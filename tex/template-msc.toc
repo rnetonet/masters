@@ -1,0 +1,24 @@
+\babel@toc {brazil}{}
+\contentsline {chapter}{Cap\'{\i }tulo~1---Introdu\c {c}\~{a}o}{1}
+\contentsline {section}{\numberline {1.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{1}
+\contentsline {section}{\numberline {1.2}Contextualiza\IeC {\c c}\IeC {\~a}o e Motiva\IeC {\c c}\IeC {\~a}o}{2}
+\contentsline {section}{\numberline {1.3}Hip\IeC {\'o}tese e Objetivo}{3}
+\contentsline {chapter}{Cap\'{\i }tulo~2---Revis\~{a}o Bibliogr\'{a}fica}{5}
+\contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{5}
+\contentsline {section}{\numberline {2.2}S\'{e}ries Temporais}{6}
+\contentsline {section}{\numberline {2.3}An\IeC {\'a}lise de S\IeC {\'e}ries Temporais}{6}
+\contentsline {section}{\numberline {2.4}Agrupamento de S\IeC {\'e}ries Temporais}{8}
+\contentsline {subsection}{\numberline {2.4.1}T\IeC {\'e}cnicas de Agrupamentos}{9}
+\contentsline {subsection}{\numberline {2.4.2}C\IeC {\'a}lculo da similaridade/dist\IeC {\^a}ncia entre s\IeC {\'e}ries temporais}{9}
+\contentsline {section}{\numberline {2.5}Trabalhos relacionados}{12}
+\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{13}
+\contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{15}
+\contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{15}
+\contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do problema}{15}
+\contentsline {subsection}{\numberline {3.2.1}Atividades da pesquisa}{17}
+\contentsline {section}{\numberline {3.3}Considera\IeC {\c c}\IeC {\~o}es Finais}{18}
+\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{19}
+\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{19}
+\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos experimentos}{19}
+\contentsline {section}{\numberline {4.3}An\IeC {\'a}lise de Similaridade/Dist\IeC {\^a}ncia}{21}
+\contentsline {section}{\numberline {4.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{26}

@@ -1,0 +1,213 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.2 }
+
+\bibitem[Aghabozorgi, Shirkhorshidi e Wah 2015]{Aghabozorgi2015}
+\abntrefinfo{Aghabozorgi, Shirkhorshidi e Wah}{AGHABOZORGI; SHIRKHORSHIDI;
+  WAH}{2015}
+{AGHABOZORGI, S.; SHIRKHORSHIDI, A.~S.; WAH, T.~Y. Time-series clustering – a
+  decade review.
+\emph{Information Systems}, v.~53, p. 16 -- 38, 2015.}
+
+\bibitem[Ayhan e Samet 2016]{Ayhan2016}
+\abntrefinfo{Ayhan e Samet}{AYHAN; SAMET}{2016}
+{AYHAN, S.; SAMET, H. Time series clustering of weather observations in
+  predicting climb phase of aircraft trajectories. In:  \emph{Proceedings of
+  the 9th ACM SIGSPATIAL International Workshop on Computational Transportation
+  Science}. New York, NY, USA: ACM, 2016.  (IWCTS '16), p. 25--30.}
+
+\bibitem[Bagnall e Janacek 2005]{bagnall2005}
+\abntrefinfo{Bagnall e Janacek}{BAGNALL; JANACEK}{2005}
+{BAGNALL, A.; JANACEK, G. Clustering time series with clipped data.
+\emph{Machine Learning}, v.~58, n.~2, p. 151--178, 2005.}
+
+\bibitem[Batista et al. 2014]{Batista2014}
+\abntrefinfo{Batista et al.}{BATISTA et al.}{2014}
+{BATISTA, G. E. A. P.~A. et al. Cid: an efficient complexity-invariant distance
+  for time series.
+\emph{Data Mining and Knowledge Discovery}, v.~28, n.~3, p. 634--669, 2014.}
+
+\bibitem[Bleiweiss 2015]{blei2015}
+\abntrefinfo{Bleiweiss}{BLEIWEISS}{2015}
+{BLEIWEISS, A. Beat discovery from dimensionality reduced perspective streams
+  of electrocardiogram signal data. In:  \emph{2015 12th International Joint
+  Conference on e-Business and Telecommunications (ICETE)}. [S.l.: s.n.], 2015.
+  v.~05, p. 39--48.}
+
+\bibitem[Box et al. 2015]{box2015}
+\abntrefinfo{Box et al.}{BOX et al.}{2015}
+{BOX, G. et al. \emph{Time Series Analysis: Forecasting and Control}. [S.l.]:
+  Wiley, 2015.  (Wiley Series in Probability and Statistics).}
+
+\bibitem[Chen e Ng 2004]{Chen2004}
+\abntrefinfo{Chen e Ng}{CHEN; NG}{2004}
+{CHEN, L.; NG, R. On the marriage of lp-norms and edit distance. In:
+  \emph{Proceedings of the Thirtieth International Conference on Very Large
+  Data Bases - Volume 30}. [S.l.]: VLDB Endowment, 2004.  (VLDB '04), p.
+  792--803.}
+
+\bibitem[Chouakria e Nagabhushan 2007]{Chouakria2007}
+\abntrefinfo{Chouakria e Nagabhushan}{CHOUAKRIA; NAGABHUSHAN}{2007}
+{CHOUAKRIA, A.~D.; NAGABHUSHAN, P.~N. Adaptive dissimilarity index for
+  measuring time series proximity.
+\emph{Advances in Data Analysis and Classification}, v.~1, n.~1, p. 5--21,
+  2007.}
+
+\bibitem[Cryer e Chan 2008]{cryer2008}
+\abntrefinfo{Cryer e Chan}{CRYER; CHAN}{2008}
+{CRYER, J.; CHAN, K. \emph{Time Series Analysis: With Applications in R}.
+  [S.l.]: Springer New York, 2008.  (Springer Texts in Statistics).}
+
+\bibitem[Durante, Pappad{\`a} e Torelli 2014]{durante}
+\abntrefinfo{Durante, Pappad{\`a} e Torelli}{DURANTE; PAPPAD{\`A};
+  TORELLI}{2014}
+{DURANTE, F.; PAPPAD{\`A}, R.; TORELLI, N. Clustering of financial time series
+  in risky scenarios.
+\emph{Advances in Data Analysis and Classification}, Springer, v.~8, n.~4, p.
+  359--376, 2014.}
+
+\bibitem[Esling e Agon 2012]{Esling2012}
+\abntrefinfo{Esling e Agon}{ESLING; AGON}{2012}
+{ESLING, P.; AGON, C. Time-series data mining.
+\emph{ACM Comput. Surv.}, ACM, New York, NY, USA, v.~45, n.~1, p. 12:1--12:34,
+  dez. 2012.}
+
+\bibitem[Faceli et al. 2011]{faceli2011inteligencia}
+\abntrefinfo{Faceli et al.}{FACELI et al.}{2011}
+{FACELI, K. et al. \emph{Intelig{\^e}ncia Artificial: Uma abordagem de
+  aprendizado de m{\'a}quina}. [S.l.: s.n.], 2011. 192~p.}
+
+\bibitem[Fei et al. 2009]{nonsta}
+\abntrefinfo{Fei et al.}{FEI et al.}{2009}
+{FEI, W. et al. Similarity analysis on nonstationary time series. In:
+  \emph{2009 Sixth International Conference on Fuzzy Systems and Knowledge
+  Discovery}. [S.l.: s.n.], 2009. v.~1, p. 286--290.}
+
+\bibitem[Han e Liu 2009]{han2009}
+\abntrefinfo{Han e Liu}{HAN; LIU}{2009}
+{HAN, M.; LIU, Y. Noise reduction method for chaotic signals based on
+  dual-wavelet and spatial correlation.
+\emph{Expert Systems with Applications}, v.~36, n.~6, p. 10060 -- 10067, 2009.}
+
+\bibitem[H{\"o}ppner e Klawonn 2009]{cross}
+\abntrefinfo{H{\"o}ppner e Klawonn}{H{\"O}PPNER; KLAWONN}{2009}
+{H{\"O}PPNER, F.; KLAWONN, F. Compensation of translational displacement in
+  time series clustering using cross correlation. In:  ADAMS, N.~M. et al.
+  (Ed.). \emph{Advances in Intelligent Data Analysis VIII: 8th International
+  Symposium on Intelligent Data Analysis, IDA, Lyon, France, August 31 -
+  September 2.} Berlin, Heidelberg: Springer Berlin Heidelberg, 2009. p.
+  71--82.}
+
+\bibitem[Huang et al. 1998]{Huang1998}
+\abntrefinfo{Huang et al.}{HUANG et al.}{1998}
+{HUANG, N.~E. et al. The empirical mode decomposition and the hilbert spectrum
+  for nonlinear and non-stationary time series analysis.
+\emph{Proceedings of the Royal Society of London A: Mathematical, Physical and
+  Engineering Sciences}, The Royal Society, v.~454, n.~1971, p. 903--995,
+  1998.}
+
+\bibitem[Izakian, Pedrycz e Jamal 2015]{izakian}
+\abntrefinfo{Izakian, Pedrycz e Jamal}{IZAKIAN; PEDRYCZ; JAMAL}{2015}
+{IZAKIAN, H.; PEDRYCZ, W.; JAMAL, I. Fuzzy clustering of time series data using
+  dynamic time warping distance.
+\emph{Engineering Applications of Artificial Intelligence}, Elsevier, v.~39, p.
+  235--244, 2015.}
+
+\bibitem[Junkui, Yuanzhen e Xinping 2006]{Lbhust}
+\abntrefinfo{Junkui, Yuanzhen e Xinping}{JUNKUI; YUANZHEN; XINPING}{2006}
+{JUNKUI, L.; YUANZHEN, W.; XINPING, L. Lb hust: A symmetrical boundary distance
+  for clustering time series. In:  \emph{Information Technology, 2006. ICIT
+  '06. 9th International Conference on}. [S.l.: s.n.], 2006. p. 203--208.}
+
+\bibitem[Keogh 2002]{LbKeogh}
+\abntrefinfo{Keogh}{KEOGH}{2002}
+{KEOGH, E. Exact indexing of dynamic time warping. In:  \emph{Proceedings of
+  the 28th International Conference on Very Large Data Bases}. [S.l.]: VLDB
+  Endowment, 2002.  (VLDB '02), p. 406--417.}
+
+\bibitem[Liao 2005]{Liao2005}
+\abntrefinfo{Liao}{LIAO}{2005}
+{LIAO, T.~W. Clustering of time series data—a survey.
+\emph{Pattern Recognition}, v.~38, n.~11, p. 1857 -- 1874, 2005.}
+
+\bibitem[Meesrikamolkul, Niennattrakul e Ratanamahatana
+  2012]{Meesrikamolkul2012}
+\abntrefinfo{Meesrikamolkul, Niennattrakul e Ratanamahatana}{MEESRIKAMOLKUL;
+  NIENNATTRAKUL; RATANAMAHATANA}{2012}
+{MEESRIKAMOLKUL, W.; NIENNATTRAKUL, V.; RATANAMAHATANA, C.~A. Shape-based
+  clustering for time series data. In:  TAN, P.-N. et al. (Ed.). \emph{Advances
+  in Knowledge Discovery and Data Mining: 16th Pacific-Asia Conference, PAKDD,
+  Kuala Lumpur, Malaysia, May 29-June 1, Proceedings, Part I}. Berlin,
+  Heidelberg: Springer Berlin Heidelberg, 2012. p. 530--541.}
+
+\bibitem[Mitchell 1997]{Mitchell:1997:ML:541177}
+\abntrefinfo{Mitchell}{MITCHELL}{1997}
+{MITCHELL, T.~M. \emph{Machine Learning}. 1. ed. New York, NY, USA:
+  McGraw-Hill, Inc., 1997.}
+
+\bibitem[Moreira\ Junior 2016]{tcc2016}
+\abntrefinfo{Moreira\ Junior}{MOREIRA\ JUNIOR}{2016}
+{MOREIRA\ JUNIOR, E.~M. \emph{{Estudo do Comportamento de Medidas de
+  Similaridade Utilizadas no Agrupamento de Séries Temporais Ruidosas}}. 2016.
+Monografia (Bacharel em Ciência da Computação), UFBA (Universidade Federal
+  da Bahia), Salvador, Brasil.}
+
+\bibitem[Morettin e Toloi 2006]{morettin2006}
+\abntrefinfo{Morettin e Toloi}{MORETTIN; TOLOI}{2006}
+{MORETTIN, P.~A.; TOLOI, C. \emph{An{\'a}lise de s{\'e}ries temporais}. [S.l.]:
+  Blucher, 2006.}
+
+\bibitem[Mori, Mendiburu e Lozano 2016]{Mori2016}
+\abntrefinfo{Mori, Mendiburu e Lozano}{MORI; MENDIBURU; LOZANO}{2016}
+{MORI, U.; MENDIBURU, A.; LOZANO, J.~A. Similarity measure selection for
+  clustering time series databases.
+\emph{IEEE Transactions on Knowledge and Data Engineering}, v.~28, n.~1, p.
+  181--195, Jan 2016.}
+
+\bibitem[Nguyen, Woon e Ng 2015]{Nguyen2015}
+\abntrefinfo{Nguyen, Woon e Ng}{NGUYEN; WOON; NG}{2015}
+{NGUYEN, H.-L.; WOON, Y.-K.; NG, W.-K. A survey on data stream clustering and
+  classification.
+\emph{Knowledge and Information Systems}, v.~45, n.~3, p. 535--569, 2015.}
+
+\bibitem[Oh e Kim 2017]{iot}
+\abntrefinfo{Oh e Kim}{OH; KIM}{2017}
+{OH, S.~R.; KIM, Y.~G. Security requirements analysis for the iot. In:
+  \emph{2017 International Conference on Platform Technology and Service
+  (PlatCon)}. [S.l.: s.n.], 2017. p.~1--6.}
+
+\bibitem[Rios e Mello 2013]{Araujo2013}
+\abntrefinfo{Rios e Mello}{RIOS; MELLO}{2013}
+{RIOS, R.~A.; MELLO, R.~F. de. Improving time series modeling by decomposing
+  and analyzing stochastic and deterministic influences.
+\emph{Signal Processing}, v.~93, n.~11, p. 3001 -- 3013, 2013.}
+
+\bibitem[Rios e Mello 2016]{Araujo2015}
+\abntrefinfo{Rios e Mello}{RIOS; MELLO}{2016}
+{RIOS, R.~A.; MELLO, R.~F. de. Applying empirical mode decomposition and mutual
+  information to separate stochastic and deterministic influences embedded in
+  signals.
+\emph{Signal Processing}, v.~118, p. 159 -- 176, 2016.}
+
+\bibitem[Shumway e Stoffer 2006]{shum2006}
+\abntrefinfo{Shumway e Stoffer}{SHUMWAY; STOFFER}{2006}
+{SHUMWAY, R.; STOFFER, D. \emph{Time series analysis and its applications: With
+  R examples, 2nd edn}. [S.l.]: New York: Springer, 2006.}
+
+\bibitem[Tormene et al. 2009]{tormene2009matching}
+\abntrefinfo{Tormene et al.}{TORMENE et al.}{2009}
+{TORMENE, P. et al. Matching incomplete time series with dynamic time warping:
+  an algorithm and an application to post-stroke rehabilitation.
+\emph{Artificial intelligence in medicine}, Elsevier, v.~45, n.~1, p. 11--34,
+  2009.}
+
+\bibitem[Zhang et al. 2011]{zhang2011}
+\abntrefinfo{Zhang et al.}{ZHANG et al.}{2011}
+{ZHANG, X. et al. A novel clustering method on time series data.
+\emph{Expert Systems with Applications}, Elsevier, v.~38, n.~9, p.
+  11891--11900, 2011.}
+
+\end{thebibliography}
