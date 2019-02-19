@@ -47,17 +47,17 @@
 \usepackage{acronym}
 \usepackage{float}
 \usepackage{todonotes}
-
+\usepackage{blindtext}
 
 
 % Siglas
 \acrodef{AM}[AM]{{Aprendizado de Máquina}}
 \acrodef{EMD}[EMD]{{Decomposição de Modo Empírico}}
 \acrodef{RQA}[RQA]{{\textit{Recurrence Quantification Analysis}}}
- \acrodef{FAPAR}[FAPAR] {{\textit{Fraction of Absorbed Photosynthesis Active Radiation}}}
- \acrodef{DTW}[DTW] {{\textit {Dynamic  Time  Warping}}}
- \acrodef{DE}[DE] {{Distância Euclidiana}}
- \acrodef{EDR}[EDR]{{ \textit{ Edite  Distance  Real}}}
+\acrodef{FAPAR}[FAPAR] {{\textit{Fraction of Absorbed Photosynthesis Active Radiation}}}
+\acrodef{DTW}[DTW] {{\textit {Dynamic  Time  Warping}}}
+\acrodef{DE}[DE] {{Distância Euclidiana}}
+\acrodef{EDR}[EDR]{{ \textit{ Edite  Distance  Real}}}
 \acrodef{CID}[CID]{{\textit{Complexity-Invariant Distance}}}
 \acrodef{SLR}[SLR]{{\textit{Systematic  Literature  Review}}}
 \acrodef{SANTS}[SANTS]{{\textit{Similarity Analysis on Nonstationary Time Series}}} 
@@ -197,10 +197,17 @@ Resumo
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-    Ambiente com fluxo contínuo de dados (\textit{Data stream}); Mudanças de conceito (\textit{Concept drift}); Métodos de detecção de mudanças (\textit{Concept drift detection})
+    Aprendizado de Máquina, Fluxos de Dados, Mudanças de Conceito
 \end{keywords}
 
-%\input abstract
+\abstract
+
+\todo{Abstract}
+
+% Palavras-chave do resumo em Ingles
+\begin{keywords}
+    Machine Learning, Data Streams, Concept Drift
+\end{keywords}
 
 %%%%%%%%%%%%%%%%%%%
 % Sumario / Indice
@@ -231,65 +238,69 @@ Resumo
 % Importante: 
 % Use \xchapter{}{} ao inves de \chapter{}; se não quiser colocar texto antes do inicio do capitulo, use \xchapter{texto}{}.
 
-% Introdução
-\xchapter{Introdu\c{c}\~{a}o}{}\label{introducao}
-
+%%%
+\xchapter{Introdução}{} \label{introducao}
 \section{Considerações Iniciais}
+\blindtext
 
-Atualmente, grandes volumes de dados são coletados e produzidos por diferentes sistemas. Segundo \citeonline{Nguyen2015}, diariamente, mais de 3,5 bilhões de buscas são realizadas nos repositórios do Google e cerca de de 4TB de imagens são geradas por satélites da NASA. 
-
-Além das grandes corporações, com o surgimento das redes sociais e a populariazação de dispositivos de acesso à Internet, usuários comuns passaram a produzir, de maneira efetiva, grandes volumes de dados por meio, por exemplo, da publicação e compartilhamento de fotos, textos e vídeos.
-
-Por fim, é importante destacar que evoluções em áreas estratégicas da computação têm favorecido o crescente aumento no volume de dados produzidos e armazenados. Uma dessas áreas é chamada de Internet das Coisas  (\textit{Internet of Things}) \cite{iot}, a qual visa conectar e coordenar diferentes dispositivos sem a intervenção humana. Recentemente, uma pesquisa divulgada pela IDC (\textit{International Data Corporation})  apresentou uma previsão de que cerca de 32 bilhões de dispositivos estarão interconectados até 2020 \cite{iot}. 
-
-Esse aumento significativo na quantidade de dados produzidos e armazenados tem dificultado a tarefa de especialistas de domínio na análise e extração novas informações. Visando superar essas dificuldades, técnicas de \ac{AM} têm sido propostas para desenvolver programas de computadores que sejam capazes de analisar dados e aprender, com base na experiência fornecida por especialistas, com intuito de melhorar o desempenho na realização de alguma tarefa \cite{Mitchell:1997:ML:541177,faceli2011inteligencia}. 
-
-De maneira geral, o aprendizado realizado por técnicas de \ac{AM} ocorre visando induzir hipóteses que sejam capazes de descrever relações entre os dados analisados. Essa busca por tais hipóteses é determinada pelo viés de cada algoritmo, o qual representa a capacidade de generalização do modelo aprendido quando aplicado à novos dados não vistos previamente \cite{faceli2011inteligencia}.
-
-Ao encontrar hipóteses que descrevem o comportamento dos dados, pode-se ajustar um modelo para, por exemplo, predizer o comportamento futuro de um sistema ou, simplesmente, descrever seu estado atual. O ajuste destes modelos ocorre de acordo com o paradigma de aprendizado, o qual pode ser supervisionado ou não-supervisionado. No paradigma supervisionado, modelos são estimados considerando um conjunto de instâncias (dados) que contém características (atributos) específicas de cada instância (dado) e um rótulo (atributo meta), o qual é normalmente fornecido por um especialista. Tarefas de aprendizagem neste caso são, geralmente, realizadas para classificação e regressão de novas instâncias.
-
-Por outro lado, existem situações onde não é possível contar com um especialista para, previamente, fornecer rótulos para cada instância. Neste caso, a utilização de métodos de aprendizagem do paradigma não-supervisionado são normalmente utilizados, uma vez que nenhuma informação é conhecida a priori, exceto os atributos de cada instância.
-
-Dentre as técnicas do paradigma não-supervisionado mais utilizadas na literatura, pode-se destacar os algoritmos de Agrupamento de Dados. Esses algoritmos analisam dados buscando estruturas de tal forma que dados pertencentes a um mesmo grupo sejam de alguma forma mais semelhantes do que dados de outros grupos \cite{Mitchell:1997:ML:541177,faceli2011inteligencia, Aghabozorgi2015}.
-
-Os dados analisados pelos algoritmos de agrupamento podem  ser caracterizados de diferentes formas como, por exemplo:  textos em redes sociais, cadastro de clientes de uma organização, ou exames realizados em pacientes de um hospital. 
-
-Em geral, dados são coletados de maneira independente e identicamente distribuída (iid), ou seja, são coletados seguindo alguma distribuição de probabilidade sem, necessariamente, ser caracterizado por uma dependência temporal. Entretanto, quando existe essa dependência, dados são organizados como séries temporais \cite{Esling2012,box2015}. Por exemplo, séries temporais podem ser utilizadas para representar medidas sequenciais ao longo do tempo de médias diárias de temperatura de uma cidade, variações de preço de uma determinada ação na bolsa de valores, propagação de uma doença ou cantos de pássaros \cite{Esling2012}. 
-
-Assim, o foco deste trabalho de mestrado é analisar a aplicação de técnicas de agrupamento de dados em séries temporais. Visando apresentar claramente as contribuições deste trabalho, a próxima seção detalha o contexto e a motivação para realização dessa análise.
-
-\section{Contextualização e Motivação}
-
-Séries temporais são representadas por uma coleção de valores obtidos a partir de medidas sequenciais ao longo do tempo e são utilizadas para análise do comportamento de sistemas em diversas áreas, tais como a medicina, meteorologia, captura de movimento, governo, engenharia, negócios, finanças, economia, entre outras \cite{Esling2012,box2015}. 
-
-O agrupamento de séries temporais possibilita extrair informações em conjuntos de dados temporais, agrupando as séries (instâncias) em grupos (\textit{clusters}) de tal forma que a variância \textit{intercluster} seja maximizada e a \textit{intracluster} seja minimizada. Assim, séries que compartilham características (informações) similares são organizadas em um mesmo grupo.
-
-Para determinar variâncias entre séries temporais são utilizadas métricas que calculam similaridades~\cite{Mori2016}. Na literatura de aprendizado de máquina não-supervisionado, instâncias são agrupadas considerando métricas de similaridades ou métricas de distância. Em algumas situações, a similaridade entre duas instâncias pode ser calculada utilizando o inverso da distância entre elas. 
-
-No entanto, a escolha de tais métricas não é trivial, uma vez que séries temporais podem apresentar diferentes comportamentos que influenciam o cálculo da similaridade. Por exemplo, a similaridade entre séries com comportamento determinístico pode ser calculada utilizando técnicas como \ac{DTW} \cite{tormene2009matching} ou \ac{MDDL} \cite{Araujo2015, Araujo2013}.Por outro lado, o cálculo da similaridade entre séries com comportamento estocástico pode ser realizado a partir da análise no domínio de frequência, i.e., comparando espectrogramas obtidos com a transformada de Fourier~\cite{morettin2006}.
-
-Contudo, séries temporais podem apresentar uma mistura de ambos os comportamentos. Conforme discutido em~\citeonline{Araujo2013,Araujo2015}, considerar apenas um dos comportamentos pode reduzir a acurácia no processo de modelagem e análise de séries temporais.
-
-Visando resolver essa limitação, este projeto de mestrado discute uma abordagem que permite analisar individualmente os comportamento estocásticos e determinísticos no processo de cálculo de similaridade entre séries temporais e, consequentemente, melhorar o processo de agrupamento de dados.
+\section{Contexto e Motivação}
+\blindtext
 
 \section{Hipótese e Objetivo}
+\blindtext
 
-Com base nas observações citadas anteriormente, a seguinte hipótese foi formulada:
+\xchapter{Revisão Bibliográfica}{} \label{revisao_bibliografica}
+\section{Considerações Iniciais}
+\blindtext
 
-\begin{center}
-\textit{``O agrupamento de séries temporais apresenta maior acurácia quando medidas de similaridade (ou distância) são, individualmente, calculadas sobre comportamentos estocásticos e determinísticos.''}
-\end{center}
+\section{Fluxos de Dados}
+\blindtext
 
-Assim, o objetivo deste trabalho de mestrado será validar esta hipótese. Para alcançar esse objetivo, será desenvolvida uma abordagem de agrupamento que decompõe séries temporais em dois componentes, um estocástico e um determinístico. Inicialmente, a decomposição das séries será realizada considerando as abordagens propostas em \citeonline{Araujo2013,Araujo2015}. A partir dessa decomposição, será possível, individualmente, medir a similaridade/distância entre cada componente. Para isso, diferentes métricas de similaridade e distância serão implementadas para validação da abordagem proposta. As séries utilizadas nos experimentos serão divididas em dois conjuntos. Um conjunto formado por séries sintéticas, que permitirá realizar uma análise detalhada da abordagem, uma vez que os comportamentos estocásticos e determinísticos serão previamente conhecidos. O outro conjunto será composto por séries coletadas de algum sistema do mundo real, visando apresentar uma aplicação prática para a solução proposta neste trabalho.
+\section{Mudança de Conceito}
+\blindtext
 
-O restante deste projeto  está organizado da seguinte maneira: O \textbf{Capítulo \ref{revisao}} possui uma revisão bibliográfica dos principais conceitos utilizados neste trabalho como, por exemplo, análise, decomposição e agrupamento de séries temporais; No \textbf{Capítulo \ref{plano}} está o plano de pesquisa elaborado com o objetivo de validar a hipótese desta pesquisa, a metodologia que será utilizada na pesquisa e o cronograma de atividades; finalmente, no \textbf{Capítulo \ref{experimentos}}, é apresentado um conjunto de experimentos preliminares, os quais foram desenvolvidos para demonstrar a importância de analisar os comportamentos estocásticos e determinísticos no agrupamento de séries temporais.
-% /Introdução
+\subsection{Algoritmos para Detecção de Mudança de Conceito}
+\blindtext
 
-\input revisao
+\subsection{Ferramentas}
+\blindtext
 
-\input plano
+\section{Redes de Função de Base Radial}
 
-\input experimentos
+\section{Trabalhos Relacionados}
+\blindtext
+
+\section{Considerações Finais}
+\blindtext
+
+\xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
+\section{Considerações Iniciais}
+\blindtext
+
+\section{Descrição do Problema}
+\blindtext
+
+\subsection{Atividades de Pesquisa}
+\blindtext
+
+\section{Considerações Finais}
+\blindtext
+
+\xchapter{Experimentos Iniciais}{} \label{experimentos_iniciais}
+\section{Considerações Iniciais}
+\blindtext
+
+\section{Configuração dos Experimentos}
+\blindtext
+
+\section{Método de Pettitt}
+\blindtext
+
+\section{Redes de Função de Base Radial}
+\blindtext
+
+\section{Considerações Finais}
+\blindtext
 
 
 %% Parte pos-textual

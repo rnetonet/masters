@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  19 FEB 2019 17:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  19 FEB 2019 18:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1212,6 +1212,26 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
 \c@@todonotes@numberoftodonotes=\count316
+) (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+\c@blindtext=\count317
+\c@Blindtext=\count318
+\c@blind@countparstart=\count319
+\blind@countxx=\count320
+\blindtext@numBlindtext=\count321
+\blind@countyy=\count322
+\c@blindlist=\count323
+\c@blindlistlevel=\count324
+\c@blindlist@level=\count325
+\blind@listitem=\count326
+\c@blind@listcount=\count327
+\c@blind@levelcount=\count328
+\blind@mathformula=\count329
+\blind@Mathformula=\count330
+\c@blind@randomcount=\count331
+\c@blind@randommax=\count332
+\c@blind@pangramcount=\count333
+\c@blind@pangrammax=\count334
 ) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
 \openout1 = `template-msc.aux'.
 
@@ -1231,16 +1251,16 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
 LaTeX Font Info:    ... okay on input line 110.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count317
+\scratchcounter=\count335
 \scratchdimen=\dimen291
 \scratchbox=\box61
-\nofMPsegments=\count318
-\nofMParguments=\count319
+\nofMPsegments=\count336
+\nofMParguments=\count337
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count320
+\MPscratchCnt=\count338
 \MPscratchDim=\dimen292
-\MPnumerator=\count321
-\makeMPintoPDFobject=\count322
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
 \everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1318,7 +1338,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count323
+\c@lstlisting=\count341
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 110.
  ABD: EveryShipout initializing macros
@@ -1380,154 +1400,185 @@ Overfull \hbox (7.8324pt too wide) in paragraph at lines 196--196
 
 ] [4
 
+]
+Overfull \hbox (54.04262pt too wide) in paragraph at lines 205--205
+[][][][]\OT1/cmr/m/n/12 Abstract  
+ []
+
+
+Overfull \hbox (54.04262pt too wide) in paragraph at lines 205--205
+[][][][]\OT1/cmr/m/n/12 Abstract  
+ []
+
+
+Overfull \hbox (7.8324pt too wide) in paragraph at lines 205--205
+[][][] 
+ []
+
+
+Overfull \hbox (54.04262pt too wide) in paragraph at lines 205--205
+[][][][]\OT1/cmr/m/n/12 Abstract  
+ []
+
+
+Overfull \hbox (54.04262pt too wide) in paragraph at lines 205--205
+[][][][]\OT1/cmr/m/n/12 Abstract  
+ []
+
+
+Overfull \hbox (7.8324pt too wide) in paragraph at lines 205--205
+[][][] 
+ []
+
+[5] [6
+
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.toc)
 \tf@toc=\write5
 \openout5 = `template-msc.toc'.
 
- [5] [6
+ [7] [8
 
-] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lof
-Overfull \hbox (20.6631pt too wide) in paragraph at lines 4--4
- [][] []\OT1/cmr/m/n/12 S^^Series tem-po-rais: (A) Sa-zo-na-li-dade. (B) Sa-zo-na-li-dade+ Com-po-nente aleat^^Sorio. 
- []
-
-)
+] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lof)
 \tf@lof=\write6
 \openout6 = `template-msc.lof'.
 
- [7] [8
+ [9] [10
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lot)
 \tf@lot=\write7
 \openout7 = `template-msc.lot'.
 
- [9] [10
+ [11] [12
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 235.
+Package xcolor Warning: Incompatible color definition on input line 242.
 
-Package acronym Info: Label `acro:AM' newly defined as it shall be overridden
-although it is yet undefined on input line 245.
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 245.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 248.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 251.
+
 [1
 
 ] [2]
-Package acronym Info: Label `acro:DTW' newly defined as it shall be overridden
-although it is yet undefined on input line 269.
-Package acronym Info: Label `acro:MDDL' newly defined as it shall be overridden
-although it is yet undefined on input line 269.
- [3] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/revisao.tex [4]
 
-Package xcolor Warning: Incompatible color definition on input line 1.
+Package xcolor Warning: Incompatible color definition on input line 252.
 
 
-Overfull \hbox (6.2052pt too wide) in paragraph at lines 12--13
-\OT1/cmr/m/n/12 longo do tempo $\OML/cmm/m/it/12 X[] \OT1/cmr/m/n/12 = []$ (BOX et al., 2015; CHOU-A-KRIA; NA-GABHUSHAN,
- []
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 255.
 
-[5
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 258.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 261.
+
+[3
 
 ]
-<seri7.pdf, id=70, 505.89pt x 505.89pt>
-File: seri7.pdf Graphic file (type pdf)
-<use seri7.pdf>
-Package pdftex.def Info: seri7.pdf  used on input line 24.
-(pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
- [6]
-Package acronym Info: Label `acro:EMD' newly defined as it shall be overridden
-although it is yet undefined on input line 44.
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 264.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 267.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 272.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 275.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/seri7.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8]
-Package acronym Info: Label `acro:CID' newly defined as it shall be overridden
-although it is yet undefined on input line 87.
-
-Overfull \hbox (0.5938pt too wide) in paragraph at lines 87--88
-\OT1/cmr/m/n/12 se-guin-tes me-di-das: Dist^ancia Eu-cli-di-ana (DE), \OT1/cmr/m/it/12 Dy-na-mic Time War-ping \OT1/cmr/m/n/12 (DTW) (ZHANG
- []
-
-
-Overfull \hbox (24.74724pt too wide) in paragraph at lines 87--88
-\OT1/cmr/m/n/12 et al., 2011), LB HUST (JUN-KUI; YU-ANZHEN; XIN-PING, 2006), \OT1/cmr/m/it/12 Cross-Correlation \OT1/cmr/m/n/12 (H[]OPP-
- []
-
-[9]
-Package acronym Info: Label `acro:DE' newly defined as it shall be overridden
-although it is yet undefined on input line 91.
- [10] [11]
-Overfull \hbox (2.4774pt too wide) in paragraph at lines 217--218
-[]\OT1/cmr/m/n/12 Na Gest~ao do Tr^^Safego A^^Sereo, ^^Se im-por-tante re-a-li-zar uma pre-vis~ao de tra-jet^^Soria confi^^Savel,
- []
-
-) [12] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/plano.tex [13] [14
+ [4] [5] [6
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 1.
+Package xcolor Warning: Incompatible color definition on input line 276.
 
-[15]
-<esquema.pdf, id=127, 2547.5175pt x 1661.20625pt>
-File: esquema.pdf Graphic file (type pdf)
-<use esquema.pdf>
-Package pdftex.def Info: esquema.pdf  used on input line 42.
-(pdftex.def)             Requested size: 509.49448pt x 332.23537pt.
 
-Overfull \hbox (56.5266pt too wide) in paragraph at lines 42--43
- [] 
- []
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 279.
 
-[16] [17 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/esquema.pdf>]
 
-LaTeX Warning: Reference `apendice1' on page 18 undefined on input line 92.
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 282.
 
-) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/experimentos.tex [18]
 
-Package xcolor Warning: Incompatible color definition on input line 1.
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 285.
 
-[19
+[7]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 288.
+
+[8]
+
+Package xcolor Warning: Incompatible color definition on input line 289.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 292.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 295.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 298.
+
+[9
 
 ]
 
-LaTeX Warning: Reference `apendice1' on page 20 undefined on input line 64.
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 301.
 
-[20] [21] [22] [23]
-Overfull \hbox (2.95137pt too wide) in paragraph at lines 241--258
- [][] 
- []
 
-[24]
-Overfull \hbox (2.95137pt too wide) in paragraph at lines 265--282
- [][] 
- []
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 304.
 
-[25] [26]) [27] [28
+[10] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl
 
-] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [29
+LaTeX Warning: Empty `thebibliography' environment on input line 8.
 
-] [30]) 
+) 
 AED: lastpage setting LastPage
-[31] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
+[11
 
-LaTeX Warning: There were undefined references.
 
- ) 
+] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
 Here is how much of TeX's memory you used:
- 27307 strings out of 492982
- 521518 string characters out of 6134895
- 695488 words of memory out of 5000000
- 30368 multiletter control sequences out of 15000+600000
- 545110 words of font info for 76 fonts, out of 8000000 for 9000
+ 27066 strings out of 492982
+ 517824 string characters out of 6134895
+ 664416 words of memory out of 5000000
+ 30140 multiletter control sequences out of 15000+600000
+ 542899 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,76p,10445b,694s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (43 pages, 3139863 bytes).
+ 62i,9n,76p,10445b,694s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (25 pages, 372228 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
+ 113 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
