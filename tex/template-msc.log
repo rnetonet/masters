@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  10 FEB 2019 01:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  19 FEB 2019 17:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1347,72 +1347,32 @@ Underfull \hbox (badness 2922) in paragraph at lines 117--117
 [1
 
 ] [2]
-Overfull \hbox (52.0232pt too wide) in paragraph at lines 206--206
-[][][][]\OT1/cmr/m/n/12 Termina 
+Overfull \hbox (49.96489pt too wide) in paragraph at lines 196--196
+[][][][]\OT1/cmr/m/n/12 Resumo  
  []
 
 
-Overfull \hbox (22.97488pt too wide) in paragraph at lines 206--206
-\OT1/cmr/m/n/12 re- 
+Overfull \hbox (49.96489pt too wide) in paragraph at lines 196--196
+[][][][]\OT1/cmr/m/n/12 Resumo  
  []
 
 
-Overfull \hbox (45.88715pt too wide) in paragraph at lines 206--206
-\OT1/cmr/m/n/12 sumo...  
- []
-
-
-Overfull \hbox (52.0232pt too wide) in paragraph at lines 206--206
-[][][][]\OT1/cmr/m/n/12 Termina 
- []
-
-
-Overfull \hbox (22.97488pt too wide) in paragraph at lines 206--206
-\OT1/cmr/m/n/12 re- 
- []
-
-
-Overfull \hbox (45.88715pt too wide) in paragraph at lines 206--206
-\OT1/cmr/m/n/12 sumo...  
- []
-
-
-Overfull \hbox (7.8324pt too wide) in paragraph at lines 206--206
+Overfull \hbox (7.8324pt too wide) in paragraph at lines 196--196
 [][][] 
  []
 
 
-Overfull \hbox (52.0232pt too wide) in paragraph at lines 206--206
-[][][][]\OT1/cmr/m/n/12 Termina 
+Overfull \hbox (49.96489pt too wide) in paragraph at lines 196--196
+[][][][]\OT1/cmr/m/n/12 Resumo  
  []
 
 
-Overfull \hbox (22.97488pt too wide) in paragraph at lines 206--206
-\OT1/cmr/m/n/12 re- 
+Overfull \hbox (49.96489pt too wide) in paragraph at lines 196--196
+[][][][]\OT1/cmr/m/n/12 Resumo  
  []
 
 
-Overfull \hbox (45.88715pt too wide) in paragraph at lines 206--206
-\OT1/cmr/m/n/12 sumo...  
- []
-
-
-Overfull \hbox (52.0232pt too wide) in paragraph at lines 206--206
-[][][][]\OT1/cmr/m/n/12 Termina 
- []
-
-
-Overfull \hbox (22.97488pt too wide) in paragraph at lines 206--206
-\OT1/cmr/m/n/12 re- 
- []
-
-
-Overfull \hbox (45.88715pt too wide) in paragraph at lines 206--206
-\OT1/cmr/m/n/12 sumo...  
- []
-
-
-Overfull \hbox (7.8324pt too wide) in paragraph at lines 206--206
+Overfull \hbox (7.8324pt too wide) in paragraph at lines 196--196
 [][][] 
  []
 
@@ -1445,17 +1405,17 @@ Overfull \hbox (20.6631pt too wide) in paragraph at lines 4--4
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 245.
+Package xcolor Warning: Incompatible color definition on input line 235.
 
 Package acronym Info: Label `acro:AM' newly defined as it shall be overridden
-although it is yet undefined on input line 255.
+although it is yet undefined on input line 245.
 [1
 
 ] [2]
 Package acronym Info: Label `acro:DTW' newly defined as it shall be overridden
-although it is yet undefined on input line 279.
+although it is yet undefined on input line 269.
 Package acronym Info: Label `acro:MDDL' newly defined as it shall be overridden
-although it is yet undefined on input line 279.
+although it is yet undefined on input line 269.
  [3] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/revisao.tex [4]
 
 Package xcolor Warning: Incompatible color definition on input line 1.
@@ -1558,13 +1518,13 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  27307 strings out of 492982
  521518 string characters out of 6134895
- 695582 words of memory out of 5000000
+ 695488 words of memory out of 5000000
  30368 multiletter control sequences out of 15000+600000
  545110 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,76p,10445b,694s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (43 pages, 3141321 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (43 pages, 3139863 bytes).
 PDF statistics:
  261 PDF objects out of 1000 (max. 8388607)
  176 compressed objects within 2 object streams
