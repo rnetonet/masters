@@ -177,13 +177,13 @@ O estudo da recorrência dos dados nesses fluxos permite a criação de modelos 
 %---
 Essas mudanças são produzidas por agentes externos ainda desconhecidos para os modelos vigentes, por exemplo: mudanças no clima, novos interesses dos sujeitos envolvidos, desastres naturais, novas estratégias de investimento, etc.
 %---
-No âmbito do Aprendizado de Máquina (AM), diversas pesquisas têm sido realizadas para investigar e identificar essas variações nos fluxos de dados, definidas como mudanças de conceito (\textit{concept drift}).
+No âmbito do Aprendizado de Máquina (AM), diversas pesquisas têm sido realizadas para identificar e investigar essas variações nos fluxos de dados, definidas como mudanças de conceito (\textit{concept drift}).
 %---
 A correta detecção das mudanças de conceito, permite que os modelos possam ser atualizados, a fim de refinar a predição, a compreensão do modelo e, possivelmente, atuar sobre os fenômenos que conduzem o fluxo de dados em análise.
 %---
-Apesar da existência de variados algoritmos para detecção de mudanças de conceito em fluxos de dados, a maioria utiliza a noção de janelas ou similar. Este tipo de abordagem aumenta a complexidade dos algoritmos, os requisitos de processamento, e afetam o tempo para detecção e resposta. 
+Apesar da existência de variados algoritmos para detecção de mudanças de conceito em fluxos de dados, a maioria utiliza uma estrutura de janelas e dependem da correta rotulação das amostras (paradigma supervisionado) para seu funcionamento. Este tipo de abordagem aumenta a complexidade dos algoritmos, os requisitos de processamento, e afetam o tempo para detecção e resposta. 
 %---
-Neste trabalho, um novo algoritmo para detecção de mudanças de conceito em fluxos de dados baseado em redes de função de base radial é proposto. O método proposto é comparado com vários algoritmos amplamente utilizados na literatura, e os resultados mostram \todo{Terminar. Incluir mais diferenciais e relatar os resultados.}
+Neste trabalho, um novo algoritmo para detecção de mudanças de conceito em fluxos de dados baseado em redes de função de base radial é proposto. O método proposto é comparado com vários algoritmos amplamente utilizados na literatura, e os resultados mostram \ldots \todo{Terminar. Incluir mais diferenciais e relatar os resultados.}
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
@@ -233,7 +233,7 @@ Neste trabalho, um novo algoritmo para detecção de mudanças de conceito em fl
 
 \section{Contexto e Motivação}
 
-Diversos processos industriais, científicos e comerciais produzem sequencias, teoricamente infinitas, de observações ao longo do tempo, denominadas fluxos de dados. Exemplos incluem transações de cartões de crédito, sensores de temperatura, dados do mercado de ações, indicadores de saúde, etc \cite{Aggarwal:2003:FCE:1315451.1315460}. 
+Diversos processos industriais, científicos e comerciais produzem sequências, teoricamente infinitas, de observações ao longo do tempo, denominadas fluxos de dados. Exemplos incluem transações de cartões de crédito, sensores de temperatura, dados do mercado de ações, indicadores de saúde, etc \cite{Aggarwal:2003:FCE:1315451.1315460}. 
 
 Mudanças no contexto ou parâmetros desses processos, podem alterar o comportamento dos fluxos de dados ao longo do tempo, por exemplo: influência de notícias no mercado de ações, mudanças abruptas no clima, etc. 
 Essas flutuações são chamadas de mudanças de conceito e geralmente identificam eventos de interesse, pois informam sobre fatores externos influenciando o processo gerador do fluxo. Enquanto nenhuma mudança é detectada, sabemos que o processo mantém-se estável e devidamente representado pelo modelo vigente.
@@ -248,7 +248,7 @@ Esta limitação motivou os pesquisadores a explorarem o paradigma não supervis
 O aprendizado não supervisionado baseia-se em algoritmos de agrupamento de dados para extração e organização das observações, posicionando-as conforme medições de similaridade. Tais algoritmos consideram mudanças nas partições dos \textit{clusters} um indicativo da ocorrência de mudança de conceito \cite{Aggarwal:2003:FCE:1315451.1315460}.
 Isto é, a partição produzida no instante $t$ é comparada com a $t - 1$, obtendo-se uma medida de divergência, utilizada para indicar a ocorrência ou não de mudança de conceito. 
 
-No entento, algoritmos não supervisionados carecem de fundamentação teórica para prover garantias à detecção de mudanças de conceitos. A maioria deles compara partições consecutivas usando alguma heurística, portanto as divergências não estão necessariamente associadas a mudanças nos dados (e, conseqüentemente, ao processo), podendo também ser produzidas por instabilidades do algoritmo. Por exemplo, algoritmos como STING \cite{Wang:1997:SSI:645923.758369} e o CluStream \cite{Aggarwal:2003:FCE:1315451.1315460} podem produzir diferentes partições de clustering para as mesmas observações de dados devido à parametrização randômica do K-means utilizado. Este cenário pode aumentar a ocorrência de falsos positivos na detecção de mudanças de conceito. 
+No entanto, algoritmos não supervisionados carecem de fundamentação teórica para prover garantias à detecção de mudanças de conceitos. A maioria deles compara partições consecutivas usando alguma heurística. Contudo, as divergências não estão necessariamente associadas a mudanças nos dados (e, consequentemente, ao processo), podendo também ser produzidas por instabilidades do algoritmo. Por exemplo, algoritmos como STING \cite{Wang:1997:SSI:645923.758369} e o CluStream \cite{Aggarwal:2003:FCE:1315451.1315460} podem produzir diferentes partições de clustering para as mesmas observações de dados devido à parametrização randômica do K-means utilizado. Este cenário pode aumentar a ocorrência de falsos positivos na detecção de mudanças de conceito. 
 
 Enquanto pequenas mudanças são vistas como uma instabilidade natural dos dados, mudanças significativas denotam alterações no processo gerador do fluxo. A detecção destas mudanças - que podem ser abruptas (mais fácil de ser detectada),  incrementais ou graduais \cite{Tsymbal04theproblem} - é a principal motivação para os pesquisadores em \textit{concept drift}.
 
