@@ -47,6 +47,10 @@
 \usepackage{acronym}
 \usepackage{float}
 \usepackage{todonotes}
+\presetkeys%
+    {todonotes}%
+    {inline,backgroundcolor=yellow}{}
+    
 \usepackage{blindtext}
 
 
@@ -167,46 +171,32 @@
 %%%%%%%%%%%%%%%%%%%%%
 \resumo
 
-% Com a grande quantidade dados produzidos e coletados diariamente por diferentes sistemas, 
-% técnicas de aprendizado de máquina foram propostas com o intuito de auxiliar no processo de 
-% extração automática de informações. 
-% Dentre essas técnicas, pode-se destacar os algoritmos de agrupamento que buscam encontrar 
-% padrões e estruturas implícitas em conjuntos de dados sem qualquer conhecimento fornecido à 
-% priori. Neste trabalho de mestrado, busca-se desenvolver uma nova abordagem de agrupamento 
-% para dados que possuem uma dependência temporal entre suas observações, comumente 
-% chamados de séries temporais. A principal diferença dessa abordagem em relação aos 
-% trabalhos existentes na literatura baseia-se na hipótese de que dados coletados do 
-% mundo real possuem influências estocásticas e determinísticas que, se não forem 
-% individualmente analisadas, podem afetar o resultado do agrupamento. 
-% Neste sentido, a abordagem proposta realiza uma etapa de decomposição das séries 
-% temporais em componentes estocásticos e determinísticos. Em seguida, realiza o 
-% agrupamento dos dados analisando de maneira individual a similaridade entre cada componente. 
-% Experimentos preliminares foram realizados sobre séries temporais sintéticas, 
-% formadas a partir da combinação entre componentes estocásticos e determinísticos. 
-% A partir da decomposição das séries sintéticas, 
-% foi possível observar que medidas de distância largamente utilizadas na literatura 
-% apresentaram melhores resultados. 
-% Ao afinal deste trabalho de mestrado, espera-se obter um melhor resultado de agrupamento 
-% utilizando a abordagem proposta sobre dados reais.
-
-\vspace{1cm}
-
-Resumo
-
-\todo{Resumo}
+Diversas aplicações industriais, científicas e comerciais produzem sequências de observações de forma contínua, teoricamente infinitas, denominadas fluxos de dados. 
+%---
+O estudo da recorrência dos dados nesses fluxos permite a criação de modelos de aprendizagem. Contudo, as mudanças de comportamento na sequência de dados prejudicam a acurácia desses modelos.
+%---
+Essas mudanças são produzidas por agentes externos ainda desconhecidos para os modelos vigentes, por exemplo: mudanças no clima, novos interesses dos sujeitos envolvidos, desastres naturais, novas estratégias de investimento, etc.
+%---
+No âmbito do Aprendizado de Máquina (AM), diversas pesquisas têm sido realizadas para investigar e identificar essas variações nos fluxos de dados, definidas como mudanças de conceito (\textit{concept drift}).
+%---
+A correta detecção das mudanças de conceito, permite que os modelos possam ser atualizados, a fim de refinar a predição, a compreensão do modelo e, possivelmente, atuar sobre os fenômenos que conduzem o fluxo de dados em análise.
+%---
+Apesar da existência de variados algoritmos para detecção de mudanças de conceito em fluxos de dados, a maioria utiliza a noção de janelas ou similar. Este tipo de abordagem aumenta a complexidade dos algoritmos, os requisitos de processamento, e afetam o tempo para detecção e resposta. 
+%---
+Neste trabalho, um novo algoritmo para detecção de mudanças de conceito em fluxos de dados baseado em redes de função de base radial é proposto. O método proposto é comparado com vários algoritmos amplamente utilizados na literatura, e os resultados mostram \todo{Terminar. Incluir mais diferenciais e relatar os resultados.}
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-    Aprendizado de Máquina, Fluxos de Dados, Mudanças de Conceito
+    Aprendizado de Máquina, Fluxos de Dados, Mudanças de Conceito, Redes de Função de Base Radial
 \end{keywords}
 
 \abstract
 
-\todo{Abstract}
+\todo{Findo o resumo, traduzir para o abstract}
 
 % Palavras-chave do resumo em Ingles
 \begin{keywords}
-    Machine Learning, Data Streams, Concept Drift
+    Machine Learning, Data Streams, Concept Drift, Radial Basis Function Networks
 \end{keywords}
 
 %%%%%%%%%%%%%%%%%%%
@@ -240,11 +230,28 @@ Resumo
 
 %%%
 \xchapter{Introdução}{} \label{introducao}
-\section{Considerações Iniciais}
-\blindtext
 
 \section{Contexto e Motivação}
-\blindtext
+
+Diversos processos industriais, científicos e comerciais produzem sequencias, teoricamente infinitas, de observações ao longo do tempo, denominadas fluxos de dados. Exemplos incluem transações de cartões de crédito, sensores de temperatura, dados do mercado de ações, indicadores de saúde, etc \cite{Aggarwal:2003:FCE:1315451.1315460}. 
+
+Mudanças no contexto ou parâmetros desses processos, podem alterar o comportamento dos fluxos de dados ao longo do tempo, por exemplo: influência de notícias no mercado de ações, mudanças abruptas no clima, etc. 
+Essas flutuações são chamadas de mudanças de conceito e geralmente identificam eventos de interesse, pois informam sobre fatores externos influenciando o processo gerador do fluxo. Enquanto nenhuma mudança é detectada, sabemos que o processo mantém-se estável e devidamente representado pelo modelo vigente.
+ 
+A detecção dessas mudanças é importante em diversos cenários, como no monitoramento do fluxo de alimentação em uma caldeira industrial \cite{6294406}. Mudanças de conceito podem acontecer, pois a alimentação de combustível é um processo manual e não padronizado, que não é necessariamente suave e pode ter interrupções curtas. Além disso, cada operador pode ter hábitos diferentes. 
+A alimentação da caldeira fora dos padrões devidos, pode oferecer risco à vida dos trabalhadores da indústria.
+
+Existem diversos algoritmos para detectar mudança de conceito, sendo a maior parte baseado em modelos de aprendizagem supervisionados \cite{Gama:2014:SCD:2597757.2523813}. 
+Estes algoritmos, baseiam-se na correta rotulagem dos dados para atualização do modelo e posterior classificação. No entanto, este paradigma enfrenta dificuldades quando os dados são produzidos em altas frequências e grandes volumes, tornando a espera por um rótulo correto inviável.
+Esta limitação motivou os pesquisadores a explorarem o paradigma não supervisionado, que não requer conhecimento prévio sobre os dados.
+
+O aprendizado não supervisionado baseia-se em algoritmos de agrupamento de dados para extração e organização das observações, posicionando-as conforme medições de similaridade. Tais algoritmos consideram mudanças nas partições dos \textit{clusters} um indicativo da ocorrência de mudança de conceito \cite{Aggarwal:2003:FCE:1315451.1315460}.
+Isto é, a partição produzida no instante $t$ é comparada com a $t - 1$, obtendo-se uma medida de divergência, utilizada para indicar a ocorrência ou não de mudança de conceito. 
+
+No entento, algoritmos não supervisionados carecem de fundamentação teórica para prover garantias à detecção de mudanças de conceitos. A maioria deles compara partições consecutivas usando alguma heurística, portanto as divergências não estão necessariamente associadas a mudanças nos dados (e, conseqüentemente, ao processo), podendo também ser produzidas por instabilidades do algoritmo. Por exemplo, algoritmos como STING \cite{Wang:1997:SSI:645923.758369} e o CluStream \cite{Aggarwal:2003:FCE:1315451.1315460} podem produzir diferentes partições de clustering para as mesmas observações de dados devido à parametrização randômica do K-means utilizado. Este cenário pode aumentar a ocorrência de falsos positivos na detecção de mudanças de conceito. 
+
+Enquanto pequenas mudanças são vistas como uma instabilidade natural dos dados, mudanças significativas denotam alterações no processo gerador do fluxo. A detecção destas mudanças - que podem ser abruptas (mais fácil de ser detectada),  incrementais ou graduais \cite{Tsymbal04theproblem} - é a principal motivação para os pesquisadores em \textit{concept drift}.
+
 
 \section{Hipótese e Objetivo}
 \blindtext

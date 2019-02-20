@@ -1,8 +1,7 @@
 \babel@toc {brazil}{}
 \contentsline {chapter}{Cap\'{\i }tulo~1---Introdu\IeC {\c c}\IeC {\~a}o}{1}
-\contentsline {section}{\numberline {1.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{1}
-\contentsline {section}{\numberline {1.2}Contexto e Motiva\IeC {\c c}\IeC {\~a}o}{1}
-\contentsline {section}{\numberline {1.3}Hip\IeC {\'o}tese e Objetivo}{1}
+\contentsline {section}{\numberline {1.1}Contexto e Motiva\IeC {\c c}\IeC {\~a}o}{1}
+\contentsline {section}{\numberline {1.2}Hip\IeC {\'o}tese e Objetivo}{2}
 \contentsline {chapter}{Cap\'{\i }tulo~2---Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{3}
 \contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{3}
 \contentsline {section}{\numberline {2.2}Fluxos de Dados}{3}

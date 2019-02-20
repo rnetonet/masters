@@ -5,4 +5,42 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
+\bibitem[Aggarwal et al. 2003]{Aggarwal:2003:FCE:1315451.1315460}
+\abntrefinfo{Aggarwal et al.}{AGGARWAL et al.}{2003}
+{AGGARWAL, C.~C. et al. A framework for clustering evolving data streams. In:
+  \emph{Proceedings of the 29th International Conference on Very Large Data
+  Bases - Volume 29}. VLDB Endowment, 2003.  (VLDB '03), p. 81--92.
+ISBN 0-12-722442-4. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=1315451.1315460}.}
+
+\bibitem[{Ang} et al. 2013]{6294406}
+\abntrefinfo{{Ang} et al.}{{Ang} et al.}{2013}
+{{Ang}, H.~H. et al. Predictive handling of asynchronous concept drifts in
+  distributed environments.
+\emph{IEEE Transactions on Knowledge and Data Engineering}, v.~25, n.~10, p.
+  2343--2355, Oct 2013.
+ISSN 1041-4347.}
+
+\bibitem[Gama et al. 2014]{Gama:2014:SCD:2597757.2523813}
+\abntrefinfo{Gama et al.}{GAMA et al.}{2014}
+{GAMA, J.~a. et al. A survey on concept drift adaptation.
+\emph{ACM Comput. Surv.}, ACM, New York, NY, USA, v.~46, n.~4, p. 44:1--44:37,
+  mar. 2014.
+ISSN 0360-0300.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
+
+\bibitem[Tsymbal 2004]{Tsymbal04theproblem}
+\abntrefinfo{Tsymbal}{TSYMBAL}{2004}
+{TSYMBAL, A. \emph{The Problem of Concept Drift: Definitions and Related Work}.
+[S.l.], 2004.}
+
+\bibitem[Wang, Yang e Muntz 1997]{Wang:1997:SSI:645923.758369}
+\abntrefinfo{Wang, Yang e Muntz}{WANG; YANG; MUNTZ}{1997}
+{WANG, W.; YANG, J.; MUNTZ, R.~R. Sting: A statistical information grid
+  approach to spatial data mining. In:  \emph{Proceedings of the 23rd
+  International Conference on Very Large Data Bases}. San Francisco, CA, USA:
+  Morgan Kaufmann Publishers Inc., 1997.  (VLDB '97), p. 186--195.
+ISBN 1-55860-470-7. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=645923.758369}.}
+
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  19 FEB 2019 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  19 FEB 2019 23:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1235,20 +1235,20 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 ) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
 \openout1 = `template-msc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count335
@@ -1302,7 +1302,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 110.
+(lastpage)             ! on input line 114.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1340,18 +1340,18 @@ Package lastpage Info: Please have a look at the pageslts package at
 
 \c@lstlisting=\count341
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 110.
+LaTeX Info: Redefining \selectfont on input line 114.
  ABD: EveryShipout initializing macros
 <ufba.pdf, id=4, 290.08376pt x 446.66875pt>
 File: ufba.pdf Graphic file (type pdf)
 <use ufba.pdf>
-Package pdftex.def Info: ufba.pdf  used on input line 112.
+Package pdftex.def Info: ufba.pdf  used on input line 116.
 (pdftex.def)             Requested size: 56.9055pt x 87.62144pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 112.
+LaTeX Font Info:    Try loading font information for U+msa on input line 116.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 112.
+LaTeX Font Info:    Try loading font information for U+msb on input line 116.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -1360,77 +1360,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/rnetonet/Workspace/pgcomp_qualificacao/tex/ufba.pdf>] [2
 
 ]
-Underfull \hbox (badness 2922) in paragraph at lines 117--117
+Underfull \hbox (badness 2922) in paragraph at lines 121--121
 \OT1/cmr/m/n/14.4 Gradua^^Xc~ao em Ci^encia da Com-
  []
 
 [1
 
 ] [2]
-Overfull \hbox (49.96489pt too wide) in paragraph at lines 196--196
-[][][][]\OT1/cmr/m/n/12 Resumo  
- []
-
-
-Overfull \hbox (49.96489pt too wide) in paragraph at lines 196--196
-[][][][]\OT1/cmr/m/n/12 Resumo  
- []
-
-
-Overfull \hbox (7.8324pt too wide) in paragraph at lines 196--196
-[][][] 
- []
-
-
-Overfull \hbox (49.96489pt too wide) in paragraph at lines 196--196
-[][][][]\OT1/cmr/m/n/12 Resumo  
- []
-
-
-Overfull \hbox (49.96489pt too wide) in paragraph at lines 196--196
-[][][][]\OT1/cmr/m/n/12 Resumo  
- []
-
-
-Overfull \hbox (7.8324pt too wide) in paragraph at lines 196--196
-[][][] 
+Overfull \hbox (4.7857pt too wide) in paragraph at lines 174--186
+\OT1/cmr/m/n/12 Diversas aplica^^Xc~oes in-dus-tri-ais, ci-ent^^S^^Pficas e co-mer-ci-ais pro-du-zem sequ^encias de ob-serva^^Xc~oes
  []
 
 [3
 
 ] [4
 
-]
-Overfull \hbox (54.04262pt too wide) in paragraph at lines 205--205
-[][][][]\OT1/cmr/m/n/12 Abstract  
- []
-
-
-Overfull \hbox (54.04262pt too wide) in paragraph at lines 205--205
-[][][][]\OT1/cmr/m/n/12 Abstract  
- []
-
-
-Overfull \hbox (7.8324pt too wide) in paragraph at lines 205--205
-[][][] 
- []
-
-
-Overfull \hbox (54.04262pt too wide) in paragraph at lines 205--205
-[][][][]\OT1/cmr/m/n/12 Abstract  
- []
-
-
-Overfull \hbox (54.04262pt too wide) in paragraph at lines 205--205
-[][][][]\OT1/cmr/m/n/12 Abstract  
- []
-
-
-Overfull \hbox (7.8324pt too wide) in paragraph at lines 205--205
-[][][] 
- []
-
-[5] [6
+] [5] [6
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.toc)
 \tf@toc=\write5
@@ -1452,65 +1397,41 @@ Overfull \hbox (7.8324pt too wide) in paragraph at lines 205--205
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 242.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 245.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 248.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 251.
+Package xcolor Warning: Incompatible color definition on input line 232.
 
 [1
 
-] [2]
-
-Package xcolor Warning: Incompatible color definition on input line 252.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 255.
-
+]
 
 Package blindtext Warning: brazil not defined, using English instead.
 (blindtext)                 on input line 258.
 
+[2]
+
+Package xcolor Warning: Incompatible color definition on input line 259.
+
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 261.
+(blindtext)                 on input line 262.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 265.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 268.
 
 [3
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 264.
+(blindtext)                 on input line 271.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 267.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 272.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 275.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4] [5] [6
-
-]
-
-Package xcolor Warning: Incompatible color definition on input line 276.
+(blindtext)                 on input line 274.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
@@ -1521,64 +1442,77 @@ Package blindtext Warning: brazil not defined, using English instead.
 (blindtext)                 on input line 282.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4] [5] [6
+
+]
+
+Package xcolor Warning: Incompatible color definition on input line 283.
+
+
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 285.
+(blindtext)                 on input line 286.
 
-[7]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 288.
-
-[8]
-
-Package xcolor Warning: Incompatible color definition on input line 289.
+(blindtext)                 on input line 289.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
 (blindtext)                 on input line 292.
 
+[7]
 
 Package blindtext Warning: brazil not defined, using English instead.
 (blindtext)                 on input line 295.
 
+[8]
+
+Package xcolor Warning: Incompatible color definition on input line 296.
+
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 298.
+(blindtext)                 on input line 299.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 302.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 305.
 
 [9
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 301.
+(blindtext)                 on input line 308.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 304.
+(blindtext)                 on input line 311.
 
-[10] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl
-
-LaTeX Warning: Empty `thebibliography' environment on input line 8.
-
-) 
+[10] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl) 
 AED: lastpage setting LastPage
 [11
 
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
 Here is how much of TeX's memory you used:
- 27066 strings out of 492982
- 517824 string characters out of 6134895
- 664416 words of memory out of 5000000
- 30140 multiletter control sequences out of 15000+600000
+ 27072 strings out of 492982
+ 518462 string characters out of 6134895
+ 662540 words of memory out of 5000000
+ 30146 multiletter control sequences out of 15000+600000
  542899 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,9n,76p,10445b,694s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (25 pages, 372228 bytes).
+ 62i,9n,80p,10445b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (25 pages, 412719 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 
