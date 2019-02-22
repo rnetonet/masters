@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  20 FEB 2019 06:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  21 FEB 2019 23:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1401,118 +1401,107 @@ Package xcolor Warning: Incompatible color definition on input line 232.
 
 [1
 
-]
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 258.
-
-[2]
-
-Package xcolor Warning: Incompatible color definition on input line 259.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 262.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 265.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 268.
-
-[3
+] [2] [3] [4
 
 ]
 
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 271.
+Package xcolor Warning: Incompatible color definition on input line 300.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 274.
+(blindtext)                 on input line 317.
+
+[5]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 320.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 279.
+(blindtext)                 on input line 323.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 282.
+(blindtext)                 on input line 326.
+
+[6]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 329.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 332.
 
- [4] [5] [6
+[7] [8
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 283.
+Package xcolor Warning: Incompatible color definition on input line 333.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 286.
+(blindtext)                 on input line 336.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 289.
+(blindtext)                 on input line 339.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 292.
+(blindtext)                 on input line 342.
 
-[7]
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 295.
-
-[8]
-
-Package xcolor Warning: Incompatible color definition on input line 296.
-
+[9]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 299.
+(blindtext)                 on input line 345.
+
+[10]
+
+Package xcolor Warning: Incompatible color definition on input line 346.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 302.
+(blindtext)                 on input line 349.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 305.
-
-[9
-
-]
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 308.
+(blindtext)                 on input line 352.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 311.
+(blindtext)                 on input line 355.
 
-[10] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl) 
-AED: lastpage setting LastPage
 [11
+
+]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 358.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 361.
+
+[12] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl) 
+AED: lastpage setting LastPage
+[13
 
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
 Here is how much of TeX's memory you used:
- 27073 strings out of 492982
- 518478 string characters out of 6134895
- 662539 words of memory out of 5000000
- 30147 multiletter control sequences out of 15000+600000
+ 27110 strings out of 492982
+ 519503 string characters out of 6134895
+ 663787 words of memory out of 5000000
+ 30184 multiletter control sequences out of 15000+600000
  542899 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,9n,80p,10445b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (25 pages, 412692 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (27 pages, 421634 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 131 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

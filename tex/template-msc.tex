@@ -181,9 +181,9 @@ No âmbito do Aprendizado de Máquina (AM), diversas pesquisas têm sido realiza
 %---
 A correta detecção das mudanças de conceito, permite que os modelos possam ser atualizados, a fim de refinar a predição, a compreensão do modelo e, possivelmente, atuar sobre os fenômenos que conduzem o fluxo de dados em análise.
 %---
-Apesar da existência de variados algoritmos para detecção de mudanças de conceito em fluxos de dados, a maioria utiliza uma estrutura de janelas e dependem da correta rotulação das amostras (paradigma supervisionado) para seu funcionamento. Este tipo de abordagem aumenta a complexidade dos algoritmos, os requisitos de processamento, e afetam o tempo para detecção e resposta. 
+Apesar da existência de variados algoritmos para detecção de mudanças de conceito em fluxos de dados na literatura, a maior parte destes depende da correta rotulação das amostras (paradigma supervisionado) para seu funcionamento. Este tipo de abordagem aumenta a complexidade dos algoritmos, os requisitos de processamento, e afetam o tempo para detecção e resposta, tornando-os impraticáveis em aplicações reais.
 %---
-Neste trabalho, um novo algoritmo para detecção de mudanças de conceito em fluxos de dados baseado em redes de função de base radial é proposto. O método proposto é comparado com vários algoritmos amplamente utilizados na literatura, e os resultados mostram \ldots \todo{Terminar. Incluir mais diferenciais e relatar os resultados.}
+Neste trabalho, um novo algoritmo para detecção de mudanças de conceito em fluxos de dados baseado em redes de função de base radial é proposto. O método desenvolvido é comparado com vários algoritmos amplamente utilizados na literatura, e os resultados mostram \ldots \todo{Terminar. Incluir mais diferenciais e relatar os resultados.}
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
@@ -233,14 +233,42 @@ Neste trabalho, um novo algoritmo para detecção de mudanças de conceito em fl
 
 \section{Contexto e Motivação}
 
-Diversos processos industriais, científicos e comerciais produzem sequências, teoricamente infinitas, de observações ao longo do tempo, denominadas fluxos de dados. Exemplos incluem transações de cartões de crédito, sensores de temperatura, dados do mercado de ações, indicadores de saúde, etc \cite{Aggarwal:2003:FCE:1315451.1315460}. 
+Importantes processos industriais, científicos e comerciais produzem sequências, potencialmente infinitas, de observações ao longo do tempo. Estas sequências são denominadas \textit{fluxos de dados}. 
+Podemos citar como exemplos:  detecção de intrusos em uma
+rede de computadores, fluxo de transações financeiras, previsões do consumo de energia, etc \cite{Aggarwal:2003:FCE:1315451.1315460}.
 
-Mudanças no contexto ou parâmetros desses processos, podem alterar o comportamento dos fluxos de dados ao longo do tempo, por exemplo: influência de notícias no mercado de ações, mudanças abruptas no clima, etc. 
-Essas flutuações são chamadas de mudanças de conceito e geralmente identificam eventos de interesse, pois informam sobre fatores externos influenciando o processo gerador do fluxo. Enquanto nenhuma mudança é detectada, sabemos que o processo mantém-se estável e devidamente representado pelo modelo vigente.
+Mudanças no contexto desses processos podem alterar o comportamento dos fluxos de dados produzidos. 
+Essas flutuações são denominadas \textit{mudanças de conceito} e geralmente sinalizam eventos de interesse, pois refletem alterações significativas no âmbito do processo gerador do fluxo \cite{Gama:2014:SCD:2597757.2523813}. 
+
+Um exemplo da importância da detecção de mudanças de conceito, é o monitoramento do abastecimento de uma caldeira industrial \cite{6294406}.
+Mudanças podem ocorrer, pois a alimentação de combustível é um processo manual, sensível e sucetível a interrupções. 
+Além disso, diferentes operadores podem ter comportamentos distintos.
+Se tais mudanças não forem detectadas em tempo hábil, a vida dos trabalhadores pode ser posta em risco.
+
+Nas últimas décadas, houve um grande aumento de interesse em algoritmos que sejam
+capazes de aprender a partir de fluxos de dados. O aumento de interesse levou à proposição de um amplo número de algoritmos de aprendizado para diversas tarefas, como classificação, agrupamento e detecção de anomalias \cite{Gama:2014:SCD:2597757.2523813, Guha:2003:CDS:776752.776777}.
+
+% Nas últimas três décadas, a pesquisa e a prática de aprendizado de máquina (AM) focou oaprendizado batch, em geral usando pequenas bases de dados (Gama, 2010). No cenáriobatch, um conjunto de dados representativos está disponível para a fase de aprendizado.Após o processamento desses dados, um modelo de decisão é gerado e pode ser usadopara fazer predições futuras na tarefa abordada. Nesse tipo de cenário, os exemplos sãogerados de acordo com uma distribuição de probabilidade estacionária (Gama, 2010).
+
+Dentre os algoritmos desenvolvidos, parte majoritária, utilizou a abordagem \textit{batch} \cite{Gama:2010:KDD:1855075}.
+No cenário \textit{batch}, uma base corretamente rotulada está disponível para a fase de aprendizado.
+Após o processamento dessa base, um modelo é gerado e utilizado para fazer predições sobre futuras amostras. 
+Nesse tipo de cenário, pressupõe-se que os exemplos são gerados de acordo com uma distribuição de probabilidade estacionária, isto é, sem mudanças de conceito \cite{Gama:2010:KDD:1855075}.
+
+% No entanto, para problemas que possuem uma natureza dinâmica, o uso de algoritmosde aprendizado batch não é adequado.
+
+% Uma propriedade desejável dos algoritmos que agem em ambientes com FCDs é a habi-lidade de adaptar seus modelos pela incorporação de novos dados. Muitos dos algoritmosdesenvolvidos são naturalmente incrementais, outros precisam de adaptações para se tor-narem incrementais. No entanto, segundo Gama (2010), em cenários não-estacionários,nos quais o conceito alvo pode mudar ao longo do tempo, algoritmos incrementais sãonecessários, mas não suficientes. Nesse caso, os algoritmos de mineração de dados de-vem ter mecanismos capazes de incorporar mudanças no conceito alvo sendo aprendidoe adaptar o modelo de decisão para o estado recente do FCD.
+
+% Além disso, em cenários de aprendizado, em especial em FCDs, pode haver a introdu-ção de novas classes do problema ao longo do tempo. Para esses cenários, são neces-sários algoritmos capazes de manter um modelo de decisão coerente com as mudanças ecom as novas classes que podem surgir ao longo do tempo. Por outro lado, o modelo dedecisão pode se tornar obsoleto e não mais contribuir para o estado atual do FCD, sendonecessário atualizá-lo constantemente.
+
+% Assim, novas soluções precisam ser desenvolvidas para atender problemas de AM queenvolvam FCDs. Um framework geral para minerar FCDs requer tempo constante e pequenopara processar cada objeto, uso de uma quantidade fixa de memória, execução de nomáximo uma varredura nos dados, atualização do modelo e inclusão de informações dopassado, que não estão desatualizadas de acordo com cenário atual (Mahdiraji, 2009).
+
+\vspace{1cm}
+\hrule
+\vspace{1cm}
+
+% Enquanto nenhuma mudança é detectada, sabemos que o processo mantém-se estável e devidamente representado pelo modelo vigente.
  
-A detecção dessas mudanças é importante em diversos cenários, como no monitoramento do fluxo de alimentação em uma caldeira industrial \cite{6294406}. Mudanças de conceito podem acontecer, pois a alimentação de combustível é um processo manual e não padronizado, que não é necessariamente suave e pode ter interrupções curtas. Além disso, cada operador pode ter hábitos diferentes. 
-A alimentação da caldeira fora dos padrões devidos, pode oferecer risco à vida dos trabalhadores da indústria.
-
 Existem diversos algoritmos para detectar mudança de conceito, sendo a maior parte baseado em modelos de aprendizagem supervisionados \cite{Gama:2014:SCD:2597757.2523813}. 
 Estes algoritmos, baseiam-se na correta rotulagem dos dados para atualização do modelo e posterior classificação. No entanto, este paradigma enfrenta dificuldades quando os dados são produzidos em altas frequências e grandes volumes, tornando a espera por um rótulo correto inviável.
 Esta limitação motivou os pesquisadores a explorarem o paradigma não supervisionado, que não requer conhecimento prévio sobre os dados.
@@ -250,18 +278,39 @@ Isto é, a partição produzida no instante $t$ é comparada com a $t - 1$, obte
 
 No entanto, algoritmos não supervisionados carecem de fundamentação teórica para prover garantias à detecção de mudanças de conceitos. A maioria deles compara partições consecutivas usando alguma heurística. Contudo, as divergências não estão necessariamente associadas a mudanças nos dados (e, consequentemente, ao processo), podendo também ser produzidas por instabilidades do algoritmo. Por exemplo, algoritmos como STING \cite{Wang:1997:SSI:645923.758369} e o CluStream \cite{Aggarwal:2003:FCE:1315451.1315460} podem produzir diferentes partições de clustering para as mesmas observações de dados devido à parametrização randômica do K-means utilizado. Este cenário pode aumentar a ocorrência de falsos positivos na detecção de mudanças de conceito. 
 
-Enquanto pequenas mudanças são vistas como uma instabilidade natural dos dados, mudanças significativas denotam alterações no processo gerador do fluxo. A detecção destas mudanças - que podem ser abruptas (mais fácil de ser detectada),  incrementais ou graduais \cite{Tsymbal04theproblem} - é a principal motivação para os pesquisadores em \textit{concept drift}.
+Enquanto pequenas mudanças são vistas como uma instabilidade natural dos dados, mudanças significativas denotam alterações no processo gerador do fluxo. A detecção destas mudanças - que podem ser abruptas (mais fácil de ser detectada), incrementais ou graduais \cite{Tsymbal04theproblem} - é a principal motivação para os pesquisadores em \textit{concept drift}.
 
 
 \section{Hipótese e Objetivo}
-\blindtext
+
+Considerando as observações da seção anterior, a seguinte hipótese foi elaborada:
+
+\begin{center}
+\textit{``A aplicação de redes de função de base radial sobre fluxos de dados, permite a detecção de mudanças de conceito, sem requerer manutenção de estados prévios, de forma ágil e com baixos requisitos de processamento.''}
+\end{center}
+
+O objetivo deste trabalho será o desenvolvimento e validação da hipótese.
+Para tanto, será desenvolvido um algoritmo para detecção de mudanças de conceito baseado em redes de função de base radial. Este algoritmo diferencia-se por realizar a escolha do centros de forma \textit{online}, conforme novas entradas são recepcionadas e por apresentar um raio dinâmico. 
+A ativação de novos centros é usado como indicador para possíveis mudanças de conceito.
+
+O algoritmo implementado será comparado com o estado da arte. Os fluxos de dados utilizados nos experimento, serão divididas em dois conjuntos. Um conjunto formado por séries sintéticas, para análise das características métricas da técnica proposta. E outro conjunto, formado por datasets oriundos de aplicações de aprendizagem de máquina do mundo real que apresentam mudanças de conceito.
+
+Este trabalho está organizado conforme a seguinte estrutura: O \textbf{Capítulo \ref{revisao_bibliografica}} possui uma revisão bibliográfica dos principais conceitos utilizados neste trabalho como, por exemplo, fluxos de dados, mudança de conceito e principais algoritmos; No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa definido é detalhado, identificando a metodologia que será aplicada e o cronograma de atividades. Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}}, apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos em relação ao estado da arte.
 
 \xchapter{Revisão Bibliográfica}{} \label{revisao_bibliografica}
 \section{Considerações Iniciais}
-\blindtext
+
+Nas próximas seção, introduziremos os campos de fluxos de dados e detecção de mudança de conceito, tópicos importante no escopo deste trabalho. Por fim, apresentamos trabalhos relacionados encontrados na literatura.
 
 \section{Fluxos de Dados}
-\blindtext
+
+Fluxos de dados podem ser definidos como sequências abertas de dados produzidos continuamente \cite{Pavlidis:2011:9AC:1860144.1860487}.
+Normalmente, supõe-se que eles são produzidos em grandes volumes e em altas freqüências. Alguns sistemas do mundo real produzem fluxos de dados, como os associados à telecomunicação empresas, sistemas bancários, mercado de ações, redes de sensores, satélites meteorológicos, Grande Colisor de Hádrons, etc \cite{Guha:2003:CDS:776752.776777}.
+Tais fluxos podem ser estudados e analisados continuamente, a fim de obter informações dos fenômenos responsáveis para gerá-los e, portanto, modelar e prever seu comportamento. No contexto desta tese, os fluxos de dados são representados como sequências de observações x1,. . . , XI , . . . , xn, em que cada a observação é um vetor de d atributos reais, isto é, xi E Rd.
+
+Dada a alta frequência possível que os dados são produzidos, os algoritmos para processar streams sofrem restrições em sua complexidade de tempo, uma vez que o algoritmo não pode executar operações exigentes durante o processamento de cada observação de dados, caso contrário a análise do fluxo seria afetada \cite{EDDM}.
+
+Outra restrição está associada à natureza infinita dos fluxos - uma vez que a memória do computador é limitada, apenas as informações de dados ou mais importantes devem ser armazenadas. Devido a essas duas restrições, os algoritmos do fluxo de dados devem analisar os dados coletados, armazenar suas características ou informações relevantes e descartá-los a seguir. Portanto, as observações de dados devem ser processadas em uma única passagem, ou seja, de uma maneira inteiramente diferente dos conjuntos de dados tradicionais, cujas observações são completamente armazenadas na memória e processadas várias vezes, como um lote.
 
 \section{Mudança de Conceito}
 \blindtext
@@ -273,7 +322,8 @@ Enquanto pequenas mudanças são vistas como uma instabilidade natural dos dados
 \blindtext
 
 \section{Redes de Função de Base Radial}
-
+\blindtext
+  
 \section{Trabalhos Relacionados}
 \blindtext
 

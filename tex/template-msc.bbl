@@ -21,6 +21,18 @@ ISBN 0-12-722442-4. Dispon{\'\i}vel em:
   2343--2355, Oct 2013.
 ISSN 1041-4347.}
 
+\bibitem[Baena-Garc{\'{\i}}a et al. 2006]{EDDM}
+\abntrefinfo{Baena-Garc{\'{\i}}a et al.}{BAENA-GARC{\'{I}}A et al.}{2006}
+{BAENA-GARC{\'{I}}A, M. et al. {Early drift detection method}. In:  \emph{In
+  Fourth International Workshop on Knowledge Discovery from Data Streams}.
+  [S.l.: s.n.], 2006.}
+
+\bibitem[Gama 2010]{Gama:2010:KDD:1855075}
+\abntrefinfo{Gama}{GAMA}{2010}
+{GAMA, J. \emph{Knowledge Discovery from Data Streams}. 1st. ed. [S.l.]:
+  Chapman \& Hall/CRC, 2010.
+ISBN 1439826110, 9781439826119.}
+
 \bibitem[Gama et al. 2014]{Gama:2014:SCD:2597757.2523813}
 \abntrefinfo{Gama et al.}{GAMA et al.}{2014}
 {GAMA, J.~a. et al. A survey on concept drift adaptation.
@@ -28,6 +40,23 @@ ISSN 1041-4347.}
   mar. 2014.
 ISSN 0360-0300.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
+
+\bibitem[Guha et al. 2003]{Guha:2003:CDS:776752.776777}
+\abntrefinfo{Guha et al.}{GUHA et al.}{2003}
+{GUHA, S. et al. Clustering data streams: Theory and practice.
+\emph{IEEE Trans. on Knowl. and Data Eng.}, IEEE Educational Activities
+  Department, Piscataway, NJ, USA, v.~15, n.~3, p. 515--528, mar. 2003.
+ISSN 1041-4347.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2003.1198387}.}
+
+\bibitem[Pavlidis et al. 2011]{Pavlidis:2011:9AC:1860144.1860487}
+\abntrefinfo{Pavlidis et al.}{PAVLIDIS et al.}{2011}
+{PAVLIDIS, N.~G. et al. $\lambda$-perceptronn: An adaptive classifier for data
+  streams.
+\emph{Pattern Recogn.}, Elsevier Science Inc., New York, NY, USA, v.~44, n.~1,
+  p. 78--96, jan. 2011.
+ISSN 0031-3203.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1016/j.patcog.2010.07.026}.}
 
 \bibitem[Tsymbal 2004]{Tsymbal04theproblem}
 \abntrefinfo{Tsymbal}{TSYMBAL}{2004}
