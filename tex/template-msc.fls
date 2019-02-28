@@ -346,7 +346,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.toc
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.toc
@@ -360,6 +359,7 @@ INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lot
 OUTPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lot
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsl12.tfm
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl

@@ -5,33 +5,11 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
-\bibitem[Aggarwal et al. 2003]{Aggarwal:2003:FCE:1315451.1315460}
-\abntrefinfo{Aggarwal et al.}{AGGARWAL et al.}{2003}
-{AGGARWAL, C.~C. et al. A framework for clustering evolving data streams. In:
-  \emph{Proceedings of the 29th International Conference on Very Large Data
-  Bases - Volume 29}. VLDB Endowment, 2003.  (VLDB '03), p. 81--92.
-ISBN 0-12-722442-4. Dispon{\'\i}vel em:
-  \url{http://dl.acm.org/citation.cfm?id=1315451.1315460}.}
-
-\bibitem[{Ang} et al. 2013]{6294406}
-\abntrefinfo{{Ang} et al.}{{Ang} et al.}{2013}
-{{Ang}, H.~H. et al. Predictive handling of asynchronous concept drifts in
-  distributed environments.
-\emph{IEEE Transactions on Knowledge and Data Engineering}, v.~25, n.~10, p.
-  2343--2355, Oct 2013.
-ISSN 1041-4347.}
-
 \bibitem[Baena-Garc{\'{\i}}a et al. 2006]{EDDM}
 \abntrefinfo{Baena-Garc{\'{\i}}a et al.}{BAENA-GARC{\'{I}}A et al.}{2006}
 {BAENA-GARC{\'{I}}A, M. et al. {Early drift detection method}. In:  \emph{In
   Fourth International Workshop on Knowledge Discovery from Data Streams}.
   [S.l.: s.n.], 2006.}
-
-\bibitem[Gama 2010]{Gama:2010:KDD:1855075}
-\abntrefinfo{Gama}{GAMA}{2010}
-{GAMA, J. \emph{Knowledge Discovery from Data Streams}. 1st. ed. [S.l.]:
-  Chapman \& Hall/CRC, 2010.
-ISBN 1439826110, 9781439826119.}
 
 \bibitem[Gama et al. 2014]{Gama:2014:SCD:2597757.2523813}
 \abntrefinfo{Gama et al.}{GAMA et al.}{2014}
@@ -57,19 +35,5 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2003.1198387}.}
   p. 78--96, jan. 2011.
 ISSN 0031-3203.
 Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1016/j.patcog.2010.07.026}.}
-
-\bibitem[Tsymbal 2004]{Tsymbal04theproblem}
-\abntrefinfo{Tsymbal}{TSYMBAL}{2004}
-{TSYMBAL, A. \emph{The Problem of Concept Drift: Definitions and Related Work}.
-[S.l.], 2004.}
-
-\bibitem[Wang, Yang e Muntz 1997]{Wang:1997:SSI:645923.758369}
-\abntrefinfo{Wang, Yang e Muntz}{WANG; YANG; MUNTZ}{1997}
-{WANG, W.; YANG, J.; MUNTZ, R.~R. Sting: A statistical information grid
-  approach to spatial data mining. In:  \emph{Proceedings of the 23rd
-  International Conference on Very Large Data Bases}. San Francisco, CA, USA:
-  Morgan Kaufmann Publishers Inc., 1997.  (VLDB '97), p. 186--195.
-ISBN 1-55860-470-7. Dispon{\'\i}vel em:
-  \url{http://dl.acm.org/citation.cfm?id=645923.758369}.}
 
 \end{thebibliography}
