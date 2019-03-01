@@ -222,15 +222,44 @@
 \xchapter{Introdução}{} \label{introducao}
 
 \section{Contexto e Motivação}
+ 
+Vivemos em uma era cuja a velocidade e a quantidade de dados produzidos são enormes.
+De acordo com relatório da IDC \cite{idc_report}, 
+os dados gerados em 2014 eram estimados em 4,4 zettabytes (trilhões de gigabytes) e este número tendia a um crescimento exponencial. 
+O mesmo relatório prevê que em 2020 este número será de 44 zettabytes.
 
-Cenários com fluxos de dados contínuos (FCDs) - \textit{data streams} - frequentemente possuem grandes quantidades de dados, potencialmente infinitos, fluindo rápida e continuamente. Aplicações baseadas em \textit{data streams} têm de processar a informação de forma online, isto é, assim que são recepcionadas, pois é impraticável armazenar todos os dados. Em outras palavras, restrições sobre o uso de memória e o tempo de execução se aplicam e não é permitida a releitura de observaçõs prévias.
+Em muitos contextos, os dados são produzidos em sequências de registros, denominados \textbf{eventos}, 
+disponíveis ao longo do tempo, em uma determinada ordem \cite{Feigenbaum:2003:ALD:589343.592594}. 
+Essas séries de dados são normalmente de alta frequência e potencialmente infinitas.
+Sendo denominadas como Fluxos Contínuos de Dados (FCDs).
 
-Além disso, como esses dados são coletados com alta frequência e durante longos períodos de tempo, a distribuição de dados tende a ser \textbf{não}-estacionária. 
-Este fenômeno é comumente conhecido como desvio de conceito \cite{Gama:2014:SCD:2597757.2523813}. Aprendizado de máquina (AM) na presença de desvio de conceito é o cenário considerado \textbf{aprendizagem online} neste trabalho.
+Exemplos de aplicações que produzem FCDs incluem: transações enviadas por processadores de cartões de crédito, 
+detecção de temperatura por centros de monitoramento climático, operações no mercado de ações, monitoramento do coração, 
+etc \cite{Aggarwal:2003:FCE:1315451.1315460}.
 
-A categorização mais comum do desvio de conceito é baseada na velocidade da alteração. Quando as mudanças de um conceito para outro são repentinas e / ou rápidas, elas são chamado de \textbf{abruptas}. Enquanto, transições entre  conceitos que  ocorrem ao longo de um número maior de instâncias, são chamadas \textbf{graduais} \cite{Gama:2014:SCD:2597757.2523813}.
+Nos últimos anos, técnicas de aprendizado de máquina aplicadas a fluxos contínuos de dados têm se tornado um tema de interesse entre diversos pesquisadores.
+A principal característica nestes cenários é a necessidade de respostas que atendam a severas restrições de tempo \cite{Gama:2010:KDD:1855075}. 
+Por exemplo, um classificador deve fornecer um resultado a um determinado evento antes que o próximo ocorra. 
+Caso isso não aconteça, alguns eventos podem ficar sem classificação.
 
+Outra dificuldade encontrada nesses ambientes é a mudança na distribuição dos dados. 
+Este problema é conhecido como mudança de conceito (\textit{concept drift}) \cite{Gama:2010:KDD:1855075}.
+Estas mudanças são classificadas conforme a velocidade com que ocorrem.
+Mudanças de conceito \textbf{abruptas} identificam transições rápidas entre conceitos. 
+Transições mais lentas, são ditas \textbf{graduais}.
 
+Para fins de exemplificação, suponhamos que o histórico de transações via cartão de crédito de determinado cliente seja armazenado.
+Este cliente, ao longo de vários anos, utiliza o cartão apenas para comprar alimentos, sempre em uma mesma região da cidade.
+A partir dessas informações, um modelo é construído.
+Contudo, não é coerente considerar que esse perfil jamais será modificado. 
+
+Diante deste contexto, devemos considerar as seguintes situações:
+1) Abruptamente, esse cliente compra vários eletrônicos em outro país.
+Neste caso, compete aos métodos de detecção identificar se houve uma fraude ou se o cliente está apenas viajando e aproveitando ofertas.
+2) Gradualmente, o mesmo cliente passa a utilizar o cartão para compras de passagens aéreas e diminui paulatinamente a utilização para compra de alimentos.
+Após certo período, o perfil de compra estará completamente renovado.
+Assim, cabe novamente aos métodos de detecção identificar a mudança de comportamento e emitir um alerta, 
+para que o modelo construído seja atualizado.
 
 \section{Hipótese e Objetivo}
 

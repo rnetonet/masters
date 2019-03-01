@@ -5,19 +5,34 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
+\bibitem[Aggarwal et al. 2003]{Aggarwal:2003:FCE:1315451.1315460}
+\abntrefinfo{Aggarwal et al.}{AGGARWAL et al.}{2003}
+{AGGARWAL, C.~C. et al. A framework for clustering evolving data streams. In:
+  \emph{Proceedings of the 29th International Conference on Very Large Data
+  Bases - Volume 29}. VLDB Endowment, 2003.  (VLDB '03), p. 81--92.
+ISBN 0-12-722442-4. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=1315451.1315460}.}
+
 \bibitem[Baena-Garc{\'{\i}}a et al. 2006]{EDDM}
 \abntrefinfo{Baena-Garc{\'{\i}}a et al.}{BAENA-GARC{\'{I}}A et al.}{2006}
 {BAENA-GARC{\'{I}}A, M. et al. {Early drift detection method}. In:  \emph{In
   Fourth International Workshop on Knowledge Discovery from Data Streams}.
   [S.l.: s.n.], 2006.}
 
-\bibitem[Gama et al. 2014]{Gama:2014:SCD:2597757.2523813}
-\abntrefinfo{Gama et al.}{GAMA et al.}{2014}
-{GAMA, J.~a. et al. A survey on concept drift adaptation.
-\emph{ACM Comput. Surv.}, ACM, New York, NY, USA, v.~46, n.~4, p. 44:1--44:37,
-  mar. 2014.
-ISSN 0360-0300.
-Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
+\bibitem[Feigenbaum et al. 2003]{Feigenbaum:2003:ALD:589343.592594}
+\abntrefinfo{Feigenbaum et al.}{FEIGENBAUM et al.}{2003}
+{FEIGENBAUM, J. et al. An approximate l1-difference algorithm for massive data
+  streams.
+\emph{SIAM J. Comput.}, Society for Industrial and Applied Mathematics,
+  Philadelphia, PA, USA, v.~32, n.~1, p. 131--151, jan. 2003.
+ISSN 0097-5397.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1137/S0097539799361701}.}
+
+\bibitem[Gama 2010]{Gama:2010:KDD:1855075}
+\abntrefinfo{Gama}{GAMA}{2010}
+{GAMA, J. \emph{Knowledge Discovery from Data Streams}. 1st. ed. [S.l.]:
+  Chapman \& Hall/CRC, 2010.
+ISBN 1439826110, 9781439826119.}
 
 \bibitem[Guha et al. 2003]{Guha:2003:CDS:776752.776777}
 \abntrefinfo{Guha et al.}{GUHA et al.}{2003}
@@ -35,5 +50,12 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2003.1198387}.}
   p. 78--96, jan. 2011.
 ISSN 0031-3203.
 Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1016/j.patcog.2010.07.026}.}
+
+\bibitem[Zwolenski e Weatherill 2014]{idc_report}
+\abntrefinfo{Zwolenski e Weatherill}{ZWOLENSKI; WEATHERILL}{2014}
+{ZWOLENSKI, M.; WEATHERILL, L. The digital universe rich data and the
+  increasing value of the internet of things.
+\emph{Australian Journal of Telecommunications and the Digital Economy}, v.~2,
+  10 2014.}
 
 \end{thebibliography}
