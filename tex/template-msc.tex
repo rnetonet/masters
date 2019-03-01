@@ -89,7 +89,7 @@
 \majorfield{Ci\^{e}ncia da Computa\c{c}\~{a}o}
 
 % Titulo da dissertacao
-\title{Aplicando redes de função de base radial para detecção de novidades em fluxos de dados contínuos}
+\title{Aplicando redes de função de base radial para detecção de novidades em fluxos contínuos de dados}
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
@@ -177,7 +177,7 @@
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-    Aprendizado de Máquina, fluxos de dados contínuos, Mudanças de Conceito, Redes de Função de Base Radial, Não supervisionado
+    Aprendizado de Máquina, fluxos contínuos de dados, Mudanças de Conceito, Redes de Função de Base Radial, Não supervisionado
 \end{keywords}
 
 \abstract
@@ -239,7 +239,7 @@ etc \cite{Aggarwal:2003:FCE:1315451.1315460}.
 
 Nos últimos anos, técnicas de aprendizado de máquina aplicadas a fluxos contínuos de dados têm se tornado um tema de interesse entre diversos pesquisadores.
 A principal característica nestes cenários é a necessidade de respostas que atendam a severas restrições de tempo \cite{Gama:2010:KDD:1855075}. 
-Por exemplo, um classificador deve fornecer um resultado a um determinado evento antes que o próximo ocorra. 
+Por exemplo, um classificador deve fornecer um resultado para um determinado evento antes que o próximo ocorra. 
 Caso isso não aconteça, alguns eventos podem ficar sem classificação.
 
 Outra dificuldade encontrada nesses ambientes é a mudança na distribuição dos dados. 
@@ -261,32 +261,45 @@ Após certo período, o perfil de compra estará completamente renovado.
 Assim, cabe novamente aos métodos de detecção identificar a mudança de comportamento e emitir um alerta, 
 para que o modelo construído seja atualizado.
 
+Diversas abordagens e algoritmos para detecção de mudanças de conceito foram propostos na literatura.
+Cada uma dessas técnicas possui características e parâmetros diferentes que visam aumentar sua eficiência, 
+conforme a natureza dos dados e do tipo de mudança que se deseja otimizar.
+Essas técnicas geralmente utilizam os resultados de um ou mais classificadores para identificar a mudança de conceito.
+A mudança é indicada quando a quantidade de erros de classificação supera os acertos a partir de uma determinada métrica.
+
+Algoritmos que adotam esta abordagem incluem: 
+DDM (GAMA et al., 2004), EDDM (BAENA-GARCíA et al., 2006), 
+ADWIN (BIFET; GAVALDA, 2007), ECDD (ROSS et al., 2012), 
+PL (BACH; MALOOF, 2008), FCWM (SEBASTIAO et al., 2010),
+PHT (PAGE, 1954), STEPD (NISHIDA; YAMAUCHI, 2007) e DOF (SOBHANI; BEIGY,2011). 
+Adicionalmente, (SEBASTIAO; GAMA, 2009) fazem um estudo comparativo entre alguns desses métodos e destacam vantagens e desvantagens em diferentes situações.
+
 \section{Hipótese e Objetivo}
 
 Considerando as observações da seção anterior, a seguinte hipótese foi elaborada:
 
 \begin{center}
-\textit{``A aplicação de redes de função de base radial sobre fluxos de dados contínuos, permite a detecção de mudanças de conceito, sem requerer manutenção de estados prévios, de forma ágil e com baixos requisitos de processamento.''}
+\textit{``A aplicação de redes de função de base radial sobre fluxos contínuos de dados, permite a detecção de mudanças de conceito, sem requerer manutenção de estados prévios, de forma ágil e com baixos requisitos de processamento.''}
 \end{center}
 
 O objetivo deste trabalho será o desenvolvimento e validação da hipótese.
 Para tanto, será desenvolvido um algoritmo para detecção de mudanças de conceito baseado em redes de função de base radial. Este algoritmo diferencia-se por realizar a escolha do centros de forma \textit{online}, conforme novas entradas são recepcionadas e por apresentar um raio dinâmico. 
 A ativação de novos centros é usado como indicador para possíveis mudanças de conceito.
 
-O algoritmo implementado será comparado com o estado da arte. Os fluxos de dados contínuos utilizados nos experimento, serão divididas em dois conjuntos. Um conjunto formado por séries sintéticas, para análise das características métricas da técnica proposta. E outro conjunto, formado por datasets oriundos de aplicações de aprendizagem de máquina do mundo real que apresentam mudanças de conceito.
+O algoritmo implementado será comparado com o estado da arte. Os fluxos contínuos de dados utilizados nos experimento, serão divididas em dois conjuntos. Um conjunto formado por séries sintéticas, para análise das características métricas da técnica proposta. E outro conjunto, formado por datasets oriundos de aplicações de aprendizagem de máquina do mundo real que apresentam mudanças de conceito.
 
-Este trabalho está organizado conforme a seguinte estrutura: O \textbf{Capítulo \ref{revisao_bibliografica}} possui uma revisão bibliográfica dos principais conceitos utilizados neste trabalho como, por exemplo, fluxos de dados contínuos, mudança de conceito e principais algoritmos; No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa definido é detalhado, identificando a metodologia que será aplicada e o cronograma de atividades. Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}}, apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos em relação ao estado da arte.
+Este trabalho está organizado conforme a seguinte estrutura: O \textbf{Capítulo \ref{revisao_bibliografica}} possui uma revisão bibliográfica dos principais conceitos utilizados neste trabalho como, por exemplo, fluxos contínuos de dados, mudança de conceito e principais algoritmos; No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa definido é detalhado, identificando a metodologia que será aplicada e o cronograma de atividades. Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}}, apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos em relação ao estado da arte.
 
 \xchapter{Revisão Bibliográfica}{} \label{revisao_bibliografica}
 \section{Considerações Iniciais}
 
-Nas próximas seção, introduziremos os campos de fluxos de dados contínuos e detecção de mudança de conceito, tópicos importante no escopo deste trabalho. Por fim, apresentamos trabalhos relacionados encontrados na literatura.
+Nas próximas seção, introduziremos os campos de fluxos contínuos de dados e detecção de mudança de conceito, tópicos importante no escopo deste trabalho. Por fim, apresentamos trabalhos relacionados encontrados na literatura.
 
-\section{fluxos de dados contínuos}
+\section{fluxos contínuos de dados}
 
-fluxos de dados contínuos podem ser definidos como sequências abertas de dados produzidos continuamente \cite{Pavlidis:2011:9AC:1860144.1860487}.
-Normalmente, supõe-se que eles são produzidos em grandes volumes e em altas freqüências. Alguns sistemas do mundo real produzem fluxos de dados contínuos, como os associados à telecomunicação empresas, sistemas bancários, mercado de ações, redes de sensores, satélites meteorológicos, Grande Colisor de Hádrons, etc \cite{Guha:2003:CDS:776752.776777}.
-Tais fluxos podem ser estudados e analisados continuamente, a fim de obter informações dos fenômenos responsáveis para gerá-los e, portanto, modelar e prever seu comportamento. No contexto desta tese, os fluxos de dados contínuos são representados como sequências de observações x1,. . . , XI , . . . , xn, em que cada a observação é um vetor de d atributos reais, isto é, xi E Rd.
+fluxos contínuos de dados podem ser definidos como sequências abertas de dados produzidos continuamente \cite{Pavlidis:2011:9AC:1860144.1860487}.
+Normalmente, supõe-se que eles são produzidos em grandes volumes e em altas freqüências. Alguns sistemas do mundo real produzem fluxos contínuos de dados, como os associados à telecomunicação empresas, sistemas bancários, mercado de ações, redes de sensores, satélites meteorológicos, Grande Colisor de Hádrons, etc \cite{Guha:2003:CDS:776752.776777}.
+Tais fluxos podem ser estudados e analisados continuamente, a fim de obter informações dos fenômenos responsáveis para gerá-los e, portanto, modelar e prever seu comportamento. No contexto desta tese, os fluxos contínuos de dados são representados como sequências de observações x1,. . . , XI , . . . , xn, em que cada a observação é um vetor de d atributos reais, isto é, xi E Rd.
 
 Dada a alta frequência possível que os dados são produzidos, os algoritmos para processar streams sofrem restrições em sua complexidade de tempo, uma vez que o algoritmo não pode executar operações exigentes durante o processamento de cada observação de dados, caso contrário a análise do fluxo seria afetada \cite{EDDM}.
 
