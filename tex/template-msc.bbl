@@ -5,19 +5,59 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
-\bibitem[Aggarwal et al. 2003]{Aggarwal:2003:FCE:1315451.1315460}
-\abntrefinfo{Aggarwal et al.}{AGGARWAL et al.}{2003}
-{AGGARWAL, C.~C. et al. A framework for clustering evolving data streams. In:
-  \emph{Proceedings of the 29th International Conference on Very Large Data
-  Bases - Volume 29}. VLDB Endowment, 2003.  (VLDB '03), p. 81--92.
-ISBN 0-12-722442-4. Dispon{\'\i}vel em:
-  \url{http://dl.acm.org/citation.cfm?id=1315451.1315460}.}
+\bibitem[{Bach} e {Maloof} 2008]{Bach:PL:2008}
+\abntrefinfo{{Bach} e {Maloof}}{{Bach}; {Maloof}}{2008}
+{{Bach}, S.~H.; {Maloof}, M.~A. Paired learners for concept drift. In:
+  \emph{2008 Eighth IEEE International Conference on Data Mining}. [S.l.:
+  s.n.], 2008. p. 23--32.
+ISSN 1550-4786.}
 
 \bibitem[Baena-Garc{\'{\i}}a et al. 2006]{EDDM}
 \abntrefinfo{Baena-Garc{\'{\i}}a et al.}{BAENA-GARC{\'{I}}A et al.}{2006}
 {BAENA-GARC{\'{I}}A, M. et al. {Early drift detection method}. In:  \emph{In
   Fourth International Workshop on Knowledge Discovery from Data Streams}.
   [S.l.: s.n.], 2006.}
+
+\bibitem[Bifet 2009]{Bifet:2009:ALM:1656274.1656287}
+\abntrefinfo{Bifet}{BIFET}{2009}
+{BIFET, A. Adaptive learning and mining for data streams and frequent patterns.
+\emph{SIGKDD Explor. Newsl.}, ACM, New York, NY, USA, v.~11, n.~1, p. 55--56,
+  nov. 2009.
+ISSN 1931-0145.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1656274.1656287}.}
+
+\bibitem[Bifet e Gavaldà 2007]{BifetG07}
+\abntrefinfo{Bifet e Gavaldà}{BIFET; GAVALDà}{2007}
+{BIFET, A.; GAVALDà, R. Learning from time-changing data with adaptive
+  windowing. In:  \emph{SDM}. SIAM, 2007. p. 443--448.
+ISBN 978-1-61197-277-1. Dispon{\'\i}vel em:
+  \url{http://dblp.uni-trier.de/db/conf/sdm/sdm2007.html\#BifetG07}.}
+
+\bibitem[Blum 1997]{Blum1997}
+\abntrefinfo{Blum}{BLUM}{1997}
+{BLUM, A. Empirical support for winnow and weighted-majority algorithms:
+  Results on a calendar scheduling domain.
+\emph{Machine Learning}, v.~26, n.~1, p. 5--23, Jan 1997.
+ISSN 1573-0565.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1023/A:1007335615132}.}
+
+\bibitem[Brzezi{\'{n}}ski e Stefanowski 2011]{AUE}
+\abntrefinfo{Brzezi{\'{n}}ski e Stefanowski}{BRZEZI{\'{N}}SKI;
+  STEFANOWSKI}{2011}
+{BRZEZI{\'{N}}SKI, D.; STEFANOWSKI, J. Accuracy updated ensemble for data
+  streams with concept drift. In:  CORCHADO, E.; KURZY{\'{N}}SKI, M.;
+  WO{\'{Z}}NIAK, M. (Ed.). \emph{Hybrid Artificial Intelligent Systems}.
+  Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. p. 155--163.
+ISBN 978-3-642-21222-2.}
+
+\bibitem[Costa, Rios e Mello 2016]{daCosta:2016:UDS:2956219.2956389}
+\abntrefinfo{Costa, Rios e Mello}{COSTA; RIOS; MELLO}{2016}
+{COSTA, F. da; RIOS, R.; MELLO, R. de. Using dynamical systems tools to detect
+  concept drift in data streams.
+\emph{Expert Syst. Appl.}, Pergamon Press, Inc., Tarrytown, NY, USA, v.~60,
+  n.~C, p. 39--50, out. 2016.
+ISSN 0957-4174.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.eswa.2016.04.026}.}
 
 \bibitem[Feigenbaum et al. 2003]{Feigenbaum:2003:ALD:589343.592594}
 \abntrefinfo{Feigenbaum et al.}{FEIGENBAUM et al.}{2003}
@@ -34,22 +74,129 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1137/S0097539799361701}.}
   Chapman \& Hall/CRC, 2010.
 ISBN 1439826110, 9781439826119.}
 
-\bibitem[Guha et al. 2003]{Guha:2003:CDS:776752.776777}
-\abntrefinfo{Guha et al.}{GUHA et al.}{2003}
-{GUHA, S. et al. Clustering data streams: Theory and practice.
-\emph{IEEE Trans. on Knowl. and Data Eng.}, IEEE Educational Activities
-  Department, Piscataway, NJ, USA, v.~15, n.~3, p. 515--528, mar. 2003.
-ISSN 1041-4347.
-Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2003.1198387}.}
+\bibitem[Gama et al. 2004]{GamaMCR04}
+\abntrefinfo{Gama et al.}{GAMA et al.}{2004}
+{GAMA, J. et al. Learning with drift detection. In:  BAZZAN, A. L.~C.; LABIDI,
+  S. (Ed.). \emph{SBIA}. Springer, 2004.  (Lecture Notes in Computer Science,
+  v.~3171), p. 286--295.
+ISBN 3-540-23237-0. Dispon{\'\i}vel em:
+  \url{http://dblp.uni-trier.de/db/conf/sbia/sbia2004.html\#GamaMCR04}.}
 
-\bibitem[Pavlidis et al. 2011]{Pavlidis:2011:9AC:1860144.1860487}
-\abntrefinfo{Pavlidis et al.}{PAVLIDIS et al.}{2011}
-{PAVLIDIS, N.~G. et al. $\lambda$-perceptronn: An adaptive classifier for data
-  streams.
-\emph{Pattern Recogn.}, Elsevier Science Inc., New York, NY, USA, v.~44, n.~1,
-  p. 78--96, jan. 2011.
-ISSN 0031-3203.
-Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1016/j.patcog.2010.07.026}.}
+\bibitem[Gama et al. 2014]{Gama:2014:SCD:2597757.2523813}
+\abntrefinfo{Gama et al.}{GAMA et al.}{2014}
+{GAMA, J.~a. et al. A survey on concept drift adaptation.
+\emph{ACM Comput. Surv.}, ACM, New York, NY, USA, v.~46, n.~4, p. 44:1--44:37,
+  mar. 2014.
+ISSN 0360-0300.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
+
+\bibitem[Katakis, Tsoumakas e Vlahavas 2010]{Katakis:2010:TRC:1746286.1746291}
+\abntrefinfo{Katakis, Tsoumakas e Vlahavas}{KATAKIS; TSOUMAKAS; VLAHAVAS}{2010}
+{KATAKIS, I.; TSOUMAKAS, G.; VLAHAVAS, I. Tracking recurring contexts using
+  ensemble classifiers: An application to email filtering.
+\emph{Knowl. Inf. Syst.}, Springer-Verlag, Berlin, Heidelberg, v.~22, n.~3, p.
+  371--391, mar. 2010.
+ISSN 0219-1377.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s10115-009-0206-2}.}
+
+\bibitem[Kolter e Maloof 2007]{Kolter:2007:DWM:1314498.1390333}
+\abntrefinfo{Kolter e Maloof}{KOLTER; MALOOF}{2007}
+{KOLTER, J.~Z.; MALOOF, M.~A. Dynamic weighted majority: An ensemble method for
+  drifting concepts.
+\emph{J. Mach. Learn. Res.}, JMLR.org, v.~8, p. 2755--2790, dez. 2007.
+ISSN 1532-4435.
+Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1314498.1390333}.}
+
+\bibitem[Lane e Brodley 1998]{Lane:1998:AOL:3000292.3000339}
+\abntrefinfo{Lane e Brodley}{LANE; BRODLEY}{1998}
+{LANE, T.; BRODLEY, C.~E. Approaches to online learning and concept drift for
+  user identification in computer security. In:  \emph{Proceedings of the
+  Fourth International Conference on Knowledge Discovery and Data Mining}. AAAI
+  Press, 1998.  (KDD'98), p. 259--263. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=3000292.3000339}.}
+
+\bibitem[{Lee}, {Wang} e {Ryu} 2007]{Lee:Wang:Ryu:2007}
+\abntrefinfo{{Lee}, {Wang} e {Ryu}}{{Lee}; {Wang}; {Ryu}}{2007}
+{{Lee}, Y.~K.; {Wang}, L.; {Ryu}, K.~H. A system architecture for monitoring
+  sensor data stream. In:  \emph{7th IEEE International Conference on Computer
+  and Information Technology (CIT 2007)}. [S.l.: s.n.], 2007. p. 1026--1031.}
+
+\bibitem[Minku e Yao 2012]{Minku:2012:DNE:2197077.2197204}
+\abntrefinfo{Minku e Yao}{MINKU; YAO}{2012}
+{MINKU, L.~L.; YAO, X. Ddd: A new ensemble approach for dealing with concept
+  drift.
+\emph{IEEE Trans. on Knowl. and Data Eng.}, IEEE Educational Activities
+  Department, Piscataway, NJ, USA, v.~24, n.~4, p. 619--633, abr. 2012.
+ISSN 1041-4347.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2011.58}.}
+
+\bibitem[Nishida e Yamauchi 2007]{STEPD}
+\abntrefinfo{Nishida e Yamauchi}{NISHIDA; YAMAUCHI}{2007}
+{NISHIDA, K.; YAMAUCHI, K. Detecting concept drift using statistical testing.
+  In:  CORRUBLE, V.; TAKEDA, M.; SUZUKI, E. (Ed.). \emph{Discovery Science}.
+  Berlin, Heidelberg: Springer Berlin Heidelberg, 2007. p. 264--269.
+ISBN 978-3-540-75488-6.}
+
+\bibitem[Ross et al. 2012]{Ross:2012:EWM:2076039.2076307}
+\abntrefinfo{Ross et al.}{ROSS et al.}{2012}
+{ROSS, G.~J. et al. Exponentially weighted moving average charts for detecting
+  concept drift.
+\emph{Pattern Recogn. Lett.}, Elsevier Science Inc., New York, NY, USA, v.~33,
+  n.~2, p. 191--198, jan. 2012.
+ISSN 0167-8655.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1016/j.patrec.2011.08.019}.}
+
+\bibitem[Ryu et al. 2012]{Ryu:Kantardzic:2012}
+\abntrefinfo{Ryu et al.}{RYU et al.}{2012}
+{RYU, J.~W. et al. An efficient method of building an ensemble of classifiers
+  in streaming data. In:  SRINIVASA, S.; BHATNAGAR, V. (Ed.). \emph{Big Data
+  Analytics}. Berlin, Heidelberg: Springer Berlin Heidelberg, 2012. p.
+  122--133.
+ISBN 978-3-642-35542-4.}
+
+\bibitem[Santos et al. 2014]{deCarvalhoSantos:2014:SUR:3120352.3120365}
+\abntrefinfo{Santos et al.}{SANTOS et al.}{2014}
+{SANTOS, S. G.~T. de C. et al. Speeding up recovery from concept drifts. In:
+  \emph{Proceedings of the 2014th European Conference on Machine Learning and
+  Knowledge Discovery in Databases - Volume Part III}. Berlin, Heidelberg:
+  Springer-Verlag, 2014.  (ECMLPKDD'14), p. 179--194.
+ISBN 978-3-662-44844-1. Dispon{\'\i}vel em:
+  \url{https://doi.org/10.1007/978-3-662-44845-8\_12}.}
+
+\bibitem[Sebasti{\~a}o et al. 2010]{FCWM}
+\abntrefinfo{Sebasti{\~a}o et al.}{SEBASTI{\~A}O et al.}{2010}
+{SEBASTI{\~A}O, R. et al. Monitoring incremental histogram distribution for
+  change detection in data streams. In:  GABER, M.~M. et al. (Ed.).
+  \emph{Knowledge Discovery from Sensor Data}. Berlin, Heidelberg: Springer
+  Berlin Heidelberg, 2010. p. 25--42.
+ISBN 978-3-642-12519-5.}
+
+\bibitem[Smailovi\'{c} et al. 2014]{Smailovic:2014:SAL:2941772.2941857}
+\abntrefinfo{Smailovi\'{c} et al.}{SMAILOVI\'{c} et al.}{2014}
+{SMAILOVI\'{c}, J. et al. Stream-based active learning for sentiment analysis
+  in the financial domain.
+\emph{Inf. Sci.}, Elsevier Science Inc., New York, NY, USA, v.~285, n.~C, p.
+  181--203, nov. 2014.
+ISSN 0020-0255.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.ins.2014.04.034}.}
+
+\bibitem[Sobhani e Beigy 2011]{Sobhani:2011:NDD:2045295.2045309}
+\abntrefinfo{Sobhani e Beigy}{SOBHANI; BEIGY}{2011}
+{SOBHANI, P.; BEIGY, H. New drift detection method for data streams. In:
+  \emph{Proceedings of the Second International Conference on Adaptive and
+  Intelligent Systems}. Berlin, Heidelberg: Springer-Verlag, 2011.  (ICAIS'11),
+  p. 88--97.
+ISBN 978-3-642-23856-7. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=2045295.2045309}.}
+
+\bibitem[Spinosa, Carvalho e Gama 2007]{Spinosa:2007:OCA:1244002.1244107}
+\abntrefinfo{Spinosa, Carvalho e Gama}{SPINOSA; CARVALHO; GAMA}{2007}
+{SPINOSA, E.~J.; CARVALHO, A.~P. de~Leon F.~de; GAMA, J.~a. Olindda: A
+  cluster-based approach for detecting novelty and concept drift in data
+  streams. In:  \emph{Proceedings of the 2007 ACM Symposium on Applied
+  Computing}. New York, NY, USA: ACM, 2007.  (SAC '07), p. 448--452.
+ISBN 1-59593-480-4. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/1244002.1244107}.}
 
 \bibitem[Zwolenski e Weatherill 2014]{idc_report}
 \abntrefinfo{Zwolenski e Weatherill}{ZWOLENSKI; WEATHERILL}{2014}

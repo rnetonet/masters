@@ -177,7 +177,7 @@
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-    Aprendizado de Máquina, fluxos contínuos de dados, Mudanças de Conceito, Redes de Função de Base Radial, Não supervisionado
+    Aprendizado de Máquina, Fluxos Contínuos de Dados, Mudanças de Conceito, Redes de Função de Base Radial, Não supervisionado
 \end{keywords}
 
 \abstract
@@ -222,88 +222,125 @@
 \xchapter{Introdução}{} \label{introducao}
 
 \section{Contexto e Motivação}
- 
-Vivemos em uma era cuja a velocidade e a quantidade de dados produzidos são enormes.
-De acordo com relatório da IDC \cite{idc_report}, 
-os dados gerados em 2014 eram estimados em 4,4 zettabytes (trilhões de gigabytes) e este número tendia a um crescimento exponencial. 
-O mesmo relatório prevê que em 2020 este número será de 44 zettabytes.
 
-Em muitos contextos, os dados são produzidos em sequências de registros, denominados \textbf{eventos}, 
-disponíveis ao longo do tempo, em uma determinada ordem \cite{Feigenbaum:2003:ALD:589343.592594}. 
-Essas séries de dados são normalmente de alta frequência e potencialmente infinitas.
-Sendo denominadas como Fluxos Contínuos de Dados (FCDs).
+A quantidade de dados produzidos por sistemas computacionais tem crescido exponencialmente.
+Relatório do IDC (\textit{International Data Corporation}) estimava que em 2014 seriam produzidos 4,4 zettabytes (trilhões de gigabytes) de dados \cite{idc_report}.
+O mesma relatório, prevê que em 2020 essa quantidade será de 44 zettabytes.
 
-Exemplos de aplicações que produzem FCDs incluem: transações enviadas por processadores de cartões de crédito, 
-detecção de temperatura por centros de monitoramento climático, operações no mercado de ações, monitoramento do coração, 
-etc \cite{Aggarwal:2003:FCE:1315451.1315460}.
+Grande parte desses sistemas produz dados através de sequências de eventos.
+Estas sequências são geradas de forma contínua, ordenada, em alta frequência e potencialmente infinita \cite{Feigenbaum:2003:ALD:589343.592594}.
+Na literatura, sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs).
+Exemplos de sistemas que produzem fluxos dessa natureza, incluem:
+monitoramento de dados de sensores \cite{Lee:Wang:Ryu:2007},
+tráfico TCP/IP, 
+histórico de compra de clientes,
+filtragem de SPAM em mensagens de e-mail \cite{Katakis:2010:TRC:1746286.1746291},
+detecção de intrusos \cite{Lane:1998:AOL:3000292.3000339},
+análise de sentimentos \cite{Smailovic:2014:SAL:2941772.2941857}, 
+etc.
 
-Nos últimos anos, técnicas de aprendizado de máquina aplicadas a fluxos contínuos de dados têm se tornado um tema de interesse entre diversos pesquisadores.
-A principal característica nestes cenários é a necessidade de respostas que atendam a severas restrições de tempo \cite{Gama:2010:KDD:1855075}. 
-Por exemplo, um classificador deve fornecer um resultado para um determinado evento antes que o próximo ocorra. 
+Nos últimos anos, técnicas de Aprendizagem de Máquina (AM) aplicadas a fluxos contínuos de dados têm se tornado um importante tema de pesquisa.
+Nestes cenários, os algoritmos de aprendizagem devem atender a severas restrições de tempo e processamento \cite{Bifet:2009:ALM:1656274.1656287}.
+Por exemplo, um classificador deve fornecer um rótulo para um evento antes que o próximo ocorra. 
 Caso isso não aconteça, alguns eventos podem ficar sem classificação.
 
 Outra dificuldade encontrada nesses ambientes é a mudança na distribuição dos dados. 
-Este problema é conhecido como mudança de conceito (\textit{concept drift}) \cite{Gama:2010:KDD:1855075}.
-Estas mudanças são classificadas conforme a velocidade com que ocorrem.
+Isto é, o contexto do processo gerador sofre alterações que impactam no fluxo produzido e, por conseguinte, as predições esperadas.
+Este problema é conhecido como \textbf{mudança de conceito} \cite{Gama:2010:KDD:1855075} e sua ocorrência impacta a acurácia do modelo criado.
+Podendo, inclusive, torná-lo obsoleto.
+Estas mudanças são comumente classificadas conforme a velocidade com que ocorrem.
 Mudanças de conceito \textbf{abruptas} identificam transições rápidas entre conceitos. 
-Transições mais lentas, são ditas \textbf{graduais}.
+Transições mais lentas, são ditas \textbf{graduais} \cite{Gama:2014:SCD:2597757.2523813}.
 
-Para fins de exemplificação, suponhamos que o histórico de transações via cartão de crédito de determinado cliente seja armazenado.
-Este cliente, ao longo de vários anos, utiliza o cartão apenas para comprar alimentos, sempre em uma mesma região da cidade.
-A partir dessas informações, um modelo é construído.
-Contudo, não é coerente considerar que esse perfil jamais será modificado. 
+Como exemplificação, suponhamos que o histórico de transações via cartão de crédito de determinado cliente seja armazenado.
+Este cliente, ao longo dos anos, tem utilizado o cartão apenas para comprar alimentos, sempre em uma mesma região da cidade.
+A partir desse conjunto de dados, um modelo de aprendizagem é criado.
+Contudo, não é coerente considerar que o comportamento do cliente permanecerá inalterado.
 
-Diante deste contexto, devemos considerar as seguintes situações:
+Diante deste contexto, devemos considerar as seguintes hipóteses:
 1) Abruptamente, esse cliente compra vários eletrônicos em outro país.
-Neste caso, compete aos métodos de detecção identificar se houve uma fraude ou se o cliente está apenas viajando e aproveitando ofertas.
+Neste caso, compete aos métodos de detecção identificar se houve fraude ou se o cliente está apenas viajando e aproveitando ofertas.
 2) Gradualmente, o mesmo cliente passa a utilizar o cartão para compras de passagens aéreas e diminui paulatinamente a utilização para compra de alimentos.
-Após certo período, o perfil de compra estará completamente renovado.
+Após determinado período, o perfil de compra estará completamente renovado.
 Assim, cabe novamente aos métodos de detecção identificar a mudança de comportamento e emitir um alerta, 
 para que o modelo construído seja atualizado.
 
-Diversas abordagens e algoritmos para detecção de mudanças de conceito foram propostos na literatura.
+Diversos algoritmos para detecção de mudanças de conceito foram propostos na literatura.
 Cada uma dessas técnicas possui características e parâmetros diferentes que visam aumentar sua eficiência, 
 conforme a natureza dos dados e do tipo de mudança que se deseja otimizar.
-Essas técnicas geralmente utilizam os resultados de um ou mais classificadores para identificar a mudança de conceito.
-A mudança é indicada quando a quantidade de erros de classificação supera os acertos a partir de uma determinada métrica.
 
-Algoritmos que adotam esta abordagem incluem: 
-DDM (GAMA et al., 2004), EDDM (BAENA-GARCíA et al., 2006), 
-ADWIN (BIFET; GAVALDA, 2007), ECDD (ROSS et al., 2012), 
-PL (BACH; MALOOF, 2008), FCWM (SEBASTIAO et al., 2010),
-PHT (PAGE, 1954), STEPD (NISHIDA; YAMAUCHI, 2007) e DOF (SOBHANI; BEIGY,2011). 
-Adicionalmente, (SEBASTIAO; GAMA, 2009) fazem um estudo comparativo entre alguns desses métodos e destacam vantagens e desvantagens em diferentes situações.
+Parte dos algoritmos detecta a mudança de conceito através do monitoramento da taxa de erro do modelo em relação a uma determinada métrica.
+Alguns algoritmos que adotam essa abordagem são: 
+DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
+ADWIN \cite{BifetG07}, ECDD \cite{Ross:2012:EWM:2076039.2076307}, 
+PL \cite{Bach:PL:2008}, FCWM \cite{FCWM}, STEPD \cite{STEPD}, DOF \cite{Sobhani:2011:NDD:2045295.2045309} e 
+SCCDD/CRCDD \cite{daCosta:2016:UDS:2956219.2956389}.
+
+Outra metodologia bastante comum para lidar com mudanças de conceito é a aplicação de comitês de classificadores (\textit{Ensemble Classifiers}). 
+Esta técnica consiste na aplicação simultânea de múltiplos classificadores.
+A combinação das predições individuais é utilizada para compor uma predição global \cite{Gama:2014:SCD:2597757.2523813}.
+Os métodos para atualização do arranjo (criação e exclusão de classificadores) e a forma de integração das predições individuais variam para cada algoritmo.
+
+Exemplos de comitês de classificadores são 
+DWM \cite{Kolter:2007:DWM:1314498.1390333}, AUE \cite{AUE}, 
+WMA \cite{Blum1997}, DDD \cite{Minku:2012:DNE:2197077.2197204}, ADOB \cite{deCarvalhoSantos:2014:SUR:3120352.3120365}, dentre outros.
+
+As abordagens mencionadas dependem da disponibilidade do rótulo correto após determinado período de tempo.
+Contudo, na maioria das aplicações reais, isto não é viável. 
+Assim, foram desenvolvidos algoritmos para detecção de mudanças de conceito baseados na distância e/ou densidade dos dados.
+
+Estes métodos são capazes de identificar eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
+Técnicas de agrupamento e detecção de \textit{outliers} são comumente utilizadas nas implementações.
+Além destas abordagens, estratégias de sumarização dos dados e aplicação de medidas de dissimilaridade \cite{Ryu:Kantardzic:2012} também são aplicadas para identificar novos conceitos.
+
+Contudo, as técnicas propostas na literatura apresentam limitações.
+Algoritmos que dependem da correta rotulação são de aplicação limitada e apresentam dificuldade para lidar com mudanças abruptas.
+Metodologias inspiradas em algoritmos não supervisionados envolvem maior custo computacional e tempo de resposta.
+Visando resolver essas limitações, este projeto de mestrado discute um método para detecção de mudanças de conceito baseado em Redes de Função de Base Radial.
 
 \section{Hipótese e Objetivo}
 
-Considerando as observações da seção anterior, a seguinte hipótese foi elaborada:
+Com base nas observações citadas anteriormente, a seguinte hipótese foi formulada:
 
 \begin{center}
-\textit{``A aplicação de redes de função de base radial sobre fluxos contínuos de dados, permite a detecção de mudanças de conceito, sem requerer manutenção de estados prévios, de forma ágil e com baixos requisitos de processamento.''}
+\textit{``A aplicação de Redes de Função de Base Radial sobre Fluxos Contínuos de Dados permite a detecção de mudanças de conceito, 
+sem requerer a manutenção de estados prévios, de forma ágil e com baixos requisitos de processamento.''}
 \end{center}
 
-O objetivo deste trabalho será o desenvolvimento e validação da hipótese.
-Para tanto, será desenvolvido um algoritmo para detecção de mudanças de conceito baseado em redes de função de base radial. Este algoritmo diferencia-se por realizar a escolha do centros de forma \textit{online}, conforme novas entradas são recepcionadas e por apresentar um raio dinâmico. 
-A ativação de novos centros é usado como indicador para possíveis mudanças de conceito.
+O objetivo deste trabalho será o desenvolvimento e validação desta hipótese.
+Para atingir este objetivo, será desenvolvido um algoritmo para detecção de mudanças de conceito baseado em Redes de Função de Base Radial. 
+Este algoritmo diferencia-se por realizar a escolha dos centros de forma \textit{online}, conforme novos eventos são recepcionados, 
+e por apresentar um raio dinâmico. 
+A ativação de novos centros é usada como indicador para possíveis mudanças de conceito.
 
-O algoritmo implementado será comparado com o estado da arte. Os fluxos contínuos de dados utilizados nos experimento, serão divididas em dois conjuntos. Um conjunto formado por séries sintéticas, para análise das características métricas da técnica proposta. E outro conjunto, formado por datasets oriundos de aplicações de aprendizagem de máquina do mundo real que apresentam mudanças de conceito.
+O algoritmo implementado será comparado com o estado da arte. 
+Os fluxos utilizados nos experimentos serão divididos em dois conjuntos. 
+Um conjunto formado por séries sintéticas, que permitirão uma análise detalhada da abordagem, uma vez que as características e os comportamentos dos fluxos são conhecidos. 
+O outro conjunto será composto por \textit{datasets} obtidos a partir de sistemas computacionais utilizados na indústria,
+visando apresentar uma aplicação prática para a solução proposta neste trabalho.
 
-Este trabalho está organizado conforme a seguinte estrutura: O \textbf{Capítulo \ref{revisao_bibliografica}} possui uma revisão bibliográfica dos principais conceitos utilizados neste trabalho como, por exemplo, fluxos contínuos de dados, mudança de conceito e principais algoritmos; No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa definido é detalhado, identificando a metodologia que será aplicada e o cronograma de atividades. Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}}, apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos em relação ao estado da arte.
+
+Este trabalho está organizado conforme a seguinte estrutura: 
+O \textbf{Capítulo \ref{revisao_bibliografica}} possui uma revisão bibliográfica dos principais conceitos utilizados neste trabalho como, 
+por exemplo, fluxos contínuos de dados, mudança de conceito e principais algoritmos; 
+No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa definido é detalhado, 
+identificando a metodologia que será aplicada e o cronograma de atividades. 
+Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} 
+apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos em relação ao estado da arte.
 
 \xchapter{Revisão Bibliográfica}{} \label{revisao_bibliografica}
 \section{Considerações Iniciais}
 
-Nas próximas seção, introduziremos os campos de fluxos contínuos de dados e detecção de mudança de conceito, tópicos importante no escopo deste trabalho. Por fim, apresentamos trabalhos relacionados encontrados na literatura.
+\todo{***} 
 
-\section{fluxos contínuos de dados}
+Este capítulo apresenta uma discussão sobre os principais temas abordados neste trabalho.
+Em primeiro momento, serão apresentados conceitos sobre Fluxos Contínuos de Dados.
+Em seguida, a definição formal de Mudança de Conceito é apresentada, seus tipos e características, além dos principais algoritmos de detecção e ferramentas.
+Dando continuidade, detalharemos as Redes de Função de Base Radial.
+Ao fim do capítulo, elencamos os trabalhos relacionados encontrados na literatura.
 
-fluxos contínuos de dados podem ser definidos como sequências abertas de dados produzidos continuamente \cite{Pavlidis:2011:9AC:1860144.1860487}.
-Normalmente, supõe-se que eles são produzidos em grandes volumes e em altas freqüências. Alguns sistemas do mundo real produzem fluxos contínuos de dados, como os associados à telecomunicação empresas, sistemas bancários, mercado de ações, redes de sensores, satélites meteorológicos, Grande Colisor de Hádrons, etc \cite{Guha:2003:CDS:776752.776777}.
-Tais fluxos podem ser estudados e analisados continuamente, a fim de obter informações dos fenômenos responsáveis para gerá-los e, portanto, modelar e prever seu comportamento. No contexto desta tese, os fluxos contínuos de dados são representados como sequências de observações x1,. . . , XI , . . . , xn, em que cada a observação é um vetor de d atributos reais, isto é, xi E Rd.
-
-Dada a alta frequência possível que os dados são produzidos, os algoritmos para processar streams sofrem restrições em sua complexidade de tempo, uma vez que o algoritmo não pode executar operações exigentes durante o processamento de cada observação de dados, caso contrário a análise do fluxo seria afetada \cite{EDDM}.
-
-Outra restrição está associada à natureza infinita dos fluxos - uma vez que a memória do computador é limitada, apenas as informações de dados ou mais importantes devem ser armazenadas. Devido a essas duas restrições, os algoritmos do fluxo de dados devem analisar os dados coletados, armazenar suas características ou informações relevantes e descartá-los a seguir. Portanto, as observações de dados devem ser processadas em uma única passagem, ou seja, de uma maneira inteiramente diferente dos conjuntos de dados tradicionais, cujas observações são completamente armazenadas na memória e processadas várias vezes, como um lote.
+\section{Fluxos Contínuos de Dados}
+\blindtext
 
 \section{Mudança de Conceito}
 \blindtext
