@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  8 MAR 2019 23:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  9 MAR 2019 17:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1410,87 +1410,87 @@ Package xcolor Warning: Incompatible color definition on input line 222.
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 331.
+Package xcolor Warning: Incompatible color definition on input line 330.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 344.
+(blindtext)                 on input line 343.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 347.
+(blindtext)                 on input line 346.
 
 [5]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 350.
+(blindtext)                 on input line 349.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 353.
+(blindtext)                 on input line 352.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 356.
+(blindtext)                 on input line 355.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 359.
+(blindtext)                 on input line 358.
 
 [6]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 362.
+(blindtext)                 on input line 361.
 
 [7] [8
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 363.
+Package xcolor Warning: Incompatible color definition on input line 362.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 366.
+(blindtext)                 on input line 365.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 369.
+(blindtext)                 on input line 368.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 372.
+(blindtext)                 on input line 371.
 
 [9]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 375.
+(blindtext)                 on input line 374.
 
 [10]
 
-Package xcolor Warning: Incompatible color definition on input line 376.
+Package xcolor Warning: Incompatible color definition on input line 375.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 379.
+(blindtext)                 on input line 378.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 382.
+(blindtext)                 on input line 381.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 385.
+(blindtext)                 on input line 384.
 
 [11
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 388.
+(blindtext)                 on input line 387.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 391.
+(blindtext)                 on input line 390.
 
 [12] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [13
 
@@ -1507,7 +1507,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  62i,9n,80p,10445b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (29 pages, 433416 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (29 pages, 433390 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
  95 compressed objects within 1 object stream

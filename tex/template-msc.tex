@@ -242,7 +242,6 @@ etc.
 Nos últimos anos, técnicas de Aprendizagem de Máquina (AM) aplicadas a fluxos contínuos de dados têm se tornado um importante tema de pesquisa.
 Nestes cenários, os algoritmos de aprendizagem devem atender a severas restrições de tempo e processamento \cite{Bifet:2009:ALM:1656274.1656287}.
 Por exemplo, um classificador deve fornecer um rótulo para um evento antes que o próximo ocorra. 
-Caso isso não aconteça, alguns eventos podem ficar sem classificação.
 
 Outra dificuldade encontrada nesses ambientes é a mudança na distribuição dos dados. 
 Isto é, o contexto do processo gerador sofre alterações que impactam no fluxo produzido e, por conseguinte, as predições esperadas.
@@ -260,7 +259,7 @@ Contudo, não é coerente considerar que o comportamento do cliente permanecerá
 Diante deste contexto, devemos considerar as seguintes hipóteses:
 1) Abruptamente, esse cliente compra vários eletrônicos em outro país.
 Neste caso, compete aos métodos de detecção identificar se houve fraude ou se o cliente está apenas viajando e aproveitando ofertas.
-2) Gradualmente, o mesmo cliente passa a utilizar o cartão para compras de passagens aéreas e diminui paulatinamente a utilização para compra de alimentos.
+2) Gradualmente, o cliente passa a utilizar o cartão para compras de passagens aéreas e diminui paulatinamente a utilização para compra de alimentos.
 Após determinado período, o perfil de compra estará completamente renovado.
 Assim, cabe novamente aos métodos de detecção identificar a mudança de comportamento e emitir um alerta, 
 para que o modelo construído seja atualizado.
@@ -287,13 +286,13 @@ WMA \cite{Blum1997}, DDD \cite{Minku:2012:DNE:2197077.2197204}, ADOB \cite{deCar
 
 As abordagens mencionadas dependem da disponibilidade do rótulo correto após determinado período de tempo.
 Contudo, na maioria das aplicações reais, isto não é viável. 
-Assim, foram desenvolvidos algoritmos para detecção de mudanças de conceito baseados na distância e/ou densidade dos dados.
+Assim, foram desenvolvidos algoritmos para detecção de mudanças de conceito que não dependem dessa disponibilidade de rótulos.
 
-Estes métodos são capazes de identificar eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
+Os métodos independentes de rótulos se baseiam na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
 Técnicas de agrupamento e detecção de \textit{outliers} são comumente utilizadas nas implementações.
-Além destas abordagens, estratégias de sumarização dos dados e aplicação de medidas de dissimilaridade \cite{Ryu:Kantardzic:2012} também são aplicadas para identificar novos conceitos.
+Além destas abordagens, estratégias de sumarização dos dados e aplicação de medidas de dissimilaridade \cite{Ryu:Kantardzic:2012} também são utilizadas para identificar novos conceitos.
 
-Contudo, as técnicas propostas na literatura apresentam limitações.
+Entretanto, as técnicas propostas na literatura apresentam limitações.
 Algoritmos que dependem da correta rotulação são de aplicação limitada e apresentam dificuldade para lidar com mudanças abruptas.
 Metodologias inspiradas em algoritmos não supervisionados envolvem maior custo computacional e tempo de resposta.
 Visando resolver essas limitações, este projeto de mestrado discute um método para detecção de mudanças de conceito baseado em Redes de Função de Base Radial.
@@ -303,8 +302,8 @@ Visando resolver essas limitações, este projeto de mestrado discute um método
 Com base nas observações citadas anteriormente, a seguinte hipótese foi formulada:
 
 \begin{center}
-\textit{``A aplicação de Redes de Função de Base Radial sobre Fluxos Contínuos de Dados permite a detecção de mudanças de conceito, 
-sem requerer a manutenção de estados prévios, de forma ágil e com baixos requisitos de processamento.''}
+\textit{``A análise de Fluxos Contínuos de Dados através de Redes de Função de Base Radial permite a detecção de mudanças de conceito, 
+sem requerer a manutenção de estados prévios, de forma ágil e com precisão satisfatória em relação ao estado da arte.''}
 \end{center}
 
 O objetivo deste trabalho será o desenvolvimento e validação desta hipótese.
@@ -322,7 +321,7 @@ visando apresentar uma aplicação prática para a solução proposta neste trab
 
 Este trabalho está organizado conforme a seguinte estrutura: 
 O \textbf{Capítulo \ref{revisao_bibliografica}} possui uma revisão bibliográfica dos principais conceitos utilizados neste trabalho como, 
-por exemplo, fluxos contínuos de dados, mudança de conceito e principais algoritmos; 
+por exemplo, fluxos contínuos de dados, mudança de conceito e redes de função de base radial; 
 No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa definido é detalhado, 
 identificando a metodologia que será aplicada e o cronograma de atividades. 
 Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} 
@@ -333,9 +332,9 @@ apresenta um conjunto de experimentos preliminares e a análise dos resultados o
 
 \todo{***} 
 
-Este capítulo apresenta uma discussão sobre os principais temas abordados neste trabalho.
+Este capítulo apresenta uma discussão sobre conceitos importantes no contexto deste trabalho de pesquisa.
 Em primeiro momento, serão apresentados conceitos sobre Fluxos Contínuos de Dados.
-Em seguida, a definição formal de Mudança de Conceito é apresentada, seus tipos e características, além dos principais algoritmos de detecção e ferramentas.
+Em seguida, serão descritas noções sobre Mudança de Conceito, seus tipos e características, além dos principais algoritmos de detecção e ferramentas.
 Dando continuidade, detalharemos as Redes de Função de Base Radial.
 Ao fim do capítulo, elencamos os trabalhos relacionados encontrados na literatura.
 
