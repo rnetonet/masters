@@ -5,6 +5,23 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
+\bibitem[Aggarwal et al. 2003]{Aggarwal:2003:FCE:1315451.1315460}
+\abntrefinfo{Aggarwal et al.}{AGGARWAL et al.}{2003}
+{AGGARWAL, C.~C. et al. A framework for clustering evolving data streams. In:
+  \emph{Proceedings of the 29th International Conference on Very Large Data
+  Bases - Volume 29}. VLDB Endowment, 2003.  (VLDB '03), p. 81--92.
+ISBN 0-12-722442-4. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=1315451.1315460}.}
+
+\bibitem[Babcock et al. 2002]{Babcock:2002:MID:543613.543615}
+\abntrefinfo{Babcock et al.}{BABCOCK et al.}{2002}
+{BABCOCK, B. et al. Models and issues in data stream systems. In:
+  \emph{Proceedings of the Twenty-first ACM SIGMOD-SIGACT-SIGART Symposium on
+  Principles of Database Systems}. New York, NY, USA: ACM, 2002.  (PODS '02),
+  p. 1--16.
+ISBN 1-58113-507-6. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/543613.543615}.}
+
 \bibitem[{Bach} e {Maloof} 2008]{Bach:PL:2008}
 \abntrefinfo{{Bach} e {Maloof}}{{Bach}; {Maloof}}{2008}
 {{Bach}, S.~H.; {Maloof}, M.~A. Paired learners for concept drift. In:
@@ -82,6 +99,11 @@ ISBN 1439826110, 9781439826119.}
 ISBN 3-540-23237-0. Dispon{\'\i}vel em:
   \url{http://dblp.uni-trier.de/db/conf/sbia/sbia2004.html\#GamaMCR04}.}
 
+\bibitem[Gama e Rodrigues 2009]{Gama:Rodrigues:2009}
+\abntrefinfo{Gama e Rodrigues}{GAMA; RODRIGUES}{2009}
+{GAMA, J.; RODRIGUES, P. An overview on mining data streams.
+In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.: s.n.], 2009. v.~206, p. 29--45.}
+
 \bibitem[Gama et al. 2014]{Gama:2014:SCD:2597757.2523813}
 \abntrefinfo{Gama et al.}{GAMA et al.}{2014}
 {GAMA, J.~a. et al. A survey on concept drift adaptation.
@@ -129,6 +151,12 @@ Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1314498.1390333}.}
   Department, Piscataway, NJ, USA, v.~24, n.~4, p. 619--633, abr. 2012.
 ISSN 1041-4347.
 Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2011.58}.}
+
+\bibitem[Mitchell 1997]{Mitchell:1997:ML:541177}
+\abntrefinfo{Mitchell}{MITCHELL}{1997}
+{MITCHELL, T.~M. \emph{Machine Learning}. 1. ed. New York, NY, USA:
+  McGraw-Hill, Inc., 1997.
+ISBN 0070428077, 9780070428072.}
 
 \bibitem[Nishida e Yamauchi 2007]{STEPD}
 \abntrefinfo{Nishida e Yamauchi}{NISHIDA; YAMAUCHI}{2007}

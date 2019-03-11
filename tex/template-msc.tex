@@ -239,7 +239,7 @@ detecção de intrusos \cite{Lane:1998:AOL:3000292.3000339},
 análise de sentimentos \cite{Smailovic:2014:SAL:2941772.2941857}, 
 etc.
 
-Nos últimos anos, técnicas de Aprendizagem de Máquina (AM) aplicadas a fluxos contínuos de dados têm se tornado um importante tema de pesquisa.
+Nos últimos anos, técnicas de Aprendizado de Máquina (AM) aplicadas a fluxos contínuos de dados têm se tornado um importante tema de pesquisa.
 Nestes cenários, os algoritmos de aprendizagem devem atender a severas restrições de tempo e processamento \cite{Bifet:2009:ALM:1656274.1656287}.
 Por exemplo, um classificador deve fornecer um rótulo para um evento antes que o próximo ocorra. 
 
@@ -336,10 +336,55 @@ Em seguida, será abordada a ideia de Mudança de Conceito, seus tipos e caracte
 Posteriormente, serão detalhadas as Redes de Função de Base Radial.
 Ao fim do capítulo, elencamos os trabalhos relacionados encontrados na literatura.
 
-\todo{***}
 
 \section{Fluxos Contínuos de Dados}
-\blindtext
+
+Os avanços em hardware e software dos últimos anos possibilitaram a aquisição de dados em larga escala \cite{Aggarwal:2003:FCE:1315451.1315460}.
+Consequentemente, tem crescido o interesse de pesquisa no gerenciamento desse grande volume de dados.
+Parte relevante dessas informações é produzida através de sequências potencialmente infinitas, geradas continuamente (normalmente em alta frequência), 
+conhecidas como Fluxos Contínuos de Dados (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
+Contudo, lidar com tamanha quantidade de informações impõe desafios aos pesquisadores, sobretudo limitações de tempo de execução e recursos computacionais.
+
+A área de Aprendizado de Máquina (AM) tem como objetivo estudar algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
+Atualmente, diversas técnicas de AM estão disponíveis, sendo aplicadas a uma amplo conjunto de problemas.
+
+Segundo \cite{Gama:2010:KDD:1855075}, a área de AM dedicou-se durante muitos anos em resolver problemas de aprendizado não-incrementais (\textit{batch}), 
+nos quais um conjunto de dados pré-definido é aplicado na fase de aprendizado.
+Após o processamento desses dados, um modelo de decisão é gerado.
+Este modelo é estático e será utilizado para realizar predições para os novos exemplos.
+O cenário descrito é adequado e bastante utilizado em ambientes cuja distribuição dos dados é estacionária, 
+pois o modelo preditivo permanecerá inalterado.
+
+Contudo, os principais cenários da indústria e pesquisa que envolvem FCDs são dinâmicos.
+Nestes cenários, os dados fluem de forma contínua, 
+mas a distribuição que os produz pode sofrer alterações com o passar do tempo.
+Isto é, são fluxos cuja distribuição dos dados não é estacionária.
+Conforme \cite{Gama:Rodrigues:2009}, no contexto de classificação, o principal problema no aprendizado a partir de FCDs é a manutenção de um modelo de decisão com boa acurácia.
+Para que esta continuidade seja possível, o algoritmo de aprendizado deve permitir a atualização do modelo de decisão conforme novos dados são analisados.
+Esta metodologia é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
+
+Além do aprendizado incremental, outros requisitos são necessários para aplicações de AM com FCDs.
+Por receber dados de forma contínua e com intervalos curtos de tempo entre os eventos, o modelo de decisão deve produzir resultados em tempo hábil.
+A quantidade de dados recebida também é muito grande, o que inviabiliza o seu armazenamento. Logo, os dados devem ser utilizados e em seguida descartados.
+Além disso, com o passar do tempo, o modelo de decisão evolui, sendo necessário esquecer exemplos do passado e concentrar-se nos exemplos do presente.
+Ademais, ruídos ou \textit{outliers} podem estar presentes nos dados e o algoritmo deve ser capaz de tratá-los adequadamente.
+Estas são algumas das características necessárias para algoritmos de AM que lidam com FCDs, e que tornam a tarefa tão desafiadora.
+
+Conforme \cite{Babcock:2002:MID:543613.543615} as principais diferenças de FCDs para os dados convecionais são:
+\begin{itemize}
+    \item Têm tamanho ilimitado;
+    \item Os dados chegam de forma contínua e, geralmente, em alta velocidade;
+    \item Não há controle sobre a ordem de chegada dos eventos;
+    \item Processado o evento, este deve ser descartado ou armazenado, entretanto, não podendo ser recuperado facilmente.
+\end{itemize}
+
+Por serem baseados em distribuições não estacionárias, os dados evoluem ao longo do tempo.
+Assim, novos conceitos (classes, grupos, etc.) podem surgir ou desaparecer, e conceitos já conhecidos podem evoluir.
+Portanto, é importante que os algoritmos para FCDs consigam identificar quais dados são os mais relevantes para o contexto atual, 
+quais são redundantes e quais devem ser esquecidos.
+
+
+\todo{Exemplos de Aplicações de FCDs}
 
 \section{Mudança de Conceito}
 \blindtext
