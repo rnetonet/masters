@@ -165,6 +165,12 @@ ISBN 0070428077, 9780070428072.}
   Berlin, Heidelberg: Springer Berlin Heidelberg, 2007. p. 264--269.
 ISBN 978-3-540-75488-6.}
 
+\bibitem[Oh e Kim 2017]{iot}
+\abntrefinfo{Oh e Kim}{OH; KIM}{2017}
+{OH, S.~R.; KIM, Y.~G. Security requirements analysis for the iot. In:
+  \emph{2017 International Conference on Platform Technology and Service
+  (PlatCon)}. [S.l.: s.n.], 2017. p.~1--6.}
+
 \bibitem[Ross et al. 2012]{Ross:2012:EWM:2076039.2076307}
 \abntrefinfo{Ross et al.}{ROSS et al.}{2012}
 {ROSS, G.~J. et al. Exponentially weighted moving average charts for detecting
