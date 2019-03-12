@@ -56,19 +56,9 @@
 
 % Siglas
 \acrodef{AM}[AM]{{Aprendizado de Máquina}}
-\acrodef{EMD}[EMD]{{Decomposição de Modo Empírico}}
-\acrodef{RQA}[RQA]{{\textit{Recurrence Quantification Analysis}}}
-\acrodef{FAPAR}[FAPAR] {{\textit{Fraction of Absorbed Photosynthesis Active Radiation}}}
-\acrodef{DTW}[DTW] {{\textit {Dynamic  Time  Warping}}}
 \acrodef{DE}[DE] {{Distância Euclidiana}}
-\acrodef{EDR}[EDR]{{ \textit{ Edite  Distance  Real}}}
 \acrodef{FCD}[FCD] {{\textit {Fluxo de Dados Contínuos}}}
 \acrodef{DN}[DN] {{\textit {Detecção de Novidade}}}
-\acrodef{CID}[CID]{{\textit{Complexity-Invariant Distance}}}
-\acrodef{SLR}[SLR]{{\textit{Systematic  Literature  Review}}}
-\acrodef{SANTS}[SANTS]{{\textit{Similarity Analysis on Nonstationary Time Series}}} 
-\acrodef{MDDL}[MDDL]{{\textit{Mean Distance from the Diagonal Line}}}
-
 
 % Universidade
 \university{Universidade Federal da Bahia}
@@ -89,7 +79,7 @@
 \majorfield{Ci\^{e}ncia da Computa\c{c}\~{a}o}
 
 % Titulo da dissertacao
-\title{Aplicando redes de função de base radial para detecção de novidades em fluxos contínuos de dados}
+\title{Aplicando redes de função de base radial para detecção de mudanças de conceito em fluxos contínuos de dados}
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
@@ -314,7 +304,7 @@ A ativação de novos centros é usada como indicador para possíveis mudanças 
 
 O algoritmo implementado será comparado com o estado da arte. 
 Os fluxos utilizados nos experimentos serão divididos em dois conjuntos. 
-Um conjunto formado por séries sintéticas, que permitirão uma análise detalhada da abordagem, uma vez que as características e os comportamentos dos fluxos são conhecidos. 
+Um conjunto formado por fluxos sintéticos, que permitirão uma análise detalhada da abordagem, uma vez que as características e os comportamentos são conhecidos. 
 O outro conjunto será composto por \textit{datasets} obtidos a partir de sistemas computacionais utilizados na indústria,
 visando apresentar uma aplicação prática para a solução proposta neste trabalho.
 
@@ -345,13 +335,29 @@ Parte relevante dessas informações é produzida através de sequências potenc
 conhecidas como Fluxos Contínuos de Dados (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
 Contudo, lidar com tamanha quantidade de informações impõe desafios aos pesquisadores, sobretudo limitações de tempo de execução e recursos computacionais.
 
+Conforme \cite{Babcock:2002:MID:543613.543615} as principais diferenças de FCDs para os dados convecionais são:
+\begin{itemize}
+    \item Têm tamanho ilimitado;
+    \item Os dados chegam de forma contínua e, geralmente, em alta velocidade;
+    \item Não há controle sobre a ordem de chegada dos eventos;
+    \item Processado o evento, este deve ser descartado.
+\end{itemize}
+
+Diversas aplicações práticas da indústria e academia produzem ou consomem dados em fluxos contínuos. São exemplos de aplicações:
+
+\begin{description}
+    \item[Finanças] detecção de fraudes em transações, acompanhamento da bolsa de valores;
+    \item[Energia] monitoramento, predição e planejamento do consumo;
+    \item[Redes e telecomunicações] monitoramento de rede, detecção de intrusos.
+\end{description}
+
 A área de Aprendizado de Máquina (AM) tem como objetivo estudar algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
 Atualmente, diversas técnicas de AM estão disponíveis, sendo aplicadas a uma amplo conjunto de problemas.
 
 Segundo \cite{Gama:2010:KDD:1855075}, a área de AM dedicou-se durante muitos anos em resolver problemas de aprendizado não-incrementais (\textit{batch}), 
 nos quais um conjunto de dados pré-definido é aplicado na fase de aprendizado.
 Após o processamento desses dados, um modelo de decisão é gerado.
-Este modelo é estático e será utilizado para realizar predições para os novos exemplos.
+Este modelo é estático e produzirá predições para novos exemplos.
 O cenário descrito é adequado e bastante utilizado em ambientes cuja distribuição dos dados é estacionária, 
 pois o modelo preditivo permanecerá inalterado.
 
@@ -363,39 +369,76 @@ Conforme \cite{Gama:Rodrigues:2009}, no contexto de classificação, o principal
 Para que esta continuidade seja possível, o algoritmo de aprendizado deve permitir a atualização do modelo de decisão conforme novos dados são analisados.
 Esta metodologia é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
 
-Além do aprendizado incremental, outros requisitos são necessários para aplicações de AM com FCDs.
-Por receber dados de forma contínua e com intervalos curtos de tempo entre os eventos, o modelo de decisão deve produzir resultados em tempo hábil.
-A quantidade de dados recebida também é muito grande, o que inviabiliza o seu armazenamento. Logo, os dados devem ser utilizados e em seguida descartados.
-Além disso, com o passar do tempo, o modelo de decisão evolui, sendo necessário esquecer exemplos do passado e concentrar-se nos exemplos do presente.
-Ademais, ruídos ou \textit{outliers} podem estar presentes nos dados e o algoritmo deve ser capaz de tratá-los adequadamente.
-Estas são algumas das características necessárias para algoritmos de AM que lidam com FCDs, e que tornam a tarefa tão desafiadora.
+% Além do aprendizado incremental, outros requisitos são necessários para aplicações de AM com FCDs.
+% Por receber dados de forma contínua e com intervalos curtos de tempo entre os eventos, o modelo de decisão deve produzir resultados em tempo hábil.
+% A quantidade de dados recebida também é muito grande, o que inviabiliza o seu armazenamento. Logo, os dados devem ser utilizados e em seguida descartados.
+% Além disso, com o passar do tempo, o modelo de decisão evolui, sendo necessário esquecer exemplos do passado e concentrar-se nos exemplos do presente.
+% Ademais, ruídos ou \textit{outliers} podem estar presentes nos dados e o algoritmo deve ser capaz de tratá-los adequadamente.
+% Estas são algumas das características necessárias para algoritmos de AM que lidam com FCDs, e que tornam a tarefa tão desafiadora.
 
-Conforme \cite{Babcock:2002:MID:543613.543615} as principais diferenças de FCDs para os dados convecionais são:
+% Por serem baseados em distribuições não estacionárias, os dados evoluem ao longo do tempo.
+% Assim, novos conceitos (classes, grupos, etc.) podem surgir ou desaparecer, e conceitos já conhecidos podem evoluir.
+% Portanto, é importante que os algoritmos para FCDs consigam identificar quais dados são os mais relevantes para o contexto atual, 
+% quais são redundantes e quais devem ser esquecidos.
+
+% Muitos algoritmos de AM assumem a disponibilidade de um conjunto de dados para treinamento.
+% Estes algoritmos são não-incrementais, isto é, uma vez criado o modelo de aprendizado, este não será mais modificado.
+% Essas técnicas apresentam as seguintes características:
+
+% \begin{itemize}
+%     \item Conhecimento não é atualizado frequentemente;
+%     \item Dependem de um conjunto de dados prévio de treinamento;
+%     \item Maior preocupação com a precisão do que com a eficiência.
+% \end{itemize}
+
+% Contudo, as principais aplicações da indústria e academia são dinâmicas.
+% Nessas aplicações, os conceitos estão em constante atualização e o aprendizado deve ser contínuo.
+% Assim, 
+
+Conforme \cite{Fisher:1987:KAV:639960.639990}, a ideia de aprendizado incremental tem origem na própria observação do mundo real, 
+no qual o conhecimento sofre atualizações constantemente e uma base contínua é mantida para lidar com novos estímulos.
+O paradigma incremental acredita que o contexto do processo pode mudar ao longo do tempo e, portanto, 
+o conhecimento adquirido deve ser constantemente atualizado. 
+
+Segundo \cite{Langley:reimann1995learning}, um algoritmo $A$ pode ser dito incremental se $A$ recebe um evento de treinamento por vez,
+não reprocessa dados do passado e mantém somente uma estrutura de conhecimento em memória. 
+Além destas, o trabalho também elenca as seguintes características dos algoritmos incrementais:
+
 \begin{itemize}
-    \item Têm tamanho ilimitado;
-    \item Os dados chegam de forma contínua e, geralmente, em alta velocidade;
-    \item Não há controle sobre a ordem de chegada dos eventos;
-    \item Processado o evento, este deve ser descartado ou armazenado, entretanto, não podendo ser recuperado facilmente.
+    \item Tempo de processamento constante;
+    \item Dados analisados não são mantidos em memória;
+    \item A fase de treinamento pode ser interrompida a qualquer momento para realização de predições.
 \end{itemize}
 
-Por serem baseados em distribuições não estacionárias, os dados evoluem ao longo do tempo.
-Assim, novos conceitos (classes, grupos, etc.) podem surgir ou desaparecer, e conceitos já conhecidos podem evoluir.
-Portanto, é importante que os algoritmos para FCDs consigam identificar quais dados são os mais relevantes para o contexto atual, 
-quais são redundantes e quais devem ser esquecidos.
+Os algoritmos incrementais apresentam as seguintes vantagens \cite{pinto2005algoritmos}:
 
-Diversas aplicações práticas da indústria e academia produzem dados em fluxos contínuos. São exemplos de aplicações:
+\begin{itemize}
+    \item Otimização do tempo de processamento;
+    \item Menor utilização de memória;
+    \item Menor tempo de resposta;
+    \item Aproximam-sa da forma de aprendizado dos humanos.
+\end{itemize}
 
-\begin{description}
-    \item[Finanças] detecção de fraudes em transações, acompanhamento da bolsa de valores;
-    \item[Energia] monitoramento, predição e planejamento do consumo;
-    \item[Redes e telecomunicações] monitoramento de rede, detecção de intrusos.
-\end{description}
+Todavia, os algoritmos incrementais são sensíveis à ordem dos exemplos fornecidos.
+A depender da ordem de recepção dos exemplos, modelos diferentes podem ser produzidos.
 
-Evoluções em áreas estratégicas da computação tendem a reforçar a produção e utilização de dados produzidos através de FCDs.
-Uma dessas áreas é o ramo de Internet das Coisas (\textit{Internet of Things}) \cite{iot}, 
-que tem como objetivo conectar e coordenar diferentes dispositivos, sem a intervenção humana.
-Pesquisa divulgada pela IDC (\textit{International Data Corporation}) prevê que serão aproximadamente 32 bilhões de dispositivos interconectados até 2020 \cite{iot}.
-Portanto, algoritmos aptos a trabalhar com FCDs serão cada vez mais necessários.
+Por suas características, algoritmos incrementais mostram-se bastante interessantes para aplicação em cenários com FCDs.
+Contudo, \cite{GamaMCR04} ressalta que o aprendizado a partir de FCDs exige que os algoritmos além de incrementais, 
+também tratem mudanças de conceito envolvidas no processo.
+Nesses casos, é preciso descartar exemplos antigos, que não mais condizem com o cenário atual e adaptar o modelo de decisão aos novos dados.
+
+Algoritmos de aprendizado de máquina clássicos utilizam técnicas como agrupamento (\textit{clustering}) e classificação.
+A partir dessas técnicas, novos algoritmos foram desenvolvidos para trabalhar com FCDs.
+
+\todo{Classificação com FCDs}
+
+% TODO: Verificar se fica ao final da seção. Aut.
+% Evoluções em áreas estratégicas da computação tendem a reforçar a produção e utilização de dados produzidos através de FCDs.
+% Uma dessas áreas é o ramo de Internet das Coisas (\textit{Internet of Things}) \cite{iot}, 
+% que tem como objetivo conectar e coordenar diferentes dispositivos, sem a intervenção humana.
+% Pesquisa divulgada pela IDC (\textit{International Data Corporation}) prevê que serão aproximadamente 32 bilhões de dispositivos interconectados até 2020 \cite{iot}.
+% Portanto, algoritmos aptos a trabalhar com FCDs serão cada vez mais necessários.
+
 
 \section{Mudança de Conceito}
 \blindtext

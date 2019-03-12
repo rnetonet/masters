@@ -85,6 +85,14 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.eswa.2016.04.026}.}
 ISSN 0097-5397.
 Dispon{\'\i}vel em: \url{https://doi.org/10.1137/S0097539799361701}.}
 
+\bibitem[Fisher 1987]{Fisher:1987:KAV:639960.639990}
+\abntrefinfo{Fisher}{FISHER}{1987}
+{FISHER, D.~H. Knowledge acquisition via incremental conceptual clustering.
+\emph{Mach. Learn.}, Kluwer Academic Publishers, Hingham, MA, USA, v.~2, n.~2,
+  p. 139--172, set. 1987.
+ISSN 0885-6125.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1023/A:1022852608280}.}
+
 \bibitem[Gama 2010]{Gama:2010:KDD:1855075}
 \abntrefinfo{Gama}{GAMA}{2010}
 {GAMA, J. \emph{Knowledge Discovery from Data Streams}. 1st. ed. [S.l.]:
@@ -165,11 +173,18 @@ ISBN 0070428077, 9780070428072.}
   Berlin, Heidelberg: Springer Berlin Heidelberg, 2007. p. 264--269.
 ISBN 978-3-540-75488-6.}
 
-\bibitem[Oh e Kim 2017]{iot}
-\abntrefinfo{Oh e Kim}{OH; KIM}{2017}
-{OH, S.~R.; KIM, Y.~G. Security requirements analysis for the iot. In:
-  \emph{2017 International Conference on Platform Technology and Service
-  (PlatCon)}. [S.l.: s.n.], 2017. p.~1--6.}
+\bibitem[Pinto, Gama e Porto 2005]{pinto2005algoritmos}
+\abntrefinfo{Pinto, Gama e Porto}{PINTO; GAMA; PORTO}{2005}
+{PINTO, C. M.~S.; GAMA, J.; PORTO, U. do. Algoritmos incrementais para
+  aprendizagem bayesiana.
+\emph{Faculdade de Economia da Universidade do Porto}, 2005.}
+
+\bibitem[Reimann e Spada 1995]{Langley:reimann1995learning}
+\abntrefinfo{Reimann e Spada}{REIMANN; SPADA}{1995}
+{REIMANN, P.; SPADA, H. \emph{Learning in Humans and Machines: Towards an
+  Interdisciplinary Learning Science}. Emerald Group Publishing Limited, 1995.
+ISBN 9780080425696. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=YkdyQgAACAAJ}.}
 
 \bibitem[Ross et al. 2012]{Ross:2012:EWM:2076039.2076307}
 \abntrefinfo{Ross et al.}{ROSS et al.}{2012}
