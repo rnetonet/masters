@@ -330,17 +330,17 @@ Ao fim do capítulo, elencamos os trabalhos relacionados encontrados na literatu
 \section{Fluxos Contínuos de Dados}
 
 Os avanços em hardware e software dos últimos anos possibilitaram a aquisição de dados em larga escala \cite{Aggarwal:2003:FCE:1315451.1315460}.
-Consequentemente, tem crescido o interesse de pesquisa no gerenciamento desse grande volume de dados.
-Parte relevante dessas informações é produzida através de sequências potencialmente infinitas, geradas continuamente (normalmente em alta frequência), 
-conhecidas como Fluxos Contínuos de Dados (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
-Contudo, lidar com tamanha quantidade de informações impõe desafios aos pesquisadores, sobretudo limitações de tempo de execução e recursos computacionais.
+Como resultado, o interesse de pesquisa no gerenciamento de grandes volumes de dados tem crescido.
+Parte relevante desses dados é adquirido através de sequências contínuas, potencialmente infinitas e de alta frequência.
+A literatura denomina séries com essas características como Fluxos Contínuos de Dados (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
+Entretanto, lidar com volumes de dados tão grandes impõe desafios aos pesquisadores, sobretudo limitações de tempo de execução e recursos computacionais.
 
-Conforme \cite{Babcock:2002:MID:543613.543615} as principais diferenças de FCDs para os dados convecionais são:
+Conforme \cite{Babcock:2002:MID:543613.543615} as principais diferenças de FCDs para os dados convencionais são:
 \begin{itemize}
-    \item Têm tamanho ilimitado;
-    \item Os dados chegam de forma contínua e, geralmente, em alta velocidade;
+    \item Tamanho ilimitado;
+    \item Dados recepcionados de forma contínua e em alta frequência;
     \item Não há controle sobre a ordem de chegada dos eventos;
-    \item Processado o evento, este deve ser descartado.
+    \item Eventos processados devem ser descartados.
 \end{itemize}
 
 Diversas aplicações práticas da indústria e academia produzem ou consomem dados em fluxos contínuos. São exemplos de aplicações:
@@ -358,42 +358,16 @@ Segundo \cite{Gama:2010:KDD:1855075}, a área de AM dedicou-se durante muitos an
 nos quais um conjunto de dados pré-definido é aplicado na fase de aprendizado.
 Após o processamento desses dados, um modelo de decisão é gerado.
 Este modelo é estático e produzirá predições para novos exemplos.
-O cenário descrito é adequado e bastante utilizado em ambientes cuja distribuição dos dados é estacionária, 
+A metodologia descrita é adequada para ambientes cuja distribuição dos dados é estacionária, 
 pois o modelo preditivo permanecerá inalterado.
 
 Contudo, os principais cenários da indústria e pesquisa que envolvem FCDs são dinâmicos.
 Nestes cenários, os dados fluem de forma contínua, 
-mas a distribuição que os produz pode sofrer alterações com o passar do tempo.
+mas o contexto do processo que os produz pode sofrer alterações com o passar do tempo.
 Isto é, são fluxos cuja distribuição dos dados não é estacionária.
 Conforme \cite{Gama:Rodrigues:2009}, no contexto de classificação, o principal problema no aprendizado a partir de FCDs é a manutenção de um modelo de decisão com boa acurácia.
 Para que esta continuidade seja possível, o algoritmo de aprendizado deve permitir a atualização do modelo de decisão conforme novos dados são analisados.
 Esta metodologia é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
-
-% Além do aprendizado incremental, outros requisitos são necessários para aplicações de AM com FCDs.
-% Por receber dados de forma contínua e com intervalos curtos de tempo entre os eventos, o modelo de decisão deve produzir resultados em tempo hábil.
-% A quantidade de dados recebida também é muito grande, o que inviabiliza o seu armazenamento. Logo, os dados devem ser utilizados e em seguida descartados.
-% Além disso, com o passar do tempo, o modelo de decisão evolui, sendo necessário esquecer exemplos do passado e concentrar-se nos exemplos do presente.
-% Ademais, ruídos ou \textit{outliers} podem estar presentes nos dados e o algoritmo deve ser capaz de tratá-los adequadamente.
-% Estas são algumas das características necessárias para algoritmos de AM que lidam com FCDs, e que tornam a tarefa tão desafiadora.
-
-% Por serem baseados em distribuições não estacionárias, os dados evoluem ao longo do tempo.
-% Assim, novos conceitos (classes, grupos, etc.) podem surgir ou desaparecer, e conceitos já conhecidos podem evoluir.
-% Portanto, é importante que os algoritmos para FCDs consigam identificar quais dados são os mais relevantes para o contexto atual, 
-% quais são redundantes e quais devem ser esquecidos.
-
-% Muitos algoritmos de AM assumem a disponibilidade de um conjunto de dados para treinamento.
-% Estes algoritmos são não-incrementais, isto é, uma vez criado o modelo de aprendizado, este não será mais modificado.
-% Essas técnicas apresentam as seguintes características:
-
-% \begin{itemize}
-%     \item Conhecimento não é atualizado frequentemente;
-%     \item Dependem de um conjunto de dados prévio de treinamento;
-%     \item Maior preocupação com a precisão do que com a eficiência.
-% \end{itemize}
-
-% Contudo, as principais aplicações da indústria e academia são dinâmicas.
-% Nessas aplicações, os conceitos estão em constante atualização e o aprendizado deve ser contínuo.
-% Assim, 
 
 Conforme \cite{Fisher:1987:KAV:639960.639990}, a ideia de aprendizado incremental tem origem na própria observação do mundo real, 
 no qual o conhecimento sofre atualizações constantemente e uma base contínua é mantida para lidar com novos estímulos.
@@ -430,7 +404,34 @@ Nesses casos, é preciso descartar exemplos antigos, que não mais condizem com 
 Algoritmos de aprendizado de máquina clássicos utilizam técnicas como agrupamento (\textit{clustering}) e classificação.
 A partir dessas técnicas, novos algoritmos foram desenvolvidos para trabalhar com FCDs.
 
-\todo{Classificação com FCDs}
+A organização de dados em grupos é uma das formas mais fundamentais de compreensão e aprendizagem \cite{Jain:1988:ACD:46712}.
+Agrupamento é a tarefa de associar objetos conforme sua similaridade.
+A técnica tem como objetivo formar grupos com alta similaridade entre seus objetos e baixa similaridade para objetos de outros grupos.
+Técnicas de agrupamento permitem explorar a estrutura dos dados e não exigem os pressupostos comuns à maioria dos métodos estatísticos.
+A representação criada permite verificar se os grupos estão de acordo com determinados parâmetros ou ainda sugerir novos experimentos \cite{Jain:1988:ACD:46712}.
+
+% Dentre os importantes algoritmos para agrupamento em cenários batch destacam-se: 
+% K-Means (Lloyd,1982)(MacQueen, 1967), 
+% DBSCAN (Ester et al., 1996), 
+% OPTICS (Ankerst et al., 1999),
+% PAM (Kaufman e Rousseeuw, 2005), 
+% CURE (Guha et al., 1998), 
+% ROCK (Guha et al., 1999),
+% CHAMALEON (Karypis et al., 1999) e COBWEB (Fisher, 1987). 
+% Uma das possíveis razões para a diversidade de algoritmos de agrupamento é que não há uma definição geral
+% de grupos, e em geral, diferentes métodos de agrupamento se adaptam a diferentes tipos
+% de aplicação (Kaufman e Rousseeuw, 2005).
+
+Os métodos de agrupamento têm sido utilizados em diversas áreas do conhecimento, o que ensejou o desenvolvimento de uma grande variedade de algoritmos.
+Dentre os principais algoritmos para cenários \textit{batch}, destacam-se:
+K-Means \cite{Lloyd:2006:LSQ:2263356.2269955},
+DBSCAN \cite{Ester:1996:DAD:3001460.3001507},
+PAM \cite{kaufman:clustering1990} e 
+OPTICS \cite{Ankerst:1999:OOP:304181.304187}
+
+Segundo \cite{Gama:2010:KDD:1855075}, a principal dificuldade na aplicação de técnicas de agrupamentos em FCDs é definida como:
+manter a qualidade do agrupamento e a consistência em relação à sequência de dados observados, utilizando pouca memória e tempo.
+Estas dificuldades são impostas pela chegada contínua de dados e a necessidade de produzir respostas em tempo hábil.
 
 % TODO: Verificar se fica ao final da seção. Aut.
 % Evoluções em áreas estratégicas da computação tendem a reforçar a produção e utilização de dados produzidos através de FCDs.

@@ -13,6 +13,14 @@
 ISBN 0-12-722442-4. Dispon{\'\i}vel em:
   \url{http://dl.acm.org/citation.cfm?id=1315451.1315460}.}
 
+\bibitem[Ankerst et al. 1999]{Ankerst:1999:OOP:304181.304187}
+\abntrefinfo{Ankerst et al.}{ANKERST et al.}{1999}
+{ANKERST, M. et al. Optics: Ordering points to identify the clustering
+  structure.
+\emph{SIGMOD Rec.}, ACM, New York, NY, USA, v.~28, n.~2, p. 49--60, jun. 1999.
+ISSN 0163-5808.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/304181.304187}.}
+
 \bibitem[Babcock et al. 2002]{Babcock:2002:MID:543613.543615}
 \abntrefinfo{Babcock et al.}{BABCOCK et al.}{2002}
 {BABCOCK, B. et al. Models and issues in data stream systems. In:
@@ -76,6 +84,15 @@ ISBN 978-3-642-21222-2.}
 ISSN 0957-4174.
 Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.eswa.2016.04.026}.}
 
+\bibitem[Ester et al. 1996]{Ester:1996:DAD:3001460.3001507}
+\abntrefinfo{Ester et al.}{ESTER et al.}{1996}
+{ESTER, M. et al. A density-based algorithm for discovering clusters a
+  density-based algorithm for discovering clusters in large spatial databases
+  with noise. In:  \emph{Proceedings of the Second International Conference on
+  Knowledge Discovery and Data Mining}. AAAI Press, 1996.  (KDD'96), p.
+  226--231. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=3001460.3001507}.}
+
 \bibitem[Feigenbaum et al. 2003]{Feigenbaum:2003:ALD:589343.592594}
 \abntrefinfo{Feigenbaum et al.}{FEIGENBAUM et al.}{2003}
 {FEIGENBAUM, J. et al. An approximate l1-difference algorithm for massive data
@@ -120,6 +137,12 @@ In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.: s.n.], 2009. v.~206, p. 29--45.}
 ISSN 0360-0300.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
 
+\bibitem[Jain e Dubes 1988]{Jain:1988:ACD:46712}
+\abntrefinfo{Jain e Dubes}{JAIN; DUBES}{1988}
+{JAIN, A.~K.; DUBES, R.~C. \emph{Algorithms for Clustering Data}. Upper Saddle
+  River, NJ, USA: Prentice-Hall, Inc., 1988.
+ISBN 0-13-022278-X.}
+
 \bibitem[Katakis, Tsoumakas e Vlahavas 2010]{Katakis:2010:TRC:1746286.1746291}
 \abntrefinfo{Katakis, Tsoumakas e Vlahavas}{KATAKIS; TSOUMAKAS; VLAHAVAS}{2010}
 {KATAKIS, I.; TSOUMAKAS, G.; VLAHAVAS, I. Tracking recurring contexts using
@@ -128,6 +151,11 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
   371--391, mar. 2010.
 ISSN 0219-1377.
 Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s10115-009-0206-2}.}
+
+\bibitem[Kaufman e Rousseeuw 1990]{kaufman:clustering1990}
+\abntrefinfo{Kaufman e Rousseeuw}{KAUFMAN; ROUSSEEUW}{1990}
+{KAUFMAN, L.; ROUSSEEUW, P. \emph{Finding Groups in Data: an introduction to
+  cluster analysis}. [S.l.]: Wiley, 1990.}
 
 \bibitem[Kolter e Maloof 2007]{Kolter:2007:DWM:1314498.1390333}
 \abntrefinfo{Kolter e Maloof}{KOLTER; MALOOF}{2007}
@@ -150,6 +178,14 @@ Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1314498.1390333}.}
 {{Lee}, Y.~K.; {Wang}, L.; {Ryu}, K.~H. A system architecture for monitoring
   sensor data stream. In:  \emph{7th IEEE International Conference on Computer
   and Information Technology (CIT 2007)}. [S.l.: s.n.], 2007. p. 1026--1031.}
+
+\bibitem[Lloyd 2006]{Lloyd:2006:LSQ:2263356.2269955}
+\abntrefinfo{Lloyd}{LLOYD}{2006}
+{LLOYD, S. Least squares quantization in pcm.
+\emph{IEEE Trans. Inf. Theor.}, IEEE Press, Piscataway, NJ, USA, v.~28, n.~2,
+  p. 129--137, set. 2006.
+ISSN 0018-9448.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TIT.1982.1056489}.}
 
 \bibitem[Minku e Yao 2012]{Minku:2012:DNE:2197077.2197204}
 \abntrefinfo{Minku e Yao}{MINKU; YAO}{2012}
