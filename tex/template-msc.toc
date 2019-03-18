@@ -5,12 +5,12 @@
 \contentsline {chapter}{Cap\'{\i }tulo~2---Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{5}
 \contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{5}
 \contentsline {section}{\numberline {2.2}Fluxos Cont\IeC {\'\i }nuos de Dados}{5}
-\contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{7}
-\contentsline {subsection}{\numberline {2.3.1}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{8}
-\contentsline {subsection}{\numberline {2.3.2}Ferramentas}{8}
-\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{8}
-\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{8}
-\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{9}
+\contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{9}
+\contentsline {subsection}{\numberline {2.3.1}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{9}
+\contentsline {subsection}{\numberline {2.3.2}Ferramentas}{9}
+\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{10}
+\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{10}
+\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{10}
 \contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{11}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{11}
 \contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{11}

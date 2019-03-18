@@ -5,6 +5,20 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.2 }
 
+\bibitem[Ackermann et al. 2012]{Ackermann:2012:SCA:2133803.2184450}
+\abntrefinfo{Ackermann et al.}{ACKERMANN et al.}{2012}
+{ACKERMANN, M.~R. et al. Streamkm++: A clustering algorithm for data streams.
+\emph{J. Exp. Algorithmics}, ACM, New York, NY, USA, v.~17, p.
+  2.4:2.1--2.4:2.30, maio 2012.
+ISSN 1084-6654.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2133803.2184450}.}
+
+\bibitem[Aggarwal 2006]{Aggarwal:2006:DSM:1196418}
+\abntrefinfo{Aggarwal}{AGGARWAL}{2006}
+{AGGARWAL, C.~C. \emph{Data Streams: Models and Algorithms (Advances in
+  Database Systems)}. Berlin, Heidelberg: Springer-Verlag, 2006.
+ISBN 0387287590.}
+
 \bibitem[Aggarwal et al. 2003]{Aggarwal:2003:FCE:1315451.1315460}
 \abntrefinfo{Aggarwal et al.}{AGGARWAL et al.}{2003}
 {AGGARWAL, C.~C. et al. A framework for clustering evolving data streams. In:
@@ -12,6 +26,15 @@
   Bases - Volume 29}. VLDB Endowment, 2003.  (VLDB '03), p. 81--92.
 ISBN 0-12-722442-4. Dispon{\'\i}vel em:
   \url{http://dl.acm.org/citation.cfm?id=1315451.1315460}.}
+
+\bibitem[Aggarwal et al. 2004]{Aggarwal:2004:DCD:1014052.1014110}
+\abntrefinfo{Aggarwal et al.}{AGGARWAL et al.}{2004}
+{AGGARWAL, C.~C. et al. On demand classification of data streams. In:
+  \emph{Proceedings of the Tenth ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining}. New York, NY, USA: ACM, 2004.  (KDD
+  '04), p. 503--508.
+ISBN 1-58113-888-1. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/1014052.1014110}.}
 
 \bibitem[Ankerst et al. 1999]{Ankerst:1999:OOP:304181.304187}
 \abntrefinfo{Ankerst et al.}{ANKERST et al.}{1999}
@@ -43,6 +66,14 @@ ISSN 1550-4786.}
   Fourth International Workshop on Knowledge Discovery from Data Streams}.
   [S.l.: s.n.], 2006.}
 
+\bibitem[Barbar\'{a} 2002]{Barbara:2002:RCD:507515.507519}
+\abntrefinfo{Barbar\'{a}}{BARBAR\'{a}}{2002}
+{BARBAR\'{a}, D. Requirements for clustering data streams.
+\emph{SIGKDD Explor. Newsl.}, ACM, New York, NY, USA, v.~3, n.~2, p. 23--27,
+  jan. 2002.
+ISSN 1931-0145.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/507515.507519}.}
+
 \bibitem[Bifet 2009]{Bifet:2009:ALM:1656274.1656287}
 \abntrefinfo{Bifet}{BIFET}{2009}
 {BIFET, A. Adaptive learning and mining for data streams and frequent patterns.
@@ -58,6 +89,14 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1656274.1656287}.}
 ISBN 978-1-61197-277-1. Dispon{\'\i}vel em:
   \url{http://dblp.uni-trier.de/db/conf/sdm/sdm2007.html\#BifetG07}.}
 
+\bibitem[Bifet et al. 2013]{Bifet:2013:EDS:2480362.2480516}
+\abntrefinfo{Bifet et al.}{BIFET et al.}{2013}
+{BIFET, A. et al. Efficient data stream classification via probabilistic
+  adaptive windows. In:  \emph{Proceedings of the 28th Annual ACM Symposium on
+  Applied Computing}. New York, NY, USA: ACM, 2013.  (SAC '13), p. 801--806.
+ISBN 978-1-4503-1656-9. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/2480362.2480516}.}
+
 \bibitem[Blum 1997]{Blum1997}
 \abntrefinfo{Blum}{BLUM}{1997}
 {BLUM, A. Empirical support for winnow and weighted-majority algorithms:
@@ -65,6 +104,11 @@ ISBN 978-1-61197-277-1. Dispon{\'\i}vel em:
 \emph{Machine Learning}, v.~26, n.~1, p. 5--23, Jan 1997.
 ISSN 1573-0565.
 Dispon{\'\i}vel em: \url{https://doi.org/10.1023/A:1007335615132}.}
+
+\bibitem[Breiman et al. 1984]{Breiman:Classification_Regression_Trees}
+\abntrefinfo{Breiman et al.}{BREIMAN et al.}{1984}
+{BREIMAN, L. et al. \emph{Classification and Regression Trees}. Monterey, CA:
+  Wadsworth and Brooks, 1984.}
 
 \bibitem[Brzezi{\'{n}}ski e Stefanowski 2011]{AUE}
 \abntrefinfo{Brzezi{\'{n}}ski e Stefanowski}{BRZEZI{\'{N}}SKI;
@@ -75,6 +119,13 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1023/A:1007335615132}.}
   Berlin, Heidelberg: Springer Berlin Heidelberg, 2011. p. 155--163.
 ISBN 978-3-642-21222-2.}
 
+\bibitem[Cao et al. 2006]{Cao:Feng:Ester}
+\abntrefinfo{Cao et al.}{CAO et al.}{2006}
+{CAO, F. et al. Density-based clustering over an evolving data stream with
+  noise. In:  GHOSH, J. et al. (Ed.). \emph{SDM}. SIAM, 2006. p. 328--339.
+ISBN 978-1-61197-276-4. Dispon{\'\i}vel em:
+  \url{http://dblp.uni-trier.de/db/conf/sdm/sdm2006.html\#CaoEQZ06}.}
+
 \bibitem[Costa, Rios e Mello 2016]{daCosta:2016:UDS:2956219.2956389}
 \abntrefinfo{Costa, Rios e Mello}{COSTA; RIOS; MELLO}{2016}
 {COSTA, F. da; RIOS, R.; MELLO, R. de. Using dynamical systems tools to detect
@@ -83,6 +134,15 @@ ISBN 978-3-642-21222-2.}
   n.~C, p. 39--50, out. 2016.
 ISSN 0957-4174.
 Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.eswa.2016.04.026}.}
+
+\bibitem[Domingos e Hulten 2000]{Domingos:2000:MHD:347090.347107}
+\abntrefinfo{Domingos e Hulten}{DOMINGOS; HULTEN}{2000}
+{DOMINGOS, P.; HULTEN, G. Mining high-speed data streams. In:
+  \emph{Proceedings of the Sixth ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining}. New York, NY, USA: ACM, 2000.  (KDD
+  '00), p. 71--80.
+ISBN 1-58113-233-6. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/347090.347107}.}
 
 \bibitem[Ester et al. 1996]{Ester:1996:DAD:3001460.3001507}
 \abntrefinfo{Ester et al.}{ESTER et al.}{1996}
@@ -129,6 +189,15 @@ ISBN 3-540-23237-0. Dispon{\'\i}vel em:
 {GAMA, J.; RODRIGUES, P. An overview on mining data streams.
 In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.: s.n.], 2009. v.~206, p. 29--45.}
 
+\bibitem[Gama, Rocha e Medas 2003]{Gama:2003:ADT:956750.956813}
+\abntrefinfo{Gama, Rocha e Medas}{GAMA; ROCHA; MEDAS}{2003}
+{GAMA, J.~a.; ROCHA, R.; MEDAS, P. Accurate decision trees for mining
+  high-speed data streams. In:  \emph{Proceedings of the Ninth ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining}. New York,
+  NY, USA: ACM, 2003.  (KDD '03), p. 523--528.
+ISBN 1-58113-737-0. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/956750.956813}.}
+
 \bibitem[Gama et al. 2014]{Gama:2014:SCD:2597757.2523813}
 \abntrefinfo{Gama et al.}{GAMA et al.}{2014}
 {GAMA, J.~a. et al. A survey on concept drift adaptation.
@@ -136,6 +205,22 @@ In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.: s.n.], 2009. v.~206, p. 29--45.}
   mar. 2014.
 ISSN 0360-0300.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
+
+\bibitem[Guha et al. 2003]{Guha:2003:CDS:776752.776777}
+\abntrefinfo{Guha et al.}{GUHA et al.}{2003}
+{GUHA, S. et al. Clustering data streams: Theory and practice.
+\emph{IEEE Trans. on Knowl. and Data Eng.}, IEEE Educational Activities
+  Department, Piscataway, NJ, USA, v.~15, n.~3, p. 515--528, mar. 2003.
+ISSN 1041-4347.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2003.1198387}.}
+
+\bibitem[Guha et al. 2000]{Guha:2000:CDS:795666.796588}
+\abntrefinfo{Guha et al.}{GUHA et al.}{2000}
+{GUHA, S. et al. Clustering data streams. In:  \emph{Proceedings of the 41st
+  Annual Symposium on Foundations of Computer Science}. Washington, DC, USA:
+  IEEE Computer Society, 2000.  (FOCS '00), p. 359--.
+ISBN 0-7695-0850-2. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=795666.796588}.}
 
 \bibitem[Jain e Dubes 1988]{Jain:1988:ACD:46712}
 \abntrefinfo{Jain e Dubes}{JAIN; DUBES}{1988}
@@ -157,6 +242,12 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s10115-009-0206-2}.}
 {KAUFMAN, L.; ROUSSEEUW, P. \emph{Finding Groups in Data: an introduction to
   cluster analysis}. [S.l.]: Wiley, 1990.}
 
+\bibitem[Khalilian e Mustapha 2010]{Khalilian:DBLP:journals/corr/abs-1006-5261}
+\abntrefinfo{Khalilian e Mustapha}{KHALILIAN; MUSTAPHA}{2010}
+{KHALILIAN, M.; MUSTAPHA, N. Data stream clustering: Challenges and issues.
+\emph{CoRR}, abs/1006.5261, 2010.
+Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1006.5261}.}
+
 \bibitem[Kolter e Maloof 2007]{Kolter:2007:DWM:1314498.1390333}
 \abntrefinfo{Kolter e Maloof}{KOLTER; MALOOF}{2007}
 {KOLTER, J.~Z.; MALOOF, M.~A. Dynamic weighted majority: An ensemble method for
@@ -164,6 +255,15 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s10115-009-0206-2}.}
 \emph{J. Mach. Learn. Res.}, JMLR.org, v.~8, p. 2755--2790, dez. 2007.
 ISSN 1532-4435.
 Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1314498.1390333}.}
+
+\bibitem[Kranen et al. 2011]{Kranen:2011:CIM:2134350.2134352}
+\abntrefinfo{Kranen et al.}{KRANEN et al.}{2011}
+{KRANEN, P. et al. The clustree: Indexing micro-clusters for anytime stream
+  mining.
+\emph{Knowl. Inf. Syst.}, Springer-Verlag New York, Inc., New York, NY, USA,
+  v.~29, n.~2, p. 249--272, nov. 2011.
+ISSN 0219-1377.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1007/s10115-010-0342-8}.}
 
 \bibitem[Lane e Brodley 1998]{Lane:1998:AOL:3000292.3000339}
 \abntrefinfo{Lane e Brodley}{LANE; BRODLEY}{1998}
@@ -178,6 +278,12 @@ Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1314498.1390333}.}
 {{Lee}, Y.~K.; {Wang}, L.; {Ryu}, K.~H. A system architecture for monitoring
   sensor data stream. In:  \emph{7th IEEE International Conference on Computer
   and Information Technology (CIT 2007)}. [S.l.: s.n.], 2007. p. 1026--1031.}
+
+\bibitem[Ling, Ling-Jun e Li 2009]{Chen:Tu}
+\abntrefinfo{Ling, Ling-Jun e Li}{LING; LING-JUN; LI}{2009}
+{LING, C.; LING-JUN, Z.; LI, T. Stream data classification using improved
+  fisher discriminate analysis.
+\emph{Journal of Computers}, 01 2009.}
 
 \bibitem[Lloyd 2006]{Lloyd:2006:LSQ:2263356.2269955}
 \abntrefinfo{Lloyd}{LLOYD}{2006}
@@ -282,6 +388,20 @@ ISBN 978-3-642-23856-7. Dispon{\'\i}vel em:
   Computing}. New York, NY, USA: ACM, 2007.  (SAC '07), p. 448--452.
 ISBN 1-59593-480-4. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/1244002.1244107}.}
+
+\bibitem[Vapnik 1998]{Vapnik1998}
+\abntrefinfo{Vapnik}{VAPNIK}{1998}
+{VAPNIK, V.~N. \emph{Statistical Learning Theory}. [S.l.]: Wiley-Interscience,
+  1998.}
+
+\bibitem[Wang et al. 2003]{Wang:2003:MCD:956750.956778}
+\abntrefinfo{Wang et al.}{WANG et al.}{2003}
+{WANG, H. et al. Mining concept-drifting data streams using ensemble
+  classifiers. In:  \emph{Proceedings of the Ninth ACM SIGKDD International
+  Conference on Knowledge Discovery and Data Mining}. New York, NY, USA: ACM,
+  2003.  (KDD '03), p. 226--235.
+ISBN 1-58113-737-0. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/956750.956778}.}
 
 \bibitem[Zwolenski e Weatherill 2014]{idc_report}
 \abntrefinfo{Zwolenski e Weatherill}{ZWOLENSKI; WEATHERILL}{2014}
