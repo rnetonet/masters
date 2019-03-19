@@ -144,6 +144,12 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.eswa.2016.04.026}.}
 ISBN 1-58113-233-6. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/347090.347107}.}
 
+\bibitem[Duda, Hart e Stork 2000]{Duda:2000:PC:954544}
+\abntrefinfo{Duda, Hart e Stork}{DUDA; HART; STORK}{2000}
+{DUDA, R.~O.; HART, P.~E.; STORK, D.~G. \emph{Pattern Classification (2Nd
+  Edition)}. New York, NY, USA: Wiley-Interscience, 2000.
+ISBN 0471056693.}
+
 \bibitem[Ester et al. 1996]{Ester:1996:DAD:3001460.3001507}
 \abntrefinfo{Ester et al.}{ESTER et al.}{1996}
 {ESTER, M. et al. A density-based algorithm for discovering clusters a
@@ -206,14 +212,11 @@ ISBN 1-58113-737-0. Dispon{\'\i}vel em:
 ISSN 0360-0300.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
 
-\bibitem[Gholipour, Hosseini e Beigy 2013]{Gholipour:2013:ART:2480362.2480519}
-\abntrefinfo{Gholipour, Hosseini e Beigy}{GHOLIPOUR; HOSSEINI; BEIGY}{2013}
-{GHOLIPOUR, A.; HOSSEINI, M.~J.; BEIGY, H. An adaptive regression tree for
-  non-stationary data streams. In:  \emph{Proceedings of the 28th Annual ACM
-  Symposium on Applied Computing}. New York, NY, USA: ACM, 2013.  (SAC '13), p.
-  815--817.
-ISBN 978-1-4503-1656-9. Dispon{\'\i}vel em:
-  \url{http://doi.acm.org/10.1145/2480362.2480519}.}
+\bibitem[Gao et al. 2007]{Gao:2007}
+\abntrefinfo{Gao et al.}{GAO et al.}{2007}
+{GAO, J. et al. A general framework for mining concept-drifting data streams
+  with skewed distributions. In:  \emph{{SDM}}. [S.l.]: {SIAM}, 2007. p.
+  3--14.}
 
 \bibitem[Guha et al. 2003]{Guha:2003:CDS:776752.776777}
 \abntrefinfo{Guha et al.}{GUHA et al.}{2003}
@@ -363,6 +366,13 @@ ISBN 978-3-642-35542-4.}
 ISBN 978-3-662-44844-1. Dispon{\'\i}vel em:
   \url{https://doi.org/10.1007/978-3-662-44845-8\_12}.}
 
+\bibitem[Schlimmer e Granger 1986]{Schlimmer1986}
+\abntrefinfo{Schlimmer e Granger}{SCHLIMMER; GRANGER}{1986}
+{SCHLIMMER, J.~C.; GRANGER, R.~H. Incremental learning from noisy data.
+\emph{Machine Learning}, v.~1, n.~3, p. 317--354, Sep 1986.
+ISSN 1573-0565.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007/BF00116895}.}
+
 \bibitem[Sebasti{\~a}o et al. 2010]{FCWM}
 \abntrefinfo{Sebasti{\~a}o et al.}{SEBASTI{\~A}O et al.}{2010}
 {SEBASTI{\~A}O, R. et al. Monitoring incremental histogram distribution for
@@ -411,6 +421,21 @@ ISBN 1-59593-480-4. Dispon{\'\i}vel em:
   2003.  (KDD '03), p. 226--235.
 ISBN 1-58113-737-0. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/956750.956778}.}
+
+\bibitem[Widmer e Kubat 1996]{Widmer:1996:LPC:226791.226798}
+\abntrefinfo{Widmer e Kubat}{WIDMER; KUBAT}{1996}
+{WIDMER, G.; KUBAT, M. Learning in the presence of concept drift and hidden
+  contexts.
+\emph{Mach. Learn.}, Kluwer Academic Publishers, Hingham, MA, USA, v.~23, n.~1,
+  p. 69--101, abr. 1996.
+ISSN 0885-6125.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1023/A:1018046501280}.}
+
+\bibitem[Zliobaite 2010]{Zliobaite:2010}
+\abntrefinfo{Zliobaite}{ZLIOBAITE}{2010}
+{ZLIOBAITE, I. Learning under concept drift: an overview.
+\emph{CoRR}, abs/1010.4784, 2010.
+Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1010.4784}.}
 
 \bibitem[Zwolenski e Weatherill 2014]{idc_report}
 \abntrefinfo{Zwolenski e Weatherill}{ZWOLENSKI; WEATHERILL}{2014}

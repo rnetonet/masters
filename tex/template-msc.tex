@@ -47,6 +47,9 @@
 \usepackage{acronym}
 \usepackage{float}
 \usepackage{todonotes}
+\usepackage{amssymb}
+
+
 \presetkeys%
     {todonotes}%
     {inline,backgroundcolor=yellow}{}
@@ -483,16 +486,116 @@ Na próxima seção, a ideia de mudança de conceito será aprofundada.
 
 \section{Mudança de Conceito}
 
-Na maioria das aplicações reais é esperado que o comportamento dos dados mude com o passar do tempo.
-Entretanto, muitas vezes, tais mudanças são provocadas por exemplos desconhecidos pelos algoritmos (\textit{hidden context}) \cite{Gama:2014:SCD:2597757.2523813}.
-Nestes casos, os algoritmos apresentam dificuldade de percepção e adequação a essas mudanças.
+Em ambientes não estacionários, a distribuição subjacente dos dados pode mudar ao longo do tempo, levando ao fenômeno de mudança de conceito \cite{Schlimmer1986}.
+Por exemplo, podemos considerar como mudança de conceito quando uma pessoa passa a preferir um novo gênero cinematográfico.
+Como consequência desta mudança, modelos de decisão relacionados podem ter sua acurácia reduzida, podendo, inclusive, tornarem-se obsoletos.
 
-Este tipo de mudança de comportamento é conhecida como mudança de conceito (\textit{concept drift}).
-No contexto de AM, considerando os algoritmos de classificação, podemos entender um conceito como uma função que mapeia atributos de exemplos à uma determinada classe \cite{Aggarwal:2004:DCD:1014052.1014110}.
-Estas mudanças dificultam a tarefa de aprendizagem \cite{Gama:2014:SCD:2597757.2523813} e representam um dos maiores desafios para classificação em fluxos contínuos de dados \cite{Gholipour:2013:ART:2480362.2480519}.
+A Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} é comumente aplicada para descrever o problema de classificação baseado 
+nas probabilidades a priori das classes, $p(y)$, e na função de densidade de probabilidade condicionada às classes, $p(X|y)$, para todo 
+$y \in {c_1, ..., c_k}$, onde $c_1, ..., c_k$ é o conjunto de classes \cite{Zliobaite:2010, Gama:2014:SCD:2597757.2523813}.
+Conforme a teoria bayesiana, a classificação de uma instância $X$ é definida com base na máxima probabilidade a posteriori.
+A máxima probabilidade a posteriori para uma instância $X$ em relação a uma classe $c_i$ pode ser calculada através da fórmula \ref{eq:1}:
 
+\begin{equation} \label{eq:1}
+p(c_i|X) = \frac{p(c_i) * p(X|c_i)}{p(X)}
+\end{equation}
 
+Sendo assim, um \textbf{conceito} pode ser definido como um conjunto de probabilidades a priori e condicionais das classes, como mostra a equação \ref{eq:2}:
 
+\begin{equation} \label{eq:2}
+    S = \{(P(c_1), P(X|c_1)), (P(c_2), P(X|c_2)), ..., (P(c_k), P(X|c_k))\}
+\end{equation}
+
+Formalmente, pode-se afirmar que houve mudança de conceito entre os instantes $t_0$ e $t_1$ se:
+
+\begin{equation} \label{eq:3}
+    {\exists}X : p_{t_0}(X, y) \ne p_{t_1}(X, y)
+\end{equation}
+
+onde, $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
+para $X$ e $y$ \cite{Gama:2014:SCD:2597757.2523813}.
+
+A equação \ref{eq:2} pode ser utilizada para caracterizar as mudanças na distribuição dos dados \cite{Gao:2007, Gama:2014:SCD:2597757.2523813}, do seguinte modo:
+
+\begin{itemize}
+    \item Mudanças podem ocorrer na probabilidade a priori $p(y)$,
+    \item Mudanças podem ocorrer na função de densidade de probabilidade condicionada às classes $p(X|y)$,
+    \item Mudanças podem ocorrer na probabilidade a posteriori $p(y|X)$, afetando os limites de classificação.
+\end{itemize}
+
+Segundo \cite{Widmer:1996:LPC:226791.226798}, alterações na distribuição dos dados podem ser categorizadas em dois grupos:
+mudanças de conceito reais e mudanças de conceito virtuais.
+Estes tipos de mudança foram formalizados por \cite{Zliobaite:2010, Gama:2014:SCD:2597757.2523813}:
+
+\begin{enumerate}
+    \item Mudanças de conceito virtuais tratam de mudanças em $p(X)$ e, consequentemente, em $p(X|y)$,
+    contudo, estas mudanças não têm impacto no conceito alvo (representado na Figura \ref{fig:real_and_virtual_concept_drift} (b)).
+    \item Mudanças de conceito reais referem-se a mudanças na relação $p(y|X)$ e afetam o conceito alvo (representado na Figura \ref{fig:real_and_virtual_concept_drift} (c)).
+\end{enumerate}
+
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[scale=0.8]{imagens/concept_drift.png}
+    \caption{Mudança de Conceito Virtual vs. Mudança de Conceito Real}
+    \label{fig:real_and_virtual_concept_drift}
+\end{center}
+\end{figure}
+
+Em \cite{Gama:2014:SCD:2597757.2523813}, o seguinte cenário é utilizado para explicar a diferença entre uma mudança de conceito real e uma virtual.
+Considere um fluxo \textit{online} de anúncios do setor imobiliário.
+Um usuário deseja classificar estes anúncios em relevantes e não relevantes.
+Suponha, que à época, o usuário está buscando um novo apartamento. 
+Isto torna anúncios de apartamentos residenciais relevantes, e anúncios de casa de férias irrelevantes.
+Se o autor dos anúncios é alterado, o estilo de escrita sofre mudanças, mas os apartamentos permanecem relevantes para o usuário.
+Este cenário corresponde a uma mudança de conceito virtual.
+Considere que devido a uma crise, mais anúncios de apartamentos e menos de casas de férias aparecem, mas o editor dos anúncios permanece o mesmo.
+Esta situação corresponde a uma mudança na probabilidade das classes.
+Em outro cenário, assuma que o usuário acabou de comprar um apartamento e está em busca de um local para passar as férias.
+Neste contexto, apartamentos tornaram-se irrelevantes e casas de férias, relevantes.
+Apesar do editor dos anúncios e das probabilidades anteriores das classes permanecerem as mesmas, este cenário corresponde a uma mudança de conceito real.
+
+Considerando apenas a perspectiva de predição, adaptações no modelo são necessárias apenas quando mudanças de conceito reais ocorrem, 
+pois os limites de decisão do modelo corrente estão obsoletos em relação aos novos exemplos \cite{Gama:2014:SCD:2597757.2523813}.
+Adaptação, neste contexto, significa atualizar o modelo de decisão perante a nova distribuição dos dados a fim de manter uma alta acurácia.
+
+Mudanças de conceito podem se apresentar sob diferentes padrões.
+Conforme ilustrado em \ref{fig:concept_drift_patterns}, mudanças de conceito podem ocorrer de forma abrupta, gradual, incremental ou recorrente.
+ 
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[scale=0.80]{imagens/concept_drift_patterns.png}
+    \caption{Padrões de ocorrência de Mudanças de Conceito}
+    \label{fig:concept_drift_patterns}
+\end{center}
+\end{figure}
+
+Mudanças de conceito abruptas são alterações súbitas entre conceitos, como descrito na Figura \ref{fig:concept_drift_patterns} (a).
+Por exemplo, o gênero literário de João pode subitamente mudar de ficção científica para auto-ajuda.
+Outro exemplo, é a troca de um sensor por outro com diferente calibração, em uma planta industrial química \cite{Gama:2014:SCD:2597757.2523813}. 
+
+Em constrate com a mudança de conceito abrupta, a mudança de conceito gradual significa uma transição mais lenta de um conceito para outro.
+Isto é, durante a transição, são percebidos exemplos de ambos os conceitos.
+Por exemplo, João, ao invés de subitamente passar a preferir livros de auto-ajuda, adquire interesse nestes ao longo do tempo.
+Isto significa que João ainda tem interesse em livros de ficção científica, mas desenvolve, em paralelo, um crescente interesse por livros de auto-ajuda, que se tornará predominante.
+A mudança de conceito gradual está representada na Figura \ref{fig:concept_drift_patterns} (b).
+
+Mudanças de conceito incrementais apresentam diversos conceitos intermediários durante a transição de um conceito para outro.
+No exemplo de João, é como se o seu interesse literário variasse de ficção científica para ficção científica e aventura, 
+de ficção científica e aventura para aventura e suspense, de aventura e suspense para suspense a auto-ajuda, e finalmente de suspense e auto-ajuda para apenas auto-ajuda.
+Considerando a planta industrial química e os sensores, seria como se um sensor perdesse precisão ao longo do tempo. 
+A Figura \ref{fig:concept_drift_patterns} (c) demonstra a mudança de conceito incremental. 
+
+Existe ainda outro padrão, denominado mudança de conceito recorrente \cite{Zliobaite:2010}. 
+Conforme apresentado na Figura \ref{fig:concept_drift_patterns} (d), a mudança de conceito recorrente existe quando um conceito previamente ativo, 
+reaparece após determinado período de tempo.
+De volta a nosso exemplo, João está atualmente interessado em livros de ficção científica.
+Contudo, ele é presenteado com uma série de livros de auto-ajuda de um renomado autor brasileiro.
+Após ler toda a série, João é premiado com descontos para livros de ficção científica.
+Ele, volta, então, a ler livros de ficção científica comprados com os descontos recebidos.
+
+Um dos principais desafios para as técnicas de detecção de mudança de conceito é conseguir diferenciar mudanças de conceito reais de \textit{outliers} ou ruídos.
+Esta diferenciação é relevante, pois nenhuma adaptação do modelo é necessária quando um \textit{outlier} ou ruído é detectado em um fluxo de dados \cite{Gama:2014:SCD:2597757.2523813}.
+Para evitar alarmes falsos, métodos para detecção de \textit{outliers} e ruídos podem ser utilizados em conjunto com os métodos de detecção de mudança de conceito.
 
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
