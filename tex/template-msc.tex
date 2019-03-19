@@ -332,9 +332,9 @@ Ao fim do capítulo, elencamos os trabalhos relacionados encontrados na literatu
 Os avanços em hardware e software dos últimos anos possibilitaram a aquisição de dados em larga escala \cite{Aggarwal:2003:FCE:1315451.1315460}.
 Muitos desses dados são adquiridos através de sequências contínuas, potencialmente infinitas e de alta frequência, 
 denominadas \textbf{Fluxos Contínuos de Dados} (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
-Consequentemente, o interesse de pesquisa para gerenciamento desses tipos de fluxos tem crescido.
+Consequentemente, o interesse de pesquisa nesta área tem crescido bastante.
 Entretanto, lidar com sequências dessa natureza impõe desafios aos pesquisadores, sobretudo limitações de tempo de execução e recursos computacionais.
-
+ 
 Conforme \cite{Babcock:2002:MID:543613.543615} as principais diferenças de FCDs para os dados convencionais são:
 \begin{itemize}
     \item Possuem tamanho ilimitado;
@@ -411,7 +411,7 @@ PAM \cite{kaufman:clustering1990} e
 OPTICS \cite{Ankerst:1999:OOP:304181.304187}.
 
 Segundo \cite{Gama:2010:KDD:1855075}, a principal dificuldade na aplicação de técnicas de agrupamentos em FCDs é 
-a manutenção da qualidade do agrupamento e a consistência em relação à sequência de dados observados, utilizando pouca memória e tempo de processamento. 
+a manutenção da qualidade e consistência do agrupamento em relação à sequência de dados observados, utilizando pouca memória e tempo de processamento. 
 Estes desafios surgem, pois os dados são recebidos de forma contínua e as respostas precisam ser obtidas em tempo hábil.
 
 Essas características fazem com que os algoritmos de agrupamentos aplicados em FCDs precisem ser incrementais, mantendo estruturas de grupos que evoluam ao longo do tempo.
@@ -433,8 +433,7 @@ Além disso, por varrerem os dados de forma única, não é possível formar agr
 Outros problemas para realização de agrupamentos em FCDs são a influência de ruídos e o fato das mudanças de conceito poderem ser abruptas ou graduais \cite{Khalilian:DBLP:journals/corr/abs-1006-5261}.
 
 De acordo com \cite{Chen:Tu}, 
-alguns algoritmos de \textit{clustering} em FCD atuam sobre uma projeção contínua do agrupamento de dados estáticos, 
-por exemplo \cite{Guha:2003:CDS:776752.776777}.
+parte dos algoritmos de \textit{clustering} em FCD atuam sobre uma projeção contínua do agrupamento de dados, por exemplo \cite{Guha:2003:CDS:776752.776777}.
 Esses algoritmos utilizam a estratégia de divisão e conquista, particionando a FCD em segmentos e 
 formando grupos através da aplicação de algoritmos baseados no K-Means em um espaço delimitado \cite{Guha:2000:CDS:795666.796588}.
 Esta técnica apresenta como limitação não conseguir capturar características que evoluem ao longo do fluxo, 
@@ -450,7 +449,7 @@ D-Stream \cite{Chen:Tu} e ClusTree \cite{Kranen:2011:CIM:2134350.2134352}.
 De forma similar, os problemas de classificação continuam sendo ativamente estudados.
 Técnicas de classificação fazem parte do conjunto de algoritmos supervisionados.
 Estes algoritmos realizam a predição de uma variável utilizando um modelo de decisão criado a partir de uma base de treinamento.
-Se a variável a ser predita é categórica, temos um problema de classificação.
+Se a variável a ser predita é categórica, entende-se como um problema de classificação.
 Se a predição resulta em um valor numérico, trata-se de um problema de regressão.
 No processo de classificação, o primeiro passo é a construção de um modelo de decisão, baseado no conjunto de treinamento.
 Este modelo é avaliado utilizando um base de testes e, se adequado, então aplicado na predição de novos exemplos.
@@ -465,7 +464,7 @@ Além disso, também assumem que todos os dados estão disponíveis em memória 
 Assim, essas técnicas precisam ser repensadas para atenderem as características dos FCDs.
 
 Conforme \cite{Chen:Tu}, o problema de classificação em FCD considera que o FCD é uma sequência de exemplos e que cada exemplo está associado a um rótulo de valor discreto.
-Este rótulo indica a classe que o exemplo pertence.
+Este rótulo indica a classe a qual o exemplo pertence.
 O objetivo, portanto, da classificação em FCD é predizer com acurácia a classe dos exemplos desconhecidos, que chegam de forma contínua através da FCD.
 
 Nos últimos anos, muitos algoritmos de classificação para FCDs foram propostos 
