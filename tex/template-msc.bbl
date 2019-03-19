@@ -206,6 +206,15 @@ ISBN 1-58113-737-0. Dispon{\'\i}vel em:
 ISSN 0360-0300.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
 
+\bibitem[Gholipour, Hosseini e Beigy 2013]{Gholipour:2013:ART:2480362.2480519}
+\abntrefinfo{Gholipour, Hosseini e Beigy}{GHOLIPOUR; HOSSEINI; BEIGY}{2013}
+{GHOLIPOUR, A.; HOSSEINI, M.~J.; BEIGY, H. An adaptive regression tree for
+  non-stationary data streams. In:  \emph{Proceedings of the 28th Annual ACM
+  Symposium on Applied Computing}. New York, NY, USA: ACM, 2013.  (SAC '13), p.
+  815--817.
+ISBN 978-1-4503-1656-9. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/2480362.2480519}.}
+
 \bibitem[Guha et al. 2003]{Guha:2003:CDS:776752.776777}
 \abntrefinfo{Guha et al.}{GUHA et al.}{2003}
 {GUHA, S. et al. Clustering data streams: Theory and practice.
