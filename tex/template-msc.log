@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  20 MAR 2019 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  20 MAR 2019 19:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1234,33 +1234,88 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 \c@blind@randommax=\count332
 \c@blind@pangramcount=\count333
 \c@blind@pangrammax=\count334
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen291
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.5)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2013/09/11 v3.0.1a (rcs-revision 1.6)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.callouts.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.callouts.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
+\pgfnodepartlowerbox=\box61
+\pgfnodeparttwobox=\box62
+\pgfnodepartthreebox=\box63
+\pgfnodepartfourbox=\box64
+\pgfnodeparttwentybox=\box65
+\pgfnodepartnineteenbox=\box66
+\pgfnodeparteighteenbox=\box67
+\pgfnodepartseventeenbox=\box68
+\pgfnodepartsixteenbox=\box69
+\pgfnodepartfifteenbox=\box70
+\pgfnodepartfourteenbox=\box71
+\pgfnodepartthirteenbox=\box72
+\pgfnodeparttwelvebox=\box73
+\pgfnodepartelevenbox=\box74
+\pgfnodeparttenbox=\box75
+\pgfnodepartninebox=\box76
+\pgfnodeparteightbox=\box77
+\pgfnodepartsevenbox=\box78
+\pgfnodepartsixbox=\box79
+\pgfnodepartfivebox=\box80
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshadows.code.tex
+File: tikzlibraryshadows.code.tex 2008/01/13 v3.0.1a (rcs-revision 1.3)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2009/11/15 v3.0.1a (rcs-revision 1.2)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings.code.tex
+File: pgflibraryfadings.code.tex 2008/02/07 v3.0.1a (rcs-revision 1.3)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
+File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 ) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
 \openout1 = `template-msc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count335
-\scratchdimen=\dimen291
-\scratchbox=\box61
+\scratchdimen=\dimen292
+\scratchbox=\box81
 \nofMPsegments=\count336
 \nofMParguments=\count337
 \everyMPshowfont=\toks51
 \MPscratchCnt=\count338
-\MPscratchDim=\dimen292
+\MPscratchDim=\dimen293
 \MPnumerator=\count339
 \makeMPintoPDFobject=\count340
 \everyMPtoPDFconversion=\toks52
@@ -1304,7 +1359,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 110.
+(lastpage)             ! on input line 111.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1342,18 +1397,18 @@ Package lastpage Info: Please have a look at the pageslts package at
 
 \c@lstlisting=\count341
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 110.
+LaTeX Info: Redefining \selectfont on input line 111.
  ABD: EveryShipout initializing macros
-<ufba.pdf, id=4, 290.08376pt x 446.66875pt>
+<ufba.pdf, id=29, 290.08376pt x 446.66875pt>
 File: ufba.pdf Graphic file (type pdf)
 <use ufba.pdf>
-Package pdftex.def Info: ufba.pdf  used on input line 112.
+Package pdftex.def Info: ufba.pdf  used on input line 113.
 (pdftex.def)             Requested size: 56.9055pt x 87.62144pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 112.
+LaTeX Font Info:    Try loading font information for U+msa on input line 113.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 112.
+LaTeX Font Info:    Try loading font information for U+msb on input line 113.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -1362,7 +1417,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/rnetonet/Workspace/pgcomp_qualificacao/tex/ufba.pdf>] [2
 
 ]
-Underfull \hbox (badness 2922) in paragraph at lines 117--117
+Underfull \hbox (badness 2922) in paragraph at lines 118--118
 \OT1/cmr/m/n/14.4 Gradua^^Xc~ao em Ci^encia da Com-
  []
 
@@ -1371,7 +1426,7 @@ Underfull \hbox (badness 2922) in paragraph at lines 117--117
 ] [2]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 171.
+(blindtext)                 on input line 172.
 
 [3
 
@@ -1380,7 +1435,7 @@ Package blindtext Warning: brazil not defined, using English instead.
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 180.
+(blindtext)                 on input line 181.
 
 [5] [6
 
@@ -1404,7 +1459,7 @@ Package blindtext Warning: brazil not defined, using English instead.
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 216.
+Package xcolor Warning: Incompatible color definition on input line 217.
 
 [1
 
@@ -1412,121 +1467,126 @@ Package xcolor Warning: Incompatible color definition on input line 216.
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 324.
+Package xcolor Warning: Incompatible color definition on input line 325.
 
 [5] [6] [7] [8] [9]
-<imagens/concept_drift.png, id=95, 557.08125pt x 206.27063pt>
+<imagens/concept_drift.png, id=119, 557.08125pt x 206.27063pt>
 File: imagens/concept_drift.png Graphic file (type png)
 <use imagens/concept_drift.png>
-Package pdftex.def Info: imagens/concept_drift.png  used on input line 537.
+Package pdftex.def Info: imagens/concept_drift.png  used on input line 538.
 (pdftex.def)             Requested size: 445.6656pt x 165.01671pt.
  [10 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift.png>]
-<imagens/concept_drift_patterns.png, id=102, 565.36218pt x 207.02344pt>
+<imagens/concept_drift_patterns.png, id=126, 565.36218pt x 207.02344pt>
 File: imagens/concept_drift_patterns.png Graphic file (type png)
 <use imagens/concept_drift_patterns.png>
-Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 565.
+Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 566.
 (pdftex.def)             Requested size: 452.29036pt x 165.61896pt.
  [11 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift_patterns.png>]
-Overfull \hbox (0.68716pt too wide) in paragraph at lines 587--594
+Overfull \hbox (0.68716pt too wide) in paragraph at lines 588--595
 []\OT1/cmr/m/n/12 Existe ainda ou-tro padr~ao, de-no-mi-nado mu-dan^^Xca de con-ceito re-cor-rente (ZLI-O-BAITE,
  []
 
 
-Overfull \hbox (1.02664pt too wide) in paragraph at lines 603--613
-[][] 
+Overfull \hbox (1.02664pt too wide) in alignment at lines 613--613
+[][][][][] 
  []
 
-[12]
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 645.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 648.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 651.
-
-[13]
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 654.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 657.
+[12] [13]
+Overfull \hbox (6.56206pt too wide) in paragraph at lines 701--710
+[]\OT1/cmr/m/n/12 Monitoram di-re-ta-mente a dis-tri-bui^^Xc~ao
+ []
 
 [14]
 
-Package xcolor Warning: Incompatible color definition on input line 658.
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 731.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 661.
+(blindtext)                 on input line 734.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 664.
+(blindtext)                 on input line 737.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 667.
+(blindtext)                 on input line 740.
 
-[15
-
-]
+[15]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 670.
+(blindtext)                 on input line 743.
 
 [16]
 
-Package xcolor Warning: Incompatible color definition on input line 671.
+Package xcolor Warning: Incompatible color definition on input line 744.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 674.
+(blindtext)                 on input line 747.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 677.
+(blindtext)                 on input line 750.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 680.
+(blindtext)                 on input line 753.
 
 [17
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 683.
+(blindtext)                 on input line 756.
+
+[18]
+
+Package xcolor Warning: Incompatible color definition on input line 757.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 686.
-
-[18] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [19
+(blindtext)                 on input line 760.
 
 
-] [20] [21] [22] [23]) 
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 763.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 766.
+
+[19
+
+]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 769.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 772.
+
+[20] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [21
+
+
+] [22] [23] [24] [25] [26]) 
 AED: lastpage setting LastPage
-[24] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
+[27] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
 Here is how much of TeX's memory you used:
- 27573 strings out of 492982
- 533841 string characters out of 6134895
- 668529 words of memory out of 5000000
- 30637 multiletter control sequences out of 15000+600000
+ 30209 strings out of 492982
+ 611535 string characters out of 6134895
+ 765871 words of memory out of 5000000
+ 33215 multiletter control sequences out of 15000+600000
  543844 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,10n,56p,10445b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,10n,82p,10445b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (38 pages, 609738 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (41 pages, 623665 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 228 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

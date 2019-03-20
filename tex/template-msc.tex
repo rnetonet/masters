@@ -50,13 +50,14 @@
 \usepackage{amssymb}
 \usepackage{placeins}
 
-
 \presetkeys%
     {todonotes}%
     {inline,backgroundcolor=yellow}{}
     
 \usepackage{blindtext}
 
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
 
 % Siglas
 \acrodef{AM}[AM]{{Aprendizado de Máquina}}
@@ -597,10 +598,10 @@ aprendizado de máquina, estatística e recuperação de informação \cite{Zlio
 Contudo, o mesmo conceito pode ter diferentes nomeclaturas em cada comunidade.
 Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a Mudança de Conceito para cada área de pesquisa.
 \FloatBarrier
-\begin{center}
+\begin{center} 
 \begin{table}[!ht]
 \label{tbl:taxonomy}
-\begin{tabular}{|l|l|lll}
+\begin{tabularx}{\textwidth}{|l|l|lll}
 \cline{1-2}
 \multicolumn{1}{|c|}{\textbf{Área}} & \multicolumn{1}{c|}{\textbf{Termos}}       &  &  &  \\ \cline{1-2}
 Mineração de Dados                  & Mudança de Conceito                        &  &  &  \\ \cline{1-2}
@@ -609,7 +610,7 @@ Computação Evolucionária            & Ambiente Evolutivo, Ambiente em Mudanç
 IA e Robótica                       & Ambiente Dinâmico                          &  &  &  \\ \cline{1-2}
 Estatísticas, Séries Temporais      & Não Estacionário                           &  &  &  \\ \cline{1-2}
 Recuperação de Informação           & Evolução Temporal                          &  &  &  \\ \cline{1-2}
-\end{tabular}
+\end{tabularx}
 \caption{Terminologia - Mudança de Conceito \cite{Zliobaite:2010}}
 \end{table}
 \end{center}
@@ -641,9 +642,94 @@ Na seção seguinte, serão detalhados os principais algoritmos para Detecção 
 priorizando algoritmos que não dependem de \textit{feedback} da performance preditiva (correta rotulação dos exemplos).
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
-\blindtext
+
+Os algoritmos para Detecção de Mudança de Conceito são os responsáveis pela identificação, de forma explícita, das mudanças de conceito em fluxos de dados \cite{Gama:2014:SCD:2597757.2523813}.
+Estes métodos caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorreram \cite{Basseville:1993:DAC:151741}.
+
+As técnicas propostas na literatura podem ser divididas em duas categorias, baseado na dependência ou não de dados rotulados:
+\begin{description}
+    \item[Algoritmos Explícitos/Supervisionados] Dependem da rotulação dos dados por um especialista.
+    Estes rótulos são utilizados no cálculo de métricas de performance como acurácia e taxa de erro, que são monitoradas ao longo do tempo.
+    Mudanças de conceito são sinalizadas quando o algoritmo detecta que essas métricas atingiram um limite previamente definido.
+
+    \item[Algoritmos Implícitos/Não Supervisionados] Independem da rotulação por especialistas, 
+    baseando-se em propriedades dos valores dos exemplos, para sinalizar desvios.
+    São mais propensos a alarmes falsos, mas a independência de rótulos os torna interessantes para contextos onde a obtenção de rótulos é dispendiosa, demorada ou inviável.
+\end{description}
+
+Em sua pesquisa \cite{Gama:2014:SCD:2597757.2523813} categorizou os algoritmos supervisionados em três grupos principais:
+
+\begin{description}
+    \item[Métodos Baseados em Análise Sequencial] Avaliam, de forma sequenciada, os resultados das predições conforme tornam-se disponíveis (taxa de erro).
+    Indicam a ocorrência de mudança de conceito quando um limite pré-definido é atingido.
+    Os algoritmos \textit{Cumulative Sum (CUSUM)}, \textit{PageHinkley (PH)} \cite{Page:CUSUM:PageHinkley:1954} e \textit{Geometric Moving Average (GMA)} \cite{Roberts:2000:CCT:338441.338464}
+    são representantes deste grupo.
+
+    \item[Abordagens baseadas em Estatística] Identificam mudanças de conceito através da análise de parâmetros estatísticos como média e desvio padrão para os resultados das predições.
+    Os métodos \textit{Drift Detection Method (DDM)} \cite{GamaMCR04}, 
+    \textit{Early Drift Detection Method (EDDM)} \cite{EDDM}, 
+    \textit{Exponentially Weighted Moving Average (EWMA)} \cite{Ross:2012:EWM:2076039.2076307} e 
+    \textit{Reactive Drift Detection Method (RDDM)} \cite{Barros:RDDM:2017} são exemplos deste grupo.
+
+    \item[Métodos baseados em Janelas] Geralmente, utilizam uma janela de tamanho fixo para sumarizar informações passadas e uma janela deslizante para sumarizar dados mais recentes.
+    A mudança de conceito é detectada quando há uma diferença significativa entre as distribuições das janelas.
+    Esta diferença é detectada a partir de testes estatísticos ou desigualdades matemáticas, considerando como hipótese nula a igualdade entre as distribuições.
+    Os algoritmos 
+    \textit{Adaptive Windowing (ADWIN)} \cite{BifetG07}, 
+    \textit{SeqDrift} \cite{PearsSK14:SeqDrift:2014}, 
+    \textit{HDDMA} e \textit{HDDMW} \cite{BlancoCRBDM15:HDDMA:HDDMW:2015}
+    são membros desta família.
+\end{description}
+
+Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVES20148144}:
+
+\begin{description}
+    \item[Detecção de Novidade / Métodos de Agrupamento] 
+    Utilizam a distância e/ou a densidade dos dados para detectar novos padrões.
+    O algoritmo identifica exemplos suspeitos e os atribui a uma classe \textit{Desconhecido}, indicando a necessidade de uma avaliação adicional.
+    As técnicas de agrupamento e detecção de \textit{outliers} são estratégias de implementação populares para estes algoritmos, 
+    pois sintetizam os dados correntes e aplicam medidas de dissimilaridade para identificar novos padrões \cite{Ryu:Kantardzic:2012}.
+    Os métodos 
+    \textit{OLINDDA} \cite{Spinosa:2007:OCA:1244002.1244107},
+    \textit{MINAS} \cite{Faria:2013:NDA:2480362.2480515},
+    \textit{Woo} \cite{Ryu:Kantardzic:2012},
+    \textit{DETECTNOD} \cite{Hashemi:Hayat:DETECTNOD:2010},
+    \textit{ECSMiner} \cite{Masud:2011:CNC:1978259.1978529} e
+    \textit{GC3} \cite{Sethi2016b:GC3} fazem parte deste grupo.
+    
+    \item[Monitoramento de distribuição multivariada]
+    Monitoram diretamente a distribuição dos dados, considerando cada atributo.
+    Este monitoramento é feito através de subconjuntos dos dados.
+    Um subconjunto de treinamento tem sua distribuição sumarizada e armazenada, sendo utilizada como referência.
+    A distribuição referência é comparada à distribuição do subconjunto atual, e havendo diferenças significativas, a mudança de conceito é sinalizada.
+    Os algoritmos
+    \textit{CoC} \cite{Lee:Magoules:CoC:2012},
+    \textit{HDDDM} \cite{Ditzler:Polikar:HDDDM:2011},
+    \textit{PCA-detect} \cite{Kuncheva:PCADetect:20085}
+    são representantes deste grupo.
+
+    \item[Monitoramento dependente de modelo]
+    As técnicas elencadas nos grupos anteriores monitoram desvios na distribuição dos dados, considerando cada atributo.
+    Essencialmente, esses métodos assumem que alterações na distribuição $P(X)$ implicarão mudanças na performance do classificador $P(Y|X)$.
+    Apesar de permitir a aplicação de qualquer tipo de classificador, essa presunção leva a uma maior quantidade de falsos alarmes.
+    As técnicas dependentes de modelo restringem-se aos classificadores probabilísticos e monitoram as probabilidades a posteriori destes, 
+    para detecção de mudanças de conceito \cite{Zliobaite:2010}.
+    A utilização das probabilidades a posteriori diminui a incidência de falsos alarmes e torna o processo computacionalmente eficiente, 
+    pois apenas um único fluxo univariado de valores é observado.
+    Os métodos 
+    \textit{A-distance} \cite{Dredze:ADistance:2010585},
+    \textit{CDBD} \cite{Lindstrom:CDBD:2013} e
+    \textit{Margin} \cite{Dries:Margin:2009} participam deste grupo.
+\end{description}
+
+
 
 \subsection{Ferramentas}
+
+\subsection{MOA}
+\blindtext
+
+\subsection{Tornado}
 \blindtext
 
 \section{Redes de Função de Base Radial}
