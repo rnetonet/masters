@@ -48,6 +48,7 @@
 \usepackage{float}
 \usepackage{todonotes}
 \usepackage{amssymb}
+\usepackage{placeins}
 
 
 \presetkeys%
@@ -234,7 +235,7 @@ etc.
 
 Nos últimos anos, técnicas de Aprendizado de Máquina (AM) aplicadas a fluxos contínuos de dados têm se tornado um importante tema de pesquisa.
 Nestes cenários, os algoritmos de aprendizagem devem atender a severas restrições de tempo e processamento \cite{Bifet:2009:ALM:1656274.1656287}.
-Por exemplo, um classificador deve fornecer um rótulo para um evento antes que o próximo ocorra. 
+Por exemplo, um classificador deve fornecer o rótulo para um evento antes que o próximo ocorra. 
 
 Outra dificuldade encontrada nesses ambientes é a mudança na distribuição dos dados. 
 Isto é, o contexto do processo gerador sofre alterações que impactam no fluxo produzido e, por conseguinte, as predições esperadas.
@@ -281,7 +282,7 @@ As abordagens mencionadas dependem da disponibilidade do rótulo correto para no
 Contudo, na maioria das aplicações reais, isto não é viável. 
 Assim, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem da correta rotulação de novos eventos por especialistas.
 
-Os métodos independentes de rótulos se baseiam na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
+Os métodos independentes de rótulos baseiam-se na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
 Técnicas de agrupamento e detecção de \textit{outliers} são comumente utilizadas nas implementações.
 Além destas abordagens, estratégias de sumarização dos dados e aplicação de medidas de dissimilaridade \cite{Ryu:Kantardzic:2012} também são utilizadas para identificar mudanças.
 
@@ -299,8 +300,8 @@ Com base nas observações citadas anteriormente, a seguinte hipótese foi formu
 em tempo de execução, sem requerer a manutenção de estados prévios, de forma ágil e com precisão satisfatória em relação ao estado da arte.''}
 \end{center}
 
-O objetivo deste trabalho será o desenvolvimento e validação desta hipótese.
-Para atingir este objetivo, será desenvolvido um algoritmo para detecção de mudanças de conceito baseado em Redes de Função de Base Radial. 
+O objetivo deste trabalho será o desenvolvimento e comprovação da hipótese.
+Para atingir este objetivo, será implementado um algoritmo para detecção de mudanças de conceito baseado em Redes de Função de Base Radial. 
 Este algoritmo diferencia-se por realizar a escolha dos centros de forma \textit{online}, conforme novos eventos são recepcionados, 
 e por apresentar um raio dinâmico. 
 A ativação de novos centros é usada como indicador para possíveis mudanças de conceito.
@@ -314,7 +315,7 @@ visando apresentar uma aplicação prática para a solução proposta neste trab
 
 Este trabalho está organizado conforme a seguinte estrutura: 
 O \textbf{Capítulo \ref{revisao_bibliografica}} possui uma revisão bibliográfica dos principais conceitos utilizados neste trabalho como, 
-por exemplo, fluxos contínuos de dados, mudança de conceito e redes de função de base radial; 
+por exemplo, Fluxos Contínuos de Dados e Aprendizado de Máquina, Mudança de Conceito e Redes de Função de Base Radial; 
 No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa definido é detalhado, 
 identificando a metodologia que será aplicada e o cronograma de atividades. 
 Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} 
@@ -324,13 +325,13 @@ apresenta um conjunto de experimentos preliminares e a análise dos resultados o
 \section{Considerações Iniciais}
 
 Este capítulo discute conceitos importantes dentro do contexto deste trabalho de pesquisa.
-Em primeiro momento, Fluxos Contínuos de Dados serão descritos.
+Em primeiro momento, a aplicação de técnicas de Aprendizado de Máquina a Fluxos Contínuos de Dados será descrita.
 Em seguida, será abordada a ideia de Mudança de Conceito, seus tipos e características, principais algoritmos de detecção e ferramentas.
 Posteriormente, serão detalhadas as Redes de Função de Base Radial.
 Ao fim do capítulo, elencamos os trabalhos relacionados encontrados na literatura.
 
 
-\section{Fluxos Contínuos de Dados}
+\section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
 
 Os avanços em hardware e software dos últimos anos possibilitaram a aquisição de dados em larga escala \cite{Aggarwal:2003:FCE:1315451.1315460}.
 Muitos desses dados são adquiridos através de sequências contínuas, potencialmente infinitas e de alta frequência, 
@@ -359,7 +360,7 @@ Atualmente, diversas técnicas de AM estão disponíveis, sendo aplicadas a um a
 
 Segundo \cite{Gama:2010:KDD:1855075}, a área de AM dedicou-se durante muitos anos em resolver problemas de aprendizado não-incrementais (\textit{batch}).
 Nestes cenários a distribuição dos dados é estacionária, ou seja, o conjunto de classes ou grupos possíveis não sofre modificações.
-Esta estabilidade, permite a criação de modelos de decisão e grupamentos que se mantêm ao longo do tempo.
+Esta estabilidade permite a criação de modelos de decisão e grupamentos que se mantêm ao longo do tempo.
 
 Contudo, os principais cenários da indústria e pesquisa que envolvem FCDs são dinâmicos.
 Nestes cenários, os dados fluem de forma contínua, 
@@ -401,8 +402,7 @@ Algoritmos de aprendizado de máquina clássicos utilizam técnicas como agrupam
 A partir destas metodologias, novos algoritmos foram desenvolvidos para trabalhar com FCDs.
 
 A organização de dados em grupos é uma das formas mais fundamentais de compreensão e aprendizagem \cite{Jain:1988:ACD:46712}.
-Agrupamento é a tarefa de associar objetos conforme suas similaridades.
-E tem como objetivo formar grupos com alta similaridade entre seus objetos e baixa similaridade com objetos de outros grupos.
+Agrupamento é a tarefa de associar objetos conforme suas características, objetivando formar grupos com alta similaridade entre seus objetos e baixa similaridade com objetos de outros grupos.
 Técnicas de agrupamento permitem explorar a estrutura dos dados e não exigem os pressupostos comuns à maioria dos métodos estatísticos.
 A representação criada permite verificar se os grupos estão de acordo com determinados parâmetros ou ainda sugerir novos experimentos \cite{Jain:1988:ACD:46712}.
 
@@ -449,13 +449,11 @@ StreamKM++ \cite{Ackermann:2012:SCA:2133803.2184450},
 DenStream \cite{Cao:Feng:Ester},
 D-Stream \cite{Chen:Tu} e ClusTree \cite{Kranen:2011:CIM:2134350.2134352}.
 
-De forma similar, os problemas de classificação continuam sendo ativamente estudados.
-Técnicas de classificação fazem parte do conjunto de algoritmos supervisionados.
-Estes algoritmos realizam a predição de uma variável utilizando um modelo de decisão criado a partir de uma base de treinamento.
+De forma similar, as técnicas de classificação continuam sendo ativamente estudadas.
+Estes métodos pertencem ao conjunto de algoritmos supervisionados, 
+que realizam predições para uma variável (conceito alvo) utilizando um modelo de decisão criado a partir de uma base de treinamento previamente rotulada \cite{Kotsiantis:2007:SML:1566770.1566773}.
 Se a variável a ser predita é categórica, entende-se como um problema de classificação.
 Se a predição resulta em um valor numérico, trata-se de um problema de regressão.
-No processo de classificação, o primeiro passo é a construção de um modelo de decisão, baseado no conjunto de treinamento.
-Este modelo é avaliado utilizando um base de testes e, se adequado, então aplicado na predição de novos exemplos.
 
 Muitos métodos foram propostos para a tarefa de classificação em cenários \textit{batch}:
 árvores de decisão \cite{Breiman:Classification_Regression_Trees},
@@ -477,9 +475,9 @@ No entanto, a maior parte dos algoritmos propostos requer que o rótulo correto 
 Este rótulo é utilizado na execução de novos ciclos de aprendizado, que permitem a atualização do modelo de decisão.
 Estes trabalhos também consideram que todas classes possíveis do problema já são conhecidas. 
 
-Segundo \cite{Aggarwal:2006:DSM:1196418}, o principal desafio da classificação em FCD é a mudança de conceito,
-ou seja, a evolução dos dados ao longo do tempo.
-A Detecção de Novidade (DN), ou Detecção de Mudança de Conceito, é uma tarefa de classificação aplicável a diferentes problemas práticos que envolvem FCDs.
+Segundo \cite{Aggarwal:2006:DSM:1196418}, o principal desafio para métodos de classificação aplicados a FCDs é a mudança de conceito,
+isto é, a evolução dos dados ao longo do tempo.
+A Detecção de Mudança de Conceito é uma tarefa de classificação aplicável a diferentes problemas práticos que envolvem FCDs.
 A técnica consiste em identificar exemplos (ou grupos de exemplos) que não são coerentes com o modelo de decisão vigente.
 O algoritmo de detecção pode indicar se o conceito alvo aprendido sofreu modificações ou se novos conceitos surgiram.
 Na próxima seção, a ideia de mudança de conceito será aprofundada.
@@ -487,7 +485,7 @@ Na próxima seção, a ideia de mudança de conceito será aprofundada.
 \section{Mudança de Conceito}
 
 Em ambientes não estacionários, a distribuição subjacente dos dados pode mudar ao longo do tempo, levando ao fenômeno de mudança de conceito \cite{Schlimmer1986}.
-Por exemplo, podemos considerar como mudança de conceito quando uma pessoa passa a preferir um novo gênero cinematográfico.
+Por exemplo, podemos considerar como mudança de conceito quando uma pessoa passa a preferir um novo gênero literário.
 Como consequência desta mudança, modelos de decisão relacionados podem ter sua acurácia reduzida, podendo, inclusive, tornarem-se obsoletos.
 
 A Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} é comumente aplicada para descrever o problema de classificação baseado 
@@ -513,7 +511,8 @@ Formalmente, pode-se afirmar que houve mudança de conceito entre os instantes $
 \end{equation}
 
 onde, $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
-para $X$ e $y$ \cite{Gama:2014:SCD:2597757.2523813}.
+para $X$ e $y$ \cite{Gama:2014:SCD:2597757.2523813}. 
+Isto é, um conjunto de exemplos possui rótulos de classe legítimos em $t_0$, mas passa a ter rótulos diferentes em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
 
 A equação \ref{eq:2} pode ser utilizada para caracterizar as mudanças na distribuição dos dados \cite{Gao:2007, Gama:2014:SCD:2597757.2523813}, do seguinte modo:
 
@@ -529,8 +528,8 @@ Estes tipos de mudança foram formalizados por \cite{Zliobaite:2010, Gama:2014:S
 
 \begin{enumerate}
     \item Mudanças de conceito virtuais tratam de mudanças em $p(X)$ e, consequentemente, em $p(X|y)$,
-    contudo, estas mudanças não têm impacto no conceito alvo (representado na Figura \ref{fig:real_and_virtual_concept_drift} (b)).
-    \item Mudanças de conceito reais referem-se a mudanças na relação $p(y|X)$ e afetam o conceito alvo (representado na Figura \ref{fig:real_and_virtual_concept_drift} (c)).
+    contudo, estas mudanças não têm impacto no conceito alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (b)).
+    \item Mudanças de conceito reais referem-se a mudanças na relação $p(y|X)$ e afetam o conceito alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (c)).
 \end{enumerate}
 
 \begin{figure}[!ht]
@@ -544,7 +543,7 @@ Estes tipos de mudança foram formalizados por \cite{Zliobaite:2010, Gama:2014:S
 Em \cite{Gama:2014:SCD:2597757.2523813}, o seguinte cenário é utilizado para explicar a diferença entre uma mudança de conceito real e uma virtual.
 Considere um fluxo \textit{online} de anúncios do setor imobiliário.
 Um usuário deseja classificar estes anúncios em relevantes e não relevantes.
-Suponha, que à época, o usuário está buscando um novo apartamento. 
+Suponha, que à época, o usuário esteja buscando um novo apartamento. 
 Isto torna anúncios de apartamentos residenciais relevantes, e anúncios de casa de férias irrelevantes.
 Se o autor dos anúncios é alterado, o estilo de escrita sofre mudanças, mas os apartamentos permanecem relevantes para o usuário.
 Este cenário corresponde a uma mudança de conceito virtual.
@@ -555,11 +554,11 @@ Neste contexto, apartamentos tornaram-se irrelevantes e casas de férias, releva
 Apesar do editor dos anúncios e das probabilidades anteriores das classes permanecerem as mesmas, este cenário corresponde a uma mudança de conceito real.
 
 Considerando apenas a perspectiva de predição, adaptações no modelo são necessárias apenas quando mudanças de conceito reais ocorrem, 
-pois os limites de decisão do modelo corrente estão obsoletos em relação aos novos exemplos \cite{Gama:2014:SCD:2597757.2523813}.
+pois os limites de decisão do modelo corrente tornam-se obsoletos em relação aos novos exemplos \cite{Gama:2014:SCD:2597757.2523813}.
 Adaptação, neste contexto, significa atualizar o modelo de decisão perante a nova distribuição dos dados a fim de manter uma alta acurácia.
 
 Mudanças de conceito podem se apresentar sob diferentes padrões.
-Conforme ilustrado em \ref{fig:concept_drift_patterns}, mudanças de conceito podem ocorrer de forma abrupta, gradual, incremental ou recorrente.
+Conforme ilustrado na Figura \ref{fig:concept_drift_patterns}, mudanças de conceito podem ocorrer de forma abrupta, gradual, incremental ou recorrente.
  
 \begin{figure}[!ht]
 \begin{center}
@@ -575,28 +574,71 @@ Outro exemplo, é a troca de um sensor por outro com diferente calibração, em 
 
 Em constrate com a mudança de conceito abrupta, a mudança de conceito gradual significa uma transição mais lenta de um conceito para outro.
 Isto é, durante a transição, são percebidos exemplos de ambos os conceitos.
-Por exemplo, João, ao invés de subitamente passar a preferir livros de auto-ajuda, adquire interesse nestes ao longo do tempo.
+Pode-se considerar que João, ao invés de subitamente passar a preferir livros de auto-ajuda, adquire interesse nestes ao longo do tempo.
 Isto significa que João ainda tem interesse em livros de ficção científica, mas desenvolve, em paralelo, um crescente interesse por livros de auto-ajuda, que se tornará predominante.
 A mudança de conceito gradual está representada na Figura \ref{fig:concept_drift_patterns} (b).
 
 Mudanças de conceito incrementais apresentam diversos conceitos intermediários durante a transição de um conceito para outro.
 No exemplo de João, é como se o seu interesse literário variasse de ficção científica para ficção científica e aventura, 
-de ficção científica e aventura para aventura e suspense, de aventura e suspense para suspense a auto-ajuda, e finalmente de suspense e auto-ajuda para apenas auto-ajuda.
+de ficção científica e aventura para aventura e suspense, de aventura e suspense para suspense e auto-ajuda, e finalmente de suspense e auto-ajuda para apenas auto-ajuda.
 Considerando a planta industrial química e os sensores, seria como se um sensor perdesse precisão ao longo do tempo. 
 A Figura \ref{fig:concept_drift_patterns} (c) demonstra a mudança de conceito incremental. 
 
 Existe ainda outro padrão, denominado mudança de conceito recorrente \cite{Zliobaite:2010}. 
 Conforme apresentado na Figura \ref{fig:concept_drift_patterns} (d), a mudança de conceito recorrente existe quando um conceito previamente ativo, 
 reaparece após determinado período de tempo.
-De volta a nosso exemplo, João está atualmente interessado em livros de ficção científica.
+De volta ao nosso exemplo, João está atualmente interessado em livros de ficção científica.
 Contudo, ele é presenteado com uma série de livros de auto-ajuda de um renomado autor brasileiro.
 Após ler toda a série, João é premiado com descontos para livros de ficção científica.
 Ele, volta, então, a ler livros de ficção científica comprados com os descontos recebidos.
 
-Um dos principais desafios para as técnicas de detecção de mudança de conceito é conseguir diferenciar mudanças de conceito reais de \textit{outliers} ou ruídos.
-Esta diferenciação é relevante, pois nenhuma adaptação do modelo é necessária quando um \textit{outlier} ou ruído é detectado em um fluxo de dados \cite{Gama:2014:SCD:2597757.2523813}.
-Para evitar alarmes falsos, métodos para detecção de \textit{outliers} e ruídos podem ser utilizados em conjunto com os métodos de detecção de mudança de conceito.
+É importante destacar que o fenômeno Mudança de Conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo mineração de dados, 
+aprendizado de máquina, estatística e recuperação de informação \cite{Zliobaite:2010}.
+Contudo, o mesmo conceito pode ter diferentes nomeclaturas em cada comunidade.
+Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a Mudança de Conceito para cada área de pesquisa.
+\FloatBarrier
+\begin{center}
+\begin{table}[!ht]
+\label{tbl:taxonomy}
+\begin{tabular}{|l|l|lll}
+\cline{1-2}
+\multicolumn{1}{|c|}{\textbf{Área}} & \multicolumn{1}{c|}{\textbf{Termos}}       &  &  &  \\ \cline{1-2}
+Mineração de Dados                  & Mudança de Conceito                        &  &  &  \\ \cline{1-2}
+Aprendizado de Máquina              & Mudança de Conceito, Mudança de Covariável &  &  &  \\ \cline{1-2}
+Computação Evolucionária            & Ambiente Evolutivo, Ambiente em Mudança    &  &  &  \\ \cline{1-2}
+IA e Robótica                       & Ambiente Dinâmico                          &  &  &  \\ \cline{1-2}
+Estatísticas, Séries Temporais      & Não Estacionário                           &  &  &  \\ \cline{1-2}
+Recuperação de Informação           & Evolução Temporal                          &  &  &  \\ \cline{1-2}
+\end{tabular}
+\caption{Terminologia - Mudança de Conceito \cite{Zliobaite:2010}}
+\end{table}
+\end{center}
+\FloatBarrier
 
+Outra possível fonte de equívoco é a utilização dos termos Detecção de \textit{Outliers}, Detecção de Novidade e Detecção de \textit{Change Points}.
+Estes termos apresentam relação para com Detecção de Mudança de Conceito, pois dizem respeito a encontrar padrões que são diferentes dos padrões conhecidos.
+Em alguns contextos, esses termos são usados indistitamente, entretanto, neste trabalho eles serão diferenciados.
+
+De acordo com \cite{Chandola:2009:ADS:1541880.1541882}, 
+detecção de \textit{outliers} refere-se a tarefa de encontrar padrões nos dados que não estão de acordo com o comportamento esperado.
+Esses padrões podem ser denominados como: \textit{outliers}, anomalias, observações discordantes, exceções, peculiaridades ou aberrações.
+
+Para \cite{Gama:2010:KDD:1855075}, exemplos esparsos e independentes, cujas características diferem muito daqueles que definem o modelo normal, 
+devem ser considerados como \textit{outliers}, pois não há garantia de que representem um conceito. 
+Em \cite{Aggarwal:2003:FCE:1315451.1315460}, os autores tipificam os \textit{outliers} como anomalias ou ruídos.
+As anomalias constiuem um tipo especial de \textit{outlier}, que é de interesse dos analistas.
+Contudo, conforme \cite{Gama:2010:KDD:1855075}, é necessário um grupo conciso de exemplos para evidenciar o aparecimento de um novo conceito, ou novidade.
+
+Segundo \cite{Chandola:2009:ADS:1541880.1541882}, a Detecção de Novidade objetiva detectar padrões não observados (emergentes) nos dados.
+Entretanto, esse termo se distingue da detecção de \textit{outliers}, pois os novos padrões, geralmente, são incorporados ao modelo normal.
+Apesar de apresentarem definições próximas, a Detecção de Mudança de Conceito engloba a Detecção de Novidade e a extrapola, ao identificar 
+mudanças de conceito reais a partir do \textit{feedback} sobre a performance preditiva \cite{Gama:2010:KDD:1855075}.
+
+Técnicas para Detecção de \textit{Change Points} identificam variações abruptas de valor em séries temporais, que podem representar transições entre estados.
+Diferenciam-se das técnicas para Detecção de Mudança de Conceito pois são aplicadas em séries temporais unidimensionais estacionárias \cite{Aminikhanghahi:2017:SMT:3086013.3086037}.
+
+Na seção seguinte, serão detalhados os principais algoritmos para Detecção de Mudança de Conceito, 
+priorizando algoritmos que não dependem de \textit{feedback} da performance preditiva (correta rotulação dos exemplos).
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
 \blindtext

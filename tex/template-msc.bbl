@@ -36,6 +36,15 @@ ISBN 0-12-722442-4. Dispon{\'\i}vel em:
 ISBN 1-58113-888-1. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/1014052.1014110}.}
 
+\bibitem[Aminikhanghahi e Cook 2017]{Aminikhanghahi:2017:SMT:3086013.3086037}
+\abntrefinfo{Aminikhanghahi e Cook}{AMINIKHANGHAHI; COOK}{2017}
+{AMINIKHANGHAHI, S.; COOK, D.~J. A survey of methods for time series change
+  point detection.
+\emph{Knowl. Inf. Syst.}, Springer-Verlag New York, Inc., New York, NY, USA,
+  v.~51, n.~2, p. 339--367, maio 2017.
+ISSN 0219-1377.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s10115-016-0987-z}.}
+
 \bibitem[Ankerst et al. 1999]{Ankerst:1999:OOP:304181.304187}
 \abntrefinfo{Ankerst et al.}{ANKERST et al.}{1999}
 {ANKERST, M. et al. Optics: Ordering points to identify the clustering
@@ -125,6 +134,14 @@ ISBN 978-3-642-21222-2.}
   noise. In:  GHOSH, J. et al. (Ed.). \emph{SDM}. SIAM, 2006. p. 328--339.
 ISBN 978-1-61197-276-4. Dispon{\'\i}vel em:
   \url{http://dblp.uni-trier.de/db/conf/sdm/sdm2006.html\#CaoEQZ06}.}
+
+\bibitem[Chandola, Banerjee e Kumar 2009]{Chandola:2009:ADS:1541880.1541882}
+\abntrefinfo{Chandola, Banerjee e Kumar}{CHANDOLA; BANERJEE; KUMAR}{2009}
+{CHANDOLA, V.; BANERJEE, A.; KUMAR, V. Anomaly detection: A survey.
+\emph{ACM Comput. Surv.}, ACM, New York, NY, USA, v.~41, n.~3, p. 15:1--15:58,
+  jul. 2009.
+ISSN 0360-0300.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1541880.1541882}.}
 
 \bibitem[Costa, Rios e Mello 2016]{daCosta:2016:UDS:2956219.2956389}
 \abntrefinfo{Costa, Rios e Mello}{COSTA; RIOS; MELLO}{2016}
@@ -267,6 +284,17 @@ Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1006.5261}.}
 \emph{J. Mach. Learn. Res.}, JMLR.org, v.~8, p. 2755--2790, dez. 2007.
 ISSN 1532-4435.
 Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1314498.1390333}.}
+
+\bibitem[Kotsiantis 2007]{Kotsiantis:2007:SML:1566770.1566773}
+\abntrefinfo{Kotsiantis}{KOTSIANTIS}{2007}
+{KOTSIANTIS, S.~B. Supervised machine learning: A review of classification
+  techniques. In:  \emph{Proceedings of the 2007 Conference on Emerging
+  Artificial Intelligence Applications in Computer Engineering: Real Word AI
+  Systems with Applications in eHealth, HCI, Information Retrieval and
+  Pervasive Technologies}. Amsterdam, The Netherlands, The Netherlands: IOS
+  Press, 2007. p. 3--24.
+ISBN 978-1-58603-780-2. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=1566770.1566773}.}
 
 \bibitem[Kranen et al. 2011]{Kranen:2011:CIM:2134350.2134352}
 \abntrefinfo{Kranen et al.}{KRANEN et al.}{2011}

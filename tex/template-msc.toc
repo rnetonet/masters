@@ -4,13 +4,13 @@
 \contentsline {section}{\numberline {1.2}Hip\IeC {\'o}tese e Objetivo}{3}
 \contentsline {chapter}{Cap\'{\i }tulo~2---Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{5}
 \contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{5}
-\contentsline {section}{\numberline {2.2}Fluxos Cont\IeC {\'\i }nuos de Dados}{5}
+\contentsline {section}{\numberline {2.2}Fluxos Cont\IeC {\'\i }nuos de Dados e Aprendizado de M\IeC {\'a}quina}{5}
 \contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{9}
-\contentsline {subsection}{\numberline {2.3.1}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{12}
-\contentsline {subsection}{\numberline {2.3.2}Ferramentas}{12}
+\contentsline {subsection}{\numberline {2.3.1}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{13}
+\contentsline {subsection}{\numberline {2.3.2}Ferramentas}{13}
 \contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{13}
-\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{13}
-\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{13}
+\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{14}
+\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{14}
 \contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{15}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{15}
 \contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{15}
