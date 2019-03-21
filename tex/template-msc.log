@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  21 MAR 2019 13:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  21 MAR 2019 14:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1509,23 +1509,23 @@ Overfull \hbox (0.68716pt too wide) in paragraph at lines 589--596
  []
 
 
-Overfull \hbox (1.02664pt too wide) in alignment at lines 614--614
+Overfull \hbox (1.02664pt too wide) in alignment at lines 615--615
 [][][][][] 
  []
 
 [12] [13]
-Overfull \hbox (6.56206pt too wide) in paragraph at lines 702--711
+Overfull \hbox (6.56206pt too wide) in paragraph at lines 703--712
 []\OT1/cmr/m/n/12 Monitoram di-re-ta-mente a dis-tri-bui^^Xc~ao
  []
 
 [14]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 753.
+(blindtext)                 on input line 754.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 756.
+(blindtext)                 on input line 757.
 
 
 Underfull \vbox (badness 1810) has occurred while \output is active []
@@ -1533,65 +1533,65 @@ Underfull \vbox (badness 1810) has occurred while \output is active []
  [15]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 759.
+(blindtext)                 on input line 760.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 762.
+(blindtext)                 on input line 763.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 765.
+(blindtext)                 on input line 766.
 
 [16] [17] [18
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 766.
+Package xcolor Warning: Incompatible color definition on input line 767.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 769.
+(blindtext)                 on input line 770.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 772.
+(blindtext)                 on input line 773.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 775.
+(blindtext)                 on input line 776.
 
 [19]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 778.
+(blindtext)                 on input line 779.
 
 [20]
 
-Package xcolor Warning: Incompatible color definition on input line 779.
+Package xcolor Warning: Incompatible color definition on input line 780.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 782.
+(blindtext)                 on input line 783.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 785.
+(blindtext)                 on input line 786.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 788.
+(blindtext)                 on input line 789.
 
 [21
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 791.
+(blindtext)                 on input line 792.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 794.
+(blindtext)                 on input line 795.
 
 [22] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [23
 
