@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  21 MAR 2019 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  21 MAR 2019 15:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1508,24 +1508,19 @@ Overfull \hbox (0.68716pt too wide) in paragraph at lines 589--596
 []\OT1/cmr/m/n/12 Existe ainda ou-tro padr~ao, de-no-mi-nado mu-dan^^Xca de con-ceito re-cor-rente (ZLI-O-BAITE,
  []
 
-
-Overfull \hbox (1.02664pt too wide) in alignment at lines 615--615
-[][][][][] 
- []
-
 [12] [13]
-Overfull \hbox (6.56206pt too wide) in paragraph at lines 703--712
+Overfull \hbox (6.56206pt too wide) in paragraph at lines 701--710
 []\OT1/cmr/m/n/12 Monitoram di-re-ta-mente a dis-tri-bui^^Xc~ao
  []
 
 [14]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 754.
+(blindtext)                 on input line 752.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 757.
+(blindtext)                 on input line 755.
 
 
 Underfull \vbox (badness 1810) has occurred while \output is active []
@@ -1533,65 +1528,65 @@ Underfull \vbox (badness 1810) has occurred while \output is active []
  [15]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 760.
+(blindtext)                 on input line 758.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 763.
+(blindtext)                 on input line 761.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 766.
+(blindtext)                 on input line 764.
 
 [16] [17] [18
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 767.
+Package xcolor Warning: Incompatible color definition on input line 765.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 770.
+(blindtext)                 on input line 768.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 773.
+(blindtext)                 on input line 771.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 776.
+(blindtext)                 on input line 774.
 
 [19]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 779.
+(blindtext)                 on input line 777.
 
 [20]
 
-Package xcolor Warning: Incompatible color definition on input line 780.
+Package xcolor Warning: Incompatible color definition on input line 778.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 783.
+(blindtext)                 on input line 781.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 786.
+(blindtext)                 on input line 784.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 789.
+(blindtext)                 on input line 787.
 
 [21
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 792.
+(blindtext)                 on input line 790.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 795.
+(blindtext)                 on input line 793.
 
 [22] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [23
 
@@ -1602,13 +1597,13 @@ AED: lastpage setting LastPage
 Here is how much of TeX's memory you used:
  30445 strings out of 492982
  614966 string characters out of 6134895
- 772365 words of memory out of 5000000
+ 771365 words of memory out of 5000000
  33447 multiletter control sequences out of 15000+600000
  543844 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,18n,82p,10445b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (44 pages, 627226 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (44 pages, 626973 bytes).
 PDF statistics:
  238 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams
