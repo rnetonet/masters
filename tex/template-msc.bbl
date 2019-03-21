@@ -524,6 +524,15 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1007/BF00116895}.}
   Berlin Heidelberg, 2010. p. 25--42.
 ISBN 978-3-642-12519-5.}
 
+\bibitem[Sethi e Kantardzic 2017]{Sethi:2017:RDC:3096751.3096864}
+\abntrefinfo{Sethi e Kantardzic}{SETHI; KANTARDZIC}{2017}
+{SETHI, T.~S.; KANTARDZIC, M. On the reliable detection of concept drift from
+  streaming unlabeled data.
+\emph{Expert Syst. Appl.}, Pergamon Press, Inc., Tarrytown, NY, USA, v.~82,
+  n.~C, p. 77--99, out. 2017.
+ISSN 0957-4174.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.eswa.2017.04.008}.}
+
 \bibitem[Sethi, Kantardzic e Hu 2016]{Sethi2016b:GC3}
 \abntrefinfo{Sethi, Kantardzic e Hu}{SETHI; KANTARDZIC; HU}{2016}
 {SETHI, T.~S.; KANTARDZIC, M.; HU, H. A grid density based framework for

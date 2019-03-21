@@ -49,6 +49,7 @@
 \usepackage{todonotes}
 \usepackage{amssymb}
 \usepackage{placeins}
+\usepackage{arydshln}
 
 \presetkeys%
     {todonotes}%
@@ -722,7 +723,28 @@ Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVE
     \textit{Margin} \cite{Dries:Margin:2009} participam deste grupo.
 \end{description}
 
+Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, os grupos e as respectivas técnicas mencionadas nesta seção.
 
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[!ht]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}[t]{@{}lllll@{}}
+    \hline \\
+    Algoritmos Explícitos/Supervisionados     & Métodos Baseados em Análise Sequencial        & \begin{tabular}[t]{@{}l@{}} Cumulative Sum (CUSUM) \\ PageHinkley (PH) \cite{Page:CUSUM:PageHinkley:1954} \\ Geometric Moving Average (GMA) \cite{Roberts:2000:CCT:338441.338464}\end{tabular}                                                                                                                        &  &  \\ \\
+                                              & Abordagens baseadas em Estatística            & \begin{tabular}[t]{@{}l@{}} Drift Detection Method (DDM) \cite{GamaMCR04} \\  Early Drift Detection Method (EDDM) \cite{EDDM} \\  Exponentially Weighted Moving Average (EWMA) \cite{Ross:2012:EWM:2076039.2076307} \\ Reactive Drift Detection Method (RDDM) \cite{Barros:RDDM:2017} \end{tabular}                                                                &  &  \\ \\
+                                              & Métodos baseados em Janelas                   & \begin{tabular}[t]{@{}l@{}} Adaptive Windowing (ADWIN) \cite{BifetG07} \\   SeqDrift \cite{PearsSK14:SeqDrift:2014} \\   HDDMA/HDDMW \cite{BlancoCRBDM15:HDDMA:HDDMW:2015} \end{tabular}                                                                                            &  &  \\ \\
+    
+    Algoritmos Implícitos/Não Supervisionados & Detecção de Novidade / Métodos de Agrupamento & \begin{tabular}[t]{@{}l@{}} OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107} \\   MINAS \cite{Faria:2013:NDA:2480362.2480515} \\   Woo \cite{Ryu:Kantardzic:2012} \\   DETECTNOD \cite{Hashemi:Hayat:DETECTNOD:2010} \\   ECSMiner \cite{Masud:2011:CNC:1978259.1978529} \\   GC3 \cite{Sethi2016b:GC3} \end{tabular} &  &  \\ \\
+                                              & Monitoramento de distribuição multivariada    & \begin{tabular}[t]{@{}l@{}} CoC \cite{Lee:Magoules:CoC:2012} \\ HDDDM \cite{Ditzler:Polikar:HDDDM:2011} \\ PCA-detect \cite{Kuncheva:PCADetect:20085} \end{tabular}                                       &  &  \\ \\
+                                              & Monitoramento dependente de modelo            & \begin{tabular}[t]{@{}l@{}} A-distance \cite{Dredze:ADistance:2010585} \\ CDBD \cite{Lindstrom:CDBD:2013} \\ Margin \cite{Dries:Margin:2009} \end{tabular}                                                                                        &  &  \\ \\
+    \hline
+    \end{tabular}%
+    }
+    \caption{Abordagens para detecção de mudança de conceito \cite{Sethi:2017:RDC:3096751.3096864}}
+    \label{tbl:abordagens}
+\end{table}
 
 \subsection{Ferramentas}
 
