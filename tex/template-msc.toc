@@ -10,9 +10,9 @@
 \contentsline {subsection}{\numberline {2.3.2}Ferramentas}{15}
 \contentsline {subsection}{\numberline {2.3.3}MOA}{15}
 \contentsline {subsection}{\numberline {2.3.4}Tornado}{16}
-\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{16}
-\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{16}
-\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{16}
+\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{17}
+\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{17}
+\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{17}
 \contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{19}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{19}
 \contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{19}

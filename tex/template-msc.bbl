@@ -307,6 +307,14 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2003.1198387}.}
 ISBN 0-7695-0850-2. Dispon{\'\i}vel em:
   \url{http://dl.acm.org/citation.cfm?id=795666.796588}.}
 
+\bibitem[Hall et al. 2009]{Hall:2009:WDM:1656274.1656278}
+\abntrefinfo{Hall et al.}{HALL et al.}{2009}
+{HALL, M. et al. The weka data mining software: An update.
+\emph{SIGKDD Explor. Newsl.}, ACM, New York, NY, USA, v.~11, n.~1, p. 10--18,
+  nov. 2009.
+ISSN 1931-0145.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1656274.1656278}.}
+
 \bibitem[{Hayat} e {Hashemi} 2010]{Hashemi:Hayat:DETECTNOD:2010}
 \abntrefinfo{{Hayat} e {Hashemi}}{{Hayat}; {Hashemi}}{2010}
 {{Hayat}, M.~Z.; {Hashemi}, M.~R. A dct based approach for detecting novelty
@@ -318,6 +326,15 @@ ISBN 0-7695-0850-2. Dispon{\'\i}vel em:
 {JAIN, A.~K.; DUBES, R.~C. \emph{Algorithms for Clustering Data}. Upper Saddle
   River, NJ, USA: Prentice-Hall, Inc., 1988.
 ISBN 0-13-022278-X.}
+
+\bibitem[Jin e Agrawal 2003]{Jin:2003:EDT:956750.956821}
+\abntrefinfo{Jin e Agrawal}{JIN; AGRAWAL}{2003}
+{JIN, R.; AGRAWAL, G. Efficient decision tree construction on streaming data.
+  In:  \emph{Proceedings of the Ninth ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining}. New York, NY, USA: ACM, 2003.  (KDD
+  '03), p. 571--576.
+ISBN 1-58113-737-0. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/956750.956821}.}
 
 \bibitem[Katakis, Tsoumakas e Vlahavas 2010]{Katakis:2010:TRC:1746286.1746291}
 \abntrefinfo{Katakis, Tsoumakas e Vlahavas}{KATAKIS; TSOUMAKAS; VLAHAVAS}{2010}
@@ -566,6 +583,15 @@ ISBN 978-3-642-23856-7. Dispon{\'\i}vel em:
   Computing}. New York, NY, USA: ACM, 2007.  (SAC '07), p. 448--452.
 ISBN 1-59593-480-4. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/1244002.1244107}.}
+
+\bibitem[Street e Kim 2001]{Street:2001:SEA:502512.502568}
+\abntrefinfo{Street e Kim}{STREET; KIM}{2001}
+{STREET, W.~N.; KIM, Y. A streaming ensemble algorithm (sea) for large-scale
+  classification. In:  \emph{Proceedings of the Seventh ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining}. New York,
+  NY, USA: ACM, 2001.  (KDD '01), p. 377--382.
+ISBN 1-58113-391-X. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/502512.502568}.}
 
 \bibitem[Vapnik 1998]{Vapnik1998}
 \abntrefinfo{Vapnik}{VAPNIK}{1998}

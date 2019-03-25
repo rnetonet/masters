@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  21 MAR 2019 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  25 MAR 2019 11:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1514,79 +1514,83 @@ Overfull \hbox (6.56206pt too wide) in paragraph at lines 701--710
  []
 
 [14]
+<imagens/moa.png, id=141, 1016.29688pt x 763.35187pt>
+File: imagens/moa.png Graphic file (type png)
+<use imagens/moa.png>
+Package pdftex.def Info: imagens/moa.png  used on input line 768.
+(pdftex.def)             Requested size: 508.1472pt x 381.675pt.
+
+Overfull \hbox (55.17932pt too wide) in paragraph at lines 768--769
+ [] 
+ []
+
+[15]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 752.
+(blindtext)                 on input line 788.
+
+[16 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/moa.png>]
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 791.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 755.
-
-
-Underfull \vbox (badness 1810) has occurred while \output is active []
-
- [15]
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 758.
+(blindtext)                 on input line 794.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 761.
+(blindtext)                 on input line 797.
 
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 764.
-
-[16] [17] [18
+[17] [18
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 765.
+Package xcolor Warning: Incompatible color definition on input line 798.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 768.
+(blindtext)                 on input line 801.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 771.
+(blindtext)                 on input line 804.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 774.
+(blindtext)                 on input line 807.
 
 [19]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 777.
+(blindtext)                 on input line 810.
 
 [20]
 
-Package xcolor Warning: Incompatible color definition on input line 778.
+Package xcolor Warning: Incompatible color definition on input line 811.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 781.
+(blindtext)                 on input line 814.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 784.
+(blindtext)                 on input line 817.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 787.
+(blindtext)                 on input line 820.
 
 [21
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 790.
+(blindtext)                 on input line 823.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 793.
+(blindtext)                 on input line 826.
 
 [22] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [23
 
@@ -1595,18 +1599,18 @@ Package blindtext Warning: brazil not defined, using English instead.
 AED: lastpage setting LastPage
 [30] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
 Here is how much of TeX's memory you used:
- 30445 strings out of 492982
- 614966 string characters out of 6134895
- 771365 words of memory out of 5000000
- 33447 multiletter control sequences out of 15000+600000
+ 30479 strings out of 492982
+ 616015 string characters out of 6134895
+ 771545 words of memory out of 5000000
+ 33480 multiletter control sequences out of 15000+600000
  543844 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,18n,82p,10445b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,18n,82p,10445b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (44 pages, 626973 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (44 pages, 703875 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
+ 240 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 124 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

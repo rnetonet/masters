@@ -747,8 +747,41 @@ Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, os grupos e as re
 
 \subsection{Ferramentas}
 
+Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
+Estes frameworks possibilitam a implementação e a análise - perante o estado da arte - de algoritmos para detecção de mudança de conceito.
+Ambos permitem a avaliação entre técnicas, utilizando diferentes \textit{datasets}.
+
 \subsection{MOA}
-\blindtext
+
+O MOA divide suas funcionalidades em tarefas (\textit{tasks}).
+As principais tarefas incluem:
+treino de classificadores,
+avaliação de modelos e 
+produção de fluxos de dados.
+Tarefas podem ser executadas a partir de uma interface gráfica (GUI) ou por linha de comando.
+A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
+A interface gráfica da aplicação permite executar múltiplas tarefas de forma concorrente, 
+possibilitando o controle de execução e a visualização de resultados parciais.
+
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[scale=0.5]{imagens/moa.png}
+    \caption{MOA - Tela Inicial}
+    \label{fig:moa}
+\end{center}
+\end{figure}
+
+O MOA é capaz de ler arquivos \textit{ARFF}, popularizados na área de aprendizado de máquina por serem utilizados no projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
+A ferramenta também permite a produção de fluxos de dados dinamicamente através de geradores, unindo diferentes fluxos ou aplicando filtros a fluxos existentes.
+Alguns dos geradores de fluxo disponíveis no MOA são:
+\textit{Random Trees} \cite{Domingos:2000:MHD:347090.347107}
+\textit{SEA} \cite{Street:2001:SEA:502512.502568}, 
+\textit{STAGGER} \cite{Schlimmer1986}, 
+\textit{Rotating Hyperplane} \cite{Wang:2003:MCD:956750.956778},
+\textit{Random RBF}, 
+\textit{LED} \cite{Gama:2003:ADT:956750.956813}, 
+\textit{Waveform} \cite{Gama:2003:ADT:956750.956813}, 
+ e \textit{Function} \cite{Jin:2003:EDT:956750.956821}.
 
 \subsection{Tornado}
 \blindtext
