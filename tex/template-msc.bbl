@@ -109,6 +109,18 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1656274.1656287}.}
 ISBN 978-1-61197-277-1. Dispon{\'\i}vel em:
   \url{http://dblp.uni-trier.de/db/conf/sdm/sdm2007.html\#BifetG07}.}
 
+\bibitem[Bifet et al. 2010]{Bifet:2010:MMO:1756006.1859903}
+\abntrefinfo{Bifet et al.}{BIFET et al.}{2010}
+{BIFET, A. et al. Moa: Massive online analysis.
+\emph{J. Mach. Learn. Res.}, JMLR.org, v.~11, p. 1601--1604, ago. 2010.
+ISSN 1532-4435.
+Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1756006.1859903}.}
+
+\bibitem[Bifet e Kirkby 2009]{bifet2009data}
+\abntrefinfo{Bifet e Kirkby}{BIFET; KIRKBY}{2009}
+{BIFET, A.; KIRKBY, R. Data stream mining a practical approach.
+Citeseer, 2009.}
+
 \bibitem[Bifet et al. 2013]{Bifet:2013:EDS:2480362.2480516}
 \abntrefinfo{Bifet et al.}{BIFET et al.}{2013}
 {BIFET, A. et al. Efficient data stream classification via probabilistic

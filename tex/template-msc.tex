@@ -753,15 +753,21 @@ Ambos permitem a avaliação entre técnicas, utilizando diferentes \textit{data
 
 \subsection{MOA}
 
+O \textit{MOA – Massive Online Analysis} é o principal framework para mineração de dados em fluxos de dados e apresenta uma comunidade crescente e ativa.
+O framework contempla uma coleção de algoritmos de aprendizado de máquina (AM): classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
+Além de conter ferramentas para avaliação destes.
+Apresenta relação com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}, sendo também desenvolvido em Java, apesar de ter uma arquitetura mais voltada para escalabilidade.
+
 O MOA divide suas funcionalidades em tarefas (\textit{tasks}).
 As principais tarefas incluem:
+produção de fluxos de dados,
 treino de classificadores,
-avaliação de modelos e 
-produção de fluxos de dados.
-Tarefas podem ser executadas a partir de uma interface gráfica (GUI) ou por linha de comando.
+aplicação de algoritmos de agrupamento,
+análise de algoritmos para detecção de \textit{outliers} e de \textit{concept drift}, dentre outras.
+As tarefas podem ser executadas a partir da interface gráfica (GUI) ou por linha de comando.
 A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
-A interface gráfica da aplicação permite executar múltiplas tarefas de forma concorrente, 
-possibilitando o controle de execução e a visualização de resultados parciais.
+Através da interface gráfica, é possível executar múltiplas tarefas de forma concorrente, 
+controlar suas execuções e a visualizar os resultados parciais.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -771,8 +777,8 @@ possibilitando o controle de execução e a visualização de resultados parciai
 \end{center}
 \end{figure}
 
-O MOA é capaz de ler arquivos \textit{ARFF}, popularizados na área de aprendizado de máquina por serem utilizados no projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
-A ferramenta também permite a produção de fluxos de dados dinamicamente através de geradores, unindo diferentes fluxos ou aplicando filtros a fluxos existentes.
+O MOA é capaz de ler arquivos \textit{ARFF}, muito utilizados graças ao projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
+A ferramenta também permite a produção de fluxos de dados dinamicamente através de geradores.
 Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{Random Trees} \cite{Domingos:2000:MHD:347090.347107}
 \textit{SEA} \cite{Street:2001:SEA:502512.502568}, 
@@ -782,6 +788,28 @@ Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{LED} \cite{Gama:2003:ADT:956750.956813}, 
 \textit{Waveform} \cite{Gama:2003:ADT:956750.956813}, 
  e \textit{Function} \cite{Jin:2003:EDT:956750.956821}.
+Além destes geradores, a aplicação possibilita a obtenção de novos fluxos através da associação ou aplicação de filtros à sequências existentes.
+
+Outra característica interessante do framework, é a possibilidade de adicionar mudanças de conceito a fluxos estacionários existentes.
+Isto é feito através de uma função sigmóide, que modela o evento de mudança de conceito como uma combinação balanceada de duas distribuições homogêneas, 
+que caracterizam os conceitos alvo antes e depois da mudança \cite{bifet2009data}.
+Além destes conceitos, o usuário também pode definir o momento da mudança e a sua duração \cite{Bifet:2010:MMO:1756006.1859903}.
+
+Os principais métodos de detecção de mudança de conceito propostos na literatura estão disponíveis no MOA.
+O framework também permite a utilização de classificadores do WEKA \cite{Hall:2009:WDM:1656274.1656278} combinados aos detectores.
+A janela para configuração de um detector é demonstrada na Figura \ref{fig:moa_detector}.
+
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[scale=1]{imagens/detector.png}
+    \caption{MOA - Configuração detector}
+    \label{fig:moa_detector}
+\end{center}
+\end{figure}
+
+A arquitetura do framework é modular, o que permite aos usuários implementar novas tarefas com pouco esforço.
+Por exemplo, para criar um novo detector, basta estender a classe abstrata \texttt{moa.classifiers.core.driftdetection.AbstractChangeDetector} e implementar o algoritmo desejado.
+A janela de configuração para o detector (similar a \ref{fig:moa_detector}) é criada dinamicamente, através dos atributos declarados na classe.
 
 \subsection{Tornado}
 \blindtext
