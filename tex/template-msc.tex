@@ -642,24 +642,24 @@ Na seção seguinte serão detalhados os principais algoritmos para Detecção d
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
 
-Os algoritmos para Detecção de Mudança de Conceito são os responsáveis pela identificação, de forma explícita, das mudanças de conceito em fluxos de dados \cite{Gama:2014:SCD:2597757.2523813}.
-Estes métodos caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorreram \cite{Basseville:1993:DAC:151741}.
+Os algoritmos para Detecção de Mudança de Conceito são os responsáveis por identificar, de forma explícita, as mudanças de conceito nos fluxos de dados \cite{Gama:2014:SCD:2597757.2523813}.
+Estes métodos caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
 
 As técnicas propostas na literatura podem ser divididas em duas categorias, baseado na dependência ou não de dados rotulados:
 \begin{description}
     \item[Algoritmos Explícitos/Supervisionados] Dependem da rotulação dos dados por um especialista.
-    Estes rótulos são utilizados no cálculo de métricas de performance como acurácia e taxa de erro, que são monitoradas ao longo do tempo.
-    Mudanças de conceito são sinalizadas quando o algoritmo detecta que essas métricas atingiram um limite previamente definido.
+    Estes rótulos são utilizados no cálculo de medidas de performance como taxa de erro e acurácia, que são monitoradas ao longo do tempo.
+    Mudanças de conceito são sinalizadas quando essas medidas atingem um limite previamente definido.
 
     \item[Algoritmos Implícitos/Não Supervisionados] Independem da rotulação por especialistas, 
-    baseando-se em propriedades dos valores dos exemplos, para sinalizar desvios.
-    São mais propensos a alarmes falsos, mas a independência de rótulos os torna interessantes para contextos onde a obtenção de rótulos é dispendiosa, demorada ou inviável.
+    baseando-se em características dos próprios dados para sinalizar desvios.
+    São mais propensos a alarmes falsos, mas a independência de rótulos os torna interessantes para contextos onde a obtenção desses é dispendiosa, demorada ou inviável.
 \end{description}
 
 Em sua pesquisa \cite{Gama:2014:SCD:2597757.2523813} categorizou os algoritmos supervisionados em três grupos principais:
 
 \begin{description}
-    \item[Métodos Baseados em Análise Sequencial] Avaliam, de forma sequenciada, os resultados das predições conforme tornam-se disponíveis (taxa de erro).
+    \item[Métodos Baseados em Análise Sequencial] Avaliam, de forma sequenciada, os resultados das predições conforme tornam-se disponíveis (performance).
     Indicam a ocorrência de mudança de conceito quando um limite pré-definido é atingido.
     Os algoritmos \textit{Cumulative Sum (CUSUM)}, \textit{PageHinkley (PH)} \cite{Page:CUSUM:PageHinkley:1954} e \textit{Geometric Moving Average (GMA)} \cite{Roberts:2000:CCT:338441.338464}
     são representantes deste grupo.
@@ -699,8 +699,8 @@ Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVE
     \item[Monitoramento de distribuição multivariada]
     Monitoram diretamente a distribuição dos dados, considerando cada atributo.
     Este monitoramento é feito através de subconjuntos dos dados.
-    Um subconjunto de treinamento tem sua distribuição sumarizada e armazenada, sendo utilizada como referência.
-    A distribuição referência é comparada à distribuição do subconjunto atual, e havendo diferenças significativas, a mudança de conceito é sinalizada.
+    Um subconjunto de treinamento tem sua distribuição sumarizada e armazenada, para ser utilizada como referência.
+    A distribuição referência é comparada à distribuição do subconjunto atual e, havendo diferenças significativas, a mudança de conceito é sinalizada.
     Os algoritmos
     \textit{CoC} \cite{Lee:Magoules:CoC:2012},
     \textit{HDDDM} \cite{Ditzler:Polikar:HDDDM:2011},
@@ -708,12 +708,12 @@ Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVE
     são representantes deste grupo.
 
     \item[Monitoramento dependente de modelo]
-    As técnicas elencadas nos grupos anteriores monitoram desvios na distribuição dos dados, considerando cada atributo.
-    Essencialmente, esses métodos assumem que alterações na distribuição $P(X)$ implicarão mudanças na performance do classificador $P(Y|X)$.
-    Apesar de permitir a aplicação de qualquer tipo de classificador, essa presunção leva a uma maior quantidade de falsos alarmes.
-    As técnicas dependentes de modelo restringem-se aos classificadores probabilísticos e monitoram as probabilidades a posteriori destes, 
-    para detecção de mudanças de conceito \cite{Zliobaite:2010}.
-    A utilização das probabilidades a posteriori diminui a incidência de falsos alarmes e torna o processo computacionalmente eficiente, 
+    As técnicas elencadas nos grupos anteriores monitoram desvios na distribuição dos dados para indicar mudanças de conceito.
+    Essencialmente, esses métodos assumem que alterações na distribuição $P(X)$ implicarão mudanças na performance do classificador $p(y|X)$.
+    Apesar de permitir a aplicação de qualquer tipo de classificador, essa presunção leva a uma maior quantidade de falsos positivos.
+    As técnicas dependentes de modelo, por sua vez, restringem-se aos classificadores probabilísticos,
+    o que permite realizar a detecção de mudanças de conceito através do monitoramento das probabilidades a posteriori \cite{Zliobaite:2010}.
+    A utilização das probabilidades a posteriori diminui a incidência de falsos positivos e torna o processo computacionalmente eficiente, 
     pois apenas um único fluxo univariado de valores é observado.
     Os métodos 
     \textit{A-distance} \cite{Dredze:ADistance:2010585},
@@ -748,14 +748,15 @@ Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, os grupos e as re
 
 Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
 Estes frameworks possibilitam a implementação e a análise - perante o estado da arte - de algoritmos para detecção de mudança de conceito.
-Ambos permitem a avaliação entre técnicas, utilizando diferentes \textit{datasets}.
+Ambos permitem a avaliação entre técnicas e a utilização de diferentes \textit{datasets}.
 
 \subsection{MOA}
 
-O \textit{MOA – Massive Online Analysis} é o principal framework de mineração de dados com fluxos contínuos e apresenta uma comunidade crescente e ativa \cite{Bifet:2010:MMO:1756006.1859903}.
-O framework contempla uma coleção de algoritmos de aprendizado de máquina: classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
+O \textit{MOA – Massive Online Analysis}\footnote{https://moa.cms.waikato.ac.nz/} é, atualmente, o principal framework para mineração de dados em fluxos contínuos.
+O projeto é de código-aberto\footnote{https://github.com/Waikato/moa} e apresenta uma comunidade bastante ativa e crescente \cite{Bifet:2010:MMO:1756006.1859903}.
+A aplicação é composta por uma ampla coleção de algoritmos da área de aprendizado de máquina: classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
 Além de conter ferramentas para avaliação destes.
-Apresenta relação com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}, sendo também desenvolvido em Java, apesar de ter uma arquitetura mais escalável.
+Apresenta relação com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}, sendo também desenvolvido em Java, o que permite a sua execução nos principais sistemas operacionais.
 
 O MOA divide suas funcionalidades em tarefas (\textit{tasks}).
 As principais tarefas incluem:
@@ -765,7 +766,7 @@ aplicação de algoritmos de agrupamento,
 análise de algoritmos para detecção de \textit{outliers} e de \textit{concept drift}, dentre outras.
 As tarefas podem ser executadas a partir da interface gráfica (GUI) ou por linha de comando.
 A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
-Através da interface gráfica, é possível executar múltiplas tarefas de forma concorrente, 
+Através da interface gráfica é possível executar múltiplas tarefas de forma concorrente, 
 controlar suas execuções e visualizar os resultados parciais.
 
 \begin{figure}[!ht]
@@ -776,7 +777,7 @@ controlar suas execuções e visualizar os resultados parciais.
 \end{center}
 \end{figure}
 
-A aplicação é capaz de ler arquivos \textit{ARFF}, muito utilizados graças ao projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
+A aplicação é capaz de ler arquivos em formato \textit{ARFF}, populares por serem utilizados no projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
 A ferramenta também permite a produção de fluxos de dados dinamicamente, através de geradores.
 Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{Random Trees} \cite{Domingos:2000:MHD:347090.347107}
@@ -787,14 +788,13 @@ Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{LED} \cite{Gama:2003:ADT:956750.956813}, 
 \textit{Waveform} \cite{Gama:2003:ADT:956750.956813}, 
  e \textit{Function} \cite{Jin:2003:EDT:956750.956821}.
-O MOA também possibilita a obtenção de novos fluxos através da associação ou aplicação de filtros à sequências existentes.
 
-Outra característica interessante do framework, é a possibilidade de adicionar mudanças de conceito a fluxos estacionários existentes.
+Outra característica interessante do framework é a possibilidade de adicionar mudanças de conceito a fluxos estacionários existentes.
 Isto é feito através de uma função sigmóide, que modela o evento de mudança de conceito como uma combinação balanceada de duas distribuições homogêneas, 
 que caracterizam os conceitos alvo antes e depois da mudança \cite{bifet2009data}.
 Além destes conceitos, o usuário também pode definir o momento da mudança e a sua duração \cite{Bifet:2010:MMO:1756006.1859903}.
 
-Os principais métodos de detecção de mudança de conceito propostos na literatura estão disponíveis no MOA.
+Os principais métodos para detecção de mudança de conceito propostos na literatura estão disponíveis no MOA.
 O framework também permite a utilização de classificadores do WEKA \cite{Hall:2009:WDM:1656274.1656278} combinados aos detectores.
 A janela para configuração de um detector é demonstrada na Figura \ref{fig:moa_detector}.
 
@@ -809,6 +809,14 @@ A janela para configuração de um detector é demonstrada na Figura \ref{fig:mo
 A arquitetura do framework é modular, o que permite aos usuários implementar novas tarefas com pouco esforço.
 Por exemplo, para criar um novo detector, basta estender a classe abstrata \texttt{moa.classifiers.core.driftdetection.AbstractChangeDetector} e implementar o algoritmo desejado.
 A janela de configuração para o detector (similar a \ref{fig:moa_detector}) é criada dinamicamente, a partir dos atributos da classe.
+
+O MOA dispõe de diversas classes para avaliação de técnicas de aprendizado de máquina. 
+Para este trabalho, destacam-se as classes \texttt{DriftDetectionMethodClassifier} e \texttt{BasicConceptDriftPerformanceEvaluator}, 
+que realizam a análise de algoritmos para detecção de mudança de conceito.
+A classe \texttt{DriftDetectionMethodClassifier} permite avaliar técnicas de detecção que encapsulam um classificador.
+Por sua vez, a classe \texttt{BasicConceptDriftPerformanceEvaluator} avalia a performance das técnicas de detecção diretamente, 
+sem a necessidade de um classificador.
+Estes avaliadores e os seus indicadores serão detalhados juntamente com os resultados dos experimentos iniciais, na Seção \ref{experimentos_iniciais}. 
 
 \subsection{Tornado}
 \blindtext
