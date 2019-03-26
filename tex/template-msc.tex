@@ -236,7 +236,7 @@ análise de sentimentos \cite{Smailovic:2014:SAL:2941772.2941857},
 etc.
 
 Nos últimos anos, técnicas de Aprendizado de Máquina (AM) aplicadas a fluxos contínuos de dados têm se tornado um importante tema de pesquisa.
-Nestes cenários, os algoritmos de aprendizagem devem atender a severas restrições de tempo e processamento \cite{Bifet:2009:ALM:1656274.1656287}.
+Nestes cenários, os algoritmos devem atender a severas restrições de tempo e processamento \cite{Bifet:2009:ALM:1656274.1656287}.
 Por exemplo, um classificador deve fornecer o rótulo para um evento antes que o próximo ocorra. 
 
 Outra dificuldade encontrada nesses ambientes é a mudança na distribuição dos dados. 
@@ -282,7 +282,7 @@ WMA \cite{Blum1997}, DDD \cite{Minku:2012:DNE:2197077.2197204}, ADOB \cite{deCar
 
 As abordagens mencionadas dependem da disponibilidade do rótulo correto para novos eventos após determinado período de tempo.
 Contudo, na maioria das aplicações reais, isto não é viável. 
-Assim, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem da correta rotulação de novos eventos por especialistas.
+Assim, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem da correta rotulação de novos exemplos.
 
 Os métodos independentes de rótulos baseiam-se na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
 Técnicas de agrupamento e detecção de \textit{outliers} são comumente utilizadas nas implementações.
@@ -316,12 +316,12 @@ visando apresentar uma aplicação prática para a solução proposta neste trab
 
 
 Este trabalho está organizado conforme a seguinte estrutura: 
-O \textbf{Capítulo \ref{revisao_bibliografica}} possui uma revisão bibliográfica dos principais conceitos utilizados neste trabalho como, 
+O \textbf{Capítulo \ref{revisao_bibliografica}} possui uma revisão bibliográfica dos principais conceitos empregados como, 
 por exemplo, Fluxos Contínuos de Dados e Aprendizado de Máquina, Mudança de Conceito e Redes de Função de Base Radial; 
 No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa definido é detalhado, 
 identificando a metodologia que será aplicada e o cronograma de atividades. 
 Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} 
-apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos em relação ao estado da arte.
+apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos.
 
 \xchapter{Revisão Bibliográfica}{} \label{revisao_bibliografica}
 \section{Considerações Iniciais}
@@ -361,8 +361,8 @@ A área de Aprendizado de Máquina (AM) tem como objetivo estudar algoritmos que
 Atualmente, diversas técnicas de AM estão disponíveis, sendo aplicadas a um amplo conjunto de problemas.
 
 Segundo \cite{Gama:2010:KDD:1855075}, a área de AM dedicou-se durante muitos anos em resolver problemas de aprendizado não-incrementais (\textit{batch}).
-Nestes cenários a distribuição dos dados é estacionária, ou seja, o conjunto de classes ou grupos possíveis não sofre modificações.
-Esta estabilidade permite a criação de modelos de decisão e grupamentos que se mantêm ao longo do tempo.
+Nestes cenários, a distribuição dos dados é estacionária, ou seja, o conjunto de classes ou grupos possíveis não sofre modificações.
+Esta estabilidade permite a criação de modelos que se mantêm ao longo do tempo.
 
 Contudo, os principais cenários da indústria e pesquisa que envolvem FCDs são dinâmicos.
 Nestes cenários, os dados fluem de forma contínua, 
@@ -425,22 +425,22 @@ Segundo \cite{Barbara:2002:RCD:507515.507519}, as características dos fluxos co
 \begin{itemize}
     \item Produzir representações compactas;
     \item Processamento rápido e incremental de novos dados;
-    \item Identificação precisa e rápida de \textit{outliers}.
+    \item Identificação precisa e tempestiva de \textit{outliers}.
 \end{itemize}
 
 Conforme \cite{Aggarwal:2003:FCE:1315451.1315460}, o problema de agrupamentos de dados em cenários com FCD é de difícil resolução,
 pois a natureza contínua e de alta frequência dos dados tornam os algoritmos tradicionais ineficientes.
 Assim, foram desenvolvidos algoritmos de agrupamento que realizam uma varredura única nos dados. 
-Todavia, segundo \cite{Aggarwal:2003:FCE:1315451.1315460}, estes algoritmos apesar de apresentarem escalabilidade, 
+Todavia, ainda segundo \cite{Aggarwal:2003:FCE:1315451.1315460}, estes algoritmos apesar de apresentarem escalabilidade, 
 não consideram a evolução dos dados. 
 Esta característica faz com que a qualidade dos grupos obtidos diminua ao longo do tempo.
 Além disso, por varrerem os dados de forma única, não é possível formar agrupamentos sobre diferentes partes do fluxo.
-Outros problemas para realização de agrupamentos em FCDs são a influência de ruídos e o fato das mudanças de conceito poderem ser abruptas ou graduais \cite{Khalilian:DBLP:journals/corr/abs-1006-5261}.
+Outro problema para realização de agrupamentos em FCDs é a influência de ruídos e \textit{outliers} \cite{Khalilian:DBLP:journals/corr/abs-1006-5261}.
 
 De acordo com \cite{Chen:Tu}, 
-parte dos algoritmos de \textit{clustering} em FCD atuam sobre uma projeção contínua do agrupamento de dados, por exemplo \cite{Guha:2003:CDS:776752.776777}.
+parte dos algoritmos de \textit{clustering} em FCD atua sobre uma projeção contínua do agrupamento de dados, por exemplo \cite{Guha:2003:CDS:776752.776777}.
 Esses algoritmos utilizam a estratégia de divisão e conquista, particionando a FCD em segmentos e 
-formando grupos através da aplicação de algoritmos baseados no K-Means em um espaço delimitado \cite{Guha:2000:CDS:795666.796588}.
+formando grupos através da aplicação de algoritmos baseados no K-Means para espaços delimitados \cite{Guha:2000:CDS:795666.796588}.
 Esta técnica apresenta como limitação não conseguir capturar características que evoluem ao longo do fluxo, 
 pois dão o mesmo peso para dados antigos e recentes.
  
@@ -516,20 +516,20 @@ onde, $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjunt
 para $X$ e $y$ \cite{Gama:2014:SCD:2597757.2523813}. 
 Isto é, um conjunto de exemplos possui rótulos de classe legítimos em $t_0$, mas passa a ter rótulos diferentes em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
 
-A equação \ref{eq:2} pode ser utilizada para caracterizar as mudanças na distribuição dos dados \cite{Gao:2007, Gama:2014:SCD:2597757.2523813}, do seguinte modo:
+A equação \ref{eq:1} pode ser utilizada para caracterizar as mudanças na distribuição dos dados \cite{Gao:2007, Gama:2014:SCD:2597757.2523813}, do seguinte modo:
 
 \begin{itemize}
-    \item Mudanças podem ocorrer na probabilidade a priori $p(y)$,
-    \item Mudanças podem ocorrer na função de densidade de probabilidade condicionada às classes $p(X|y)$,
-    \item Mudanças podem ocorrer na probabilidade a posteriori $p(y|X)$, afetando os limites de classificação.
+    \item Mudanças podem ocorrer na probabilidade a priori $P(c)$,
+    \item Mudanças podem ocorrer na função de densidade de probabilidade condicionada às classes $p(X|c)$,
+    \item Mudanças podem ocorrer na probabilidade a posteriori $p(c|X)$, afetando os limites de classificação.
 \end{itemize}
 
 Segundo \cite{Widmer:1996:LPC:226791.226798}, alterações na distribuição dos dados podem ser categorizadas em dois grupos:
-mudanças de conceito reais e mudanças de conceito virtuais.
+mudanças de conceito virtuais e mudanças de conceito reais.
 Estes tipos de mudança foram formalizados por \cite{Zliobaite:2010, Gama:2014:SCD:2597757.2523813}:
 
 \begin{enumerate}
-    \item Mudanças de conceito virtuais tratam de mudanças em $p(X)$ e, consequentemente, em $p(X|y)$,
+    \item Mudanças de conceito virtuais tratam de mudanças em $P(X)$ e, consequentemente, em $p(X|y)$,
     contudo, estas mudanças não têm impacto no conceito alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (b)).
     \item Mudanças de conceito reais referem-se a mudanças na relação $p(y|X)$ e afetam o conceito alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (c)).
 \end{enumerate}
@@ -545,8 +545,8 @@ Estes tipos de mudança foram formalizados por \cite{Zliobaite:2010, Gama:2014:S
 Em \cite{Gama:2014:SCD:2597757.2523813}, o seguinte cenário é utilizado para explicar a diferença entre uma mudança de conceito real e uma virtual.
 Considere um fluxo \textit{online} de anúncios do setor imobiliário.
 Um usuário deseja classificar estes anúncios em relevantes e não relevantes.
-Suponha, que à época, o usuário esteja buscando um novo apartamento. 
-Isto torna anúncios de apartamentos residenciais relevantes, e anúncios de casa de férias irrelevantes.
+Suponha que, à época, o usuário esteja buscando um novo apartamento. 
+Isto torna anúncios de apartamentos residenciais mais relevantes e os anúncios de casa de férias menos relevantes.
 Se o autor dos anúncios é alterado, o estilo de escrita sofre mudanças, mas os apartamentos permanecem relevantes para o usuário.
 Este cenário corresponde a uma mudança de conceito virtual.
 Considere que devido a uma crise, mais anúncios de apartamentos e menos de casas de férias aparecem, mas o editor dos anúncios permanece o mesmo.
@@ -621,25 +621,24 @@ Estes termos apresentam relação para com Detecção de Mudança de Conceito, p
 Em alguns contextos, esses termos são usados indistitamente, entretanto, neste trabalho eles serão diferenciados.
 
 De acordo com \cite{Chandola:2009:ADS:1541880.1541882}, 
-detecção de \textit{outliers} refere-se a tarefa de encontrar padrões nos dados que não estão de acordo com o comportamento esperado.
+Detecção de \textit{Outliers} refere-se a tarefa de encontrar padrões nos dados que não estão de acordo com o comportamento esperado.
 Esses padrões podem ser denominados como: \textit{outliers}, anomalias, observações discordantes, exceções, peculiaridades ou aberrações.
 
-Para \cite{Gama:2010:KDD:1855075}, exemplos esparsos e independentes, cujas características diferem muito daqueles que definem o modelo normal, 
+Para \cite{Gama:2010:KDD:1855075}, exemplos esparsos e independentes, cujas características diferem muito daqueles que definem o modelo, 
 devem ser considerados como \textit{outliers}, pois não há garantia de que representem um conceito. 
 Em \cite{Aggarwal:2003:FCE:1315451.1315460}, os autores tipificam os \textit{outliers} como anomalias ou ruídos.
-As anomalias constiuem um tipo especial de \textit{outlier}, que é de interesse dos analistas.
+As anomalias constituem um tipo especial de \textit{outlier}, que é de interesse dos analistas.
 Contudo, conforme \cite{Gama:2010:KDD:1855075}, é necessário um grupo conciso de exemplos para evidenciar o aparecimento de um novo conceito, ou novidade.
 
 Segundo \cite{Chandola:2009:ADS:1541880.1541882}, a Detecção de Novidade objetiva detectar padrões não observados (emergentes) nos dados.
-Entretanto, esse termo se distingue da detecção de \textit{outliers}, pois os novos padrões, geralmente, são incorporados ao modelo normal.
+Entretanto, esse termo se distingue da detecção de \textit{outliers}, pois os novos padrões, geralmente, são incorporados ao modelo.
 Apesar de apresentarem definições próximas, a Detecção de Mudança de Conceito engloba a Detecção de Novidade e a extrapola, ao identificar 
 mudanças de conceito reais a partir do \textit{feedback} sobre a performance preditiva \cite{Gama:2010:KDD:1855075}.
 
 Técnicas para Detecção de \textit{Change Points} identificam variações abruptas de valor em séries temporais, que podem representar transições entre estados.
 Diferenciam-se das técnicas para Detecção de Mudança de Conceito pois são aplicadas em séries temporais unidimensionais estacionárias \cite{Aminikhanghahi:2017:SMT:3086013.3086037}.
 
-Na seção seguinte, serão detalhados os principais algoritmos para Detecção de Mudança de Conceito, 
-priorizando algoritmos que não dependem de \textit{feedback} da performance preditiva (correta rotulação dos exemplos).
+Na seção seguinte serão detalhados os principais algoritmos para Detecção de Mudança de Conceito.
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
 
@@ -753,10 +752,10 @@ Ambos permitem a avaliação entre técnicas, utilizando diferentes \textit{data
 
 \subsection{MOA}
 
-O \textit{MOA – Massive Online Analysis} é o principal framework para mineração de dados em fluxos de dados e apresenta uma comunidade crescente e ativa.
-O framework contempla uma coleção de algoritmos de aprendizado de máquina (AM): classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
+O \textit{MOA – Massive Online Analysis} é o principal framework de mineração de dados com fluxos contínuos e apresenta uma comunidade crescente e ativa \cite{Bifet:2010:MMO:1756006.1859903}.
+O framework contempla uma coleção de algoritmos de aprendizado de máquina: classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
 Além de conter ferramentas para avaliação destes.
-Apresenta relação com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}, sendo também desenvolvido em Java, apesar de ter uma arquitetura mais voltada para escalabilidade.
+Apresenta relação com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}, sendo também desenvolvido em Java, apesar de ter uma arquitetura mais escalável.
 
 O MOA divide suas funcionalidades em tarefas (\textit{tasks}).
 As principais tarefas incluem:
@@ -767,7 +766,7 @@ análise de algoritmos para detecção de \textit{outliers} e de \textit{concept
 As tarefas podem ser executadas a partir da interface gráfica (GUI) ou por linha de comando.
 A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
 Através da interface gráfica, é possível executar múltiplas tarefas de forma concorrente, 
-controlar suas execuções e a visualizar os resultados parciais.
+controlar suas execuções e visualizar os resultados parciais.
 
 \begin{figure}[!ht]
 \begin{center}
@@ -777,8 +776,8 @@ controlar suas execuções e a visualizar os resultados parciais.
 \end{center}
 \end{figure}
 
-O MOA é capaz de ler arquivos \textit{ARFF}, muito utilizados graças ao projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
-A ferramenta também permite a produção de fluxos de dados dinamicamente através de geradores.
+A aplicação é capaz de ler arquivos \textit{ARFF}, muito utilizados graças ao projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
+A ferramenta também permite a produção de fluxos de dados dinamicamente, através de geradores.
 Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{Random Trees} \cite{Domingos:2000:MHD:347090.347107}
 \textit{SEA} \cite{Street:2001:SEA:502512.502568}, 
@@ -788,7 +787,7 @@ Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{LED} \cite{Gama:2003:ADT:956750.956813}, 
 \textit{Waveform} \cite{Gama:2003:ADT:956750.956813}, 
  e \textit{Function} \cite{Jin:2003:EDT:956750.956821}.
-Além destes geradores, a aplicação possibilita a obtenção de novos fluxos através da associação ou aplicação de filtros à sequências existentes.
+O MOA também possibilita a obtenção de novos fluxos através da associação ou aplicação de filtros à sequências existentes.
 
 Outra característica interessante do framework, é a possibilidade de adicionar mudanças de conceito a fluxos estacionários existentes.
 Isto é feito através de uma função sigmóide, que modela o evento de mudança de conceito como uma combinação balanceada de duas distribuições homogêneas, 
@@ -809,7 +808,7 @@ A janela para configuração de um detector é demonstrada na Figura \ref{fig:mo
 
 A arquitetura do framework é modular, o que permite aos usuários implementar novas tarefas com pouco esforço.
 Por exemplo, para criar um novo detector, basta estender a classe abstrata \texttt{moa.classifiers.core.driftdetection.AbstractChangeDetector} e implementar o algoritmo desejado.
-A janela de configuração para o detector (similar a \ref{fig:moa_detector}) é criada dinamicamente, através dos atributos declarados na classe.
+A janela de configuração para o detector (similar a \ref{fig:moa_detector}) é criada dinamicamente, a partir dos atributos da classe.
 
 \subsection{Tornado}
 \blindtext
