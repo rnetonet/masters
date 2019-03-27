@@ -477,11 +477,9 @@ No entanto, a maior parte dos algoritmos propostos requer que o rótulo correto 
 Este rótulo é utilizado na execução de novos ciclos de aprendizado, que permitem a atualização do modelo de decisão.
 Estes trabalhos também consideram que todas classes possíveis do problema já são conhecidas. 
 
-Segundo \cite{Aggarwal:2006:DSM:1196418}, o principal desafio para métodos de classificação aplicados a FCDs é a mudança de conceito,
-isto é, a evolução dos dados ao longo do tempo.
-A Detecção de Mudança de Conceito é uma tarefa de classificação aplicável a diferentes problemas práticos que envolvem FCDs.
-A técnica consiste em identificar exemplos (ou grupos de exemplos) que não são coerentes com o modelo de decisão vigente.
-O algoritmo de detecção pode indicar se o conceito alvo aprendido sofreu modificações ou se novos conceitos surgiram.
+No contexto deste trabalho de mestrado, assume-se que os dados são obtidos a partir de fluxos contínuos de dados não estacionários com presença de mudança de conceito.
+O algoritmo proposto não considera técnicas de aprendizado de máquina aplicadas a estes fluxos.
+A técnica desenvolvida tem como foco a identificação de mudanças de conceito a partir de uma análise direta e contínua do fluxo.
 Na próxima seção, a ideia de mudança de conceito será aprofundada.
 
 \section{Mudança de Conceito}
@@ -638,6 +636,7 @@ mudanças de conceito reais a partir do \textit{feedback} sobre a performance pr
 Técnicas para Detecção de \textit{Change Points} identificam variações abruptas de valor em séries temporais, que podem representar transições entre estados.
 Diferenciam-se das técnicas para Detecção de Mudança de Conceito pois são aplicadas em séries temporais unidimensionais estacionárias \cite{Aminikhanghahi:2017:SMT:3086013.3086037}.
 
+O método proposto neste projeto de mestrado objetiva identificar mudanças de conceito virtuais e reais, seja qual for o padrão de ocorrência.
 Na seção seguinte serão detalhados os principais algoritmos para Detecção de Mudança de Conceito.
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
@@ -744,6 +743,9 @@ Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, os grupos e as re
     \label{tbl:abordagens}
 \end{table}
 
+O algoritmo desenvolvido neste projeto de mestrado enquadra-se na categoria de algoritmos implícitos ou não supervisionados, mais especificamente no grupo \textit{Detecção de Novidades / Métodos de Agrupamento}.
+Na próxima seção, abordaremos as ferramentas utilizadas para implementação da técnica e sua validação.
+
 \subsection{Ferramentas}
 
 Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
@@ -818,6 +820,8 @@ Por sua vez, a classe \texttt{BasicConceptDriftPerformanceEvaluator} avalia a pe
 sem a necessidade de um classificador.
 Estes avaliadores e os seus indicadores serão detalhados juntamente com os resultados dos experimentos iniciais, na Seção \ref{experimentos_iniciais}. 
 
+Neste projeto de mestrado foram implementados novos detectores para o MOA e as duas técnicas de validação foram utilizadas na análise dos experimentos.
+
 \subsection{Tornado}
 
 O Tornado é, assim como o MOA, um framework para mineração de dados para fluxos contínuos \cite{Pesaranghader:Tornado}.
@@ -839,22 +843,24 @@ Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do f
 A entrada de dados é composta por um fluxo (\textit{Stream}), uma lista de pares (classificador, detector) e um vetor com pesos.
 O Tornado utiliza a abordagem de validação \textit{prequential}, na qual as instâncias são testadas e depois utilizadas no aprendizado \cite{Gama:2014:SCD:2597757.2523813}.
 
-
 O componente \textit{Stream Reader} lê instâncias a partir do fluxo e as envia, uma a uma, para o par (classificador, detector), para construção do modelo.
 Os modelos são construídos de forma incremental. Por seguir a abordagem \textit{prequential}, cada instância é primeiramente utilizada para testes e depois como treinamento.
 Simultaneamente, os classificadores enviam suas estatísticas (taxas de erro ou resultados das predições) aos detectores, para que a mudança de conceito possa ser sinalizada.
 Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par, considerando taxas de erro, atraso para detecção da mudança de conceito, falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
 O framework apresenta ao usuário o par com maior pontuação. Este par, contudo, pode mudar devido ao aprendizado incremental ou à mudança de conceito.
-
-A Figure \ref{fig:tornado_out2} apresenta um exemplo de resultado obtido através do framework.
+A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado obtido através do framework.
 
 \begin{figure}[!ht]
 \begin{center}
-    \includegraphics[scale=0.6]{imagens/tornado_out2.png}
-    \caption{Tornado - Resultado para um múltiplos pares \cite{Pesaranghader:Tornado}}
+    \includegraphics[scale=0.5]{imagens/tornado_out2.png}
+    \caption{Tornado - Resultado para múltiplos pares \cite{Pesaranghader:Tornado}}
     \label{fig:tornado_out2}
 \end{center}
 \end{figure}
+
+Neste trabalho de pesquisa, de forma similar ao MOA, a técnica proposta foi implementada no framework Tornado.
+O framework foi utilizado na validação dos experimentos, permitindo verificar o comportamento do detector em conjunto com um classificador, ao longo do tempo.
+Na seção seguinte, detalharemos conceitos sobre as Redes de Função de Base Radial, técnica que serviu de base para o algoritmo proposto nesta pesquisa.
 
 \section{Redes de Função de Base Radial}
 
@@ -923,8 +929,14 @@ de base radial aplicadas nas entradas $x$ e dos seus respectivos centros $t_i$,
 $w_{j_0}$ representa o bias, $\varphi (||{{x}}-{{t}}_{i}||)$ é o conjunto de $N$ funções de base radial,
 $||\ldots||$ é a norma euclidiana e $y$ são as saídas geradas pela rede.
 
+As camadas inicial e intermediária e suas propriedades de agrupamento são utilizadas como base para o algoritmo de detecção de mudança de conceito 
+proposto neste trabalho de pesquisa. 
+
 \section{Trabalhos Relacionados}
-\blindtext
+
+Além das referências básicas apresentadas nesta seção, foi realizada uma pesquisa na literatura visando identificar trabalhos relacionados que
+ propõem a identificação de mudanças de conceito em FCDs através da aplicação de redes RBF.
+
 
 \section{Considerações Finais}
 \blindtext
