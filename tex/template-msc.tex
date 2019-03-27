@@ -883,17 +883,17 @@ Na literatura, a função de base radial gaussiana (Eq. \ref{eq:gaussiana}) é u
     f(x)=e^{-{\frac {v^{2}}{2\sigma^{2}}}}
 \end{equation}
 
-Na equação \ref{eq:gaussiana}, $v = \lVert x - t_i \rVert$ é dado pela distância euclidiana, onde $x$ é o valor de entrada da rede, enquanto $t_i$ e $\sigma$
-correspondem ao centro e a largura da função radial. 
+Na equação \ref{eq:gaussiana}, $v = \lVert x - t_i \rVert$ é dado pela distância euclidiana, onde $x$ é o valor de entrada da rede, 
+enquanto $t_i$ e $\sigma$ correspondem respectivamente ao centro e a largura da função radial. 
 Dessa maneira, a resolução de um determinado problema por uma rede do tipo RBF consiste na resolução das funções \ref{eq:rbf1} e
 \ref{eq:rbf2} para chegar ao sistema \ref{eq:rbf3}.
 
 \begin{equation} \label{eq:rbf1}
-    f(x)=\sum _{{i=1}}^{N}w_{ji}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||)
+    f(x)=\sum _{{i=1}}^{N}w_{j_i}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||)
 \end{equation}
 
 \begin{equation} \label{eq:rbf2}
-    y_i=\sum _{{i=1}}^{N}w_{ji}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||) + w_{j0}
+    y_i=\sum _{{i=1}}^{N}w_{j_i}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||) + w_{j_0}
 \end{equation}
 
 \todo{Ajustar matriz}
