@@ -10,17 +10,17 @@
 \contentsline {subsection}{\numberline {2.3.2}Ferramentas}{15}
 \contentsline {subsection}{\numberline {2.3.3}MOA}{15}
 \contentsline {subsection}{\numberline {2.3.4}Tornado}{18}
-\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{18}
-\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{18}
-\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{19}
-\contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{21}
-\contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{21}
-\contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{21}
-\contentsline {subsection}{\numberline {3.2.1}Atividades de Pesquisa}{21}
-\contentsline {section}{\numberline {3.3}Considera\IeC {\c c}\IeC {\~o}es Finais}{22}
-\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{23}
-\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{23}
-\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{23}
-\contentsline {section}{\numberline {4.3}M\IeC {\'e}todo de Pettitt}{23}
-\contentsline {section}{\numberline {4.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{24}
-\contentsline {section}{\numberline {4.5}Considera\IeC {\c c}\IeC {\~o}es Finais}{24}
+\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{19}
+\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{21}
+\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{21}
+\contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{23}
+\contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{23}
+\contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{23}
+\contentsline {subsection}{\numberline {3.2.1}Atividades de Pesquisa}{23}
+\contentsline {section}{\numberline {3.3}Considera\IeC {\c c}\IeC {\~o}es Finais}{24}
+\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{25}
+\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{25}
+\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{25}
+\contentsline {section}{\numberline {4.3}M\IeC {\'e}todo de Pettitt}{25}
+\contentsline {section}{\numberline {4.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{26}
+\contentsline {section}{\numberline {4.5}Considera\IeC {\c c}\IeC {\~o}es Finais}{26}

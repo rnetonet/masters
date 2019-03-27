@@ -182,7 +182,7 @@
 
 % Palavras-chave do resumo em Ingles
 \begin{keywords}
-    Machine Learning, Data Streams, Concept Drift, Radial Basis Function Networks, Unlabeled
+    Machine Learning, Data Streams, Concept Drift, Radial Basis Function Networks, RBF Network, Unlabeled
 \end{keywords}
 
 %%%%%%%%%%%%%%%%%%%
@@ -819,11 +819,107 @@ sem a necessidade de um classificador.
 Estes avaliadores e os seus indicadores serão detalhados juntamente com os resultados dos experimentos iniciais, na Seção \ref{experimentos_iniciais}. 
 
 \subsection{Tornado}
-\blindtext
+
+O Tornado é, assim como o MOA, um framework para mineração de dados para fluxos contínuos \cite{Pesaranghader:Tornado}.
+O projeto é desenvolvido na linguagem Python e seu código está disponível\footnote{https://github.com/alipsgh/tornado}.
+O framework diferencia-se do MOA por apresentar um cenário de avaliação específico: 
+analisar a execução, em paralelo, de pares (classificador, detector de mudança de conceito), 
+para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
+
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[scale=0.75]{imagens/tornado.png}
+    \caption{Framework Tornado. Fonte: \cite{Pesaranghader:Tornado}.}
+    \label{fig:tornado}
+\end{center}
+\end{figure}
+
+Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do framework são: 
+\textit{Stream Reader}, \textit{Classifiers}, \textit{Detectors}, \textit{Classifier-Detector Pairs} e \textit{CAR Calculator}.
+A entrada de dados é composta por um fluxo (\textit{Stream}), uma lista de pares (classificador, detector) e um vetor com pesos.
+O Tornado utiliza a abordagem de validação \textit{prequential}, na qual as instâncias são testadas e depois utilizadas no aprendizado \cite{Gama:2014:SCD:2597757.2523813}.
+
+
+O componente \textit{Stream Reader} lê instâncias a partir do fluxo e as envia, uma a uma, para o par (classificador, detector), para construção do modelo.
+Os modelos são construídos de forma incremental. Por seguir a abordagem \textit{prequential}, cada instância é primeiramente utilizada para testes e depois como treinamento.
+Simultaneamente, os classificadores enviam suas estatísticas (taxas de erro ou resultados das predições) aos detectores, para que a mudança de conceito possa ser sinalizada.
+Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par, considerando taxas de erro, atraso para detecção da mudança de conceito, falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
+O framework apresenta ao usuário o par com maior pontuação. Este par, contudo, pode mudar devido ao aprendizado incremental ou à mudança de conceito.
+
+A Figure \ref{fig:tornado_out2} apresenta um exemplo de resultado obtido através do framework.
+
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[scale=0.6]{imagens/tornado_out2.png}
+    \caption{Tornado - Resultado para um múltiplos pares \cite{Pesaranghader:Tornado}}
+    \label{fig:tornado_out2}
+\end{center}
+\end{figure}
 
 \section{Redes de Função de Base Radial}
-\blindtext
-  
+
+As Redes de Função de Base Radial (RBF \textit{networks}) são aproximadoras universais de funções.
+As RBFs têm como principal diferença em relação às outras redes neurais, a forma de ativação.
+Nessas redes, este processo é feito através do cálculo da distância entre os vetores de entrada e os centros estabelecidos \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+
+Em sua forma básica, a arquitetura de uma rede do tipo RBF é composta por três camadas: 
+uma camada de entrada, uma intermediária e uma de saída \cite{Rojas:1996:NNS:235222}. 
+A camada intermediária (oculta) de uma RBF utiliza funções de base radiais para agrupar os dados de entrada em clusters, 
+transformando padrões de entrada não linearmente separáveis em um conjunto de saídas linearmente separáveis. 
+A camada de saída classifica os padrões recebidos através da combinação linear das saídas das funções \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
+
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[scale=1]{imagens/rbf_arq.png}
+    \caption{Arquitetura RBF}
+    \label{fig:rbg_arq}
+\end{center}
+\end{figure}
+
+Na literatura, a função de base radial gaussiana (Eq. \ref{eq:gaussiana}) é uma das mais utilizadas para camada intermediária.
+
+\begin{equation} \label{eq:gaussiana}
+    f(x)=e^{-{\frac {v^{2}}{2\sigma^{2}}}}
+\end{equation}
+
+Na equação \ref{eq:gaussiana}, $v = \lVert x - t_i \rVert$ é dado pela distância euclidiana, onde $x$ é o valor de entrada da rede, enquanto $t_i$ e $\sigma$
+correspondem ao centro e a largura da função radial. 
+Dessa maneira, a resolução de um determinado problema por uma rede do tipo RBF consiste na resolução das funções \ref{eq:rbf1} e
+\ref{eq:rbf2} para chegar ao sistema \ref{eq:rbf3}.
+
+\begin{equation} \label{eq:rbf1}
+    f(x)=\sum _{{i=1}}^{N}w_{ji}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||)
+\end{equation}
+
+\begin{equation} \label{eq:rbf2}
+    y_i=\sum _{{i=1}}^{N}w_{ji}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||) + w_{j0}
+\end{equation}
+
+\todo{Ajustar matriz}
+
+\begin{equation} \label{eq:rbf3}
+\begin{bmatrix}
+    x_{11}       & x_{12} & x_{13} & \dots & x_{1n} \\
+    x_{21}       & x_{22} & x_{23} & \dots & x_{2n} \\
+    \hdotsfor{5} \\
+    x_{d1}       & x_{d2} & x_{d3} & \dots & x_{dn}
+\end{bmatrix}
+\begin{bmatrix}
+    x_{11} & x_{12} & x_{13} & \dots  & x_{1n} \\
+    x_{21} & x_{22} & x_{23} & \dots  & x_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    x_{d1} & x_{d2} & x_{d3} & \dots  & x_{dn}
+\end{bmatrix}
+=
+\begin{bmatrix}
+    x_{11} & x_{12} & x_{13} & \dots  & x_{1n} \\
+    x_{21} & x_{22} & x_{23} & \dots  & x_{2n} \\
+    \vdots & \vdots & \vdots & \ddots & \vdots \\
+    x_{d1} & x_{d2} & x_{d3} & \dots  & x_{dn}
+\end{bmatrix}
+\end{equation}
+
 \section{Trabalhos Relacionados}
 \blindtext
 
