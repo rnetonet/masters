@@ -889,36 +889,39 @@ Dessa maneira, a resolução de um determinado problema por uma rede do tipo RBF
 \ref{eq:rbf2} para chegar ao sistema \ref{eq:rbf3}.
 
 \begin{equation} \label{eq:rbf1}
-    f(x)=\sum _{{i=1}}^{N}w_{j_i}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||)
+    f(x)=\sum _{{i=1}}^{N}w_{ij}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||)
 \end{equation}
 
 \begin{equation} \label{eq:rbf2}
-    y_i=\sum _{{i=1}}^{N}w_{j_i}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||) + w_{j_0}
+    y_i=\sum _{{i=1}}^{N}w_{ij}\phi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||) + w_{j_0}
 \end{equation}
-
-\todo{Ajustar matriz}
 
 \begin{equation} \label{eq:rbf3}
 \begin{bmatrix}
-    x_{11}       & x_{12} & x_{13} & \dots & x_{1n} \\
-    x_{21}       & x_{22} & x_{23} & \dots & x_{2n} \\
+    \varphi (||{{x_1}}-{{t}}_{1}||) & \varphi (||{{x_1}}-{{t}}_{2}||) & \dots & \varphi (||{{x_1}}-{{t}}_{N}||) \\
+    \varphi (||{{x_2}}-{{t}}_{1}||) & \varphi (||{{x_2}}-{{t}}_{2}||) & \dots & \varphi (||{{x_2}}-{{t}}_{N}||) \\
     \hdotsfor{5} \\
-    x_{d1}       & x_{d2} & x_{d3} & \dots & x_{dn}
+    \varphi (||{{x_N}}-{{t}}_{1}||) & \varphi (||{{x_N}}-{{t}}_{2}||) & \dots & \varphi (||{{x_N}}-{{t}}_{N}||)
 \end{bmatrix}
 \begin{bmatrix}
-    x_{11} & x_{12} & x_{13} & \dots  & x_{1n} \\
-    x_{21} & x_{22} & x_{23} & \dots  & x_{2n} \\
-    \vdots & \vdots & \vdots & \ddots & \vdots \\
-    x_{d1} & x_{d2} & x_{d3} & \dots  & x_{dn}
+    w_1 \\
+    w_2 \\
+    \vdots \\
+    w_N \\
 \end{bmatrix}
 =
 \begin{bmatrix}
-    x_{11} & x_{12} & x_{13} & \dots  & x_{1n} \\
-    x_{21} & x_{22} & x_{23} & \dots  & x_{2n} \\
-    \vdots & \vdots & \vdots & \ddots & \vdots \\
-    x_{d1} & x_{d2} & x_{d3} & \dots  & x_{dn}
+    y_1 \\
+    y_2 \\
+    \vdots \\
+    y_N \\
 \end{bmatrix}
 \end{equation}
+
+onde $w_{ij}$ são os pesos de cada conexão sináptica, $\phi$ é a matriz de interpolação originada do conjunto de $N$ funções
+de base radial aplicadas nas entradas $x$ e dos seus respectivos centros $t_i$,
+$w_{j_0}$ representa o bias, $\varphi (||{{x}}-{{t}}_{i}||)$ é o conjunto de $N$ funções de base radial,
+$||\ldots||$ é a norma euclidiana e $y$ são as saídas geradas pela rede.
 
 \section{Trabalhos Relacionados}
 \blindtext
