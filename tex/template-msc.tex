@@ -934,21 +934,51 @@ proposto neste trabalho de pesquisa.
 
 \section{Trabalhos Relacionados}
 
-Além das referências básicas apresentadas nesta seção, foi realizada uma pesquisa na literatura visando identificar trabalhos relacionados que
- propõem a identificação de mudanças de conceito em FCDs através da aplicação de redes RBF.
+Além das referências básicas apresentadas nesta seção, foi realizada uma pesquisa na literatura visando identificar trabalhos relacionados 
+que propõem a identificação de mudanças de conceito em FCDs através da aplicação de redes RBF, ou técnicas similares.
 
+Em \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification} redes RBF com funções Gaussianas são utilizadas para detecção de novidades.
+Os centros e as matrizes de covariância são definidas através do agrupamento via \textit{k-means} juntamente com a aplicação de heurísticas de largura ou do algoritmo \textit{EM}.
+O método proposto não atua sobre fluxos de dados e constitue uma rede RBF completa e estática ao longo do tempo.
+
+Roberts e Penny \cite{Roberts:Penny:Novelty:Confidence} propõem  um método para detecção de novidade baseado nas taxas de erro e confiança, 
+utilizando um comitê de redes RBF. 
+Cada rede é inicializada com um vetor de pesos diferente.
+A taxa de erro final é calculada a partir da matriz de covariância de erro do cômite criado.
+Esta abordagem foi testada na classificação de pacientes com problemas de tremor muscular.
+
+As redes baseadas em função de base radial também foram aplicadas para detecção de \textit{outliers}, mais especificamente, para detecção de anomalias \cite{Bazargani2018RadialBF}.
+Esta pesquisa propõe modificações na arquitetura de redes RBF, de forma mais específica, em sua função \textit{loss}.
+Esta modificação faz com que a redes atuem como um classificador de uma única classe, permitindo a identificação de exemplos divergentes do padrão conhecido.
+
+Este projeto de mestrado se diferencia dos trabalhos mencionados por utilizar apenas as camadas de entrada e intermediária das redes RBF para detecção de mudanças de conceito.
+Além disso, etapas como a escolha dos centros e o cálculo do tamanho do raio são realizadas de forma dinâmica.
+Estas características viabilizam a aplicação da técnica em fluxos contínuos de dados.
 
 \section{Considerações Finais}
-\blindtext
+
+Neste capítulo foram apresentados alguns conceitos básicos que serão utilizados como base para a execução deste trabalho. 
+Foram descritos os conceitos de 
+Fluxos Contínuos de Dados e suas aplicações em Aprendizado de Máquina,
+Mudança de Conceito,
+técnicas para Detecção de Mudança de Conceito,
+principais ferramentas da área e 
+Redes de Função de Base Radial.
+Por fim,
+foram discutidos trabalhos que aplicam redes RBF para detecção de padrões divergentes (novidades, \textit{outliers}, etc).
 
 \xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
 \section{Considerações Iniciais}
-\blindtext
+
+Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que Redes de Função de Base Radial sejam aplicadas para detecção de mudanças de conceito em fluxos contínuos de dados.
+Espera-se que com a utilização das camadas inicias e intermediária das redes RBF e suas propriedades de agrupamento, seja possível detectar mudanças de conceito de forma eficiente e sem requerer a manutenção de estados prévios.
+A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
+
 
 \section{Descrição do Problema}
 \blindtext
 
-\subsection{Atividades de Pesquisa}
+\section{Atividades de Pesquisa}
 \blindtext
 
 \section{Considerações Finais}

@@ -94,6 +94,11 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/507515.507519}.}
   Application}. Upper Saddle River, NJ, USA: Prentice-Hall, Inc., 1993.
 ISBN 0-13-126780-9.}
 
+\bibitem[Bazargani e Namee 2018]{Bazargani2018RadialBF}
+\abntrefinfo{Bazargani e Namee}{BAZARGANI; NAMEE}{2018}
+{BAZARGANI, M.~H.; NAMEE, B.~M. Radial basis function data descriptor ( rbfdd )
+  network : An anomaly detection approach. In:  . [S.l.: s.n.], 2018.}
+
 \bibitem[Bifet 2009]{Bifet:2009:ALM:1656274.1656287}
 \abntrefinfo{Bifet}{BIFET}{2009}
 {BIFET, A. Adaptive learning and mining for data streams and frequent patterns.
@@ -346,6 +351,15 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1656274.1656278}.}
   River, NJ, USA: Prentice-Hall, Inc., 1988.
 ISBN 0-13-022278-X.}
 
+\bibitem[Jianping e Venkateswarlu
+  2002]{Jianping:Venkateswarlu:RBF:SpeakerIdentification}
+\abntrefinfo{Jianping e Venkateswarlu}{JIANPING; VENKATESWARLU}{2002}
+{JIANPING, D.; VENKATESWARLU, R. Speaker recognition using radial basis
+  function neural networks. In:  ABRAHAM, A.; K{\"O}PPEN, M. (Ed.).
+  \emph{Hybrid Information Systems}. Heidelberg: Physica-Verlag HD, 2002. p.
+  57--64.
+ISBN 978-3-7908-1782-9.}
+
 \bibitem[Jin e Agrawal 2003]{Jin:2003:EDT:956750.956821}
 \abntrefinfo{Jin e Agrawal}{JIN; AGRAWAL}{2003}
 {JIN, R.; AGRAWAL, G. Efficient decision tree construction on streaming data.
@@ -516,6 +530,12 @@ Dispon{\'\i}vel em: \url{http://ruor.uottawa.ca/handle/10393/38190}.}
   Interdisciplinary Learning Science}. Emerald Group Publishing Limited, 1995.
 ISBN 9780080425696. Dispon{\'\i}vel em:
   \url{https://books.google.com.br/books?id=YkdyQgAACAAJ}.}
+
+\bibitem[{Roberts}, {Penny} e {Pillot} 1996]{Roberts:Penny:Novelty:Confidence}
+\abntrefinfo{{Roberts}, {Penny} e {Pillot}}{{Roberts}; {Penny}; {Pillot}}{1996}
+{{Roberts}, S.~J.; {Penny}, W.; {Pillot}, D. Novelty, confidence and errors in
+  connectionist systems. In:  \emph{IEE Colloquium on Intelligent Sensors
+  (Digest No: 1996/261)}. [S.l.: s.n.], 1996. p. 10/1--10/6.}
 
 \bibitem[Roberts 2000]{Roberts:2000:CCT:338441.338464}
 \abntrefinfo{Roberts}{ROBERTS}{2000}
