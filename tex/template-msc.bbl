@@ -424,14 +424,6 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1007/s10115-010-0342-8}.}
 \emph{Proc. Eur. Conf. Artif. Intell.}, p. 5--10, 2008.
 Cited By 70.}
 
-\bibitem[Lane e Brodley 1998]{Lane:1998:AOL:3000292.3000339}
-\abntrefinfo{Lane e Brodley}{LANE; BRODLEY}{1998}
-{LANE, T.; BRODLEY, C.~E. Approaches to online learning and concept drift for
-  user identification in computer security. In:  \emph{Proceedings of the
-  Fourth International Conference on Knowledge Discovery and Data Mining}. AAAI
-  Press, 1998.  (KDD'98), p. 259--263. Dispon{\'\i}vel em:
-  \url{http://dl.acm.org/citation.cfm?id=3000292.3000339}.}
-
 \bibitem[{Lee} e {Magoulès} 2012]{Lee:Magoules:CoC:2012}
 \abntrefinfo{{Lee} e {Magoulès}}{{Lee}; {Magoulès}}{2012}
 {{Lee}, J.; {Magoulès}, F. Detection of concept drift for learning from stream

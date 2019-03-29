@@ -1,7 +1,7 @@
 \babel@toc {brazil}{}
 \contentsline {chapter}{Cap\'{\i }tulo~1---Introdu\IeC {\c c}\IeC {\~a}o}{1}
 \contentsline {section}{\numberline {1.1}Contexto e Motiva\IeC {\c c}\IeC {\~a}o}{1}
-\contentsline {section}{\numberline {1.2}Hip\IeC {\'o}tese e Objetivo}{3}
+\contentsline {section}{\numberline {1.2}Hip\IeC {\'o}tese e Objetivo}{2}
 \contentsline {chapter}{Cap\'{\i }tulo~2---Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{5}
 \contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{5}
 \contentsline {section}{\numberline {2.2}Fluxos Cont\IeC {\'\i }nuos de Dados e Aprendizado de M\IeC {\'a}quina}{5}
@@ -16,7 +16,7 @@
 \contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{23}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{23}
 \contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{23}
-\contentsline {section}{\numberline {3.3}Atividades de Pesquisa}{23}
+\contentsline {section}{\numberline {3.3}Atividades de Pesquisa}{24}
 \contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{24}
 \contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{25}
 \contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{25}

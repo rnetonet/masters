@@ -219,79 +219,64 @@
 
 \section{Contexto e Motivação}
 
-A quantidade de dados produzidos por sistemas computacionais tem crescido exponencialmente.
-Relatório do IDC (\textit{International Data Corporation}) estimava que em 2014 seriam produzidos 4,4 zettabytes (trilhões de gigabytes) de dados \cite{idc_report}.
-O mesma relatório, prevê que em 2020 essa quantidade será de 44 zettabytes.
+A quantidade de dados produzidos por sistemas computacionais tem crescido exponencialmente nos últimos anos.
+Relatório produzido pelo IDC (\textit{International Data Corporation}), estimava que em 2014 seriam produzidos 4,4 zettabytes (trilhões de gigabytes) de dados \cite{idc_report}.
+O mesmo relatório, projeta que em 2019 essa quantidade será de 44 zettabytes.
 
-Grande parte desses sistemas produz dados através de sequências de eventos.
-Estas sequências são geradas de forma contínua, ordenada, em alta frequência e potencialmente infinita \cite{Feigenbaum:2003:ALD:589343.592594}.
-Na literatura, sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs).
-Exemplos de sistemas que produzem fluxos dessa natureza, incluem:
-monitoramento de dados de sensores \cite{Lee:Wang:Ryu:2007},
+Parte significativa dessas informações é criada atráves de Fluxos Contínuos de Dados (FCDs).
+Estes fluxos caracterizam-se por produzirem novos eventos de forma contínua, ordenada, em alta frequência e potencialmente infinita \cite{Feigenbaum:2003:ALD:589343.592594}.
+Diversos domínios de aplicação atuam dessa forma, incluindo:
+monitoramento de sensores \cite{Lee:Wang:Ryu:2007},
 tráfico TCP/IP, 
 histórico de compra de clientes,
 filtragem de SPAM em mensagens de e-mail \cite{Katakis:2010:TRC:1746286.1746291},
-detecção de intrusos \cite{Lane:1998:AOL:3000292.3000339},
+detecção de intrusos,
 análise de sentimentos \cite{Smailovic:2014:SAL:2941772.2941857}, 
 etc.
 
-Nos últimos anos, técnicas de Aprendizado de Máquina (AM) aplicadas a fluxos contínuos de dados têm se tornado um importante tema de pesquisa.
-Nestes cenários, os algoritmos devem atender a severas restrições de tempo e processamento \cite{Bifet:2009:ALM:1656274.1656287}.
-Por exemplo, um classificador deve fornecer o rótulo para um evento antes que o próximo ocorra. 
+Diante desse cenário, a adaptação de técnicas de Aprendizado de Máquina (AM) para contextos com FCDs tem se tornado uma importante e desafiadora área de pesquisa.
+Isto ocorre, pois, nestas circustâncias os algoritmos de AM devem atender a severas restrições de tempo e processamento \cite{Bifet:2009:ALM:1656274.1656287}.
 
-Outra dificuldade encontrada nesses ambientes é a mudança na distribuição dos dados. 
-Isto é, o contexto do processo gerador sofre alterações que impactam no fluxo produzido e, por conseguinte, as predições esperadas.
-Este problema é conhecido como \textbf{mudança de conceito} \cite{Gama:2010:KDD:1855075} e sua ocorrência impacta a acurácia do modelo criado.
+Além disso, a maioria das aplicações reais que envolvem FCDs são dinâmicas.
+Isto é, ao longo do tempo, o contexto implícito do processo gerador ou a distribuição dos dados produzidos podem sofrer alterações, modificando os conceitos-alvo esperados.
+Na literatura, este problema é denominado como mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia do modelo de decisão.
 Podendo, inclusive, torná-lo obsoleto.
-Estas mudanças são comumente classificadas conforme a velocidade com que ocorrem.
-Mudanças de conceito \textbf{abruptas} identificam transições rápidas entre conceitos. 
-Transições mais lentas, são ditas \textbf{graduais} \cite{Gama:2014:SCD:2597757.2523813}.
-
-Como exemplificação, suponhamos que o histórico de transações via cartão de crédito de determinado cliente seja armazenado.
-Este cliente, ao longo dos anos, tem utilizado o cartão apenas para comprar alimentos, sempre em uma mesma região da cidade.
-A partir desse conjunto de dados, um modelo de decisão é criado.
-Contudo, não é coerente considerar que o comportamento do cliente permanecerá inalterado.
-
-Diante desse contexto, devemos considerar as seguintes hipóteses:
-1) Abruptamente, esse cliente compra vários eletrônicos em outro país.
-Neste caso, compete aos métodos de detecção identificar se houve fraude ou se o cliente está apenas viajando e aproveitando ofertas.
-2) Gradualmente, o cliente passa a utilizar o cartão para compras de passagens aéreas e diminui paulatinamente a utilização para compra de alimentos.
-Após determinado período, o perfil de compra estará completamente renovado.
-Assim, cabe novamente aos métodos de detecção identificar a mudança de comportamento e emitir um alerta, 
-para que o modelo construído seja atualizado.
 
 Diversos algoritmos para detecção de mudanças de conceito foram propostos na literatura.
-Cada uma dessas técnicas possui características e parâmetros diferentes que visam aumentar sua eficiência, 
+Estes trabalhos, em sua maioria, atuam em cenários de classificação.
+Deve-se destacar que cada técnica possui características e parâmetros diferentes, que visam aumentar sua eficiência, 
 conforme a natureza dos dados e do tipo de mudança que se deseja otimizar.
 
-Parte dos algoritmos detecta a mudança de conceito através do monitoramento da taxa de erro do modelo em relação a uma determinada métrica.
-Alguns algoritmos que adotam essa abordagem são: 
+Parte desses algoritmos detecta a mudança de conceito através do monitoramento da taxa de erro do classificador em relação a uma determinada métrica \cite{Gama:2014:SCD:2597757.2523813}.
+Alguns algoritmos que adotam essa estratégia são: 
 DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
 ADWIN \cite{BifetG07}, ECDD \cite{Ross:2012:EWM:2076039.2076307}, 
-PL \cite{Bach:PL:2008}, FCWM \cite{FCWM}, STEPD \cite{STEPD}, DOF \cite{Sobhani:2011:NDD:2045295.2045309} e 
-SCCDD/CRCDD \cite{daCosta:2016:UDS:2956219.2956389}.
+PL \cite{Bach:PL:2008}, FCWM \cite{FCWM}, STEPD \cite{STEPD}, DOF \cite{Sobhani:2011:NDD:2045295.2045309}, 
+SCCDD/CRCDD \cite{daCosta:2016:UDS:2956219.2956389}, dentre outros.
 
-Outra metodologia bastante comum para lidar com mudanças de conceito é a aplicação de comitês de classificadores (\textit{Ensemble Classifiers}). 
-Esta técnica consiste na aplicação simultânea de múltiplos classificadores.
-A combinação das predições individuais é utilizada para compor uma predição global \cite{Gama:2014:SCD:2597757.2523813}.
-Os métodos para atualização do arranjo (criação e exclusão de classificadores) e a forma de integração das predições individuais variam para cada algoritmo.
-
-Exemplos de comitês de classificadores são 
+Outra metodologia para identificar alterações nos conceitos, é a aplicação de comitês de classificadores (\textit{Ensemble Classifiers}). 
+Nesta abordagem, a predição global é obtida a partir da combinação das predições individuais de cada classificador.
+Durante este processo, divergências entre as predições são utilizadas para identificar a ocorrência de mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
+Exemplos de trabalhos que implementam essa técnica, incluem:
 DWM \cite{Kolter:2007:DWM:1314498.1390333}, AUE \cite{AUE}, 
 WMA \cite{Blum1997}, DDD \cite{Minku:2012:DNE:2197077.2197204}, ADOB \cite{deCarvalhoSantos:2014:SUR:3120352.3120365}, dentre outros.
 
-As abordagens mencionadas dependem da disponibilidade do rótulo correto para novos eventos após determinado período de tempo.
-Contudo, na maioria das aplicações reais, isto não é viável. 
-Assim, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem da correta rotulação de novos exemplos.
+Contudo, as abordagens mencionadas dependem que o rótulo correto para cada predição seja informado,
+o que não é viável para a maioria das aplicações reais.
+Dessa forma, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem desse \textit{feedback}.
 
 Os métodos independentes de rótulos baseiam-se na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
-Técnicas de agrupamento e detecção de \textit{outliers} são comumente utilizadas nas implementações.
-Além destas abordagens, estratégias de sumarização dos dados e aplicação de medidas de dissimilaridade \cite{Ryu:Kantardzic:2012} também são utilizadas para identificar mudanças.
+Técnicas de agrupamento, detecção de \textit{outliers}, sumarização dos dados e aplicação de medidas de dissimilaridade são comumente utilizadas nas implementações \cite{Ryu:Kantardzic:2012}.
+Os seguintes algoritmos são exemplos deste grupo: 
+OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107},
+MINAS \cite{Faria:2013:NDA:2480362.2480515},
+ECSMiner \cite{Masud:2011:CNC:1978259.1978529},
+GC3 \cite{Sethi2016b:GC3}, dentre outros.
 
-Entretanto, as técnicas propostas na literatura apresentam limitações.
-Algoritmos que dependem da correta rotulação são de aplicação limitada e apresentam dificuldade para lidar com mudanças abruptas.
-Metodologias inspiradas em algoritmos não supervisionados envolvem maior custo computacional e tempo de resposta.
-Visando resolver essas limitações, este projeto de mestrado discute um método para detecção de mudanças de conceito baseado em Redes de Função de Base Radial.
+Todavia, as abordagens elencadas não são perfeitamente adequadas para cenários com FCDs.
+As técnicas dependentes de rótulo são impraticáveis em problemas do mundo real, por dependerem do \textit{feedback} de um especialista.
+Os algoritmos independentes, têm dificuldade para lidar com as restrições de tempo e processamento, inerentes aos contextos com fluxos contínuos.
+Visando resolver essas limitações, este projeto de mestrado propõe um método eficiente e independente de \textit{feedback} para detecção de mudanças de conceito baseado em Redes de Função de Base Radial.
 
 \section{Hipótese e Objetivo}
 
@@ -554,7 +539,7 @@ Neste contexto, apartamentos tornaram-se irrelevantes e casas de férias, releva
 Apesar do editor dos anúncios e das probabilidades anteriores das classes permanecerem as mesmas, este cenário corresponde a uma mudança de conceito real.
 
 Considerando apenas a perspectiva de predição, adaptações no modelo são necessárias apenas quando mudanças de conceito reais ocorrem, 
-pois os limites de decisão do modelo corrente tornam-se obsoletos em relação aos novos exemplos \cite{Gama:2014:SCD:2597757.2523813}.
+pois os limites de decisão do modelo corrente tornam-se obsoletos em relação aos novos eventos \cite{Gama:2014:SCD:2597757.2523813}.
 Adaptação, neste contexto, significa atualizar o modelo de decisão perante a nova distribuição dos dados a fim de manter uma alta acurácia.
 
 Mudanças de conceito podem se apresentar sob diferentes padrões.
@@ -573,7 +558,7 @@ Por exemplo, o gênero literário de João pode subitamente mudar de ficção ci
 Outro exemplo, é a troca de um sensor por outro com diferente calibração, em uma planta industrial química \cite{Gama:2014:SCD:2597757.2523813}. 
 
 Em constrate com a mudança de conceito abrupta, a mudança de conceito gradual significa uma transição mais lenta de um conceito para outro.
-Isto é, durante a transição, são percebidos exemplos de ambos os conceitos.
+Isto é, durante a transição, são percebidos eventos de ambos os conceitos.
 Pode-se considerar que João, ao invés de subitamente passar a preferir livros de auto-ajuda, adquire interesse nestes ao longo do tempo.
 Isto significa que João ainda tem interesse em livros de ficção científica, mas desenvolve, em paralelo, um crescente interesse por livros de auto-ajuda, que se tornará predominante.
 A mudança de conceito gradual está representada na Figura \ref{fig:concept_drift_patterns} (b).
@@ -833,7 +818,7 @@ para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
 \begin{figure}[!ht]
 \begin{center}
     \includegraphics[scale=0.75]{imagens/tornado.png}
-    \caption{Framework Tornado. Fonte: \cite{Pesaranghader:Tornado}.}
+    \caption{Framework Tornado \cite{Pesaranghader:Tornado}.}
     \label{fig:tornado}
 \end{center}
 \end{figure}
@@ -883,7 +868,7 @@ A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 \end{center}
 \end{figure}
 
-Na literatura, a função de base radial gaussiana (Eq. \ref{eq:gaussiana}) é uma das mais utilizadas para camada intermediária.
+Na literatura, a função de base radial Gaussiana (Eq. \ref{eq:gaussiana}) é uma das mais utilizadas para camada intermediária.
 
 \begin{equation} \label{eq:gaussiana}
     f(x)=e^{-{\frac {v^{2}}{2\sigma^{2}}}}
@@ -892,7 +877,7 @@ Na literatura, a função de base radial gaussiana (Eq. \ref{eq:gaussiana}) é u
 Na equação \ref{eq:gaussiana}, $v = \lVert x - t_i \rVert$ é dado pela distância euclidiana, onde $x$ é o valor de entrada da rede, 
 enquanto $t_i$ e $\sigma$ correspondem respectivamente ao centro e a largura da função radial. 
 Dessa maneira, a resolução de um determinado problema por uma rede do tipo RBF consiste na resolução das funções \ref{eq:rbf1} e
-\ref{eq:rbf2} para chegar ao sistema \ref{eq:rbf3}.
+\ref{eq:rbf2} obtendo o sistema \ref{eq:rbf3}.
 
 \begin{equation} \label{eq:rbf1}
     f(x)=\sum _{{i=1}}^{N}w_{ij}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||)
@@ -924,13 +909,13 @@ Dessa maneira, a resolução de um determinado problema por uma rede do tipo RBF
 \end{bmatrix}
 \end{equation}
 
-onde $w_{ij}$ são os pesos de cada conexão sináptica, $\phi$ é a matriz de interpolação originada do conjunto de $N$ funções
+onde $w_{ij}$ são os pesos de cada conexão, $\phi$ é a matriz de interpolação originada do conjunto de $N$ funções
 de base radial aplicadas nas entradas $x$ e dos seus respectivos centros $t_i$,
 $w_{j_0}$ representa o bias, $\varphi (||{{x}}-{{t}}_{i}||)$ é o conjunto de $N$ funções de base radial,
 $||\ldots||$ é a norma euclidiana e $y$ são as saídas geradas pela rede.
 
 As camadas inicial e intermediária e suas propriedades de agrupamento são utilizadas como base para o algoritmo de detecção de mudança de conceito 
-proposto neste trabalho de pesquisa. 
+proposto neste projeto de mestrado. 
 
 \section{Trabalhos Relacionados}
 
@@ -941,15 +926,16 @@ Em \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification} redes RBF com funçõ
 Os centros e as matrizes de covariância são definidas através do agrupamento via \textit{k-means} juntamente com a aplicação de heurísticas de largura ou do algoritmo \textit{EM}.
 O método proposto não atua sobre fluxos de dados e constitue uma rede RBF completa e estática ao longo do tempo.
 
-Roberts e Penny \cite{Roberts:Penny:Novelty:Confidence} propõem  um método para detecção de novidade baseado nas taxas de erro e confiança, 
+Roberts e Penny \cite{Roberts:Penny:Novelty:Confidence} propõem  um método para detecção de novidade baseado no monitoramento das taxas de erro e confiança, 
 utilizando um comitê de redes RBF. 
 Cada rede é inicializada com um vetor de pesos diferente.
 A taxa de erro final é calculada a partir da matriz de covariância de erro do cômite criado.
 Esta abordagem foi testada na classificação de pacientes com problemas de tremor muscular.
 
-As redes baseadas em função de base radial também foram aplicadas para detecção de \textit{outliers}, mais especificamente, para detecção de anomalias \cite{Bazargani2018RadialBF}.
-Esta pesquisa propõe modificações na arquitetura de redes RBF, de forma mais específica, em sua função \textit{loss}.
-Esta modificação faz com que a redes atuem como um classificador de uma única classe, permitindo a identificação de exemplos divergentes do padrão conhecido.
+As RBFs também foram aplicadas para detecção de anomalias \cite{Bazargani2018RadialBF}.
+Esta pesquisa realiza modificações às funções de perda (\textit{loss}) das redes, 
+fazendo com que a rede atuem como classificador de classe única, 
+permitindo a identificação de exemplos divergentes do padrão conhecido.
 
 Este projeto de mestrado se diferencia dos trabalhos mencionados por utilizar apenas as camadas de entrada e intermediária das redes RBF para detecção de mudanças de conceito.
 Além disso, etapas como a escolha dos centros e o cálculo do tamanho do raio são realizadas de forma dinâmica.
@@ -970,13 +956,32 @@ foram discutidos trabalhos que aplicam redes RBF para detecção de padrões div
 \xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
 \section{Considerações Iniciais}
 
-Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que Redes de Função de Base Radial sejam aplicadas para detecção de mudanças de conceito em fluxos contínuos de dados.
-Espera-se que com a utilização das camadas inicias e intermediária das redes RBF e suas propriedades de agrupamento, seja possível detectar mudanças de conceito de forma eficiente e sem requerer a manutenção de estados prévios.
+Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que Redes de Função de Base Radial sejam aplicadas para detecção de mudanças de conceito em Fluxos Contínuos de Dados.
+Espera-se que com a utilização das camadas inicial e intermediária das redes RBF e suas propriedades de agrupamento, seja possível detectar mudanças de conceito de forma eficiente e sem requerer a manutenção de estados prévios.
 A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
 
-
 \section{Descrição do Problema}
-\blindtext
+
+O fenômeno Mudança de Conceito pode ser definido a partir do teorema de Bayes para probabilidades posteriores.
+Seja $X$ um vetor de entrada e $Y$ a classe alvo,
+a decisão de classificar $X$ como $Y$ dependerá da probabilidade posterior da classe, dada por:
+
+\begin{equation} \label{eq:gaussiana}
+    P(Y |X) = \frac{P(Y)P(X|Y)}{P(X)}
+\end{equation}
+
+onde $P(Y|X)$ é a probabilidade de $Y$ para a entrada $X$, $P(X|Y)$ é a distribuição condicional da classe para as variáveis da entrada $X$ e 
+$P(Y)$ é a probabilidade a priori da classe e $P(X)$ é a probibilidade a priori do vetor de entrada $X$.
+
+Na presença de mudança de conceito, a probabilidade posterior $P(Y|X)$ varia ao longo do tempo, isto é $P_{t_0}(Y|X)$ pode ser diferente de $P_{t_1}(Y|X)$.
+Em outras palavras, os limites de decisão do classificador se alteram ao longo do tempo.
+
+Considerando que redes de função de base radial apresentam em suas camadas inicial e intermediária características de agrupamento, 
+este projeto de mestrado visa comprovara hipótese que redes RBF podem detectar mudanças de conceito em fluxos contínuos de dados, 
+em tempo de execução, sem requerer a manutenção de estados prévios, de forma ágil e com precisão satisfatória.
+
+Para exemplificar a execução desta proposta de mestrado, considere \ldots
+
 
 \section{Atividades de Pesquisa}
 \blindtext

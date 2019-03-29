@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  28 MAR 2019 23:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  29 MAR 2019 18:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1311,7 +1311,11 @@ File: tikzlibraryfadings.code.tex 2009/11/15 v3.0.1a (rcs-revision 1.2)
 File: pgflibraryfadings.code.tex 2008/02/07 v3.0.1a (rcs-revision 1.3)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
-) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
+) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux
+
+LaTeX Warning: Label `eq:gaussiana' multiply defined.
+
+)
 \openout1 = `template-msc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
@@ -1485,31 +1489,36 @@ Package xcolor Warning: Incompatible color definition on input line 218.
 
 [1
 
-] [2] [3] [4
+]
+Overfull \hbox (6.38707pt too wide) in paragraph at lines 264--267
+[]\OT1/cmr/m/n/12 Contudo, as abor-da-gens men-ci-o-na-das de-pen-dem que o r^^Sotulo cor-reto para cada predi^^Xc~ao
+ []
+
+[2] [3] [4
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 326.
+Package xcolor Warning: Incompatible color definition on input line 311.
 
 [5] [6] [7] [8] [9]
 <imagens/concept_drift.png, id=119, 557.08125pt x 206.27063pt>
 File: imagens/concept_drift.png Graphic file (type png)
 <use imagens/concept_drift.png>
-Package pdftex.def Info: imagens/concept_drift.png  used on input line 537.
+Package pdftex.def Info: imagens/concept_drift.png  used on input line 522.
 (pdftex.def)             Requested size: 445.6656pt x 165.01671pt.
  [10 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift.png>]
 <imagens/concept_drift_patterns.png, id=126, 565.36218pt x 207.02344pt>
 File: imagens/concept_drift_patterns.png Graphic file (type png)
 <use imagens/concept_drift_patterns.png>
-Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 565.
+Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 550.
 (pdftex.def)             Requested size: 452.29036pt x 165.61896pt.
 
-Overfull \hbox (0.68716pt too wide) in paragraph at lines 587--594
+Overfull \hbox (0.68716pt too wide) in paragraph at lines 572--579
 []\OT1/cmr/m/n/12 Existe ainda ou-tro padr~ao, de-no-mi-nado mu-dan^^Xca de con-ceito re-cor-rente (ZLI-O-BAITE,
  []
 
 [11 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift_patterns.png>] [12] [13]
-Overfull \hbox (6.56206pt too wide) in paragraph at lines 699--708
+Overfull \hbox (6.56206pt too wide) in paragraph at lines 684--693
 []\OT1/cmr/m/n/12 Monitoram di-re-ta-mente a dis-tri-bui^^Xc~ao
  []
 
@@ -1517,10 +1526,10 @@ Overfull \hbox (6.56206pt too wide) in paragraph at lines 699--708
 <imagens/moa.png, id=145, 1016.29688pt x 763.35187pt>
 File: imagens/moa.png Graphic file (type png)
 <use imagens/moa.png>
-Package pdftex.def Info: imagens/moa.png  used on input line 776.
+Package pdftex.def Info: imagens/moa.png  used on input line 761.
 (pdftex.def)             Requested size: 508.1472pt x 381.675pt.
 
-Overfull \hbox (55.17932pt too wide) in paragraph at lines 776--777
+Overfull \hbox (55.17932pt too wide) in paragraph at lines 761--762
  [] 
  []
 
@@ -1528,10 +1537,10 @@ Overfull \hbox (55.17932pt too wide) in paragraph at lines 776--777
 <imagens/detector.png, id=150, 470.50781pt x 332.74312pt>
 File: imagens/detector.png Graphic file (type png)
 <use imagens/detector.png>
-Package pdftex.def Info: imagens/detector.png  used on input line 805.
+Package pdftex.def Info: imagens/detector.png  used on input line 790.
 (pdftex.def)             Requested size: 470.50665pt x 332.7423pt.
 
-Overfull \hbox (17.53877pt too wide) in paragraph at lines 805--806
+Overfull \hbox (17.53877pt too wide) in paragraph at lines 790--791
  [] 
  []
 
@@ -1539,84 +1548,84 @@ Overfull \hbox (17.53877pt too wide) in paragraph at lines 805--806
 <imagens/tornado.png, id=156, 368.87813pt x 347.04657pt>
 File: imagens/tornado.png Graphic file (type png)
 <use imagens/tornado.png>
-Package pdftex.def Info: imagens/tornado.png  used on input line 835.
+Package pdftex.def Info: imagens/tornado.png  used on input line 820.
 (pdftex.def)             Requested size: 276.6579pt x 260.28429pt.
 <imagens/tornado_out2.png, id=157, 753.0534pt x 331.9602pt>
 File: imagens/tornado_out2.png Graphic file (type png)
 <use imagens/tornado_out2.png>
-Package pdftex.def Info: imagens/tornado_out2.png  used on input line 855.
+Package pdftex.def Info: imagens/tornado_out2.png  used on input line 840.
 (pdftex.def)             Requested size: 376.52577pt x 165.97969pt.
  [18] [19 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado.png (PNG copy)> </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado_out2.png>]
 <imagens/rbf_arq.png, id=166, 330.48468pt x 313.17pt>
 File: imagens/rbf_arq.png Graphic file (type png)
 <use imagens/rbf_arq.png>
-Package pdftex.def Info: imagens/rbf_arq.png  used on input line 880.
+Package pdftex.def Info: imagens/rbf_arq.png  used on input line 865.
 (pdftex.def)             Requested size: 330.48387pt x 313.16922pt.
  [20 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/rbf_arq.png>] [21] [22]
 
-Package xcolor Warning: Incompatible color definition on input line 970.
+Package xcolor Warning: Incompatible color definition on input line 956.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 980.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 983.
+(blindtext)                 on input line 988.
 
 [23
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 986.
+(blindtext)                 on input line 991.
 
 [24]
 
-Package xcolor Warning: Incompatible color definition on input line 987.
+Package xcolor Warning: Incompatible color definition on input line 992.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 990.
+(blindtext)                 on input line 995.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 993.
+(blindtext)                 on input line 998.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 996.
+(blindtext)                 on input line 1001.
 
 [25
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 999.
+(blindtext)                 on input line 1004.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1002.
+(blindtext)                 on input line 1007.
 
 [26] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [27
 
 
-] [28] [29] [30] [31] [32] [33] [34]) 
+] [28] [29] [30] [31] [32] [33]) 
 AED: lastpage setting LastPage
-[35] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
+[34] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 30598 strings out of 492982
- 619264 string characters out of 6134895
- 772240 words of memory out of 5000000
- 33590 multiletter control sequences out of 15000+600000
+ 30590 strings out of 492982
+ 618956 string characters out of 6134895
+ 772217 words of memory out of 5000000
+ 33582 multiletter control sequences out of 15000+600000
  545279 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,18n,82p,10445b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,18n,82p,10445b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (49 pages, 1218056 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (48 pages, 1217388 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 181 compressed objects within 2 object streams
+ 279 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 
