@@ -307,22 +307,21 @@ apresenta um conjunto de experimentos preliminares e a análise dos resultados o
 \xchapter{Revisão Bibliográfica}{} \label{revisao_bibliografica}
 \section{Considerações Iniciais}
 
-Este capítulo discute conceitos importantes dentro do contexto deste trabalho de pesquisa.
-Em primeiro momento, a aplicação de técnicas de Aprendizado de Máquina a Fluxos Contínuos de Dados será descrita.
-Em seguida, será abordada a ideia de Mudança de Conceito, seus tipos e características, principais algoritmos de detecção e ferramentas.
-Posteriormente, serão detalhadas as Redes de Função de Base Radial.
-Ao fim do capítulo, elencamos os trabalhos relacionados encontrados na literatura.
-
+Este capítulo discute os principais conceitos utilizados neste trabalho de pesquisa.
+Em primeiro momento, a aplicação de técnicas de Aprendizado de Máquina a Fluxos Contínuos de Dados será detalhada.
+Em seguida, será apresentada a ideia de Mudança de Conceito, seus tipos e características, principais algoritmos de detecção e ferramentas.
+Logo após, as Redes de Função de Base Radial serão abordadas.
+Ao fim do capítulo, serão elencados os trabalhos relacionados encontrados na literatura.
 
 \section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
 
-Os avanços em hardware e software dos últimos anos possibilitaram a aquisição de dados em larga escala \cite{Aggarwal:2003:FCE:1315451.1315460}.
-Muitos desses dados são adquiridos através de sequências contínuas, potencialmente infinitas e de alta frequência, 
-denominadas \textbf{Fluxos Contínuos de Dados} (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
-Consequentemente, o interesse de pesquisa nesta área tem crescido bastante.
-Entretanto, lidar com sequências dessa natureza impõe desafios aos pesquisadores, sobretudo limitações de tempo de execução e recursos computacionais.
+Os avanços em hardware e software dos últimos anos possibilitaram a aquisição e produção de dados em larga escala \cite{Aggarwal:2003:FCE:1315451.1315460}.
+Muitos desses dados são adquiridos ou produzidos através de sequências contínuas, potencialmente infinitas e de alta frequência, denominadas Fluxos Contínuos de Dados (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
+
+Graças a essas mudanças e à robusta expansão da pesquisa em Aprendizado de Máquina (AM), é crescente o interesse na adaptação destas técnicas para cenários com FCDs.
+Entretanto, lidar com sequências dessa natureza impõe desafios aos pesquisadores, sobretudo limitações de tempo de execução e recursos computacionais \cite{Bifet:2009:ALM:1656274.1656287}.
  
-Conforme \cite{Babcock:2002:MID:543613.543615} as principais diferenças de FCDs para os dados convencionais são:
+Segundo \cite{Babcock:2002:MID:543613.543615}, as principais características que diferenciam os fluxos contínuos dos dados convencionais são:
 \begin{itemize}
     \item Possuem tamanho ilimitado;
     \item Os dados são produzidos de forma contínua e em alta frequência;
@@ -341,26 +340,21 @@ Diversas aplicações da indústria e academia lidam com dados em fluxos contín
 A área de Aprendizado de Máquina (AM) tem como objetivo estudar algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
 Atualmente, diversas técnicas de AM estão disponíveis, sendo aplicadas a um amplo conjunto de problemas.
 
-Segundo \cite{Gama:2010:KDD:1855075}, a área de AM dedicou-se durante muitos anos em resolver problemas de aprendizado não-incrementais (\textit{batch}).
-Nestes cenários, a distribuição dos dados é estacionária, ou seja, o conjunto de classes ou grupos possíveis não sofre modificações.
-Esta estabilidade permite a criação de modelos que se mantêm ao longo do tempo.
+Segundo \cite{Gama:2010:KDD:1855075}, a área de AM dedicou-se durante muitos anos em resolver problemas de aprendizado não-incrementais (\textit{batch}), especialmente para tarefas de classificação.
+Estes cenários consideram que a distribuição dos dados é estacionária, ou seja, o conjunto de conceitos-alvo não sofre modificações, 
+permitindo que modelos de decisão sejam mantidos ao longo do tempo, sem perder acurácia.
 
-Contudo, os principais cenários da indústria e pesquisa que envolvem FCDs são dinâmicos.
-Nestes cenários, os dados fluem de forma contínua, 
-mas o contexto do processo que os produz pode sofrer alterações com o passar do tempo.
-Isto é, são fluxos cuja distribuição dos dados não é estacionária.
+Contudo, os principais cenários da indústria e pesquisa que envolvem FCDs são dinâmicos (não estacionários).
+Isto é, o contexto implícito do processo gerador ou a distribuição dos dados produzidos podem sofrer alterações, modificando os conceitos-alvo esperados.
+Estas alterações, denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075}, podem impactar a acurácia do modelo de decisão.
+
 Conforme \cite{Gama:Rodrigues:2009}, o principal problema no aprendizado a partir de FCDs é a manutenção de uma boa acurácia (classificadores) e a obtenção de grupos bem formados (\textit{clustering}).
-Para que esta continuidade seja possível, o algoritmo de aprendizado deve ser atualizado conforme novos dados são analisados.
+Para mitigar estas dificuldades, o algoritmo de aprendizado deve ser atualizado conforme novos dados são analisados.
 Esta metodologia é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
-
-Conforme \cite{Fisher:1987:KAV:639960.639990}, a ideia de aprendizado incremental tem origem na própria observação do mundo real, 
-no qual o conhecimento sofre atualizações constantemente e uma base contínua é mantida para lidar com novos estímulos.
-O paradigma incremental acredita que o contexto do processo pode mudar ao longo do tempo e, portanto, 
-o conhecimento adquirido deve ser constantemente atualizado. 
 
 Segundo \cite{Langley:reimann1995learning}, um algoritmo $A$ pode ser dito incremental se $A$ recebe um evento de treinamento por vez,
 não reprocessa dados do passado e mantém somente uma estrutura de conhecimento em memória. 
-Além destas, o trabalho também elenca as seguintes características desejáveis para os algoritmos incrementais:
+Além destes, o trabalho também elenca os seguintes requisitos para algoritmos incrementais:
 
 \begin{itemize}
     \item Tempo de processamento constante;
@@ -375,6 +369,8 @@ Os algoritmos incrementais apresentam as seguintes vantagens \cite{pinto2005algo
     \item Menor utilização de memória;
     \item Aproximam-se da forma de aprendizado dos humanos.
 \end{itemize}
+
+\todo{Rev.}
 
 Por suas características, algoritmos incrementais mostram-se bastante interessantes para aplicação em cenários com FCDs.
 Contudo, \cite{GamaMCR04} ressalta que o aprendizado a partir de FCDs exige que os algoritmos além de incrementais, 
