@@ -307,22 +307,6 @@ ISSN 0957-4174.
 Dispon{\'\i}vel em:
   \url{http://www.sciencedirect.com/science/article/pii/S0957417414004175}.}
 
-\bibitem[Guha et al. 2003]{Guha:2003:CDS:776752.776777}
-\abntrefinfo{Guha et al.}{GUHA et al.}{2003}
-{GUHA, S. et al. Clustering data streams: Theory and practice.
-\emph{IEEE Trans. on Knowl. and Data Eng.}, IEEE Educational Activities
-  Department, Piscataway, NJ, USA, v.~15, n.~3, p. 515--528, mar. 2003.
-ISSN 1041-4347.
-Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2003.1198387}.}
-
-\bibitem[Guha et al. 2000]{Guha:2000:CDS:795666.796588}
-\abntrefinfo{Guha et al.}{GUHA et al.}{2000}
-{GUHA, S. et al. Clustering data streams. In:  \emph{Proceedings of the 41st
-  Annual Symposium on Foundations of Computer Science}. Washington, DC, USA:
-  IEEE Computer Society, 2000.  (FOCS '00), p. 359--.
-ISBN 0-7695-0850-2. Dispon{\'\i}vel em:
-  \url{http://dl.acm.org/citation.cfm?id=795666.796588}.}
-
 \bibitem[Hall et al. 2009]{Hall:2009:WDM:1656274.1656278}
 \abntrefinfo{Hall et al.}{HALL et al.}{2009}
 {HALL, M. et al. The weka data mining software: An update.
@@ -468,12 +452,6 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2010.61}.}
   Department, Piscataway, NJ, USA, v.~24, n.~4, p. 619--633, abr. 2012.
 ISSN 1041-4347.
 Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2011.58}.}
-
-\bibitem[Mitchell 1997]{Mitchell:1997:ML:541177}
-\abntrefinfo{Mitchell}{MITCHELL}{1997}
-{MITCHELL, T.~M. \emph{Machine Learning}. 1. ed. New York, NY, USA:
-  McGraw-Hill, Inc., 1997.
-ISBN 0070428077, 9780070428072.}
 
 \bibitem[Nishida e Yamauchi 2007]{STEPD}
 \abntrefinfo{Nishida e Yamauchi}{NISHIDA; YAMAUCHI}{2007}

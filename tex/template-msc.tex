@@ -317,9 +317,6 @@ Ao fim do capítulo, serão elencados os trabalhos relacionados encontrados na l
 
 Os avanços em hardware e software dos últimos anos possibilitaram a aquisição e produção de dados em larga escala \cite{Aggarwal:2003:FCE:1315451.1315460}.
 Muitos desses dados são adquiridos ou produzidos através de sequências contínuas, potencialmente infinitas e de alta frequência, denominadas Fluxos Contínuos de Dados (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
-
-Graças a essas mudanças e à robusta expansão da pesquisa em Aprendizado de Máquina (AM), é crescente o interesse na adaptação destas técnicas para cenários com FCDs.
-Entretanto, lidar com sequências dessa natureza impõe desafios aos pesquisadores, sobretudo limitações de tempo de execução e recursos computacionais \cite{Bifet:2009:ALM:1656274.1656287}.
  
 Segundo \cite{Babcock:2002:MID:543613.543615}, as principais características que diferenciam os fluxos contínuos dos dados convencionais são:
 \begin{itemize}
@@ -329,7 +326,7 @@ Segundo \cite{Babcock:2002:MID:543613.543615}, as principais características qu
     \item Os eventos processados devem ser descartados.
 \end{itemize}
 
-Diversas aplicações da indústria e academia lidam com dados em fluxos contínuos, por exemplo:
+Diversas aplicações da indústria e academia lidam com sequências desse tipo, por exemplo:
 
 \begin{description}
     \item[Finanças] detecção de fraudes em transações, acompanhamento da bolsa de valores;
@@ -337,18 +334,19 @@ Diversas aplicações da indústria e academia lidam com dados em fluxos contín
     \item[Redes e telecomunicações] monitoramento de rede, detecção de intrusos.
 \end{description}
 
-A área de Aprendizado de Máquina (AM) tem como objetivo estudar algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
-Atualmente, diversas técnicas de AM estão disponíveis, sendo aplicadas a um amplo conjunto de problemas.
+Devido as mudanças nas formas de produzir e consumir dados e ao evidenciamento da área de Aprendizado de Máquina (AM), 
+é crescente o interesse de pesquisa na aplicação de técnicas de aprendizagem a fluxos contínuos de dados.
+Entretanto, lidar com sequências dessa natureza impõe desafios aos pesquisadores, sobretudo limitações de tempo de execução e recursos computacionais \cite{Bifet:2009:ALM:1656274.1656287}.
 
-Segundo \cite{Gama:2010:KDD:1855075}, a área de AM dedicou-se durante muitos anos em resolver problemas de aprendizado não-incrementais (\textit{batch}), especialmente para tarefas de classificação.
-Estes cenários consideram que a distribuição dos dados é estacionária, ou seja, o conjunto de conceitos-alvo não sofre modificações, 
+Segundo \cite{Gama:2010:KDD:1855075}, a área de AM dedicou-se durante muitos anos a problemas de aprendizado em lote (\textit{batch}), principalmente tarefas de classificação.
+Os contextos em lote assumem que a distribuição dos dados é estacionária, ou seja, o conjunto de conceitos-alvo não sofre modificações, 
 permitindo que modelos de decisão sejam mantidos ao longo do tempo, sem perder acurácia.
 
 Contudo, os principais cenários da indústria e pesquisa que envolvem FCDs são dinâmicos (não estacionários).
 Isto é, o contexto implícito do processo gerador ou a distribuição dos dados produzidos podem sofrer alterações, modificando os conceitos-alvo esperados.
 Estas alterações, denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075}, podem impactar a acurácia do modelo de decisão.
 
-Conforme \cite{Gama:Rodrigues:2009}, o principal problema no aprendizado a partir de FCDs é a manutenção de uma boa acurácia (classificadores) e a obtenção de grupos bem formados (\textit{clustering}).
+Conforme \cite{Gama:Rodrigues:2009}, o principal problema no aprendizado a partir de FCDs é a manutenção de uma boa acurácia (classificadores) e da obtenção de grupos bem formados (\textit{clustering}).
 Para mitigar estas dificuldades, o algoritmo de aprendizado deve ser atualizado conforme novos dados são analisados.
 Esta metodologia é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
 
@@ -370,33 +368,31 @@ Os algoritmos incrementais apresentam as seguintes vantagens \cite{pinto2005algo
     \item Aproximam-se da forma de aprendizado dos humanos.
 \end{itemize}
 
-\todo{Rev.}
+Por suas características, os algoritmos incrementais tornam-se uma escolha natural para cenários com fluxos contínuos.
+Contudo, \cite{GamaMCR04} ressalta que nestes contextos os algoritmos também devem tratar a ocorrência de mudanças de conceito,
+pois além de assimilar novos exemplos, o método deverá descartar dados antigos, para adaptar corretamento o modelo.
 
-Por suas características, algoritmos incrementais mostram-se bastante interessantes para aplicação em cenários com FCDs.
-Contudo, \cite{GamaMCR04} ressalta que o aprendizado a partir de FCDs exige que os algoritmos além de incrementais, 
-também tratem mudanças de conceito envolvidas no processo.
-Nesses casos, é preciso descartar exemplos antigos, que não mais condizem com o cenário atual e adaptar o modelo de decisão aos novos dados.
-
-Algoritmos de aprendizado de máquina clássicos utilizam técnicas como agrupamento (\textit{clustering}) e classificação.
-A partir destas metodologias, novos algoritmos foram desenvolvidos para trabalhar com FCDs.
+Os algoritmos de aprendizado de máquina dividem-se em técnicas de agrupamento (\textit{clustering}) e classificação.
+Parte dos algoritmos foi adaptada para lidar com fluxos contínuos de dados.
+Estas técnicas e suas adaptações serão discutidas a seguir.
 
 A organização de dados em grupos é uma das formas mais fundamentais de compreensão e aprendizagem \cite{Jain:1988:ACD:46712}.
-Agrupamento é a tarefa de associar objetos conforme suas características, objetivando formar grupos com alta similaridade entre seus objetos e baixa similaridade com objetos de outros grupos.
-Técnicas de agrupamento permitem explorar a estrutura dos dados e não exigem os pressupostos comuns à maioria dos métodos estatísticos.
-A representação criada permite verificar se os grupos estão de acordo com determinados parâmetros ou ainda sugerir novos experimentos \cite{Jain:1988:ACD:46712}.
+A tarefa de agrupamento realiza a associação de objetos conforme suas características, buscando formar grupos com alta similaridade entre seus objetos e baixa similaridade com objetos de outros grupos.
+Estas técnicas permitem explorar a estrutura dos dados sem exigir os pressupostos comuns à maioria dos métodos estatísticos.
+As representações criadas são de fácil entedimento e permitem verificar se os grupos atendem a determinados parâmetros \cite{Jain:1988:ACD:46712}.
 
-Os métodos de agrupamento têm sido utilizados em diversas áreas do conhecimento, o que ensejou o desenvolvimento de uma grande variedade de algoritmos.
+Os métodos de agrupamento têm sido utilizados em diversas áreas do conhecimento, o que viabilizou o desenvolvimento de uma grande variedade de algoritmos.
 Dentre os principais algoritmos para cenários \textit{batch}, destacam-se:
 K-Means \cite{Lloyd:2006:LSQ:2263356.2269955},
 DBSCAN \cite{Ester:1996:DAD:3001460.3001507},
 PAM \cite{kaufman:clustering1990} e 
 OPTICS \cite{Ankerst:1999:OOP:304181.304187}.
 
-Segundo \cite{Gama:2010:KDD:1855075}, a principal dificuldade na aplicação de técnicas de agrupamentos em FCDs é 
-a manutenção da qualidade e consistência do agrupamento em relação à sequência de dados observados, utilizando pouca memória e tempo de processamento. 
-Estes desafios surgem, pois os dados são recebidos de forma contínua e as respostas precisam ser obtidas em tempo hábil.
+Conforme \cite{Gama:2010:KDD:1855075}, a principal dificuldade na aplicação de técnicas de agrupamento em contextos com FCDs é 
+a manutenção da qualidade e consistência dos grupos formados em relação à sequência de dados observados, utilizando pouca memória e tempo de processamento. 
+Estes desafios ocorrem pois os dados são recebidos de forma contínua e as respostas precisam ser dadas em tempo hábil.
 
-Essas características fazem com que os algoritmos de agrupamentos aplicados em FCDs precisem ser incrementais, mantendo estruturas de grupos que evoluam ao longo do tempo.
+Essas características fazem com que os algoritmos de agrupamento aplicados a FCDs precisem atuar de forma incremental, mantendo estruturas de grupos que evoluam ao longo do tempo.
 Segundo \cite{Barbara:2002:RCD:507515.507519}, as características dos fluxos contínuos implicam três novos requisitos aos algoritmos de agrupamento:
 
 \begin{itemize}
@@ -405,28 +401,18 @@ Segundo \cite{Barbara:2002:RCD:507515.507519}, as características dos fluxos co
     \item Identificação precisa e tempestiva de \textit{outliers}.
 \end{itemize}
 
-Conforme \cite{Aggarwal:2003:FCE:1315451.1315460}, o problema de agrupamentos de dados em cenários com FCD é de difícil resolução,
+Conforme \cite{Aggarwal:2003:FCE:1315451.1315460}, o problema de agrupamento de dados em cenários com FCD é de difícil resolução,
 pois a natureza contínua e de alta frequência dos dados tornam os algoritmos tradicionais ineficientes.
-Assim, foram desenvolvidos algoritmos de agrupamento que realizam uma varredura única nos dados. 
-Todavia, ainda segundo \cite{Aggarwal:2003:FCE:1315451.1315460}, estes algoritmos apesar de apresentarem escalabilidade, 
-não consideram a evolução dos dados. 
-Esta característica faz com que a qualidade dos grupos obtidos diminua ao longo do tempo.
-Além disso, por varrerem os dados de forma única, não é possível formar agrupamentos sobre diferentes partes do fluxo.
-Outro problema para realização de agrupamentos em FCDs é a influência de ruídos e \textit{outliers} \cite{Khalilian:DBLP:journals/corr/abs-1006-5261}.
+Assim, foram desenvolvidas novas técnicas de clusterização que realizam uma única varredura nos dados. 
+Entretanto, apesar do ganho em escalabilidade, estas técnicas também não consideram a evolução dos dados e podem ser impactadas por mudanças de conceito \cite{Aggarwal:2003:FCE:1315451.1315460}.
+Além desta, outras dificuldades são a influência de ruídos e a ocorrência de \textit{outliers} \cite{Khalilian:DBLP:journals/corr/abs-1006-5261}.
 
-De acordo com \cite{Chen:Tu}, 
-parte dos algoritmos de \textit{clustering} em FCD atua sobre uma projeção contínua do agrupamento de dados, por exemplo \cite{Guha:2003:CDS:776752.776777}.
-Esses algoritmos utilizam a estratégia de divisão e conquista, particionando a FCD em segmentos e 
-formando grupos através da aplicação de algoritmos baseados no K-Means para espaços delimitados \cite{Guha:2000:CDS:795666.796588}.
-Esta técnica apresenta como limitação não conseguir capturar características que evoluem ao longo do fluxo, 
-pois dão o mesmo peso para dados antigos e recentes.
- 
-Diversos algoritmos foram propostos para agrupamento em FCD. 
-Destacam-se: 
+Diversos algoritmos foram propostos para o agrupamento de fluxos contínuos de dados. 
+São exemplos dessa técnica: 
 CluStream \cite{Aggarwal:2003:FCE:1315451.1315460},
 StreamKM++ \cite{Ackermann:2012:SCA:2133803.2184450},
 DenStream \cite{Cao:Feng:Ester},
-D-Stream \cite{Chen:Tu} e ClusTree \cite{Kranen:2011:CIM:2134350.2134352}.
+D-Stream \cite{Chen:Tu} e ClusTree \cite{Kranen:2011:CIM:2134350.2134352}, dentre outros.
 
 De forma similar, as técnicas de classificação continuam sendo ativamente estudadas.
 Estes métodos pertencem ao conjunto de algoritmos supervisionados, 
@@ -434,29 +420,30 @@ que realizam predições para uma variável (conceito alvo) utilizando um modelo
 Se a variável a ser predita é categórica, entende-se como um problema de classificação.
 Se a predição resulta em um valor numérico, trata-se de um problema de regressão.
 
-Muitos métodos foram propostos para a tarefa de classificação em cenários \textit{batch}:
+Diversos métodos de classificação para contextos \textit{batch} foram propostos na literatura. Exemplos:
 árvores de decisão \cite{Breiman:Classification_Regression_Trees},
 métodos baseados em regras, 
 redes neurais e máquinas de vetores suporte (SVM) \cite{Vapnik1998}, 
 dentre outros.
+
 Contudo, a maioria dos trabalhos propostos pressupõe ambientes estáticos, onde os modelos de decisão criados não sofrem alterações \cite{Aggarwal:2006:DSM:1196418}.
 Além disso, também assumem que todos os dados estão disponíveis em memória e que é possível realizar múltiplas varreduras sobre eles.
-Assim, essas técnicas precisam ser repensadas para atenderem as características dos FCDs.
+Logo, essas técnicas precisam ser aperfeiçoadas para atenderem as características dos fluxos contínuos de dados.
 
-Conforme \cite{Chen:Tu}, o problema de classificação em FCD considera que o FCD é uma sequência de exemplos e que cada exemplo está associado a um rótulo de valor discreto.
-Este rótulo indica a classe a qual o exemplo pertence.
-O objetivo, portanto, da classificação em FCD é predizer com acurácia a classe dos exemplos desconhecidos, que chegam de forma contínua através da FCD.
+% Conforme \cite{Chen:Tu}, o problema de classificação em FCD considera que o FCD é uma sequência de exemplos e que cada exemplo está associado a um rótulo de valor discreto.
+% Este rótulo indica a classe a qual o exemplo pertence.
+% O objetivo, portanto, da classificação em FCD é predizer com acurácia a classe dos exemplos desconhecidos, que chegam de forma contínua através da FCD.
 
 Nos últimos anos, muitos algoritmos de classificação para FCDs foram propostos 
 \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813}.
 Estes trabalhos aplicam técnicas incrementais e adotam medidas para atualização do modelo de decisão.
 No entanto, a maior parte dos algoritmos propostos requer que o rótulo correto para os exemplos esteja disponível após determinado período de tempo.
-Este rótulo é utilizado na execução de novos ciclos de aprendizado, que permitem a atualização do modelo de decisão.
+Este rótulo é utilizado na execução de novos ciclos de aprendizado, que permitem a atualização do modelo.
 Estes trabalhos também consideram que todas classes possíveis do problema já são conhecidas. 
 
-No contexto deste trabalho de mestrado, assume-se que os dados são obtidos a partir de fluxos contínuos de dados não estacionários com presença de mudança de conceito.
-O algoritmo proposto não considera técnicas de aprendizado de máquina aplicadas a estes fluxos.
-A técnica desenvolvida tem como foco a identificação de mudanças de conceito a partir de uma análise direta e contínua do fluxo.
+No contexto deste trabalho de mestrado, assume-se que os dados são obtidos a partir de fluxos contínuos de dados com mudanças de conceito.
+O algoritmo proposto é independente de técnicas de aprendizado de máquina aplicadas ao fluxo, podendo, contudo, atuar de forma paralela.
+O método desenvolvido busca identificar as mudanças de conceito a partir de uma análise direta e contínua dos dados produzidos no fluxo e suas características.
 Na próxima seção, a ideia de mudança de conceito será aprofundada.
 
 \section{Mudança de Conceito}
