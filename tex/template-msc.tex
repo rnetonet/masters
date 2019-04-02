@@ -300,18 +300,18 @@ apresenta um conjunto de experimentos preliminares e a análise dos resultados o
 \section{Considerações Iniciais}
 
 Este capítulo discute os principais conceitos utilizados neste trabalho de pesquisa.
-Em primeiro momento, a aplicação de técnicas de Aprendizado de Máquina a Fluxos Contínuos de Dados será detalhada.
-Em seguida, será apresentada a ideia de Mudança de Conceito, seus tipos e características, principais algoritmos de detecção e ferramentas.
-Logo após, as Redes de Função de Base Radial serão abordadas.
+Em primeiro momento, a aplicação de técnicas de aprendizado de máquina a fluxos contínuos de dados será detalhada.
+Em seguida, será apresentada a ideia de mudança de conceito, seus tipos e características, principais algoritmos de detecção e ferramentas.
+Logo após, as redes de função de base radial serão discutidas.
 Ao fim do capítulo, serão elencados os trabalhos relacionados encontrados na literatura.
 
 \section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
 
 Os avanços em hardware e software dos últimos anos possibilitaram a aquisição e produção de dados em larga escala \cite{Aggarwal:2003:FCE:1315451.1315460}.
-Grande parte desses dados é produzida em sequências contínuas, potencialmente infinitas e de alta frequência.
-A literatura denomina sequências com essas características como Fluxos Contínuos de Dados (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
+Parte significativa desses dados é produzida em sequências contínuas, potencialmente infinitas e de alta frequência.
+Na literatura, sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs) \cite{Aggarwal:2003:FCE:1315451.1315460, Gama:2010:KDD:1855075, GamaMCR04}.
 
-De acordo com \cite{Babcock:2002:MID:543613.543615}, esses fluxos diferenciam-se dos conjuntos de dados convencionais por:
+De acordo com \cite{Babcock:2002:MID:543613.543615}, os fluxos contínuos de dados têm como diferenciais:
 \begin{itemize}
     \item Possuirem tamanho ilimitado;
     \item Produzirem dados de forma contínua e em alta frequência;
@@ -319,7 +319,7 @@ De acordo com \cite{Babcock:2002:MID:543613.543615}, esses fluxos diferenciam-se
     \item Demandarem o descarte de dados processados.
 \end{itemize}
 
-Diversos domínios de aplicação lidam com sequências desse tipo, por exemplo:
+Fluxos com essas características estão presentes em diversos domínios de aplicação, por exemplo:
 \begin{description}
     \item[Finanças] detecção de fraudes em transações, acompanhamento da bolsa de valores;
     \item[Energia] monitoramento, predição e planejamento do consumo;
@@ -340,8 +340,8 @@ Contudo, os principais cenários da indústria e pesquisa que envolvem fluxos co
 Isto é, a distribuição dos dados produzidos ou o contexto do processo gerador podem sofrer alterações, com efeito nos conceitos-alvo esperados.
 Estas alterações, denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075}, podem impactar a acurácia do modelo de decisão.
 
-Conforme \cite{Gama:Rodrigues:2009}, o principal desafio ao aplicar técnicas de aprendizado em cenários dinâmicos é manter o modelo de decisão com boa acurácia ao longo do tempo.
-Para que isto seja possível, o algoritmo de aprendizado deve ser atualizado conforme novos dados são analisados.
+Conforme \cite{Gama:Rodrigues:2009}, o principal desafio ao aplicar técnicas de aprendizado de máquina em cenários dinâmicos é manter o modelo de decisão com boa acurácia ao longo do tempo.
+Para que isto seja possível, o modelo criado deve ser atualizado conforme novos dados são analisados.
 Esta metodologia é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
 
 Segundo \cite{Langley:reimann1995learning}, um algoritmo $A$ pode ser dito incremental se $A$ recebe um evento de treinamento por vez,
@@ -381,7 +381,7 @@ DBSCAN \cite{Ester:1996:DAD:3001460.3001507},
 PAM \cite{kaufman:clustering1990} e 
 OPTICS \cite{Ankerst:1999:OOP:304181.304187}.
 
-Conforme \cite{Gama:2010:KDD:1855075}, a principal dificuldade na aplicação de técnicas de agrupamento com séries contínuas é 
+Conforme \cite{Gama:2010:KDD:1855075}, a principal dificuldade na aplicação de técnicas de agrupamento em fluxos contínuos de dados é 
 a manutenção da qualidade e consistência dos grupos formados em relação à sequência de dados observados, utilizando pouca memória e tempo de processamento. 
 
 Portanto, é necessário que os algoritmos atuem de forma incremental, evoluindo os grupos formados ao longo do tempo.
@@ -393,13 +393,13 @@ Segundo \cite{Barbara:2002:RCD:507515.507519}, as características dos fluxos co
     \item Identificação precisa e tempestiva de \textit{outliers}.
 \end{itemize}
 
-Conforme \cite{Aggarwal:2003:FCE:1315451.1315460}, o problema de agrupamento para fluxos contínuos de dados é de difícil resolução,
+Segundo \cite{Aggarwal:2003:FCE:1315451.1315460}, o problema de agrupamento para fluxos contínuos de dados é de difícil resolução,
 pois a natureza contínua e de alta frequência dos dados tornam os algoritmos tradicionais ineficientes.
 Assim, foram desenvolvidas novas técnicas de clusterização que realizam uma única varredura nos dados. 
 Entretanto, apesar do ganho em escalabilidade, estas técnicas também não consideram a evolução dos dados e podem ser impactadas por mudanças de conceito \cite{Aggarwal:2003:FCE:1315451.1315460}.
 Além desta, outras dificuldades encontradas são a influência de ruídos e a ocorrência de \textit{outliers} \cite{Khalilian:DBLP:journals/corr/abs-1006-5261}.
 
-Diversos algoritmos foram propostos para o agrupamento de séries contínuas de dados, por exemplo: 
+Diversos algoritmos novos e adaptações de algoritmos existentes foram propostos, por exemplo: 
 CluStream \cite{Aggarwal:2003:FCE:1315451.1315460},
 StreamKM++ \cite{Ackermann:2012:SCA:2133803.2184450},
 DenStream \cite{Cao:Feng:Ester},
@@ -411,7 +411,7 @@ que realizam predições para uma variável (conceito alvo) utilizando um modelo
 Se a variável a ser predita é categórica, entende-se como um problema de classificação.
 Se a predição resulta em um valor numérico, trata-se de um problema de regressão.
 
-Diversos métodos de classificação para contextos \textit{batch} foram propostos na literatura. Exemplos:
+Foram desenvolvidos diferentes métodos de classificação para contextos em lote, por exemplo:
 árvores de decisão \cite{Breiman:Classification_Regression_Trees},
 métodos baseados em regras, 
 redes neurais e máquinas de vetores suporte (SVM) \cite{Vapnik1998}, 
