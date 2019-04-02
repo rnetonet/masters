@@ -220,7 +220,7 @@
 \section{Contexto e Motivação}
 
 A quantidade de dados produzidos por sistemas computacionais tem crescido exponencialmente nos últimos anos.
-Relatório produzido pelo IDC (\textit{International Data Corporation}) estimou que em 2014 seriam produzidos 4,4 zettabytes (trilhões de gigabytes) de dados e que este número saltará para 44 zettabytes em 2020 \cite{idc_report}.
+Este crescimento pode ser verificado no relatório produzido pelo IDC (\textit{International Data Corporation}), o qual estimou que em 2014 seriam produzidos 4,4 zettabytes (trilhões de gigabytes) de dados e que este número chegará a 44 zettabytes em 2020 \cite{idc_report}.
 
 Parte significativa dessas informações é produzida por sequências contínuas, ordenadas, potencialmente infinitas e de alta frequência.
 Estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) \cite{Feigenbaum:2003:ALD:589343.592594} e estão presentes em diversos domínios de aplicação, por exemplo:
@@ -236,11 +236,11 @@ A área de Aprendizado de Máquina (AM) é composta por algoritmos que melhoram 
 Diversas técnicas foram desenvolvidas e têm sido aplicadas com sucesso na academia e indústria.
 Todavia, muitas dessas aplicações ocorrem em contextos com fluxos contínuos de dados, o que demandou a adaptação dos métodos de aprendizagem à estes novos cenários e suas restrições \cite{Bifet:2009:ALM:1656274.1656287}.
 
-A maioria dos cenários com fluxos contínuos de dados é dinâmica, isto é, o contexto do processo gerador ou a distribuição dos dados podem sofrer alterações ao longo do tempo, afetando as predições esperadas.
+A maioria dos cenários com fluxos contínuos de dados é dinâmica, isto é, o contexto do processo gerador ou a distribuição dos dados podem sofrer alterações ao longo do tempo, afetando as predições esperadas (conceitos-alvo).
 Este problema é denominado mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia do modelo de decisão.
 
 Diversos algoritmos para detecção de mudanças de conceito foram propostos na literatura \cite{Gama:2014:SCD:2597757.2523813}. 
-Alguns destes algoritmos atuam em conjunto com as técnicas de classificação e identificam as mudanças a partir do monitoramento da taxa de erro \cite{Gama:2014:SCD:2597757.2523813}, 
+Alguns destes algoritmos atuam em conjunto com as técnicas de classificação e identificam mudanças a partir do monitoramento da taxa de erro \cite{Gama:2014:SCD:2597757.2523813}, 
 exemplos: DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
 ADWIN \cite{BifetG07}, ECDD \cite{Ross:2012:EWM:2076039.2076307}, 
 PL \cite{Bach:PL:2008}, FCWM \cite{FCWM}, STEPD \cite{STEPD}, DOF \cite{Sobhani:2011:NDD:2045295.2045309}, 
@@ -248,13 +248,13 @@ SCCDD/CRCDD \cite{daCosta:2016:UDS:2956219.2956389}, dentre outros.
 
 Outra metodologia utilizada para identificar alterações nos conceitos é a aplicação de comitês de classificadores (\textit{Ensemble Classifiers}). 
 Nesta abordagem, a predição global é obtida a partir da combinação das predições individuais de cada classificador.
-Durante este processo, as divergências são utilizadas para identificar mudanças \cite{Gama:2014:SCD:2597757.2523813}.
+Divergências entre as predições individuais são utilizadas como indicadores de possíveis mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
 Exemplos de trabalhos que implementam essa técnica, incluem:
 DWM \cite{Kolter:2007:DWM:1314498.1390333}, AUE \cite{AUE}, 
 WMA \cite{Blum1997}, DDD \cite{Minku:2012:DNE:2197077.2197204}, ADOB \cite{deCarvalhoSantos:2014:SUR:3120352.3120365}, dentre outros.
 
-Contudo, as abordagens mencionadas dependem que o rótulo correto para cada predição seja informado,
-o que não é viável para a maioria das aplicações reais.
+Entretanto, as abordagens mencionadas dependem que o rótulo correto para cada exemplo seja informado,
+o que não é viável para muitas das aplicações reais.
 Dessa forma, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem dessa informação.
 
 Os métodos independentes de rótulos baseiam-se na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
@@ -265,10 +265,11 @@ MINAS \cite{Faria:2013:NDA:2480362.2480515},
 ECSMiner \cite{Masud:2011:CNC:1978259.1978529},
 GC3 \cite{Sethi2016b:GC3}, dentre outros.
 
-Conforme \cite{Aggarwal:2004:DCD:1014052.1014110}., as abordagens elencadas não são perfeitamente adequadas para cenários com fluxos contínuos de dados.
-Visto que as técnicas dependentes de rótulo são impraticáveis em problemas do mundo real, por dependerem de um \textit{especialista} para cada análise.
-De forma similar, os algoritmos independentes apresentam dificuldade para lidar com as restrições de tempo e processamento.
-Visando resolver essas limitações, este projeto de mestrado propõe um método eficiente e independente de rótulos para detecção de mudanças de conceito utilizando Redes de Função de Base Radial.
+Conforme \cite{Aggarwal:2006:DSM:1196418}, apesar de representarem avanços de pesquisa, as técnicas de detecção de mudança de conceito elencadas ainda possuem deficiências.
+Por exemplo, os métodos dependentes de rótulo são impraticáveis em muitos problemas do mundo real \cite{Gama:2014:SCD:2597757.2523813}.
+De forma similar, os algoritmos que não dependem de rotulação apresentam dificuldade com restrições de tempo de execução e de uso dos recursos computacionais, inerentes aos cenários com fluxos contínuos \cite{Gama:2010:KDD:1855075}.
+
+Visando resolver essas limitações, este projeto de mestrado propõe um algoritmo baseado em Redes de Função de Base Radial capaz de detectar mudanças de conceito em tempo de execução, de forma precisa e sem depender da correta rotulação dos eventos.
 
 \section{Hipótese e Objetivo}
 
