@@ -11,7 +11,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated field_info (elt_size=4) to 10934 items from 5000.
+Reallocated field_info (elt_size=4) to 11003 items from 5000.
 Database file #1: abntex2-options.bib
 Database file #2: biblio.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -23,44 +23,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-You've used 86 entries,
+You've used 87 entries,
             6711 wiz_defined-function locations,
-            1881 strings with 30666 characters,
-and the built_in function-call counts, 125992 in all, are:
-= -- 13644
-> -- 3131
-< -- 2527
-+ -- 3591
-- -- 930
-* -- 8640
-:= -- 15454
-add.period$ -- 441
-call.type$ -- 86
-change.case$ -- 1034
-chr.to.int$ -- 200
-cite$ -- 85
-duplicate$ -- 10901
-empty$ -- 5841
-format.name$ -- 4524
-if$ -- 26689
+            1886 strings with 30773 characters,
+and the built_in function-call counts, 126652 in all, are:
+= -- 13694
+> -- 3147
+< -- 2528
++ -- 3596
+- -- 935
+* -- 8680
+:= -- 15546
+add.period$ -- 446
+call.type$ -- 87
+change.case$ -- 1041
+chr.to.int$ -- 204
+cite$ -- 86
+duplicate$ -- 10941
+empty$ -- 5903
+format.name$ -- 4547
+if$ -- 26849
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 1587
-newline$ -- 478
-num.names$ -- 432
-pop$ -- 1928
+missing$ -- 1607
+newline$ -- 483
+num.names$ -- 437
+pop$ -- 1950
 preamble$ -- 1
-purify$ -- 372
+purify$ -- 375
 quote$ -- 0
-skip$ -- 10977
+skip$ -- 11011
 stack$ -- 1
-substring$ -- 5525
-swap$ -- 4496
+substring$ -- 5543
+swap$ -- 4515
 text.length$ -- 180
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 34
 warning$ -- 0
-while$ -- 724
+while$ -- 730
 width$ -- 0
-write$ -- 1539
+write$ -- 1555

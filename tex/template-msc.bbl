@@ -453,6 +453,12 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2010.61}.}
 ISSN 1041-4347.
 Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2011.58}.}
 
+\bibitem[Mitchell 1997]{Mitchell:1997:ML:541177}
+\abntrefinfo{Mitchell}{MITCHELL}{1997}
+{MITCHELL, T.~M. \emph{Machine Learning}. 1. ed. New York, NY, USA:
+  McGraw-Hill, Inc., 1997.
+ISBN 0070428077, 9780070428072.}
+
 \bibitem[Nishida e Yamauchi 2007]{STEPD}
 \abntrefinfo{Nishida e Yamauchi}{NISHIDA; YAMAUCHI}{2007}
 {NISHIDA, K.; YAMAUCHI, K. Detecting concept drift using statistical testing.
