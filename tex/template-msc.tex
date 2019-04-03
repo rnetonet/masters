@@ -219,11 +219,13 @@
 
 \section{Contexto e Motivação}
 
-A quantidade de dados produzidos por sistemas computacionais tem crescido exponencialmente nos últimos anos.
-Este crescimento pode ser verificado no relatório produzido pelo IDC (\textit{International Data Corporation}), o qual estimou que em 2014 seriam produzidos 4,4 zettabytes (trilhões de gigabytes) de dados e que este número chegará a 44 zettabytes em 2020 \cite{idc_report}.
+O volume de dados produzidos por sistemas computacionais tem crescido de forma significativa \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
+Em relatório publicado pelo IDC (\textit{International Data Corporation}), 
+estimava-se que em 2014 seriam produzidos 4,4 zettabytes (trilhões de gigabytes) de dados 
+e que em 2020 essa quantidade será de 44 zettabytes \cite{idc_report}.
 
-Parte significativa dessas informações é produzida por sequências contínuas, ordenadas, potencialmente infinitas e de alta frequência.
-Estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) \cite{Feigenbaum:2003:ALD:589343.592594} e estão presentes em diversos domínios de aplicação, por exemplo:
+Parte relevante desses dados é produzida em sequências contínuas, ordenadas, de alta frequência e potencialmente infinitas.
+Estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em muitos domínios de aplicação \cite{Aggarwal:2006:DSM:1196418}: 
 monitoramento de sensores \cite{Lee:Wang:Ryu:2007},
 tráfico TCP/IP, 
 histórico de compra de clientes,
@@ -232,44 +234,47 @@ detecção de intrusos,
 análise de sentimentos \cite{Smailovic:2014:SAL:2941772.2941857}, 
 etc.
 
-A área de Aprendizado de Máquina (AM) é composta por algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
-Diversas técnicas foram desenvolvidas e têm sido aplicadas com sucesso na academia e indústria.
-Todavia, muitas dessas aplicações ocorrem em contextos com fluxos contínuos de dados, o que demandou a adaptação dos métodos de aprendizagem à estes novos cenários e suas restrições \cite{Bifet:2009:ALM:1656274.1656287}.
+A área de Aprendizado de Máquina (AM) estuda algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
+Nos últimos anos, há um crescente interesse de pesquisa na aplicação dessas técnicas em diferentes contextos.
+Em muitos destes, os dados são produzidos através de fluxos contínuos de dados.
+Sendo necessário, portanto, adaptar os algoritmos para atenderem às restrições de tempo de execução e de uso dos recursos computacionais \cite{Bifet:2009:ALM:1656274.1656287}.
 
-A maioria dos cenários com fluxos contínuos de dados é dinâmica, isto é, o contexto do processo gerador ou a distribuição dos dados podem sofrer alterações ao longo do tempo, afetando as predições esperadas (conceitos-alvo).
-Este problema é denominado mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia do modelo de decisão.
+Além dessas restrições, a dinamicidade dos cenários com fluxos contínuos de dados também é considerada um obstáculo para as técnicas de aprendizado de máquina.
+Isto ocorre, pois, nestes cenários, o contexto do processo ou a distribuição dos dados podem mudar ao longo do tempo, afetando as predições esperadas (conceitos-alvo).
+Este problema é denominado mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia das predições.
 
-Diversos algoritmos para detecção de mudanças de conceito foram propostos na literatura \cite{Gama:2014:SCD:2597757.2523813}. 
-Alguns destes algoritmos atuam em conjunto com as técnicas de classificação e identificam mudanças a partir do monitoramento da taxa de erro \cite{Gama:2014:SCD:2597757.2523813}, 
-exemplos: DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
+Visando mitigar esse problema, foram desenvolvidas técnicas para detecção de mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
+As primeiras técnicas desenvolvidas atuavam em conjunto com os classificadores,  
+detectando mudanças a partir do monitoramento da taxa de erro.
+São exemplos desta abordagem: DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
 ADWIN \cite{BifetG07}, ECDD \cite{Ross:2012:EWM:2076039.2076307}, 
 PL \cite{Bach:PL:2008}, FCWM \cite{FCWM}, STEPD \cite{STEPD}, DOF \cite{Sobhani:2011:NDD:2045295.2045309}, 
 SCCDD/CRCDD \cite{daCosta:2016:UDS:2956219.2956389}, dentre outros.
 
-Outra metodologia utilizada para identificar alterações nos conceitos é a aplicação de comitês de classificadores (\textit{Ensemble Classifiers}). 
-Nesta abordagem, a predição global é obtida a partir da combinação das predições individuais de cada classificador.
-Divergências entre as predições individuais são utilizadas como indicadores de possíveis mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
-Exemplos de trabalhos que implementam essa técnica, incluem:
+Os comitês de classificadores também foram utilizados em métodos para detecção de mudanças de conceito.
+Nestes grupos, a predição global é obtida a partir da combinação das predições individuais.
+Divergências identificadas durante este processo sinalizam potenciais mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
+São exemplos desta técnica:
 DWM \cite{Kolter:2007:DWM:1314498.1390333}, AUE \cite{AUE}, 
 WMA \cite{Blum1997}, DDD \cite{Minku:2012:DNE:2197077.2197204}, ADOB \cite{deCarvalhoSantos:2014:SUR:3120352.3120365}, dentre outros.
 
-Entretanto, as abordagens mencionadas dependem que o rótulo correto para cada exemplo seja informado,
-o que não é viável para muitas das aplicações reais.
-Dessa forma, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem dessa informação.
+Contudo, as abordagens mencionadas dependem que o rótulo correto de cada exemplo esteja disponível.
+Em muitos contextos, o tempo ou o custo para obter esse rótulo é proibitivo \cite{Aggarwal:2006:DSM:1196418}.
+Diante disso, foram desenvolvidos algoritmos que independem dessa informação.
 
-Os métodos independentes de rótulos baseiam-se na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
-Técnicas de agrupamento, detecção de \textit{outliers}, sumarização dos dados e aplicação de medidas de dissimilaridade são comumente utilizadas nas implementações \cite{Ryu:Kantardzic:2012}.
-Os seguintes algoritmos são exemplos deste grupo: 
+Esses algoritmos reconhecem as mudanças de conceito a partir da identificação de eventos que não se enquadrem na estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
+Para isto, técnicas de de agrupamento, detecção de \textit{outliers}, sumarização dos dados e aplicação de medidas de dissimilaridade são utilizadas nas implementações \cite{Ryu:Kantardzic:2012}.
+São exemplos desta categoria:
 OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107},
 MINAS \cite{Faria:2013:NDA:2480362.2480515},
 ECSMiner \cite{Masud:2011:CNC:1978259.1978529},
 GC3 \cite{Sethi2016b:GC3}, dentre outros.
 
-Conforme \cite{Aggarwal:2006:DSM:1196418}, apesar de representarem avanços de pesquisa, as técnicas de detecção de mudança de conceito elencadas ainda possuem deficiências.
-Por exemplo, os métodos dependentes de rótulo são impraticáveis em muitos problemas do mundo real \cite{Gama:2014:SCD:2597757.2523813}.
-De forma similar, os algoritmos que não dependem de rotulação apresentam dificuldade com restrições de tempo de execução e de uso dos recursos computacionais, inerentes aos cenários com fluxos contínuos \cite{Gama:2010:KDD:1855075}.
+Contudo, conforme \cite{Aggarwal:2006:DSM:1196418}, as técnicas para identificação de mudanças de conceito propostas ainda possuem deficiências.
+Os algoritmos depentes de rótulos, por exemplo, são impraticáveis para muitos problemas do mundo real \cite{Gama:2014:SCD:2597757.2523813}.
+De forma similar, as técnicas independentes, têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais.
 
-Visando resolver essas limitações, este projeto de mestrado propõe um algoritmo baseado em Redes de Função de Base Radial capaz de detectar mudanças de conceito em tempo de execução, de forma precisa, sem manutenção de exemplos prévios e independente de rótulos.
+Visando resolver essas limitações, este projeto de mestrado propõe um algoritmo baseado em Redes de Função de Base Radial para detecção de mudanças de conceito em tempo de execução, de forma precisa, sem manutenção de exemplos prévios e independente de rótulos.
 
 \section{Hipótese e Objetivo}
 
@@ -340,7 +345,7 @@ Contudo, os principais cenários da indústria e pesquisa que envolvem fluxos co
 Isto é, a distribuição dos dados produzidos ou o contexto do processo gerador podem sofrer alterações, com efeito nos conceitos-alvo esperados.
 Estas alterações, denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075}, podem impactar a acurácia do modelo de decisão.
 
-Conforme \cite{Gama:Rodrigues:2009}, o principal desafio ao aplicar técnicas de aprendizado de máquina em cenários dinâmicos é manter o modelo de decisão com boa acurácia ao longo do tempo.
+Conforme \cite{Gama:Rodrigues:2009}, o principal desafio ao aplicar técnicas de aprendizado de máquina em cenários dinâmicos é manter o modelo de decisão com boa performance ao longo do tempo.
 Para que isto seja possível, o modelo criado deve ser atualizado conforme novos dados são analisados.
 Esta metodologia é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
 
@@ -367,7 +372,7 @@ Contudo, conforme \cite{GamaMCR04}, além de assimilar novos exemplos, os algori
 Pois, nesses casos, pode ser necessário descartar parte das informações para que o modelo seja atualizado corretamente.
 
 Os algoritmos de aprendizado de máquina podem ser divididos em duas áreas principais: agrupamento (\textit{clustering}) e predição (classificação ou regressão).
-Parte desses algoritmos foi adaptada para lidar com fluxos contínuos de dados.
+Algoritmos de ambas áreas foram adaptados para cenários com fluxos contínuos.
 Estas áreas e as adaptações propostas serão tratadas no restante desta subseção.
 
 As técnicas de agrupamento associam objetos conforme suas características, buscando formar conjuntos com alta similaridade interna e baixa similaridade externa.
@@ -375,7 +380,7 @@ Os algoritmos de agrupamento permitem explorar a estrutura dos dados sem exigir 
 As representações criadas são de fácil entedimento e permitem verificar se os grupos atendem a determinados parâmetros \cite{Jain:1988:ACD:46712}.
 
 Os métodos de agrupamento têm sido utilizados em diversas áreas do conhecimento, o que viabilizou o desenvolvimento de uma grande variedade de algoritmos.
-Dentre os principais algoritmos para cenários \textit{batch}, destacam-se:
+Dentre os principais algoritmos para cenários em lote, destacam-se:
 K-Means \cite{Lloyd:2006:LSQ:2263356.2269955},
 DBSCAN \cite{Ester:1996:DAD:3001460.3001507},
 PAM \cite{kaufman:clustering1990} e 

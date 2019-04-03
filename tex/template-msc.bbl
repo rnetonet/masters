@@ -184,6 +184,13 @@ ISBN 978-1-61197-276-4. Dispon{\'\i}vel em:
 ISSN 0360-0300.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1541880.1541882}.}
 
+\bibitem[Cohen et al. 2009]{Cohen:BigData:2009:MSN:1687553.1687576}
+\abntrefinfo{Cohen et al.}{COHEN et al.}{2009}
+{COHEN, J. et al. Mad skills: New analysis practices for big data.
+\emph{Proc. VLDB Endow.}, VLDB Endowment, v.~2, n.~2, p. 1481--1492, ago. 2009.
+ISSN 2150-8097.
+Dispon{\'\i}vel em: \url{https://doi.org/10.14778/1687553.1687576}.}
+
 \bibitem[Costa, Rios e Mello 2016]{daCosta:2016:UDS:2956219.2956389}
 \abntrefinfo{Costa, Rios e Mello}{COSTA; RIOS; MELLO}{2016}
 {COSTA, F. da; RIOS, R.; MELLO, R. de. Using dynamical systems tools to detect
@@ -247,15 +254,6 @@ ISBN 0471056693.}
   2013.  (SAC '13), p. 795--800.
 ISBN 978-1-4503-1656-9. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/2480362.2480515}.}
-
-\bibitem[Feigenbaum et al. 2003]{Feigenbaum:2003:ALD:589343.592594}
-\abntrefinfo{Feigenbaum et al.}{FEIGENBAUM et al.}{2003}
-{FEIGENBAUM, J. et al. An approximate l1-difference algorithm for massive data
-  streams.
-\emph{SIAM J. Comput.}, Society for Industrial and Applied Mathematics,
-  Philadelphia, PA, USA, v.~32, n.~1, p. 131--151, jan. 2003.
-ISSN 0097-5397.
-Dispon{\'\i}vel em: \url{https://doi.org/10.1137/S0097539799361701}.}
 
 \bibitem[Gama 2010]{Gama:2010:KDD:1855075}
 \abntrefinfo{Gama}{GAMA}{2010}
