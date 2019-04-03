@@ -53,15 +53,6 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s10115-016-0987-z}.}
 ISSN 0163-5808.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/304181.304187}.}
 
-\bibitem[Babcock et al. 2002]{Babcock:2002:MID:543613.543615}
-\abntrefinfo{Babcock et al.}{BABCOCK et al.}{2002}
-{BABCOCK, B. et al. Models and issues in data stream systems. In:
-  \emph{Proceedings of the Twenty-first ACM SIGMOD-SIGACT-SIGART Symposium on
-  Principles of Database Systems}. New York, NY, USA: ACM, 2002.  (PODS '02),
-  p. 1--16.
-ISBN 1-58113-507-6. Dispon{\'\i}vel em:
-  \url{http://doi.acm.org/10.1145/543613.543615}.}
-
 \bibitem[{Bach} e {Maloof} 2008]{Bach:PL:2008}
 \abntrefinfo{{Bach} e {Maloof}}{{Bach}; {Maloof}}{2008}
 {{Bach}, S.~H.; {Maloof}, M.~A. Paired learners for concept drift. In:
@@ -357,12 +348,6 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s10115-009-0206-2}.}
 {KAUFMAN, L.; ROUSSEEUW, P. \emph{Finding Groups in Data: an introduction to
   cluster analysis}. [S.l.]: Wiley, 1990.}
 
-\bibitem[Khalilian e Mustapha 2010]{Khalilian:DBLP:journals/corr/abs-1006-5261}
-\abntrefinfo{Khalilian e Mustapha}{KHALILIAN; MUSTAPHA}{2010}
-{KHALILIAN, M.; MUSTAPHA, N. Data stream clustering: Challenges and issues.
-\emph{CoRR}, abs/1006.5261, 2010.
-Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1006.5261}.}
-
 \bibitem[Kolter e Maloof 2007]{Kolter:2007:DWM:1314498.1390333}
 \abntrefinfo{Kolter e Maloof}{KOLTER; MALOOF}{2007}
 {KOLTER, J.~Z.; MALOOF, M.~A. Dynamic weighted majority: An ensemble method for
@@ -483,19 +468,6 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.2307/2333009}.}
   from Evolving Data Streams}. Université d'Ottawa / University of Ottawa,
   2018.
 Dispon{\'\i}vel em: \url{http://ruor.uottawa.ca/handle/10393/38190}.}
-
-\bibitem[Pinto, Gama e Porto 2005]{pinto2005algoritmos}
-\abntrefinfo{Pinto, Gama e Porto}{PINTO; GAMA; PORTO}{2005}
-{PINTO, C. M.~S.; GAMA, J.; PORTO, U. do. Algoritmos incrementais para
-  aprendizagem bayesiana.
-\emph{Faculdade de Economia da Universidade do Porto}, 2005.}
-
-\bibitem[Reimann e Spada 1995]{Langley:reimann1995learning}
-\abntrefinfo{Reimann e Spada}{REIMANN; SPADA}{1995}
-{REIMANN, P.; SPADA, H. \emph{Learning in Humans and Machines: Towards an
-  Interdisciplinary Learning Science}. Emerald Group Publishing Limited, 1995.
-ISBN 9780080425696. Dispon{\'\i}vel em:
-  \url{https://books.google.com.br/books?id=YkdyQgAACAAJ}.}
 
 \bibitem[{Roberts}, {Penny} e {Pillot} 1996]{Roberts:Penny:Novelty:Confidence}
 \abntrefinfo{{Roberts}, {Penny} e {Pillot}}{{Roberts}; {Penny}; {Pillot}}{1996}
