@@ -631,8 +631,8 @@ Na próxima seção, abordaremos as ferramentas utilizadas para implementação 
 \subsection{Ferramentas}
 
 Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
-Estes frameworks possibilitam a implementação e a análise - perante o estado da arte - de algoritmos para detecção de mudança de conceito.
-Ambos permitem a avaliação entre técnicas e a utilização de diferentes \textit{datasets}.
+Estes frameworks possibilitam a implementação e a análise - perante o estado da arte - de algoritmos para detecção de mudanças de conceito.
+Ambos permitem a avaliação entre técnicas e a utilização de diferentes fontes de dados.
 
 \subsection{MOA}
 
@@ -655,7 +655,7 @@ controlar suas execuções e visualizar os resultados parciais.
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[scale=0.5]{imagens/moa.png}
+    \includegraphics[scale=0.4]{imagens/moa.png}
     \caption{MOA - Tela Inicial}
     \label{fig:moa}
 \end{center}
@@ -673,9 +673,9 @@ Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{Waveform} \cite{Gama:2003:ADT:956750.956813}, 
  e \textit{Function} \cite{Jin:2003:EDT:956750.956821}.
 
-Outra característica interessante do framework é a possibilidade de adicionar mudanças de conceito a fluxos estacionários existentes.
+Outra funcionalidade importante do framework é a possibilidade de adicionar mudanças de conceito a fluxos estacionários existentes.
 Isto é feito através de uma função sigmóide, que modela o evento de mudança de conceito como uma combinação balanceada de duas distribuições homogêneas, 
-que caracterizam os conceitos alvo antes e depois da mudança \cite{bifet2009data}.
+que caracterizam os conceitos-alvo antes e depois da mudança \cite{bifet2009data}.
 Além destes conceitos, o usuário também pode definir o momento da mudança e a sua duração \cite{Bifet:2010:MMO:1756006.1859903}.
 
 Os principais métodos para detecção de mudança de conceito propostos na literatura estão disponíveis no MOA.
@@ -700,13 +700,11 @@ que realizam a análise de algoritmos para detecção de mudança de conceito.
 A classe \texttt{DriftDetectionMethodClassifier} permite avaliar técnicas de detecção que encapsulam um classificador.
 Por sua vez, a classe \texttt{BasicConceptDriftPerformanceEvaluator} avalia a performance das técnicas de detecção diretamente, 
 sem a necessidade de um classificador.
-Estes avaliadores e os seus indicadores serão detalhados juntamente com os resultados dos experimentos iniciais, na Seção \ref{experimentos_iniciais}. 
-
-Neste projeto de mestrado foram implementados novos detectores para o MOA e as duas técnicas de validação foram utilizadas na análise dos experimentos.
+Estes avaliadores e os seus indicadores serão detalhados juntamente com os resultados dos experimentos iniciais, na Seção \ref{experimentos_iniciais}.
 
 \subsection{Tornado}
 
-O Tornado é, assim como o MOA, um framework para mineração de dados para fluxos contínuos \cite{Pesaranghader:Tornado}.
+O Tornado é um framework para avaliação de algoritmos de detecção de mudança de conceito \cite{Pesaranghader:Tornado}.
 O projeto é desenvolvido na linguagem Python e seu código está disponível\footnote{https://github.com/alipsgh/tornado}.
 O framework diferencia-se do MOA por apresentar um cenário de avaliação específico: 
 analisar a execução, em paralelo, de pares (classificador, detector de mudança de conceito), 
@@ -723,26 +721,25 @@ para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
 Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do framework são: 
 \textit{Stream Reader}, \textit{Classifiers}, \textit{Detectors}, \textit{Classifier-Detector Pairs} e \textit{CAR Calculator}.
 A entrada de dados é composta por um fluxo (\textit{Stream}), uma lista de pares (classificador, detector) e um vetor com pesos.
-O Tornado utiliza a abordagem de validação \textit{prequential}, na qual as instâncias são testadas e depois utilizadas no aprendizado \cite{Gama:2014:SCD:2597757.2523813}.
 
 O componente \textit{Stream Reader} lê instâncias a partir do fluxo e as envia, uma a uma, para o par (classificador, detector), para construção do modelo.
 Os modelos são construídos de forma incremental. Por seguir a abordagem \textit{prequential}, cada instância é primeiramente utilizada para testes e depois como treinamento.
 Simultaneamente, os classificadores enviam suas estatísticas (taxas de erro ou resultados das predições) aos detectores, para que a mudança de conceito possa ser sinalizada.
 Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par, considerando taxas de erro, atraso para detecção da mudança de conceito, falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
 O framework apresenta ao usuário o par com maior pontuação. Este par, contudo, pode mudar devido ao aprendizado incremental ou à mudança de conceito.
-A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado obtido através do framework.
+A Figura \ref{fig:tornado_out2} apresenta um resultado obtido através do framework.
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[scale=0.5]{imagens/tornado_out2.png}
+    \includegraphics[scale=0.6]{imagens/tornado_out2.png}
     \caption{Tornado - Resultado para múltiplos pares \cite{Pesaranghader:Tornado}}
     \label{fig:tornado_out2}
 \end{center}
 \end{figure}
 
-Neste trabalho de pesquisa, de forma similar ao MOA, a técnica proposta foi implementada no framework Tornado.
-O framework foi utilizado na validação dos experimentos, permitindo verificar o comportamento do detector em conjunto com um classificador, ao longo do tempo.
-Na seção seguinte, detalharemos conceitos sobre as Redes de Função de Base Radial, técnica que serviu de base para o algoritmo proposto nesta pesquisa.
+Neste trabalho, o algoritmo proposto foi implementado e testado nas duas ferramentas apresentadas.
+Os detalhes de implementação e os resultados desses testes são discutidos na Seção \ref{experimentos_iniciais}.
+A seguir, as redes de função de base radial serão detalhadas.
 
 \section{Redes de Função de Base Radial}
 
@@ -774,7 +771,7 @@ Na literatura, a função de base radial Gaussiana (Eq. \ref{eq:gaussiana}) é u
 Na equação \ref{eq:gaussiana}, $v = \lVert x - t_i \rVert$ é dado pela distância euclidiana, onde $x$ é o valor de entrada da rede, 
 enquanto $t_i$ e $\sigma$ correspondem respectivamente ao centro e a largura da função radial. 
 Dessa maneira, a resolução de um determinado problema por uma rede do tipo RBF consiste na resolução das funções \ref{eq:rbf1} e
-\ref{eq:rbf2} obtendo o sistema \ref{eq:rbf3}.
+\ref{eq:rbf2}, obtendo o sistema \ref{eq:rbf3}.
 
 \begin{equation} \label{eq:rbf1}
     f(x)=\sum _{{i=1}}^{N}w_{ij}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||)
@@ -816,42 +813,39 @@ proposto neste projeto de mestrado.
 
 \section{Trabalhos Relacionados}
 
-Além das referências básicas apresentadas nesta seção, foi realizada uma pesquisa na literatura visando identificar trabalhos relacionados 
-que propõem a identificação de mudanças de conceito em FCDs através da aplicação de redes RBF, ou técnicas similares.
+Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura visando identificar trabalhos relacionados 
+que propõem a identificação de mudanças de conceito em fluxos contínuos de dados através da aplicação de redes de função de base radial, ou técnicas similares.
 
-Em \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification} redes RBF com funções Gaussianas são utilizadas para detecção de novidades.
-Os centros e as matrizes de covariância são definidas através do agrupamento via \textit{k-means} juntamente com a aplicação de heurísticas de largura ou do algoritmo \textit{EM}.
-O método proposto não atua sobre fluxos de dados e constitue uma rede RBF completa e estática ao longo do tempo.
+Em \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification} redes de função de base radial, utilizando funções gaussianas, são utilizadas para detecção de novidades.
+A técnica proposta atua sobre cenários estacionários, mais especificamente o problema de identificação de falas.
+Durante a preparação da rede, o algoritmo \textit{k-means} é utilizado para definir os centros e as matrizes de covariância.
 
 Roberts e Penny \cite{Roberts:Penny:Novelty:Confidence} propõem  um método para detecção de novidade baseado no monitoramento das taxas de erro e confiança, 
-utilizando um comitê de redes RBF. 
+utilizando um comitê de redes de função de base radial. 
 Cada rede é inicializada com um vetor de pesos diferente.
 A taxa de erro final é calculada a partir da matriz de covariância de erro do cômite criado.
 Esta abordagem foi testada na classificação de pacientes com problemas de tremor muscular.
 
-As RBFs também foram aplicadas para detecção de anomalias \cite{Bazargani2018RadialBF}.
-Esta pesquisa realiza modificações às funções de perda (\textit{loss}) das redes, 
-fazendo com que a rede atuem como classificador de classe única, 
-permitindo a identificação de exemplos divergentes do padrão conhecido.
+As redes de função de base radial também foram aplicadas para detecção de anomalias \cite{Bazargani2018RadialBF}.
+Neste trabalho, às funções de perda (\textit{loss}) das redes são modificadas, 
+tornando-as classificadores para uma única classe. 
+Estas modificações permitem às redes identificar exemplos divergentes dos padrões conhecidos.
 
-Este projeto de mestrado se diferencia dos trabalhos mencionados por utilizar apenas as camadas de entrada e intermediária das redes RBF para detecção de mudanças de conceito.
-Além disso, etapas como a escolha dos centros e o cálculo do tamanho do raio são realizadas de forma dinâmica.
-Estas características viabilizam a aplicação da técnica em fluxos contínuos de dados.
+Este projeto de mestrado se diferencia dos trabalhos mencionados por utilizar apenas as camadas de entrada e intermediária das redes de função de base radial para detecção de mudanças de conceito.
+Além disso, etapas como a escolha dos centros e o cálculo do tamanho do raio são realizadas de forma dinâmica, tornando possível a sua aplicação em cenários com fluxos contínuos de dados.
 
 \section{Considerações Finais}
 
-Neste capítulo foram apresentados alguns conceitos básicos que serão utilizados como base para a execução deste trabalho. 
-Foram descritos os conceitos de 
-Fluxos Contínuos de Dados e suas aplicações em Aprendizado de Máquina,
-Mudança de Conceito,
-técnicas para Detecção de Mudança de Conceito,
-principais ferramentas da área e 
-Redes de Função de Base Radial.
-Por fim,
-foram discutidos trabalhos que aplicam redes RBF para detecção de padrões divergentes (novidades, \textit{outliers}, etc).
+Neste capítulo foram apresentados os principais conceitos para a execução deste trabalho. 
+Foram discutidas noções sobre a aplicação de técnicas de aprendizado a fluxos contínuos de dados,
+o fenômeno mudança de conceito e suas técnicas de detecção e ferramentas,
+as redes de função de base radial e, por fim, os principais trabalhos relacionados.
+No próximo capítulo, o plano de pesquisa será detalhado.
 
 \xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
 \section{Considerações Iniciais}
+
+\todo{Daqui}
 
 Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que Redes de Função de Base Radial sejam aplicadas para detecção de mudanças de conceito em Fluxos Contínuos de Dados.
 Espera-se que com a utilização das camadas inicial e intermediária das redes RBF e suas propriedades de agrupamento, seja possível detectar mudanças de conceito de forma eficiente e sem requerer a manutenção de estados prévios.
