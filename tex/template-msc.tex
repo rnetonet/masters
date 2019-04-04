@@ -241,7 +241,7 @@ Sendo necessário, portanto, adaptar os algoritmos para atenderem às restriçõ
 
 Além dessas restrições, a dinamicidade dos cenários com fluxos contínuos de dados também é considerada um obstáculo para as técnicas de aprendizado de máquina.
 Isto ocorre, pois, nestes cenários, o contexto do processo ou a distribuição dos dados podem mudar ao longo do tempo, afetando as predições esperadas (conceitos-alvo).
-Este problema é denominado mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia das predições.
+Este problema é denominado mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia do modelo.
 
 Visando mitigar esse problema, foram desenvolvidas técnicas para detecção de mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
 As primeiras técnicas desenvolvidas atuavam em conjunto com os classificadores,  
@@ -272,7 +272,7 @@ GC3 \cite{Sethi2016b:GC3}, dentre outros.
 
 Contudo, conforme \cite{Aggarwal:2006:DSM:1196418}, as técnicas para identificação de mudanças de conceito propostas ainda possuem deficiências.
 Os algoritmos depentes de rótulos, por exemplo, são impraticáveis para muitos problemas do mundo real \cite{Gama:2014:SCD:2597757.2523813}.
-De forma similar, as técnicas independentes, têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais.
+De forma similar, as técnicas independentes, têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais em cenários com fluxos contínuos de dados.
 
 Visando resolver essas limitações, este projeto de mestrado propõe um algoritmo baseado em redes de função de base radial capaz de detectar mudanças de conceito de forma online, precisa e idependente de exemplos prévios ou rótulos.
 
@@ -306,7 +306,7 @@ apresenta um conjunto de experimentos preliminares e a análise dos resultados o
 
 Este capítulo discute os principais conceitos utilizados neste trabalho de pesquisa.
 Em primeiro momento, a aplicação de técnicas de aprendizado de máquina a fluxos contínuos de dados será detalhada.
-Em seguida, será apresentada a ideia de mudança de conceito, seus tipos e características, principais algoritmos de detecção e ferramentas.
+Em seguida, será apresentada a ideia de mudança de conceito, seus tipos e características, taxonomia, principais algoritmos de detecção e ferramentas.
 Logo após, as redes de função de base radial serão discutidas.
 Ao fim do capítulo, serão elencados os trabalhos relacionados encontrados na literatura.
 
@@ -330,7 +330,7 @@ Entretanto, segundo \cite{Gama:2010:KDD:1855075}, a área teve como foco, durant
 Nestes cenários, os algoritmos consideram que a distribuição dos dados e o contexto do processo não sofrem alterações ao longo do tempo.
 Ou seja, não há o surgimento de novos conceitos-alvo ou alteração dos existentes.
 
-Contudo, os principais cenários com fluxos contínuos de dados são dinâmicos.
+Contudo, os principais domínios de aplicação com fluxos contínuos de dados são dinâmicos.
 Isto é, a distribuição dos dados ou o contexto do processo gerador podem sofrer alterações que afetam os conceitos-alvo esperados.
 Estas alterações, denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075}, podem impactar a acurácia do modelo de decisão.
 
@@ -380,7 +380,7 @@ Dessa forma, novos algoritmos supervisionados foram propostos para os cenários 
 No contexto deste trabalho de mestrado, assume-se que os dados são obtidos a partir de fluxos contínuos de dados com mudanças de conceito.
 O algoritmo para detecão de mudanças proposto é independente de técnicas de aprendizado, 
 pois identifica as mudanças a partir de uma análise direta e contínua do fluxo de dados.
-Na próxima seção, o fenômeno mudança de conceito, suas técnicas de detecção e principais ferramentas serão discutidas.
+Na próxima seção, o fenômeno mudança de conceito será discutido.
 
 \section{Mudança de Conceito}
 
@@ -390,7 +390,7 @@ Este cliente tem demonstrado, ao longo do tempo, uma absoluta preferência por l
 Entretanto, ao ingressar na universidade, passa a consumir apenas livros técnicos.
 Esta alteração de comportamento é considerada uma mudança de conceito e pode ter impacto na acurácia do modelo.
 
-A Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} é comumente aplicada para descrever o problema de classificação.
+A Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} é comumente aplicada para descrever as técnicas de classificação.
 Utilizaremos esta descrição como base teórica para formalizar o problema de mudança de conceito:
 Sendo $X \in \mathbb{R}^p$ uma instância em um espaço $p$-dimensional de atributos e $X \in c_i$ onde $c_1$, $c_2$, \ldots, $c_k$ é o conjunto de classes, 
 o classificador ótimo para classificar $x \rightarrow c_i$ é determinado pelas probabilidades a priori das classes $P(c_i)$ e a função de densidade de probabilidade condicionada às classes $p(X|c_i), i = 1, \ldots, k$.
@@ -401,7 +401,7 @@ Dessa forma, um conceito pode ser definido como um conjunto de probabilidades a 
     S = \{(P(c_1), P(X|c_1)), (P(c_2), P(X|c_2)), ..., (P(c_k), P(X|c_k))\}
 \end{equation}
 
-Ainda segundo a Teoria Bayesiana, a classificação de uma instância $X$ baseada na máxima probabilidade a posteriori pode ser obtida através da Equação \ref{eq:classificacao}
+Ainda segundo a Teoria Bayesiana, a classificação de uma instância $X$ baseada na máxima probabilidade a posteriori pode ser obtida através da Equação \ref{eq:classificacao}:
 
 \begin{equation} \label{eq:classificacao}
     p(c_i|X) = \frac{p(c_i) * p(X|c_i)}{p(X)}
@@ -426,7 +426,7 @@ Com base na formalização exposta, segundo \cite{Zliobaite:2010}, mudanças de 
 \end{enumerate}
 
 Segundo \cite{Zliobaite:2010, Gama:2014:SCD:2597757.2523813}, as mudanças de conceito podem ser categorizadas como virtuais ou reais.
-As mudanças de conceito virtuais indicam mudanças na probabilidade a priori das classes, $P(c)$, e não têm impacto nos conceitos-alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (b)).
+As virtuais indicam mudanças na probabilidade a priori das classes, $P(c)$, e não têm impacto nos conceitos-alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (b)).
 Enquanto as mudanças de conceito reais referem-se a mudanças na probabilidade a posteriori, $p(c|X)$, e afetam os conceitos-alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (c)).
 
 \begin{figure}[H]
@@ -470,10 +470,16 @@ Contudo, ele é presenteado com uma série de livros de auto-ajuda de um renomad
 Após ler toda a série, o cliente é premiado com descontos para livros de ficção científica e volta a lê-los.
 A mudança de conceito recorrente está representada na Figura \ref{fig:concept_drift_patterns} (d).
 
-É importante destacar que o fenômeno mudança de conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo mineração de dados, 
+O método de detecção proposto neste trabalho de mestrado busca identificar mudanças de conceito reais em fluxos contínuos de dados, independente do padrão de ocorrência destas.
+
+Na subseção seguinte, será discutida a taxonomia do termo mudança de conceito e discriminada a expressão detecção de mudança de conceito de outras técnicas relacionadas.
+
+\subsection{Taxonomia}
+
+O fenômeno mudança de conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo mineração de dados, 
 aprendizado de máquina, estatística e recuperação de informação \cite{Zliobaite:2010}.
 Contudo, o mesmo conceito pode ter diferentes nomeclaturas em cada comunidade.
-Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a Mudança de Conceito para cada área de pesquisa.
+Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a mudança de conceito para cada área de pesquisa.
 
 \begin{center} 
 \begin{table}[H]
@@ -492,34 +498,34 @@ Recuperação de Informação           & Evolução Temporal                   
 \end{table}
 \end{center}
 
-O método de detecção proposto neste trabalho de mestrado busca identificar mudanças de conceito reais em fluxos contínuos de dados, independente do padrão de ocorrência destas.
-Na seção seguinte serão detalhados os principais algoritmos para Detecção de Mudança de Conceito encontrados na literatura.
+Outra fonte comum de equívocos são os termos Detecção de \textit{Outliers}, Detecção de Novidade, Detecção de \textit{Change Points} e Detecção de Mudança de Conceito.
+Estes termos são, em muitos cenários, utilizados de forma indistinta.
+Mas, para o contexto deste trabalho, é importante distingui-los.
+
+De acordo com \cite{Chandola:2009:ADS:1541880.1541882}, a expressão Detecção de \textit{Outliers} refere-se a tarefa de encontrar padrões nos dados em desacordo com o comportamento esperado.
+
+Ainda conforme \cite{Chandola:2009:ADS:1541880.1541882}, as técnicas para Detecção de Novidade têm como objetivo detectar padrões ainda não observados nos dados.
+Diferentemente das técnicas para Detecção de \textit{Outliers}, as técnicas para Detecção de Novidade incorporam os novos padrões ao modelo de decisão.
+
+% Entretanto, esse termo se distingue da detecção de \textit{outliers}, pois os novos padrões, geralmente, são incorporados ao modelo.
+% Apesar de apresentarem definições próximas, a Detecção de Mudança de Conceito engloba a Detecção de Novidade e a extrapola, ao identificar 
+% mudanças de conceito reais a partir do \textit{feedback} sobre a performance preditiva \cite{Gama:2010:KDD:1855075}.
+
+% Esses padrões podem ser denominados como: \textit{outliers}, anomalias, observações discordantes, exceções, peculiaridades ou aberrações.
+% Para \cite{Gama:2010:KDD:1855075}, exemplos esparsos e independentes, cujas características diferem muito daqueles que definem o modelo, 
+% devem ser considerados como \textit{outliers}, pois não há garantia de que representem um conceito. 
+% Em \cite{Aggarwal:2003:FCE:1315451.1315460}, os autores tipificam os \textit{outliers} como anomalias ou ruídos.
+% As anomalias constituem um tipo especial de \textit{outlier}, que é de interesse dos analistas.
+% Contudo, conforme \cite{Gama:2010:KDD:1855075}, é necessário um grupo conciso de exemplos para evidenciar o aparecimento de um novo conceito, ou novidade.
+
+Por fim, as técnicas para Detecção de \textit{Change Points} identificam variações abruptas de valor, que podem representar transições entre estados, em séries temporais unidimensionais estacionárias \cite{Aminikhanghahi:2017:SMT:3086013.3086037}.
+
+Na próxima subseção, detalharemos as principais técnicas para detecção de mudanças de conceito encontradas na literatura.
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
 
 Os algoritmos para Detecção de Mudança de Conceito são os responsáveis por identificar, de forma explícita, as mudanças de conceito nos fluxos de dados \cite{Gama:2014:SCD:2597757.2523813}.
 Estes métodos caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
-
-Uma fonte de equívoco comum reside na utilização dos termos Detecção de \textit{Outliers}, Detecção de Novidade, Detecção de \textit{Change Points} e Detecção de Mudança de Conceito.
-Em alguns contextos, esses termos são usados indistitamente, entretanto, neste trabalho eles serão diferenciados.
-
-De acordo com \cite{Chandola:2009:ADS:1541880.1541882}, 
-Detecção de \textit{Outliers} refere-se a tarefa de encontrar padrões nos dados que não estão de acordo com o comportamento esperado.
-Esses padrões podem ser denominados como: \textit{outliers}, anomalias, observações discordantes, exceções, peculiaridades ou aberrações.
-
-Para \cite{Gama:2010:KDD:1855075}, exemplos esparsos e independentes, cujas características diferem muito daqueles que definem o modelo, 
-devem ser considerados como \textit{outliers}, pois não há garantia de que representem um conceito. 
-Em \cite{Aggarwal:2003:FCE:1315451.1315460}, os autores tipificam os \textit{outliers} como anomalias ou ruídos.
-As anomalias constituem um tipo especial de \textit{outlier}, que é de interesse dos analistas.
-Contudo, conforme \cite{Gama:2010:KDD:1855075}, é necessário um grupo conciso de exemplos para evidenciar o aparecimento de um novo conceito, ou novidade.
-
-Segundo \cite{Chandola:2009:ADS:1541880.1541882}, a Detecção de Novidade objetiva detectar padrões não observados (emergentes) nos dados.
-Entretanto, esse termo se distingue da detecção de \textit{outliers}, pois os novos padrões, geralmente, são incorporados ao modelo.
-Apesar de apresentarem definições próximas, a Detecção de Mudança de Conceito engloba a Detecção de Novidade e a extrapola, ao identificar 
-mudanças de conceito reais a partir do \textit{feedback} sobre a performance preditiva \cite{Gama:2010:KDD:1855075}.
-
-Técnicas para Detecção de \textit{Change Points} identificam variações abruptas de valor em séries temporais, que podem representar transições entre estados.
-Diferenciam-se das técnicas para Detecção de Mudança de Conceito pois são aplicadas em séries temporais unidimensionais estacionárias \cite{Aminikhanghahi:2017:SMT:3086013.3086037}.
 
 As técnicas para detecção e mudanças de conceito propostas na literatura podem ser divididas em duas categorias, baseado na dependência ou não de dados rotulados:
 \begin{description}
@@ -648,7 +654,7 @@ A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
 Através da interface gráfica é possível executar múltiplas tarefas de forma concorrente, 
 controlar suas execuções e visualizar os resultados parciais.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \begin{center}
     \includegraphics[scale=0.5]{imagens/moa.png}
     \caption{MOA - Tela Inicial}
@@ -677,7 +683,7 @@ Os principais métodos para detecção de mudança de conceito propostos na lite
 O framework também permite a utilização de classificadores do WEKA \cite{Hall:2009:WDM:1656274.1656278} combinados aos detectores.
 A janela para configuração de um detector é demonstrada na Figura \ref{fig:moa_detector}.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \begin{center}
     \includegraphics[scale=1]{imagens/detector.png}
     \caption{MOA - Configuração detector}
@@ -707,7 +713,7 @@ O framework diferencia-se do MOA por apresentar um cenário de avaliação espec
 analisar a execução, em paralelo, de pares (classificador, detector de mudança de conceito), 
 para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \begin{center}
     \includegraphics[scale=0.75]{imagens/tornado.png}
     \caption{Framework Tornado \cite{Pesaranghader:Tornado}.}
@@ -727,7 +733,7 @@ Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada 
 O framework apresenta ao usuário o par com maior pontuação. Este par, contudo, pode mudar devido ao aprendizado incremental ou à mudança de conceito.
 A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado obtido através do framework.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \begin{center}
     \includegraphics[scale=0.5]{imagens/tornado_out2.png}
     \caption{Tornado - Resultado para múltiplos pares \cite{Pesaranghader:Tornado}}
@@ -752,7 +758,7 @@ transformando padrões de entrada não linearmente separáveis em um conjunto de
 A camada de saída classifica os padrões recebidos através da combinação linear das saídas das funções \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \begin{center}
     \includegraphics[scale=1]{imagens/rbf_arq.png}
     \caption{Arquitetura RBF}
