@@ -524,10 +524,10 @@ Na próxima subseção, detalharemos as principais técnicas para detecção de 
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
 
-Os algoritmos para Detecção de Mudança de Conceito são os responsáveis por identificar, de forma explícita, as mudanças de conceito nos fluxos de dados \cite{Gama:2014:SCD:2597757.2523813}.
+Os algoritmos para detecção de mudança de conceito são os responsáveis por identificar, de forma explícita, as referidas mudanças \cite{Gama:2014:SCD:2597757.2523813}.
 Estes métodos caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
 
-As técnicas para detecção e mudanças de conceito propostas na literatura podem ser divididas em duas categorias, baseado na dependência ou não de dados rotulados:
+Essas técnicas podem ser divididas em duas categorias principais, conforme a dependência ou não de rotulação dos dados:
 \begin{description}
     \item[Algoritmos Explícitos/Supervisionados] Dependem da rotulação dos dados por um especialista.
     Estes rótulos são utilizados no cálculo de medidas de performance como taxa de erro e acurácia, que são monitoradas ao longo do tempo.
@@ -579,8 +579,7 @@ Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVE
     \textit{GC3} \cite{Sethi2016b:GC3} fazem parte deste grupo.
     
     \item[Monitoramento de distribuição multivariada]
-    Monitoram diretamente a distribuição dos dados, considerando cada atributo.
-    Este monitoramento é feito através de subconjuntos dos dados.
+    Monitoram diretamente a distribuição dos dados através de subconjuntos.
     Um subconjunto de treinamento tem sua distribuição sumarizada e armazenada, para ser utilizada como referência.
     A distribuição referência é comparada à distribuição do subconjunto atual e, havendo diferenças significativas, a mudança de conceito é sinalizada.
     Os algoritmos
@@ -591,11 +590,11 @@ Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVE
 
     \item[Monitoramento dependente de modelo]
     As técnicas elencadas nos grupos anteriores monitoram desvios na distribuição dos dados para indicar mudanças de conceito.
-    Essencialmente, esses métodos assumem que alterações na distribuição $P(X)$ implicarão mudanças na performance do classificador $p(y|X)$.
+    Essencialmente, esses métodos assumem que alterações na distribuição, $P(X)$, implicarão mudanças na performance do classificador, $p(c|X)$.
     Apesar de permitir a aplicação de qualquer tipo de classificador, essa presunção leva a uma maior quantidade de falsos positivos.
     As técnicas dependentes de modelo, por sua vez, restringem-se aos classificadores probabilísticos,
     o que permite realizar a detecção de mudanças de conceito através do monitoramento das probabilidades a posteriori \cite{Zliobaite:2010}.
-    A utilização das probabilidades a posteriori diminui a incidência de falsos positivos e torna o processo computacionalmente eficiente, 
+    A utilização destas probabilidades diminui a incidência de falsos positivos e torna o processo computacionalmente eficiente, 
     pois apenas um único fluxo univariado de valores é observado.
     Os métodos 
     \textit{A-distance} \cite{Dredze:ADistance:2010585},
