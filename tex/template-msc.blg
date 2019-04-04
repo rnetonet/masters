@@ -11,7 +11,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated field_info (elt_size=4) to 10727 items from 5000.
+Reallocated field_info (elt_size=4) to 10520 items from 5000.
 Database file #1: abntex2-options.bib
 Database file #2: biblio.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -23,44 +23,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-You've used 83 entries,
+You've used 80 entries,
             6711 wiz_defined-function locations,
-            1855 strings with 29700 characters,
-and the built_in function-call counts, 120928 in all, are:
-= -- 13071
-> -- 2990
-< -- 2403
-+ -- 3413
-- -- 888
-* -- 8285
-:= -- 14833
-add.period$ -- 427
-call.type$ -- 83
-change.case$ -- 991
-chr.to.int$ -- 197
-cite$ -- 82
-duplicate$ -- 10426
-empty$ -- 5667
-format.name$ -- 4322
-if$ -- 25676
+            1831 strings with 29151 characters,
+and the built_in function-call counts, 117297 in all, are:
+= -- 12718
+> -- 2883
+< -- 2353
++ -- 3329
+- -- 856
+* -- 8029
+:= -- 14382
+add.period$ -- 412
+call.type$ -- 80
+change.case$ -- 955
+chr.to.int$ -- 188
+cite$ -- 79
+duplicate$ -- 10166
+empty$ -- 5454
+format.name$ -- 4167
+if$ -- 24856
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 1533
-newline$ -- 462
-num.names$ -- 417
-pop$ -- 1848
+missing$ -- 1480
+newline$ -- 446
+num.names$ -- 402
+pop$ -- 1783
 preamble$ -- 1
-purify$ -- 357
+purify$ -- 344
 quote$ -- 0
-skip$ -- 10490
+skip$ -- 10223
 stack$ -- 1
-substring$ -- 5338
-swap$ -- 4329
-text.length$ -- 176
+substring$ -- 5187
+swap$ -- 4214
+text.length$ -- 169
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 33
+type$ -- 31
 warning$ -- 0
-while$ -- 700
+while$ -- 674
 width$ -- 0
-write$ -- 1489
+write$ -- 1435

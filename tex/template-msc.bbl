@@ -260,11 +260,6 @@ ISBN 1439826110, 9781439826119.}
 ISBN 3-540-23237-0. Dispon{\'\i}vel em:
   \url{http://dblp.uni-trier.de/db/conf/sbia/sbia2004.html\#GamaMCR04}.}
 
-\bibitem[Gama e Rodrigues 2009]{Gama:Rodrigues:2009}
-\abntrefinfo{Gama e Rodrigues}{GAMA; RODRIGUES}{2009}
-{GAMA, J.; RODRIGUES, P. An overview on mining data streams.
-In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.: s.n.], 2009. v.~206, p. 29--45.}
-
 \bibitem[Gama, Rocha e Medas 2003]{Gama:2003:ADT:956750.956813}
 \abntrefinfo{Gama, Rocha e Medas}{GAMA; ROCHA; MEDAS}{2003}
 {GAMA, J.~a.; ROCHA, R.; MEDAS, P. Accurate decision trees for mining
@@ -281,12 +276,6 @@ ISBN 1-58113-737-0. Dispon{\'\i}vel em:
   mar. 2014.
 ISSN 0360-0300.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
-
-\bibitem[Gao et al. 2007]{Gao:2007}
-\abntrefinfo{Gao et al.}{GAO et al.}{2007}
-{GAO, J. et al. A general framework for mining concept-drifting data streams
-  with skewed distributions. In:  \emph{{SDM}}. [S.l.]: {SIAM}, 2007. p.
-  3--14.}
 
 \bibitem[Gonçalves et al. 2014]{GONCALVES20148144}
 \abntrefinfo{Gonçalves et al.}{GONçALVES et al.}{2014}
@@ -596,15 +585,6 @@ ISBN 1-58113-391-X. Dispon{\'\i}vel em:
   2003.  (KDD '03), p. 226--235.
 ISBN 1-58113-737-0. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/956750.956778}.}
-
-\bibitem[Widmer e Kubat 1996]{Widmer:1996:LPC:226791.226798}
-\abntrefinfo{Widmer e Kubat}{WIDMER; KUBAT}{1996}
-{WIDMER, G.; KUBAT, M. Learning in the presence of concept drift and hidden
-  contexts.
-\emph{Mach. Learn.}, Kluwer Academic Publishers, Hingham, MA, USA, v.~23, n.~1,
-  p. 69--101, abr. 1996.
-ISSN 0885-6125.
-Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1023/A:1018046501280}.}
 
 \bibitem[Zliobaite 2010]{Zliobaite:2010}
 \abntrefinfo{Zliobaite}{ZLIOBAITE}{2010}

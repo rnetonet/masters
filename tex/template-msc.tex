@@ -334,17 +334,17 @@ Contudo, os principais cenários com fluxos contínuos de dados são dinâmicos.
 Isto é, a distribuição dos dados ou o contexto do processo gerador podem sofrer alterações que afetam os conceitos-alvo esperados.
 Estas alterações, denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075}, podem impactar a acurácia do modelo de decisão.
 
-De acordo com \cite{Gama:Rodrigues:2009}, o principal desafio ao aplicar técnicas de aprendizado em cenários dinâmicos é manter o modelo com boa performance ao longo do tempo.
-Para que isto seja possível, o modelo criado deve ser atualizado conforme novos dados são analisados.
-Esta abordagem é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
+% De acordo com \cite{Gama:Rodrigues:2009}, o principal desafio ao aplicar técnicas de aprendizado em cenários dinâmicos é manter o modelo com boa performance ao longo do tempo.
+% Para que isto seja possível, o modelo criado deve ser atualizado conforme novos dados são analisados.
+% Esta abordagem é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
 
-É natural, portanto, considerar os algoritmos dessa abordagem para os cenários com fluxos contínuos de dados.
-Contudo, sinaliza \cite{GamaMCR04}, continua sendo importante que as técnicas tratem as mudanças de conceito.
-Pois, nesses casos, pode ser necessário descartar parte das informações para que o modelo seja atualizado corretamente.
+% É natural, portanto, considerar os algoritmos dessa abordagem para os cenários com fluxos contínuos de dados.
+% Contudo, sinaliza \cite{GamaMCR04}, continua sendo importante que as técnicas tratem as mudanças de conceito.
+% Pois, nesses casos, pode ser necessário descartar parte das informações para que o modelo seja atualizado corretamente.
 
-Voltando às técnicas de aprendizado de máquina, cabe destacar que estes algoritmos dividem-se em duas categorias principais: 
+As técnicas de aprendizado de máquina dividem-se em duas categorias principais: 
 não supervisionados (agrupamento ou \textit{clustering}) e supervisionados (classificação ou regressão) \cite{Mitchell:1997:ML:541177}.
-E que algoritmos de ambas as categorias foram adaptados para que pudessem ser aplicados à cenários com fluxos contínuos de dados.
+Algoritmos de ambas as categorias foram adaptados para que pudessem ser aplicados à cenários com fluxos contínuos de dados.
 Os detalhes de cada categoria e as adaptações propostas na literatura serão discutidas a seguir.
 
 As técnicas de agrupamento associam objetos conforme suas características.
@@ -366,7 +366,7 @@ D-Stream \cite{Chen:Tu} e ClusTree \cite{Kranen:2011:CIM:2134350.2134352}, dentr
 
 Os algoritmos supervisionados realizam predições para novos exemplos utilizando um modelo de decisão criado a partir de uma base de treinamento previamente rotulada \cite{Kotsiantis:2007:SML:1566770.1566773}.
 Se a predição é categórica, entende-se como um problema de classificação.
-Se a predição resulta em um valor numérico, trata-se de um problema de regressão.
+Se a predição resulta em um valor numérico, trata-se de uma tarefa de regressão.
 Os principais algoritmos de classificação e regressão para cenários em lote são:
 árvores de decisão \cite{Breiman:Classification_Regression_Trees},
 métodos baseados em regras, 
@@ -377,62 +377,59 @@ Contudo, esses métodos não atualizam o modelo conforme novos dados são observ
 Além disso, também assumem que todos os dados estão disponíveis em memória e que é possível realizar múltiplas varreduras sobre eles.
 Dessa forma, novos algoritmos supervisionados foram propostos para os cenários com fluxos contínuos de dados \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813}.
 
-No contexto deste trabalho de mestrado, assume-se que os dados são obtidos a partir de fluxos contínuos de dados dinâmicos.
-O algoritmo para detecção de mudanças de conceito proposto é independente de técnicas de aprendizado, 
+No contexto deste trabalho de mestrado, assume-se que os dados são obtidos a partir de fluxos contínuos de dados com mudanças de conceito.
+O algoritmo para detecão de mudanças proposto é independente de técnicas de aprendizado, 
 pois identifica as mudanças a partir de uma análise direta e contínua do fluxo de dados.
-Na próxima seção, o fenômeno mudança de conceito e as suas técnicas de detecção serão discutidas.
+Na próxima seção, o fenômeno mudança de conceito, suas técnicas de detecção e principais ferramentas serão discutidas.
 
 \section{Mudança de Conceito}
 
-Em ambientes não estacionários, a distribuição subjacente dos dados pode mudar ao longo do tempo, levando ao fenômeno de mudança de conceito \cite{Schlimmer1986}.
-Por exemplo, podemos considerar como mudança de conceito quando uma pessoa passa a preferir um novo gênero literário.
-Como consequência desta mudança, modelos de decisão relacionados podem ter sua acurácia reduzida, podendo, inclusive, tornarem-se obsoletos.
+Quando técnicas de aprendizado de máquina são aplicadas em cenários dinâmicos, é comum que a distribuição dos dados ou o contexto do processo mudem ao longo do tempo, levando ao fenômeno de mudança de conceito \cite{Schlimmer1986}.
+Como exemplo, considere um modelo criado a partir do histórico de compras de um cliente em uma livraria.
+Este cliente tem demonstrado, ao longo do tempo, uma absoluta preferência por livros de ficção científica.
+Entretanto, ao ingressar na universidade, passa a consumir apenas livros técnicos.
+Esta alteração de comportamento é considerada uma mudança de conceito e pode ter impacto na acurácia do modelo.
 
-A Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} é comumente aplicada para descrever o problema de classificação baseado 
-nas probabilidades a priori das classes, $p(y)$, e na função de densidade de probabilidade condicionada às classes, $p(X|y)$, para todo 
-$y \in {c_1, ..., c_k}$, onde $c_1, ..., c_k$ é o conjunto de classes \cite{Zliobaite:2010, Gama:2014:SCD:2597757.2523813}.
-Conforme a teoria bayesiana, a classificação de uma instância $X$ é definida com base na máxima probabilidade a posteriori.
-A máxima probabilidade a posteriori para uma instância $X$ em relação a uma classe $c_i$ pode ser calculada através da fórmula \ref{eq:1}:
+A Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} é comumente aplicada para descrever o problema de classificação.
+Utilizaremos esta descrição como base teórica para formalizar o problema de mudança de conceito:
+Sendo $X \in \mathbb{R}^p$ uma instância em um espaço $p$-dimensional de atributos e $X \in c_i$ onde $c_1$, $c_2$, \ldots, $c_k$ é o conjunto de classes, 
+o classificador ótimo para classificar $x \rightarrow c_i$ é determinado pelas probabilidades a priori das classes $P(c_i)$ e a função de densidade de probabilidade condicionada às classes $p(X|c_i), i = 1, \ldots, k$.
 
-\begin{equation} \label{eq:1}
-p(c_i|X) = \frac{p(c_i) * p(X|c_i)}{p(X)}
-\end{equation}
+Dessa forma, um conceito pode ser definido como um conjunto de probabilidades a priori e condicionais das classes, como mostra a Equação \ref{eq:conceito}:
 
-Sendo assim, um \textbf{conceito} pode ser definido como um conjunto de probabilidades a priori e condicionais das classes, como mostra a equação \ref{eq:2}:
-
-\begin{equation} \label{eq:2}
+\begin{equation} \label{eq:conceito}
     S = \{(P(c_1), P(X|c_1)), (P(c_2), P(X|c_2)), ..., (P(c_k), P(X|c_k))\}
 \end{equation}
 
-Formalmente, pode-se afirmar que houve mudança de conceito entre os instantes $t_0$ e $t_1$ se:
+Ainda segundo a Teoria Bayesiana, a classificação de uma instância $X$ baseada na máxima probabilidade a posteriori pode ser obtida através da Equação \ref{eq:classificacao}
+
+\begin{equation} \label{eq:classificacao}
+    p(c_i|X) = \frac{p(c_i) * p(X|c_i)}{p(X)}
+\end{equation}
+
+Sendo assim, é possível formalmente definir que há mudança de conceito entre os instantes $t_0$ e $t_1$ se:
 
 \begin{equation} \label{eq:3}
-    {\exists}X : p_{t_0}(X, y) \ne p_{t_1}(X, y)
+    {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
 \end{equation}
 
 onde, $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
-para $X$ e $y$ \cite{Gama:2014:SCD:2597757.2523813}. 
-Isto é, um conjunto de exemplos possui rótulos de classe legítimos em $t_0$, mas passa a ter rótulos diferentes em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
+para $X$ e $c$ \cite{Gama:2014:SCD:2597757.2523813}. 
+Isto é, um conjunto de exemplos possui rótulos de classe legítimos em $t_0$, mas passa a ter rótulos diferentes, também legítimos, em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
 
-A equação \ref{eq:1} pode ser utilizada para caracterizar as mudanças na distribuição dos dados \cite{Gao:2007, Gama:2014:SCD:2597757.2523813}, do seguinte modo:
-
-\begin{itemize}
-    \item Mudanças podem ocorrer na probabilidade a priori $P(c)$,
-    \item Mudanças podem ocorrer na função de densidade de probabilidade condicionada às classes $p(X|c)$,
-    \item Mudanças podem ocorrer na probabilidade a posteriori $p(c|X)$, afetando os limites de classificação.
-\end{itemize}
-
-Segundo \cite{Widmer:1996:LPC:226791.226798}, alterações na distribuição dos dados podem ser categorizadas em dois grupos:
-mudanças de conceito virtuais e mudanças de conceito reais.
-Estes tipos de mudança foram formalizados por \cite{Zliobaite:2010, Gama:2014:SCD:2597757.2523813}:
+Com base na formalização exposta, segundo \cite{Zliobaite:2010}, mudanças de conceito podem ocorrer devido a:
 
 \begin{enumerate}
-    \item Mudanças de conceito virtuais tratam de mudanças em $P(X)$ e, consequentemente, em $p(X|y)$,
-    contudo, estas mudanças não têm impacto no conceito alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (b)).
-    \item Mudanças de conceito reais referem-se a mudanças na relação $p(y|X)$ e afetam o conceito alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (c)).
+    \item Alterações na probabilidade a priori das classes $P(c)$;
+    \item Alterações na distribuição de uma ou mais classes $p(X|c)$;
+    \item Alterações nas distribuições a posteriori das classes $p(c|X)$.
 \end{enumerate}
 
-\begin{figure}[!ht]
+Segundo \cite{Zliobaite:2010, Gama:2014:SCD:2597757.2523813}, as mudanças de conceito podem ser categorizadas como virtuais ou reais.
+As mudanças de conceito virtuais indicam mudanças na probabilidade a priori das classes, $P(c)$, e não têm impacto nos conceitos-alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (b)).
+Enquanto as mudanças de conceito reais referem-se a mudanças na probabilidade a posteriori, $p(c|X)$, e afetam os conceitos-alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (c)).
+
+\begin{figure}[H]
 \begin{center}
     \includegraphics[scale=0.8]{imagens/concept_drift.png}
     \caption{Mudança de Conceito Virtual vs. Mudança de Conceito Real}
@@ -440,65 +437,46 @@ Estes tipos de mudança foram formalizados por \cite{Zliobaite:2010, Gama:2014:S
 \end{center}
 \end{figure}
 
-Em \cite{Gama:2014:SCD:2597757.2523813}, o seguinte cenário é utilizado para explicar a diferença entre uma mudança de conceito real e uma virtual.
-Considere um fluxo \textit{online} de anúncios do setor imobiliário.
-Um usuário deseja classificar estes anúncios em relevantes e não relevantes.
-Suponha que, à época, o usuário esteja buscando um novo apartamento. 
-Isto torna anúncios de apartamentos residenciais mais relevantes e os anúncios de casa de férias menos relevantes.
-Se o autor dos anúncios é alterado, o estilo de escrita sofre mudanças, mas os apartamentos permanecem relevantes para o usuário.
-Este cenário corresponde a uma mudança de conceito virtual.
-Considere que devido a uma crise, mais anúncios de apartamentos e menos de casas de férias aparecem, mas o editor dos anúncios permanece o mesmo.
-Esta situação corresponde a uma mudança na probabilidade das classes.
-Em outro cenário, assuma que o usuário acabou de comprar um apartamento e está em busca de um local para passar as férias.
-Neste contexto, apartamentos tornaram-se irrelevantes e casas de férias, relevantes.
-Apesar do editor dos anúncios e das probabilidades anteriores das classes permanecerem as mesmas, este cenário corresponde a uma mudança de conceito real.
+Conforme \cite{Gama:2014:SCD:2597757.2523813}, as mudanças de conceito podem ocorrer de forma abrupta, gradual, incremental ou recorrente.
+A Figura \ref{fig:concept_drift_patterns} ilustra estes padrões:
 
-Considerando apenas a perspectiva de predição, adaptações no modelo são necessárias apenas quando mudanças de conceito reais ocorrem, 
-pois os limites de decisão do modelo corrente tornam-se obsoletos em relação aos novos eventos \cite{Gama:2014:SCD:2597757.2523813}.
-Adaptação, neste contexto, significa atualizar o modelo de decisão perante a nova distribuição dos dados a fim de manter uma alta acurácia.
-
-Mudanças de conceito podem se apresentar sob diferentes padrões.
-Conforme ilustrado na Figura \ref{fig:concept_drift_patterns}, mudanças de conceito podem ocorrer de forma abrupta, gradual, incremental ou recorrente.
- 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \begin{center}
-    \includegraphics[scale=0.80]{imagens/concept_drift_patterns.png}
+    \includegraphics[scale=0.8]{imagens/concept_drift_patterns.png}
     \caption{Padrões de ocorrência de Mudanças de Conceito}
     \label{fig:concept_drift_patterns}
 \end{center}
 \end{figure}
 
-Mudanças de conceito abruptas são alterações súbitas entre conceitos, como descrito na Figura \ref{fig:concept_drift_patterns} (a).
-Por exemplo, o gênero literário de João pode subitamente mudar de ficção científica para auto-ajuda.
+Mudanças de conceito abruptas são alterações repentinas entre conceitos, como descrito na Figura \ref{fig:concept_drift_patterns} (a).
+Por exemplo, o gênero literário preferido de um cliente pode mudar repentinamente de ficção científica para auto-ajuda.
 Outro exemplo, é a troca de um sensor por outro com diferente calibração, em uma planta industrial química \cite{Gama:2014:SCD:2597757.2523813}. 
 
-Em constrate com a mudança de conceito abrupta, a mudança de conceito gradual significa uma transição mais lenta de um conceito para outro.
+A mudança de conceito gradual representa uma transição mais lenta de um conceito para outro.
 Isto é, durante a transição, são percebidos eventos de ambos os conceitos.
-Pode-se considerar que João, ao invés de subitamente passar a preferir livros de auto-ajuda, adquire interesse nestes ao longo do tempo.
-Isto significa que João ainda tem interesse em livros de ficção científica, mas desenvolve, em paralelo, um crescente interesse por livros de auto-ajuda, que se tornará predominante.
-A mudança de conceito gradual está representada na Figura \ref{fig:concept_drift_patterns} (b).
+Pode-se considerar que o cliente, ao invés de subitamente passar a preferir livros de auto-ajuda, adquire interesse nestes ao longo do tempo.
+Isto significa que ainda existe certo interesse em livros de ficção científica, mas, em paralelo, desenvolve-se uma crescente preferência por livros de auto-ajuda, que se tornará predominante.
+A mudança de conceito gradual é representada na Figura \ref{fig:concept_drift_patterns} (b).
 
-Mudanças de conceito incrementais apresentam diversos conceitos intermediários durante a transição de um conceito para outro.
-No exemplo de João, é como se o seu interesse literário variasse de ficção científica para ficção científica e aventura, 
+Mudanças de conceito incrementais apresentam conceitos intermediários durante a transição de um conceito para outro.
+Para o exemplo utilizado, é como se o interesse literário variasse de ficção científica para ficção científica e aventura, 
 de ficção científica e aventura para aventura e suspense, de aventura e suspense para suspense e auto-ajuda, e finalmente de suspense e auto-ajuda para apenas auto-ajuda.
 Considerando a planta industrial química e os sensores, seria como se um sensor perdesse precisão ao longo do tempo. 
 A Figura \ref{fig:concept_drift_patterns} (c) demonstra a mudança de conceito incremental. 
 
-Existe ainda outro padrão, denominado mudança de conceito recorrente \cite{Zliobaite:2010}. 
-Conforme apresentado na Figura \ref{fig:concept_drift_patterns} (d), a mudança de conceito recorrente existe quando um conceito previamente ativo, 
-reaparece após determinado período de tempo.
-De volta ao nosso exemplo, João está atualmente interessado em livros de ficção científica.
-Contudo, ele é presenteado com uma série de livros de auto-ajuda de um renomado autor brasileiro.
-Após ler toda a série, João é premiado com descontos para livros de ficção científica.
-Ele, volta, então, a ler livros de ficção científica comprados com os descontos recebidos.
+A mudança de conceito recorrente surge quando um conceito, previamente ativo, reaparece após determinado período de tempo.
+Em nosso exemplo, considere que o cliente está atualmente interessado em livros de ficção científica.
+Contudo, ele é presenteado com uma série de livros de auto-ajuda de um renomado autor.
+Após ler toda a série, o cliente é premiado com descontos para livros de ficção científica e volta a lê-los.
+A mudança de conceito recorrente está representada na Figura \ref{fig:concept_drift_patterns} (d).
 
-É importante destacar que o fenômeno Mudança de Conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo mineração de dados, 
+É importante destacar que o fenômeno mudança de conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo mineração de dados, 
 aprendizado de máquina, estatística e recuperação de informação \cite{Zliobaite:2010}.
 Contudo, o mesmo conceito pode ter diferentes nomeclaturas em cada comunidade.
 Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a Mudança de Conceito para cada área de pesquisa.
 
 \begin{center} 
-\begin{table}[!ht]
+\begin{table}[H]
 \label{tbl:taxonomy}
 \begin{tabularx}{\textwidth}{|l|X|}
 \cline{1-2}
@@ -514,8 +492,15 @@ Recuperação de Informação           & Evolução Temporal                   
 \end{table}
 \end{center}
 
-Outra possível fonte de equívoco é a utilização dos termos Detecção de \textit{Outliers}, Detecção de Novidade e Detecção de \textit{Change Points}.
-Estes termos apresentam relação para com Detecção de Mudança de Conceito, pois dizem respeito a encontrar padrões que são diferentes dos padrões conhecidos.
+O método de detecção proposto neste trabalho de mestrado busca identificar mudanças de conceito reais em fluxos contínuos de dados, independente do padrão de ocorrência destas.
+Na seção seguinte serão detalhados os principais algoritmos para Detecção de Mudança de Conceito encontrados na literatura.
+
+\subsection{Algoritmos para Detecção de Mudança de Conceito}
+
+Os algoritmos para Detecção de Mudança de Conceito são os responsáveis por identificar, de forma explícita, as mudanças de conceito nos fluxos de dados \cite{Gama:2014:SCD:2597757.2523813}.
+Estes métodos caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
+
+Uma fonte de equívoco comum reside na utilização dos termos Detecção de \textit{Outliers}, Detecção de Novidade, Detecção de \textit{Change Points} e Detecção de Mudança de Conceito.
 Em alguns contextos, esses termos são usados indistitamente, entretanto, neste trabalho eles serão diferenciados.
 
 De acordo com \cite{Chandola:2009:ADS:1541880.1541882}, 
@@ -536,15 +521,7 @@ mudanças de conceito reais a partir do \textit{feedback} sobre a performance pr
 Técnicas para Detecção de \textit{Change Points} identificam variações abruptas de valor em séries temporais, que podem representar transições entre estados.
 Diferenciam-se das técnicas para Detecção de Mudança de Conceito pois são aplicadas em séries temporais unidimensionais estacionárias \cite{Aminikhanghahi:2017:SMT:3086013.3086037}.
 
-O método proposto neste projeto de mestrado objetiva identificar mudanças de conceito virtuais e reais, seja qual for o padrão de ocorrência.
-Na seção seguinte serão detalhados os principais algoritmos para Detecção de Mudança de Conceito.
-
-\subsection{Algoritmos para Detecção de Mudança de Conceito}
-
-Os algoritmos para Detecção de Mudança de Conceito são os responsáveis por identificar, de forma explícita, as mudanças de conceito nos fluxos de dados \cite{Gama:2014:SCD:2597757.2523813}.
-Estes métodos caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
-
-As técnicas propostas na literatura podem ser divididas em duas categorias, baseado na dependência ou não de dados rotulados:
+As técnicas para detecção e mudanças de conceito propostas na literatura podem ser divididas em duas categorias, baseado na dependência ou não de dados rotulados:
 \begin{description}
     \item[Algoritmos Explícitos/Supervisionados] Dependem da rotulação dos dados por um especialista.
     Estes rótulos são utilizados no cálculo de medidas de performance como taxa de erro e acurácia, que são monitoradas ao longo do tempo.

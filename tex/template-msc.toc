@@ -5,14 +5,14 @@
 \contentsline {chapter}{Cap\'{\i }tulo~2---Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{5}
 \contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{5}
 \contentsline {section}{\numberline {2.2}Fluxos Cont\IeC {\'\i }nuos de Dados e Aprendizado de M\IeC {\'a}quina}{5}
-\contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{7}
-\contentsline {subsection}{\numberline {2.3.1}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{11}
-\contentsline {subsection}{\numberline {2.3.2}Ferramentas}{13}
+\contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{6}
+\contentsline {subsection}{\numberline {2.3.1}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{9}
+\contentsline {subsection}{\numberline {2.3.2}Ferramentas}{12}
 \contentsline {subsection}{\numberline {2.3.3}MOA}{13}
-\contentsline {subsection}{\numberline {2.3.4}Tornado}{16}
+\contentsline {subsection}{\numberline {2.3.4}Tornado}{14}
 \contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{17}
-\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{19}
-\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{20}
+\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{18}
+\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{19}
 \contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{21}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{21}
 \contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{21}
