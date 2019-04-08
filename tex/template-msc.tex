@@ -219,13 +219,13 @@
 
 \section{Contexto e Motivação}
 
-O volume de dados produzidos por sistemas computacionais tem crescido de forma significativa \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
+O volume de dados produzido por sistemas computacionais tem crescido de forma significativa nos últimos anos \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
 Em relatório publicado pelo IDC (\textit{International Data Corporation}), 
 estimava-se que em 2014 seriam produzidos 4,4 zettabytes (trilhões de gigabytes) de dados 
-e que em 2020 essa quantidade será de 44 zettabytes \cite{idc_report}.
+e que em 2020 essa quantidade chegará a 44 zettabytes \cite{idc_report}.
 
 Parte relevante desses dados é produzida em sequências contínuas, ordenadas, de alta frequência e potencialmente infinitas.
-Estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em muitos domínios de aplicação \cite{Aggarwal:2006:DSM:1196418}: 
+Estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em muitos domínios de aplicação, por exemplo \cite{Aggarwal:2006:DSM:1196418}: 
 monitoramento de sensores \cite{Lee:Wang:Ryu:2007},
 tráfico TCP/IP, 
 histórico de compra de clientes,
@@ -235,12 +235,12 @@ análise de sentimentos \cite{Smailovic:2014:SAL:2941772.2941857},
 etc.
 
 A área de Aprendizado de Máquina (AM) estuda algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
-Nos últimos anos, há um crescente interesse de pesquisa na aplicação dessas técnicas em diferentes contextos.
-Em muitos destes, os dados são produzidos através de fluxos contínuos de dados.
-Sendo necessário, portanto, adaptar os algoritmos para atenderem às restrições de tempo de execução e de uso dos recursos computacionais \cite{Bifet:2009:ALM:1656274.1656287}.
+Nos últimos anos, há um crescente interesse de pesquisa no uso dessas técnicas em diferentes domínios de aplicação.
+Em muitos desses domínios, os dados são produzidos através de fluxos contínuos de dados \cite{Aggarwal:2006:DSM:1196418}, sendo necessário, portanto, 
+ adaptar os algoritmos para atenderem às restrições de tempo de execução e de uso dos recursos computacionais \cite{Bifet:2009:ALM:1656274.1656287}.
 
 Além dessas restrições, a dinamicidade dos cenários com fluxos contínuos de dados também é considerada um obstáculo para as técnicas de aprendizado de máquina.
-Isto ocorre, pois, nestes cenários, o contexto do processo ou a distribuição dos dados podem mudar ao longo do tempo, afetando as predições esperadas (conceitos-alvo).
+Isto ocorre, pois, nesses cenários, o contexto do processo ou a distribuição dos dados podem mudar ao longo do tempo, afetando as predições esperadas (conceitos-alvo).
 Este problema é denominado mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia do modelo.
 
 Visando mitigar esse problema, foram desenvolvidas técnicas para detecção de mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
@@ -262,17 +262,17 @@ Contudo, as abordagens mencionadas dependem que o rótulo correto de cada exempl
 Em muitos contextos, o tempo ou o custo para obter esse rótulo é proibitivo \cite{Aggarwal:2006:DSM:1196418}.
 Diante disso, foram desenvolvidos algoritmos que independem dessa informação.
 
-Esses algoritmos reconhecem as mudanças de conceito a partir da identificação de eventos que não se enquadram na estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
-Para isto, técnicas de de agrupamento, detecção de \textit{outliers}, sumarização dos dados e aplicação de medidas de dissimilaridade são utilizadas nas implementações \cite{Ryu:Kantardzic:2012}.
+As técnicas independentes de rótulos reconhecem as mudanças de conceito a partir da identificação de eventos que não se enquadram na estrutura dos dados conhecidos \cite{Spinosa:2007:OCA:1244002.1244107}.
+Para tanto, técnicas de de agrupamento, detecção de \textit{outliers}, sumarização dos dados e aplicação de medidas de dissimilaridade são utilizadas nas implementações \cite{Ryu:Kantardzic:2012}.
 São exemplos desta categoria:
 OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107},
 MINAS \cite{Faria:2013:NDA:2480362.2480515},
 ECSMiner \cite{Masud:2011:CNC:1978259.1978529},
 GC3 \cite{Sethi2016b:GC3}, dentre outros.
 
-Contudo, conforme \cite{Aggarwal:2006:DSM:1196418}, as técnicas para identificação de mudanças de conceito propostas ainda possuem deficiências.
+Contudo, segundo \cite{Aggarwal:2006:DSM:1196418}, as técnicas para identificação de mudanças de conceito propostas ainda possuem deficiências.
 Os algoritmos depentes de rótulos, por exemplo, são impraticáveis para muitos problemas do mundo real \cite{Gama:2014:SCD:2597757.2523813}.
-De forma similar, as técnicas independentes, têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais em cenários com fluxos contínuos de dados.
+De forma similar, as técnicas independentes têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais em cenários com fluxos contínuos de dados.
 
 Visando resolver essas limitações, este projeto de mestrado propõe um algoritmo baseado em redes de função de base radial capaz de detectar mudanças de conceito de forma online, precisa e idependente de exemplos prévios ou rótulos.
 
@@ -352,8 +352,8 @@ Estas técnicas buscam formar grupos com alta similaridade interna e baixa simil
 Os principais métodos de agrupamento para cenários em lote são:
 K-Means \cite{Lloyd:2006:LSQ:2263356.2269955},
 DBSCAN \cite{Ester:1996:DAD:3001460.3001507},
-PAM \cite{kaufman:clustering1990} e 
-OPTICS \cite{Ankerst:1999:OOP:304181.304187}.
+PAM \cite{kaufman:clustering1990},
+OPTICS \cite{Ankerst:1999:OOP:304181.304187}, dentre outros.
 
 Segundo \cite{Gama:2010:KDD:1855075}, a principal dificuldade na aplicação de técnicas de agrupamento em cenários com fluxos contínuos de dados  
 é a manutenção da qualidade e consistência dos grupos formados em relação à sequência de dados observados. 
@@ -813,8 +813,9 @@ proposto neste projeto de mestrado.
 
 \section{Trabalhos Relacionados}
 
-Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura visando identificar trabalhos relacionados 
-que propõem a identificação de mudanças de conceito em fluxos contínuos de dados através da aplicação de redes de função de base radial, ou técnicas similares.
+Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura visando identificar trabalhos também 
+que propõem a identificação de mudanças de conceito em fluxos contínuos de dados através da aplicação de redes de função de base radial
+ou que apliquem técnicas similares.
 
 Em \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification} redes de função de base radial, utilizando funções gaussianas, são utilizadas para detecção de novidades.
 A técnica proposta atua sobre cenários estacionários, mais especificamente o problema de identificação de falas.
@@ -872,7 +873,6 @@ este projeto de mestrado visa comprovara hipótese que redes RBF podem detectar 
 em tempo de execução, sem requerer a manutenção de estados prévios, de forma ágil e com precisão satisfatória.
 
 Para exemplificar a execução desta proposta de mestrado, considere \ldots
-
 
 \section{Atividades de Pesquisa}
 \blindtext
