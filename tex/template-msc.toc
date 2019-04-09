@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {2.3.5}Tornado}{15}
 \contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{16}
 \contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{18}
-\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{19}
+\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{18}
 \contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{21}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{21}
 \contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{21}

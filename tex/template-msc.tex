@@ -343,7 +343,7 @@ Estas alterações, denominadas mudanças de conceito \cite{Gama:2010:KDD:185507
 % Pois, nesses casos, pode ser necessário descartar parte das informações para que o modelo seja atualizado corretamente.
 
 As técnicas de aprendizado de máquina dividem-se em duas categorias principais: 
-não supervisionados (agrupamento ou \textit{clustering}) e supervisionados (classificação ou regressão) \cite{Mitchell:1997:ML:541177}.
+não supervisionadas (agrupamento ou \textit{clustering}) e supervisionadas (classificação ou regressão) \cite{Mitchell:1997:ML:541177}.
 Algoritmos de ambas as categorias foram adaptados para que pudessem ser aplicados à cenários com fluxos contínuos de dados.
 Os detalhes de cada categoria e as adaptações propostas na literatura serão discutidas a seguir.
 
@@ -384,7 +384,7 @@ Na próxima seção, o fenômeno mudança de conceito será discutido.
 
 \section{Mudança de Conceito}
 
-Quando técnicas de aprendizado de máquina são aplicadas em cenários dinâmicos, é comum que a distribuição dos dados ou o contexto do processo mudem ao longo do tempo, levando ao fenômeno de mudança de conceito \cite{Schlimmer1986}.
+Ao aplicar técnicas de aprendizado de máquina em cenários dinâmicos, é comum que a distribuição dos dados ou o contexto do processo mudem ao longo do tempo, levando ao fenômeno de mudança de conceito \cite{Schlimmer1986}.
 Como exemplo, considere um modelo criado a partir do histórico de compras de um cliente em uma livraria.
 Este cliente tem demonstrado, ao longo do tempo, uma absoluta preferência por livros de ficção científica.
 Entretanto, ao ingressar na universidade, passa a consumir apenas livros técnicos.
@@ -425,7 +425,7 @@ Com base na formalização exposta, segundo \cite{Zliobaite:2010}, mudanças de 
     \item Alterações nas distribuições a posteriori das classes $p(c|X)$.
 \end{enumerate}
 
-Segundo \cite{Zliobaite:2010, Gama:2014:SCD:2597757.2523813}, as mudanças de conceito podem ser categorizadas como virtuais ou reais.
+De acordo com \cite{Zliobaite:2010, Gama:2014:SCD:2597757.2523813}, as mudanças de conceito podem ser categorizadas como virtuais ou reais.
 As virtuais indicam mudanças na probabilidade a priori das classes, $P(c)$, e não têm impacto nos conceitos-alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (b)).
 Enquanto as mudanças de conceito reais referem-se a mudanças na probabilidade a posteriori, $p(c|X)$, e afetam os conceitos-alvo (representadas na Figura \ref{fig:real_and_virtual_concept_drift} (c)).
 
@@ -470,9 +470,8 @@ Contudo, ele é presenteado com uma série de livros de auto-ajuda de um renomad
 Após ler toda a série, o cliente é premiado com descontos para livros de ficção científica e volta a lê-los.
 A mudança de conceito recorrente está representada na Figura \ref{fig:concept_drift_patterns} (d).
 
-O método de detecção proposto neste trabalho de mestrado busca identificar mudanças de conceito reais em fluxos contínuos de dados, independente do padrão de ocorrência destas.
-
-Na subseção seguinte, será discutida a taxonomia do termo mudança de conceito e discriminada a expressão detecção de mudança de conceito de outras técnicas relacionadas.
+O método proposto neste trabalho de mestrado busca identificar mudanças de conceito reais em fluxos contínuos de dados, independente do padrão de ocorrência destas.
+Na subseção seguinte, será discutida a taxonomia do termo mudança de conceito e diferenciada a técnica de detecção de mudança de conceito de outras relacionadas.
 
 \subsection{Taxonomia}
 
@@ -502,7 +501,7 @@ Outra fonte comum de equívocos são os termos Detecção de \textit{Outliers}, 
 Estes termos são, em muitos cenários, utilizados de forma indistinta.
 Mas, para o contexto deste trabalho, é importante distingui-los.
 
-De acordo com \cite{Chandola:2009:ADS:1541880.1541882}, a expressão Detecção de \textit{Outliers} refere-se a tarefa de encontrar padrões nos dados em desacordo com o comportamento esperado.
+De acordo com \cite{Chandola:2009:ADS:1541880.1541882}, a expressão Detecção de \textit{Outliers} refere-se a tarefa de encontrar padrões nos dados em desacordo com o comportamento esperado: anomalias, ruídos, etc.
 
 Ainda conforme \cite{Chandola:2009:ADS:1541880.1541882}, as técnicas para Detecção de Novidade têm como objetivo detectar padrões ainda não observados nos dados.
 Diferentemente das técnicas para Detecção de \textit{Outliers}, as técnicas para Detecção de Novidade incorporam os novos padrões ao modelo de decisão.
@@ -524,17 +523,16 @@ Na próxima subseção, detalharemos as principais técnicas para detecção de 
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
 
-Os algoritmos para detecção de mudança de conceito são os responsáveis por identificar, de forma explícita, as referidas mudanças \cite{Gama:2014:SCD:2597757.2523813}.
-Estes métodos caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
+Os algoritmos para detecção de mudança de conceito caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
 
-Essas técnicas podem ser divididas em duas categorias principais, conforme a dependência ou não de rotulação dos dados:
+Essas técnicas podem ser divididas em duas categorias principais, conforme a dependência ou não da rotulação dos dados:
 \begin{description}
     \item[Algoritmos Explícitos/Supervisionados] Dependem da rotulação dos dados por um especialista.
     Estes rótulos são utilizados no cálculo de medidas de performance como taxa de erro e acurácia, que são monitoradas ao longo do tempo.
     Mudanças de conceito são sinalizadas quando essas medidas atingem um limite previamente definido.
 
     \item[Algoritmos Implícitos/Não Supervisionados] Independem da rotulação por especialistas, 
-    baseando-se em características dos próprios dados para sinalizar desvios.
+    baseando-se em características dos próprios dados ou indicadores das técnicas de aprendizagem aplicadas, para sinalizar desvios.
     São mais propensos a alarmes falsos, mas a independência de rótulos os torna interessantes para contextos onde a obtenção desses é dispendiosa, demorada ou inviável.
 \end{description}
 
@@ -552,24 +550,21 @@ Em sua pesquisa \cite{Gama:2014:SCD:2597757.2523813} categorizou os algoritmos s
     \textit{Exponentially Weighted Moving Average (EWMA)} \cite{Ross:2012:EWM:2076039.2076307} e 
     \textit{Reactive Drift Detection Method (RDDM)} \cite{Barros:RDDM:2017} são exemplos deste grupo.
 
-    \item[Métodos baseados em Janelas] Geralmente, utilizam uma janela de tamanho fixo para sumarizar informações passadas e uma janela deslizante para sumarizar dados mais recentes.
+    \item[Métodos baseados em Janelas] Utilizam uma janela de tamanho fixo para sumarizar informações passadas e uma janela deslizante para sumarizar dados mais recentes.
     A mudança de conceito é detectada quando há uma diferença significativa entre as distribuições das janelas.
     Esta diferença é detectada a partir de testes estatísticos ou desigualdades matemáticas, considerando como hipótese nula a igualdade entre as distribuições.
     Os algoritmos 
     \textit{Adaptive Windowing (ADWIN)} \cite{BifetG07}, 
     \textit{SeqDrift} \cite{PearsSK14:SeqDrift:2014}, 
     \textit{HDDMA} e \textit{HDDMW} \cite{BlancoCRBDM15:HDDMA:HDDMW:2015}
-    são membros desta família.
+    pertencem a este grupo.
 \end{description}
 
 Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVES20148144}:
 
 \begin{description}
     \item[Detecção de Novidade / Métodos de Agrupamento] 
-    Utilizam a distância e/ou a densidade dos dados para detectar novos padrões.
-    O algoritmo identifica exemplos suspeitos e os atribui a uma classe \textit{Desconhecido}, indicando a necessidade de uma avaliação adicional.
-    As técnicas de agrupamento e detecção de \textit{outliers} são estratégias de implementação populares para estes algoritmos, 
-    pois sintetizam os dados correntes e aplicam medidas de dissimilaridade para identificar novos padrões \cite{Ryu:Kantardzic:2012}.
+    Utilizam estratégias oriundas das técnicas de agrupamento e detecção de \textit{outliers} para identificar novos padrões \cite{Ryu:Kantardzic:2012}.
     Os métodos 
     \textit{OLINDDA} \cite{Spinosa:2007:OCA:1244002.1244107},
     \textit{MINAS} \cite{Faria:2013:NDA:2480362.2480515},
@@ -589,17 +584,17 @@ Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVE
     são representantes deste grupo.
 
     \item[Monitoramento dependente de modelo]
-    As técnicas elencadas nos grupos anteriores monitoram desvios na distribuição dos dados para indicar mudanças de conceito.
-    Essencialmente, esses métodos assumem que alterações na distribuição, $P(X)$, implicarão mudanças na performance do classificador, $p(c|X)$.
-    Apesar de permitir a aplicação de qualquer tipo de classificador, essa presunção leva a uma maior quantidade de falsos positivos.
-    As técnicas dependentes de modelo, por sua vez, restringem-se aos classificadores probabilísticos,
+    % As técnicas elencadas nos grupos anteriores monitoram desvios na distribuição dos dados para indicar mudanças de conceito.
+    % Essencialmente, esses métodos assumem que alterações na distribuição, $P(X)$, implicarão mudanças na performance do classificador, $p(c|X)$.
+    % Apesar de permitir a aplicação de qualquer tipo de classificador, essa presunção leva a uma maior quantidade de falsos positivos.
+    São aplicadas em conjunto com classificadores probabilísticos,
     o que permite realizar a detecção de mudanças de conceito através do monitoramento das probabilidades a posteriori \cite{Zliobaite:2010}.
     A utilização destas probabilidades diminui a incidência de falsos positivos e torna o processo computacionalmente eficiente, 
     pois apenas um único fluxo univariado de valores é observado.
     Os métodos 
     \textit{A-distance} \cite{Dredze:ADistance:2010585},
     \textit{CDBD} \cite{Lindstrom:CDBD:2013} e
-    \textit{Margin} \cite{Dries:Margin:2009} participam deste grupo.
+    \textit{Margin} \cite{Dries:Margin:2009} integram este grupo.
 \end{description}
 
 Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, os grupos e as respectivas técnicas mencionadas nesta seção.
@@ -639,8 +634,8 @@ Ambos permitem a avaliação entre técnicas e a utilização de diferentes font
 O \textit{MOA – Massive Online Analysis}\footnote{https://moa.cms.waikato.ac.nz/} é, atualmente, o principal framework para mineração de dados em fluxos contínuos.
 O projeto é de código-aberto\footnote{https://github.com/Waikato/moa} e apresenta uma comunidade bastante ativa e crescente \cite{Bifet:2010:MMO:1756006.1859903}.
 A aplicação é composta por uma ampla coleção de algoritmos da área de aprendizado de máquina: classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
-Além de conter ferramentas para avaliação destes.
-Apresenta relação com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}, sendo também desenvolvido em Java, o que permite a sua execução nos principais sistemas operacionais.
+Além das implementações, também estão disponíveis métodos para avaliação dessas técnicas.
+A aplicação é desenvolvida em Java, o que permite a sua execução nos principais sistemas operacionais, e dispõe de integração com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
 
 O MOA divide suas funcionalidades em tarefas (\textit{tasks}).
 As principais tarefas incluem:
@@ -722,11 +717,12 @@ Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do f
 \textit{Stream Reader}, \textit{Classifiers}, \textit{Detectors}, \textit{Classifier-Detector Pairs} e \textit{CAR Calculator}.
 A entrada de dados é composta por um fluxo (\textit{Stream}), uma lista de pares (classificador, detector) e um vetor com pesos.
 
-O componente \textit{Stream Reader} lê instâncias a partir do fluxo e as envia, uma a uma, para o par (classificador, detector), para construção do modelo.
+O componente \textit{Stream Reader} lê instâncias e as encaminha para construção do modelo.
 Os modelos são construídos de forma incremental. Por seguir a abordagem \textit{prequential}, cada instância é primeiramente utilizada para testes e depois como treinamento.
 Simultaneamente, os classificadores enviam suas estatísticas (taxas de erro ou resultados das predições) aos detectores, para que a mudança de conceito possa ser sinalizada.
-Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par, considerando taxas de erro, atraso para detecção da mudança de conceito, falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
-O framework apresenta ao usuário o par com maior pontuação. Este par, contudo, pode mudar devido ao aprendizado incremental ou à mudança de conceito.
+Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par (classificador e detector), considerando taxas de erro, atraso para detecção da mudança de conceito, falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
+O framework apresenta ao usuário o par com maior pontuação em cada instante de execução. 
+A avaliação do framework é necessária pois este par pode mudar ao longo do tempo, devido ao aprendizado incremental ou as mudanças de conceito.
 A Figura \ref{fig:tornado_out2} apresenta um resultado obtido através do framework.
 
 \begin{figure}[H]
@@ -744,14 +740,13 @@ A seguir, as redes de função de base radial serão detalhadas.
 \section{Redes de Função de Base Radial}
 
 As Redes de Função de Base Radial (RBF \textit{networks}) são aproximadoras universais de funções.
-As RBFs têm como principal diferença em relação às outras redes neurais, a forma de ativação.
-Nessas redes, este processo é feito através do cálculo da distância entre os vetores de entrada e os centros estabelecidos \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+Têm como principal diferencial a sua forma de ativação, feito através do cálculo da distância entre os vetores de entrada e os centros estabelecidos \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 
 Em sua forma básica, a arquitetura de uma rede do tipo RBF é composta por três camadas: 
 uma camada de entrada, uma intermediária e uma de saída \cite{Rojas:1996:NNS:235222}. 
 A camada intermediária (oculta) de uma RBF utiliza funções de base radiais para agrupar os dados de entrada em clusters, 
-transformando padrões de entrada não linearmente separáveis em um conjunto de saídas linearmente separáveis. 
-A camada de saída classifica os padrões recebidos através da combinação linear das saídas das funções \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+transformando padrões de entrada não linearmente separáveis em um conjunto de valores linearmente separáveis. 
+A camada de saída classifica os padrões recebidos através da combinação linear desses resultados \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 
 \begin{figure}[H]
@@ -762,7 +757,7 @@ A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 \end{center}
 \end{figure}
 
-Na literatura, a função de base radial Gaussiana (Eq. \ref{eq:gaussiana}) é uma das mais utilizadas para camada intermediária.
+Na literatura, a função de base radial Gaussiana (Eq. \ref{eq:gaussiana}) é uma das mais utilizadas para camada intermediária:
 
 \begin{equation} \label{eq:gaussiana}
     f(x)=e^{-{\frac {v^{2}}{2\sigma^{2}}}}
@@ -813,11 +808,11 @@ proposto neste projeto de mestrado.
 
 \section{Trabalhos Relacionados}
 
-Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura visando identificar trabalhos também 
-que propõem a identificação de mudanças de conceito em fluxos contínuos de dados através da aplicação de redes de função de base radial
+Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura visando identificar trabalhos 
+que também propõem a identificação de mudanças de conceito em fluxos contínuos de dados através da aplicação de redes de função de base radial
 ou que apliquem técnicas similares.
 
-Em \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification} redes de função de base radial, utilizando funções gaussianas, são utilizadas para detecção de novidades.
+Em \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification} redes de função de base radial, com funções gaussianas, são utilizadas para detecção de novidades.
 A técnica proposta atua sobre cenários estacionários, mais especificamente o problema de identificação de falas.
 Durante a preparação da rede, o algoritmo \textit{k-means} é utilizado para definir os centros e as matrizes de covariância.
 
@@ -829,7 +824,7 @@ Esta abordagem foi testada na classificação de pacientes com problemas de trem
 
 As redes de função de base radial também foram aplicadas para detecção de anomalias \cite{Bazargani2018RadialBF}.
 Neste trabalho, às funções de perda (\textit{loss}) das redes são modificadas, 
-tornando-as classificadores para uma única classe. 
+tornando-as classificadores de uma única classe. 
 Estas modificações permitem às redes identificar exemplos divergentes dos padrões conhecidos.
 
 Este projeto de mestrado se diferencia dos trabalhos mencionados por utilizar apenas as camadas de entrada e intermediária das redes de função de base radial para detecção de mudanças de conceito.
@@ -837,10 +832,10 @@ Além disso, etapas como a escolha dos centros e o cálculo do tamanho do raio s
 
 \section{Considerações Finais}
 
-Neste capítulo foram apresentados os principais conceitos para a execução deste trabalho. 
-Foram discutidas noções sobre a aplicação de técnicas de aprendizado a fluxos contínuos de dados,
-o fenômeno mudança de conceito e suas técnicas de detecção e ferramentas,
-as redes de função de base radial e, por fim, os principais trabalhos relacionados.
+Neste capítulo foram apresentados os principais conceitos utilizados neste projeto de mestrado.
+Discutiu-se a aplicação de técnicas de aprendizado de máquina à fluxos contínuos de dados,
+o fenômeno mudança de conceito, suas técnicas de detecção e ferramentas,
+redes de função de base radial e os principais trabalhos relacionados encontrados na literatura.
 No próximo capítulo, o plano de pesquisa será detalhado.
 
 \xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
@@ -858,7 +853,7 @@ O fenômeno Mudança de Conceito pode ser definido a partir do teorema de Bayes 
 Seja $X$ um vetor de entrada e $Y$ a classe alvo,
 a decisão de classificar $X$ como $Y$ dependerá da probabilidade posterior da classe, dada por:
 
-\begin{equation} \label{eq:gaussiana}
+\begin{equation} \label{eq:mudanca_de_conceito_formalizacao}
     P(Y |X) = \frac{P(Y)P(X|Y)}{P(X)}
 \end{equation}
 
