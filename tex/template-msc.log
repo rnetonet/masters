@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  9 APR 2019 10:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  15 APR 2019 00:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1489,27 +1489,27 @@ Package xcolor Warning: Incompatible color definition on input line 218.
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 304.
+Package xcolor Warning: Incompatible color definition on input line 296.
 
 [5] [6]
 <imagens/concept_drift.png, id=104, 558.58687pt x 209.28188pt>
 File: imagens/concept_drift.png Graphic file (type png)
 <use imagens/concept_drift.png>
-Package pdftex.def Info: imagens/concept_drift.png  used on input line 434.
+Package pdftex.def Info: imagens/concept_drift.png  used on input line 427.
 (pdftex.def)             Requested size: 446.8701pt x 167.4257pt.
  [7]
 <imagens/concept_drift_patterns.png, id=116, 565.36218pt x 207.02344pt>
 File: imagens/concept_drift_patterns.png Graphic file (type png)
 <use imagens/concept_drift_patterns.png>
-Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 445.
+Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 438.
 (pdftex.def)             Requested size: 452.29036pt x 165.61896pt.
  [8 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift.png> </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift_patterns.png>] [9] [10]
-Overfull \hbox (1.59581pt too wide) in paragraph at lines 567--575
+Overfull \hbox (1.59581pt too wide) in paragraph at lines 560--568
 []\OT1/cmr/m/n/12 Utilizam es-trat^^Segias oriun-das
  []
 
 
-Overfull \hbox (6.56206pt too wide) in paragraph at lines 577--585
+Overfull \hbox (6.56206pt too wide) in paragraph at lines 570--578
 []\OT1/cmr/m/n/12 Monitoram di-re-ta-mente a dis-tri-bui^^Xc~ao
  []
 
@@ -1517,16 +1517,16 @@ Overfull \hbox (6.56206pt too wide) in paragraph at lines 577--585
 <imagens/moa.png, id=133, 1016.29688pt x 763.35187pt>
 File: imagens/moa.png Graphic file (type png)
 <use imagens/moa.png>
-Package pdftex.def Info: imagens/moa.png  used on input line 653.
+Package pdftex.def Info: imagens/moa.png  used on input line 646.
 (pdftex.def)             Requested size: 406.51155pt x 305.33534pt.
  [12]
 <imagens/detector.png, id=138, 470.50781pt x 332.74312pt>
 File: imagens/detector.png Graphic file (type png)
 <use imagens/detector.png>
-Package pdftex.def Info: imagens/detector.png  used on input line 682.
+Package pdftex.def Info: imagens/detector.png  used on input line 675.
 (pdftex.def)             Requested size: 470.50665pt x 332.7423pt.
 
-Overfull \hbox (17.53877pt too wide) in paragraph at lines 682--683
+Overfull \hbox (17.53877pt too wide) in paragraph at lines 675--676
  [] 
  []
 
@@ -1540,48 +1540,56 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <imagens/tornado.png, id=148, 368.87813pt x 347.04657pt>
 File: imagens/tornado.png Graphic file (type png)
 <use imagens/tornado.png>
-Package pdftex.def Info: imagens/tornado.png  used on input line 710.
+Package pdftex.def Info: imagens/tornado.png  used on input line 703.
 (pdftex.def)             Requested size: 276.6579pt x 260.28429pt.
  [15 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado.png (PNG copy)>]
 <imagens/tornado_out2.png, id=152, 753.0534pt x 331.9602pt>
 File: imagens/tornado_out2.png Graphic file (type png)
 <use imagens/tornado_out2.png>
-Package pdftex.def Info: imagens/tornado_out2.png  used on input line 730.
+Package pdftex.def Info: imagens/tornado_out2.png  used on input line 723.
 (pdftex.def)             Requested size: 451.83553pt x 199.17764pt.
 <imagens/rbf_arq.png, id=153, 330.48468pt x 313.17pt>
 File: imagens/rbf_arq.png Graphic file (type png)
 <use imagens/rbf_arq.png>
-Package pdftex.def Info: imagens/rbf_arq.png  used on input line 754.
+Package pdftex.def Info: imagens/rbf_arq.png  used on input line 745.
 (pdftex.def)             Requested size: 330.48387pt x 313.16922pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado_out2.png>]
-Underfull \vbox (badness 1137) has occurred while \output is active []
-
- [17 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/rbf_arq.png>] [18] [19] [20
+ [16 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado_out2.png>] [17 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/rbf_arq.png>] [18] [19] [20
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 841.
+Package xcolor Warning: Incompatible color definition on input line 834.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 868.
 
 [21]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 874.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 877.
+(blindtext)                 on input line 871.
 
 [22]
 
-Package xcolor Warning: Incompatible color definition on input line 878.
+Package xcolor Warning: Incompatible color definition on input line 872.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 875.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 878.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
 (blindtext)                 on input line 881.
 
+[23
+
+]
 
 Package blindtext Warning: brazil not defined, using English instead.
 (blindtext)                 on input line 884.
@@ -1590,17 +1598,6 @@ Package blindtext Warning: brazil not defined, using English instead.
 Package blindtext Warning: brazil not defined, using English instead.
 (blindtext)                 on input line 887.
 
-[23
-
-]
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 890.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 893.
-
 [24] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [25
 
 
@@ -1608,18 +1605,18 @@ Package blindtext Warning: brazil not defined, using English instead.
 AED: lastpage setting LastPage
 [31] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
 Here is how much of TeX's memory you used:
- 30546 strings out of 492982
- 617339 string characters out of 6134895
- 775615 words of memory out of 5000000
- 33538 multiletter control sequences out of 15000+600000
+ 30429 strings out of 492982
+ 613880 string characters out of 6134895
+ 774976 words of memory out of 5000000
+ 33421 multiletter control sequences out of 15000+600000
  545279 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,18n,82p,10445b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (45 pages, 1207509 bytes).
+ 62i,18n,82p,10445b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (45 pages, 1189908 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 175 compressed objects within 2 object streams
+ 266 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

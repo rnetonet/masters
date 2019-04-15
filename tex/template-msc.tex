@@ -219,50 +219,42 @@
 
 \section{Contexto e Motivação}
 
-O volume de dados produzido por sistemas computacionais tem crescido de forma significativa nos últimos anos \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
-Em relatório publicado pelo IDC (\textit{International Data Corporation}), 
-estimava-se que em 2014 seriam produzidos 4,4 zettabytes (trilhões de gigabytes) de dados 
-e que em 2020 essa quantidade chegará a 44 zettabytes \cite{idc_report}.
+Nos últimos anos, o volume de dados produzido por sistemas computacionais tem crescido de forma significativa.
+Segundo \cite{idc_report}, estima-se que entre os anos de 2014 e 2020 a quantidade de dados produzida anualmente aumentará de 4,4 zettabytes (trilhões de gigabytes) para 44 zettabytes.
 
-Parte relevante desses dados é produzida em sequências contínuas, ordenadas, de alta frequência e potencialmente infinitas.
-Estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em muitos domínios de aplicação, por exemplo \cite{Aggarwal:2006:DSM:1196418}: 
-monitoramento de sensores \cite{Lee:Wang:Ryu:2007},
-tráfico TCP/IP, 
-histórico de compra de clientes,
-filtragem de SPAM em mensagens de e-mail \cite{Katakis:2010:TRC:1746286.1746291},
-detecção de intrusos,
-análise de sentimentos \cite{Smailovic:2014:SAL:2941772.2941857}, 
-etc.
+Nos principais domínios de aplicação de sistemas computacionais, as informações são produzidas na forma de Fluxos Contínuos de Dados (FCDs): sequências ininterruptas, ordenadas, de alta frequência e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
+Exemplos desses domínios, incluem:
+redes de sensores,
+redes de computadores,
+comércio eletrônico,
+análise de sentimentos, entre outros.
 
 A área de Aprendizado de Máquina (AM) estuda algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
-Nos últimos anos, há um crescente interesse de pesquisa no uso dessas técnicas em diferentes domínios de aplicação.
-Em muitos desses domínios, os dados são produzidos através de fluxos contínuos de dados \cite{Aggarwal:2006:DSM:1196418}, sendo necessário, portanto, 
- adaptar os algoritmos para atenderem às restrições de tempo de execução e de uso dos recursos computacionais \cite{Bifet:2009:ALM:1656274.1656287}.
+Na última década, tem havido um grande interesse de pesquisa na aplicação dessas técnicas em diferentes domínios.
+Contudo, muitos desses domínios lidam com dados na forma de fluxos contínuos, sendo necessário adaptar os algoritmos para atenderem a severas restrições de tempo de execução e de uso dos recursos computacionais \cite{Bifet:2009:ALM:1656274.1656287}.
 
-Além dessas restrições, a dinamicidade dos cenários com fluxos contínuos de dados também é considerada um obstáculo para as técnicas de aprendizado de máquina.
-Isto ocorre, pois, nesses cenários, o contexto do processo ou a distribuição dos dados podem mudar ao longo do tempo, afetando as predições esperadas (conceitos-alvo).
-Este problema é denominado mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia do modelo.
+Além dessas restrições, as técnicas de aprendizado também devem considerar que os domínios de aplicação com fluxos contínuos de dados são, em sua maioria, dinâmicos.
+Isto é, nesses cenários, o contexto do processo gerador ou a distribuição dos dados podem mudar ao longo do tempo.
+Este problema é denominado mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia do modelo de decisão criado.
 
-Visando mitigar esse problema, foram desenvolvidas técnicas para detecção de mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
-As primeiras técnicas desenvolvidas atuavam em conjunto com os classificadores,  
-detectando mudanças a partir do monitoramento da taxa de erro.
+A fim de minimizar o impacto das mudanças de conceito, foram desenvolvidas diferentes técnicas de detecção \cite{Gama:2014:SCD:2597757.2523813}.
+As primeiras técnicas propostas atuavam em conjunto com os classificadores, detectando alterações através do monitoramento da taxa de erro.
 São exemplos desta abordagem: DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
 ADWIN \cite{BifetG07}, ECDD \cite{Ross:2012:EWM:2076039.2076307}, 
-PL \cite{Bach:PL:2008}, FCWM \cite{FCWM}, STEPD \cite{STEPD}, DOF \cite{Sobhani:2011:NDD:2045295.2045309}, 
-SCCDD/CRCDD \cite{daCosta:2016:UDS:2956219.2956389}, dentre outros.
+PL \cite{Bach:PL:2008}, FCWM \cite{FCWM}, STEPD \cite{STEPD}, DOF \cite{Sobhani:2011:NDD:2045295.2045309}, dentre outros.
 
-Os comitês de classificadores também foram utilizados em métodos para detecção de mudanças de conceito.
-Nestes grupos, a predição global é obtida a partir da combinação das predições individuais.
-Divergências identificadas durante este processo sinalizam potenciais mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
-São exemplos desta técnica:
-DWM \cite{Kolter:2007:DWM:1314498.1390333}, AUE \cite{AUE}, 
-WMA \cite{Blum1997}, DDD \cite{Minku:2012:DNE:2197077.2197204}, ADOB \cite{deCarvalhoSantos:2014:SUR:3120352.3120365}, dentre outros.
+% Comitês de classificadores também foram utilizados para detecção de mudanças de conceito.
+% Esses comitês formam a predição final a partir da combinação das predições individuais de cada classificador. 
+% Divergências identificadas durante o processo de combinação indicam possíveis mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
+% São exemplos de aplicação desta técnica:
+% DWM \cite{Kolter:2007:DWM:1314498.1390333}, AUE \cite{AUE}, 
+% WMA \cite{Blum1997}, DDD \cite{Minku:2012:DNE:2197077.2197204}, ADOB \cite{deCarvalhoSantos:2014:SUR:3120352.3120365}, dentre outros.
 
-Contudo, as abordagens mencionadas dependem que o rótulo correto de cada exemplo esteja disponível.
+Todavia, as técnicas mencionadas dependem que o rótulo correto de cada exemplo esteja disponível.
 Em muitos contextos, o tempo ou o custo para obter esse rótulo é proibitivo \cite{Aggarwal:2006:DSM:1196418}.
-Diante disso, foram desenvolvidos algoritmos que independem dessa informação.
+Diante disso, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem dessa informação.
 
-As técnicas independentes de rótulos reconhecem as mudanças de conceito a partir da identificação de eventos que não se enquadram na estrutura dos dados conhecidos \cite{Spinosa:2007:OCA:1244002.1244107}.
+As técnicas independentes de rótulos baseiam-se na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
 Para tanto, técnicas de de agrupamento, detecção de \textit{outliers}, sumarização dos dados e aplicação de medidas de dissimilaridade são utilizadas nas implementações \cite{Ryu:Kantardzic:2012}.
 São exemplos desta categoria:
 OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107},
@@ -270,11 +262,11 @@ MINAS \cite{Faria:2013:NDA:2480362.2480515},
 ECSMiner \cite{Masud:2011:CNC:1978259.1978529},
 GC3 \cite{Sethi2016b:GC3}, dentre outros.
 
-Entretanto, segundo \cite{Aggarwal:2006:DSM:1196418}, as técnicas para identificação de mudanças de conceito propostas ainda possuem deficiências.
-Os algoritmos depentes de rótulos, por exemplo, são impraticáveis para muitos problemas do mundo real \cite{Gama:2014:SCD:2597757.2523813}.
+Entretanto, segundo \cite{Aggarwal:2006:DSM:1196418, Gama:2014:SCD:2597757.2523813}, as técnicas para identificação de mudanças de conceito propostas ainda possuem deficiências.
+Os algoritmos depentes de rótulos, por exemplo, são impraticáveis para muitos problemas do mundo real.
 De forma similar, as técnicas independentes têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais em cenários com fluxos contínuos de dados.
 
-Visando resolver essas limitações, este projeto de mestrado propõe um algoritmo baseado em redes de função de base radial capaz de detectar mudanças de conceito de forma online, precisa e idependente de exemplos prévios ou rótulos.
+Visando resolver essas limitações, este projeto de mestrado propõe um algoritmo baseado em redes de função de base radial capaz de detectar mudanças de conceito em fluxos contínuos de dados, de forma online, precisa e idependente de exemplos prévios ou rótulos.
 
 \section{Hipótese e Objetivo}
 
@@ -383,6 +375,7 @@ pois identifica as mudanças a partir de uma análise direta e contínua do flux
 Na próxima seção, o fenômeno mudança de conceito será discutido.
 
 \section{Mudança de Conceito}
+\label{sec:mudanca_de_conceito}
 
 Ao aplicar técnicas de aprendizado de máquina em cenários dinâmicos, é comum que a distribuição dos dados ou o contexto do processo mudem ao longo do tempo, levando ao fenômeno de mudança de conceito \cite{Schlimmer1986}.
 Como exemplo, considere um modelo criado a partir do histórico de compras de um cliente em uma livraria.
@@ -739,14 +732,12 @@ A seguir, as redes de função de base radial serão detalhadas.
 
 \section{Redes de Função de Base Radial}
 
-As Redes de Função de Base Radial (RBF \textit{networks}) são aproximadoras universais de funções.
-Têm como principal diferencial a sua forma de ativação, feito através do cálculo da distância entre os vetores de entrada e os centros estabelecidos \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+As Redes de Função de Base Radial (RBF \textit{networks}) são aproximadoras universais de funções e têm como principal diferencial a sua forma de ativação, a qual é feita através do cálculo da distância entre os vetores de entrada e os centros estabelecidos \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 
 Em sua forma básica, a arquitetura de uma rede do tipo RBF é composta por três camadas: 
-uma camada de entrada, uma intermediária e uma de saída \cite{Rojas:1996:NNS:235222}. 
-A camada intermediária (oculta) de uma RBF utiliza funções de base radiais para agrupar os dados de entrada em clusters, 
-transformando padrões de entrada não linearmente separáveis em um conjunto de valores linearmente separáveis. 
-A camada de saída classifica os padrões recebidos através da combinação linear desses resultados \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+i) uma camada de entrada; ii) uma intermediária; e iii) uma de saída \cite{Rojas:1996:NNS:235222}. 
+A camada de entrada recepciona os dados, a camada intermediária (oculta) utiliza funções de base radial para organizar os dados de entrada em grupos, transformando-os em um conjunto de valores linearmente separáveis. Por fim, a camada de saída realiza uma combinação linear para classifcar os padrões recebidos a partir da camada intermediária \cite{Braga:RedesNeuraisTeoriaAplicacoes}. 
+
 A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 
 \begin{figure}[H]
@@ -757,11 +748,13 @@ A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 \end{center}
 \end{figure}
 
-Na literatura, a função de base radial Gaussiana (Eq. \ref{eq:gaussiana}) é uma das mais utilizadas para camada intermediária:
+Conforme a literatura, a função de base radial Gaussiana (Eq. \ref{eq:gaussiana}) é a mais utilizada na camada intermediária:
 
 \begin{equation} \label{eq:gaussiana}
-    f(x)=e^{-{\frac {v^{2}}{2\sigma^{2}}}}
+    \phi (v_{i})=\exp \left(-{\frac  {\|v_{i}-c_{i}\|^{2}}{2\sigma ^{2}}}\right)
 \end{equation}
+
+onde $c_i$ representa o centro e $\sigma$ é o parâmetro limitador do raio.
 
 Na equação \ref{eq:gaussiana}, $v = \lVert x - t_i \rVert$ é dado pela distância euclidiana, onde $x$ é o valor de entrada da rede, 
 enquanto $t_i$ e $\sigma$ correspondem respectivamente ao centro e a largura da função radial. 
@@ -841,33 +834,34 @@ No próximo capítulo, o plano de pesquisa será detalhado.
 \xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
 \section{Considerações Iniciais}
 
-\todo{Daqui}
-
-Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que Redes de Função de Base Radial sejam aplicadas para detecção de mudanças de conceito em Fluxos Contínuos de Dados.
-Espera-se que com a utilização das camadas inicial e intermediária das redes RBF e suas propriedades de agrupamento, seja possível detectar mudanças de conceito de forma eficiente e sem requerer a manutenção de estados prévios.
+Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida.
+O objetivo principal é a implementação de um algoritmo para detecção de mudanças de conceito em fluxos de dados contínuos utilizando as camadas inicial e intermediária das redes da função de base radial.
 A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
 
 \section{Descrição do Problema}
 
-O fenômeno Mudança de Conceito pode ser definido a partir do teorema de Bayes para probabilidades posteriores.
-Seja $X$ um vetor de entrada e $Y$ a classe alvo,
-a decisão de classificar $X$ como $Y$ dependerá da probabilidade posterior da classe, dada por:
+A partir da Teoria Bayesiana de Decisão, apresentada na Seção \ref{sec:mudanca_de_conceito}, é possível afirmar que existe mudança de conceito entre os instantes $t_0$ e $t_1$ se:
 
-\begin{equation} \label{eq:mudanca_de_conceito_formalizacao}
-    P(Y |X) = \frac{P(Y)P(X|Y)}{P(X)}
+\begin{equation} \label{eq:mudanca_de_conceito}
+    {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
 \end{equation}
 
-onde $P(Y|X)$ é a probabilidade de $Y$ para a entrada $X$, $P(X|Y)$ é a distribuição condicional da classe para as variáveis da entrada $X$ e 
-$P(Y)$ é a probabilidade a priori da classe e $P(X)$ é a probibilidade a priori do vetor de entrada $X$.
+onde, $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
+para $X$ e $c$ \cite{Gama:2014:SCD:2597757.2523813}. 
+Isto é, um conjunto de exemplos possui rótulos de classe legítimos em $t_0$, mas passa a ter rótulos diferentes, também legítimos, em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
+Esta mudança pode ocorrer devido a alterações no contexto do processo gerador ou na distribuição dos dados, 
+e pode impactar a acurácia de modelos de decisão utilizados.
 
-Na presença de mudança de conceito, a probabilidade posterior $P(Y|X)$ varia ao longo do tempo, isto é $P_{t_0}(Y|X)$ pode ser diferente de $P_{t_1}(Y|X)$.
-Em outras palavras, os limites de decisão do classificador se alteram ao longo do tempo.
+Considerando que a camada intermediária (oculta) de uma rede de função de base radial realiza o agrupamento dos dados de entrada em clusters, 
+transformando padrões de entrada não linearmente separáveis em um conjunto de valores linearmente separáveis \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification}, 
+este projeto de mestrado tem como objetivo comprovar a hipótese que mudanças de conceito em fluxos contínuos de dados podem ser detectadas através de redes de função de base radial, de forma online e independente de exemplos prévios ou rótulos.
 
-Considerando que redes de função de base radial apresentam em suas camadas inicial e intermediária características de agrupamento, 
-este projeto de mestrado visa comprovara hipótese que redes RBF podem detectar mudanças de conceito em fluxos contínuos de dados, 
-em tempo de execução, sem requerer a manutenção de estados prévios, de forma ágil e com precisão satisfatória.
+Para exemplificar a execução desta proposta de mestrado, considere o conjunto $D = \{0.1, 0.13, 0.14, 0.4, 0.5, 0.6, 0.16, 0.14\}$, recorte do fluxo contínuo utilizado como entrada.
 
-Para exemplificar a execução desta proposta de mestrado, considere \ldots
+% Assumindo que sejam produtos de um fluxo contínuo de dados, estes valores são passados para a camada de entrada da rede de função de base radial.
+% Esta camada encaminha o valor para uma função de base radial Gaussiana (\ref{eq:gaussiana}). 
+
+
 
 \section{Atividades de Pesquisa}
 \blindtext
