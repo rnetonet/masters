@@ -90,14 +90,6 @@ ISBN 0-13-126780-9.}
 {BAZARGANI, M.~H.; NAMEE, B.~M. Radial basis function data descriptor ( rbfdd )
   network : An anomaly detection approach. In:  . [S.l.: s.n.], 2018.}
 
-\bibitem[Bifet 2009]{Bifet:2009:ALM:1656274.1656287}
-\abntrefinfo{Bifet}{BIFET}{2009}
-{BIFET, A. Adaptive learning and mining for data streams and frequent patterns.
-\emph{SIGKDD Explor. Newsl.}, ACM, New York, NY, USA, v.~11, n.~1, p. 55--56,
-  nov. 2009.
-ISSN 1931-0145.
-Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1656274.1656287}.}
-
 \bibitem[Bifet e Gavaldà 2007]{BifetG07}
 \abntrefinfo{Bifet e Gavaldà}{BIFET; GAVALDà}{2007}
 {BIFET, A.; GAVALDà, R. Learning from time-changing data with adaptive
@@ -476,15 +468,6 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.eswa.2017.04.008}.}
   classifying streaming data in the presence of concept drift.
 \emph{Journal of Intelligent Information Systems}, v.~46, n.~1, p. 179--211,
   Feb 2016.}
-
-\bibitem[Sobhani e Beigy 2011]{Sobhani:2011:NDD:2045295.2045309}
-\abntrefinfo{Sobhani e Beigy}{SOBHANI; BEIGY}{2011}
-{SOBHANI, P.; BEIGY, H. New drift detection method for data streams. In:
-  \emph{Proceedings of the Second International Conference on Adaptive and
-  Intelligent Systems}. Berlin, Heidelberg: Springer-Verlag, 2011.  (ICAIS'11),
-  p. 88--97.
-ISBN 978-3-642-23856-7. Dispon{\'\i}vel em:
-  \url{http://dl.acm.org/citation.cfm?id=2045295.2045309}.}
 
 \bibitem[Spinosa, Carvalho e Gama 2007]{Spinosa:2007:OCA:1244002.1244107}
 \abntrefinfo{Spinosa, Carvalho e Gama}{SPINOSA; CARVALHO; GAMA}{2007}

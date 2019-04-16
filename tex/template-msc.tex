@@ -219,42 +219,61 @@
 
 \section{Contexto e Motivação}
 
-Nos últimos anos, o volume de dados produzido por sistemas computacionais tem crescido de forma significativa.
-Segundo \cite{idc_report}, estima-se que entre os anos de 2014 e 2020 a quantidade de dados produzida anualmente aumentará de 4,4 zettabytes (trilhões de gigabytes) para 44 zettabytes.
+Nos últimos anos, o volume de dados produzidos por sistemas computacionais tem crescido de forma acentuada.
+%
+Esse crescimento foi favorecido por avanços tecnológicos recentes, como, por exemplo, 
+a pervasividade dos dispositivos móveis,
+a popularização das redes sociais e 
+a expansão da internet das coisas \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
+%
+A dimensão desse aumento é verificada em \cite{idc_report}, 
+no qual se estima que, entre os anos de 2014 e 2020,
+a quantidade de informações produzidas anualmente irá aumentar de 4,4 zettabytes (trilhões de gigabytes) para 44 zettabytes.
 
-Nos principais domínios de aplicação de sistemas computacionais, as informações são produzidas na forma de Fluxos Contínuos de Dados (FCDs): sequências ininterruptas, ordenadas, de alta frequência e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
-Exemplos desses domínios, incluem:
-redes de sensores,
-redes de computadores,
-comércio eletrônico,
-análise de sentimentos, entre outros.
+Parte significativa dessas informações é produzida na forma de sequências contínuas, ordenadas, de alta frequência e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
+%
+Na literatura estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em diversos domínios de aplicação, por exemplo:
+climatologia, 
+monitoramento de redes,
+saúde e análise do mercado de ações.
 
-A área de Aprendizado de Máquina (AM) estuda algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
-Na última década, tem havido um grande interesse de pesquisa nas aplicações dessas técnicas para diferentes domínios.
-Contudo, muitos desses domínios lidam com dados na forma de fluxos contínuos, sendo necessário adaptar os algoritmos para atenderem a severas restrições de tempo de execução e de uso dos recursos computacionais \cite{Bifet:2009:ALM:1656274.1656287}.
+Para extrair informações úteis dessa grande quantidade de dados, 
+pesquisadores têm aplicado técnicas da área de Aprendizado de Máquina (AM), 
+a qual estuda algoritmos que melhoram seu desempenho conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
+%
+Entretanto, as estratégias tradicionais de aprendizado de máquina têm aplicação limitada para contextos com fluxos contínuos de dados, 
+pois nesses cenários os algoritmos devem atender a severas restrições de tempo de execução e de uso dos recursos computacionais \cite{bifet2009data}.
 
-Além dessas restrições, as técnicas de aprendizado também devem considerar que os domínios de aplicação com fluxos contínuos de dados são, em sua maioria, dinâmicos.
-Isto é, nesses cenários, o contexto do processo gerador ou a distribuição dos dados podem mudar ao longo do tempo.
-Este problema é denominado mudança de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia do modelo de decisão criado.
+Além dessas limitações, 
+as técnicas de aprendizado de máquina, 
+quando aplicadas em contextos com fluxos contínuos, 
+também devem lidar com alterações na distribuição dos dados ou no contexto do processo gerador.
+%
+Essas alterações são denominadas Mudanças de Conceito \cite{Gama:2010:KDD:1855075} e 
+a sua ocorrência pode impactar a acurácia do modelo de decisão vigente.
 
-A fim de minimizar o impacto das mudanças de conceito, foram desenvolvidas diferentes técnicas de detecção \cite{Gama:2014:SCD:2597757.2523813}.
-As primeiras técnicas propostas atuavam em conjunto com os classificadores, detectando alterações através do monitoramento da taxa de erro.
-São exemplos desta abordagem: DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
+Inicialmente, a atualização periódica do modelo de decisão foi utilizada como estratégia para evitar a perda de acurácia causada por mudanças de conceito.
+%
+Contudo, esta solução é pouco sofisticada e computacionalmente custosa.
+% 
+Diante disso, pesquisadores propuseram técnicas de detecção de mudanças de conceito baseadas em monitoramento \cite{Gama:2014:SCD:2597757.2523813}.
+% 
+Estes métodos identificam o momento exato da mudança, permitindo que o modelo de decisão seja atualizado somente quando necessário.
+%
+Exemplos de algoritmos baseados nesta abordagem, incluem: 
+DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
 ADWIN \cite{BifetG07}, ECDD \cite{Ross:2012:EWM:2076039.2076307}, 
-PL \cite{Bach:PL:2008}, FCWM \cite{FCWM}, STEPD \cite{STEPD}, DOF \cite{Sobhani:2011:NDD:2045295.2045309}, dentre outros.
+PL \cite{Bach:PL:2008}, FCWM \cite{FCWM} e STEPD \cite{STEPD}.
 
-% Comitês de classificadores também foram utilizados para detecção de mudanças de conceito.
-% Esses comitês formam a predição final a partir da combinação das predições individuais de cada classificador. 
-% Divergências identificadas durante o processo de combinação indicam possíveis mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
-% São exemplos de aplicação desta técnica:
-% DWM \cite{Kolter:2007:DWM:1314498.1390333}, AUE \cite{AUE}, 
-% WMA \cite{Blum1997}, DDD \cite{Minku:2012:DNE:2197077.2197204}, ADOB \cite{deCarvalhoSantos:2014:SUR:3120352.3120365}, dentre outros.
+\todo{}
 
-Todavia, as técnicas mencionadas dependem que o rótulo correto de cada exemplo esteja disponível.
+
+
+Contudo, as técnicas mencionadas dependem que o rótulo correto de cada exemplo esteja disponível.
 Em muitos contextos, o tempo ou o custo para obter esse rótulo é proibitivo \cite{Aggarwal:2006:DSM:1196418}.
 Diante disso, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem dessa informação.
 
-As técnicas independentes de rótulos baseiam-se na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
+Os métodos de detecção independentes de rótulos baseiam-se na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
 Para tanto, técnicas de de agrupamento, detecção de \textit{outliers}, sumarização dos dados e aplicação de medidas de dissimilaridade são utilizadas nas implementações \cite{Ryu:Kantardzic:2012}.
 São exemplos desta categoria:
 OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107},
@@ -299,13 +318,13 @@ apresenta um conjunto de experimentos preliminares e a análise dos resultados o
 Este capítulo discute os principais conceitos utilizados neste trabalho de pesquisa.
 Em primeiro momento, a aplicação de técnicas de aprendizado de máquina a fluxos contínuos de dados será detalhada.
 Em seguida, abordaremos a ideia de mudança de conceito, seus tipos e características, taxonomia, principais algoritmos de detecção e ferramentas.
-Logo após, as redes de função de base radial serão explanadas.
+Logo após, as redes de função de base radial serão apresentadas.
 Ao fim do capítulo, serão elencados os trabalhos relacionados encontrados na literatura.
 
 \section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
 
-O volume de dados produzidos por sistemas computacionais tem crescido de forma significativa \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
-Parte relevante desses dados é produzida em sequências contínuas, ordenadas, de alta frequência e potencialmente infinitas.
+Nos últimos anos, o volume de dados produzido por sistemas computacionais tem crescido de forma significativa \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
+Parte relevante desses dados é produzida na forma de sequências contínuas, ordenadas, de alta frequência e potencialmente infinitas.
 Estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em muitos domínios de aplicação \cite{Aggarwal:2006:DSM:1196418}.
 
 % As principais características desses fluxos, segundo \cite{Babcock:2002:MID:543613.543615}, são: 
