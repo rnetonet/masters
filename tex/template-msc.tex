@@ -232,7 +232,7 @@ a quantidade de informações produzidas anualmente irá aumentar de 4,4 zettaby
 
 Parte significativa dessas informações é produzida na forma de sequências contínuas, ordenadas, de alta frequência e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
 %
-Na literatura estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em diversos domínios de aplicação, por exemplo:
+Na literatura sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em diversos domínios de aplicação, por exemplo:
 climatologia, 
 monitoramento de redes,
 saúde e análise do mercado de ações.
@@ -265,27 +265,33 @@ DDM \cite{GamaMCR04}, EDDM \cite{EDDM},
 ADWIN \cite{BifetG07}, ECDD \cite{Ross:2012:EWM:2076039.2076307}, 
 PL \cite{Bach:PL:2008}, FCWM \cite{FCWM} e STEPD \cite{STEPD}.
 
-\todo{}
+Entretanto, as técnicas baseadas em monitoramento necessitam que o rótulo correto de cada exemplo esteja disponível.
+%
+Em muitos cenários, o tempo ou o custo para obter esses rótulos é proibitivo \cite{Aggarwal:2006:DSM:1196418}.
+%
+Consequentemente, foram desenvolvidos algoritmos independentes de rótulos para detecção de mudanças de conceito.
 
-
-
-Contudo, as técnicas mencionadas dependem que o rótulo correto de cada exemplo esteja disponível.
-Em muitos contextos, o tempo ou o custo para obter esse rótulo é proibitivo \cite{Aggarwal:2006:DSM:1196418}.
-Diante disso, foram desenvolvidos algoritmos para detecção de mudanças de conceito que independem dessa informação.
-
-Os métodos de detecção independentes de rótulos baseiam-se na identificação de eventos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
-Para tanto, técnicas de de agrupamento, detecção de \textit{outliers}, sumarização dos dados e aplicação de medidas de dissimilaridade são utilizadas nas implementações \cite{Ryu:Kantardzic:2012}.
-São exemplos desta categoria:
+Os métodos independentes de rótulos detectam as mudanças de conceito a partir da identificação de exemplos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
+% 
+Esse análise é implementada com base em técnicas de agrupamento, detecção de \textit{outliers} e medidas de dissimilaridade \cite{Ryu:Kantardzic:2012}.
+%
+Os seguintes algoritmos são exemplos desta metodologia:
 OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107},
 MINAS \cite{Faria:2013:NDA:2480362.2480515},
-ECSMiner \cite{Masud:2011:CNC:1978259.1978529},
-GC3 \cite{Sethi2016b:GC3}, dentre outros.
+ECSMiner \cite{Masud:2011:CNC:1978259.1978529} e 
+GC3 \cite{Sethi2016b:GC3}.
 
-Entretanto, segundo \cite{Aggarwal:2006:DSM:1196418, Gama:2014:SCD:2597757.2523813}, as técnicas para identificação de mudanças de conceito propostas ainda possuem deficiências.
-Os algoritmos depentes de rótulos, por exemplo, são impraticáveis para muitos problemas do mundo real.
-De forma similar, as técnicas independentes têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais em cenários com fluxos contínuos de dados.
+Segundo \cite{Aggarwal:2006:DSM:1196418, Gama:2014:SCD:2597757.2523813},
+as técnicas de detecção de mudanças de conceito propostas ainda apresentam limitações que dificultam suas aplicações no mundo real.
+% 
+Por exemplo, os algoritmos dependentes de rótulo são inviáveis para cenários com fluxos contínuos, por causa do custo e do tempo necessário para obter os rótulos corretos.
+%
+Do mesmo modo, as técnicas independentes de rótulos têm dificuldade para atender às severas restrições de tempo e de uso dos recursos computacionais desses cenários.
 
-Visando resolver essas limitações, este projeto de mestrado propõe um algoritmo baseado em redes de função de base radial capaz de detectar mudanças de conceito em fluxos contínuos de dados, de forma online, precisa e independente de exemplos prévios ou rótulos.
+Visando resolver essas limitações, 
+este projeto de mestrado propõe um algoritmo baseado em redes de função de base radial capaz de detectar mudanças de conceito em fluxos contínuos de dados, 
+de forma online, 
+precisa e independente de exemplos prévios ou rótulos.
 
 \section{Hipótese e Objetivo}
 
