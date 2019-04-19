@@ -221,7 +221,7 @@
 
 Nos últimos anos, o volume de dados produzidos por sistemas computacionais tem crescido de forma acentuada.
 %
-Esse crescimento foi favorecido por avanços tecnológicos recentes, como, por exemplo, 
+Esse crescimento foi favorecido por avanços tecnológicos recentes, como  
 a pervasividade dos dispositivos móveis,
 a popularização das redes sociais e 
 a expansão da internet das coisas \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
@@ -230,9 +230,9 @@ A dimensão desse aumento é verificada em \cite{idc_report},
 no qual se estima que, entre os anos de 2014 e 2020,
 a quantidade de informações produzidas anualmente irá aumentar de 4,4 zettabytes (trilhões de gigabytes) para 44 zettabytes.
 
-Parte significativa dessas informações é produzida na forma de sequências contínuas, ordenadas, de alta frequência e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
+Parte significativa dessas informações é produzida na forma de sequências ininterruptas e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
 %
-Na literatura essas sequências são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em diversos domínios de aplicação, por exemplo:
+Na literatura sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em diversos domínios de aplicação, por exemplo:
 climatologia, 
 monitoramento de redes,
 saúde e análise do mercado de ações.
@@ -247,12 +247,12 @@ pois nesses cenários os algoritmos devem atender a severas restrições de temp
 Além dessas limitações, 
 as técnicas de aprendizado de máquina, 
 quando aplicadas em contextos com fluxos contínuos, 
-também devem lidar com alterações na distribuição dos dados ou no contexto do processo gerador.
+também devem lidar com variações na distribuição dos dados ou no contexto do processo gerador.
 %
 Essas alterações são denominadas Mudanças de Conceito \cite{Gama:2010:KDD:1855075} e 
-a sua ocorrência pode impactar a acurácia do modelo de decisão vigente.
+a sua ocorrência pode impactar a acurácia do modelo.
 
-Inicialmente, a atualização periódica do modelo de decisão foi utilizada como estratégia para evitar a perda de acurácia causada por mudanças de conceito.
+Inicialmente, a atualização periódica do modelo foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
 %
 Contudo, esta solução é pouco sofisticada e computacionalmente custosa.
 % 
@@ -269,11 +269,10 @@ Entretanto, as técnicas baseadas em monitoramento necessitam que o rótulo corr
 %
 Em muitos cenários, o tempo ou o custo para obter esses rótulos é proibitivo \cite{Aggarwal:2006:DSM:1196418}.
 %
-Consequentemente, foram desenvolvidos algoritmos independentes de rótulos para detecção de mudanças de conceito.
-
-Os métodos independentes de rótulos detectam as mudanças de conceito a partir da identificação de exemplos que não se enquadram na atual estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
+Consequentemente, foram desenvolvidos novos algoritmos independentes de rótulos.
+Nestes métodos, a detecção se baseia na identificação de exemplos que não se enquadram na estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
 % 
-Esse análise é implementada com base em técnicas de agrupamento, detecção de \textit{outliers} e medidas de dissimilaridade \cite{Ryu:Kantardzic:2012}.
+Essa análise é implementada com base em técnicas de agrupamento, detecção de \textit{outliers} e medidas de dissimilaridade \cite{Ryu:Kantardzic:2012}.
 %
 Os seguintes algoritmos são exemplos desta metodologia:
 OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107},
@@ -281,21 +280,25 @@ MINAS \cite{Faria:2013:NDA:2480362.2480515},
 ECSMiner \cite{Masud:2011:CNC:1978259.1978529} e 
 GC3 \cite{Sethi2016b:GC3}.
 
-Segundo \cite{Aggarwal:2006:DSM:1196418, Gama:2014:SCD:2597757.2523813},
-as técnicas de detecção de mudanças de conceito propostas ainda apresentam limitações que dificultam suas aplicações no mundo real.
+Todavia, segundo \cite{Aggarwal:2006:DSM:1196418, Gama:2014:SCD:2597757.2523813},
+as técnicas de detecção de mudanças de conceito propostas apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
 % 
-Por exemplo, os algoritmos dependentes de rótulo são inviáveis para cenários com fluxos contínuos, por causa do custo e do tempo necessário para obter os rótulos corretos.
+Os algoritmos dependentes de rótulo se tornam inviáveis, por causa do custo e do tempo necessário para obter os rótulos corretos.
 %
-Do mesmo modo, as técnicas independentes de rótulos têm dificuldade para atender às severas restrições de tempo e de uso dos recursos computacionais desses cenários.
+Enquanto as técnicas independentes têm dificuldade em atender as severas restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
 
 Visando resolver essas limitações, 
-este projeto de mestrado propõe um algoritmo baseado em redes de função de base radial capaz de detectar mudanças de conceito em fluxos contínuos de dados, 
-de forma online, 
-precisa e independente de exemplos prévios ou rótulos.
+este projeto de mestrado discute uma abordagem baseada em redes de função de base radial 
+para detecção de mudanças de conceito em fluxos contínuos de dados.
+A metodologia proposta se diferencia por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 
 \section{Hipótese e Objetivo}
 
 Com base nas observações citadas anteriormente, a seguinte hipótese foi formulada:
+
+% “O agrupamento de séries temporais apresenta maior acurácia quando medidas de
+% similaridade (ou distância) são, individualmente, calculadas sobre comportamentos
+% estocásticos e determinı́sticos.”
 
 \begin{center}
 \textit{``A análise de fluxos contínuos de dados através de redes de função de base radial permite a detecção de mudanças de conceito de forma online, precisa e independente de exemplos prévios ou rótulos.''}
