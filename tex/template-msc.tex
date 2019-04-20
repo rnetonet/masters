@@ -233,9 +233,11 @@ a quantidade de informações produzidas anualmente irá aumentar de 4,4 zettaby
 Parte significativa dessas informações é produzida na forma de sequências ininterruptas e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
 %
 Na literatura, sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em diversos domínios de aplicação, por exemplo:
-climatologia, 
-monitoramento de redes,
-saúde e análise do mercado de ações.
+monitoramento do mercado financeiro \cite{ZHOU:2015},
+acompanhamento de tráfico rodoviário \cite{Wang:2015:EOV:2843092.2843464}, 
+gerenciamento de redes de telecomunicação \cite{delattre2015method}, 
+análise de sentimento em tempo real \cite{KRANJC2015187} e 
+sistemas de prevenção e identificação de intrusos \cite{KENKRE:PAI:COLACO:2015}.
 
 Para extrair informações úteis dessa grande quantidade de dados, 
 pesquisadores têm aplicado técnicas da área de Aprendizado de Máquina (AM), 
@@ -329,7 +331,7 @@ Este capítulo apresenta uma discussão geral sobre os principais conceitos util
 %
 Inicialmente, serão abordadas as características dos fluxos contínuos de dados e a aplicação de técnicas de aprendizado de máquina nestes cenários.
 %
-Em seguida, será discutidada a concepção de mudança de conceito, seus tipos e características, taxonomia, principais algoritmos de detecção e ferramentas.
+Em seguida, será discutidada a ideia de mudança de conceito, seus tipos e características, taxonomia, principais algoritmos de detecção e ferramentas.
 %
 Posteriormente, as redes de função de base radial serão detalhadas.
 %
@@ -337,73 +339,70 @@ Por fim, serão apresentados os trabalhos relacionados encontrados na literatura
 
 \section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
 
-Nos últimos anos, o volume de dados produzidos por sistemas computacionais tem crescido de forma substancial \cite{bifet2009data}.
+Fluxos Contínuos de Dados (FCDs) podem ser definidos como sequências ininterruptas e potencialmente infinitas de eventos \cite{Aggarwal:2006:DSM:1196418}.
 %
-Parte relevante dessas informações é produzida na forma de sequências ininterruptas e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
+Nestes fluxos, os eventos ocorrem em alta frequência, sendo necessário processá-los em tempo real.
 %
-Na literatura, sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em muitos domínios de aplicação \cite{Aggarwal:2006:DSM:1196418}.
+Além disso, por serem de tamanho potencialmente ilimitado, não é possível armazená-los de forma permanente em memória.
+%
+
+As características dos fluxos contínuos de dados implicam nas seguintes restrições aos algoritmos que os processam \cite{bifet2009data}:
+%
+\begin{enumerate}
+    \item É impossível armazenar todos os dados do fluxo. Somente uma pequena parcela pode ser processada e armazenada, enquanto o restante é descartado;
+    \item A velocidade de chegada dos eventos no fluxo exige que cada elemento seja processado em tempo de execução;
+    \item A distribuição dos dados pode mudar com o tempo. Assim, os dados do passado podem se tornar irrelevantes ou mesmo prejudiciais para a descrição dos conceitos atuais.
+\end{enumerate}
 
 A área de Aprendizado de Máquina (AM) estuda algoritmos que melhoram o seu desempenho conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
 %
-Nos últimos anos, há um crescente interesse de pesquisa na aplicação dessas técnicas em diferentes contextos.
+Estes algoritmos dividem-se em duas categorias principais: 
 %
-Entretanto, segundo \cite{Gama:2010:KDD:1855075}, a área teve como foco, durante muitos anos, os problemas de aprendizado em lote.
+não supervisionados (agrupamento ou \textit{clustering}) e supervisionados (classificação ou regressão).
 %
-Nestes cenários, os algoritmos consideram que a distribuição dos dados e o contexto do processo não sofrem alterações ao longo do tempo.
+Ambas as categorias foram especializadas para que pudessem ser aplicadas a cenários com fluxos contínuos de dados.
 %
-Ou seja, não há o surgimento de novos conceitos-alvo ou alteração dos existentes.
+As características de cada categoria e as principais especializações serão discutidas a seguir.
 
-Contudo, os principais domínios de aplicação com fluxos contínuos de dados são dinâmicos.
-Isto é, a distribuição dos dados ou o contexto do processo gerador podem sofrer alterações que afetam os conceitos-alvo esperados.
-Estas alterações, denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075}, podem impactar a acurácia do modelo de decisão.
-
-% De acordo com \cite{Gama:Rodrigues:2009}, o principal desafio ao aplicar técnicas de aprendizado em cenários dinâmicos é manter o modelo com boa performance ao longo do tempo.
-% Para que isto seja possível, o modelo criado deve ser atualizado conforme novos dados são analisados.
-% Esta abordagem é denominada Aprendizado Incremental \cite{Gama:2014:SCD:2597757.2523813}.
-
-% É natural, portanto, considerar os algoritmos dessa abordagem para os cenários com fluxos contínuos de dados.
-% Contudo, sinaliza \cite{GamaMCR04}, continua sendo importante que as técnicas tratem as mudanças de conceito.
-% Pois, nesses casos, pode ser necessário descartar parte das informações para que o modelo seja atualizado corretamente.
-
-As técnicas de aprendizado de máquina dividem-se em duas categorias principais: 
-não supervisionadas (agrupamento ou \textit{clustering}) e supervisionadas (classificação ou regressão) \cite{Mitchell:1997:ML:541177}.
-Algoritmos de ambas as categorias foram adaptados para que pudessem ser aplicados à cenários com fluxos contínuos de dados.
-Os detalhes de cada categoria e as adaptações propostas na literatura serão discutidas a seguir.
-
-As técnicas de agrupamento associam objetos conforme suas características.
-Estas técnicas buscam formar grupos com alta similaridade interna e baixa similaridade com elementos externos \cite{Jain:1988:ACD:46712}.
-Os principais métodos de agrupamento para cenários em lote são:
+As técnicas não supervisionadas realizam o agrupamento automático de dados segundo o seu grau de semelhança.
+Essas técnicas têm como objetivo a formação de grupos com alta similaridade intragrupo e baixa similaridade intergrupo \cite{Jain:1988:ACD:46712}.
+Os seguintes algoritmos são exemplos de técnicas não supervisionadas para cenários em lote:
 K-Means \cite{Lloyd:2006:LSQ:2263356.2269955},
 DBSCAN \cite{Ester:1996:DAD:3001460.3001507},
-PAM \cite{kaufman:clustering1990},
-OPTICS \cite{Ankerst:1999:OOP:304181.304187}, dentre outros.
+PAM \cite{kaufman:clustering1990} e 
+OPTICS \cite{Ankerst:1999:OOP:304181.304187}.
 
-Segundo \cite{Gama:2010:KDD:1855075}, a principal dificuldade na aplicação de técnicas de agrupamento em cenários com fluxos contínuos de dados  
-é a manutenção da qualidade e consistência dos grupos formados em relação à sequência de dados observados. 
+De acordo com \citeonline{Gama:2010:KDD:1855075}, a principal dificuldade ao aplicar técnicas não supervisionadas em cenários com fluxos contínuos de dados é a manutenção da qualidade e consistência dos grupos formados conforme novos dados são observados.
 Portanto, é necessário que os algoritmos atuem de forma incremental, evoluindo os grupos formados ao longo do tempo \cite{Barbara:2002:RCD:507515.507519}.
-Sendo assim, foram desenvolvidos algoritmos de agrupamento especializados para fluxos contínuos de dados \cite{Aggarwal:2003:FCE:1315451.1315460}:
+Sendo assim, foram desenvolvidos algoritmos não supervisionados especializados para fluxos contínuos de dados \cite{Aggarwal:2003:FCE:1315451.1315460}.
+Os seguintes algoritmos são exemplos dessas especializações:
 CluStream \cite{Aggarwal:2003:FCE:1315451.1315460},
 StreamKM++ \cite{Ackermann:2012:SCA:2133803.2184450},
 DenStream \cite{Cao:Feng:Ester},
-D-Stream \cite{Chen:Tu} e ClusTree \cite{Kranen:2011:CIM:2134350.2134352}, dentre outros.
+D-Stream \cite{Chen:Tu} e ClusTree \cite{Kranen:2011:CIM:2134350.2134352}.
 
-Os algoritmos supervisionados realizam predições para novos exemplos utilizando um modelo de decisão criado a partir de uma base de treinamento previamente rotulada \cite{Kotsiantis:2007:SML:1566770.1566773}.
+Os algoritmos supervisionados realizam predições para novos exemplos utilizando um modelo de decisão criado a partir de uma base de treinamento \cite{Kotsiantis:2007:SML:1566770.1566773}.
 Se a predição é categórica, entende-se como um problema de classificação.
 Se a predição resulta em um valor numérico, trata-se de uma tarefa de regressão.
-Os principais algoritmos de classificação e regressão para cenários em lote são:
+Os principais algoritmos supervisionados para cenários em lote são:
 árvores de decisão \cite{Breiman:Classification_Regression_Trees},
 métodos baseados em regras, 
-redes neurais e máquinas de vetores suporte (SVM) \cite{Vapnik1998}, 
-dentre outros.
+redes neurais e máquinas de vetores suporte (SVM) \cite{Vapnik1998}.
 
-Contudo, esses métodos não atualizam o modelo conforme novos dados são observados.
-Além disso, também assumem que todos os dados estão disponíveis em memória e que é possível realizar múltiplas varreduras sobre eles.
-Dessa forma, novos algoritmos supervisionados foram propostos para os cenários com fluxos contínuos de dados \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813}.
+Segundo \citeonline{Gama:2010:LDS:1951990}, 
+não é possível aplicar as técnicas supervisionadas tradicionais em contextos com fluxos contínuos de dados, 
+pois estes métodos não contemplam as severas restrições de uso de memória e de tempo de execução.
+%
+Dessa forma, 
+novos algoritmos supervisionados foram propostos para esses cenários \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813}.
 
-No contexto deste trabalho de mestrado, assume-se que os dados são obtidos a partir de fluxos contínuos de dados com mudanças de conceito.
-O algoritmo para detecão de mudanças proposto é independente de técnicas de aprendizado, 
-pois identifica as mudanças a partir de uma análise direta e contínua do fluxo de dados.
-Na próxima seção, o fenômeno mudança de conceito será discutido.
+As especializações mencionadas buscam atender às restrições de uso de memória e de tempo de execução dos contextos com fluxos contínuos de dados.
+Contudo, não consideram que na maioria desses cenários as informações são geradas por uma distribuição não estacionária e por processos que evoluem ao longo do tempo.
+Isto é, a distribuição dos dados ou o contexto do processo gerador podem sofrer variações, alterando os resultados esperados.
+Na literatura, essas alterações são denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia da técnica utilizada.
+
+Neste projeto de mestrado, considera-se que os dados são obtidos a partir de fluxos contínuos de dados com ocorrência de mudanças de conceito.
+Na próxima seção, o fenômeno mudança de conceito será discutido com maior detalhamento.
 
 \section{Mudança de Conceito}
 \label{sec:mudanca_de_conceito}

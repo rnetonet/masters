@@ -157,6 +157,12 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1541880.1541882}.}
 ISSN 2150-8097.
 Dispon{\'\i}vel em: \url{https://doi.org/10.14778/1687553.1687576}.}
 
+\bibitem[Delattre e Imbert 2015]{delattre2015method}
+\abntrefinfo{Delattre e Imbert}{DELATTRE; IMBERT}{2015}
+{DELATTRE, M.; IMBERT, B. \emph{Method for management of data stream exchanges
+  in an autonomic telecommunications network}. [S.l.]: Google Patents, 2015.
+US Patent 8,949,412.}
+
 \bibitem[{Ditzler} e {Polikar} 2011]{Ditzler:Polikar:HDDDM:2011}
 \abntrefinfo{{Ditzler} e {Polikar}}{{Ditzler}; {Polikar}}{2011}
 {{Ditzler}, G.; {Polikar}, R. Hellinger distance based drift detection for
@@ -217,6 +223,13 @@ ISBN 978-1-4503-1656-9. Dispon{\'\i}vel em:
 {GAMA, J. \emph{Knowledge Discovery from Data Streams}. 1st. ed. [S.l.]:
   Chapman \& Hall/CRC, 2010.
 ISBN 1439826110, 9781439826119.}
+
+\bibitem[Gama e Gaber 2010]{Gama:2010:LDS:1951990}
+\abntrefinfo{Gama e Gaber}{GAMA; GABER}{2010}
+{GAMA, J.; GABER, M.~M. \emph{Learning from Data Streams: Processing Techniques
+  in Sensor Networks}. 1st. ed. [S.l.]: Springer Publishing Company,
+  Incorporated, 2010.
+ISBN 3642092853, 9783642092855.}
 
 \bibitem[Gama et al. 2004]{GamaMCR04}
 \abntrefinfo{Gama et al.}{GAMA et al.}{2004}
@@ -294,6 +307,15 @@ ISBN 1-58113-737-0. Dispon{\'\i}vel em:
 {KAUFMAN, L.; ROUSSEEUW, P. \emph{Finding Groups in Data: an introduction to
   cluster analysis}. [S.l.]: Wiley, 1990.}
 
+\bibitem[Kenkre, Pai e Colaco 2015]{KENKRE:PAI:COLACO:2015}
+\abntrefinfo{Kenkre, Pai e Colaco}{KENKRE; PAI; COLACO}{2015}
+{KENKRE, P.~S.; PAI, A.; COLACO, L. Real time intrusion detection and
+  prevention system. In:  SATAPATHY, S.~C. et al. (Ed.). \emph{Proceedings of
+  the 3rd International Conference on Frontiers of Intelligent Computing:
+  Theory and Applications (FICTA) 2014}. Cham: Springer International
+  Publishing, 2015. p. 405--411.
+ISBN 978-3-319-11933-5.}
+
 \bibitem[Kolter e Maloof 2007]{Kolter:2007:DWM:1314498.1390333}
 \abntrefinfo{Kolter e Maloof}{KOLTER; MALOOF}{2007}
 {KOLTER, J.~Z.; MALOOF, M.~A. Dynamic weighted majority: An ensemble method for
@@ -321,6 +343,15 @@ ISBN 978-1-58603-780-2. Dispon{\'\i}vel em:
   v.~29, n.~2, p. 249--272, nov. 2011.
 ISSN 0219-1377.
 Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1007/s10115-010-0342-8}.}
+
+\bibitem[Kranjc et al. 2015]{KRANJC2015187}
+\abntrefinfo{Kranjc et al.}{KRANJC et al.}{2015}
+{KRANJC, J. et al. Active learning for sentiment analysis on data streams:
+  Methodology and workflow implementation in the clowdflows platform.
+\emph{Information Processing \& Management}, v.~51, n.~2, p. 187 -- 203, 2015.
+ISSN 0306-4573.
+Dispon{\'\i}vel em:
+  \url{http://www.sciencedirect.com/science/article/pii/S0306457314000296}.}
 
 \bibitem[Kuncheva 2008]{Kuncheva:PCADetect:20085}
 \abntrefinfo{Kuncheva}{KUNCHEVA}{2008}
@@ -492,6 +523,15 @@ ISBN 1-58113-391-X. Dispon{\'\i}vel em:
 {VAPNIK, V.~N. \emph{Statistical Learning Theory}. [S.l.]: Wiley-Interscience,
   1998.}
 
+\bibitem[Wang et al. 2015]{Wang:2015:EOV:2843092.2843464}
+\abntrefinfo{Wang et al.}{WANG et al.}{2015}
+{WANG, F. et al. Estimating online vacancies in real-time road traffic
+  monitoring with traffic sensor data stream.
+\emph{Ad Hoc Netw.}, Elsevier Science Publishers B. V., Amsterdam, The
+  Netherlands, The Netherlands, v.~35, n.~C, p. 3--13, dez. 2015.
+ISSN 1570-8705.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.adhoc.2015.07.003}.}
+
 \bibitem[Wang et al. 2003]{Wang:2003:MCD:956750.956778}
 \abntrefinfo{Wang et al.}{WANG et al.}{2003}
 {WANG, H. et al. Mining concept-drifting data streams using ensemble
@@ -500,6 +540,13 @@ ISBN 1-58113-391-X. Dispon{\'\i}vel em:
   2003.  (KDD '03), p. 226--235.
 ISBN 1-58113-737-0. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/956750.956778}.}
+
+\bibitem[Zhou et al. 2015]{ZHOU:2015}
+\abntrefinfo{Zhou et al.}{ZHOU et al.}{2015}
+{ZHOU, L. et al. Fpga based low-latency market data feed handler. In:  XU, W.
+  et al. (Ed.). \emph{Computer Engineering and Technology}. Berlin, Heidelberg:
+  Springer Berlin Heidelberg, 2015. p. 69--77.
+ISBN 978-3-662-45815-0.}
 
 \bibitem[Zliobaite 2010]{Zliobaite:2010}
 \abntrefinfo{Zliobaite}{ZLIOBAITE}{2010}

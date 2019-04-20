@@ -5,7 +5,7 @@
 \contentsline {chapter}{Cap\'{\i }tulo~2---Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{5}
 \contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{5}
 \contentsline {section}{\numberline {2.2}Fluxos Cont\IeC {\'\i }nuos de Dados e Aprendizado de M\IeC {\'a}quina}{5}
-\contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{6}
+\contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{7}
 \contentsline {subsection}{\numberline {2.3.1}Taxonomia}{9}
 \contentsline {subsection}{\numberline {2.3.2}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{10}
 \contentsline {subsection}{\numberline {2.3.3}Ferramentas}{12}

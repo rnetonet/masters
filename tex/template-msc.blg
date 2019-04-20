@@ -11,6 +11,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated field_info (elt_size=4) to 10244 items from 5000.
 Database file #1: abntex2-options.bib
 Database file #2: biblio.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -22,44 +23,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-You've used 70 entries,
+You've used 76 entries,
             6711 wiz_defined-function locations,
-            1754 strings with 26520 characters,
-and the built_in function-call counts, 100935 in all, are:
-= -- 10892
-> -- 2504
-< -- 1981
-+ -- 2844
-- -- 744
-* -- 6902
-:= -- 12415
-add.period$ -- 356
-call.type$ -- 70
-change.case$ -- 832
-chr.to.int$ -- 160
-cite$ -- 69
-duplicate$ -- 8656
-empty$ -- 4767
-format.name$ -- 3626
-if$ -- 21452
+            1802 strings with 28344 characters,
+and the built_in function-call counts, 109066 in all, are:
+= -- 11697
+> -- 2761
+< -- 2103
++ -- 3052
+- -- 819
+* -- 7491
+:= -- 13431
+add.period$ -- 389
+call.type$ -- 76
+change.case$ -- 915
+chr.to.int$ -- 175
+cite$ -- 75
+duplicate$ -- 9268
+empty$ -- 5190
+format.name$ -- 4003
+if$ -- 23239
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 1294
-newline$ -- 385
-num.names$ -- 351
-pop$ -- 1578
+missing$ -- 1411
+newline$ -- 419
+num.names$ -- 383
+pop$ -- 1724
 preamble$ -- 1
-purify$ -- 301
+purify$ -- 329
 quote$ -- 0
-skip$ -- 8741
+skip$ -- 9346
 stack$ -- 1
-substring$ -- 4446
-swap$ -- 3580
-text.length$ -- 139
+substring$ -- 4764
+swap$ -- 3848
+text.length$ -- 149
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 27
+type$ -- 29
 warning$ -- 0
-while$ -- 582
+while$ -- 632
 width$ -- 0
-write$ -- 1239
+write$ -- 1346
