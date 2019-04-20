@@ -280,7 +280,7 @@ MINAS \cite{Faria:2013:NDA:2480362.2480515},
 ECSMiner \cite{Masud:2011:CNC:1978259.1978529} e 
 GC3 \cite{Sethi2016b:GC3}.
 
-Todavia, segundo \cite{Aggarwal:2006:DSM:1196418, Gama:2014:SCD:2597757.2523813},
+Todavia, segundo \citeonline{Aggarwal:2006:DSM:1196418},
 as técnicas de detecção de mudanças de conceito propostas apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
 % 
 Os algoritmos dependentes de rótulo se tornam inviáveis, por causa do custo e do tempo necessário para obter os rótulos corretos.
@@ -325,30 +325,32 @@ Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} apresenta um conjunto 
 \xchapter{Revisão Bibliográfica}{} \label{revisao_bibliografica}
 \section{Considerações Iniciais}
 
-Este capítulo discute os principais conceitos utilizados neste trabalho de pesquisa.
-Em primeiro momento, a aplicação de técnicas de aprendizado de máquina a fluxos contínuos de dados será detalhada.
-Em seguida, abordaremos a ideia de mudança de conceito, seus tipos e características, taxonomia, principais algoritmos de detecção e ferramentas.
-Logo após, as redes de função de base radial serão apresentadas.
-Ao fim do capítulo, serão elencados os trabalhos relacionados encontrados na literatura.
+Este capítulo apresenta uma discussão geral sobre os principais conceitos utilizados neste projeto.
+%
+Inicialmente, serão abordadas as características dos fluxos contínuos de dados e a aplicação de técnicas de aprendizado de máquina nestes cenários.
+%
+Em seguida, será discutidada a concepção de mudança de conceito, seus tipos e características, taxonomia, principais algoritmos de detecção e ferramentas.
+%
+Posteriormente, as redes de função de base radial serão detalhadas.
+%
+Por fim, serão apresentados os trabalhos relacionados encontrados na literatura.
 
 \section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
 
-Nos últimos anos, o volume de dados produzido por sistemas computacionais tem crescido de forma significativa \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
-Parte relevante desses dados é produzida na forma de sequências contínuas, ordenadas, de alta frequência e potencialmente infinitas.
-Estas sequências são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em muitos domínios de aplicação \cite{Aggarwal:2006:DSM:1196418}.
+Nos últimos anos, o volume de dados produzidos por sistemas computacionais tem crescido de forma substancial \cite{bifet2009data}.
+%
+Parte relevante dessas informações é produzida na forma de sequências ininterruptas e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
+%
+Na literatura, sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em muitos domínios de aplicação \cite{Aggarwal:2006:DSM:1196418}.
 
-% As principais características desses fluxos, segundo \cite{Babcock:2002:MID:543613.543615}, são: 
-
-% \begin{itemize}
-%     \item Possuem tamanho ilimitado;
-%     \item Produzem dados de forma contínua e em alta frequência; e
-%     \item Não dispõem de controle sobre a ordem dos eventos.
-% \end{itemize}
-
-A área de Aprendizado de Máquina (AM) estuda algoritmos que melhoram o seu desempenho na realização de determinada tarefa conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
+A área de Aprendizado de Máquina (AM) estuda algoritmos que melhoram o seu desempenho conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
+%
 Nos últimos anos, há um crescente interesse de pesquisa na aplicação dessas técnicas em diferentes contextos.
+%
 Entretanto, segundo \cite{Gama:2010:KDD:1855075}, a área teve como foco, durante muitos anos, os problemas de aprendizado em lote.
+%
 Nestes cenários, os algoritmos consideram que a distribuição dos dados e o contexto do processo não sofrem alterações ao longo do tempo.
+%
 Ou seja, não há o surgimento de novos conceitos-alvo ou alteração dos existentes.
 
 Contudo, os principais domínios de aplicação com fluxos contínuos de dados são dinâmicos.
