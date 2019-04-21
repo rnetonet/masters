@@ -541,6 +541,15 @@ Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.adhoc.2015.07.003}.}
 ISBN 1-58113-737-0. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/956750.956778}.}
 
+\bibitem[Widmer e Kubat 1996]{Widmer:1996:LPC:226791.226798}
+\abntrefinfo{Widmer e Kubat}{WIDMER; KUBAT}{1996}
+{WIDMER, G.; KUBAT, M. Learning in the presence of concept drift and hidden
+  contexts.
+\emph{Mach. Learn.}, Kluwer Academic Publishers, Hingham, MA, USA, v.~23, n.~1,
+  p. 69--101, abr. 1996.
+ISSN 0885-6125.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1023/A:1018046501280}.}
+
 \bibitem[Zhou et al. 2015]{ZHOU:2015}
 \abntrefinfo{Zhou et al.}{ZHOU et al.}{2015}
 {ZHOU, L. et al. Fpga based low-latency market data feed handler. In:  XU, W.

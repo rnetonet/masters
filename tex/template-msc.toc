@@ -6,9 +6,9 @@
 \contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{5}
 \contentsline {section}{\numberline {2.2}Fluxos Cont\IeC {\'\i }nuos de Dados e Aprendizado de M\IeC {\'a}quina}{5}
 \contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{7}
-\contentsline {subsection}{\numberline {2.3.1}Taxonomia}{9}
+\contentsline {subsection}{\numberline {2.3.1}Terminologia}{9}
 \contentsline {subsection}{\numberline {2.3.2}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{10}
-\contentsline {subsection}{\numberline {2.3.3}Ferramentas}{12}
+\contentsline {subsection}{\numberline {2.3.3}Ferramentas}{11}
 \contentsline {subsection}{\numberline {2.3.4}MOA}{12}
 \contentsline {subsection}{\numberline {2.3.5}Tornado}{15}
 \contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{16}
