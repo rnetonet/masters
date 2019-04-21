@@ -374,32 +374,32 @@ OPTICS \cite{Ankerst:1999:OOP:304181.304187}.
 
 De acordo com \citeonline{Gama:2010:KDD:1855075}, a principal dificuldade ao aplicar técnicas não supervisionadas em cenários com fluxos contínuos é a manutenção da qualidade e consistência dos grupos formados conforme novos dados são observados.
 Portanto, é necessário que os algoritmos atuem de forma incremental, evoluindo os grupos formados ao longo do tempo \cite{Barbara:2002:RCD:507515.507519}.
-Sendo assim, foram desenvolvidos métodos não supervisionados especializados para fluxos contínuos de dados \cite{Aggarwal:2003:FCE:1315451.1315460}.
+Sendo assim, foram desenvolvidos métodos não supervisionados especializados para fluxos contínuos de dados.
 Os seguintes trabalhos são exemplos dessas especializações:
 CluStream \cite{Aggarwal:2003:FCE:1315451.1315460},
 StreamKM++ \cite{Ackermann:2012:SCA:2133803.2184450},
 DenStream \cite{Cao:Feng:Ester},
 D-Stream \cite{Chen:Tu} e ClusTree \cite{Kranen:2011:CIM:2134350.2134352}.
 
-Os algoritmos supervisionados realizam predições para novos exemplos utilizando um modelo de decisão criado a partir de uma base de treinamento \cite{Kotsiantis:2007:SML:1566770.1566773}.
+Os algoritmos supervisionados realizam predições para novos exemplos utilizando um modelo criado a partir de uma base de treinamento \cite{Kotsiantis:2007:SML:1566770.1566773}.
 Se a predição é categórica, entende-se como um problema de classificação.
 Se a predição resulta em um valor numérico, trata-se de uma tarefa de regressão.
-Os principais algoritmos supervisionados para cenários em lote são:
+Alguns dos principais algoritmos supervisionados para cenários em lote são:
 árvores de decisão \cite{Breiman:Classification_Regression_Trees},
 métodos baseados em regras, 
 redes neurais e máquinas de vetores suporte (SVM) \cite{Vapnik1998}.
 
 Segundo \citeonline{Gama:2010:LDS:1951990}, 
-não é possível aplicar as técnicas supervisionadas tradicionais em contextos com fluxos contínuos de dados, 
-pois estes métodos não contemplam as severas restrições de uso de memória e de tempo de execução.
+as técnicas supervisionadas tradicionais não podem ser aplicadas a contextos com fluxos contínuos de dados, 
+pois estes métodos não contemplam as severas restrições de uso de memória e de tempo de execução desses cenários.
 %
 Dessa forma, 
-novos algoritmos supervisionados foram propostos para esses cenários \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813}.
+novos algoritmos supervisionados foram propostos para esses contextos \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813}.
 
 As especializações mencionadas buscam atender às restrições de uso de memória e de tempo de execução dos contextos com fluxos contínuos de dados.
 Contudo, não consideram que na maioria desses cenários as informações são geradas por uma distribuição não estacionária e por processos que evoluem ao longo do tempo.
-Isto é, a distribuição dos dados ou o contexto do processo gerador podem sofrer variações, alterando os resultados esperados.
-Na literatura, essas alterações são denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia do algoritmo.
+Ou seja, a distribuição dos dados ou o contexto do processo gerador podem sofrer variações, alterando os resultados esperados.
+Na literatura, essas alterações são denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia da técnica aplicada.
 
 Neste projeto de mestrado, considera-se que os dados são obtidos a partir de fluxos contínuos de dados com ocorrência de mudanças de conceito.
 Na próxima seção, o fenômeno mudança de conceito será discutido com maior detalhamento.
@@ -413,8 +413,7 @@ Essas alterações são denominadas mudanças de conceito (\textit{concept drift
 Na literatura, é comum utilizar a Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} para descrever a tarefa de classificação.
 Esta descrição será utilizada como base para formalização do fenômeno de mudança de conceito: Sendo $X \in \mathbb{R}^p$ uma instância em um espaço $p$-dimensional de atributos e $X \in c_i$ onde $c_1$, $c_2$, \ldots, $c_k$ é o conjunto de classes, 
 o classificador ótimo para classificar $x \rightarrow c_i$ é determinado pelas probabilidades a priori das classes $P(c_i)$ e a função de densidade de probabilidade condicionada às classes $p(X|c_i), i = 1, \ldots, k$.
-
-Dessa forma, um conceito pode ser definido como um conjunto de probabilidades a priori e condicionais das classes, como mostra a Equação \ref{eq:conceito}:
+É possível definir um conceito como um conjunto de probabilidades a priori e condicionais das classes, como mostra a Equação \ref{eq:conceito}:
 
 \begin{equation} \label{eq:conceito}
     S = \{(P(c_1), P(X|c_1)), (P(c_2), P(X|c_2)), ..., (P(c_k), P(X|c_k))\}
@@ -432,7 +431,7 @@ Assim, é possível afirmar que há mudança de conceito entre os instantes $t_0
     {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
 \end{equation}
 
-onde, $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
+onde $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
 para $X$ e $c$ \cite{Gama:2014:SCD:2597757.2523813}. 
 Em outras palavras, um conjunto de dados possui resultados esperados legítimos em $t_0$, mas este mesmo conjunto passa a ter resultados esperados diferentes, também legítimos, em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
 
@@ -485,7 +484,7 @@ A mudança recorrente acontece quando um conceito anteriormente ativo reaparece 
 Contudo, não se trata de uma sazonalidade periódica, pois não é evidente o momento no qual o conceito voltará a ser ativo (Figura \ref{fig:concept_drift_patterns} (d)).
 
 Este trabalho de mestrado propõe um método baseado em redes de função de base radial para detecção de mudanças de conceito reais em fluxos contínuos de dados, independente do padrão de ocorrência.
-Na próxima subseção, será discutida a terminologia da área de mudança de conceito.
+Na próxima subseção, será apresentada a terminologia do fenômeno mudança de conceito.
 
 \subsection{Terminologia}
 
@@ -514,69 +513,69 @@ Recuperação de Informação           & Evolução Temporal                   
 Outra fonte comum de equívocos são os termos detecção de \textit{outliers}, detecção de novidade, detecção de \textit{change points} e detecção de mudança de conceito.
 Estes termos são muitas vezes utilizados de forma indistinta, mas, para o contexto deste trabalho, é importante distingui-los.
 
-As técnicas para detecção de \textit{outliers} têm como objetivo encontrar padrões de dados em desacordo com o comportamento esperado, geralmente classificados como anomalias ou ruídos \cite{Chandola:2009:ADS:1541880.1541882}.
+As técnicas para detecção de \textit{outliers} têm como objetivo identificar padrões de dados em desacordo com o comportamento esperado, geralmente classificados como anomalias ou ruídos \cite{Chandola:2009:ADS:1541880.1541882}.
 
 Os métodos para detecção de novidade identificam padrões ainda não observados, mas que se enquadram no comportamento esperado.
 Estes métodos se diferenciam das técnicas para detecção de \textit{outliers} pois os novos padrões são incorporados ao modelo \cite{Chandola:2009:ADS:1541880.1541882}.
 
 As estratégias para detecção de \textit{change points} identificam variações abruptas de valor, que podem representar transições entre estados, em séries temporais unidimensionais estacionárias \cite{Aminikhanghahi:2017:SMT:3086013.3086037}.
 
-Por fim, os métodos para detecção de mudanças de conceito monitoram a distribuição dos dados ou indicadores (por exemplo: taxa de erro) das técnicas de aprendizado aplicadas, a fim de identificar a ocorrência de mudanças de conceito, permitindo a atualização do modelo \cite{Gama:2014:SCD:2597757.2523813}.
+Por fim, os métodos para detecção de mudanças de conceito monitoram a distribuição dos dados ou indicadores (por exemplo: taxa de erro) das técnicas de aprendizado aplicadas, a fim de identificar a ocorrência de mudanças de conceito \cite{Gama:2014:SCD:2597757.2523813}.
 
-Neste trabalho, uma nova abordagem para detecção de mudanças de conceito baseada em redes de função de base radial é proposta.
-Na próxima subseção, as técnicas para detecção de mudança de conceito serão discutidas com maior profundidade.
+Na próxima subseção, os algoritmos para detecção de mudança de conceito serão descritos com maior precisão.
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
 
 Os algoritmos para detecção de mudança de conceito caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
 
-Essas técnicas podem ser divididas em duas categorias principais, conforme a dependência ou não da rotulação dos dados:
+Esses algoritmos se dividem em duas categorias, conforme a dependência ou não da rotulação dos dados \cite{Zliobaite:2010}:
+
 \begin{description}
     \item[Algoritmos Explícitos/Supervisionados] Dependem da rotulação dos dados por um especialista.
     Estes rótulos são utilizados no cálculo de medidas de performance como taxa de erro e acurácia, que são monitoradas ao longo do tempo.
     Mudanças de conceito são sinalizadas quando essas medidas atingem um limite previamente definido.
 
     \item[Algoritmos Implícitos/Não Supervisionados] Independem da rotulação por especialistas, 
-    baseando-se em características dos próprios dados ou indicadores das técnicas de aprendizagem aplicadas, para sinalizar desvios.
-    São mais propensos a alarmes falsos, mas a independência de rótulos os torna interessantes para contextos onde a obtenção desses é dispendiosa, demorada ou inviável.
+    baseando-se em características dos próprios dados ou indicadores das técnicas de aprendizado aplicadas.
+    São mais propensos a alarmes falsos, mas a independência de rótulos torna-os interessantes para contextos onde a obtenção desses é dispendiosa, demorada ou inviável.
 \end{description}
 
-Em sua pesquisa \cite{Gama:2014:SCD:2597757.2523813} categorizou os algoritmos supervisionados em três grupos principais:
+Segundo \citeonline{Gama:2014:SCD:2597757.2523813}, os algoritmos supervisionados podem ser segmentados em três subcategorias:
 
 \begin{description}
-    \item[Métodos Baseados em Análise Sequencial] Avaliam, de forma sequenciada, os resultados das predições conforme tornam-se disponíveis (performance).
+    \item[Métodos Baseados em Análise Sequencial] Avaliam, de forma contínua, os resultados das predições conforme tornam-se disponíveis (performance).
     Indicam a ocorrência de mudança de conceito quando um limite pré-definido é atingido.
     Os algoritmos \textit{Cumulative Sum (CUSUM)}, \textit{PageHinkley (PH)} \cite{Page:CUSUM:PageHinkley:1954} e \textit{Geometric Moving Average (GMA)} \cite{Roberts:2000:CCT:338441.338464}
-    são representantes deste grupo.
+    são representantes desta subcategoria.
 
     \item[Abordagens baseadas em Estatística] Identificam mudanças de conceito através da análise de parâmetros estatísticos como média e desvio padrão para os resultados das predições.
     Os métodos \textit{Drift Detection Method (DDM)} \cite{GamaMCR04}, 
     \textit{Early Drift Detection Method (EDDM)} \cite{EDDM}, 
     \textit{Exponentially Weighted Moving Average (EWMA)} \cite{Ross:2012:EWM:2076039.2076307} e 
-    \textit{Reactive Drift Detection Method (RDDM)} \cite{Barros:RDDM:2017} são exemplos deste grupo.
+    \textit{Reactive Drift Detection Method (RDDM)} \cite{Barros:RDDM:2017} são exemplos desta subcategoria.
 
-    \item[Métodos baseados em Janelas] Utilizam uma janela de tamanho fixo para sumarizar informações passadas e uma janela deslizante para sumarizar dados mais recentes.
+    \item[Métodos baseados em Janelas] Utilizam uma janela de tamanho fixo para sumarizar informações passadas e uma janela deslizante para sumarizar dados recentes.
     A mudança de conceito é detectada quando há uma diferença significativa entre as distribuições das janelas.
-    Esta diferença é detectada a partir de testes estatísticos ou desigualdades matemáticas, considerando como hipótese nula a igualdade entre as distribuições.
+    Esta diferença é detectada a partir de testes estatísticos ou desigualdades matemáticas, considerando como hipótese nula a igualdade das distribuições.
     Os algoritmos 
     \textit{Adaptive Windowing (ADWIN)} \cite{BifetG07}, 
     \textit{SeqDrift} \cite{PearsSK14:SeqDrift:2014}, 
     \textit{HDDMA} e \textit{HDDMW} \cite{BlancoCRBDM15:HDDMA:HDDMW:2015}
-    pertencem a este grupo.
+    pertencem a esta subcategoria.
 \end{description}
 
-Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVES20148144}:
+De forma similar, os algoritmos implícitos também foram divididos em três subcategorias \cite{GONCALVES20148144}:
 
 \begin{description}
     \item[Detecção de Novidade / Métodos de Agrupamento] 
-    Utilizam estratégias oriundas das técnicas de agrupamento e detecção de \textit{outliers} para identificar novos padrões \cite{Ryu:Kantardzic:2012}.
+    Utilizam estratégias oriundas das técnicas de agrupamento e detecção de \textit{outliers} para identificar novos padrões que sinalizem a ocorrência de mudança de conceito \cite{Ryu:Kantardzic:2012}.
     Os métodos 
     \textit{OLINDDA} \cite{Spinosa:2007:OCA:1244002.1244107},
     \textit{MINAS} \cite{Faria:2013:NDA:2480362.2480515},
     \textit{Woo} \cite{Ryu:Kantardzic:2012},
     \textit{DETECTNOD} \cite{Hashemi:Hayat:DETECTNOD:2010},
     \textit{ECSMiner} \cite{Masud:2011:CNC:1978259.1978529} e
-    \textit{GC3} \cite{Sethi2016b:GC3} fazem parte deste grupo.
+    \textit{GC3} \cite{Sethi2016b:GC3} fazem parte desta subcategoria.
     
     \item[Monitoramento de distribuição multivariada]
     Monitoram diretamente a distribuição dos dados através de subconjuntos.
@@ -586,26 +585,21 @@ Os algoritmos implícitos também foram divididos em três grupos \cite{GONCALVE
     \textit{CoC} \cite{Lee:Magoules:CoC:2012},
     \textit{HDDDM} \cite{Ditzler:Polikar:HDDDM:2011},
     \textit{PCA-detect} \cite{Kuncheva:PCADetect:20085}
-    são representantes deste grupo.
+    são representantes desta subcategoria.
 
     \item[Monitoramento dependente de modelo]
-    % As técnicas elencadas nos grupos anteriores monitoram desvios na distribuição dos dados para indicar mudanças de conceito.
-    % Essencialmente, esses métodos assumem que alterações na distribuição, $P(X)$, implicarão mudanças na performance do classificador, $p(c|X)$.
-    % Apesar de permitir a aplicação de qualquer tipo de classificador, essa presunção leva a uma maior quantidade de falsos positivos.
-    São aplicadas em conjunto com classificadores probabilísticos,
-    o que permite realizar a detecção de mudanças de conceito através do monitoramento das probabilidades a posteriori \cite{Zliobaite:2010}.
-    A utilização destas probabilidades diminui a incidência de falsos positivos e torna o processo computacionalmente eficiente, 
+    São algoritmos que atuam em conjunto com classificadores probabilísticos.
+    Realizam a detecção de mudanças de conceito através do monitoramento das probabilidades a posteriori \cite{Zliobaite:2010}.
+    Assim, conseguem reduzir a incidência de falsos positivos e tornam o processo computacionalmente eficiente, 
     pois apenas um único fluxo univariado de valores é observado.
     Os métodos 
     \textit{A-distance} \cite{Dredze:ADistance:2010585},
     \textit{CDBD} \cite{Lindstrom:CDBD:2013} e
-    \textit{Margin} \cite{Dries:Margin:2009} integram este grupo.
+    \textit{Margin} \cite{Dries:Margin:2009} integram esta subcategoria.
 \end{description}
 
-Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, os grupos e as respectivas técnicas mencionadas nesta seção.
+Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, as subcategorias e as respectivas técnicas abordadas nesta seção.
 
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
 \begin{table}[!ht]
     \centering
     \resizebox{\textwidth}{!}{%
@@ -621,12 +615,12 @@ Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, os grupos e as re
     \hline
     \end{tabular}%
     }
-    \caption{Sumário - Abordagens de detecção \cite{Sethi:2017:RDC:3096751.3096864}}
+    \caption{Sumário - Algoritmos para Detecçaõ de Mudanças de Conceito \cite{Sethi:2017:RDC:3096751.3096864}}
     \label{tbl:abordagens}
 \end{table}
 
-O algoritmo desenvolvido neste projeto de mestrado enquadra-se na categoria de algoritmos implícitos ou não supervisionados, mais especificamente no grupo \textit{Detecção de Novidades / Métodos de Agrupamento}.
-Na próxima seção, abordaremos as ferramentas utilizadas para implementação da técnica e sua validação.
+O algoritmo desenvolvido neste projeto de mestrado enquadra-se na categoria de algoritmos \textit{implícitos ou não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}.
+Na próxima seção, as ferramentas utilizadas para implementação e validação da técnica proposta serão discutidas.
 
 \subsection{Ferramentas}
 
