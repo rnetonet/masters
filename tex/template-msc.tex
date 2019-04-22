@@ -329,7 +329,7 @@ Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} apresenta um conjunto 
 
 Este capítulo apresenta uma discussão geral sobre os principais conceitos utilizados neste projeto.
 %
-Inicialmente, serão abordadas as características dos fluxos contínuos de dados e a aplicação de técnicas de aprendizado de máquina nestes cenários.
+Inicialmente, serão abordadas as características dos fluxos contínuos de dados e a sua relação com as técnicas de aprendizado de máquina.
 %
 Em seguida, será discutidada a ideia de mudança de conceito, seus tipos e características, terminologia, principais algoritmos de detecção e ferramentas.
 %
@@ -360,9 +360,9 @@ Esses algoritmos dividem-se em duas categorias principais:
 %
 não supervisionados (agrupamento ou \textit{clustering}) e supervisionados (classificação ou regressão).
 %
-Ambas as categorias foram especializadas para que pudessem ser aplicadas a cenários com fluxos contínuos de dados.
+Ambas as categorias precisaram ser adaptadas para cenários com fluxos contínuos de dados.
 %
-As características de cada categoria e as principais especializações serão discutidas a seguir.
+As principais características de cada categoria e as especializações propostas serão discutidas a seguir.
 
 As técnicas não supervisionadas realizam o agrupamento automático de dados segundo o seu grau de semelhança.
 Essas técnicas têm como objetivo a formação de grupos com alta similaridade intragrupo e baixa similaridade intergrupo \cite{Jain:1988:ACD:46712}.
@@ -399,7 +399,7 @@ novos algoritmos supervisionados foram propostos para esses contextos \cite{Domi
 As especializações mencionadas buscam atender às restrições de uso de memória e de tempo de execução dos contextos com fluxos contínuos de dados.
 Contudo, não consideram que na maioria desses cenários as informações são geradas por uma distribuição não estacionária e por processos que evoluem ao longo do tempo.
 Ou seja, a distribuição dos dados ou o contexto do processo gerador podem sofrer variações, alterando os resultados esperados.
-Na literatura, essas alterações são denominadas mudanças de conceito \cite{Gama:2010:KDD:1855075} e a sua ocorrência pode impactar a acurácia da técnica aplicada.
+Na literatura, essas alterações são denominadas mudanças de conceito e a sua ocorrência pode impactar a acurácia da técnica aplicada \cite{Gama:2010:KDD:1855075}.
 
 Neste projeto de mestrado, considera-se que os dados são obtidos a partir de fluxos contínuos de dados com ocorrência de mudanças de conceito.
 Na próxima seção, o fenômeno mudança de conceito será discutido com maior detalhamento.
@@ -540,7 +540,7 @@ Esses algoritmos se dividem em duas categorias, conforme a dependência ou não 
     São mais propensos a alarmes falsos, mas a independência de rótulos torna-os interessantes para contextos onde a obtenção desses é dispendiosa, demorada ou inviável.
 \end{description}
 
-Segundo \citeonline{Gama:2014:SCD:2597757.2523813}, os algoritmos supervisionados podem ser segmentados em três subcategorias:
+Segundo \citeonline{Gama:2014:SCD:2597757.2523813}, os algoritmos explícitos / supervisionados podem ser segmentados em três subcategorias:
 
 \begin{description}
     \item[Métodos Baseados em Análise Sequencial] Avaliam, de forma contínua, os resultados das predições conforme tornam-se disponíveis (performance).
@@ -564,7 +564,7 @@ Segundo \citeonline{Gama:2014:SCD:2597757.2523813}, os algoritmos supervisionado
     pertencem a esta subcategoria.
 \end{description}
 
-De forma similar, os algoritmos implícitos também foram divididos em três subcategorias \cite{GONCALVES20148144}:
+De forma similar, os algoritmos implícitos / não supervisionados também foram divididos em três subcategorias \cite{GONCALVES20148144}:
 
 \begin{description}
     \item[Detecção de Novidade / Métodos de Agrupamento] 
@@ -619,7 +619,7 @@ Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, as subcategorias 
     \label{tbl:abordagens}
 \end{table}
 
-O algoritmo desenvolvido neste projeto de mestrado enquadra-se na categoria de algoritmos \textit{implícitos ou não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}.
+O algoritmo desenvolvido neste projeto de mestrado enquadra-se na categoria de algoritmos \textit{implícitos / não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}.
 Na próxima seção, as ferramentas utilizadas para implementação e validação da técnica proposta serão discutidas.
 
 \subsection{Ferramentas}
