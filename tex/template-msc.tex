@@ -350,7 +350,7 @@ As características dos fluxos contínuos de dados implicam nas seguintes restri
 %
 \begin{enumerate}
     \item É impossível armazenar todos os dados do fluxo. Somente uma pequena parcela pode ser processada e armazenada, enquanto o restante é descartado;
-    \item A velocidade de chegada dos eventos no fluxo exige que cada elemento seja processado em tempo de execução;
+    \item A velocidade de chegada dos eventos no fluxo exige que os elementos sejam processados em tempo real;
     \item A distribuição dos dados pode mudar com o tempo. Assim, os dados do passado podem se tornar irrelevantes ou mesmo prejudiciais para a descrição dos conceitos atuais.
 \end{enumerate}
 
@@ -384,7 +384,7 @@ D-Stream \cite{Chen:Tu} e ClusTree \cite{Kranen:2011:CIM:2134350.2134352}.
 Os algoritmos supervisionados realizam predições para novos exemplos utilizando um modelo criado a partir de uma base de treinamento \cite{Kotsiantis:2007:SML:1566770.1566773}.
 Se a predição é categórica, entende-se como um problema de classificação.
 Se a predição resulta em um valor numérico, trata-se de uma tarefa de regressão.
-Alguns dos principais algoritmos supervisionados para cenários em lote são:
+Exemplos de algoritmos supervisionados para cenários em lote, incluem:
 árvores de decisão \cite{Breiman:Classification_Regression_Trees},
 métodos baseados em regras, 
 redes neurais e máquinas de vetores suporte (SVM) \cite{Vapnik1998}.
@@ -412,8 +412,9 @@ Essas alterações são denominadas mudanças de conceito (\textit{concept drift
 
 Na literatura, é comum utilizar a Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} para descrever a tarefa de classificação.
 Esta descrição será utilizada como base para formalização do fenômeno de mudança de conceito: Sendo $X \in \mathbb{R}^p$ uma instância em um espaço $p$-dimensional de atributos e $X \in c_i$ onde $c_1$, $c_2$, \ldots, $c_k$ é o conjunto de classes, 
-o classificador ótimo para classificar $x \rightarrow c_i$ é determinado pelas probabilidades a priori das classes $P(c_i)$ e a função de densidade de probabilidade condicionada às classes $p(X|c_i), i = 1, \ldots, k$.
-É possível definir um conceito como um conjunto de probabilidades a priori e condicionais das classes, como mostra a Equação \ref{eq:conceito}:
+o classificador ótimo para classificar $x \rightarrow c_i$ é determinado a partir das probabilidades a priori das classes $P(c_i)$ e pela função de densidade de probabilidade condicionada às classes $p(X|c_i), i = 1, \ldots, k$, 
+
+Por conseguinte, é possível definir um conceito como um conjunto de probabilidades a priori e condicionais das classes, como mostra a Equação \ref{eq:conceito}:
 
 \begin{equation} \label{eq:conceito}
     S = \{(P(c_1), P(X|c_1)), (P(c_2), P(X|c_2)), ..., (P(c_k), P(X|c_k))\}
@@ -434,14 +435,6 @@ Assim, é possível afirmar que há mudança de conceito entre os instantes $t_0
 onde $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
 para $X$ e $c$ \cite{Gama:2014:SCD:2597757.2523813}. 
 Em outras palavras, um conjunto de dados possui resultados esperados legítimos em $t_0$, mas este mesmo conjunto passa a ter resultados esperados diferentes, também legítimos, em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
-
-% Conforme \citeonline{Zliobaite:2010} e com base na formalização apresentada, é possível definir que mudanças de conceito ocorrem devido a:
-
-% \begin{enumerate}
-%     \item Alterações na probabilidade a priori das classes $P(c)$;
-%     \item Alterações na distribuição de uma ou mais classes $p(X|c)$;
-%     \item Alterações nas distribuições a posteriori das classes $p(c|X)$.
-% \end{enumerate}
 
 De acordo com \citeonline{Gama:2014:SCD:2597757.2523813}, as mudanças de conceito podem ser categorizadas como virtuais ou reais.
 As mudanças virtuais são causadas por alterações na probabilidade a priori das classes, $P(c)$, e não alteram os conceitos-alvo.
@@ -513,7 +506,7 @@ Recuperação de Informação           & Evolução Temporal                   
 Outra fonte comum de equívocos são os termos detecção de \textit{outliers}, detecção de novidade, detecção de \textit{change points} e detecção de mudança de conceito.
 Estes termos são muitas vezes utilizados de forma indistinta, mas, para o contexto deste trabalho, é importante distingui-los.
 
-As técnicas para detecção de \textit{outliers} têm como objetivo identificar padrões de dados em desacordo com o comportamento esperado, geralmente classificados como anomalias ou ruídos \cite{Chandola:2009:ADS:1541880.1541882}.
+As técnicas para detecção de \textit{outliers} têm como objetivo identificar padrões de dados em desacordo com o comportamento esperado. Estes padrões são geralmente classificados como anomalias ou ruídos \cite{Chandola:2009:ADS:1541880.1541882}.
 
 Os métodos para detecção de novidade identificam padrões ainda não observados, mas que se enquadram no comportamento esperado.
 Estes métodos se diferenciam das técnicas para detecção de \textit{outliers} pois os novos padrões são incorporados ao modelo \cite{Chandola:2009:ADS:1541880.1541882}.
@@ -528,7 +521,7 @@ Na próxima subseção, os algoritmos para detecção de mudança de conceito se
 
 Os algoritmos para detecção de mudança de conceito caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
 
-Esses algoritmos se dividem em duas categorias, conforme a dependência ou não da rotulação dos dados \cite{Zliobaite:2010}:
+Esses algoritmos se dividem em duas categorias, conforme a necessidade de rotulação dos dados \cite{Zliobaite:2010}:
 
 \begin{description}
     \item[Algoritmos Explícitos/Supervisionados] Dependem da rotulação dos dados por um especialista.
@@ -543,19 +536,19 @@ Esses algoritmos se dividem em duas categorias, conforme a dependência ou não 
 Segundo \citeonline{Gama:2014:SCD:2597757.2523813}, os algoritmos explícitos / supervisionados podem ser segmentados em três subcategorias:
 
 \begin{description}
-    \item[Métodos Baseados em Análise Sequencial] Avaliam, de forma contínua, os resultados das predições conforme tornam-se disponíveis (performance).
-    Indicam a ocorrência de mudança de conceito quando um limite pré-definido é atingido.
+    \item[Métodos Baseados em Análise Sequencial] Avaliam continuamente os indicadores de performance (por exemplo: taxa de erro) do classificador aplicado.
+    A mudança de conceito é detectada quando esses indicadores atingem um limite pré-definido.
     Os algoritmos \textit{Cumulative Sum (CUSUM)}, \textit{PageHinkley (PH)} \cite{Page:CUSUM:PageHinkley:1954} e \textit{Geometric Moving Average (GMA)} \cite{Roberts:2000:CCT:338441.338464}
     são representantes desta subcategoria.
 
-    \item[Abordagens baseadas em Estatística] Identificam mudanças de conceito através da análise de parâmetros estatísticos como média e desvio padrão para os resultados das predições.
+    \item[Abordagens baseadas em Estatística] Identificam mudanças de conceito através da análise de parâmetros estatísticos como média e desvio padrão associados aos resultados das predições.
     Os métodos \textit{Drift Detection Method (DDM)} \cite{GamaMCR04}, 
     \textit{Early Drift Detection Method (EDDM)} \cite{EDDM}, 
     \textit{Exponentially Weighted Moving Average (EWMA)} \cite{Ross:2012:EWM:2076039.2076307} e 
     \textit{Reactive Drift Detection Method (RDDM)} \cite{Barros:RDDM:2017} são exemplos desta subcategoria.
 
-    \item[Métodos baseados em Janelas] Utilizam uma janela de tamanho fixo para sumarizar informações passadas e uma janela deslizante para sumarizar dados recentes.
-    A mudança de conceito é detectada quando há uma diferença significativa entre as distribuições das janelas.
+    \item[Métodos baseados em Janelas] Utilizam uma janela de tamanho fixo para sumarizar informações passadas e uma janela deslizante para sumarizar os dados mais recentes.
+    Uma diferença significativa entre essas distribuições implica na ocorrência de mudança de conceito.
     Esta diferença é detectada a partir de testes estatísticos ou desigualdades matemáticas, considerando como hipótese nula a igualdade das distribuições.
     Os algoritmos 
     \textit{Adaptive Windowing (ADWIN)} \cite{BifetG07}, 
@@ -568,7 +561,8 @@ De forma similar, os algoritmos implícitos / não supervisionados também foram
 
 \begin{description}
     \item[Detecção de Novidade / Métodos de Agrupamento] 
-    Utilizam estratégias oriundas das técnicas de agrupamento e detecção de \textit{outliers} para identificar novos padrões que sinalizem a ocorrência de mudança de conceito \cite{Ryu:Kantardzic:2012}.
+    Utilizam técnicas derivadas dos métodos de agrupamento e de detecção de \textit{outliers} para identificar padrões ainda não observados.
+    A partir dessa identificação, são realizados cálculos de distância e/ou densidade para confirmar a ocorrência de mudança de conceito \cite{Ryu:Kantardzic:2012}.
     Os métodos 
     \textit{OLINDDA} \cite{Spinosa:2007:OCA:1244002.1244107},
     \textit{MINAS} \cite{Faria:2013:NDA:2480362.2480515},
@@ -578,9 +572,10 @@ De forma similar, os algoritmos implícitos / não supervisionados também foram
     \textit{GC3} \cite{Sethi2016b:GC3} fazem parte desta subcategoria.
     
     \item[Monitoramento de distribuição multivariada]
-    Monitoram diretamente a distribuição dos dados através de subconjuntos.
-    Um subconjunto de treinamento tem sua distribuição sumarizada e armazenada, para ser utilizada como referência.
-    A distribuição referência é comparada à distribuição do subconjunto atual e, havendo diferenças significativas, a mudança de conceito é sinalizada.
+    Monitoram diretamente a distribuição dos dados para cada atributo.
+    A distribuição de um conjunto de treinamento é sumarizada e utilizada como referência.
+    Esta referência é, então, comparada à distribuição dos dados do conjunto atual.
+    Diferenças significativas entre esses conjuntos indicam a ocorrência de mudança de conceito.
     Os algoritmos
     \textit{CoC} \cite{Lee:Magoules:CoC:2012},
     \textit{HDDDM} \cite{Ditzler:Polikar:HDDDM:2011},
@@ -588,10 +583,9 @@ De forma similar, os algoritmos implícitos / não supervisionados também foram
     são representantes desta subcategoria.
 
     \item[Monitoramento dependente de modelo]
-    São algoritmos que atuam em conjunto com classificadores probabilísticos.
-    Realizam a detecção de mudanças de conceito através do monitoramento das probabilidades a posteriori \cite{Zliobaite:2010}.
-    Assim, conseguem reduzir a incidência de falsos positivos e tornam o processo computacionalmente eficiente, 
-    pois apenas um único fluxo univariado de valores é observado.
+    Atuam em conjunto com classificadores probabilísticos.
+    Realizam a detecção de mudanças de conceito através do monitoramento das probabilidades a posteriori \cite{Zliobaite:2010} disponibilizadas por estas técnicas.
+    Assim, conseguem reduzir a incidência de falsos positivos e tornam o processo computacionalmente eficiente, pois apenas um único fluxo univariado de valores é observado.
     Os métodos 
     \textit{A-distance} \cite{Dredze:ADistance:2010585},
     \textit{CDBD} \cite{Lindstrom:CDBD:2013} e
@@ -619,33 +613,29 @@ Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, as subcategorias 
     \label{tbl:abordagens}
 \end{table}
 
-O algoritmo desenvolvido neste projeto de mestrado enquadra-se na categoria de algoritmos \textit{implícitos / não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}.
-Na próxima seção, as ferramentas utilizadas para implementação e validação da técnica proposta serão discutidas.
+O método de detecção proposto neste trabalho se enquadra na categoria de algoritmos \textit{implícitos / não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}.
+Na próxima seção, as ferramentas utilizadas para implementação e validação deste método serão apresentadas.
 
 \subsection{Ferramentas}
 
 Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
-Estes frameworks possibilitam a implementação e a análise - perante o estado da arte - de algoritmos para detecção de mudanças de conceito.
-Ambos permitem a avaliação entre técnicas e a utilização de diferentes fontes de dados.
+Estas ferramentas permitem a implementação e a validação de novas técnicas de detecção de mudanças de conceito.
+Além de possibilitarem a comparação com o estado da arte, pois dispõem de um vasto conjunto de algoritmos já implementados.
+Ambas as ferramentas foram utilizadas durante o desenvolvimento deste projeto de trabalho de mestrado.
 
 \subsection{MOA}
 
-O \textit{MOA – Massive Online Analysis}\footnote{https://moa.cms.waikato.ac.nz/} é, atualmente, o principal framework para mineração de dados em fluxos contínuos.
-O projeto é de código-aberto\footnote{https://github.com/Waikato/moa} e apresenta uma comunidade bastante ativa e crescente \cite{Bifet:2010:MMO:1756006.1859903}.
-A aplicação é composta por uma ampla coleção de algoritmos da área de aprendizado de máquina: classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
-Além das implementações, também estão disponíveis métodos para avaliação dessas técnicas.
-A aplicação é desenvolvida em Java, o que permite a sua execução nos principais sistemas operacionais, e dispõe de integração com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
+Atualmente, o \textit{MOA – Massive Online Analysis}\footnote{https://moa.cms.waikato.ac.nz/} é o principal framework para mineração de dados em fluxos contínuos \cite{Bifet:2010:MMO:1756006.1859903}.
+O projeto é de código-aberto\footnote{https://github.com/Waikato/moa} e apresenta uma comunidade bastante ativa e crescente.
+A aplicação é composta por uma ampla coleção de algoritmos da área de aprendizado de máquina, contemplando técnicas de classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
+Além das implementações, também estão disponíveis rotinas para avaliação dessas técnicas.
+A aplicação é desenvolvida em Java, o que permite a sua execução nos principais sistemas operacionais e a integração com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
 
-O MOA divide suas funcionalidades em tarefas (\textit{tasks}).
-As principais tarefas incluem:
-produção de fluxos de dados,
-treino de classificadores,
-aplicação de algoritmos de agrupamento,
-análise de algoritmos para detecção de \textit{outliers} e de \textit{concept drift}, dentre outras.
-As tarefas podem ser executadas a partir da interface gráfica (GUI) ou por linha de comando.
-A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
-Através da interface gráfica é possível executar múltiplas tarefas de forma concorrente, 
+O MOA divide as suas funcionalidades em tarefas (\textit{tasks}).
+Estas tarefas podem ser executadas a partir da interface gráfica (GUI) ou por linha de comando.
+A interface gráfica permite executar múltiplas tarefas de forma concorrente, 
 controlar suas execuções e visualizar os resultados parciais.
+A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
 
 \begin{figure}[H]
 \begin{center}
@@ -655,7 +645,7 @@ controlar suas execuções e visualizar os resultados parciais.
 \end{center}
 \end{figure}
 
-A aplicação é capaz de ler arquivos em formato \textit{ARFF}, populares por serem utilizados no projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
+A aplicação é capaz de ler arquivos em formato \textit{ARFF}, popularizados pelo projeto WEKA.
 A ferramenta também permite a produção de fluxos de dados dinamicamente, através de geradores.
 Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{Random Trees} \cite{Domingos:2000:MHD:347090.347107}
@@ -669,12 +659,13 @@ Alguns dos geradores de fluxo disponíveis no MOA são:
 
 Outra funcionalidade importante do framework é a possibilidade de adicionar mudanças de conceito a fluxos estacionários existentes.
 Isto é feito através de uma função sigmóide, que modela o evento de mudança de conceito como uma combinação balanceada de duas distribuições homogêneas, 
-que caracterizam os conceitos-alvo antes e depois da mudança \cite{bifet2009data}.
+que caracterizam os conceitos-alvo antes e depois da mudança.
 Além destes conceitos, o usuário também pode definir o momento da mudança e a sua duração \cite{Bifet:2010:MMO:1756006.1859903}.
 
 Os principais métodos para detecção de mudança de conceito propostos na literatura estão disponíveis no MOA.
-O framework também permite a utilização de classificadores do WEKA \cite{Hall:2009:WDM:1656274.1656278} combinados aos detectores.
-A janela para configuração de um detector é demonstrada na Figura \ref{fig:moa_detector}.
+Além disso, a arquitetura do framework é modular, permitindo que os usuários implementem novos detectores com pouco esforço.
+Por exemplo, para criar um novo detector, basta estender a classe abstrata \texttt{AbstractChangeDetector} e implementar o algoritmo desejado.
+A janela de configuração deste detector, similar a Figura \ref{fig:moa_detector}, será criada dinamicamente, a partir dos atributos definidos na classe.
 
 \begin{figure}[H]
 \begin{center}
@@ -683,10 +674,7 @@ A janela para configuração de um detector é demonstrada na Figura \ref{fig:mo
     \label{fig:moa_detector}
 \end{center}
 \end{figure}
-
-A arquitetura do framework é modular, o que permite aos usuários implementar novas tarefas com pouco esforço.
-Por exemplo, para criar um novo detector, basta estender a classe abstrata \texttt{moa.classifiers.core.driftdetection.AbstractChangeDetector} e implementar o algoritmo desejado.
-A janela de configuração para o detector (similar a \ref{fig:moa_detector}) é criada dinamicamente, a partir dos atributos da classe.
+    
 
 O MOA dispõe de diversas classes para avaliação de técnicas de aprendizado de máquina. 
 Para este trabalho, destacam-se as classes \texttt{DriftDetectionMethodClassifier} e \texttt{BasicConceptDriftPerformanceEvaluator}, 
@@ -698,9 +686,9 @@ Estes avaliadores e os seus indicadores serão detalhados juntamente com os resu
 
 \subsection{Tornado}
 
-O Tornado é um framework para avaliação de algoritmos de detecção de mudança de conceito \cite{Pesaranghader:Tornado}.
+O \textit{Tornado} é um framework para avaliação de algoritmos de detecção de mudança de conceito \cite{Pesaranghader:Tornado}.
 O projeto é desenvolvido na linguagem Python e seu código está disponível\footnote{https://github.com/alipsgh/tornado}.
-O framework diferencia-se do MOA por apresentar um cenário de avaliação específico: 
+O framework se diferencia do \textit{MOA} por apresentar um cenário de avaliação específico: 
 analisar a execução, em paralelo, de pares (classificador, detector de mudança de conceito), 
 para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
 
@@ -716,13 +704,14 @@ Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do f
 \textit{Stream Reader}, \textit{Classifiers}, \textit{Detectors}, \textit{Classifier-Detector Pairs} e \textit{CAR Calculator}.
 A entrada de dados é composta por um fluxo (\textit{Stream}), uma lista de pares (classificador, detector) e um vetor com pesos.
 
-O componente \textit{Stream Reader} lê instâncias e as encaminha para construção do modelo.
+O componente \textit{Stream Reader} recepciona as instâncias e as encaminha para construção do modelo.
 Os modelos são construídos de forma incremental. Por seguir a abordagem \textit{prequential}, cada instância é primeiramente utilizada para testes e depois como treinamento.
-Simultaneamente, os classificadores enviam suas estatísticas (taxas de erro ou resultados das predições) aos detectores, para que a mudança de conceito possa ser sinalizada.
-Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par (classificador e detector), considerando taxas de erro, atraso para detecção da mudança de conceito, falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
-O framework apresenta ao usuário o par com maior pontuação em cada instante de execução. 
-A avaliação do framework é necessária pois este par pode mudar ao longo do tempo, devido ao aprendizado incremental ou as mudanças de conceito.
-A Figura \ref{fig:tornado_out2} apresenta um resultado obtido através do framework.
+Simultaneamente, os classificadores enviam suas estatísticas aos detectores, para que a mudança de conceito possa ser sinalizada.
+Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par (classificador e detector), considerando taxa de erro, atraso para detecção da mudança de conceito, falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
+
+O framework apresenta ao usuário o par ótimo para cada instante da execução. 
+A abordagem de avaliação adotada pelo framework é relevante, pois este par pode mudar ao longo do tempo, devido ao aprendizado incremental ou às mudanças de conceito.
+A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado produzido pela ferramenta.
 
 \begin{figure}[H]
 \begin{center}
@@ -743,7 +732,6 @@ As Redes de Função de Base Radial (RBF \textit{networks}) são aproximadoras u
 Em sua forma básica, a arquitetura de uma rede do tipo RBF é composta por três camadas: 
 i) uma camada de entrada; ii) uma intermediária; e iii) uma de saída \cite{Rojas:1996:NNS:235222}. 
 A camada de entrada recepciona os dados, a camada intermediária (oculta) utiliza funções de base radial para organizar os dados de entrada em grupos, transformando-os em um conjunto de valores linearmente separáveis. Por fim, a camada de saída realiza uma combinação linear para classifcar os padrões recebidos a partir da camada intermediária \cite{Braga:RedesNeuraisTeoriaAplicacoes}. 
-
 A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 
 \begin{figure}[H]
@@ -754,15 +742,13 @@ A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 \end{center}
 \end{figure}
 
-Conforme a literatura, a função de base radial Gaussiana (Eq. \ref{eq:gaussiana}) é a mais utilizada na camada intermediária:
+A função de base radial Gaussiana é comumente utilizada na camada intermediária. Esta função está representada na Equação \ref{eq:gaussiana}:
 
 \begin{equation} \label{eq:gaussiana}
     \phi (v_{i})=\exp \left(-{\frac  {\|v_{i}-c_{i}\|^{2}}{2\sigma ^{2}}}\right)
 \end{equation}
 
-onde $c_i$ representa o centro e $\sigma$ é o parâmetro limitador do raio.
-
-Na equação \ref{eq:gaussiana}, $v = \lVert x - t_i \rVert$ é dado pela distância euclidiana, onde $x$ é o valor de entrada da rede, 
+Nesta equação, $c_i$ representa o centro, $\sigma$ é o parâmetro limitador do raio e $v = \lVert x - t_i \rVert$ é dado pela distância euclidiana, onde $x$ é o valor de entrada da rede, 
 enquanto $t_i$ e $\sigma$ correspondem respectivamente ao centro e a largura da função radial. 
 Dessa maneira, a resolução de um determinado problema por uma rede do tipo RBF consiste na resolução das funções \ref{eq:rbf1} e
 \ref{eq:rbf2}, obtendo o sistema \ref{eq:rbf3}.
@@ -802,14 +788,13 @@ de base radial aplicadas nas entradas $x$ e dos seus respectivos centros $t_i$,
 $w_{j_0}$ representa o bias, $\varphi (||{{x}}-{{t}}_{i}||)$ é o conjunto de $N$ funções de base radial,
 $||\ldots||$ é a norma euclidiana e $y$ são as saídas geradas pela rede.
 
-As camadas inicial e intermediária e suas propriedades de agrupamento são utilizadas como base para o algoritmo de detecção de mudança de conceito 
-proposto neste projeto de mestrado. 
+As propriedas de agrupamento das camadas inicial e intermediária são utilizadas como base para o algoritmo de detecção de mudança de conceito 
+proposto neste projeto de mestrado. Na próxima seção, os trabalhos relacionados encontrados na literatura são discutidos.
 
 \section{Trabalhos Relacionados}
 
 Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura visando identificar trabalhos 
-que também propõem a identificação de mudanças de conceito em fluxos contínuos de dados através da aplicação de redes de função de base radial
-ou que apliquem técnicas similares.
+que também propõem a identificação de mudanças de conceito em fluxos contínuos de dados através da aplicação de redes de função de base radial.
 
 Em \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification} redes de função de base radial, com funções gaussianas, são utilizadas para detecção de novidades.
 A técnica proposta atua sobre cenários estacionários, mais especificamente o problema de identificação de falas.
@@ -831,10 +816,12 @@ Além disso, etapas como a escolha dos centros e o cálculo do tamanho do raio s
 
 \section{Considerações Finais}
 
-Neste capítulo foram apresentados os principais conceitos utilizados neste projeto de mestrado.
-Discutiu-se a aplicação de técnicas de aprendizado de máquina à fluxos contínuos de dados,
-o fenômeno mudança de conceito, suas técnicas de detecção e ferramentas,
-redes de função de base radial e os principais trabalhos relacionados encontrados na literatura.
+Neste capítulo foram apresentados os principais conceitos utilizados neste projeto de trabalho de mestrado.
+Foram discutidos conceitos de fluxos contínuos de dados, 
+técnicas de aprendizado de máquina, 
+mudanças de conceito,
+técnicas de detecção de mudanças de conceito e redes de função de base radial.
+Por fim, foram apresentados os trabalhos relacionados encontrados na literatura.
 No próximo capítulo, o plano de pesquisa será detalhado.
 
 \xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}

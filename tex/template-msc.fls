@@ -419,10 +419,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/moa.png
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/moa.png
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/moa.png
-INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png
-INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png
-INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png
+INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png
+INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado.png
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado.png
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado.png
