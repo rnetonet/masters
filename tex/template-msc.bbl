@@ -157,6 +157,15 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1541880.1541882}.}
 ISSN 2150-8097.
 Dispon{\'\i}vel em: \url{https://doi.org/10.14778/1687553.1687576}.}
 
+\bibitem[Cover 1965]{cover1965browse}
+\abntrefinfo{Cover}{COVER}{1965}
+{COVER, T.~M. Geometrical and statistical properties of systems of linear
+  inequalities with applications in pattern recognition.
+\emph{Electronic Computers, IEEE Transactions on}, EC-14, n.~3, p. 326--334,
+  1965.
+Dispon{\'\i}vel em:
+  \url{http://hebb.mit.edu/courses/9.641/2002/readings/Cover65.pdf}.}
+
 \bibitem[Delattre e Imbert 2015]{delattre2015method}
 \abntrefinfo{Delattre e Imbert}{DELATTRE; IMBERT}{2015}
 {DELATTRE, M.; IMBERT, B. \emph{Method for management of data stream exchanges
