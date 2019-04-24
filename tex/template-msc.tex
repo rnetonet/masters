@@ -768,7 +768,7 @@ Assim, a classificação realizada por uma rede de função de base radial consi
     y_i=\sum _{{i=1}}^{N}w_{ij}\phi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||) + w_{j_0}
 \end{equation}
 
-A resolução dessas equações produz o sistema responsável por produzir o resultado final da rede (Equação \ref{eq:rbf3}):
+A resolução dessas equações dá origem ao sistema responsável por produzir o resultado final da rede (Equação \ref{eq:rbf3}):
 
 \begin{equation} \label{eq:rbf3}
 \begin{bmatrix}
@@ -798,8 +798,8 @@ $w_{j_0}$ representa o bias, $\varphi (||{{x}}-{{t}}_{i}||)$ é o conjunto de $N
 $||\ldots||$ é a norma euclidiana e $y$ são as saídas geradas pela rede.
 
 O algoritmo proposto neste trabalho utiliza as camadas inicial e intermediária das redes de função de base radial para compôr um novo método de detecção de mudanças de conceito.
-A camada intermediária cria, de forma implícita, agrupamentos no espaço oculto de alta dimensionalidade.
-Portanto, é possível utilizar a criação de novos centros e a mudança do centro ativo como indicadores de possíveis mudanças de conceito.
+Isto é possível, pois a camada intermediária cria, de forma implícita, agrupamentos no espaço oculto de alta dimensionalidade.
+Dessa forma, a criação de novos centros e ou a mudança do centro ativo podem sinalizar a ocorrência de mudanças de conceito.
 A técnica desenvolvida será discutida em detalhes no Capítulo \ref{plano_pesquisa}.
 
 Na próxima seção, os trabalhos relacionados encontrados na literatura são apresentados.
@@ -809,17 +809,17 @@ Na próxima seção, os trabalhos relacionados encontrados na literatura são ap
 Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura visando identificar trabalhos 
 que utilizam redes de função de base radial para identificação de mudanças de conceito ou para outras tarefas correlatas.
 
-\citeonline{Jianping:Venkateswarlu:RBF:SpeakerIdentification} utilizaram redes de função de base radial em um novo método para detecção de novidades.
-A técnica proposta atua sobre cenários estacionários e foi aplicada ao problema de identificação da fala.
-Seu principal diferencial é a utilização do algoritmo \textit{k-means} para definir os centros e as matrizes de covariância da rede.
-
 \citeonline{Roberts:Penny:Novelty:Confidence} propuseram um método para detecção de novidades baseado em um comitê de redes de função de base radial.
 Novos padrões são detectados a partir do monitoramento das taxas de erro e confiança desse comitê.
 A técnica proposta foi testada na classificação de pacientes com problemas de tremor muscular.
 
+\citeonline{Jianping:Venkateswarlu:RBF:SpeakerIdentification} utilizaram redes de função de base radial em um novo método para detecção de novidades.
+A técnica proposta atua sobre cenários estacionários e foi aplicada ao problema de identificação da fala.
+Seu principal diferencial é a utilização do algoritmo \textit{k-means} para definir os centros e as matrizes de covariância da rede.
+
 Por fim, \citeonline{Bazargani2018RadialBF} utilizaram redes RBF para detecção de anomalias em fluxos de dados.
 O método proposto modifica às funções de perda (\textit{loss}), transformando as redes de função de base radial em classificadores de classe única.
-Essa alteração permitiu a identificação de exemplos divergentes dos padrões conhecidos.
+Permitindo que as redes identifiquem exemplos divergentes dos padrões conhecidos.
 
 \section{Considerações Finais}
 
