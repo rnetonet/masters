@@ -807,25 +807,19 @@ Na próxima seção, os trabalhos relacionados encontrados na literatura são ap
 \section{Trabalhos Relacionados}
 
 Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura visando identificar trabalhos 
-que também propõem a identificação de mudanças de conceito em fluxos contínuos de dados através da aplicação de redes de função de base radial.
+que utilizam redes de função de base radial para identificação de mudanças de conceito ou para outras tarefas correlatas.
 
-Em \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification} redes de função de base radial, com funções gaussianas, são utilizadas para detecção de novidades.
-A técnica proposta atua sobre cenários estacionários, mais especificamente o problema de identificação de falas.
-Durante a preparação da rede, o algoritmo \textit{k-means} é utilizado para definir os centros e as matrizes de covariância.
+\citeonline{Jianping:Venkateswarlu:RBF:SpeakerIdentification} utilizaram redes de função de base radial em um novo método para detecção de novidades.
+A técnica proposta atua sobre cenários estacionários e foi aplicada ao problema de identificação da fala.
+Seu principal diferencial é a utilização do algoritmo \textit{k-means} para definir os centros e as matrizes de covariância da rede.
 
-Roberts e Penny \cite{Roberts:Penny:Novelty:Confidence} propõem  um método para detecção de novidade baseado no monitoramento das taxas de erro e confiança, 
-utilizando um comitê de redes de função de base radial. 
-Cada rede é inicializada com um vetor de pesos diferente.
-A taxa de erro final é calculada a partir da matriz de covariância de erro do cômite criado.
-Esta abordagem foi testada na classificação de pacientes com problemas de tremor muscular.
+\citeonline{Roberts:Penny:Novelty:Confidence} propuseram um método para detecção de novidades baseado em um comitê de redes de função de base radial.
+Novos padrões são detectados a partir do monitoramento das taxas de erro e confiança desse comitê.
+A técnica proposta foi testada na classificação de pacientes com problemas de tremor muscular.
 
-As redes de função de base radial também foram aplicadas para detecção de anomalias \cite{Bazargani2018RadialBF}.
-Neste trabalho, às funções de perda (\textit{loss}) das redes são modificadas, 
-tornando-as classificadores de uma única classe. 
-Estas modificações permitem às redes identificar exemplos divergentes dos padrões conhecidos.
-
-Este projeto de mestrado se diferencia dos trabalhos mencionados por utilizar apenas as camadas de entrada e intermediária das redes de função de base radial para detecção de mudanças de conceito.
-Além disso, etapas como a escolha dos centros e o cálculo do tamanho do raio são realizadas de forma dinâmica, tornando possível a sua aplicação em cenários com fluxos contínuos de dados.
+Por fim, \citeonline{Bazargani2018RadialBF} utilizaram redes RBF para detecção de anomalias em fluxos de dados.
+O método proposto modifica às funções de perda (\textit{loss}), transformando as redes de função de base radial em classificadores de classe única.
+Essa alteração permitiu a identificação de exemplos divergentes dos padrões conhecidos.
 
 \section{Considerações Finais}
 
