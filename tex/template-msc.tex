@@ -593,7 +593,7 @@ De forma similar, os algoritmos \textit{implícitos / não supervisionados} tamb
     \textit{Margin} \cite{Dries:Margin:2009} integram esta subcategoria.
 \end{description}
 
-Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, as subcategorias e as respectivas técnicas abordadas nesta seção.
+Por fim, a Tabela \ref{tbl:abordagens} resume as categorias, as subcategorias e as respectivas técnicas abordadas nesta seção.
 
 \begin{table}[!ht]
     \centering
@@ -610,7 +610,7 @@ Por fim, a Tabela \ref{tbl:abordagens} sumariza as categorias, as subcategorias 
     \hline
     \end{tabular}%
     }
-    \caption{Sumário - Algoritmos para Detecçaõ de Mudanças de Conceito \cite{Sethi:2017:RDC:3096751.3096864}}
+    \caption{Resumo - Algoritmos de detecção \cite{Sethi:2017:RDC:3096751.3096864}}
     \label{tbl:abordagens}
 \end{table}
 
@@ -716,7 +716,7 @@ A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado produzido pela
 \begin{figure}[H]
 \begin{center}
     \includegraphics[scale=0.6]{imagens/tornado_out2.png}
-    \caption{Tornado - Resultado para múltiplos pares \cite{Pesaranghader:Tornado}}
+    \caption{Tornado - Exemplo de resultado \cite{Pesaranghader:Tornado}}
     \label{fig:tornado_out2}
 \end{center}
 \end{figure}
@@ -799,7 +799,7 @@ $||\ldots||$ é a norma euclidiana e $y$ são as saídas geradas pela rede.
 
 O algoritmo proposto neste trabalho utiliza as camadas inicial e intermediária das redes de função de base radial para compôr um novo método de detecção de mudanças de conceito.
 Isto é possível, pois a camada intermediária cria, de forma implícita, agrupamentos no espaço oculto de alta dimensionalidade.
-Dessa forma, a criação de novos centros e ou a mudança do centro ativo podem sinalizar a ocorrência de mudanças de conceito.
+Dessa forma, a criação de novos centros e a mudança do centro ativo podem sinalizar a ocorrência de mudanças de conceito.
 A técnica desenvolvida será discutida em detalhes no Capítulo \ref{plano_pesquisa}.
 
 Na próxima seção, os trabalhos relacionados encontrados na literatura são apresentados.
@@ -810,16 +810,16 @@ Além das referências básicas apresentadas neste capítulo, foi realizada uma 
 que utilizam redes de função de base radial para identificação de mudanças de conceito ou para outras tarefas correlatas.
 
 \citeonline{Roberts:Penny:Novelty:Confidence} propuseram um método para detecção de novidades baseado em um comitê de redes de função de base radial.
-Novos padrões são detectados a partir do monitoramento das taxas de erro e confiança desse comitê.
-A técnica proposta foi testada na classificação de pacientes com problemas de tremor muscular.
+Neste método, novos padrões são detectados a partir do monitoramento das taxas de erro e confiança do comitê.
+A técnica foi utilizada para classificação de pacientes com problemas de tremor muscular.
 
-\citeonline{Jianping:Venkateswarlu:RBF:SpeakerIdentification} utilizaram redes de função de base radial em um novo método para detecção de novidades.
+\citeonline{Jianping:Venkateswarlu:RBF:SpeakerIdentification} também utilizaram as redes de função de base radial em tarefas de detecção de novidades.
 A técnica proposta atua sobre cenários estacionários e foi aplicada ao problema de identificação da fala.
 Seu principal diferencial é a utilização do algoritmo \textit{k-means} para definir os centros e as matrizes de covariância da rede.
 
 Por fim, \citeonline{Bazargani2018RadialBF} utilizaram redes RBF para detecção de anomalias em fluxos de dados.
-O método proposto modifica às funções de perda (\textit{loss}), transformando as redes de função de base radial em classificadores de classe única.
-Permitindo que as redes identifiquem exemplos divergentes dos padrões conhecidos.
+O método proposto modifica as funções de perda, transformando as redes de função de base radial em classificadores de classe única, 
+permitindo a identificação de exemplos divergentes dos padrões conhecidos.
 
 \section{Considerações Finais}
 
@@ -834,33 +834,39 @@ No próximo capítulo, o plano de pesquisa será detalhado.
 \xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
 \section{Considerações Iniciais}
 
-Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que redes de função de base radial sejam aplicadas na detecção de mudanças de conceito em fluxos contínuos de dados.
+Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que redes de função de base radial sejam aplicadas para detecção de mudanças de conceito em fluxos contínuos de dados.
 Espera-se que com a utilização de redes RBF, seja possível detectar mudanças de conceito reais em fluxos contínuos de dados em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
 
 \section{Descrição do Problema}
 
-A partir da Teoria Bayesiana de Decisão, apresentada na Seção \ref{sec:mudanca_de_conceito}, é possível afirmar que existe mudança de conceito entre os instantes $t_0$ e $t_1$ se:
+Nos últimos anos, a quantidade de dados produzidos por sistemas computacionais tem crescido de forma exponencial \cite{idc_report}.
+Parte significativa dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências potencialmente infinitas e de alta frequência \cite{Aggarwal:2006:DSM:1196418}.
 
-\begin{equation} \label{eq:mudanca_de_conceito}
-    {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
-\end{equation}
+Devido a esse crescimento, pesquisadores passaram a utilizar técnicas de aprendizado de máquina para extrair informações úteis de grandes volumes de dados.
+Essas técnicas precisaram ser adaptadas para contextos com fluxos contínuos de dados, pois estes cenários apresentam severas restrições de tempo de execução e de uso dos recursos computacionais.
 
-onde $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
-para $X$ e $c$ \cite{Gama:2014:SCD:2597757.2523813}. 
-Isto é, um conjunto de exemplos possui rótulos de classe legítimos em $t_0$, mas passa a ter rótulos diferentes, também legítimos, em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
-Esta mudança pode ocorrer devido a alterações no contexto do processo gerador ou na distribuição dos dados, 
-e pode impactar a acurácia de modelos de decisão utilizados.
+Contudo, as adaptações propostas não tratam variações na distribuição dos dados ou no contexto do processo gerador do fluxo.
+Estas alterações são denominadas mudanças de conceito e podem afetar negativamente a acurácia do algoritmo \cite{Gama:2014:SCD:2597757.2523813}.
 
-Considerando que a camada intermediária (oculta) de uma rede de função de base radial realiza o agrupamento dos dados de entrada em clusters, 
-transformando padrões de entrada não linearmente separáveis em um conjunto de valores linearmente separáveis \cite{Jianping:Venkateswarlu:RBF:SpeakerIdentification}, 
-este projeto de mestrado tem como objetivo comprovar a hipótese que mudanças de conceito em fluxos contínuos de dados podem ser detectadas através de redes de função de base radial, de forma online e independente de exemplos prévios ou rótulos.
+Para mitigar este problema, técnicas de detecção de mudanças de conceito foram propostas. 
+Estes métodos identificam com precisão o momento da mudança, permitindo que o modelo de decisão seja atualizado somente quando necessário.
 
-Para exemplificar a execução desta proposta de mestrado, considere o conjunto $D = \{0.1, 0.13, 0.14, 0.4, 0.5, 0.6, 0.16, 0.14\}$, recorte do fluxo contínuo utilizado como entrada.
+Entretanto, as técnicas de detecção propostas apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
+Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que os torna inviáveis, por causa do custo e do tempo para obtenção de cada rótulo.
+Enquanto as técnicas não supervisionadas/implícitas têm dificuldade para antender às restrições de tempo de execução e de uso dos recursos computacionais.
 
-% Assumindo que sejam produtos de um fluxo contínuo de dados, estes valores são passados para a camada de entrada da rede de função de base radial.
-% Esta camada encaminha o valor para uma função de base radial Gaussiana (\ref{eq:gaussiana}). 
+Redes de função de base radial são modelos de redes neurais multicamadas alimentadas adiante, capazes de analisar padrões complexos e resolver problemas não-linearmente separáveis \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+A arquitetura básica dessas redes é composta por três camadas.
+A camada de entrada recepciona os dados.
+A camada intermediária, através de funções de base radial, realiza uma transformação não-linear dos dados para um espaço com alta dimensionalidade, a fim de tornar o problema linearmente separável \cite{cover1965browse}.
+Por fim, a camada de saída produz o resultado final da rede através de uma combinação linear dos resultados da camada intermediária \cite{Rojas:1996:NNS:235222}.
 
+A camada intermediária das redes RBF forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
+Neste projeto de trabalho de mestrado, esta propriedade é utilizada para propôr um novo método de detecção de mudanças de conceito em fluxos contínuos de dados.
+A criação de novos centros ou alteração do centro ativo sinalizam a possível ocorrência de mudanças de conceito.
+
+Para exemplificar de forma simplificada e intuitiva a execução desta proposta de mestrado, considere o conjunto $S = {}$ como um recorte dos dados recepcionados a partir de um fluxo contínuo de dados.
 
 
 \section{Atividades de Pesquisa}
