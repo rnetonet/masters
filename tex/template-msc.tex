@@ -39,6 +39,7 @@
 \usepackage{pifont}
 \usepackage{multirow}
 \usepackage{listings} 
+\usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
 \usepackage{colortbl}
 \usepackage{xfrac}
 \usepackage[FIGTOPCAP]{subfigure}
@@ -853,27 +854,144 @@ Para mitigar este problema, técnicas de detecção de mudanças de conceito for
 Estes métodos identificam com precisão o momento da mudança, permitindo que o modelo de decisão seja atualizado somente quando necessário.
 
 Entretanto, as técnicas de detecção propostas apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
-Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que os torna inviáveis, por causa do custo e do tempo para obtenção de cada rótulo.
-Enquanto as técnicas não supervisionadas/implícitas têm dificuldade para antender às restrições de tempo de execução e de uso dos recursos computacionais.
+Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que os torna inviáveis, por causa do custo e do tempo de rotulação.
+Enquanto as técnicas não supervisionadas/implícitas têm dificuldade para antender às restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
 
 Redes de função de base radial são modelos de redes neurais multicamadas alimentadas adiante, capazes de analisar padrões complexos e resolver problemas não-linearmente separáveis \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 A arquitetura básica dessas redes é composta por três camadas.
 A camada de entrada recepciona os dados.
-A camada intermediária, através de funções de base radial, realiza uma transformação não-linear dos dados para um espaço com alta dimensionalidade, a fim de tornar o problema linearmente separável \cite{cover1965browse}.
+A camada intermediária, através de funções de base radial, realiza uma transformação não-linear dos dados para um espaço com alta dimensionalidade, buscando tornar o problema linearmente separável \cite{cover1965browse}.
 Por fim, a camada de saída produz o resultado final da rede através de uma combinação linear dos resultados da camada intermediária \cite{Rojas:1996:NNS:235222}.
 
-A camada intermediária das redes RBF forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
-Neste projeto de trabalho de mestrado, esta propriedade é utilizada para propôr um novo método de detecção de mudanças de conceito em fluxos contínuos de dados.
-A criação de novos centros ou alteração do centro ativo sinalizam a possível ocorrência de mudanças de conceito.
+A camada intermediária das redes de função de base radial forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
+Neste trabalho de mestrado, esta propriedade é utilizada para propôr um novo método de detecção de mudanças de conceito em fluxos contínuos de dados, 
+baseado no monitoramento do centro ativo.
 
-Para exemplificar de forma simplificada e intuitiva a execução desta proposta de mestrado, considere o conjunto $S = {}$ como um recorte dos dados recepcionados a partir de um fluxo contínuo de dados.
+O algoritmo projetado utiliza apenas as camadas inicial e intermediária da arquitetura de uma rede RBF simplificada.
+Além disso, a técnica utiliza uma função gaussiana (Equação \ref{eq:gaussiana}) para ativação e requer a definição de dois parâmetros: 
+\texttt{sigma}, utilizado na função radial e responsável por limitar o raio do agrupamento, e \texttt{threshold}, que define o valor mínimo para ativação de um centro.
 
+Para exemplificar a execução do algoritmo proposto neste projeto, considere o conjunto $S = \{0.11, 0.12, 0.13, 0.34, 0.45, 0.47, 0.33, 0.25, 0.14, 0.10\}$ como fonte de dados.
+Para este exemplo, os parâmetros foram definidos de forma empírica. O parâmetro \texttt{sigma} foi definido com o valor $0.2$ e o parâmetro \texttt{threshold} foi fixado em $0.6$.
+A seguir, o funcionamento da técnica proposta ao tratar o conjunto $S$ é descrito. A Figura \ref{fig:funcionamento_algoritmo} apresenta esse comportamento graficamente.
+
+No instante $T1$, o valor $0.11$ é recepcionado. Como não existem centros estabelecidos, o valor é definido como centro e ativado.
+Em $T2$ e $T3$, respectivamente, são recebidos os valores $0.12$ e $0.13$ que são imediatamente vinculados ao centro atualmente ativo ($0.11$) através da função de base radial gaussiana.
+
+No instante $T4$, o valor $0.34$ não atinge o \textit{threshold} parametrizado para o centro ativo. Dessa forma, o valor é definido como um novo centro e ativado.
+A ocorrência de mudança de conceito é sinalizada.
+
+Os instantes $T5$, $T6$, $T7$ e $T8$ são vinculados ao último centro ativo ($0.34$). Contudo, em $T9$ o centro $0.11$ volta a ser ativo, pois apresentar maior valor de ativação. Logo, uma nova mudança de conceito é sinalizada.
+Finalmente, no instante $T10$ o valor é vinculado ao centro $0.11$.
+
+
+% % Please add the following required packages to your document preamble:
+% % \usepackage{graphicx}
+% \begin{table}[ht]
+%     \label{tbl:funcionamento_algoritmo}
+%     \centering
+%     \resizebox{\textwidth}{!}{%
+%     \begin{tabular}{|c|c|c|c|c|c|}
+%     \hline
+%     \textbf{Instante} & \textbf{Valor Recebido} & \textbf{Centros Estabelecidos} & \textbf{Centro Ativado} & \textbf{Valor de Ativação} & \textbf{Descrição}                                                                 \\ \hline
+%     T1                & $0.11$                  &                                & $0.11$                  & -                          & Por não haver nenhum centro estabelecido, $0.11$ é definido como centro e ativado. \\ \hline
+%     T2                & $0.12$                  &  $\{0.11\}$                    & $0.11$                  & $1.00$                     & Valor vinculado ao centro ativo.                                               \\ \hline
+%     T3                & $0.13$                  &  $\{0.11\}$                    & $0.11$                  & $1.00$                     & Valor vinculado ao centro ativo.                                               \\ \hline                      
+%     T4                & $0.34$                  &  $\{0.11\}$                    & $0.34$                  & -                          & Valor não foi ativado para nenhum centro ($< threshold$). Novo centro é criado e ativado. Mudança de conceito é identificada.                                               \\ \hline
+%     T5                & $0.45$                  &  $\{0.11, 0.34\}$              & $0.34$                  & $0.86$                     & Valor vinculado ao centro ativo.                                               \\ \hline                                            
+%     T6                & $0.47$                  &  $\{0.11, 0.34\}$              & $0.34$                  & $0.81$                     & Valor vinculado ao centro ativo.                                               \\ \hline
+%     T7                & $0.33$                  &  $\{0.11, 0.34\}$              & $0.34$                  & $1.00$                     & Valor vinculado ao centro ativo.                                                                                   \\ \hline
+%     T8                & $0.25$                  &  $\{0.11, 0.34\}$              & $0.34$                  & $0.90$                     & Valor vinculado ao centro ativo.                                                   \\ \hline
+%     T9                & $0.14$                  &  $\{0.11, 0.34\}$              & $0.11$                  & $0.99$                     & Valor é vinculado ao centro anterior, por ter maior valor de ativação.Este centro passa a ser o ativo. Mudança de conceito é identificada.                                                                                   \\ \hline
+%     T10               & $0.10$                  &  $\{0.11, 0.34\}$              & $0.34$                  & $1.00$                     & Valor vinculado ao centro ativo.                                                                                    \\ \hline
+%     \end{tabular}%
+%     }
+%     \caption{Funcionamento do algoritmo para o fluxo $S$}
+% \end{table}
+
+\begin{figure}[H]
+\begin{center}
+    \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{imagens/funcionamento_algoritmo.png}}
+    \caption{Exemplo de funcionamento do algoritmo}
+    \label{fig:funcionamento_algoritmo}
+\end{center}
+\end{figure}
+
+Por fim, o algoritmo proposto é descrito, de forma simplificada e reduzida, em pseudocódigo:
+
+\begin{algorithm}[h]
+    \SetAlgoLined
+    \Entrada{$valor, \sigma, threshold$} 
+    \Saida{Booleano indicando a ocorrência ou não de mudança de conceito}
+    \Inicio{
+     $mudanca \leftarrow falso$\\
+     \Para{cada \texttt{centro}}{
+         $ativacao \leftarrow gaussiana(valor, \sigma)$\\
+         \uIf{$ativacao > threshold$}{
+            marque \texttt{centro} como ativo\\
+            $threshold \leftarrow ativacao$\\
+         }
+      }
+
+      \uIf{
+
+      }
+    }
+    \Retorna{mudanca}
+    \label{alg:algoritmo} 
+    \caption{\textsc{RBFDriftDetector}}
+\end{algorithm}
 
 \section{Atividades de Pesquisa}
-\blindtext
+
+A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para a realização da pesquisa. Atividades concluídas são representadas pelo símbolo $X$ e as futuras por $\bullet$. 
+
+
+
+\begin{table}[htbp]
+\caption{Cronograma de atividades}     % mude aqui para seu título da tabela
+\begin{center}
+\resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
+\begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Atividades}} & \multicolumn{24}{c|}{Meses} \\ \cline{2-25}
+\multicolumn{1}{|c|}{} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline
+%\rowcolor[HTML]{EFEFEF}
+
+
+1-Disciplinas & X & X & X & X & X & X & X & X & X & X & X & X & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+2-Revisão da Literatura & X & X & X & X & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ &  ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+3-Experimentos  & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~  & ~  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+4-Análise dos Resultados & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & ~ & ~ & ~  & ~  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+5-Escrita da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+6-Estágio docente & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+7-Pesquisa Orientada & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
+8-Apresentação da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+9-Escrita de artigos& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$  & ~ & ~ & ~ & ~ & $\bullet$ & ~ & ~ & ~ & ~ & $\bullet$ & ~ \\ \hline
+10-Escrita da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
+11- Defesa da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ \\ \hline
+
+\hline
+\end{tabular}
+} % fecha resizebox
+\end{center}
+\label{cronograma} % para referencia no texto.
+\end{table}
+
+Para a conclusão da atividade 1, o Programa de Pós-Graduação em Ciência da Computação (PGCOMP) da Universidade Federal da Bahia (UFBA) exige que um mestrado obtenha um total de 18 créditos em disciplinas. Nos semestres 2016.1 e 2016.2, foram obtidos 15 créditos ao cursar as disciplinas: MATE64 -- Seminários Científicos, MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I, MATD74 --  Algoritmos e Grafos, MATD33 -- Tópicos em Inteligência Computacional III e  MATE70 -- Computação Ubíqua e Sensível ao Contexto. No semestre corrente, 2017.1, está sendo cursada a disciplina MATE32 -- Tópicos em Inteligência Computacional II, completando os 3 créditos restantes. 
+
+A segunda atividade planejada neste cronograma foi realizada em parceria com o aluno de bacharelado em Ciência da Computação Evaldo Machado Moreira Junior. O objetivo da sua monografia foi entender como as métricas são influenciadas pela presença de ruídos. Neste trabalho, as principais medidas/métricas de similaridade/distância entre séries temporais utilizadas por pesquisas na área foram encontradas com a execução de uma Revisão Sistemática de Literatura (\emph{Systematic Literature Review} -- SLR). 
+
+As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados. Essas atividades foram divididas em duas partes. A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho. Nesta parte, séries temporais sintéticas com ruído aditivo foram criadas e analisadas conforme apresentado no Capítulo \ref{experimentos} e Apêndice \ref{apendice1}. A segunda parte dos experimentos e suas análises serão realizadas após a qualificação.
+
+As atividades 5 e 8 estão relacionadas com o componente curricular MATD75 -- Exame de qualificação. A atividade 5 refere-se à escrita deste texto e as atividades 6 e 7 representam os componentes curriculares MATA32 -- Estágio Docente e MATA31 -- Pesquisa Orientada, respectivamente. Além disso, durante a execução destas tarefas foi realizada a prova de proficiência em inglês. A atividade 8 está relacionada à apresentação desta qualificação de mestrado.
+ 
+A escrita de artigos, listada no item 9 do cronograma, será realizada com base nos resultados gerados com os experimentos (Atividades $3$ e $4$) e nas contribuições obtidas com a apresentação da qualificação. Por fim, como requisito para a defesa de dissertação, fica pendente a atividade MATE93 -– Defesa de Proposta de Mestrado, a qual se refere aos itens 10 e 11 da Tabela \ref{cronograma}. 
 
 \section{Considerações Finais}
-\blindtext
+
+Neste capítulo, apresentou-se de maneira detalhada o projeto de pesquisa, o plano de atividades e o cronograma planejado para a conclusão do mestrado. 
+No próximo capítulo, serão discutidos os resultados preliminares realizados com o objetivo de analisar a viabilidade da proposta de mestrado.
 
 \xchapter{Experimentos Iniciais}{} \label{experimentos_iniciais}
 \section{Considerações Iniciais}

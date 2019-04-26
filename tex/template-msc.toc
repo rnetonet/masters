@@ -5,7 +5,7 @@
 \contentsline {chapter}{Cap\'{\i }tulo~2---Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{5}
 \contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{5}
 \contentsline {section}{\numberline {2.2}Fluxos Cont\IeC {\'\i }nuos de Dados e Aprendizado de M\IeC {\'a}quina}{5}
-\contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{7}
+\contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{6}
 \contentsline {subsection}{\numberline {2.3.1}Terminologia}{9}
 \contentsline {subsection}{\numberline {2.3.2}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{10}
 \contentsline {subsection}{\numberline {2.3.3}Ferramentas}{11}
@@ -17,11 +17,11 @@
 \contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{21}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{21}
 \contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{21}
-\contentsline {section}{\numberline {3.3}Atividades de Pesquisa}{22}
-\contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{22}
-\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{23}
-\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{23}
-\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{23}
-\contentsline {section}{\numberline {4.3}M\IeC {\'e}todo de Pettitt}{23}
-\contentsline {section}{\numberline {4.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{24}
-\contentsline {section}{\numberline {4.5}Considera\IeC {\c c}\IeC {\~o}es Finais}{24}
+\contentsline {section}{\numberline {3.3}Atividades de Pesquisa}{23}
+\contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{25}
+\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{27}
+\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{27}
+\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{27}
+\contentsline {section}{\numberline {4.3}M\IeC {\'e}todo de Pettitt}{27}
+\contentsline {section}{\numberline {4.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{28}
+\contentsline {section}{\numberline {4.5}Considera\IeC {\c c}\IeC {\~o}es Finais}{28}
