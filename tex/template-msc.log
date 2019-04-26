@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  26 APR 2019 00:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  26 APR 2019 11:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1504,460 +1504,65 @@ Package blindtext Warning: brazil not defined, using English instead.
 
 [5] [6
 
-]
-No file template-msc.toc.
+] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.toc)
 \tf@toc=\write5
 \openout5 = `template-msc.toc'.
 
-[7] [8
+ [7] [8
 
-]
-No file template-msc.lof.
+] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lof)
 \tf@lof=\write6
 \openout6 = `template-msc.lof'.
 
-[9] [10
+ [9] [10
 
-]
-No file template-msc.lot.
+] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lot)
 \tf@lot=\write7
 \openout7 = `template-msc.lot'.
 
-[11] [12
+ [11] [12
 
 ]
 
 Package xcolor Warning: Incompatible color definition on input line 219.
 
-
-LaTeX Warning: Citation `Cohen:BigData:2009:MSN:1687553.1687576' on page 1 undefined on input line 228.
-
-
-LaTeX Warning: Citation `idc_report' on page 1 undefined on input line 230.
-
-
-LaTeX Warning: Citation `Aggarwal:2006:DSM:1196418' on page 1 undefined on input line 234.
-
-
-LaTeX Warning: Citation `ZHOU:2015' on page 1 undefined on input line 237.
-
-
-LaTeX Warning: Citation `Wang:2015:EOV:2843092.2843464' on page 1 undefined on input line 238.
-
-
-LaTeX Warning: Citation `delattre2015method' on page 1 undefined on input line 239.
-
-
-LaTeX Warning: Citation `KRANJC2015187' on page 1 undefined on input line 240.
-
-
-LaTeX Warning: Citation `KENKRE:PAI:COLACO:2015' on page 1 undefined on input line 241.
-
-
-LaTeX Warning: Citation `Mitchell:1997:ML:541177' on page 1 undefined on input line 245.
-
-
-LaTeX Warning: Citation `bifet2009data' on page 1 undefined on input line 248.
-
-
-LaTeX Warning: Citation `Gama:2010:KDD:1855075' on page 1 undefined on input line 255.
-
-
-LaTeX Warning: Citation `Gama:2014:SCD:2597757.2523813' on page 1 undefined on input line 262.
-
-
-LaTeX Warning: Citation `GamaMCR04' on page 1 undefined on input line 267.
-
-
-LaTeX Warning: Citation `EDDM' on page 1 undefined on input line 267.
-
-
-LaTeX Warning: Citation `BifetG07' on page 1 undefined on input line 268.
-
-
-LaTeX Warning: Citation `Ross:2012:EWM:2076039.2076307' on page 1 undefined on input line 268.
-
-
-LaTeX Warning: Citation `Bach:PL:2008' on page 1 undefined on input line 269.
-
-
-LaTeX Warning: Citation `FCWM' on page 1 undefined on input line 269.
-
-
-LaTeX Warning: Citation `STEPD' on page 1 undefined on input line 269.
-
 [1
 
-]
-
-LaTeX Warning: Citation `Aggarwal:2006:DSM:1196418' on page 2 undefined on input line 273.
-
-
-LaTeX Warning: Citation `Spinosa:2007:OCA:1244002.1244107' on page 2 undefined on input line 276.
-
-
-LaTeX Warning: Citation `Ryu:Kantardzic:2012' on page 2 undefined on input line 278.
-
-
-LaTeX Warning: Citation `Spinosa:2007:OCA:1244002.1244107' on page 2 undefined on input line 281.
-
-
-LaTeX Warning: Citation `Faria:2013:NDA:2480362.2480515' on page 2 undefined on input line 282.
-
-
-LaTeX Warning: Citation `Masud:2011:CNC:1978259.1978529' on page 2 undefined on input line 283.
-
-
-LaTeX Warning: Citation `Sethi2016b:GC3' on page 2 undefined on input line 284.
-
-
-LaTeX Warning: Citation `Aggarwal:2006:DSM:1196418' on page 2 undefined on input line 286.
-
-
-LaTeX Warning: Reference `revisao_bibliografica' on page 2 undefined on input line 322.
-
-
-LaTeX Warning: Reference `plano_pesquisa' on page 2 undefined on input line 324.
-
-
-LaTeX Warning: Reference `experimentos_iniciais' on page 2 undefined on input line 326.
-
-[2] [3] [4
+] [2] [3] [4
 
 ]
 
 Package xcolor Warning: Incompatible color definition on input line 328.
 
-
-LaTeX Warning: Citation `Aggarwal:2006:DSM:1196418' on page 5 undefined on input line 343.
-
-
-LaTeX Warning: Citation `bifet2009data' on page 5 undefined on input line 350.
-
-
-LaTeX Warning: Citation `Mitchell:1997:ML:541177' on page 5 undefined on input line 358.
-
 [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Citation `Jain:1988:ACD:46712' on page 6 undefined on input line 369.
-
-
-LaTeX Warning: Citation `Lloyd:2006:LSQ:2263356.2269955' on page 6 undefined on input line 371.
-
-
-LaTeX Warning: Citation `Ester:1996:DAD:3001460.3001507' on page 6 undefined on input line 372.
-
-
-LaTeX Warning: Citation `kaufman:clustering1990' on page 6 undefined on input line 373.
-
-
-LaTeX Warning: Citation `Ankerst:1999:OOP:304181.304187' on page 6 undefined on input line 374.
-
-
-LaTeX Warning: Citation `Gama:2010:KDD:1855075' on page 6 undefined on input line 376.
-
-
-LaTeX Warning: Citation `Barbara:2002:RCD:507515.507519' on page 6 undefined on input line 377.
-
-
-LaTeX Warning: Citation `Aggarwal:2003:FCE:1315451.1315460' on page 6 undefined on input line 380.
-
-
-LaTeX Warning: Citation `Ackermann:2012:SCA:2133803.2184450' on page 6 undefined on input line 381.
-
-
-LaTeX Warning: Citation `Cao:Feng:Ester' on page 6 undefined on input line 382.
-
-
-LaTeX Warning: Citation `Chen:Tu' on page 6 undefined on input line 383.
-
-
-LaTeX Warning: Citation `Kranen:2011:CIM:2134350.2134352' on page 6 undefined on input line 383.
-
-
-LaTeX Warning: Citation `Kotsiantis:2007:SML:1566770.1566773' on page 6 undefined on input line 385.
-
-
-LaTeX Warning: Citation `Breiman:Classification_Regression_Trees' on page 6 undefined on input line 389.
-
-
-LaTeX Warning: Citation `Vapnik1998' on page 6 undefined on input line 391.
-
-
-LaTeX Warning: Citation `Gama:2010:LDS:1951990' on page 6 undefined on input line 393.
-
-
-LaTeX Warning: Citation `Domingos:2000:MHD:347090.347107' on page 6 undefined on input line 398.
-
-
-LaTeX Warning: Citation `Bifet:2013:EDS:2480362.2480516' on page 6 undefined on input line 398.
-
-
-LaTeX Warning: Citation `Wang:2003:MCD:956750.956778' on page 6 undefined on input line 398.
-
-
-LaTeX Warning: Citation `Aggarwal:2004:DCD:1014052.1014110' on page 6 undefined on input line 398.
-
-
-LaTeX Warning: Citation `Gama:2003:ADT:956750.956813' on page 6 undefined on input line 398.
-
-
-LaTeX Warning: Citation `Gama:2010:KDD:1855075' on page 6 undefined on input line 403.
-
-
-LaTeX Warning: Citation `Widmer:1996:LPC:226791.226798' on page 6 undefined on input line 412.
-
-
-LaTeX Warning: Citation `Duda:2000:PC:954544' on page 6 undefined on input line 414.
-
-[6]
-
-LaTeX Warning: Reference `eq:conceito' on page 7 undefined on input line 419.
-
-
-LaTeX Warning: Reference `eq:classificacao' on page 7 undefined on input line 425.
-
-
-LaTeX Warning: Citation `Gama:2014:SCD:2597757.2523813' on page 7 undefined on input line 438.
-
-
-LaTeX Warning: Citation `Kolter:2007:DWM:1314498.1390333' on page 7 undefined on input line 439.
-
-
-LaTeX Warning: Citation `Gama:2014:SCD:2597757.2523813' on page 7 undefined on input line 441.
-
-
-LaTeX Warning: Reference `fig:real_and_virtual_concept_drift' on page 7 undefined on input line 444.
-
+ [6]
 <imagens/concept_drift.png, id=104, 558.58687pt x 209.28188pt>
 File: imagens/concept_drift.png Graphic file (type png)
 <use imagens/concept_drift.png>
 Package pdftex.def Info: imagens/concept_drift.png  used on input line 448.
 (pdftex.def)             Requested size: 446.8701pt x 167.4257pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3375) has occurred while \output is active []
 
  [7]
-
-LaTeX Warning: Citation `Zliobaite:2010' on page 8 undefined on input line 454.
-
-
-LaTeX Warning: Reference `fig:concept_drift_patterns' on page 8 undefined on input line 455.
-
 <imagens/concept_drift_patterns.png, id=116, 565.36218pt x 207.02344pt>
 File: imagens/concept_drift_patterns.png Graphic file (type png)
 <use imagens/concept_drift_patterns.png>
 Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 460.
 (pdftex.def)             Requested size: 452.29036pt x 165.61896pt.
-
-LaTeX Warning: Reference `fig:concept_drift_patterns' on page 8 undefined on input line 466.
-
-
-LaTeX Warning: Reference `fig:concept_drift_patterns' on page 8 undefined on input line 471.
-
-
-LaTeX Warning: Reference `fig:concept_drift_patterns' on page 8 undefined on input line 476.
-
-
-LaTeX Warning: Reference `fig:concept_drift_patterns' on page 8 undefined on input line 479.
-
-[8 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift.png> </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift_patterns.png>]
-
-LaTeX Warning: Citation `Zliobaite:2010' on page 9 undefined on input line 487.
-
-
-LaTeX Warning: Reference `tbl:taxonomy' on page 9 undefined on input line 489.
-
-
-LaTeX Warning: Citation `Zliobaite:2010' on page 9 undefined on input line 504.
-
-
-LaTeX Warning: Citation `Chandola:2009:ADS:1541880.1541882' on page 9 undefined on input line 511.
-
-
-LaTeX Warning: Citation `Chandola:2009:ADS:1541880.1541882' on page 9 undefined on input line 514.
-
-
-LaTeX Warning: Citation `Aminikhanghahi:2017:SMT:3086013.3086037' on page 9 undefined on input line 516.
-
-
-LaTeX Warning: Citation `Gama:2014:SCD:2597757.2523813' on page 9 undefined on input line 518.
-
-[9]
-
-LaTeX Warning: Citation `Basseville:1993:DAC:151741' on page 10 undefined on input line 524.
-
-
-LaTeX Warning: Citation `Zliobaite:2010' on page 10 undefined on input line 526.
-
-
-LaTeX Warning: Citation `Gama:2014:SCD:2597757.2523813' on page 10 undefined on input line 538.
-
-
-LaTeX Warning: Citation `Page:CUSUM:PageHinkley:1954' on page 10 undefined on input line 543.
-
-
-LaTeX Warning: Citation `Roberts:2000:CCT:338441.338464' on page 10 undefined on input line 543.
-
-
-LaTeX Warning: Citation `GamaMCR04' on page 10 undefined on input line 547.
-
-
-LaTeX Warning: Citation `EDDM' on page 10 undefined on input line 548.
-
-
-LaTeX Warning: Citation `Ross:2012:EWM:2076039.2076307' on page 10 undefined on input line 549.
-
-
-LaTeX Warning: Citation `Barros:RDDM:2017' on page 10 undefined on input line 550.
-
-
-LaTeX Warning: Citation `BifetG07' on page 10 undefined on input line 556.
-
-
-LaTeX Warning: Citation `PearsSK14:SeqDrift:2014' on page 10 undefined on input line 557.
-
-
-LaTeX Warning: Citation `BlancoCRBDM15:HDDMA:HDDMW:2015' on page 10 undefined on input line 558.
-
-
-LaTeX Warning: Citation `GONCALVES20148144' on page 10 undefined on input line 562.
-
-[10]
-
-LaTeX Warning: Citation `Ryu:Kantardzic:2012' on page 11 undefined on input line 567.
-
-
-LaTeX Warning: Citation `Spinosa:2007:OCA:1244002.1244107' on page 11 undefined on input line 569.
-
-
-LaTeX Warning: Citation `Faria:2013:NDA:2480362.2480515' on page 11 undefined on input line 570.
-
-
-LaTeX Warning: Citation `Ryu:Kantardzic:2012' on page 11 undefined on input line 571.
-
-
-LaTeX Warning: Citation `Hashemi:Hayat:DETECTNOD:2010' on page 11 undefined on input line 572.
-
-
-LaTeX Warning: Citation `Masud:2011:CNC:1978259.1978529' on page 11 undefined on input line 573.
-
-
-LaTeX Warning: Citation `Sethi2016b:GC3' on page 11 undefined on input line 574.
-
-
+ [8 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift.png> </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift_patterns.png>] [9] [10]
 Overfull \hbox (11.71376pt too wide) in paragraph at lines 566--575
 []\OT1/cmr/m/n/12 Utilizam t^^Secnicas de-ri-va-das dos
  []
-
-
-LaTeX Warning: Citation `Lee:Magoules:CoC:2012' on page 11 undefined on input line 582.
-
-
-LaTeX Warning: Citation `Ditzler:Polikar:HDDDM:2011' on page 11 undefined on input line 583.
-
-
-LaTeX Warning: Citation `Kuncheva:PCADetect:20085' on page 11 undefined on input line 584.
 
 
 Overfull \hbox (6.56206pt too wide) in paragraph at lines 577--586
 []\OT1/cmr/m/n/12 Monitoram di-re-ta-mente a dis-tri-bui^^Xc~ao
  []
 
-
-LaTeX Warning: Citation `Zliobaite:2010' on page 11 undefined on input line 589.
-
-
-LaTeX Warning: Citation `Dredze:ADistance:2010585' on page 11 undefined on input line 592.
-
-
-LaTeX Warning: Citation `Lindstrom:CDBD:2013' on page 11 undefined on input line 593.
-
-
-LaTeX Warning: Citation `Dries:Margin:2009' on page 11 undefined on input line 594.
-
-
-LaTeX Warning: Reference `tbl:abordagens' on page 11 undefined on input line 597.
-
-
-LaTeX Warning: Citation `Page:CUSUM:PageHinkley:1954' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Roberts:2000:CCT:338441.338464' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `GamaMCR04' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `EDDM' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Ross:2012:EWM:2076039.2076307' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Barros:RDDM:2017' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `BifetG07' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `PearsSK14:SeqDrift:2014' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `BlancoCRBDM15:HDDMA:HDDMW:2015' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Spinosa:2007:OCA:1244002.1244107' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Faria:2013:NDA:2480362.2480515' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Ryu:Kantardzic:2012' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Hashemi:Hayat:DETECTNOD:2010' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Masud:2011:CNC:1978259.1978529' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Sethi2016b:GC3' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Lee:Magoules:CoC:2012' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Ditzler:Polikar:HDDDM:2011' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Kuncheva:PCADetect:20085' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Dredze:ADistance:2010585' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Lindstrom:CDBD:2013' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Dries:Margin:2009' on page 11 undefined on input line 613.
-
-
-LaTeX Warning: Citation `Sethi:2017:RDC:3096751.3096864' on page 11 undefined on input line 614.
-
-
-LaTeX Warning: Citation `Bifet:2010:MMO:1756006.1859903' on page 11 undefined on input line 630.
-
-
-LaTeX Warning: Citation `Hall:2009:WDM:1656274.1656278' on page 11 undefined on input line 634.
-
-
-Underfull \vbox (badness 2495) has occurred while \output is active []
-
- [11]
-
-LaTeX Warning: Reference `fig:moa' on page 12 undefined on input line 640.
-
+[11]
 <imagens/moa.png, id=133, 1016.29688pt x 763.35187pt>
 File: imagens/moa.png Graphic file (type png)
 <use imagens/moa.png>
@@ -1967,33 +1572,6 @@ Package pdftex.def Info: imagens/moa.png  used on input line 644.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12]
-
-LaTeX Warning: Citation `Domingos:2000:MHD:347090.347107' on page 13 undefined on input line 653.
-
-
-LaTeX Warning: Citation `Street:2001:SEA:502512.502568' on page 13 undefined on input line 654.
-
-
-LaTeX Warning: Citation `Schlimmer1986' on page 13 undefined on input line 655.
-
-
-LaTeX Warning: Citation `Wang:2003:MCD:956750.956778' on page 13 undefined on input line 656.
-
-
-LaTeX Warning: Citation `Gama:2003:ADT:956750.956813' on page 13 undefined on input line 658.
-
-
-LaTeX Warning: Citation `Gama:2003:ADT:956750.956813' on page 13 undefined on input line 659.
-
-
-LaTeX Warning: Citation `Jin:2003:EDT:956750.956821' on page 13 undefined on input line 660.
-
-
-LaTeX Warning: Citation `Bifet:2010:MMO:1756006.1859903' on page 13 undefined on input line 665.
-
-
-LaTeX Warning: Reference `fig:moa_detector' on page 13 undefined on input line 670.
-
 <imagens/detector.png, id=138, 470.50781pt x 332.74312pt>
 File: imagens/detector.png Graphic file (type png)
 <use imagens/detector.png>
@@ -2004,59 +1582,21 @@ Overfull \hbox (17.53877pt too wide) in paragraph at lines 674--675
  [] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/moa.png>]
-
-LaTeX Warning: Reference `experimentos_iniciais' on page 14 undefined on input line 686.
-
-
-LaTeX Warning: Citation `Pesaranghader:Tornado' on page 14 undefined on input line 690.
-
-[14 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png>]
+[13 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/moa.png>] [14 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png>]
 <imagens/tornado.png, id=148, 368.87813pt x 347.04657pt>
 File: imagens/tornado.png Graphic file (type png)
 <use imagens/tornado.png>
 Package pdftex.def Info: imagens/tornado.png  used on input line 698.
 (pdftex.def)             Requested size: 276.6579pt x 260.28429pt.
-
-
-LaTeX Warning: Citation `Pesaranghader:Tornado' on page 15 undefined on input line 699.
-
-
-LaTeX Warning: Reference `fig:tornado' on page 15 undefined on input line 704.
-
-
-LaTeX Warning: Citation `Pesaranghader:Tornado' on page 15 undefined on input line 711.
-
-
-LaTeX Warning: Reference `fig:tornado_out2' on page 15 undefined on input line 715.
-
 <imagens/tornado_out2.png, id=149, 753.0534pt x 331.9602pt>
 File: imagens/tornado_out2.png Graphic file (type png)
 <use imagens/tornado_out2.png>
 Package pdftex.def Info: imagens/tornado_out2.png  used on input line 719.
 (pdftex.def)             Requested size: 451.83553pt x 199.17764pt.
 
-LaTeX Warning: Citation `Pesaranghader:Tornado' on page 15 undefined on input line 720.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado.png (PNG copy)>]
-
-LaTeX Warning: Reference `experimentos_iniciais' on page 16 undefined on input line 726.
-
-
-LaTeX Warning: Citation `Braga:RedesNeuraisTeoriaAplicacoes' on page 16 undefined on input line 734.
-
-
-LaTeX Warning: Citation `Rojas:1996:NNS:235222' on page 16 undefined on input line 740.
-
-
-LaTeX Warning: Reference `fig:rbg_arq' on page 16 undefined on input line 741.
-
 <imagens/rbf_arq.png, id=153, 330.48468pt x 313.17pt>
 File: imagens/rbf_arq.png Graphic file (type png)
 <use imagens/rbf_arq.png>
@@ -2065,165 +1605,78 @@ Package pdftex.def Info: imagens/rbf_arq.png  used on input line 745.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado_out2.png>]
-
-LaTeX Warning: Citation `cover1965browse' on page 17 undefined on input line 751.
-
-
-LaTeX Warning: Reference `eq:gaussiana' on page 17 undefined on input line 755.
-
-
-LaTeX Warning: Reference `eq:rbf1' on page 17 undefined on input line 762.
-
-
-LaTeX Warning: Reference `eq:rbf2' on page 17 undefined on input line 762.
-
-[17 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/rbf_arq.png>]
-
-LaTeX Warning: Reference `eq:rbf3' on page 18 undefined on input line 772.
-
-
-LaTeX Warning: Reference `plano_pesquisa' on page 18 undefined on input line 804.
-
-
-LaTeX Warning: Citation `Roberts:Penny:Novelty:Confidence' on page 18 undefined on input line 813.
-
-
-LaTeX Warning: Citation `Jianping:Venkateswarlu:RBF:SpeakerIdentification' on page 18 undefined on input line 817.
-
-
-LaTeX Warning: Citation `Bazargani2018RadialBF' on page 18 undefined on input line 821.
-
-[18] [19] [20
+ [16 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado_out2.png>] [17 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/rbf_arq.png>] [18] [19] [20
 
 ]
 
 Package xcolor Warning: Incompatible color definition on input line 835.
 
-
-LaTeX Warning: Citation `idc_report' on page 21 undefined on input line 844.
-
-
-LaTeX Warning: Citation `Aggarwal:2006:DSM:1196418' on page 21 undefined on input line 845.
-
-
-LaTeX Warning: Citation `Gama:2014:SCD:2597757.2523813' on page 21 undefined on input line 851.
-
 [21]
-
-LaTeX Warning: Citation `Braga:RedesNeuraisTeoriaAplicacoes' on page 22 undefined on input line 860.
-
-
-LaTeX Warning: Citation `cover1965browse' on page 22 undefined on input line 863.
-
-
-LaTeX Warning: Citation `Rojas:1996:NNS:235222' on page 22 undefined on input line 864.
-
-
-LaTeX Warning: Reference `eq:gaussiana' on page 22 undefined on input line 871.
-
-
-LaTeX Warning: Reference `fig:funcionamento_algoritmo' on page 22 undefined on input line 876.
-
-<imagens/funcionamento_algoritmo.png, id=176, 1156.32pt x 578.8827pt>
+<imagens/funcionamento_algoritmo.png, id=176, 933.7284pt x 483.4863pt>
 File: imagens/funcionamento_algoritmo.png Graphic file (type png)
 <use imagens/funcionamento_algoritmo.png>
-Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 914.
-(pdftex.def)             Requested size: 452.96788pt x 226.76147pt.
+Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 896.
+(pdftex.def)             Requested size: 452.96788pt x 234.5422pt.
+ [22] [23 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png>]
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22]
-/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.tex:940: Argument of \algocf@uIfmain has an extra }.
-<inserted text> 
-                \par 
-l.940     \Retorna
-                  {mudanca}
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.tex:940: Paragraph ended before \algocf@uIfmain was complete.
-<to be read again> 
-                   \par 
-l.940     \Retorna
-                  {mudanca}
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
+LaTeX Warning: Reference `experimentos' on page 24 undefined on input line 963.
 
 
-LaTeX Warning: Reference `cronograma' on page 23 undefined on input line 947.
-
-[23 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png>]
-
-LaTeX Warning: Reference `experimentos' on page 24 undefined on input line 985.
+LaTeX Warning: Reference `apendice1' on page 24 undefined on input line 963.
 
 
-LaTeX Warning: Reference `apendice1' on page 24 undefined on input line 985.
+Underfull \vbox (badness 7777) has occurred while \output is active []
 
-
-LaTeX Warning: Reference `cronograma' on page 24 undefined on input line 989.
-
-[24] [25] [26
+ [24] [25] [26
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 996.
+Package xcolor Warning: Incompatible color definition on input line 974.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 999.
+(blindtext)                 on input line 977.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1002.
+(blindtext)                 on input line 980.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1005.
+(blindtext)                 on input line 983.
 
 [27]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1008.
+(blindtext)                 on input line 986.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1011.
+(blindtext)                 on input line 989.
 
-[28]
-No file template-msc.bbl.
-
-Package lastpage Warning: Rerun to get the references right on input line 1038.
+[28] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [29
 
 
+] [30] [31] [32] [33] [34]) 
 AED: lastpage setting LastPage
-(/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
+[35] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 31014 strings out of 492982
- 616350 string characters out of 6134895
- 841118 words of memory out of 5000000
- 34003 multiletter control sequences out of 15000+600000
+ 31560 strings out of 492982
+ 633135 string characters out of 6134895
+ 846582 words of memory out of 5000000
+ 34541 multiletter control sequences out of 15000+600000
  545748 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,18n,82p,10445b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (42 pages, 1260870 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (49 pages, 1263399 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
+ 293 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  154 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,582 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.2 }
+
+\bibitem[Ackermann et al. 2012]{Ackermann:2012:SCA:2133803.2184450}
+\abntrefinfo{Ackermann et al.}{ACKERMANN et al.}{2012}
+{ACKERMANN, M.~R. et al. Streamkm++: A clustering algorithm for data streams.
+\emph{J. Exp. Algorithmics}, ACM, New York, NY, USA, v.~17, p.
+  2.4:2.1--2.4:2.30, maio 2012.
+ISSN 1084-6654.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2133803.2184450}.}
+
+\bibitem[Aggarwal 2006]{Aggarwal:2006:DSM:1196418}
+\abntrefinfo{Aggarwal}{AGGARWAL}{2006}
+{AGGARWAL, C.~C. \emph{Data Streams: Models and Algorithms (Advances in
+  Database Systems)}. Berlin, Heidelberg: Springer-Verlag, 2006.
+ISBN 0387287590.}
+
+\bibitem[Aggarwal et al. 2003]{Aggarwal:2003:FCE:1315451.1315460}
+\abntrefinfo{Aggarwal et al.}{AGGARWAL et al.}{2003}
+{AGGARWAL, C.~C. et al. A framework for clustering evolving data streams. In:
+  \emph{Proceedings of the 29th International Conference on Very Large Data
+  Bases - Volume 29}. VLDB Endowment, 2003.  (VLDB '03), p. 81--92.
+ISBN 0-12-722442-4. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=1315451.1315460}.}
+
+\bibitem[Aggarwal et al. 2004]{Aggarwal:2004:DCD:1014052.1014110}
+\abntrefinfo{Aggarwal et al.}{AGGARWAL et al.}{2004}
+{AGGARWAL, C.~C. et al. On demand classification of data streams. In:
+  \emph{Proceedings of the Tenth ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining}. New York, NY, USA: ACM, 2004.  (KDD
+  '04), p. 503--508.
+ISBN 1-58113-888-1. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/1014052.1014110}.}
+
+\bibitem[Aminikhanghahi e Cook 2017]{Aminikhanghahi:2017:SMT:3086013.3086037}
+\abntrefinfo{Aminikhanghahi e Cook}{AMINIKHANGHAHI; COOK}{2017}
+{AMINIKHANGHAHI, S.; COOK, D.~J. A survey of methods for time series change
+  point detection.
+\emph{Knowl. Inf. Syst.}, Springer-Verlag New York, Inc., New York, NY, USA,
+  v.~51, n.~2, p. 339--367, maio 2017.
+ISSN 0219-1377.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s10115-016-0987-z}.}
+
+\bibitem[Ankerst et al. 1999]{Ankerst:1999:OOP:304181.304187}
+\abntrefinfo{Ankerst et al.}{ANKERST et al.}{1999}
+{ANKERST, M. et al. Optics: Ordering points to identify the clustering
+  structure.
+\emph{SIGMOD Rec.}, ACM, New York, NY, USA, v.~28, n.~2, p. 49--60, jun. 1999.
+ISSN 0163-5808.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/304181.304187}.}
+
+\bibitem[{Bach} e {Maloof} 2008]{Bach:PL:2008}
+\abntrefinfo{{Bach} e {Maloof}}{{Bach}; {Maloof}}{2008}
+{{Bach}, S.~H.; {Maloof}, M.~A. Paired learners for concept drift. In:
+  \emph{2008 Eighth IEEE International Conference on Data Mining}. [S.l.:
+  s.n.], 2008. p. 23--32.
+ISSN 1550-4786.}
+
+\bibitem[Baena-Garc{\'{\i}}a et al. 2006]{EDDM}
+\abntrefinfo{Baena-Garc{\'{\i}}a et al.}{BAENA-GARC{\'{I}}A et al.}{2006}
+{BAENA-GARC{\'{I}}A, M. et al. {Early drift detection method}. In:  \emph{In
+  Fourth International Workshop on Knowledge Discovery from Data Streams}.
+  [S.l.: s.n.], 2006.}
+
+\bibitem[Barbar\'{a} 2002]{Barbara:2002:RCD:507515.507519}
+\abntrefinfo{Barbar\'{a}}{BARBAR\'{a}}{2002}
+{BARBAR\'{a}, D. Requirements for clustering data streams.
+\emph{SIGKDD Explor. Newsl.}, ACM, New York, NY, USA, v.~3, n.~2, p. 23--27,
+  jan. 2002.
+ISSN 1931-0145.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/507515.507519}.}
+
+\bibitem[Barros et al. 2017]{Barros:RDDM:2017}
+\abntrefinfo{Barros et al.}{BARROS et al.}{2017}
+{BARROS, R. S.~M. de et al. {RDDM:} reactive drift detection method.
+\emph{Expert Syst. Appl.}, v.~90, p. 344--355, 2017.}
+
+\bibitem[Basseville e Nikiforov 1993]{Basseville:1993:DAC:151741}
+\abntrefinfo{Basseville e Nikiforov}{BASSEVILLE; NIKIFOROV}{1993}
+{BASSEVILLE, M.; NIKIFOROV, I.~V. \emph{Detection of Abrupt Changes: Theory and
+  Application}. Upper Saddle River, NJ, USA: Prentice-Hall, Inc., 1993.
+ISBN 0-13-126780-9.}
+
+\bibitem[Bazargani e Namee 2018]{Bazargani2018RadialBF}
+\abntrefinfo{Bazargani e Namee}{BAZARGANI; NAMEE}{2018}
+{BAZARGANI, M.~H.; NAMEE, B.~M. Radial basis function data descriptor ( rbfdd )
+  network : An anomaly detection approach. In:  . [S.l.: s.n.], 2018.}
+
+\bibitem[Bifet e Gavaldà 2007]{BifetG07}
+\abntrefinfo{Bifet e Gavaldà}{BIFET; GAVALDà}{2007}
+{BIFET, A.; GAVALDà, R. Learning from time-changing data with adaptive
+  windowing. In:  \emph{SDM}. SIAM, 2007. p. 443--448.
+ISBN 978-1-61197-277-1. Dispon{\'\i}vel em:
+  \url{http://dblp.uni-trier.de/db/conf/sdm/sdm2007.html\#BifetG07}.}
+
+\bibitem[Bifet et al. 2010]{Bifet:2010:MMO:1756006.1859903}
+\abntrefinfo{Bifet et al.}{BIFET et al.}{2010}
+{BIFET, A. et al. Moa: Massive online analysis.
+\emph{J. Mach. Learn. Res.}, JMLR.org, v.~11, p. 1601--1604, ago. 2010.
+ISSN 1532-4435.
+Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1756006.1859903}.}
+
+\bibitem[Bifet e Kirkby 2009]{bifet2009data}
+\abntrefinfo{Bifet e Kirkby}{BIFET; KIRKBY}{2009}
+{BIFET, A.; KIRKBY, R. Data stream mining a practical approach.
+Citeseer, 2009.}
+
+\bibitem[Bifet et al. 2013]{Bifet:2013:EDS:2480362.2480516}
+\abntrefinfo{Bifet et al.}{BIFET et al.}{2013}
+{BIFET, A. et al. Efficient data stream classification via probabilistic
+  adaptive windows. In:  \emph{Proceedings of the 28th Annual ACM Symposium on
+  Applied Computing}. New York, NY, USA: ACM, 2013.  (SAC '13), p. 801--806.
+ISBN 978-1-4503-1656-9. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/2480362.2480516}.}
+
+\bibitem[Blanco et al. 2015]{BlancoCRBDM15:HDDMA:HDDMW:2015}
+\abntrefinfo{Blanco et al.}{BLANCO et al.}{2015}
+{BLANCO, I. I.~F. et al. Online and non-parametric drift detection methods
+  based on hoeffding's bounds.
+\emph{{IEEE} Trans. Knowl. Data Eng.}, v.~27, n.~3, p. 810--823, 2015.}
+
+\bibitem[Braga, Carvalho e Ludermir 2007]{Braga:RedesNeuraisTeoriaAplicacoes}
+\abntrefinfo{Braga, Carvalho e Ludermir}{BRAGA; CARVALHO; LUDERMIR}{2007}
+{BRAGA, A.; CARVALHO, A.~C.; LUDERMIR, T.~B. \emph{{Redes Neurais Artificiais:
+  Teoria e aplica\c{c}\~{o}es}}. LTC Editora, 2007.
+ISBN 9788521615644. Dispon{\'\i}vel em:
+  \url{http://www.worldcat.org/isbn/9788521615644}.}
+
+\bibitem[Breiman et al. 1984]{Breiman:Classification_Regression_Trees}
+\abntrefinfo{Breiman et al.}{BREIMAN et al.}{1984}
+{BREIMAN, L. et al. \emph{Classification and Regression Trees}. Monterey, CA:
+  Wadsworth and Brooks, 1984.}
+
+\bibitem[Cao et al. 2006]{Cao:Feng:Ester}
+\abntrefinfo{Cao et al.}{CAO et al.}{2006}
+{CAO, F. et al. Density-based clustering over an evolving data stream with
+  noise. In:  GHOSH, J. et al. (Ed.). \emph{SDM}. SIAM, 2006. p. 328--339.
+ISBN 978-1-61197-276-4. Dispon{\'\i}vel em:
+  \url{http://dblp.uni-trier.de/db/conf/sdm/sdm2006.html\#CaoEQZ06}.}
+
+\bibitem[Chandola, Banerjee e Kumar 2009]{Chandola:2009:ADS:1541880.1541882}
+\abntrefinfo{Chandola, Banerjee e Kumar}{CHANDOLA; BANERJEE; KUMAR}{2009}
+{CHANDOLA, V.; BANERJEE, A.; KUMAR, V. Anomaly detection: A survey.
+\emph{ACM Comput. Surv.}, ACM, New York, NY, USA, v.~41, n.~3, p. 15:1--15:58,
+  jul. 2009.
+ISSN 0360-0300.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1541880.1541882}.}
+
+\bibitem[Cohen et al. 2009]{Cohen:BigData:2009:MSN:1687553.1687576}
+\abntrefinfo{Cohen et al.}{COHEN et al.}{2009}
+{COHEN, J. et al. Mad skills: New analysis practices for big data.
+\emph{Proc. VLDB Endow.}, VLDB Endowment, v.~2, n.~2, p. 1481--1492, ago. 2009.
+ISSN 2150-8097.
+Dispon{\'\i}vel em: \url{https://doi.org/10.14778/1687553.1687576}.}
+
+\bibitem[Cover 1965]{cover1965browse}
+\abntrefinfo{Cover}{COVER}{1965}
+{COVER, T.~M. Geometrical and statistical properties of systems of linear
+  inequalities with applications in pattern recognition.
+\emph{Electronic Computers, IEEE Transactions on}, EC-14, n.~3, p. 326--334,
+  1965.
+Dispon{\'\i}vel em:
+  \url{http://hebb.mit.edu/courses/9.641/2002/readings/Cover65.pdf}.}
+
+\bibitem[Delattre e Imbert 2015]{delattre2015method}
+\abntrefinfo{Delattre e Imbert}{DELATTRE; IMBERT}{2015}
+{DELATTRE, M.; IMBERT, B. \emph{Method for management of data stream exchanges
+  in an autonomic telecommunications network}. [S.l.]: Google Patents, 2015.
+US Patent 8,949,412.}
+
+\bibitem[{Ditzler} e {Polikar} 2011]{Ditzler:Polikar:HDDDM:2011}
+\abntrefinfo{{Ditzler} e {Polikar}}{{Ditzler}; {Polikar}}{2011}
+{{Ditzler}, G.; {Polikar}, R. Hellinger distance based drift detection for
+  nonstationary environments. In:  \emph{2011 IEEE Symposium on Computational
+  Intelligence in Dynamic and Uncertain Environments (CIDUE)}. [S.l.: s.n.],
+  2011. p. 41--48.}
+
+\bibitem[Domingos e Hulten 2000]{Domingos:2000:MHD:347090.347107}
+\abntrefinfo{Domingos e Hulten}{DOMINGOS; HULTEN}{2000}
+{DOMINGOS, P.; HULTEN, G. Mining high-speed data streams. In:
+  \emph{Proceedings of the Sixth ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining}. New York, NY, USA: ACM, 2000.  (KDD
+  '00), p. 71--80.
+ISBN 1-58113-233-6. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/347090.347107}.}
+
+\bibitem[Dredze, Oates e Piatko 2010]{Dredze:ADistance:2010585}
+\abntrefinfo{Dredze, Oates e Piatko}{DREDZE; OATES; PIATKO}{2010}
+{DREDZE, M.; OATES, T.; PIATKO, C. We're not in kansas anymore: Detecting
+  domain changes in streams. In:  . [s.n.], 2010. p. 585--595. Cited By 13.
+  Dispon{\'\i}vel em:
+  \url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-80053285630&partnerID=40&md5=2eea89f635e2cbc0920069028e9f7746}.}
+
+\bibitem[Dries e Rückert 2009]{Dries:Margin:2009}
+\abntrefinfo{Dries e Rückert}{DRIES; RüCKERT}{2009}
+{DRIES, A.; RüCKERT, U. Adaptive concept drift detection.
+\emph{Statistical Analysis and Data Mining: The ASA Data Science Journal},
+  v.~2, n. 5‐6, p. 311--327, 2009.
+Dispon{\'\i}vel em:
+  \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/sam.10054}.}
+
+\bibitem[Duda, Hart e Stork 2000]{Duda:2000:PC:954544}
+\abntrefinfo{Duda, Hart e Stork}{DUDA; HART; STORK}{2000}
+{DUDA, R.~O.; HART, P.~E.; STORK, D.~G. \emph{Pattern Classification (2Nd
+  Edition)}. New York, NY, USA: Wiley-Interscience, 2000.
+ISBN 0471056693.}
+
+\bibitem[Ester et al. 1996]{Ester:1996:DAD:3001460.3001507}
+\abntrefinfo{Ester et al.}{ESTER et al.}{1996}
+{ESTER, M. et al. A density-based algorithm for discovering clusters a
+  density-based algorithm for discovering clusters in large spatial databases
+  with noise. In:  \emph{Proceedings of the Second International Conference on
+  Knowledge Discovery and Data Mining}. AAAI Press, 1996.  (KDD'96), p.
+  226--231. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=3001460.3001507}.}
+
+\bibitem[Faria, Gama e Carvalho 2013]{Faria:2013:NDA:2480362.2480515}
+\abntrefinfo{Faria, Gama e Carvalho}{FARIA; GAMA; CARVALHO}{2013}
+{FARIA, E.~R.; GAMA, J.~a.; CARVALHO, A. C. P. L.~F. Novelty detection
+  algorithm for data streams multi-class problems. In:  \emph{Proceedings of
+  the 28th Annual ACM Symposium on Applied Computing}. New York, NY, USA: ACM,
+  2013.  (SAC '13), p. 795--800.
+ISBN 978-1-4503-1656-9. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/2480362.2480515}.}
+
+\bibitem[Gama 2010]{Gama:2010:KDD:1855075}
+\abntrefinfo{Gama}{GAMA}{2010}
+{GAMA, J. \emph{Knowledge Discovery from Data Streams}. 1st. ed. [S.l.]:
+  Chapman \& Hall/CRC, 2010.
+ISBN 1439826110, 9781439826119.}
+
+\bibitem[Gama e Gaber 2010]{Gama:2010:LDS:1951990}
+\abntrefinfo{Gama e Gaber}{GAMA; GABER}{2010}
+{GAMA, J.; GABER, M.~M. \emph{Learning from Data Streams: Processing Techniques
+  in Sensor Networks}. 1st. ed. [S.l.]: Springer Publishing Company,
+  Incorporated, 2010.
+ISBN 3642092853, 9783642092855.}
+
+\bibitem[Gama et al. 2004]{GamaMCR04}
+\abntrefinfo{Gama et al.}{GAMA et al.}{2004}
+{GAMA, J. et al. Learning with drift detection. In:  BAZZAN, A. L.~C.; LABIDI,
+  S. (Ed.). \emph{SBIA}. Springer, 2004.  (Lecture Notes in Computer Science,
+  v.~3171), p. 286--295.
+ISBN 3-540-23237-0. Dispon{\'\i}vel em:
+  \url{http://dblp.uni-trier.de/db/conf/sbia/sbia2004.html\#GamaMCR04}.}
+
+\bibitem[Gama, Rocha e Medas 2003]{Gama:2003:ADT:956750.956813}
+\abntrefinfo{Gama, Rocha e Medas}{GAMA; ROCHA; MEDAS}{2003}
+{GAMA, J.~a.; ROCHA, R.; MEDAS, P. Accurate decision trees for mining
+  high-speed data streams. In:  \emph{Proceedings of the Ninth ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining}. New York,
+  NY, USA: ACM, 2003.  (KDD '03), p. 523--528.
+ISBN 1-58113-737-0. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/956750.956813}.}
+
+\bibitem[Gama et al. 2014]{Gama:2014:SCD:2597757.2523813}
+\abntrefinfo{Gama et al.}{GAMA et al.}{2014}
+{GAMA, J.~a. et al. A survey on concept drift adaptation.
+\emph{ACM Comput. Surv.}, ACM, New York, NY, USA, v.~46, n.~4, p. 44:1--44:37,
+  mar. 2014.
+ISSN 0360-0300.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
+
+\bibitem[Gonçalves et al. 2014]{GONCALVES20148144}
+\abntrefinfo{Gonçalves et al.}{GONçALVES et al.}{2014}
+{GONçALVES, P.~M. et al. A comparative study on concept drift detectors.
+\emph{Expert Systems with Applications}, v.~41, n.~18, p. 8144 -- 8156, 2014.
+ISSN 0957-4174.
+Dispon{\'\i}vel em:
+  \url{http://www.sciencedirect.com/science/article/pii/S0957417414004175}.}
+
+\bibitem[Hall et al. 2009]{Hall:2009:WDM:1656274.1656278}
+\abntrefinfo{Hall et al.}{HALL et al.}{2009}
+{HALL, M. et al. The weka data mining software: An update.
+\emph{SIGKDD Explor. Newsl.}, ACM, New York, NY, USA, v.~11, n.~1, p. 10--18,
+  nov. 2009.
+ISSN 1931-0145.
+Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1656274.1656278}.}
+
+\bibitem[{Hayat} e {Hashemi} 2010]{Hashemi:Hayat:DETECTNOD:2010}
+\abntrefinfo{{Hayat} e {Hashemi}}{{Hayat}; {Hashemi}}{2010}
+{{Hayat}, M.~Z.; {Hashemi}, M.~R. A dct based approach for detecting novelty
+  and concept drift in data streams. In:  \emph{2010 International Conference
+  of Soft Computing and Pattern Recognition}. [S.l.: s.n.], 2010. p. 373--378.}
+
+\bibitem[Jain e Dubes 1988]{Jain:1988:ACD:46712}
+\abntrefinfo{Jain e Dubes}{JAIN; DUBES}{1988}
+{JAIN, A.~K.; DUBES, R.~C. \emph{Algorithms for Clustering Data}. Upper Saddle
+  River, NJ, USA: Prentice-Hall, Inc., 1988.
+ISBN 0-13-022278-X.}
+
+\bibitem[Jianping e Venkateswarlu
+  2002]{Jianping:Venkateswarlu:RBF:SpeakerIdentification}
+\abntrefinfo{Jianping e Venkateswarlu}{JIANPING; VENKATESWARLU}{2002}
+{JIANPING, D.; VENKATESWARLU, R. Speaker recognition using radial basis
+  function neural networks. In:  ABRAHAM, A.; K{\"O}PPEN, M. (Ed.).
+  \emph{Hybrid Information Systems}. Heidelberg: Physica-Verlag HD, 2002. p.
+  57--64.
+ISBN 978-3-7908-1782-9.}
+
+\bibitem[Jin e Agrawal 2003]{Jin:2003:EDT:956750.956821}
+\abntrefinfo{Jin e Agrawal}{JIN; AGRAWAL}{2003}
+{JIN, R.; AGRAWAL, G. Efficient decision tree construction on streaming data.
+  In:  \emph{Proceedings of the Ninth ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining}. New York, NY, USA: ACM, 2003.  (KDD
+  '03), p. 571--576.
+ISBN 1-58113-737-0. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/956750.956821}.}
+
+\bibitem[Kaufman e Rousseeuw 1990]{kaufman:clustering1990}
+\abntrefinfo{Kaufman e Rousseeuw}{KAUFMAN; ROUSSEEUW}{1990}
+{KAUFMAN, L.; ROUSSEEUW, P. \emph{Finding Groups in Data: an introduction to
+  cluster analysis}. [S.l.]: Wiley, 1990.}
+
+\bibitem[Kenkre, Pai e Colaco 2015]{KENKRE:PAI:COLACO:2015}
+\abntrefinfo{Kenkre, Pai e Colaco}{KENKRE; PAI; COLACO}{2015}
+{KENKRE, P.~S.; PAI, A.; COLACO, L. Real time intrusion detection and
+  prevention system. In:  SATAPATHY, S.~C. et al. (Ed.). \emph{Proceedings of
+  the 3rd International Conference on Frontiers of Intelligent Computing:
+  Theory and Applications (FICTA) 2014}. Cham: Springer International
+  Publishing, 2015. p. 405--411.
+ISBN 978-3-319-11933-5.}
+
+\bibitem[Kolter e Maloof 2007]{Kolter:2007:DWM:1314498.1390333}
+\abntrefinfo{Kolter e Maloof}{KOLTER; MALOOF}{2007}
+{KOLTER, J.~Z.; MALOOF, M.~A. Dynamic weighted majority: An ensemble method for
+  drifting concepts.
+\emph{J. Mach. Learn. Res.}, JMLR.org, v.~8, p. 2755--2790, dez. 2007.
+ISSN 1532-4435.
+Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1314498.1390333}.}
+
+\bibitem[Kotsiantis 2007]{Kotsiantis:2007:SML:1566770.1566773}
+\abntrefinfo{Kotsiantis}{KOTSIANTIS}{2007}
+{KOTSIANTIS, S.~B. Supervised machine learning: A review of classification
+  techniques. In:  \emph{Proceedings of the 2007 Conference on Emerging
+  Artificial Intelligence Applications in Computer Engineering: Real Word AI
+  Systems with Applications in eHealth, HCI, Information Retrieval and
+  Pervasive Technologies}. Amsterdam, The Netherlands, The Netherlands: IOS
+  Press, 2007. p. 3--24.
+ISBN 978-1-58603-780-2. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=1566770.1566773}.}
+
+\bibitem[Kranen et al. 2011]{Kranen:2011:CIM:2134350.2134352}
+\abntrefinfo{Kranen et al.}{KRANEN et al.}{2011}
+{KRANEN, P. et al. The clustree: Indexing micro-clusters for anytime stream
+  mining.
+\emph{Knowl. Inf. Syst.}, Springer-Verlag New York, Inc., New York, NY, USA,
+  v.~29, n.~2, p. 249--272, nov. 2011.
+ISSN 0219-1377.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1007/s10115-010-0342-8}.}
+
+\bibitem[Kranjc et al. 2015]{KRANJC2015187}
+\abntrefinfo{Kranjc et al.}{KRANJC et al.}{2015}
+{KRANJC, J. et al. Active learning for sentiment analysis on data streams:
+  Methodology and workflow implementation in the clowdflows platform.
+\emph{Information Processing \& Management}, v.~51, n.~2, p. 187 -- 203, 2015.
+ISSN 0306-4573.
+Dispon{\'\i}vel em:
+  \url{http://www.sciencedirect.com/science/article/pii/S0306457314000296}.}
+
+\bibitem[Kuncheva 2008]{Kuncheva:PCADetect:20085}
+\abntrefinfo{Kuncheva}{KUNCHEVA}{2008}
+{KUNCHEVA, L. Classifier ensembles for detecting concept change in streaming
+  data: Overview and perspectives.
+\emph{Proc. Eur. Conf. Artif. Intell.}, p. 5--10, 2008.
+Cited By 70.}
+
+\bibitem[{Lee} e {Magoulès} 2012]{Lee:Magoules:CoC:2012}
+\abntrefinfo{{Lee} e {Magoulès}}{{Lee}; {Magoulès}}{2012}
+{{Lee}, J.; {Magoulès}, F. Detection of concept drift for learning from stream
+  data. In:  \emph{2012 IEEE 14th International Conference on High Performance
+  Computing and Communication 2012 IEEE 9th International Conference on
+  Embedded Software and Systems}. [S.l.: s.n.], 2012. p. 241--245.}
+
+\bibitem[Lindstrom, Namee e Delany 2013]{Lindstrom:CDBD:2013}
+\abntrefinfo{Lindstrom, Namee e Delany}{LINDSTROM; NAMEE; DELANY}{2013}
+{LINDSTROM, P.; NAMEE, B. M.; DELANY, S.~J. Drift detection using uncertainty
+  distribution divergence.
+\emph{Evolving Systems}, v.~4, n.~1, p. 13--25, Mar 2013.
+ISSN 1868-6486.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007/s12530-012-9061-6}.}
+
+\bibitem[Ling, Ling-Jun e Li 2009]{Chen:Tu}
+\abntrefinfo{Ling, Ling-Jun e Li}{LING; LING-JUN; LI}{2009}
+{LING, C.; LING-JUN, Z.; LI, T. Stream data classification using improved
+  fisher discriminate analysis.
+\emph{Journal of Computers}, 01 2009.}
+
+\bibitem[Lloyd 2006]{Lloyd:2006:LSQ:2263356.2269955}
+\abntrefinfo{Lloyd}{LLOYD}{2006}
+{LLOYD, S. Least squares quantization in pcm.
+\emph{IEEE Trans. Inf. Theor.}, IEEE Press, Piscataway, NJ, USA, v.~28, n.~2,
+  p. 129--137, set. 2006.
+ISSN 0018-9448.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TIT.1982.1056489}.}
+
+\bibitem[Masud et al. 2011]{Masud:2011:CNC:1978259.1978529}
+\abntrefinfo{Masud et al.}{MASUD et al.}{2011}
+{MASUD, M. et al. Classification and novel class detection in concept-drifting
+  data streams under time constraints.
+\emph{IEEE Trans. on Knowl. and Data Eng.}, IEEE Educational Activities
+  Department, Piscataway, NJ, USA, v.~23, n.~6, p. 859--874, jun. 2011.
+ISSN 1041-4347.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1109/TKDE.2010.61}.}
+
+\bibitem[Mitchell 1997]{Mitchell:1997:ML:541177}
+\abntrefinfo{Mitchell}{MITCHELL}{1997}
+{MITCHELL, T.~M. \emph{Machine Learning}. 1. ed. New York, NY, USA:
+  McGraw-Hill, Inc., 1997.
+ISBN 0070428077, 9780070428072.}
+
+\bibitem[Nishida e Yamauchi 2007]{STEPD}
+\abntrefinfo{Nishida e Yamauchi}{NISHIDA; YAMAUCHI}{2007}
+{NISHIDA, K.; YAMAUCHI, K. Detecting concept drift using statistical testing.
+  In:  CORRUBLE, V.; TAKEDA, M.; SUZUKI, E. (Ed.). \emph{Discovery Science}.
+  Berlin, Heidelberg: Springer Berlin Heidelberg, 2007. p. 264--269.
+ISBN 978-3-540-75488-6.}
+
+\bibitem[Page 1954]{Page:CUSUM:PageHinkley:1954}
+\abntrefinfo{Page}{PAGE}{1954}
+{PAGE, E.~S. {Continuous Inspection Schemes}.
+\emph{Biometrika}, Biometrika Trust, v.~41, n.~1/2, p. 100--115, 1954.
+ISSN 00063444.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.2307/2333009}.}
+
+\bibitem[Pears, Sakthithasan e Koh 2014]{PearsSK14:SeqDrift:2014}
+\abntrefinfo{Pears, Sakthithasan e Koh}{PEARS; SAKTHITHASAN; KOH}{2014}
+{PEARS, R.; SAKTHITHASAN, S.; KOH, Y.~S. Detecting concept change in dynamic
+  data streams - {A} sequential approach based on reservoir sampling.
+\emph{Machine Learning}, v.~97, n.~3, p. 259--293, 2014.}
+
+\bibitem[Pesaranghader 2018]{Pesaranghader:Tornado}
+\abntrefinfo{Pesaranghader}{PESARANGHADER}{2018}
+{PESARANGHADER, A. \emph{A Reservoir of Adaptive Algorithms for Online Learning
+  from Evolving Data Streams}. Université d'Ottawa / University of Ottawa,
+  2018.
+Dispon{\'\i}vel em: \url{http://ruor.uottawa.ca/handle/10393/38190}.}
+
+\bibitem[{Roberts}, {Penny} e {Pillot} 1996]{Roberts:Penny:Novelty:Confidence}
+\abntrefinfo{{Roberts}, {Penny} e {Pillot}}{{Roberts}; {Penny}; {Pillot}}{1996}
+{{Roberts}, S.~J.; {Penny}, W.; {Pillot}, D. Novelty, confidence and errors in
+  connectionist systems. In:  \emph{IEE Colloquium on Intelligent Sensors
+  (Digest No: 1996/261)}. [S.l.: s.n.], 1996. p. 10/1--10/6.}
+
+\bibitem[Roberts 2000]{Roberts:2000:CCT:338441.338464}
+\abntrefinfo{Roberts}{ROBERTS}{2000}
+{ROBERTS, S.~W. Control chart tests based on geometric moving averages.
+\emph{Technometrics}, American Society for Quality Control and American
+  Statistical Association, Alexandria, Va, USA, v.~42, n.~1, p. 97--101, fev.
+  2000.
+ISSN 0040-1706.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.2307/1271439}.}
+
+\bibitem[Rojas 1996]{Rojas:1996:NNS:235222}
+\abntrefinfo{Rojas}{ROJAS}{1996}
+{ROJAS, R. \emph{Neural Networks: A Systematic Introduction}. Berlin,
+  Heidelberg: Springer-Verlag, 1996.
+ISBN 3-540-60505-3.}
+
+\bibitem[Ross et al. 2012]{Ross:2012:EWM:2076039.2076307}
+\abntrefinfo{Ross et al.}{ROSS et al.}{2012}
+{ROSS, G.~J. et al. Exponentially weighted moving average charts for detecting
+  concept drift.
+\emph{Pattern Recogn. Lett.}, Elsevier Science Inc., New York, NY, USA, v.~33,
+  n.~2, p. 191--198, jan. 2012.
+ISSN 0167-8655.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1016/j.patrec.2011.08.019}.}
+
+\bibitem[Ryu et al. 2012]{Ryu:Kantardzic:2012}
+\abntrefinfo{Ryu et al.}{RYU et al.}{2012}
+{RYU, J.~W. et al. An efficient method of building an ensemble of classifiers
+  in streaming data. In:  SRINIVASA, S.; BHATNAGAR, V. (Ed.). \emph{Big Data
+  Analytics}. Berlin, Heidelberg: Springer Berlin Heidelberg, 2012. p.
+  122--133.
+ISBN 978-3-642-35542-4.}
+
+\bibitem[Schlimmer e Granger 1986]{Schlimmer1986}
+\abntrefinfo{Schlimmer e Granger}{SCHLIMMER; GRANGER}{1986}
+{SCHLIMMER, J.~C.; GRANGER, R.~H. Incremental learning from noisy data.
+\emph{Machine Learning}, v.~1, n.~3, p. 317--354, Sep 1986.
+ISSN 1573-0565.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1007/BF00116895}.}
+
+\bibitem[Sebasti{\~a}o et al. 2010]{FCWM}
+\abntrefinfo{Sebasti{\~a}o et al.}{SEBASTI{\~A}O et al.}{2010}
+{SEBASTI{\~A}O, R. et al. Monitoring incremental histogram distribution for
+  change detection in data streams. In:  GABER, M.~M. et al. (Ed.).
+  \emph{Knowledge Discovery from Sensor Data}. Berlin, Heidelberg: Springer
+  Berlin Heidelberg, 2010. p. 25--42.
+ISBN 978-3-642-12519-5.}
+
+\bibitem[Sethi e Kantardzic 2017]{Sethi:2017:RDC:3096751.3096864}
+\abntrefinfo{Sethi e Kantardzic}{SETHI; KANTARDZIC}{2017}
+{SETHI, T.~S.; KANTARDZIC, M. On the reliable detection of concept drift from
+  streaming unlabeled data.
+\emph{Expert Syst. Appl.}, Pergamon Press, Inc., Tarrytown, NY, USA, v.~82,
+  n.~C, p. 77--99, out. 2017.
+ISSN 0957-4174.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.eswa.2017.04.008}.}
+
+\bibitem[Sethi, Kantardzic e Hu 2016]{Sethi2016b:GC3}
+\abntrefinfo{Sethi, Kantardzic e Hu}{SETHI; KANTARDZIC; HU}{2016}
+{SETHI, T.~S.; KANTARDZIC, M.; HU, H. A grid density based framework for
+  classifying streaming data in the presence of concept drift.
+\emph{Journal of Intelligent Information Systems}, v.~46, n.~1, p. 179--211,
+  Feb 2016.}
+
+\bibitem[Spinosa, Carvalho e Gama 2007]{Spinosa:2007:OCA:1244002.1244107}
+\abntrefinfo{Spinosa, Carvalho e Gama}{SPINOSA; CARVALHO; GAMA}{2007}
+{SPINOSA, E.~J.; CARVALHO, A.~P. de~Leon F.~de; GAMA, J.~a. Olindda: A
+  cluster-based approach for detecting novelty and concept drift in data
+  streams. In:  \emph{Proceedings of the 2007 ACM Symposium on Applied
+  Computing}. New York, NY, USA: ACM, 2007.  (SAC '07), p. 448--452.
+ISBN 1-59593-480-4. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/1244002.1244107}.}
+
+\bibitem[Street e Kim 2001]{Street:2001:SEA:502512.502568}
+\abntrefinfo{Street e Kim}{STREET; KIM}{2001}
+{STREET, W.~N.; KIM, Y. A streaming ensemble algorithm (sea) for large-scale
+  classification. In:  \emph{Proceedings of the Seventh ACM SIGKDD
+  International Conference on Knowledge Discovery and Data Mining}. New York,
+  NY, USA: ACM, 2001.  (KDD '01), p. 377--382.
+ISBN 1-58113-391-X. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/502512.502568}.}
+
+\bibitem[Vapnik 1998]{Vapnik1998}
+\abntrefinfo{Vapnik}{VAPNIK}{1998}
+{VAPNIK, V.~N. \emph{Statistical Learning Theory}. [S.l.]: Wiley-Interscience,
+  1998.}
+
+\bibitem[Wang et al. 2015]{Wang:2015:EOV:2843092.2843464}
+\abntrefinfo{Wang et al.}{WANG et al.}{2015}
+{WANG, F. et al. Estimating online vacancies in real-time road traffic
+  monitoring with traffic sensor data stream.
+\emph{Ad Hoc Netw.}, Elsevier Science Publishers B. V., Amsterdam, The
+  Netherlands, The Netherlands, v.~35, n.~C, p. 3--13, dez. 2015.
+ISSN 1570-8705.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1016/j.adhoc.2015.07.003}.}
+
+\bibitem[Wang et al. 2003]{Wang:2003:MCD:956750.956778}
+\abntrefinfo{Wang et al.}{WANG et al.}{2003}
+{WANG, H. et al. Mining concept-drifting data streams using ensemble
+  classifiers. In:  \emph{Proceedings of the Ninth ACM SIGKDD International
+  Conference on Knowledge Discovery and Data Mining}. New York, NY, USA: ACM,
+  2003.  (KDD '03), p. 226--235.
+ISBN 1-58113-737-0. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/956750.956778}.}
+
+\bibitem[Widmer e Kubat 1996]{Widmer:1996:LPC:226791.226798}
+\abntrefinfo{Widmer e Kubat}{WIDMER; KUBAT}{1996}
+{WIDMER, G.; KUBAT, M. Learning in the presence of concept drift and hidden
+  contexts.
+\emph{Mach. Learn.}, Kluwer Academic Publishers, Hingham, MA, USA, v.~23, n.~1,
+  p. 69--101, abr. 1996.
+ISSN 0885-6125.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1023/A:1018046501280}.}
+
+\bibitem[Zhou et al. 2015]{ZHOU:2015}
+\abntrefinfo{Zhou et al.}{ZHOU et al.}{2015}
+{ZHOU, L. et al. Fpga based low-latency market data feed handler. In:  XU, W.
+  et al. (Ed.). \emph{Computer Engineering and Technology}. Berlin, Heidelberg:
+  Springer Berlin Heidelberg, 2015. p. 69--77.
+ISBN 978-3-662-45815-0.}
+
+\bibitem[Zliobaite 2010]{Zliobaite:2010}
+\abntrefinfo{Zliobaite}{ZLIOBAITE}{2010}
+{ZLIOBAITE, I. Learning under concept drift: an overview.
+\emph{CoRR}, abs/1010.4784, 2010.
+Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1010.4784}.}
+
+\bibitem[Zwolenski e Weatherill 2014]{idc_report}
+\abntrefinfo{Zwolenski e Weatherill}{ZWOLENSKI; WEATHERILL}{2014}
+{ZWOLENSKI, M.; WEATHERILL, L. The digital universe rich data and the
+  increasing value of the internet of things.
+\emph{Australian Journal of Telecommunications and the Digital Economy}, v.~2,
+  10 2014.}
+
+\end{thebibliography}
