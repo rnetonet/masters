@@ -850,10 +850,10 @@ Essas técnicas precisaram ser adaptadas para contextos com fluxos contínuos, p
 Contudo, as adaptações propostas não tratam variações na distribuição dos dados ou no contexto do processo gerador do fluxo.
 Estas alterações são denominadas mudanças de conceito e podem afetar negativamente a acurácia do algoritmo \cite{Gama:2014:SCD:2597757.2523813}.
 
-Para mitigar este problema, técnicas de detecção de mudanças de conceito foram propostas. 
+Para mitigar este problema, técnicas de detecção de mudanças de conceito foram desenvolvidas. 
 Estes métodos identificam com precisão o momento da mudança, permitindo que o modelo de decisão seja atualizado de forma eficiente e tempestiva.
 
-Entretanto, as técnicas de detecção propostas apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
+Entretanto, as técnicas de detecção encontradas na literatura apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
 Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que os torna inviáveis, por causa do custo e do tempo de rotulação.
 Enquanto as técnicas não supervisionadas/implícitas têm dificuldade para antender às restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
 
@@ -864,8 +864,8 @@ A camada intermediária, através de funções de base radial, realiza uma trans
 Por fim, a camada de saída produz o resultado final da rede através de uma combinação linear dos resultados da camada intermediária \cite{Rojas:1996:NNS:235222}.
 
 A camada intermediária das redes de função de base radial forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
-Considerando que o centro ativo desse agrupamento sofre alterações ao longo do tempo, influenciado pelo valor de entrada e o resultado da sua transformação não-linear,
-este projeto de mestrado visa comprovar a hipótese que o monitoramento da ativação de centros permite detectar mudanças de conceito em fluxos contínuos de dados em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+Considerando que o centro ativo do agrupamento muda conforme o valor processado pelo algoritmo, 
+este projeto de mestrado visa comprovar a hipótese que o monitoramento destas alterações permite detectar mudanças de conceito em fluxos contínuos de dados em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 
 O algoritmo projetado utiliza apenas as camadas inicial e intermediária da arquitetura de uma rede RBF simplificada.
 Além disso, a técnica utiliza uma função gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
@@ -885,10 +885,11 @@ Devido a alteração do centro ativo, o algoritmo sinaliza a ocorrência de muda
 Os valores dos instantes $T5$, $T6$, $T7$ e $T8$ são vinculados ao último centro ativo ($0.34$). 
 Contudo, em $T9$, o valor $0.14$ é recebido e apresenta maior valor de ativação para o centro $0.11$, que é reativado. 
 Assim, uma nova mudança de conceito é sinalizada.
-Finalmente, o valor do instante $T10$ é vinculado ao centro $0.11$.
+Finalmente, o valor do instante $T10$, $0.10$, é vinculado ao centro ativo ($0.11$).
 
 A Figura \ref{fig:funcionamento_algoritmo} apresenta esse comportamento graficamente. 
-Os círculos na cor amarela foram ativados para o centro $0.11$ ($T1$), enquanto os de cor magenta foram ativados para o centro $0.34$ ($T4$).
+Os círculos na cor amarela representam eventos (valores) vinculados ao primeiro centro estabelecido ($0.11$ no momento $T1$), 
+enquanto os de cor magenta apresentaram maior ativação para o segundo centro definido ($0.34$ em $T4$).
 As linhas verticais tracejadas na cor vermelha indicam a ocorrência de mudança de conceito.
 
 \begin{figure}[H]
@@ -907,15 +908,28 @@ Por fim, o algoritmo proposto é descrito, de forma simplificada, em pseudocódi
     \Saida{booleano indicando a ocorrência ou não de mudança de conceito}
     \Inicio{
      $mudanca \leftarrow falso$\\
+     $centroAtivo \leftarrow null$\\
+     $centroAnterior \leftarrow null$\\
+
      \Para{cada \texttt{centro}}{
          $ativacao \leftarrow gaussiana(valor, \sigma)$\\
          \uIf{$ativacao >= \epsilon$}{
-            marque \texttt{centro} como ativo\\
-            $\epsilon \leftarrow ativacao$\\ 
+            $centroAtivo \leftarrow centro$ \\
+            $\epsilon \leftarrow ativacao$ \\ 
          }
-      }
+    } 
+    \uIf{$centroAtivo == null$}{
+        $centroAnterior \leftarrow centro$\\
+        $centroAtivo \leftarrow valor$ \\
+        $centros \leftarrow valor$ \\
     }   
+    \uIf{$centroAnterior <> centroAtivo$}{
+        $mudanca \leftarrow verdadeiro$
+    }
     \Retorna{mudanca}
+    
+    }
+
     \label{alg:algoritmo} 
     \caption{\textsc{RBFDriftDetector}}
 \end{algorithm}
@@ -927,7 +941,6 @@ A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para 
 
 
 \begin{table}[htbp]
-\caption{Cronograma de atividades}     % mude aqui para seu título da tabela
 \begin{center}
 \resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
 \begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
@@ -937,30 +950,41 @@ A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para 
 %\rowcolor[HTML]{EFEFEF}
 
 
-1-Disciplinas & X & X & X & X & X & X & X & X & X & X & X & X & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-2-Revisão da Literatura & X & X & X & X & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ &  ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-3-Experimentos  & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~  & ~  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-4-Análise dos Resultados & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & ~ & ~ & ~  & ~  & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-5-Escrita da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-6-Estágio docente & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-7-Pesquisa Orientada & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
+1-Disciplinas & X & X & X & X & X & X & X & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+2-Revisão da Literatura & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & X & X & ~ & ~ & ~ & ~ &  ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+3-Experimentos  & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X  & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+4-Análise dos Resultados & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & ~  & ~  & ~ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+5-Escrita da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+6-Estágio docente & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ \\ \hline
+7-Pesquisa Orientada & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & X & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
 8-Apresentação da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-9-Escrita de artigos& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$  & ~ & ~ & ~ & ~ & $\bullet$ & ~ & ~ & ~ & ~ & $\bullet$ & ~ \\ \hline
-10-Escrita da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
+9-Escrita de artigos& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~  & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ \\ \hline
+10-Escrita da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
 11- Defesa da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ \\ \hline
 
 \hline
 \end{tabular}
 } % fecha resizebox
 \end{center}
+\caption{Cronograma de atividades}     % mude aqui para seu título da tabela
 \label{cronograma} % para referencia no texto.
 \end{table}
 
-Para a conclusão da atividade 1, o Programa de Pós-Graduação em Ciência da Computação (PGCOMP) da Universidade Federal da Bahia (UFBA) exige que um mestrado obtenha um total de 18 créditos em disciplinas. Nos semestres 2016.1 e 2016.2, foram obtidos 15 créditos ao cursar as disciplinas: MATE64 -- Seminários Científicos, MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I, MATD74 --  Algoritmos e Grafos, MATD33 -- Tópicos em Inteligência Computacional III e  MATE70 -- Computação Ubíqua e Sensível ao Contexto. No semestre corrente, 2017.1, está sendo cursada a disciplina MATE32 -- Tópicos em Inteligência Computacional II, completando os 3 créditos restantes. 
+Para a conclusão da atividade 1, 
+o Programa de Pós-Graduação em Ciência da Computação (PGCOMP) da Universidade Federal da Bahia (UFBA) exige que um mestrando obtenha um total de 18 créditos em disciplinas. 
+Nos semestres 2018.1 e 2018.2, foram obtidos os créditos exigidos ao cursar as disciplinas: 
+MATD74 -- Algoritmos e Grafos, MATE32 -- Tópicos em Inteligência Computacional II, MATE64 -- Seminários Científicos, MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I,
+MATE10 -- Tópicos em Inteligência Computacional I e MATE84 -- Tópicos em Fundamentos da Computação IV.
 
-A segunda atividade planejada neste cronograma foi realizada em parceria com o aluno de bacharelado em Ciência da Computação Evaldo Machado Moreira Junior. O objetivo da sua monografia foi entender como as métricas são influenciadas pela presença de ruídos. Neste trabalho, as principais medidas/métricas de similaridade/distância entre séries temporais utilizadas por pesquisas na área foram encontradas com a execução de uma Revisão Sistemática de Literatura (\emph{Systematic Literature Review} -- SLR). 
+A segunda atividade planejada neste cronograma foi realizada durante o curso da disciplina MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I 
+e nos meses subsequentes, 
+conforme orientações do orientador.
 
-As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados. Essas atividades foram divididas em duas partes. A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho. Nesta parte, séries temporais sintéticas com ruído aditivo foram criadas e analisadas conforme apresentado no Capítulo \ref{experimentos} e Apêndice \ref{apendice1}. A segunda parte dos experimentos e suas análises serão realizadas após a qualificação.
+As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados. 
+Essas atividades foram divididas em duas partes. 
+A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho. 
+Nesta parte, fluxos contínuos de dados sintéticos com mudança de conceito foram criados e analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}. 
+A segunda parte dos experimentos e suas análises serão realizadas após a qualificação.
 
 As atividades 5 e 8 estão relacionadas com o componente curricular MATD75 -- Exame de qualificação. A atividade 5 refere-se à escrita deste texto e as atividades 6 e 7 representam os componentes curriculares MATA32 -- Estágio Docente e MATA31 -- Pesquisa Orientada, respectivamente. Além disso, durante a execução destas tarefas foi realizada a prova de proficiência em inglês. A atividade 8 está relacionada à apresentação desta qualificação de mestrado.
  

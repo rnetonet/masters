@@ -17,7 +17,7 @@
 \contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{21}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{21}
 \contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{21}
-\contentsline {section}{\numberline {3.3}Atividades de Pesquisa}{23}
+\contentsline {section}{\numberline {3.3}Atividades de Pesquisa}{24}
 \contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{25}
 \contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{27}
 \contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{27}

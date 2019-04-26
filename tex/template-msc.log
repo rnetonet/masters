@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  26 APR 2019 11:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  26 APR 2019 16:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1615,65 +1615,51 @@ Package xcolor Warning: Incompatible color definition on input line 835.
 <imagens/funcionamento_algoritmo.png, id=176, 933.7284pt x 483.4863pt>
 File: imagens/funcionamento_algoritmo.png Graphic file (type png)
 <use imagens/funcionamento_algoritmo.png>
-Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 896.
+Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 897.
 (pdftex.def)             Requested size: 452.96788pt x 234.5422pt.
- [22] [23 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png>]
-
-LaTeX Warning: Reference `experimentos' on page 24 undefined on input line 963.
-
-
-LaTeX Warning: Reference `apendice1' on page 24 undefined on input line 963.
-
-
-Underfull \vbox (badness 7777) has occurred while \output is active []
-
- [24] [25] [26
+ [22] [23 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png>] [24] [25] [26
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 974.
+Package xcolor Warning: Incompatible color definition on input line 998.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 977.
+(blindtext)                 on input line 1001.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 980.
+(blindtext)                 on input line 1004.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 983.
+(blindtext)                 on input line 1007.
 
 [27]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 986.
+(blindtext)                 on input line 1010.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 989.
+(blindtext)                 on input line 1013.
 
 [28] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [29
 
 
 ] [30] [31] [32] [33] [34]) 
 AED: lastpage setting LastPage
-[35] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[35] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
 Here is how much of TeX's memory you used:
- 31560 strings out of 492982
- 633135 string characters out of 6134895
- 846582 words of memory out of 5000000
- 34541 multiletter control sequences out of 15000+600000
+ 31558 strings out of 492982
+ 633110 string characters out of 6134895
+ 843778 words of memory out of 5000000
+ 34539 multiletter control sequences out of 15000+600000
  545748 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,18n,82p,10445b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,18n,82p,10445b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (49 pages, 1263399 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (49 pages, 1263456 bytes).
 PDF statistics:
  293 PDF objects out of 1000 (max. 8388607)
  187 compressed objects within 2 object streams
