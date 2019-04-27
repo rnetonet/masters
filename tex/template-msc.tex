@@ -51,6 +51,7 @@
 \usepackage{amssymb}
 \usepackage{placeins}
 \usepackage{arydshln}
+\usepackage{lscape}
 
 \presetkeys%
     {todonotes}%
@@ -836,7 +837,7 @@ No próximo capítulo, o plano de pesquisa será detalhado.
 \section{Considerações Iniciais}
 
 Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que redes de função de base radial sejam aplicadas para detectar mudanças de conceito em fluxos contínuos de dados.
-Espera-se que com a utilização de redes RBF, seja possível detectar mudanças de conceito reais em fluxos contínuos de dados em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+Espera-se que com a utilização de redes RBF, seja possível detectar mudanças de conceito em fluxos contínuos de dados em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
 
 \section{Descrição do Problema}
@@ -865,7 +866,7 @@ Por fim, a camada de saída produz o resultado final da rede através de uma com
 
 A camada intermediária das redes de função de base radial forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
 Considerando que o centro ativo do agrupamento muda conforme o valor processado pelo algoritmo, 
-este projeto de mestrado visa comprovar a hipótese que o monitoramento destas alterações permite detectar mudanças de conceito em fluxos contínuos de dados em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+este projeto de mestrado visa comprovar a hipótese que o monitoramento dessas alterações permite detectar mudanças de conceito em fluxos contínuos de dados em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 
 O algoritmo projetado utiliza apenas as camadas inicial e intermediária da arquitetura de uma rede RBF simplificada.
 Além disso, a técnica utiliza uma função gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
@@ -878,7 +879,7 @@ A seguir, será descrito o comportamento do algoritmo para cada dado recebido a 
 No instante $T1$, o valor $0.11$ é recepcionado. Como não existem centros estabelecidos, o valor é definido como centro e ativado.
 Em $T2$ e $T3$ são recebidos, respectivamente, os valores $0.12$ e $0.13$ que são imediatamente vinculados ao centro atualmente ativo ($0.11$), pois seus valores de ativação foram maiores que $0.6$ ($\epsilon$).
 
-No instante $T4$, o valor $0.34$ não atinge o valor mínimo de ativação (\texttt{$\epsilon$}) para ser vinculado ao centro ativo corrente ($0.11$). 
+No instante $T4$, o valor $0.34$ não atinge o valor mínimo de ativação (\texttt{$\epsilon$}) para ser vinculado ao centro ativo ($0.11$). 
 Dessa forma, o valor é definido como um novo centro e ativado.
 Devido a alteração do centro ativo, o algoritmo sinaliza a ocorrência de mudança de conceito.
 
@@ -892,24 +893,28 @@ Os círculos na cor amarela representam eventos (valores) vinculados ao primeiro
 enquanto os de cor magenta apresentaram maior ativação para o segundo centro definido ($0.34$ em $T4$).
 As linhas verticais tracejadas na cor vermelha indicam a ocorrência de mudança de conceito.
 
+\begin{landscape}
 \begin{figure}[H]
 \begin{center}
-    \noindent\makebox[\textwidth]{\includegraphics[width=\textwidth]{imagens/funcionamento_algoritmo.png}}
+    \includegraphics[height=0.8\textheight]{imagens/funcionamento_algoritmo.png}
     \caption{Exemplo de funcionamento do algoritmo}
     \label{fig:funcionamento_algoritmo}
 \end{center}
 \end{figure}
+\end{landscape}
+\newpage
 
 Por fim, o algoritmo proposto é descrito, de forma simplificada, em pseudocódigo:
 
-\begin{algorithm}[h]
+\begin{algorithm}[H]
     \SetAlgoLined
     \Entrada{$valor, \sigma, \epsilon$} 
     \Saida{booleano indicando a ocorrência ou não de mudança de conceito}
     \Inicio{
-     $mudanca \leftarrow falso$\\
+     $centros \leftarrow ()$\\
+     $centroAtual \leftarrow null$\\
      $centroAtivo \leftarrow null$\\
-     $centroAnterior \leftarrow null$\\
+     $mudanca \leftarrow falso$\\
 
      \Para{cada \texttt{centro}}{
          $ativacao \leftarrow gaussiana(valor, \sigma)$\\
@@ -919,12 +924,15 @@ Por fim, o algoritmo proposto é descrito, de forma simplificada, em pseudocódi
          }
     } 
     \uIf{$centroAtivo == null$}{
-        $centroAnterior \leftarrow centro$\\
+        $centros \leftarrow valor$ \\    
         $centroAtivo \leftarrow valor$ \\
-        $centros \leftarrow valor$ \\
     }   
-    \uIf{$centroAnterior <> centroAtivo$}{
-        $mudanca \leftarrow verdadeiro$
+    \uIf{$centroAtual == null$}{
+        $centroAtual \leftarrow valor$ \\
+    }
+    \uIf{$centroAtual \neq centroAtivo$}{
+        $centroAtual \leftarrow centroAtivo$ \\
+        $mudanca \leftarrow verdadeiro$ \\
     }
     \Retorna{mudanca}
     
@@ -982,7 +990,7 @@ e nos meses subsequentes. Além disso, durante a execução desta tarefa foi rea
 As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados. 
 Essas atividades foram divididas em duas partes. 
 A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho. 
-Nesta parte, fluxos contínuos de dados sintéticos com mudança de conceito foram criados e analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}. 
+Nesta parte, fluxos contínuos de dados sintéticos com mudança de conceito foram analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}. 
 A segunda parte dos experimentos e suas análises serão realizadas após a qualificação.
 
 As atividades 5 e 8 estão relacionadas com o componente curricular MATD75 -- Exame de qualificação. A atividade 5 refere-se à escrita deste texto e as atividades 6 e 7 representam os componentes curriculares MATA32 -- Estágio Docente e MATA31 -- Pesquisa Orientada, respectivamente. A atividade 8 está relacionada à apresentação desta qualificação de mestrado.

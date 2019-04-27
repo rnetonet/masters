@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  26 APR 2019 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  26 APR 2019 23:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1279,6 +1279,8 @@ Package: arydshln 2016/04/28 v1.73
 \adl@clb=\count331
 \adl@everyvbox=\toks51
 \adl@LTpagetotal=\dimen304
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 ) (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
 \c@blindtext=\count332
@@ -1357,20 +1359,20 @@ File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 ) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
 \openout1 = `template-msc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 113.
-LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 114.
+LaTeX Font Info:    ... okay on input line 114.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count350
@@ -1424,7 +1426,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 113.
+(lastpage)             ! on input line 114.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1462,18 +1464,18 @@ Package lastpage Info: Please have a look at the pageslts package at
 
 \c@lstlisting=\count356
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 113.
+LaTeX Info: Redefining \selectfont on input line 114.
  ABD: EveryShipout initializing macros
 <ufba.pdf, id=29, 290.08376pt x 446.66875pt>
 File: ufba.pdf Graphic file (type pdf)
 <use ufba.pdf>
-Package pdftex.def Info: ufba.pdf  used on input line 115.
+Package pdftex.def Info: ufba.pdf  used on input line 116.
 (pdftex.def)             Requested size: 56.9055pt x 87.62144pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 115.
+LaTeX Font Info:    Try loading font information for U+msa on input line 116.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 115.
+LaTeX Font Info:    Try loading font information for U+msb on input line 116.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -1482,7 +1484,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/rnetonet/Workspace/pgcomp_qualificacao/tex/ufba.pdf>] [2
 
 ]
-Underfull \hbox (badness 2922) in paragraph at lines 120--120
+Underfull \hbox (badness 2922) in paragraph at lines 121--121
 \OT1/cmr/m/n/14.4 Gradua^^Xc~ao em Ci^encia da Com-
  []
 
@@ -1491,7 +1493,7 @@ Underfull \hbox (badness 2922) in paragraph at lines 120--120
 ] [2]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 174.
+(blindtext)                 on input line 175.
 
 [3
 
@@ -1500,7 +1502,7 @@ Package blindtext Warning: brazil not defined, using English instead.
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 183.
+(blindtext)                 on input line 184.
 
 [5] [6
 
@@ -1524,7 +1526,7 @@ Package blindtext Warning: brazil not defined, using English instead.
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 219.
+Package xcolor Warning: Incompatible color definition on input line 220.
 
 [1
 
@@ -1532,7 +1534,7 @@ Package xcolor Warning: Incompatible color definition on input line 219.
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 328.
+Package xcolor Warning: Incompatible color definition on input line 329.
 
 [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1541,7 +1543,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <imagens/concept_drift.png, id=104, 558.58687pt x 209.28188pt>
 File: imagens/concept_drift.png Graphic file (type png)
 <use imagens/concept_drift.png>
-Package pdftex.def Info: imagens/concept_drift.png  used on input line 448.
+Package pdftex.def Info: imagens/concept_drift.png  used on input line 449.
 (pdftex.def)             Requested size: 446.8701pt x 167.4257pt.
 
 Underfull \vbox (badness 3375) has occurred while \output is active []
@@ -1550,15 +1552,15 @@ Underfull \vbox (badness 3375) has occurred while \output is active []
 <imagens/concept_drift_patterns.png, id=116, 565.36218pt x 207.02344pt>
 File: imagens/concept_drift_patterns.png Graphic file (type png)
 <use imagens/concept_drift_patterns.png>
-Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 460.
+Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 461.
 (pdftex.def)             Requested size: 452.29036pt x 165.61896pt.
  [8 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift.png> </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift_patterns.png>] [9] [10]
-Overfull \hbox (11.71376pt too wide) in paragraph at lines 566--575
+Overfull \hbox (11.71376pt too wide) in paragraph at lines 567--576
 []\OT1/cmr/m/n/12 Utilizam t^^Secnicas de-ri-va-das dos
  []
 
 
-Overfull \hbox (6.56206pt too wide) in paragraph at lines 577--586
+Overfull \hbox (6.56206pt too wide) in paragraph at lines 578--587
 []\OT1/cmr/m/n/12 Monitoram di-re-ta-mente a dis-tri-bui^^Xc~ao
  []
 
@@ -1566,7 +1568,7 @@ Overfull \hbox (6.56206pt too wide) in paragraph at lines 577--586
 <imagens/moa.png, id=133, 1016.29688pt x 763.35187pt>
 File: imagens/moa.png Graphic file (type png)
 <use imagens/moa.png>
-Package pdftex.def Info: imagens/moa.png  used on input line 644.
+Package pdftex.def Info: imagens/moa.png  used on input line 645.
 (pdftex.def)             Requested size: 406.51155pt x 305.33534pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1575,10 +1577,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <imagens/detector.png, id=138, 470.50781pt x 332.74312pt>
 File: imagens/detector.png Graphic file (type png)
 <use imagens/detector.png>
-Package pdftex.def Info: imagens/detector.png  used on input line 674.
+Package pdftex.def Info: imagens/detector.png  used on input line 675.
 (pdftex.def)             Requested size: 470.50665pt x 332.7423pt.
 
-Overfull \hbox (17.53877pt too wide) in paragraph at lines 674--675
+Overfull \hbox (17.53877pt too wide) in paragraph at lines 675--676
  [] 
  []
 
@@ -1586,12 +1588,12 @@ Overfull \hbox (17.53877pt too wide) in paragraph at lines 674--675
 <imagens/tornado.png, id=148, 368.87813pt x 347.04657pt>
 File: imagens/tornado.png Graphic file (type png)
 <use imagens/tornado.png>
-Package pdftex.def Info: imagens/tornado.png  used on input line 698.
+Package pdftex.def Info: imagens/tornado.png  used on input line 699.
 (pdftex.def)             Requested size: 276.6579pt x 260.28429pt.
 <imagens/tornado_out2.png, id=149, 753.0534pt x 331.9602pt>
 File: imagens/tornado_out2.png Graphic file (type png)
 <use imagens/tornado_out2.png>
-Package pdftex.def Info: imagens/tornado_out2.png  used on input line 719.
+Package pdftex.def Info: imagens/tornado_out2.png  used on input line 720.
 (pdftex.def)             Requested size: 451.83553pt x 199.17764pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1600,7 +1602,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <imagens/rbf_arq.png, id=153, 330.48468pt x 313.17pt>
 File: imagens/rbf_arq.png Graphic file (type png)
 <use imagens/rbf_arq.png>
-Package pdftex.def Info: imagens/rbf_arq.png  used on input line 745.
+Package pdftex.def Info: imagens/rbf_arq.png  used on input line 746.
 (pdftex.def)             Requested size: 330.48387pt x 313.16922pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1609,40 +1611,49 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 835.
+Package xcolor Warning: Incompatible color definition on input line 836.
 
-[21]
-<imagens/funcionamento_algoritmo.png, id=176, 933.7284pt x 483.4863pt>
+[21] [22]
+<imagens/funcionamento_algoritmo.png, id=179, 933.7284pt x 483.4863pt>
 File: imagens/funcionamento_algoritmo.png Graphic file (type png)
 <use imagens/funcionamento_algoritmo.png>
-Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 897.
-(pdftex.def)             Requested size: 452.96788pt x 234.5422pt.
- [22] [23 </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png>] [24] [25] [26
+Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 899.
+(pdftex.def)             Requested size: 699.8529pt x 362.37567pt.
+
+Overfull \hbox (61.21985pt too wide) in paragraph at lines 899--900
+ [] 
+ []
+
+[23
+
+ </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png>] [24
+
+] [25] [26
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 997.
+Package xcolor Warning: Incompatible color definition on input line 1005.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1000.
+(blindtext)                 on input line 1008.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1003.
+(blindtext)                 on input line 1011.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1006.
+(blindtext)                 on input line 1014.
 
 [27]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1009.
+(blindtext)                 on input line 1017.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1012.
+(blindtext)                 on input line 1020.
 
 [28] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl [29
 
@@ -1651,15 +1662,15 @@ Package blindtext Warning: brazil not defined, using English instead.
 AED: lastpage setting LastPage
 [35] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux) ) 
 Here is how much of TeX's memory you used:
- 31558 strings out of 492982
- 633110 string characters out of 6134895
- 843778 words of memory out of 5000000
- 34539 multiletter control sequences out of 15000+600000
+ 31571 strings out of 492982
+ 633356 string characters out of 6134895
+ 847640 words of memory out of 5000000
+ 34549 multiletter control sequences out of 15000+600000
  545748 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,18n,82p,10445b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,18n,82p,10445b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (49 pages, 1263430 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (49 pages, 1263346 bytes).
 PDF statistics:
  293 PDF objects out of 1000 (max. 8388607)
  187 compressed objects within 2 object streams
