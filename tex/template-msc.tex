@@ -39,7 +39,7 @@
 \usepackage{pifont}
 \usepackage{multirow}
 \usepackage{listings} 
-\usepackage[portuguese, ruled, linesnumbered]{algorithm2e}
+\usepackage[portuguese, noend, plain]{algorithm2e}
 \usepackage{colortbl}
 \usepackage{xfrac}
 \usepackage[FIGTOPCAP]{subfigure}
@@ -59,9 +59,6 @@
     
 \usepackage{blindtext}
 
-\usepackage{tikz}
-\usetikzlibrary{arrows,shapes,positioning,shadows,trees}
-
 % Siglas
 \acrodef{AM}[AM]{{Aprendizado de Máquina}}
 \acrodef{DE}[DE] {{Distância Euclidiana}}
@@ -71,7 +68,7 @@
 % Universidade
 \university{Universidade Federal da Bahia}
 
-% Endereco (cidade)
+% Endereco (cidade) 
 \address{Salvador}
 
 % Instituto ou Centro Academico
@@ -109,6 +106,21 @@
 % e.g. \coadviser{Prof. Dr. Pedro Pedreira}
 % Comente se nao ha co-orientador
 %\coadviser{Nome Completo do CO-ORIENTADOR}
+
+% \usepackage[bookmarks=true, unicode=true]{hyperref}
+% \hypersetup{
+%         unicode=true,
+%         backref=true,
+%         pagebackref=true,
+%         bookmarks=true,                 % show bookmarks bar?
+%         colorlinks=true,               % false: boxed links; true: colored links
+%         linkcolor=blue,                      % color of internal links
+%         citecolor=blue,                % color of links to bibliography
+%         filecolor=magenta,              % color of file links
+%         urlcolor=blue,            % color of url links
+%         bookmarksdepth=4,
+%         breaklinks=true            % deve ser usado com o pacote breakurl, sem ele não fuciona
+% }
 
 %% Inicio do documento
 \begin{document}
@@ -680,11 +692,9 @@ A janela de configuração deste detector, similar a Figura \ref{fig:moa_detecto
     
 
 O MOA dispõe de diversas classes para avaliação de técnicas de aprendizado de máquina. 
-Para este trabalho, destacam-se as classes \texttt{DriftDetectionMethodClassifier} e \texttt{BasicConceptDriftPerformanceEvaluator}, 
-que realizam a análise de algoritmos para detecção de mudança de conceito.
-A classe \texttt{DriftDetectionMethodClassifier} permite avaliar técnicas de detecção que encapsulam um classificador.
-Por sua vez, a classe \texttt{BasicConceptDriftPerformanceEvaluator} avalia a performance das técnicas de detecção que atuam diretamente sobre o fluxo de dados, sem utilizarem um algoritmo de classificação.
-Estes avaliadores e os seus indicadores serão detalhados juntamente com os resultados dos experimentos iniciais, no Capítulo \ref{experimentos_iniciais}.
+Para este trabalho, a classe \texttt{BasicConceptDriftPerformanceEvaluator} é mais relevante, por realizar a análise de  algoritmos para detecção de mudança de conceito.
+
+Na próxima subseção, o framework \textit{Tornado} será discutido.
 
 \subsection{Tornado}
 
@@ -870,16 +880,53 @@ este projeto de mestrado visa comprovar a hipótese que o monitoramento dessas a
 
 O algoritmo projetado utiliza apenas as camadas inicial e intermediária da arquitetura de uma rede RBF simplificada.
 Além disso, a técnica utiliza uma função gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
-\texttt{$\sigma$}, responsável por limitar o raio da função gaussiana, e \texttt{$\epsilon$}, que define o valor mínimo para ativação de um centro.
+\texttt{$\sigma$}, responsável por limitar o raio da função gaussiana, e \texttt{$\lambda$}, que define o valor mínimo para ativação de um centro.
+O pseudocódigo da técnica proposta é listado em Algoritmo \ref{alg:algoritmo}.
+
+\vspace{5pt}
+\begin{algorithm}[H]
+    \SetAlgoLined
+    \Entrada{$valor, \sigma, \lambda$} 
+    \Saida{booleano indicando a ocorrência ou não de mudança de conceito}
+    \Inicio{
+     $centros \longleftarrow ()$, $centroAtual \longleftarrow null$, $centroAtivo \longleftarrow null$, $mudanca \longleftarrow falso$\\
+
+     \ParaTodo{centro}{
+         $ativacao \longleftarrow gaussiana(valor, \sigma)$\\
+         \Se{$ativacao >= \lambda$}{
+            $centroAtivo \longleftarrow centro$ \\
+            $\lambda \longleftarrow ativacao$ \\ 
+         }
+    } 
+    \Se{$centroAtivo == null$}{
+        $centros \longleftarrow valor$ \\    
+        $centroAtivo \longleftarrow valor$ \\
+    }   
+    \Se{$centroAtual == null$}{
+        $centroAtual \longleftarrow valor$ \\
+    }
+    \Se{$centroAtual \neq centroAtivo$}{
+        $centroAtual \longleftarrow centroAtivo$ \\
+        $mudanca \longleftarrow verdadeiro$ \\
+    }
+    \Retorna{mudanca}\\
+    \BlankLine
+    \BlankLine
+    }
+
+    \label{alg:algoritmo} 
+    \caption{\textsc{RBFDriftDetector}}
+\end{algorithm}
+\vspace{5pt}
 
 Para exemplificar a execução do algoritmo proposto neste projeto, considere o conjunto $S = \{0.11, 0.12, 0.13, 0.34, 0.45, 0.47, 0.33, 0.25, 0.14, 0.10\}$ como fonte de dados.
-Para este exemplo, os parâmetros foram definidos de forma empírica. O parâmetro \texttt{$\sigma$} foi definido com o valor $0.2$ e o parâmetro \texttt{$\epsilon$} foi fixado em $0.6$.
+Para este exemplo, os parâmetros foram definidos de forma empírica. O parâmetro \texttt{$\sigma$} foi definido com o valor $0.2$ e o parâmetro \texttt{$\lambda$} foi fixado em $0.6$.
 A seguir, será descrito o comportamento do algoritmo para cada dado recebido a partir de $S$.
 
 No instante $T1$, o valor $0.11$ é recepcionado. Como não existem centros estabelecidos, o valor é definido como centro e ativado.
-Em $T2$ e $T3$ são recebidos, respectivamente, os valores $0.12$ e $0.13$ que são imediatamente vinculados ao centro atualmente ativo ($0.11$), pois seus valores de ativação foram maiores que $0.6$ ($\epsilon$).
+Em $T2$ e $T3$ são recebidos, respectivamente, os valores $0.12$ e $0.13$ que são imediatamente vinculados ao centro atualmente ativo ($0.11$), pois seus valores de ativação foram maiores que $0.6$ ($\lambda$).
 
-No instante $T4$, o valor $0.34$ não atinge o valor mínimo de ativação (\texttt{$\epsilon$}) para ser vinculado ao centro ativo ($0.11$). 
+No instante $T4$, o valor $0.34$ não atinge o valor mínimo de ativação (\texttt{$\lambda$}) para ser vinculado ao centro ativo ($0.11$). 
 Dessa forma, o valor é definido como um novo centro e ativado.
 Devido a alteração do centro ativo, o algoritmo sinaliza a ocorrência de mudança de conceito.
 
@@ -893,60 +940,17 @@ Os círculos na cor amarela representam eventos (valores) vinculados ao primeiro
 enquanto os de cor magenta apresentaram maior ativação para o segundo centro definido ($0.34$ em $T4$).
 As linhas verticais tracejadas na cor vermelha indicam a ocorrência de mudança de conceito.
 
-\begin{landscape}
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[height=0.8\textheight]{imagens/funcionamento_algoritmo.png}
+    \includegraphics[width=\textwidth]{imagens/funcionamento_algoritmo.png}
     \caption{Exemplo de funcionamento do algoritmo}
     \label{fig:funcionamento_algoritmo}
 \end{center}
 \end{figure}
-\end{landscape}
-\newpage
-
-Por fim, o algoritmo proposto é descrito, de forma simplificada, em pseudocódigo:
-
-\begin{algorithm}[H]
-    \SetAlgoLined
-    \Entrada{$valor, \sigma, \epsilon$} 
-    \Saida{booleano indicando a ocorrência ou não de mudança de conceito}
-    \Inicio{
-     $centros \leftarrow ()$\\
-     $centroAtual \leftarrow null$\\
-     $centroAtivo \leftarrow null$\\
-     $mudanca \leftarrow falso$\\
-
-     \Para{cada \texttt{centro}}{
-         $ativacao \leftarrow gaussiana(valor, \sigma)$\\
-         \uIf{$ativacao >= \epsilon$}{
-            $centroAtivo \leftarrow centro$ \\
-            $\epsilon \leftarrow ativacao$ \\ 
-         }
-    } 
-    \uIf{$centroAtivo == null$}{
-        $centros \leftarrow valor$ \\    
-        $centroAtivo \leftarrow valor$ \\
-    }   
-    \uIf{$centroAtual == null$}{
-        $centroAtual \leftarrow valor$ \\
-    }
-    \uIf{$centroAtual \neq centroAtivo$}{
-        $centroAtual \leftarrow centroAtivo$ \\
-        $mudanca \leftarrow verdadeiro$ \\
-    }
-    \Retorna{mudanca}
-    
-    }
-
-    \label{alg:algoritmo} 
-    \caption{\textsc{RBFDriftDetector}}
-\end{algorithm}
 
 \section{Atividades de Pesquisa}
 
 A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para a realização da pesquisa. Atividades concluídas são representadas pelo símbolo $X$ e as futuras por $\bullet$. 
-
-
 
 \begin{table}[htbp]
 \begin{center}
@@ -956,7 +960,6 @@ A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para 
 \multicolumn{1}{|c|}{\multirow{2}{*}{Atividades}} & \multicolumn{24}{c|}{Meses} \\ \cline{2-25}
 \multicolumn{1}{|c|}{} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline
 %\rowcolor[HTML]{EFEFEF}
-
 
 1-Disciplinas & X & X & X & X & X & X & X & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
 2-Revisão da Literatura & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & X & X & ~ & ~ & ~ & ~ &  ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
@@ -1004,7 +1007,13 @@ No próximo capítulo, serão discutidos os resultados preliminares realizados c
 
 \xchapter{Experimentos Iniciais}{} \label{experimentos_iniciais}
 \section{Considerações Iniciais}
-\blindtext
+
+Este capítulo apresenta um conjunto de experimentos preliminares realizados sobre dois fluxos contínuos sintéticos, 
+cujo objetivo principal foi demonstrar a viabilidade da proposta deste projeto de mestrado.
+Os resultados dos experimentos justificaram a possibilidade de identificar mudanças de conceito em fluxos contínuos de dados 
+utilizando redes de função de base radial.
+
+A próxima seção apresenta como cada fluxo sintético foi produzido para condução dos experimentos.
 
 \section{Configuração dos Experimentos}
 \blindtext
