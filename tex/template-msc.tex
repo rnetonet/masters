@@ -679,7 +679,7 @@ Além destes conceitos, o usuário também pode definir o momento da mudança e 
 
 Os principais métodos para detecção de mudança de conceito propostos na literatura estão disponíveis no MOA.
 Além disso, a arquitetura do framework é modular, permitindo a implementação de novos detectores de forma trivial.
-Por exemplo, para criar um novo detector, basta estender a classe abstrata \texttt{AbstractChangeDetector} e implementar o algoritmo desejado.
+Por exemplo, para criar um novo detector, basta estender a classe abstrata \textit{AbstractChangeDetector} e implementar o algoritmo desejado.
 A janela de configuração deste detector, similar a Figura \ref{fig:moa_detector}, será criada dinamicamente, a partir dos atributos definidos na classe.
 
 \begin{figure}[H]
@@ -692,7 +692,7 @@ A janela de configuração deste detector, similar a Figura \ref{fig:moa_detecto
     
 
 O MOA dispõe de diversas classes para avaliação de técnicas de aprendizado de máquina. 
-Para este trabalho, a classe \texttt{BasicConceptDriftPerformanceEvaluator} é mais relevante, por realizar a análise de  algoritmos para detecção de mudança de conceito.
+Para este trabalho, a classe \textit{BasicConceptDriftPerformanceEvaluator} é mais relevante, por realizar a análise de  algoritmos para detecção de mudança de conceito.
 
 Na próxima subseção, o framework \textit{Tornado} será discutido.
 
@@ -881,7 +881,7 @@ este projeto de mestrado visa comprovar a hipótese que o monitoramento dessas a
 
 O algoritmo projetado utiliza apenas as camadas inicial e intermediária da arquitetura de uma rede RBF simplificada.
 Além disso, a técnica utiliza uma função gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
-\texttt{$\sigma$}, responsável por limitar o raio da função gaussiana, e \texttt{$\lambda$}, que define o valor mínimo para ativação de um centro.
+\textit{$\sigma$}, responsável por limitar o raio da função gaussiana, e \textit{$\lambda$}, que define o valor mínimo para ativação de um centro.
 O pseudocódigo da técnica proposta é listado em Algoritmo \ref{alg:algoritmo}.
 
 \vspace{5pt}
@@ -921,13 +921,13 @@ O pseudocódigo da técnica proposta é listado em Algoritmo \ref{alg:algoritmo}
 \vspace{5pt}
 
 Para exemplificar a execução do algoritmo proposto neste projeto, considere o conjunto $S = \{0.11, 0.12, 0.13, 0.34, 0.45, 0.47, 0.33, 0.25, 0.14, 0.10\}$ como fonte de dados.
-Para este exemplo, os parâmetros foram definidos de forma empírica. O parâmetro \texttt{$\sigma$} foi definido com o valor $0.2$ e o parâmetro \texttt{$\lambda$} foi fixado em $0.6$.
+Para este exemplo, os parâmetros foram definidos de forma empírica. O parâmetro \textit{$\sigma$} foi definido com o valor $0.2$ e o parâmetro \textit{$\lambda$} foi fixado em $0.6$.
 A seguir, será descrito o comportamento do algoritmo para cada dado recebido a partir de $S$.
 
 No instante $T1$, o valor $0.11$ é recepcionado. Como não existem centros estabelecidos, o valor é definido como centro e ativado.
 Em $T2$ e $T3$ são recebidos, respectivamente, os valores $0.12$ e $0.13$ que são imediatamente vinculados ao centro atualmente ativo ($0.11$), pois seus valores de ativação foram maiores que $0.6$ ($\lambda$).
 
-No instante $T4$, o valor $0.34$ não atinge o valor mínimo de ativação (\texttt{$\lambda$}) para ser vinculado ao centro ativo ($0.11$). 
+No instante $T4$, o valor $0.34$ não atinge o valor mínimo de ativação (\textit{$\lambda$}) para ser vinculado ao centro ativo ($0.11$). 
 Dessa forma, o valor é definido como um novo centro e ativado.
 Devido a alteração do centro ativo, o algoritmo sinaliza a ocorrência de mudança de conceito.
 
@@ -1009,30 +1009,61 @@ No próximo capítulo, serão discutidos os resultados preliminares realizados c
 \xchapter{Experimentos Iniciais}{} \label{experimentos_iniciais}
 \section{Considerações Iniciais}
 
-Este capítulo apresenta um conjunto de experimentos preliminares realizados sobre dois fluxos contínuos sintéticos, 
-cujo objetivo principal foi demonstrar a viabilidade da proposta deste projeto de mestrado.
-A próxima seção apresenta como cada fluxo sintético foi produzido para condução dos experimentos.
+Este capítulo apresenta um conjunto de experimentos preliminares realizados com fluxos de dados sintéticos, 
+cujo objetivo foi demonstrar a viabilidade da proposta de mestrado.
+%
+Os resultados destes experimentos contribuíram na formalização da proposta e justificaram a continuidade da pesquisa, 
+pois foram obtidos resultados satisfatórios, considerando que a investigação encontra-se em seu início.
+%
+A próxima seção apresenta como os fluxos de dados sintéticos foram produzidos para condução dos experimentos.
 
 \section{Configuração dos Experimentos}
 
-Os fluxos contínuos de dados sintéticos utilizados nos experimentos foram criados através de classes geradoras do MOA \cite{Bifet:2010:MMO:1756006.1859903}.
-Para que pudessem ser reutilizados entre os testes, os dados gerados foram salvos em arquivos no formato ARFF \cite{Hall:2009:WDM:1656274.1656278} através da tarefa \texttt{WriteStreamToARFFFile}.
+Os fluxos de dados sintéticos foram produzidos a partir das classes geradoras do framework MOA \cite{Bifet:2010:MMO:1756006.1859903} e salvos em arquivos no formato \textit{ARFF}, através da tarefa \textit{WriteStreamToARFFFile}, para que fossem reutilizados entre os experimentos. 
+Cada arquivo é composto por 20.000 observações, cujos valores variam entre 0 e 1, e podem ser relacionados a dois conceitos distintos.
+As classes geradoras utilizadas, as modificações realizadas e os parâmetros aplicados são discutidos a seguir.
 
-Foram geradas 10.000 observações para cada conjunto de dados, com valores entre 0 e 1.
-Cada conjunto contempla dois conceitos distintos.
+A classe \textit{AbruptChangeGenerator} produz fluxos com mudanças de conceito abruptas através da intercalação de sequências com o valor $0.2$ e sequências com o valor $0.8$, conforme o tamanho parametrizado para os conceitos.
+Com o objetivo de aproximar os dados produzidos da realidade, foi necessário alterar a classe para permitr a adição de um ruído randômico para cada exemplo produzido.
+A amplitude desse ruído pode ser definida através de parâmetros de mínimo e máximo, configuráveis na interface da aplicação.
 
-Para produzir o fluxo representando mudanças abruptas de conceito, foi utilizada a classe \texttt{AbruptChangeGenerator}.
-Esta classe foi alterada para permitir a parametrização de valores mínimos e máximo de ruído a serem aplicados aos dados gerados.
-Pois, não existia, em sua versão orginal, a possibilidade de incluir algum ruído aos dados produzidos.
+Para construir o fluxo sintético com mudanças abruptas utilizado nos experimentos deste trabalho, 
+a classe \textit{AbruptChangeGenerator} modificada foi parametrizada para produzir exemplos não binários, 
+com conceitos formados por 2.500 instâncias e ruído limitado ao intervalo $[-0.1, 0.2]$.
+A Figura \ref{fig:abrupt_change_generator} apresenta essa parametrização.
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{imagens/abrupt_change_generator.png}
+        \caption{Parametrização da classe \textit{AbruptChangeGenerator}}
+        \label{fig:abrupt_change_generator}
+    \end{center}
+\end{figure}
 
+De forma similar, a classe \textit{GradualChangeGenerator}, responsável por produzir fluxos sintéticos com mudanças de conceito graduais também não permite a adição de ruído aos resultados.
+Além disso, a classe produz apenas uma mudança de conceito gradual, ignorando o tamanho parametrizado para os conceitos.
+Para mitigar estas limitações, a classe foi modificada para permitir a adição de um ruído randômico 
+e parametrizável aos resultados e respeitar o limite definido para os conceitos, produzindo mais de uma mudança de conceito quando necessário.
 
+Para construir o fluxo sintético com mudanças graduais utilizado nos experimentos deste trabalho, 
+a classe \textit{GradualChangeGenerator} modificada foi parametrizada para produzir exemplos não binários, 
+com conceitos formados por 2.500 instâncias e ruído limitado ao intervalo $[-0.1, 0.2]$.
+A Figura \ref{fig:gradual_change_generator} apresenta essa parametrização.
 
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{imagens/gradual_change_generator.png}
+        \caption{Parametrização da classe \textit{GradualChangeGenerator}}
+        \label{fig:gradual_change_generator}
+    \end{center}
+\end{figure}
 
+Por fim, a classe \textit{NoChangeGenerator}, que produz fluxos sem ocorrência de mudanças de conceito, também foi modificada para permitir a incidência de ruído nos resultados gerados.
+A classe modificada foi utilizada para produzir um terceiro conjunto de dados, com ruído entre $[-0.1, 0.1]$ e sem mudanças de conceito para ser utilizado como \textit{baseline}.
 
 \section{Método de Pettitt}
 \blindtext
-
+ 
 \section{Redes de Função de Base Radial}
 \blindtext
 
@@ -1067,3 +1098,4 @@ Pois, não existia, em sua versão orginal, a possibilidade de incluir algum ru�
 %% Fim do documento
 \end{document}
 %------------------------------------------------------------------------------------------%
+/

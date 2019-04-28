@@ -22,6 +22,6 @@
 \contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{27}{chapter.4}
 \contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{27}{section.4.1}
 \contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}M\IeC {\'e}todo de Pettitt}{27}{section.4.3}
-\contentsline {section}{\numberline {4.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{28}{section.4.4}
-\contentsline {section}{\numberline {4.5}Considera\IeC {\c c}\IeC {\~o}es Finais}{28}{section.4.5}
+\contentsline {section}{\numberline {4.3}M\IeC {\'e}todo de Pettitt}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{30}{section.4.4}
+\contentsline {section}{\numberline {4.5}Considera\IeC {\c c}\IeC {\~o}es Finais}{30}{section.4.5}
