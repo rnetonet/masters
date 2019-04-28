@@ -882,7 +882,7 @@ este projeto de mestrado visa comprovar a hipótese que o monitoramento dessas a
 O algoritmo projetado utiliza apenas as camadas inicial e intermediária da arquitetura de uma rede RBF simplificada.
 Além disso, a técnica utiliza uma função gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
 \textit{$\sigma$}, responsável por limitar o raio da função gaussiana, e \textit{$\lambda$}, que define o valor mínimo para ativação de um centro.
-O pseudocódigo da técnica proposta é listado em Algoritmo \ref{alg:algoritmo}.
+O método foi implementado para o framework MOA\footnote{\url{https://git.io/fjGuv}} e o seu pseudocódigo é listado em Algoritmo \ref{alg:algoritmo}.
 
 \vspace{5pt}
 \begin{algorithm}[H]
@@ -1024,7 +1024,7 @@ Cada arquivo é composto por 20.000 observações, cujos valores variam entre 0 
 As classes geradoras utilizadas, as modificações realizadas e os parâmetros aplicados são discutidos a seguir.
 
 A classe \textit{AbruptChangeGenerator} produz fluxos com mudanças de conceito abruptas através da intercalação de sequências com o valor $0.2$ e sequências com o valor $0.8$, conforme o tamanho parametrizado para os conceitos.
-Com o objetivo de aproximar os dados produzidos da realidade, foi necessário alterar a classe para permitr a adição de um ruído randômico para cada exemplo produzido.
+Com o objetivo de aproximar os dados produzidos da realidade, foi necessário alterar a classe\footnote{\url{https://git.io/fjGEj}} para permitr a adição de um ruído randômico para cada exemplo produzido.
 A amplitude desse ruído pode ser definida através de parâmetros de mínimo e máximo, configuráveis na interface da aplicação.
 
 Para construir o fluxo sintético com mudanças abruptas utilizado nos experimentos deste trabalho, 
@@ -1042,7 +1042,7 @@ A Figura \ref{fig:abrupt_change_generator} apresenta essa parametrização.
 
 De forma similar, a classe \textit{GradualChangeGenerator}, responsável por produzir fluxos sintéticos com mudanças de conceito graduais também não permite a adição de ruído aos resultados.
 Além disso, a classe produz apenas uma mudança de conceito gradual, ignorando o tamanho parametrizado para os conceitos.
-Para mitigar estas limitações, a classe foi modificada para permitir a adição de um ruído randômico 
+Para mitigar estas limitações, a classe foi modificada\footnote{\url{https://git.io/fjGue}} para permitir a adição de um ruído randômico 
 e parametrizável aos resultados e respeitar o limite definido para os conceitos, produzindo mais de uma mudança de conceito quando necessário.
 
 Para construir o fluxo sintético com mudanças graduais utilizado nos experimentos deste trabalho, 
@@ -1061,7 +1061,11 @@ A Figura \ref{fig:gradual_change_generator} apresenta essa parametrização.
 Por fim, a classe \textit{NoChangeGenerator}, que produz fluxos sem ocorrência de mudanças de conceito, também foi modificada para permitir a incidência de ruído nos resultados gerados.
 A classe modificada foi utilizada para produzir um terceiro conjunto de dados, com ruído entre $[-0.1, 0.1]$ e sem mudanças de conceito para ser utilizado como \textit{baseline}.
 
-\section{Método de Pettitt}
+As modificações realizadas representam uma das contribuições deste trabalho e podem ser verificadas no repositório customizado do projeto\footnote{}
+
+\section{}
+
+\section{Pettitt}
 \blindtext
  
 \section{Redes de Função de Base Radial}
