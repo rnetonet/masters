@@ -733,12 +733,11 @@ A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado produzido pela
 \end{center}
 \end{figure}
 
-Neste trabalho, o algoritmo proposto foi implementado e testado nas duas ferramentas apresentadas.
+Neste trabalho, o algoritmo proposto será implementado e testado nas duas ferramentas apresentadas.
 Os detalhes de implementação e os resultados desses testes serão discutidos no Capítulo \ref{experimentos_iniciais}.
 A seguir, as redes de função de base radial são detalhadas.
 
 \section{Redes de Função de Base Radial}
-
 
 Uma Rede de Função de Base Radial (\textit{radial basis function, RBF,} em inglês) pode ser definida como um modelo de múltiplas camadas alimentadas adiante (\textit{feedforward}), 
 capaz de analisar padrões complexos e resolver problemas não-linearmente separáveis, utilizando uma abordagem de aproximação de funções.
@@ -765,11 +764,13 @@ segundo o qual, ``um problema complexo de classificação de padrões disposto n
 Essa transformação é realizada por funções de base radial presentes na camada intermediária. 
 Na literatura, uma das funções mais utilizadas para esta tarefa é a função gaussiana, representada na Equação \ref{eq:gaussiana}:
 
-\begin{equation} \label{eq:gaussiana}
-    \phi (v_{i})=\exp \left(-{\frac  {\|v_{i}-c_{i}\|^{2}}{2\sigma ^{2}}}\right)
+\begin{equation}
+    \label{eq:gaussiana}
+    \varphi (v_{i})=e^{-(\sigma r)^{2}}
 \end{equation}
 
-onde, $v$ é o valor de entrada, $c_i$ representa o centro e $\sigma$ é o parâmetro limitador do raio.
+% r=
+onde, $r$ é a distância euclidiana ($\|\mathbf {v_{i}} - \mathbf {c_{i}}\|$), $v$ é o valor de entrada, $c_i$ representa o centro e $\sigma$ é o parâmetro limitador do raio.
 Assim, a classificação realizada por uma rede de função de base radial consiste na resolução das funções \ref{eq:rbf1} e \ref{eq:rbf2}:
 
 \begin{equation} \label{eq:rbf1}
@@ -1010,13 +1011,24 @@ No próximo capítulo, serão discutidos os resultados preliminares realizados c
 
 Este capítulo apresenta um conjunto de experimentos preliminares realizados sobre dois fluxos contínuos sintéticos, 
 cujo objetivo principal foi demonstrar a viabilidade da proposta deste projeto de mestrado.
-Os resultados dos experimentos justificaram a possibilidade de identificar mudanças de conceito em fluxos contínuos de dados 
-utilizando redes de função de base radial.
-
 A próxima seção apresenta como cada fluxo sintético foi produzido para condução dos experimentos.
 
 \section{Configuração dos Experimentos}
-\blindtext
+
+Os fluxos contínuos de dados sintéticos utilizados nos experimentos foram criados através de classes geradoras do MOA \cite{Bifet:2010:MMO:1756006.1859903}.
+Para que pudessem ser reutilizados entre os testes, os dados gerados foram salvos em arquivos no formato ARFF \cite{Hall:2009:WDM:1656274.1656278} através da tarefa \texttt{WriteStreamToARFFFile}.
+
+Foram geradas 10.000 observações para cada conjunto de dados, com valores entre 0 e 1.
+Cada conjunto contempla dois conceitos distintos.
+
+Para produzir o fluxo representando mudanças abruptas de conceito, foi utilizada a classe \texttt{AbruptChangeGenerator}.
+Esta classe foi alterada para permitir a parametrização de valores mínimos e máximo de ruído a serem aplicados aos dados gerados.
+Pois, não existia, em sua versão orginal, a possibilidade de incluir algum ruído aos dados produzidos.
+
+
+
+
+
 
 \section{Método de Pettitt}
 \blindtext
