@@ -1058,12 +1058,51 @@ A Figura \ref{fig:gradual_change_generator} apresenta essa parametrização.
     \end{center}
 \end{figure}
 
-Por fim, a classe \textit{NoChangeGenerator}, que produz fluxos sem ocorrência de mudanças de conceito, também foi modificada para permitir a incidência de ruído nos resultados gerados.
-A classe modificada foi utilizada para produzir um terceiro conjunto de dados, com ruído entre $[-0.1, 0.1]$ e sem mudanças de conceito para ser utilizado como \textit{baseline}.
+Por fim, a classe \textit{NoChangeGenerator}, que produz fluxos sem ocorrência de mudanças de conceito, também foi modificada\footnote{\url{https://git.io/fjGu3}} para permitir a incidência de ruído nos resultados gerados.
+A classe modificada foi utilizada para produzir um terceiro conjunto de dados, com ruído entre $[-0.1, 0.1]$ e sem mudanças de conceito, utilizado como \textit{baseline}.
 
-As modificações realizadas representam uma das contribuições deste trabalho e podem ser verificadas no repositório customizado do projeto\footnote{}
+\section{Critérios de avaliação}
 
-\section{}
+Para avaliação do algoritmo proposto neste trabalho e comparação com o estado da arte, será utilizada a classe \textit{BasicConceptDriftPerformanceEvaluator} do MOA.
+Esta classe permite avaliar a performance de métodos de detecção de mudanças de conceito, analisando dimensões de acurária e eficiência computacional.
+A classe de avaliação deve ser executada através da tarefa \textit{EvaluateConceptDrift}, disponível na aba \textit{Concept Drift} da tela inicial da aplicação.
+A tela de configuração da tarefa é demonstrada na Figura \ref{fig:evaluateconceptdrift_task}.
+
+O restante desta subseção descreve as configurações aplicadas à classe \textit{BasicConceptDriftPerformanceEvaluator} para realização dos experimentos e as dimensões analisadas.
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[width=\textwidth]{imagens/evaluateconceptdrift_task.png}
+        \caption{Parametrização da tarefa \textit{EvaluateConceptDrift}}
+        \label{fig:evaluateconceptdrift_task}
+    \end{center}
+\end{figure}
+
+O parâmetro \textbf{learner} foi definido como \textit{ChangeDetectorLearner} e o seu parâmetro, \textbf{driftDetectionMethod}, configurado conforme a técnica aplicada durante o experimento.
+
+O campo \textbf{stream} define a fonte de dados a ser utilizada para a avaliação e foi configurado como uma fonte \textit{ARFFFileStream}, vinculada a um dos arquivos \textit{ARFF} descritos na subseção anterior.
+O parâmetro \textbf{classIndex}, da classe \textit{ARFFFileStream}, é setado para $0$, pois as fontes de dados utilizadas neste trabalho não contém rótulos definidos.
+
+Os parâmetros \textbf{instanceLimit} e \textbf{timeLimit}, que restringem, respectivamente, as quantidades de instâncias a serem processadas e o tempo de execução total, são configuradas como $-1$, desabilitando essas limitações.
+
+Por fim, o campo \textbf{sampleFrequency} é definido como $1$,  obrigando o MOA a gerar uma linha de resultado para cada instância processada.
+
+As principais dimensões analisadas pela classe de avaliação \textit{BasicConceptDriftPerformanceEvaluator} e os seus significados são apresentados na Tabela \ref{tbl:dimensoes_avaliador_drift}:
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[H]
+    \centering
+    %\resizebox{\textwidth}{!}{%
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Dimensão} & \textbf{Significado} \\ \hline
+                      &                      \\ \hline
+                      &                      \\ \hline
+    \end{tabular}%
+    %}
+    \label{tbl:dimensoes_avaliador_drift}
+\end{table}
 
 \section{Pettitt}
 \blindtext
