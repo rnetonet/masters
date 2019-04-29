@@ -1065,7 +1065,7 @@ A classe modificada foi utilizada para produzir um terceiro conjunto de dados, c
 
 Para avaliação do algoritmo proposto neste trabalho e comparação com o estado da arte, será utilizada a classe \textit{BasicConceptDriftPerformanceEvaluator} do MOA.
 Esta classe permite avaliar a performance de métodos de detecção de mudanças de conceito, analisando dimensões de acurária e eficiência computacional.
-A classe de avaliação deve ser executada através da tarefa \textit{EvaluateConceptDrift}, disponível na aba \textit{Concept Drift} da tela inicial da aplicação.
+A classe de avaliação deve ser executada através da tarefa \textit{EvaluateConceptDrift}, disponível na aba \textit{Concept Drift}, presente na tela inicial da aplicação.
 A tela de configuração da tarefa é demonstrada na Figura \ref{fig:evaluateconceptdrift_task}.
 
 O restante desta subseção descreve as configurações aplicadas à classe \textit{BasicConceptDriftPerformanceEvaluator} para realização dos experimentos e as dimensões analisadas.
@@ -1085,9 +1085,8 @@ O parâmetro \textbf{classIndex}, da classe \textit{ARFFFileStream}, é setado p
 
 Os parâmetros \textbf{instanceLimit} e \textbf{timeLimit}, que restringem, respectivamente, as quantidades de instâncias a serem processadas e o tempo de execução total, são configuradas como $-1$, desabilitando essas limitações.
 
-Por fim, o campo \textbf{sampleFrequency} é definido como $1$,  obrigando o MOA a gerar uma linha de resultado para cada instância processada.
-
-As principais dimensões analisadas pela classe de avaliação \textit{BasicConceptDriftPerformanceEvaluator} e os seus significados são apresentados na Tabela \ref{tbl:dimensoes_avaliador_drift}:
+Por fim, o campo \textbf{sampleFrequency} é definido como $1$,  indicando ao MOA que cada instância processada deve gerar uma linha de resultado.
+As principais dimensões analisadas nestes resultados são apresentados na Tabela \ref{tbl:dimensoes_avaliador_drift}:
 
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
