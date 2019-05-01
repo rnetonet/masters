@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  1 MAY 2019 00:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  1 MAY 2019 14:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1369,7 +1369,16 @@ Package: arydshln 2016/04/28 v1.73
 \adl@LTpagetotal=\dimen308
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+ (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen309
+)) (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
 \c@blindtext=\count342
 \c@Blindtext=\count343
@@ -1392,32 +1401,32 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 ) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
 \openout1 = `template-msc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 136.
-LaTeX Font Info:    ... okay on input line 136.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count360
-\scratchdimen=\dimen309
+\scratchdimen=\dimen310
 \scratchbox=\box70
 \nofMPsegments=\count361
 \nofMParguments=\count362
 \everyMPshowfont=\toks52
 \MPscratchCnt=\count363
-\MPscratchDim=\dimen310
+\MPscratchDim=\dimen311
 \MPnumerator=\count364
 \makeMPintoPDFobject=\count365
 \everyMPtoPDFconversion=\toks53
@@ -1434,7 +1443,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box71
-Package hyperref Info: Link coloring OFF on input line 136.
+Package hyperref Info: Link coloring OFF on input line 129.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1442,16 +1451,16 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count366
 )
-LaTeX Info: Redefining \ref on input line 136.
-LaTeX Info: Redefining \pageref on input line 136.
-LaTeX Info: Redefining \nameref on input line 136.
+LaTeX Info: Redefining \ref on input line 129.
+LaTeX Info: Redefining \pageref on input line 129.
+LaTeX Info: Redefining \nameref on input line 129.
  (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.out) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.out)
 \@outlinefile=\write5
 \openout5 = `template-msc.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 136.
+(lastpage)             ! on input line 129.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1489,83 +1498,83 @@ Package lastpage Info: Please have a look at the pageslts package at
 
 \c@lstlisting=\count367
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 136.
+LaTeX Info: Redefining \selectfont on input line 129.
  ABD: EveryShipout initializing macros
 <ufba.pdf, id=111, 290.08376pt x 446.66875pt>
 File: ufba.pdf Graphic file (type pdf)
 <use ufba.pdf>
-Package pdftex.def Info: ufba.pdf  used on input line 138.
+Package pdftex.def Info: ufba.pdf  used on input line 131.
 (pdftex.def)             Requested size: 56.9055pt x 87.62144pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 138.
+LaTeX Font Info:    Try loading font information for U+msa on input line 131.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 138.
+LaTeX Font Info:    Try loading font information for U+msb on input line 131.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 141.
+(babel)             in language  on input line 134.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 141.
+(babel)             in language  on input line 134.
  [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/rnetonet/Workspace/pgcomp_qualificacao/tex/ufba.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 141.
+(babel)             in language  on input line 134.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 141.
+(babel)             in language  on input line 134.
  [2
 
 ]
-Underfull \hbox (badness 2922) in paragraph at lines 143--143
+Underfull \hbox (badness 2922) in paragraph at lines 136--136
 \OT1/cmr/m/n/14.4 Gradua^^Xc~ao em Ci^encia da Com-
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 167.
+(babel)             in language  on input line 160.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 167.
+(babel)             in language  on input line 160.
 [1
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 187.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 194.
+(babel)             in language  on input line 187.
  [2]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 197.
+(blindtext)                 on input line 190.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 203.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 203.
+(babel)             in language  on input line 196.
 [3
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 203.
+(babel)             in language  on input line 196.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 203.
+(babel)             in language  on input line 196.
  [4
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 206.
+(blindtext)                 on input line 199.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 217.
+(babel)             in language  on input line 210.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 217.
+(babel)             in language  on input line 210.
 [5]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 217.
+(babel)             in language  on input line 210.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 217.
+(babel)             in language  on input line 210.
  [6
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.toc)
@@ -1573,14 +1582,14 @@ Package babel Info: Redefining portuges shorthand "|
 \openout6 = `template-msc.toc'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 214.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 214.
  [7]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 214.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 214.
  [8
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lof)
@@ -1588,14 +1597,14 @@ Package babel Info: Redefining portuges shorthand "|
 \openout7 = `template-msc.lof'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 225.
+(babel)             in language  on input line 218.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 225.
+(babel)             in language  on input line 218.
  [9]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 225.
+(babel)             in language  on input line 218.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 225.
+(babel)             in language  on input line 218.
  [10
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lot)
@@ -1603,422 +1612,445 @@ Package babel Info: Redefining portuges shorthand "|
 \openout8 = `template-msc.lot'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 221.
  [11]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 221.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 228.
+(babel)             in language  on input line 221.
  [12
+
+] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.loa)
+\tf@loa=\write9
+\openout9 = `template-msc.loa'.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 224.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 224.
+ [13]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 224.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 224.
+ [14
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 242.
+(babel)             in language  on input line 238.
 
 
-Package xcolor Warning: Incompatible color definition on input line 242.
+Package xcolor Warning: Incompatible color definition on input line 238.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 244.
+(babel)             in language  on input line 240.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 293.
+(babel)             in language  on input line 289.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 293.
+(babel)             in language  on input line 289.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.293 
+l.289 
        [1
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 321.
+(babel)             in language  on input line 317.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 342.
+(babel)             in language  on input line 338.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 342.
+(babel)             in language  on input line 338.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.342 
+l.338 
        [2]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 351.
+(babel)             in language  on input line 347.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 351.
+(babel)             in language  on input line 347.
  [3]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 351.
+(babel)             in language  on input line 347.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 351.
+(babel)             in language  on input line 347.
  [4
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 351.
+(babel)             in language  on input line 347.
 
 
-Package xcolor Warning: Incompatible color definition on input line 351.
+Package xcolor Warning: Incompatible color definition on input line 347.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 352.
+(babel)             in language  on input line 348.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 364.
+(babel)             in language  on input line 360.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 390.
+(babel)             in language  on input line 386.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 390.
+(babel)             in language  on input line 386.
 [5]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 431.
+(babel)             in language  on input line 427.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 436.
+(babel)             in language  on input line 432.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 436.
+(babel)             in language  on input line 432.
  [6]
-<imagens/concept_drift.png, id=447, 558.58687pt x 209.28188pt>
+<imagens/concept_drift.png, id=460, 558.58687pt x 209.28188pt>
 File: imagens/concept_drift.png Graphic file (type png)
 <use imagens/concept_drift.png>
-Package pdftex.def Info: imagens/concept_drift.png  used on input line 471.
+Package pdftex.def Info: imagens/concept_drift.png  used on input line 467.
 (pdftex.def)             Requested size: 446.8701pt x 167.4257pt.
 
 Underfull \vbox (badness 3375) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 476.
+(babel)             in language  on input line 472.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 476.
+(babel)             in language  on input line 472.
  [7]
-<imagens/concept_drift_patterns.png, id=471, 565.36218pt x 207.02344pt>
+<imagens/concept_drift_patterns.png, id=484, 565.36218pt x 207.02344pt>
 File: imagens/concept_drift_patterns.png Graphic file (type png)
 <use imagens/concept_drift_patterns.png>
-Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 483.
+Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 479.
 (pdftex.def)             Requested size: 452.29036pt x 165.61896pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 501.
+(babel)             in language  on input line 497.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 501.
+(babel)             in language  on input line 497.
  [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.501 A
+l.497 A
         mudança recorrente acontece quando um conceito anteriormente ativo ...pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.501 A
+l.497 A
         mudança recorrente acontece quando um conceito anteriormente ativo ... </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift.png> </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift_patterns.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 507.
+(babel)             in language  on input line 503.
 
-Underfull \hbox (badness 10000) in alignment at lines 530--530
+Underfull \hbox (badness 10000) in alignment at lines 526--526
 [][] 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 543.
+(babel)             in language  on input line 539.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 543.
+(babel)             in language  on input line 539.
 [9pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.543 
+l.539 
       ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 548.
+(babel)             in language  on input line 544.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 586.
+(babel)             in language  on input line 582.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 586.
+(babel)             in language  on input line 582.
  [10]
-Overfull \hbox (11.71376pt too wide) in paragraph at lines 592--601
+Overfull \hbox (11.71376pt too wide) in paragraph at lines 588--597
 []\OT1/cmr/m/n/12 Utilizam t^^Secnicas de-ri-va-das dos
  []
 
 
-Overfull \hbox (6.56206pt too wide) in paragraph at lines 603--612
+Overfull \hbox (6.56206pt too wide) in paragraph at lines 599--608
 []\OT1/cmr/m/n/12 Monitoram di-re-ta-mente a dis-tri-bui^^Xc~ao
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 647.
+(babel)             in language  on input line 643.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 653.
+(babel)             in language  on input line 649.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 653.
+(babel)             in language  on input line 649.
 [11]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 654.
+(babel)             in language  on input line 650.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 667.
+(babel)             in language  on input line 663.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 667.
+(babel)             in language  on input line 663.
  [12pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.667 
+l.663 
       ]
-<imagens/moa.png, id=644, 1016.29688pt x 763.35187pt>
+<imagens/moa.png, id=657, 1016.29688pt x 763.35187pt>
 File: imagens/moa.png Graphic file (type png)
 <use imagens/moa.png>
-Package pdftex.def Info: imagens/moa.png  used on input line 670.
+Package pdftex.def Info: imagens/moa.png  used on input line 666.
 (pdftex.def)             Requested size: 406.51155pt x 305.33534pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 697.
+(babel)             in language  on input line 693.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 697.
+(babel)             in language  on input line 693.
  [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.697 
+l.693 
        </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/moa.png>]
-<imagens/detector.png, id=671, 470.50781pt x 332.74312pt>
+<imagens/detector.png, id=684, 470.50781pt x 332.74312pt>
 File: imagens/detector.png Graphic file (type png)
 <use imagens/detector.png>
-Package pdftex.def Info: imagens/detector.png  used on input line 700.
+Package pdftex.def Info: imagens/detector.png  used on input line 696.
 (pdftex.def)             Requested size: 470.50665pt x 332.7423pt.
 
-Overfull \hbox (17.53877pt too wide) in paragraph at lines 700--701
+Overfull \hbox (17.53877pt too wide) in paragraph at lines 696--697
  [] 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 712.
+(babel)             in language  on input line 708.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 719.
+(babel)             in language  on input line 715.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 719.
+(babel)             in language  on input line 715.
 [14pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.719 
+l.715 
        </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png>]
-<imagens/tornado.png, id=680, 368.87813pt x 347.04657pt>
+<imagens/tornado.png, id=693, 368.87813pt x 347.04657pt>
 File: imagens/tornado.png Graphic file (type png)
 <use imagens/tornado.png>
-Package pdftex.def Info: imagens/tornado.png  used on input line 722.
+Package pdftex.def Info: imagens/tornado.png  used on input line 718.
 (pdftex.def)             Requested size: 276.6579pt x 260.28429pt.
-<imagens/tornado_out2.png, id=687, 753.0534pt x 331.9602pt>
+<imagens/tornado_out2.png, id=700, 753.0534pt x 331.9602pt>
 File: imagens/tornado_out2.png Graphic file (type png)
 <use imagens/tornado_out2.png>
-Package pdftex.def Info: imagens/tornado_out2.png  used on input line 743.
+Package pdftex.def Info: imagens/tornado_out2.png  used on input line 739.
 (pdftex.def)             Requested size: 451.83553pt x 199.17764pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 748.
+(babel)             in language  on input line 744.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 748.
+(babel)             in language  on input line 744.
  [15pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.748 
+l.744 
        </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado.png (PNG copy)>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 753.
-<imagens/rbf_arq.png, id=702, 330.48468pt x 313.17pt>
+(babel)             in language  on input line 749.
+<imagens/rbf_arq.png, id=716, 330.48468pt x 313.17pt>
 File: imagens/rbf_arq.png Graphic file (type png)
 <use imagens/rbf_arq.png>
-Package pdftex.def Info: imagens/rbf_arq.png  used on input line 768.
+Package pdftex.def Info: imagens/rbf_arq.png  used on input line 764.
 (pdftex.def)             Requested size: 330.48387pt x 313.16922pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 773.
+(babel)             in language  on input line 769.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 773.
+(babel)             in language  on input line 769.
  [16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.773 
+l.769 
        </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado_out2.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 795.
+(babel)             in language  on input line 791.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 795.
+(babel)             in language  on input line 791.
  [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.795 \end{equation}
+l.791 \end{equation}
                      </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/rbf_arq.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 833.
+(babel)             in language  on input line 829.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 850.
+(babel)             in language  on input line 846.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 859.
+(babel)             in language  on input line 855.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 859.
+(babel)             in language  on input line 855.
  [18]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 860.
+(babel)             in language  on input line 856.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 860.
+(babel)             in language  on input line 856.
  [19]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 860.
+(babel)             in language  on input line 856.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 860.
+(babel)             in language  on input line 856.
  [20
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 860.
+(babel)             in language  on input line 856.
 
 
-Package xcolor Warning: Incompatible color definition on input line 860.
+Package xcolor Warning: Incompatible color definition on input line 856.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 861.
+(babel)             in language  on input line 857.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 867.
+(babel)             in language  on input line 863.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 885.
+(babel)             in language  on input line 881.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 885.
+(babel)             in language  on input line 881.
 [21]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 940.
+(babel)             in language  on input line 937.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 940.
+(babel)             in language  on input line 937.
  [22pdfTeX warning (ext4): destination with the same identifier (name{algocf.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.940 
+l.937 
       ]
-<imagens/funcionamento_algoritmo.png, id=781, 933.7284pt x 483.4863pt>
+<imagens/funcionamento_algoritmo.png, id=793, 933.7284pt x 483.4863pt>
 File: imagens/funcionamento_algoritmo.png Graphic file (type png)
 <use imagens/funcionamento_algoritmo.png>
-Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 960.
+Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 957.
 (pdftex.def)             Requested size: 452.96788pt x 234.5422pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 966.
+(babel)             in language  on input line 963.
+
+Underfull \vbox (badness 5607) has occurred while \output is active []
+
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 997.
+(babel)             in language  on input line 994.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 997.
+(babel)             in language  on input line 994.
  [23pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.997 \end{table}
+l.994 \end{table}
                   </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1017.
+(babel)             in language  on input line 1014.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1017.
+(babel)             in language  on input line 1014.
  [24pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1017 
+l.1014 
        ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1018.
+(babel)             in language  on input line 1015.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1023.
+(babel)             in language  on input line 1020.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1023.
+(babel)             in language  on input line 1020.
  [25]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1023.
+(babel)             in language  on input line 1020.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1023.
+(babel)             in language  on input line 1020.
  [26
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1023.
+(babel)             in language  on input line 1020.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1023.
+Package xcolor Warning: Incompatible color definition on input line 1020.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1024.
+(babel)             in language  on input line 1021.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1032.
-<imagens/abrupt_change_generator.png, id=806, 438.8897pt x 377.15906pt>
+(babel)             in language  on input line 1029.
+<imagens/abrupt_change_generator.png, id=818, 438.8897pt x 377.15906pt>
 File: imagens/abrupt_change_generator.png Graphic file (type png)
 <use imagens/abrupt_change_generator.png>
-Package pdftex.def Info: imagens/abrupt_change_generator.png  used on input line 1048.
+Package pdftex.def Info: imagens/abrupt_change_generator.png  used on input line 1045.
 (pdftex.def)             Requested size: 452.96788pt x 389.2666pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1053.
+(babel)             in language  on input line 1050.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1053.
+(babel)             in language  on input line 1050.
 [27]
-<imagens/gradual_change_generator.png, id=816, 438.8897pt x 377.15906pt>
+<imagens/gradual_change_generator.png, id=828, 438.8897pt x 377.15906pt>
 File: imagens/gradual_change_generator.png Graphic file (type png)
 <use imagens/gradual_change_generator.png>
-Package pdftex.def Info: imagens/gradual_change_generator.png  used on input line 1065.
+Package pdftex.def Info: imagens/gradual_change_generator.png  used on input line 1062.
 (pdftex.def)             Requested size: 452.96788pt x 389.2666pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1070.
+(babel)             in language  on input line 1067.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1070.
+(babel)             in language  on input line 1067.
  [28pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1070 
+l.1067 
         </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/abrupt_change_generator.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1074.
+(babel)             in language  on input line 1071.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1080.
+(babel)             in language  on input line 1077.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1080.
+(babel)             in language  on input line 1077.
  [29pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1080 P
+l.1077 P
         ara execução dos experimentos deste projeto de mestrado, os parâm... </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/gradual_change_generator.png>]
-Overfull \hbox (33.21034pt too wide) in paragraph at lines 1086--1102
+Overfull \hbox (4.75758pt too wide) in paragraph at lines 1083--1095
 [][] 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1116.
+(babel)             in language  on input line 1120.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1119.
+(babel)             in language  on input line 1123.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1119.
+(babel)             in language  on input line 1123.
 [30pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1119 
+l.1123 
+       pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1123 
        ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1130.
+(babel)             in language  on input line 1134.
 
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1132.
+(blindtext)                 on input line 1136.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1135.
+(babel)             in language  on input line 1139.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1135.
+(babel)             in language  on input line 1139.
 [31]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1135.
+(babel)             in language  on input line 1139.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1135.
+(babel)             in language  on input line 1139.
  [32
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl
@@ -2056,30 +2088,30 @@ Package babel Info: Redefining portuges shorthand "|
  [38]) 
 AED: lastpage setting LastPage
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1159.
+(babel)             in language  on input line 1163.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1159.
+(babel)             in language  on input line 1163.
 [39]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1159.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1159.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1159.
+(babel)             in language  on input line 1163.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1163.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1163.
  (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1159.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1159.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1163.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1163.
 Package rerunfilecheck Info: File `template-msc.out' has not changed.
 (rerunfilecheck)             Checksum: 0620E33951520ECFB09CB3E91AAA61EE;1919.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1159.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1163.
  ) 
 Here is how much of TeX's memory you used:
- 32633 strings out of 492982
- 615519 string characters out of 6134895
- 845184 words of memory out of 5000000
- 35473 multiletter control sequences out of 15000+600000
+ 33668 strings out of 492982
+ 642710 string characters out of 6134895
+ 875009 words of memory out of 5000000
+ 36489 multiletter control sequences out of 15000+600000
  546684 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,21n,56p,10445b,651s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2098,10 +2130,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (53 pages, 1406751 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (55 pages, 1406583 bytes).
 PDF statistics:
- 1046 PDF objects out of 1200 (max. 8388607)
- 940 compressed objects within 10 object streams
- 188 named destinations out of 1000 (max. 500000)
+ 1059 PDF objects out of 1200 (max. 8388607)
+ 951 compressed objects within 10 object streams
+ 191 named destinations out of 1000 (max. 500000)
  276 words of extra memory for PDF output out of 10000 (max. 10000000)
 

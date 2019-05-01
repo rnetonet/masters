@@ -53,6 +53,14 @@
 \usepackage{arydshln}
 \usepackage{lscape}
 
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
 \presetkeys%
     {todonotes}%
     {inline,backgroundcolor=yellow}{}
@@ -116,21 +124,6 @@
 % e.g. \coadviser{Prof. Dr. Pedro Pedreira}
 % Comente se nao ha co-orientador
 %\coadviser{Nome Completo do CO-ORIENTADOR}
-
-% \usepackage[bookmarks=true, unicode=true]{hyperref}
-% \hypersetup{
-%         unicode=true,
-%         backref=true,
-%         pagebackref=true,
-%         bookmarks=true,                 % show bookmarks bar?
-%         colorlinks=true,               % false: boxed links; true: colored links
-%         linkcolor=blue,                      % color of internal links
-%         citecolor=blue,                % color of links to bibliography
-%         filecolor=magenta,              % color of file links
-%         urlcolor=blue,            % color of url links
-%         bookmarksdepth=4,
-%         breaklinks=true            % deve ser usado com o pacote breakurl, sem ele não fuciona
-% }
 
 %% Inicio do documento
 \begin{document}
@@ -223,6 +216,9 @@
 % Lista de tabelas
 % Comente para ocultar
 \listoftables
+
+% Lista de algoritmos
+\listofalgorithms
 
 %% Parte textual
 \mainmatter
@@ -861,7 +857,7 @@ No próximo capítulo, o plano de pesquisa será detalhado.
 \section{Considerações Iniciais}
 
 Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que redes de função de base radial sejam aplicadas para detectar mudanças de conceito em fluxos contínuos de dados.
-Espera-se que com a utilização de redes RBF, seja possível detectar mudanças de conceito em fluxos contínuos de dados em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+Espera-se que com a utilização de redes RBF, seja possível detectar mudanças de conceito em fluxos contínuos em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
 
 \section{Descrição do Problema}
@@ -882,22 +878,23 @@ Entretanto, as técnicas de detecção encontradas na literatura apresentam limi
 Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que os torna inviáveis, por causa do custo e do tempo de rotulação.
 Enquanto as técnicas não supervisionadas/implícitas têm dificuldade para antender às restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
 
-Redes de função de base radial são modelos de redes neurais multicamadas alimentadas adiante, capazes de analisar padrões complexos e resolver problemas não-linearmente separáveis \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+Redes de função de base radial são modelos de redes neurais multicamadas, alimentadas adiante, capazes de analisar padrões complexos e resolver problemas não-linearmente separáveis \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 A arquitetura básica dessas redes é composta por três camadas.
 A camada de entrada recepciona os dados.
 A camada intermediária, através de funções de base radial, realiza uma transformação não-linear dos dados para um espaço com alta dimensionalidade, buscando tornar o problema linearmente separável \cite{cover1965browse}.
 Por fim, a camada de saída produz o resultado final da rede através de uma combinação linear dos resultados da camada intermediária \cite{Rojas:1996:NNS:235222}.
 
 A camada intermediária das redes de função de base radial forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
-Considerando que o centro ativo do agrupamento muda conforme o valor processado pelo algoritmo, 
-este projeto de mestrado visa comprovar a hipótese que o monitoramento dessas alterações permite detectar mudanças de conceito em fluxos contínuos de dados em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+O centro ativo deste agrupamento pode se alterar, conforme o valor processado.
+Assim, este trabalho de mestrado implementa as camadas inicial e intermediária, 
+e utiliza as alterações de centro no espaço de alta dimensionalidade como indicadores da ocorrência de mudanças de conceito.
 
-O algoritmo projetado utiliza apenas as camadas inicial e intermediária da arquitetura de uma rede RBF simplificada.
-Além disso, a técnica utiliza uma função gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
+O método proposto, denominado \textit{RBFDriftDetector}, utiliza a Gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
 \textit{$\sigma$}, responsável por limitar o raio da função gaussiana, e \textit{$\lambda$}, que define o valor mínimo para ativação de um centro.
-O método foi implementado para o framework MOA\footnote{\url{https://git.io/fjGuv}} e o seu pseudocódigo é listado em Algoritmo \ref{alg:algoritmo}.
+A técnica é descrita na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo}, 
+tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/fjGuv}}, para realização dos experimentos na plataforma \textit{MOA}.
 
-\vspace{5pt}
+\vspace{7pt}
 \begin{algorithm}[H]
     \SetAlgoLined
     \Entrada{$valor, \sigma, \lambda$} 
@@ -932,7 +929,7 @@ O método foi implementado para o framework MOA\footnote{\url{https://git.io/fjG
     \caption{\textsc{RBFDriftDetector}}
     \label{alg:algoritmo} 
 \end{algorithm}
-\vspace{5pt}
+\vspace{7pt}
 
 Para exemplificar a execução do algoritmo proposto neste projeto, considere o conjunto $S = \{0.11, 0.12, 0.13, 0.34, 0.45, 0.47, 0.33, 0.25, 0.14, 0.10\}$ como fonte de dados.
 Para este exemplo, os parâmetros foram definidos de forma empírica. O parâmetro \textit{$\sigma$} foi definido com o valor $0.2$ e o parâmetro \textit{$\lambda$} foi fixado em $0.6$.
@@ -951,9 +948,9 @@ Assim, uma nova mudança de conceito é sinalizada.
 Finalmente, o valor do instante $T10$, $0.10$, é vinculado ao centro ativo ($0.11$).
 
 A Figura \ref{fig:funcionamento_algoritmo} apresenta esse comportamento graficamente. 
-Os círculos na cor amarela representam eventos (valores) vinculados ao primeiro centro estabelecido ($0.11$ no momento $T1$), 
-enquanto os de cor magenta apresentaram maior ativação para o segundo centro definido ($0.34$ em $T4$).
-As linhas verticais tracejadas na cor vermelha indicam a ocorrência de mudança de conceito.
+Os círculos na cor amarela representam valores vinculados ao primeiro centro estabelecido ($0.11$ no momento $T1$), 
+enquanto os de cor lilás foram ativados pelo segundo centro definido ($0.34$ em $T4$).
+As linhas verticais tracejadas, de cor vermelha, indicam a ocorrência de mudança de conceito.
 
 \begin{figure}[H]
 \begin{center}
@@ -1083,35 +1080,42 @@ Para execução dos experimentos deste projeto de mestrado, os parâmetros da ta
     \begin{table}[ht]
     \caption{Configuração da tarefa \textit{BasicConceptDriftPerformanceEvaluator}}
     \label{tbl:configuracao_tarefa}
-    \begin{tabular}{llm{8.5cm}}
+    \begin{tabular}{llm{7.5cm}}
     \hline
     \textbf{Parâmetro} & \textbf{Valor} & \textbf{Observação} \\
     \hline
     \hline
     \textit{learner}          & \textit{ChangeDetectorLearner}  &  O algoritmo de detecção de mudanças de conceito a ser testado é definido no atributo \textit{driftDetectionMethod} da classe \textit{ChangeDetectorLearner}.                   \\
-    \noalign{\vskip 1mm}
     \textit{stream}           & \textit{ARFFFileStream}         &  Caminho para um dos arquivos \textit{ARFF} descrito na seção anterior. O atributo \textit{classIndex} deve ser definido como $0$, pois não existem rótulos nestes conjuntos de dados.  \\ 
-    \noalign{\vskip 1mm}    
     \textit{instanceLimit}    & $-1$                            &  Desabilita o limite de instâncias a serem processadas.  \\
-    \noalign{\vskip 1mm}    
     \textit{timeLimit}        & $-1$                            &  Desabilita o limite de tempo de execução.  \\ 
-    \noalign{\vskip 1mm}    
-    \textit{sampleFrequency}  & \hspace{3mm}$1$                       &  Uma linha de resultado do avaliador deve ser gerada para cada instância processada.  \\
+    \textit{sampleFrequency}  & \hspace{3mm}$1$                 &  Uma linha de resultado do avaliador deve ser gerada para cada instância processada.  \\
     \hline
     \end{tabular}
     \end{table}
 \end{center}
 
 A classe \textit{BasicConceptDriftPerformanceEvaluator} produz diversos indicadores sobre a performance e a acurácia da técnica de detecção de mudanças analisada.
-Neste trabalho de mestrado, os seguintes indicadores serão analisados durante os experimentos:
+Os indicadores analisados neste trabalho estão listados na Tabela \ref{tbl:indicadores_analisado}.
 
-\begin{itemize}
-    \item \textbf{Tempo de Processamento}: indica o tempo médio de processamento, em segundos, para cada exemplo;
-    \item \textbf{Mudanças Existentes}: quantidade de mudanças presentes no fluxo de dados analisado;
-    \item \textbf{Mudanças Detectadas}: quantidade de mudanças detectadas pelo algoritmo analisado;
-    \item \textbf{Mudanças Reais Detectadas}: quantidade de mudanças detectadas corretamente pelo algoritmo analisado;
-    \item \textbf{Atraso de Detecção}: Atraso médio, em número de instâncias processadas, para detecção de uma mudança pelo algoritmo.
-\end{itemize}
+\begin{center} 
+    \begin{table}[ht]
+    \caption{Indicadores analisados}
+    \label{tbl:indicadores_analisado}
+    \begin{tabular}{lm{10cm}}
+    \hline
+    \textbf{Indicador} & \textbf{Observação} \\
+    \hline
+    \hline
+    \textit{Tempo de Processamento}    &  Tempo médio (segundos) de processamento para cada exemplo. \\
+    \textit{Mudanças Existentes}       &  Quantidade de mudanças existentes de fato. \\
+    \textit{Mudanças Detectadas}       &  Quantidade de mudanças detectadas. \\
+    \textit{Mudanças Reais Detectadas} &  Quantidade de mudanças detectadas corretamente. \\
+    \textit{Atraso de Detecção}        &  Quantidade média de instâncias necessárias para detectar uma mudança. \\
+    \hline
+    \end{tabular}
+    \end{table}
+\end{center}
 
 \section{RBFD\element{rift}D\element{etector}}
 
