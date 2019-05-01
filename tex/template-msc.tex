@@ -67,6 +67,8 @@
 \pdfstringdefDisableCommands{\let\element\@firstofone}
 \makeatother
 
+\renewcommand{\arraystretch}{1.3}
+
 % Siglas
 \acrodef{AM}[AM]{{Aprendizado de Máquina}}
 \acrodef{DE}[DE] {{Distância Euclidiana}}
@@ -511,18 +513,21 @@ Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a mudança 
 
 \begin{center} 
 \begin{table}[H]
-\label{tbl:taxonomy}
-\begin{tabularx}{\textwidth}{|l|X|}
-\cline{1-2}
-\multicolumn{1}{|c|}{\textbf{Área}} & \multicolumn{1}{c|}{\textbf{Termos}}       \\ \cline{1-2}
-Mineração de Dados                  & Mudança de Conceito                        \\ \cline{1-2}
-Aprendizado de Máquina              & Mudança de Conceito, Mudança de Covariável \\ \cline{1-2}
-Computação Evolucionária            & Ambiente Evolutivo, Ambiente em Mudança    \\ \cline{1-2}
-IA e Robótica                       & Ambiente Dinâmico                          \\ \cline{1-2}
-Estatísticas, Séries Temporais      & Não Estacionário                           \\ \cline{1-2}
-Recuperação de Informação           & Evolução Temporal                          \\ \cline{1-2}
-\end{tabularx}
 \caption{Terminologia - Mudança de Conceito \cite{Zliobaite:2010}}
+\label{tbl:taxonomy}
+\begin{tabularx}{\textwidth}{lc}
+\hline
+\multicolumn{1}{c}{\textbf{Área}} & \multicolumn{1}{c}{\textbf{Termos}}          \\
+\hline
+\hline
+Mineração de Dados                  & Mudança de Conceito                        \\
+Aprendizado de Máquina              & Mudança de Conceito, Mudança de Covariável \\
+Computação Evolucionária            & Ambiente Evolutivo, Ambiente em Mudança    \\
+IA e Robótica                       & Ambiente Dinâmico                          \\
+Estatísticas, Séries Temporais      & Não Estacionário                           \\
+Recuperação de Informação           & Evolução Temporal                          \\
+\hline
+\end{tabularx}
 \end{table}
 \end{center}
 
@@ -618,6 +623,8 @@ De forma similar, os algoritmos \textit{implícitos / não supervisionados} tamb
 Por fim, a Tabela \ref{tbl:abordagens} resume as categorias, as subcategorias e as respectivas técnicas abordadas nesta seção.
 
 \begin{table}[!ht]
+    \caption{Resumo - Algoritmos de detecção \cite{Sethi:2017:RDC:3096751.3096864}}
+    \label{tbl:abordagens}
     \centering
     \resizebox{\textwidth}{!}{%
     \begin{tabular}[t]{@{}lllll@{}}
@@ -632,8 +639,6 @@ Por fim, a Tabela \ref{tbl:abordagens} resume as categorias, as subcategorias e 
     \hline
     \end{tabular}%
     }
-    \caption{Resumo - Algoritmos de detecção \cite{Sethi:2017:RDC:3096751.3096864}}
-    \label{tbl:abordagens}
 \end{table}
 
 O método de detecção proposto neste trabalho se enquadra na categoria de algoritmos \textit{implícitos / não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}.
@@ -924,8 +929,8 @@ O método foi implementado para o framework MOA\footnote{\url{https://git.io/fjG
     \BlankLine
     }
 
-    \label{alg:algoritmo} 
     \caption{\textsc{RBFDriftDetector}}
+    \label{alg:algoritmo} 
 \end{algorithm}
 \vspace{5pt}
 
@@ -964,6 +969,8 @@ A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para 
 
 \begin{table}[htbp]
 \begin{center}
+\caption{Cronograma de atividades}     % mude aqui para seu título da tabela
+\label{cronograma} % para referencia no texto.
 \resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
 \begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
@@ -987,8 +994,6 @@ A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para 
 \end{tabular}
 } % fecha resizebox
 \end{center}
-\caption{Cronograma de atividades}     % mude aqui para seu título da tabela
-\label{cronograma} % para referencia no texto.
 \end{table}
 
 Para a conclusão da atividade 1, 
@@ -1025,6 +1030,7 @@ Os resultados obtidos se mostraram promissores, justificando a continuidade da p
 A próxima seção apresenta como os dados sintéticos foram produzidos para condução dos experimentos.
 
 \section{Configuração dos Experimentos}
+\label{sec:configuracao_experimentos}
 
 Os fluxos de dados sintéticos foram produzidos através de classes geradoras do framework \textit{MOA} e salvos em arquivos no formato \textit{ARFF}, para que pudessem ser reutilizados.
 Cada fluxo gerado representa até dois conceitos e é composto por 20.000 observações, com valores entre 0 e 1.
@@ -1071,36 +1077,55 @@ A classe \textit{BasicConceptDriftPerformanceEvaluator} do MOA será utilizada p
 Esta classe permite avaliar algoritmos para detecção de mudanças de conceito, analisando dimensões de acurária e eficiência computacional.
 Para utilizá-la, é necessário construir uma tarefa do tipo \textit{EvaluateConceptDrift} através da aba \textit{Concept Drift}, presente na tela inicial da aplicação.
 
-Para execução dos experimentos deste projeto de mestrado, os parâmetros da tarefa \textit{BasicConceptDriftPerformanceEvaluator} foram configurados conforme a Tabela \ref{tbl:params_basic_concept_drift_evaluator}.
+Para execução dos experimentos deste projeto de mestrado, os parâmetros da tarefa \textit{BasicConceptDriftPerformanceEvaluator} foram configurados conforme a Tabela \ref{tbl:configuracao_tarefa}.
 
 \begin{center} 
     \begin{table}[ht]
-    \label{tbl:params_basic_concept_drift_evaluator}
-    \begin{tabularx}{\textwidth}{|p{3cm}|p{5cm}|X|}
-    \cline{1-3}
-    \multicolumn{1}{|c}{\textbf{Parâmetro}} & \multicolumn{1}{|c|}{\textbf{Valor}} & \multicolumn{1}{c|}{\textbf{Observação}}       \\ \cline{1-3}
-    \textit{learner}                  & \textit{ChangeDetectorLearner}                 &  O algoritmo de detecção de mudanças de conceito a ser testado é definido no atributo \textit{driftDetectionMethod} da classe \textit{ChangeDetectorLearner}.                   \\ \cline{1-3}
-    \textit{stream}                  & \textit{ARFFFileStream}                &  Caminho para um dos arquivos \textit{ARFF} descrito na seção anterior. O atributo \textit{classIndex} deve ser definido como $0$, pois não existem rótulos nestes conjuntos de dados.  \\ \cline{1-3}
-    \textit{instanceLimit}                  & $-1$                &  Desabilita o limite de instâncias a serem processadas.  \\ \cline{1-3}
-    \textit{timeLimit}                  & $-1$                &  Desabilita o limite de tempo de execução.  \\ \cline{1-3}
-    \textit{sampleFrequency}                  & $1$                &  Uma linha de resultado do avaliador deve ser gerada para cada instância processada.  \\ \cline{1-3}
-    \cline{1-3}
-    \end{tabularx}
     \caption{Configuração da tarefa \textit{BasicConceptDriftPerformanceEvaluator}}
+    \label{tbl:configuracao_tarefa}
+    \begin{tabular}{llm{8.5cm}}
+    \hline
+    \textbf{Parâmetro} & \textbf{Valor} & \textbf{Observação} \\
+    \hline
+    \hline
+    \textit{learner}          & \textit{ChangeDetectorLearner}  &  O algoritmo de detecção de mudanças de conceito a ser testado é definido no atributo \textit{driftDetectionMethod} da classe \textit{ChangeDetectorLearner}.                   \\
+    \noalign{\vskip 1mm}
+    \textit{stream}           & \textit{ARFFFileStream}         &  Caminho para um dos arquivos \textit{ARFF} descrito na seção anterior. O atributo \textit{classIndex} deve ser definido como $0$, pois não existem rótulos nestes conjuntos de dados.  \\ 
+    \noalign{\vskip 1mm}    
+    \textit{instanceLimit}    & $-1$                            &  Desabilita o limite de instâncias a serem processadas.  \\
+    \noalign{\vskip 1mm}    
+    \textit{timeLimit}        & $-1$                            &  Desabilita o limite de tempo de execução.  \\ 
+    \noalign{\vskip 1mm}    
+    \textit{sampleFrequency}  & \hspace{3mm}$1$                       &  Uma linha de resultado do avaliador deve ser gerada para cada instância processada.  \\
+    \hline
+    \end{tabular}
     \end{table}
 \end{center}
 
-Neste trabalho de mestrado, serão analisadas as seguintes dimensões de avaliação:
-tempo de avaliação (\textit{evaluation time (cpu seconds)}), 
-mudanças detectadas (\textit{detected changes}),
-mudanças verdadeiras (\textit{true changes}),
-atraso de detecção (\textit{delay detection (average)}) e mudanças reais detectadas (\textit{true changes detected}).
+A classe \textit{BasicConceptDriftPerformanceEvaluator} produz diversos indicadores sobre a performance e a acurácia da técnica de detecção de mudanças analisada.
+Neste trabalho de mestrado, os seguintes indicadores serão analisados durante os experimentos:
 
-\section{P\element{ettitt}}
-\blindtext
- 
+\begin{itemize}
+    \item \textbf{Tempo de Processamento}: indica o tempo médio de processamento, em segundos, para cada exemplo;
+    \item \textbf{Mudanças Existentes}: quantidade de mudanças presentes no fluxo de dados analisado;
+    \item \textbf{Mudanças Detectadas}: quantidade de mudanças detectadas pelo algoritmo analisado;
+    \item \textbf{Mudanças Reais Detectadas}: quantidade de mudanças detectadas corretamente pelo algoritmo analisado;
+    \item \textbf{Atraso de Detecção}: Atraso médio, em número de instâncias processadas, para detecção de uma mudança pelo algoritmo.
+\end{itemize}
+
 \section{RBFD\element{rift}D\element{etector}}
-\blindtext
+
+Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o método de detecção de mudanças de conceito proposto neste trabalho, denominado \textit{RBFDriftDetector}.
+
+Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta, 
+a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de redes de funçaõ de base radial para detecção de mudanças de conceito em fluxos contínuos de dados.
+
+% Para execução dos experimentos, foram selecionadas 6 medidas de distância e simila-
+% ridade listadas no Capı́tulo 2: i) DTW; ii) Euclidiana; iii) Manhattan; iv) Minkowski; v)
+% CID; e vi) Cross-Correlation.
+Para execução dos experimentos, foram utilizados os três conjuntos de dados sintéticos gerados, conforme a seção \ref{sec:configuracao_experimentos}.
+A seguir 
+\textit{ADWIN}, \textit{}
 
 \section{Considerações Finais}
 \blindtext
