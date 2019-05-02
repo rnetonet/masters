@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  2 MAY 2019 00:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.11)  2 MAY 2019 11:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -806,26 +806,7 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
-)) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen131
-\lightrulewidth=\dimen132
-\cmidrulewidth=\dimen133
-\belowrulesep=\dimen134
-\belowbottomsep=\dimen135
-\aboverulesep=\dimen136
-\abovetopsep=\dimen137
-\cmidrulesep=\dimen138
-\cmidrulekern=\dimen139
-\defaultaddspace=\dimen140
-\@cmidla=\count129
-\@cmidlb=\count130
-\@aboverulesep=\dimen141
-\@belowrulesep=\dimen142
-\@thisruleclass=\count131
-\@lastruleclass=\count132
-\@thisrulewidth=\dimen143
-) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
 LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/upzd.fd
@@ -837,26 +818,26 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 )) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip59
-\multirow@cntb=\count133
+\multirow@cntb=\count129
 \multirow@dima=\skip60
-\bigstrutjot=\dimen144
+\bigstrutjot=\dimen131
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count134
+\lst@mode=\count130
 \lst@gtempboxa=\box28
 \lst@token=\toks32
-\lst@length=\count135
-\lst@currlwidth=\dimen145
-\lst@column=\count136
-\lst@pos=\count137
-\lst@lostspace=\dimen146
-\lst@width=\dimen147
-\lst@newlines=\count138
-\lst@lineno=\count139
-\lst@maxwidth=\dimen148
+\lst@length=\count131
+\lst@currlwidth=\dimen132
+\lst@column=\count132
+\lst@pos=\count133
+\lst@lostspace=\dimen133
+\lst@width=\dimen134
+\lst@newlines=\count134
+\lst@lineno=\count135
+\lst@maxwidth=\dimen135
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count140
-\lst@skipnumbers=\count141
+\c@lstnumber=\count136
+\lst@skipnumbers=\count137
 \lst@framebox=\box29
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -864,11 +845,11 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
  (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count142
+\c@AlgoLine=\count138
 \algocf@hangindent=\skip61
  (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count143
+\c@checkoddpage=\count139
 )
 \skiptotal=\skip62
 \skiplinenumber=\skip63
@@ -878,12 +859,12 @@ Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
 \skiplength=\skip67
 \algomargin=\skip68
 \skipalgocfslide=\skip69
-\algowidth=\dimen149
-\inoutsize=\dimen150
-\inoutindent=\dimen151
-\interspacetitleruled=\dimen152
-\interspacealgoruled=\dimen153
-\interspacetitleboxruled=\dimen154
+\algowidth=\dimen136
+\inoutsize=\dimen137
+\inoutindent=\dimen138
+\interspacetitleruled=\dimen139
+\interspacealgoruled=\dimen140
+\interspacetitleboxruled=\dimen141
 \algocf@ruledwidth=\skip70
 \algocf@inoutbox=\box30
 \algocf@inputbox=\box31
@@ -900,33 +881,33 @@ Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
 \algoheightrule=\skip77
 \algotitleheightruledefault=\skip78
 \algotitleheightrule=\skip79
-\c@algocfline=\count144
-\c@algocfproc=\count145
-\c@algocf=\count146
+\c@algocfline=\count140
+\c@algocfproc=\count141
+\c@algocf=\count142
 \algocf@algoframe=\box36
 \algocf@algobox=\box37
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xfrac/xfrac.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2018/02/21 L3 programming layer (loader) 
  (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2018/02/21 L3 programming layer (code)
-\c_max_int=\count147
-\l_tmpa_int=\count148
-\l_tmpb_int=\count149
-\g_tmpa_int=\count150
-\g_tmpb_int=\count151
-\g__intarray_font_int=\count152
-\g__prg_map_int=\count153
-\c_log_iow=\count154
-\l_iow_line_count_int=\count155
-\l__iow_line_target_int=\count156
-\l__iow_one_indent_int=\count157
-\l__iow_indent_int=\count158
-\c_zero_dim=\dimen155
-\c_max_dim=\dimen156
-\l_tmpa_dim=\dimen157
-\l_tmpb_dim=\dimen158
-\g_tmpa_dim=\dimen159
-\g_tmpb_dim=\dimen160
+\c_max_int=\count143
+\l_tmpa_int=\count144
+\l_tmpb_int=\count145
+\g_tmpa_int=\count146
+\g_tmpb_int=\count147
+\g__intarray_font_int=\count148
+\g__prg_map_int=\count149
+\c_log_iow=\count150
+\l_iow_line_count_int=\count151
+\l__iow_line_target_int=\count152
+\l__iow_one_indent_int=\count153
+\l__iow_indent_int=\count154
+\c_zero_dim=\dimen142
+\c_max_dim=\dimen143
+\l_tmpa_dim=\dimen144
+\l_tmpb_dim=\dimen145
+\g_tmpa_dim=\dimen146
+\g_tmpb_dim=\dimen147
 \c_zero_skip=\skip80
 \c_max_skip=\skip81
 \l_tmpa_skip=\skip82
@@ -939,99 +920,99 @@ Package: expl3 2018/02/21 L3 programming layer (code)
 \l_tmpb_muskip=\muskip15
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
-\l_keys_choice_int=\count159
-\c__fp_leading_shift_int=\count160
-\c__fp_middle_shift_int=\count161
-\c__fp_trailing_shift_int=\count162
-\c__fp_big_leading_shift_int=\count163
-\c__fp_big_middle_shift_int=\count164
-\c__fp_big_trailing_shift_int=\count165
-\c__fp_Bigg_leading_shift_int=\count166
-\c__fp_Bigg_middle_shift_int=\count167
-\c__fp_Bigg_trailing_shift_int=\count168
-\c__fp_rand_size_int=\count169
-\c__fp_rand_four_int=\count170
-\c__fp_rand_eight_int=\count171
-\l__sort_length_int=\count172
-\l__sort_min_int=\count173
-\l__sort_top_int=\count174
-\l__sort_max_int=\count175
-\l__sort_true_max_int=\count176
-\l__sort_block_int=\count177
-\l__sort_begin_int=\count178
-\l__sort_end_int=\count179
-\l__sort_A_int=\count180
-\l__sort_B_int=\count181
-\l__sort_C_int=\count182
-\l__tl_build_start_index_int=\count183
-\l__tl_build_index_int=\count184
-\l__tl_analysis_normal_int=\count185
-\l__tl_analysis_index_int=\count186
-\l__tl_analysis_nesting_int=\count187
-\l__tl_analysis_type_int=\count188
-\l__regex_internal_a_int=\count189
-\l__regex_internal_b_int=\count190
-\l__regex_internal_c_int=\count191
-\l__regex_balance_int=\count192
-\l__regex_group_level_int=\count193
-\l__regex_mode_int=\count194
-\c__regex_cs_in_class_mode_int=\count195
-\c__regex_cs_mode_int=\count196
-\l__regex_catcodes_int=\count197
-\l__regex_default_catcodes_int=\count198
-\c__regex_catcode_D_int=\count199
-\c__regex_catcode_S_int=\count266
-\c__regex_catcode_L_int=\count267
-\c__regex_catcode_O_int=\count268
-\c__regex_catcode_A_int=\count269
-\c__regex_all_catcodes_int=\count270
-\l__regex_show_lines_int=\count271
-\l__regex_min_state_int=\count272
-\l__regex_max_state_int=\count273
-\l__regex_left_state_int=\count274
-\l__regex_right_state_int=\count275
-\l__regex_capturing_group_int=\count276
-\l__regex_min_pos_int=\count277
-\l__regex_max_pos_int=\count278
-\l__regex_curr_pos_int=\count279
-\l__regex_start_pos_int=\count280
-\l__regex_success_pos_int=\count281
-\l__regex_curr_char_int=\count282
-\l__regex_curr_catcode_int=\count283
-\l__regex_last_char_int=\count284
-\l__regex_case_changed_char_int=\count285
-\l__regex_curr_state_int=\count286
-\l__regex_step_int=\count287
-\l__regex_min_active_int=\count288
-\l__regex_max_active_int=\count289
-\l__regex_replacement_csnames_int=\count290
-\l__regex_match_count_int=\count291
-\l__regex_min_submatch_int=\count292
-\l__regex_submatch_int=\count293
-\l__regex_zeroth_submatch_int=\count294
-\g__regex_trace_regex_int=\count295
+\l_keys_choice_int=\count155
+\c__fp_leading_shift_int=\count156
+\c__fp_middle_shift_int=\count157
+\c__fp_trailing_shift_int=\count158
+\c__fp_big_leading_shift_int=\count159
+\c__fp_big_middle_shift_int=\count160
+\c__fp_big_trailing_shift_int=\count161
+\c__fp_Bigg_leading_shift_int=\count162
+\c__fp_Bigg_middle_shift_int=\count163
+\c__fp_Bigg_trailing_shift_int=\count164
+\c__fp_rand_size_int=\count165
+\c__fp_rand_four_int=\count166
+\c__fp_rand_eight_int=\count167
+\l__sort_length_int=\count168
+\l__sort_min_int=\count169
+\l__sort_top_int=\count170
+\l__sort_max_int=\count171
+\l__sort_true_max_int=\count172
+\l__sort_block_int=\count173
+\l__sort_begin_int=\count174
+\l__sort_end_int=\count175
+\l__sort_A_int=\count176
+\l__sort_B_int=\count177
+\l__sort_C_int=\count178
+\l__tl_build_start_index_int=\count179
+\l__tl_build_index_int=\count180
+\l__tl_analysis_normal_int=\count181
+\l__tl_analysis_index_int=\count182
+\l__tl_analysis_nesting_int=\count183
+\l__tl_analysis_type_int=\count184
+\l__regex_internal_a_int=\count185
+\l__regex_internal_b_int=\count186
+\l__regex_internal_c_int=\count187
+\l__regex_balance_int=\count188
+\l__regex_group_level_int=\count189
+\l__regex_mode_int=\count190
+\c__regex_cs_in_class_mode_int=\count191
+\c__regex_cs_mode_int=\count192
+\l__regex_catcodes_int=\count193
+\l__regex_default_catcodes_int=\count194
+\c__regex_catcode_D_int=\count195
+\c__regex_catcode_S_int=\count196
+\c__regex_catcode_L_int=\count197
+\c__regex_catcode_O_int=\count198
+\c__regex_catcode_A_int=\count199
+\c__regex_all_catcodes_int=\count266
+\l__regex_show_lines_int=\count267
+\l__regex_min_state_int=\count268
+\l__regex_max_state_int=\count269
+\l__regex_left_state_int=\count270
+\l__regex_right_state_int=\count271
+\l__regex_capturing_group_int=\count272
+\l__regex_min_pos_int=\count273
+\l__regex_max_pos_int=\count274
+\l__regex_curr_pos_int=\count275
+\l__regex_start_pos_int=\count276
+\l__regex_success_pos_int=\count277
+\l__regex_curr_char_int=\count278
+\l__regex_curr_catcode_int=\count279
+\l__regex_last_char_int=\count280
+\l__regex_case_changed_char_int=\count281
+\l__regex_curr_state_int=\count282
+\l__regex_step_int=\count283
+\l__regex_min_active_int=\count284
+\l__regex_max_active_int=\count285
+\l__regex_replacement_csnames_int=\count286
+\l__regex_match_count_int=\count287
+\l__regex_min_submatch_int=\count288
+\l__regex_submatch_int=\count289
+\l__regex_zeroth_submatch_int=\count290
+\g__regex_trace_regex_int=\count291
 \c_empty_box=\box38
 \l_tmpa_box=\box39
 \l_tmpb_box=\box40
 \g_tmpa_box=\box41
 \g_tmpb_box=\box42
-\l__box_top_dim=\dimen161
-\l__box_bottom_dim=\dimen162
-\l__box_left_dim=\dimen163
-\l__box_right_dim=\dimen164
-\l__box_top_new_dim=\dimen165
-\l__box_bottom_new_dim=\dimen166
-\l__box_left_new_dim=\dimen167
-\l__box_right_new_dim=\dimen168
+\l__box_top_dim=\dimen148
+\l__box_bottom_dim=\dimen149
+\l__box_left_dim=\dimen150
+\l__box_right_dim=\dimen151
+\l__box_top_new_dim=\dimen152
+\l__box_bottom_new_dim=\dimen153
+\l__box_left_new_dim=\dimen154
+\l__box_right_new_dim=\dimen155
 \l__box_internal_box=\box43
 \l__coffin_internal_box=\box44
-\l__coffin_internal_dim=\dimen169
-\l__coffin_offset_x_dim=\dimen170
-\l__coffin_offset_y_dim=\dimen171
-\l__coffin_x_dim=\dimen172
-\l__coffin_y_dim=\dimen173
-\l__coffin_x_prime_dim=\dimen174
-\l__coffin_y_prime_dim=\dimen175
+\l__coffin_internal_dim=\dimen156
+\l__coffin_offset_x_dim=\dimen157
+\l__coffin_offset_y_dim=\dimen158
+\l__coffin_x_dim=\dimen159
+\l__coffin_y_dim=\dimen160
+\l__coffin_x_prime_dim=\dimen161
+\l__coffin_y_prime_dim=\dimen162
 \c_empty_coffin=\box45
 \l__coffin_aligned_coffin=\box46
 \l__coffin_aligned_internal_coffin=\box47
@@ -1040,44 +1021,44 @@ Package: expl3 2018/02/21 L3 programming layer (code)
 \l__coffin_display_coffin=\box50
 \l__coffin_display_coord_coffin=\box51
 \l__coffin_display_pole_coffin=\box52
-\l__coffin_display_offset_dim=\dimen176
-\l__coffin_display_x_dim=\dimen177
-\l__coffin_display_y_dim=\dimen178
-\l__coffin_bounding_shift_dim=\dimen179
-\l__coffin_left_corner_dim=\dimen180
-\l__coffin_right_corner_dim=\dimen181
-\l__coffin_bottom_corner_dim=\dimen182
-\l__coffin_top_corner_dim=\dimen183
-\l__coffin_scaled_total_height_dim=\dimen184
-\l__coffin_scaled_width_dim=\dimen185
+\l__coffin_display_offset_dim=\dimen163
+\l__coffin_display_x_dim=\dimen164
+\l__coffin_display_y_dim=\dimen165
+\l__coffin_bounding_shift_dim=\dimen166
+\l__coffin_left_corner_dim=\dimen167
+\l__coffin_right_corner_dim=\dimen168
+\l__coffin_bottom_corner_dim=\dimen169
+\l__coffin_top_corner_dim=\dimen170
+\l__coffin_scaled_total_height_dim=\dimen171
+\l__coffin_scaled_width_dim=\dimen172
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count296
+\l__driver_color_stack_int=\count292
 \l__driver_tmp_box=\box53
 )) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2018/02/21 LaTeX2e option processing using LaTeX3 keys
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2018/02/21 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count297
-\g__xparse_grabber_int=\count298
-\l__xparse_m_args_int=\count299
-\l__xparse_mandatory_args_int=\count300
-\l__xparse_v_nesting_int=\count301
+\l__xparse_current_arg_int=\count293
+\g__xparse_grabber_int=\count294
+\l__xparse_m_args_int=\count295
+\l__xparse_mandatory_args_int=\count296
+\l__xparse_v_nesting_int=\count297
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
 Package: xtemplate 2018/02/21 L3 Experimental prototype document functions
-\l__xtemplate_tmp_dim=\dimen186
-\l__xtemplate_tmp_int=\count302
+\l__xtemplate_tmp_dim=\dimen173
+\l__xtemplate_tmp_int=\count298
 \l__xtemplate_tmp_muskip=\muskip18
 \l__xtemplate_tmp_skip=\skip86
 )
 Package: xfrac 2018/02/21 L3 Experimental split-level fractions
 \l__xfrac_slash_box=\box54
 \l__xfrac_tmp_box=\box55
-\l__xfrac_denominator_bot_sep_dim=\dimen187
-\l__xfrac_numerator_bot_sep_dim=\dimen188
-\l__xfrac_numerator_top_sep_dim=\dimen189
-\l__xfrac_slash_left_sep_dim=\dimen190
-\l__xfrac_slash_right_sep_dim=\dimen191
+\l__xfrac_denominator_bot_sep_dim=\dimen174
+\l__xfrac_numerator_bot_sep_dim=\dimen175
+\l__xfrac_numerator_top_sep_dim=\dimen176
+\l__xfrac_slash_left_sep_dim=\dimen177
+\l__xfrac_slash_right_sep_dim=\dimen178
 \l__xfrac_slash_left_muskip=\muskip19
 \l__xfrac_slash_right_muskip=\muskip20
 .................................................
@@ -1094,14 +1075,14 @@ Package: xfrac 2018/02/21 L3 Experimental split-level fractions
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip87
 \subfigcapskip=\skip88
-\subfigcaptopadj=\dimen192
+\subfigcaptopadj=\dimen179
 \subfigbottomskip=\skip89
-\subfigcapmargin=\dimen193
+\subfigcapmargin=\dimen180
 \subfiglabelskip=\skip90
-\c@subfigure=\count303
-\c@lofdepth=\count304
-\c@subtable=\count305
-\c@lotdepth=\count306
+\c@subfigure=\count299
+\c@lofdepth=\count300
+\c@subtable=\count301
+\c@lotdepth=\count302
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -1109,15 +1090,51 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip91
 \subfig@bottom=\skip92
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2012/05/21 v1.0 Adjusting TeX boxes (trim, clip, ...)
+ (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+ (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks33
+\XKV@tempa@toks=\toks34
+)
+\XKV@depth=\count303
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
+) (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2012/05/16 v1.0 Trim and clip general TeX material
+ (/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box56
+)
+\tc@llx=\dimen181
+\tc@lly=\dimen182
+\tc@urx=\dimen183
+\tc@ury=\dimen184
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+ (/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2012/05/13 v1.0 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen185
+\adjbox@Height=\dimen186
+\adjbox@Depth=\dimen187
+\adjbox@Totalheight=\dimen188
+ (/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box57
+\sift@deathcycles=\count304
+\@vwid@loff=\dimen189
+\@vwid@roff=\dimen190
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
-\TX@col@width=\dimen194
-\TX@old@table=\dimen195
-\TX@old@col=\dimen196
-\TX@target=\dimen197
-\TX@delta=\dimen198
-\TX@cols=\count307
-\TX@ftn=\toks33
+\TX@col@width=\dimen191
+\TX@old@table=\dimen192
+\TX@old@col=\dimen193
+\TX@target=\dimen194
+\TX@delta=\dimen195
+\TX@cols=\count305
+\TX@ftn=\toks35
 ) (/usr/share/texlive/texmf-dist/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
  (/usr/share/texlive/texmf-dist/tex/latex/ms/everysel.sty
@@ -1137,42 +1154,53 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 \RaggedLeftParindent=\skip104
 \RaggedRightParindent=\skip105
 \JustifyingParindent=\skip106
+) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen196
+\lightrulewidth=\dimen197
+\cmidrulewidth=\dimen198
+\belowrulesep=\dimen199
+\belowbottomsep=\dimen256
+\aboverulesep=\dimen257
+\abovetopsep=\dimen258
+\cmidrulesep=\dimen259
+\cmidrulekern=\dimen260
+\defaultaddspace=\dimen261
+\@cmidla=\count306
+\@cmidlb=\count307
+\@aboverulesep=\dimen262
+\@belowrulesep=\dimen263
+\@thisruleclass=\count308
+\@lastruleclass=\count309
+\@thisrulewidth=\dimen264
 ) (/usr/share/texlive/texmf-dist/tex/latex/acronym/acronym.sty
 Package: acronym 2015/03/21 v1.41 Support for acronyms (Tobias Oetiker)
  (/usr/share/texlive/texmf-dist/tex/latex/bigfoot/suffix.sty
 Package: suffix 2006/07/15 1.5a Variant command support
 ) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write3
-\integerpart=\count308
-\decimalpart=\count309
+\integerpart=\count310
+\decimalpart=\count311
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\AC@clearlist=\toks34
+\AC@clearlist=\toks36
 ) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count310
-\float@exts=\toks35
-\float@box=\box56
-\@float@everytoks=\toks36
-\@floatcapt=\box57
+\c@float@type=\count312
+\float@exts=\toks37
+\float@box=\box58
+\@float@everytoks=\toks38
+\@floatcapt=\box59
 ) (/usr/share/texlive/texmf-dist/tex/latex/todonotes/todonotes.sty
 Package: todonotes 2015/07/09 .dtx Todonotes source and documentation.
 Package: todonotes 2012/07/25
- (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
- (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks37
-\XKV@tempa@toks=\toks38
-)
-\XKV@depth=\count311
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+ (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks39
-\pgfutil@tempdima=\dimen199
-\pgfutil@tempdimb=\dimen256
+\pgfutil@tempdima=\dimen265
+\pgfutil@tempdimb=\dimen266
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box58
+\pgfutil@abb=\box60
  (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
@@ -1187,20 +1215,20 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks42
 ))
-\pgf@x=\dimen257
-\pgf@y=\dimen258
-\pgf@xa=\dimen259
-\pgf@ya=\dimen260
-\pgf@xb=\dimen261
-\pgf@yb=\dimen262
-\pgf@xc=\dimen263
-\pgf@yc=\dimen264
+\pgf@x=\dimen267
+\pgf@y=\dimen268
+\pgf@xa=\dimen269
+\pgf@ya=\dimen270
+\pgf@xb=\dimen271
+\pgf@yb=\dimen272
+\pgf@xc=\dimen273
+\pgf@yc=\dimen274
 \w@pgf@writea=\write4
 \r@pgf@reada=\read1
-\c@pgf@counta=\count312
-\c@pgf@countb=\count313
-\c@pgf@countc=\count314
-\c@pgf@countd=\count315
+\c@pgf@counta=\count313
+\c@pgf@countb=\count314
+\c@pgf@countc=\count315
+\c@pgf@countd=\count316
 \t@pgf@toka=\toks43
 \t@pgf@tokb=\toks44
 \t@pgf@tokc=\toks45
@@ -1214,59 +1242,59 @@ File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count316
-\pgfsyssoftpath@bigbuffer@items=\count317
+\pgfsyssoftpath@smallbuffer@items=\count317
+\pgfsyssoftpath@bigbuffer@items=\count318
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen265
-\pgfmath@count=\count318
-\pgfmath@box=\box59
+\pgfmath@dimen=\dimen275
+\pgfmath@count=\count319
+\pgfmath@box=\box61
 \pgfmath@toks=\toks46
 \pgfmath@stack@operand=\toks47
 \pgfmath@stack@operation=\toks48
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count319
+\c@pgfmathroundto@lastzeros=\count320
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen266
-\pgf@picmaxx=\dimen267
-\pgf@picminy=\dimen268
-\pgf@picmaxy=\dimen269
-\pgf@pathminx=\dimen270
-\pgf@pathmaxx=\dimen271
-\pgf@pathminy=\dimen272
-\pgf@pathmaxy=\dimen273
-\pgf@xx=\dimen274
-\pgf@xy=\dimen275
-\pgf@yx=\dimen276
-\pgf@yy=\dimen277
-\pgf@zx=\dimen278
-\pgf@zy=\dimen279
+\pgf@picminx=\dimen276
+\pgf@picmaxx=\dimen277
+\pgf@picminy=\dimen278
+\pgf@picmaxy=\dimen279
+\pgf@pathminx=\dimen280
+\pgf@pathmaxx=\dimen281
+\pgf@pathminy=\dimen282
+\pgf@pathmaxy=\dimen283
+\pgf@xx=\dimen284
+\pgf@xy=\dimen285
+\pgf@yx=\dimen286
+\pgf@yy=\dimen287
+\pgf@zx=\dimen288
+\pgf@zy=\dimen289
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen280
-\pgf@path@lasty=\dimen281
+\pgf@path@lastx=\dimen290
+\pgf@path@lasty=\dimen291
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen282
-\pgf@shorten@start@additional=\dimen283
+\pgf@shorten@end@additional=\dimen292
+\pgf@shorten@start@additional=\dimen293
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
-\pgfpic=\box60
-\pgf@hbox=\box61
-\pgf@layerbox@main=\box62
-\pgf@picture@serial@count=\count320
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count321
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen284
+\pgflinewidth=\dimen294
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen285
-\pgf@pt@y=\dimen286
-\pgf@pt@temp=\dimen287
+\pgf@pt@x=\dimen295
+\pgf@pt@y=\dimen296
+\pgf@pt@temp=\dimen297
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -1275,16 +1303,16 @@ File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen288
+\pgfarrowsep=\dimen298
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen289
-\pgf@sys@shading@range@num=\count321
+\pgf@max=\dimen299
+\pgf@sys@shading@range@num=\count322
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
-\pgfexternal@startupbox=\box63
+\pgfexternal@startupbox=\box65
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -1293,142 +1321,133 @@ File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
 File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
-\pgfnodeparttextbox=\box64
+\pgfnodeparttextbox=\box66
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen290
-\pgf@nodesepend=\dimen291
+\pgf@nodesepstart=\dimen300
+\pgf@nodesepend=\dimen301
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 )) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen292
-\pgffor@skip=\dimen293
+\pgffor@iter=\dimen302
+\pgffor@skip=\dimen303
 \pgffor@stack=\toks49
 \pgffor@toks=\toks50
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count322
-\pgfplotmarksize=\dimen294
+\pgf@plot@mark@count=\count323
+\pgfplotmarksize=\dimen304
 )
-\tikz@lastx=\dimen295
-\tikz@lasty=\dimen296
-\tikz@lastxsaved=\dimen297
-\tikz@lastysaved=\dimen298
-\tikzleveldistance=\dimen299
-\tikzsiblingdistance=\dimen300
-\tikz@figbox=\box65
-\tikz@figbox@bg=\box66
-\tikz@tempbox=\box67
-\tikz@tempbox@bg=\box68
-\tikztreelevel=\count323
-\tikznumberofchildren=\count324
-\tikznumberofcurrentchild=\count325
-\tikz@fig@count=\count326
+\tikz@lastx=\dimen305
+\tikz@lasty=\dimen306
+\tikz@lastxsaved=\dimen307
+\tikz@lastysaved=\dimen308
+\tikzleveldistance=\dimen309
+\tikzsiblingdistance=\dimen310
+\tikz@figbox=\box67
+\tikz@figbox@bg=\box68
+\tikz@tempbox=\box69
+\tikz@tempbox@bg=\box70
+\tikztreelevel=\count324
+\tikznumberofchildren=\count325
+\tikznumberofcurrentchild=\count326
+\tikz@fig@count=\count327
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count327
-\pgfmatrixcurrentcolumn=\count328
-\pgf@matrix@numberofcolumns=\count329
+\pgfmatrixcurrentrow=\count328
+\pgfmatrixcurrentcolumn=\count329
+\pgf@matrix@numberofcolumns=\count330
 )
-\tikz@expandcount=\count330
+\tikz@expandcount=\count331
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.1a (rcs-revision 1.7)
 )
-\c@@todonotes@numberoftodonotes=\count331
+\c@@todonotes@numberoftodonotes=\count332
 ) (/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
 ) (/usr/share/texlive/texmf-dist/tex/latex/arydshln/arydshln.sty
 Package: arydshln 2016/04/28 v1.73 
-\dashlinedash=\dimen301
-\dashlinegap=\dimen302
-\adl@box=\box69
-\adl@height=\dimen303
-\adl@heightsave=\dimen304
-\adl@depth=\dimen305
-\adl@depthsave=\dimen306
-\adl@finaldepth=\dimen307
-\adl@columns=\count332
-\adl@ncol=\count333
-\adl@currentcolumn=\count334
-\adl@currentcolumnsave=\count335
-\adl@totalheight=\count336
-\adl@totalheightsave=\count337
-\adl@dash=\count338
-\adl@gap=\count339
-\adl@cla=\count340
-\adl@clb=\count341
+\dashlinedash=\dimen311
+\dashlinegap=\dimen312
+\adl@box=\box71
+\adl@height=\dimen313
+\adl@heightsave=\dimen314
+\adl@depth=\dimen315
+\adl@depthsave=\dimen316
+\adl@finaldepth=\dimen317
+\adl@columns=\count333
+\adl@ncol=\count334
+\adl@currentcolumn=\count335
+\adl@currentcolumnsave=\count336
+\adl@totalheight=\count337
+\adl@totalheightsave=\count338
+\adl@dash=\count339
+\adl@gap=\count340
+\adl@cla=\count341
+\adl@clb=\count342
 \adl@everyvbox=\toks51
-\adl@LTpagetotal=\dimen308
+\adl@LTpagetotal=\dimen318
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
-File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
-File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
-)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
-File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
-File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen309
-)) (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
-\c@blindtext=\count342
-\c@Blindtext=\count343
-\c@blind@countparstart=\count344
-\blind@countxx=\count345
-\blindtext@numBlindtext=\count346
-\blind@countyy=\count347
-\c@blindlist=\count348
-\c@blindlistlevel=\count349
-\c@blindlist@level=\count350
-\blind@listitem=\count351
-\c@blind@listcount=\count352
-\c@blind@levelcount=\count353
-\blind@mathformula=\count354
-\blind@Mathformula=\count355
-\c@blind@randomcount=\count356
-\c@blind@randommax=\count357
-\c@blind@pangramcount=\count358
-\c@blind@pangrammax=\count359
+\c@blindtext=\count343
+\c@Blindtext=\count344
+\c@blind@countparstart=\count345
+\blind@countxx=\count346
+\blindtext@numBlindtext=\count347
+\blind@countyy=\count348
+\c@blindlist=\count349
+\c@blindlistlevel=\count350
+\c@blindlist@level=\count351
+\blind@listitem=\count352
+\c@blind@listcount=\count353
+\c@blind@levelcount=\count354
+\blind@mathformula=\count355
+\blind@Mathformula=\count356
+\c@blind@randomcount=\count357
+\c@blind@randommax=\count358
+\c@blind@pangramcount=\count359
+\c@blind@pangrammax=\count360
 ) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
 \openout1 = `template-msc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
-LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count360
-\scratchdimen=\dimen310
-\scratchbox=\box70
-\nofMPsegments=\count361
-\nofMParguments=\count362
+\scratchcounter=\count361
+\scratchdimen=\dimen319
+\scratchbox=\box72
+\nofMPsegments=\count362
+\nofMParguments=\count363
 \everyMPshowfont=\toks52
-\MPscratchCnt=\count363
-\MPscratchDim=\dimen311
-\MPnumerator=\count364
-\makeMPintoPDFobject=\count365
+\MPscratchCnt=\count364
+\MPscratchDim=\dimen320
+\MPnumerator=\count365
+\makeMPintoPDFobject=\count366
 \everyMPtoPDFconversion=\toks53
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1442,25 +1461,25 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\AtBeginShipoutBox=\box71
-Package hyperref Info: Link coloring OFF on input line 129.
+\AtBeginShipoutBox=\box73
+Package hyperref Info: Link coloring OFF on input line 124.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count366
+\c@section@level=\count367
 )
-LaTeX Info: Redefining \ref on input line 129.
-LaTeX Info: Redefining \pageref on input line 129.
-LaTeX Info: Redefining \nameref on input line 129.
+LaTeX Info: Redefining \ref on input line 124.
+LaTeX Info: Redefining \pageref on input line 124.
+LaTeX Info: Redefining \nameref on input line 124.
  (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.out) (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.out)
 \@outlinefile=\write5
 \openout5 = `template-msc.out'.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 129.
+(lastpage)             ! on input line 124.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1496,85 +1515,85 @@ Package lastpage Info: Please have a look at the pageslts package at
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count367
+\c@lstlisting=\count368
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 129.
+LaTeX Info: Redefining \selectfont on input line 124.
  ABD: EveryShipout initializing macros
 <ufba.pdf, id=111, 290.08376pt x 446.66875pt>
 File: ufba.pdf Graphic file (type pdf)
 <use ufba.pdf>
-Package pdftex.def Info: ufba.pdf  used on input line 131.
+Package pdftex.def Info: ufba.pdf  used on input line 126.
 (pdftex.def)             Requested size: 56.9055pt x 87.62144pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 131.
+LaTeX Font Info:    Try loading font information for U+msa on input line 126.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 131.
+LaTeX Font Info:    Try loading font information for U+msb on input line 126.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 129.
  [1
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/rnetonet/Workspace/pgcomp_qualificacao/tex/ufba.pdf>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 129.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 129.
  [2
 
 ]
-Underfull \hbox (badness 2922) in paragraph at lines 136--136
+Underfull \hbox (badness 2922) in paragraph at lines 131--131
 \OT1/cmr/m/n/14.4 Gradua^^Xc~ao em Ci^encia da Com-
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 160.
+(babel)             in language  on input line 155.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 160.
+(babel)             in language  on input line 155.
 [1
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 182.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 187.
+(babel)             in language  on input line 182.
  [2]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 190.
+(blindtext)                 on input line 185.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 196.
+(babel)             in language  on input line 191.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 196.
+(babel)             in language  on input line 191.
 [3
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 196.
+(babel)             in language  on input line 191.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 196.
+(babel)             in language  on input line 191.
  [4
 
 ]
 
 Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 199.
+(blindtext)                 on input line 194.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 205.
 [5]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 205.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 210.
+(babel)             in language  on input line 205.
  [6
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.toc)
@@ -1582,14 +1601,14 @@ Package babel Info: Redefining portuges shorthand "|
 \openout6 = `template-msc.toc'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 209.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 209.
  [7]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 209.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 214.
+(babel)             in language  on input line 209.
  [8
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lof)
@@ -1597,14 +1616,14 @@ Package babel Info: Redefining portuges shorthand "|
 \openout7 = `template-msc.lof'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 213.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 213.
  [9]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 213.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 218.
+(babel)             in language  on input line 213.
  [10
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lot)
@@ -1612,14 +1631,14 @@ Package babel Info: Redefining portuges shorthand "|
 \openout8 = `template-msc.lot'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 216.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 216.
  [11]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 216.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 216.
  [12
 
 ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.loa)
@@ -1627,409 +1646,408 @@ Package babel Info: Redefining portuges shorthand "|
 \openout9 = `template-msc.loa'.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 224.
+(babel)             in language  on input line 219.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 224.
+(babel)             in language  on input line 219.
  [13]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 224.
+(babel)             in language  on input line 219.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 224.
+(babel)             in language  on input line 219.
  [14
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 238.
+(babel)             in language  on input line 233.
 
 
-Package xcolor Warning: Incompatible color definition on input line 238.
+Package xcolor Warning: Incompatible color definition on input line 233.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 240.
+(babel)             in language  on input line 235.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 289.
+(babel)             in language  on input line 284.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 289.
+(babel)             in language  on input line 284.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.289 
+l.284 
        [1
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 317.
+(babel)             in language  on input line 312.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 338.
+(babel)             in language  on input line 333.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 338.
+(babel)             in language  on input line 333.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.338 
+l.333 
        [2]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 342.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 342.
  [3]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 342.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 342.
  [4
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 347.
+(babel)             in language  on input line 342.
 
 
-Package xcolor Warning: Incompatible color definition on input line 347.
+Package xcolor Warning: Incompatible color definition on input line 342.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 348.
+(babel)             in language  on input line 343.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 360.
+(babel)             in language  on input line 355.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 386.
+(babel)             in language  on input line 381.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 386.
+(babel)             in language  on input line 381.
 [5]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 427.
+(babel)             in language  on input line 422.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 427.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 432.
+(babel)             in language  on input line 427.
  [6]
-<imagens/concept_drift.png, id=456, 558.58687pt x 209.28188pt>
+<imagens/concept_drift.png, id=460, 558.58687pt x 209.28188pt>
 File: imagens/concept_drift.png Graphic file (type png)
 <use imagens/concept_drift.png>
-Package pdftex.def Info: imagens/concept_drift.png  used on input line 467.
+Package pdftex.def Info: imagens/concept_drift.png  used on input line 462.
 (pdftex.def)             Requested size: 446.8701pt x 167.4257pt.
 
 Underfull \vbox (badness 3375) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 472.
+(babel)             in language  on input line 467.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 472.
+(babel)             in language  on input line 467.
  [7]
-<imagens/concept_drift_patterns.png, id=480, 565.36218pt x 207.02344pt>
+<imagens/concept_drift_patterns.png, id=484, 565.36218pt x 207.02344pt>
 File: imagens/concept_drift_patterns.png Graphic file (type png)
 <use imagens/concept_drift_patterns.png>
-Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 479.
+Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 474.
 (pdftex.def)             Requested size: 452.29036pt x 165.61896pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 497.
+(babel)             in language  on input line 492.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 497.
+(babel)             in language  on input line 492.
  [8pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.497 A
+l.492 A
         mudança recorrente acontece quando um conceito anteriormente ativo ...pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.497 A
+l.492 A
         mudança recorrente acontece quando um conceito anteriormente ativo ... </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift.png> </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/concept_drift_patterns.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 503.
-
-Underfull \hbox (badness 10000) in alignment at lines 526--526
-[][] 
- []
-
+(babel)             in language  on input line 498.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 539.
+(babel)             in language  on input line 533.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 539.
-[9pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) has been already used, duplicate ignored
+(babel)             in language  on input line 533.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.539 
-      ]
+l.533 A
+       s estratégias para detecção de \textit{change points} identificam ...]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 544.
+(babel)             in language  on input line 539.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 582.
+(babel)             in language  on input line 569.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 582.
+(babel)             in language  on input line 569.
  [10]
-Overfull \hbox (11.71376pt too wide) in paragraph at lines 588--597
+Overfull \hbox (11.71376pt too wide) in paragraph at lines 583--592
 []\OT1/cmr/m/n/12 Utilizam t^^Secnicas de-ri-va-das dos
  []
 
 
-Overfull \hbox (6.56206pt too wide) in paragraph at lines 599--608
+Overfull \hbox (6.56206pt too wide) in paragraph at lines 594--603
 []\OT1/cmr/m/n/12 Monitoram di-re-ta-mente a dis-tri-bui^^Xc~ao
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 643.
+(babel)             in language  on input line 645.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 649.
+(babel)             in language  on input line 651.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 649.
+(babel)             in language  on input line 651.
 [11]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 650.
+(babel)             in language  on input line 652.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 663.
+(babel)             in language  on input line 665.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 663.
+(babel)             in language  on input line 665.
  [12pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.663 
+l.665 
       ]
-<imagens/moa.png, id=653, 1016.29688pt x 763.35187pt>
+<imagens/moa.png, id=657, 1016.29688pt x 763.35187pt>
 File: imagens/moa.png Graphic file (type png)
 <use imagens/moa.png>
-Package pdftex.def Info: imagens/moa.png  used on input line 666.
+Package pdftex.def Info: imagens/moa.png  used on input line 668.
 (pdftex.def)             Requested size: 406.51155pt x 305.33534pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 693.
+(babel)             in language  on input line 695.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 693.
+(babel)             in language  on input line 695.
  [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.693 
+l.695 
        </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/moa.png>]
-<imagens/detector.png, id=680, 470.50781pt x 332.74312pt>
+<imagens/detector.png, id=684, 470.50781pt x 332.74312pt>
 File: imagens/detector.png Graphic file (type png)
 <use imagens/detector.png>
-Package pdftex.def Info: imagens/detector.png  used on input line 696.
+Package pdftex.def Info: imagens/detector.png  used on input line 698.
 (pdftex.def)             Requested size: 470.50665pt x 332.7423pt.
 
-Overfull \hbox (17.53877pt too wide) in paragraph at lines 696--697
+Overfull \hbox (17.53877pt too wide) in paragraph at lines 698--699
  [] 
  []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 708.
+(babel)             in language  on input line 710.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 715.
+(babel)             in language  on input line 717.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 715.
+(babel)             in language  on input line 717.
 [14pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.715 
+l.717 
        </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/detector.png>]
-<imagens/tornado.png, id=689, 368.87813pt x 347.04657pt>
+<imagens/tornado.png, id=693, 368.87813pt x 347.04657pt>
 File: imagens/tornado.png Graphic file (type png)
 <use imagens/tornado.png>
-Package pdftex.def Info: imagens/tornado.png  used on input line 718.
+Package pdftex.def Info: imagens/tornado.png  used on input line 720.
 (pdftex.def)             Requested size: 276.6579pt x 260.28429pt.
-<imagens/tornado_out2.png, id=696, 753.0534pt x 331.9602pt>
+<imagens/tornado_out2.png, id=700, 753.0534pt x 331.9602pt>
 File: imagens/tornado_out2.png Graphic file (type png)
 <use imagens/tornado_out2.png>
-Package pdftex.def Info: imagens/tornado_out2.png  used on input line 739.
+Package pdftex.def Info: imagens/tornado_out2.png  used on input line 741.
 (pdftex.def)             Requested size: 451.83553pt x 199.17764pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 744.
+(babel)             in language  on input line 746.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 744.
+(babel)             in language  on input line 746.
  [15pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.744 
+l.746 
        </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado.png (PNG copy)>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 749.
-<imagens/rbf_arq.png, id=712, 330.48468pt x 313.17pt>
+(babel)             in language  on input line 751.
+<imagens/rbf_arq.png, id=716, 330.48468pt x 313.17pt>
 File: imagens/rbf_arq.png Graphic file (type png)
 <use imagens/rbf_arq.png>
-Package pdftex.def Info: imagens/rbf_arq.png  used on input line 764.
+Package pdftex.def Info: imagens/rbf_arq.png  used on input line 766.
 (pdftex.def)             Requested size: 330.48387pt x 313.16922pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 769.
+(babel)             in language  on input line 771.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 769.
+(babel)             in language  on input line 771.
  [16pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.769 
+l.771 
        </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/tornado_out2.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 791.
+(babel)             in language  on input line 793.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 791.
+(babel)             in language  on input line 793.
  [17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.791 \end{equation}
+l.793 \end{equation}
                      </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/rbf_arq.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 829.
+(babel)             in language  on input line 831.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 846.
+(babel)             in language  on input line 848.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 855.
+(babel)             in language  on input line 857.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 855.
+(babel)             in language  on input line 857.
  [18]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 856.
+(babel)             in language  on input line 858.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 856.
+(babel)             in language  on input line 858.
  [19]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 856.
+(babel)             in language  on input line 858.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 856.
+(babel)             in language  on input line 858.
  [20
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 856.
+(babel)             in language  on input line 858.
 
 
-Package xcolor Warning: Incompatible color definition on input line 856.
+Package xcolor Warning: Incompatible color definition on input line 858.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 857.
+(babel)             in language  on input line 859.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 863.
+(babel)             in language  on input line 865.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 881.
+(babel)             in language  on input line 883.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 881.
+(babel)             in language  on input line 883.
 [21]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 934.
+(babel)             in language  on input line 936.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 934.
+(babel)             in language  on input line 936.
  [22pdfTeX warning (ext4): destination with the same identifier (name{algocf.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.934 
+l.936 
       ]
-<imagens/funcionamento_algoritmo.png, id=789, 933.7284pt x 483.4863pt>
+<imagens/funcionamento_algoritmo.png, id=793, 933.7284pt x 483.4863pt>
 File: imagens/funcionamento_algoritmo.png Graphic file (type png)
 <use imagens/funcionamento_algoritmo.png>
-Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 954.
+Package pdftex.def Info: imagens/funcionamento_algoritmo.png  used on input line 956.
 (pdftex.def)             Requested size: 452.96788pt x 234.5422pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 960.
+(babel)             in language  on input line 962.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 991.
+(babel)             in language  on input line 993.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 991.
+(babel)             in language  on input line 993.
  [23pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.991 \end{table}
+l.993 \end{table}
                   </home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png>]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1011.
+(babel)             in language  on input line 1013.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1011.
+(babel)             in language  on input line 1013.
  [24pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1011 
+l.1013 
        ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1012.
+(babel)             in language  on input line 1014.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1017.
+(babel)             in language  on input line 1019.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1017.
+(babel)             in language  on input line 1019.
  [25]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1017.
+(babel)             in language  on input line 1019.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1017.
+(babel)             in language  on input line 1019.
  [26
 
 ]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1017.
+(babel)             in language  on input line 1019.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1017.
+Package xcolor Warning: Incompatible color definition on input line 1019.
 
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1018.
+(babel)             in language  on input line 1020.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1026.
+(babel)             in language  on input line 1028.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1054.
+(babel)             in language  on input line 1056.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1054.
+(babel)             in language  on input line 1056.
 [27]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1068.
-
-Overfull \hbox (4.75758pt too wide) in paragraph at lines 1080--1096
-[][] 
- []
-
+(babel)             in language  on input line 1070.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1101.
+(babel)             in language  on input line 1100.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1101.
-[28pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
+(babel)             in language  on input line 1100.
+ [28pdfTeX warning (ext4): destination with the same identifier (name{table.4.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1101 
+l.1100 
        ]
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 1121.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1134.
-
-
-Package blindtext Warning: brazil not defined, using English instead.
-(blindtext)                 on input line 1136.
-
+(babel)             in language  on input line 1148.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1139.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1139.
-[29pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}) has been already used, duplicate ignored
+(babel)             in language  on input line 1148.
+ [29pdfTeX warning (ext4): destination with the same identifier (name{table.4.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1139 \backmatter
-                  ]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1139.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1139.
- [30
+l.1148 \end{center}
+                   pdfTeX warning (ext4): destination with the same identifier (name{table.4.3}) has been already used, duplicate ignored
 
-] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1148 \end{center}
+                   ]
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1172.
+
+
+Package blindtext Warning: brazil not defined, using English instead.
+(blindtext)                 on input line 1174.
+
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1177.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 1177.
+[30pdfTeX warning (ext4): destination with the same identifier (name{table.4.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1177 \backmatter
+                  ] (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 92.
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 92.
  [31
+
 
 ]
 Package babel Info: Redefining portuges shorthand "|
@@ -2059,31 +2077,31 @@ Package babel Info: Redefining portuges shorthand "|
  [36]) 
 AED: lastpage setting LastPage
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1163.
+(babel)             in language  on input line 1201.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1163.
+(babel)             in language  on input line 1201.
 [37]
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 1163.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1163.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1163.
+(babel)             in language  on input line 1201.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1201.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1201.
  (/home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1163.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1163.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1201.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1201.
 Package rerunfilecheck Info: File `template-msc.out' has not changed.
 (rerunfilecheck)             Checksum: 0620E33951520ECFB09CB3E91AAA61EE;1919.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1163.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1201.
  ) 
 Here is how much of TeX's memory you used:
- 33650 strings out of 492982
- 642181 string characters out of 6134895
- 874691 words of memory out of 5000000
- 36477 multiletter control sequences out of 15000+600000
- 546684 words of font info for 81 fonts, out of 8000000 for 9000
+ 33126 strings out of 492982
+ 623631 string characters out of 6134895
+ 853956 words of memory out of 5000000
+ 35941 multiletter control sequences out of 15000+600000
+ 547385 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,21n,56p,10445b,651s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist, replaced by a fixed one
@@ -2101,10 +2119,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (53 pages, 1301306 bytes).
+Output written on /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.pdf (53 pages, 1303190 bytes).
 PDF statistics:
- 1040 PDF objects out of 1200 (max. 8388607)
- 938 compressed objects within 10 object streams
- 187 named destinations out of 1000 (max. 500000)
+ 1046 PDF objects out of 1200 (max. 8388607)
+ 944 compressed objects within 10 object streams
+ 189 named destinations out of 1000 (max. 500000)
  266 words of extra memory for PDF output out of 10000 (max. 10000000)
 
