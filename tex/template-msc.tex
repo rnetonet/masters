@@ -904,7 +904,7 @@ tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/f
      $mudanca \longleftarrow falso$
 
      \ParaTodo{centro}{
-         $ativacao \longleftarrow gaussiana(valor, \sigma)$\\
+         $ativacao \longleftarrow gaussiana(valor, centro, \sigma)$\\
          \Se{$ativacao >= \lambda$}{
             $centroAtivo \longleftarrow centro$ \\
             $\lambda \longleftarrow ativacao$ \\ 
@@ -914,9 +914,6 @@ tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/f
         $centros \longleftarrow valor$ \\    
         $centroAtivo \longleftarrow valor$ \\
     }   
-    \Se{$centroAtual == null$}{
-        $centroAtual \longleftarrow valor$ \\
-    }
     \Se{$centroAtual \neq centroAtivo$}{
         $centroAtual \longleftarrow centroAtivo$ \\
         $mudanca \longleftarrow verdadeiro$ \\
@@ -1029,56 +1026,56 @@ A próxima seção apresenta como os dados sintéticos foram produzidos para con
 \section{Configuração dos Experimentos}
 \label{sec:configuracao_experimentos}
 
-Os fluxos de dados sintéticos foram produzidos através de classes geradoras do framework \textit{MOA} e salvos em arquivos no formato \textit{ARFF}, para que pudessem ser reutilizados.
-Cada fluxo gerado representa até dois conceitos e é composto por 20.000 observações, com valores entre 0 e 1.
+Os fluxos de dados sintéticos foram produzidos através de classes geradoras do framework \textit{MOA} e salvos em arquivos no formato \textit{ARFF}, para que pudessem ser reutilizados entre os experimentos.
+Cada fluxo produzido representa até dois conceitos e é composto por 2.500 observações, com valores entre 0 e 1.
 O restante desta seção apresenta as classes geradoras utilizadas, as modificações realizadas e os parâmetros aplicados.
 
 A classe geradora \textit{AbruptChangeGenerator} produz fluxos de dados sintéticos com mudanças de conceito abruptas.
 Os fluxos gerados simulam as mudanças através da intercalação de sequências com o valor $0.2$ e sequências com o valor $0.8$, conforme o tamanho definido para os conceitos.
 Com o objetivo de tornar os dados produzidos mais próximos da realidade, a classe foi alterada\footnote{\url{https://git.io/fjGEj}} para permitir a adição de um ruído randômico, com amplitude configurável, para cada exemplo produzido.
 A versão com suporte a ruído foi utilizada na produção do fluxo com mudanças abruptas utilizado nos experimentos.
-O gerador foi parametrizado para produzir exemplos não binários, com conceitos formados por 2.500 instâncias e ruído limitado ao intervalo $[-0.1, 0.2]$.
-Esta configuração é apresentada na Figura \ref{fig:abrupt_change_generator}.
+O gerador foi parametrizado para produzir exemplos não binários, com conceitos formados por 400 instâncias e ruído limitado ao intervalo $[-0.1, 0.2]$.
 
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=\textwidth]{imagens/abrupt_change_generator.png}
-        \caption{Parametrização da classe \textit{AbruptChangeGenerator}}
-        \label{fig:abrupt_change_generator}
-    \end{center}
-\end{figure}
+% Esta configuração é apresentada na Figura \ref{fig:abrupt_change_generator}.
 
-A classe \textit{GradualChangeGenerator}, responsável por produzir fluxos sintéticos com mudanças de conceito graduais, também não permite a adição de ruído aos resultados.
-Além disso, a classe produz apenas uma mudança de conceito gradual, ignorando o tamanho parametrizado para os conceitos.
-Para mitigar estas limitações, a classe foi modificada\footnote{\url{https://git.io/fjGue}} para permitir a adição de um ruído randômico 
-e parametrizável aos resultados e para respeitar o tamanho dos conceitos, produzindo uma quantidade de mudanças adequada.
-Esta classe foi utilizada para gerar o fluxo sintético com mudanças graduais utilizado nos experimentos, 
-sendo parametrizada para produzir exemplos não binários, 
-com conceitos formados por 2.500 instâncias e ruído limitado ao intervalo $[-0.1, 0.2]$.
-A Figura \ref{fig:gradual_change_generator} apresenta a tela de configuração desta classe geradora.
+% \begin{figure}[H]
+%     \begin{center}
+%         \includegraphics[width=\textwidth]{imagens/abrupt_change_generator.png}
+%         \caption{Parametrização da classe \textit{AbruptChangeGenerator}}
+%         \label{fig:abrupt_change_generator}
+%     \end{center}
+% \end{figure}
 
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=\textwidth]{imagens/gradual_change_generator.png}
-        \caption{Parametrização da classe \textit{GradualChangeGenerator}}
-        \label{fig:gradual_change_generator}
-    \end{center}
-\end{figure}
+A classe \textit{GradualChangeGenerator} produz fluxos sintéticos com mudanças de conceito graduais.
+Durante sua configuração, percebeu-se uma limitação, pois a classe só gera uma mudança gradual, independente do tamanho dos conceitos.
+Para mitigar esta limitação, a classe foi modificada\footnote{\url{https://git.io/fjGue}} para gerar uma quantidade de mudanças coerente com o tamanho definido.
+A classe modificada foi utilizada para gerar o fluxo sintético com mudanças graduais utilizado nos experimentos, 
+sendo parametrizada para produzir exemplos não binários e conceitos compostos por 400 instâncias.
+
+% A Figura \ref{fig:gradual_change_generator} apresenta a tela de configuração da aplicação.
+
+% \begin{figure}[H]
+%     \begin{center}
+%         \includegraphics[width=\textwidth]{imagens/gradual_change_generator.png}
+%         \caption{Parametrização da classe \textit{GradualChangeGenerator}}
+%         \label{fig:gradual_change_generator}
+%     \end{center}
+% \end{figure}
 
 Por fim, a classe \textit{NoChangeGenerator}, que produz fluxos sem ocorrência de mudanças de conceito, também foi modificada\footnote{\url{https://git.io/fjGu3}} para permitir a incidência de ruído nos resultados gerados.
 Esta versão foi utilizada para produzir um fluxo sintético sem mudanças, com ruído entre $[-0.1, 0.1]$, para ser utilizado como \textit{baseline} nos experimentos.
 
 \section{Critérios de avaliação}
 
-A classe \textit{BasicConceptDriftPerformanceEvaluator} do MOA será utilizada para avaliar o método proposto neste trabalho e compará-lo ao estado da arte.
-Esta classe permite avaliar algoritmos para detecção de mudanças de conceito, analisando dimensões de acurária e eficiência computacional.
+A classe de avaliação \textit{BasicConceptDriftPerformanceEvaluator}, pertencente ao framework \textit{MOA}, será utilizada para avaliar o método proposto neste trabalho.
+Esta classe permite mensurar a acurácia e o desemprenho de algoritmos para detecção de mudanças de conceito.
 Para utilizá-la, é necessário construir uma tarefa do tipo \textit{EvaluateConceptDrift} através da aba \textit{Concept Drift}, presente na tela inicial da aplicação.
 
-Para execução dos experimentos deste projeto de mestrado, os parâmetros da tarefa \textit{BasicConceptDriftPerformanceEvaluator} foram configurados conforme a Tabela \ref{tbl:configuracao_tarefa}.
+Para condução dos experimentos deste trabalho de mestrado, a classe foi configurada conforme descrito na Tabela \ref{tbl:configuracao_tarefa}.
 
 \begin{center} 
     \begin{table}[ht]
-    \caption{Configuração da tarefa \textit{BasicConceptDriftPerformanceEvaluator}}
+    \caption{Configuração da classe \textit{BasicConceptDriftPerformanceEvaluator}}
     \label{tbl:configuracao_tarefa}
     \begin{tabular}{llm{7.5cm}}
     \hline
@@ -1086,17 +1083,21 @@ Para execução dos experimentos deste projeto de mestrado, os parâmetros da ta
     \hline
     \hline
     \textit{learner}          & \textit{ChangeDetectorLearner}  &  O algoritmo de detecção de mudanças de conceito a ser testado é definido no atributo \textit{driftDetectionMethod} da classe \textit{ChangeDetectorLearner}.                   \\
+    \addlinespace[1mm]
     \textit{stream}           & \textit{ARFFFileStream}         &  Caminho para um dos arquivos \textit{ARFF} descrito na seção anterior. O atributo \textit{classIndex} deve ser definido como $0$, pois não existem rótulos nestes conjuntos de dados.  \\ 
+    \addlinespace[1mm]
     \textit{instanceLimit}    & $-1$                            &  Desabilita o limite de instâncias a serem processadas.  \\
+    \addlinespace[1mm]
     \textit{timeLimit}        & $-1$                            &  Desabilita o limite de tempo de execução.  \\ 
+    \addlinespace[1mm]
     \textit{sampleFrequency}  & \hspace{3mm}$1$                 &  Uma linha de resultado do avaliador deve ser gerada para cada instância processada.  \\
     \hline
     \end{tabular}
     \end{table}
 \end{center}
 
-A classe \textit{BasicConceptDriftPerformanceEvaluator} produz diversos indicadores sobre a performance e a acurácia da técnica de detecção de mudanças analisada.
-Os indicadores analisados neste trabalho estão listados na Tabela \ref{tbl:indicadores_analisado}.
+A classe de avaliação utilizada produz diversos indicadores referentes a acurácia e performance do algoritmo executado. 
+A Tabela \ref{tbl:indicadores_analisado} apresenta os indicadores analisados neste trabalho.
 
 \begin{center} 
     \begin{table}[ht]
@@ -1120,7 +1121,6 @@ Os indicadores analisados neste trabalho estão listados na Tabela \ref{tbl:indi
 \section{RBFD\element{rift}D\element{etector}}
 
 Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o método de detecção de mudanças de conceito proposto neste trabalho, denominado \textit{RBFDriftDetector}.
-
 Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta, 
 a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de redes de funçaõ de base radial para detecção de mudanças de conceito em fluxos contínuos de dados.
 

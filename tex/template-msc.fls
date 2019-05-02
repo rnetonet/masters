@@ -381,10 +381,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 OUTPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.toc
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lof
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lof
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 OUTPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lof
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lot
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lot
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 OUTPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.lot
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.loa
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.loa
@@ -429,13 +429,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/funcionamento_algoritmo.png
-INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/abrupt_change_generator.png
-INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/abrupt_change_generator.png
-INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/abrupt_change_generator.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
-INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/gradual_change_generator.png
-INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/gradual_change_generator.png
-INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/imagens/gradual_change_generator.png
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.bbl
 INPUT /home/rnetonet/Workspace/pgcomp_qualificacao/tex/template-msc.aux
