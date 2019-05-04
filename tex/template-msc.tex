@@ -97,11 +97,11 @@
 \majorfield{Ci\^{e}ncia da Computa\c{c}\~{a}o}
 
 % Titulo da dissertacao
-\title{Aplicando redes de função de base radial para detecção de mudanças de conceito em fluxos contínuos de dados}
+\title{Aplicando redes de função de base radial para a detecção de mudanças de conceito em fluxos contínuos de dados}
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
-\date{03 de Abril de 2019}
+\date{17 de Maio de 2019}
 % e.g. \defenseyear{2013}
 \defenseyear{2019}
 
@@ -148,7 +148,7 @@
 % Termo de aprovacaoo
 %%%%%%%%%%%%%%%%%%%%%
 
-\approvalsheet{Salvador, 03 de Abril de 2019}{
+\approvalsheet{Salvador, 17 de Maio de 2019}{
    \comittemember{Prof. Dr. Ricardo Araújo Rios}{UFBA}  
    %\comittemember{Profa. Dr...}{UFBA}
    %\comittemember{Prof. Dr...}{USP} 
@@ -181,21 +181,32 @@
 %%%%%%%%%%%%%%%%%%%%%
 \resumo
 
-\blindtext
+A quantidade de dados produzidos por sistemas computacionais tem crescido de forma exponencial nos últimos anos.
+Parte relevante dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências ininterruptas e potencialmente infinitas.
+Pesquisadores têm aplicado técnicas de aprendizado de máquina para extração de informações úteis desses fluxos.
+Contudo, as sequências produzidas são, em sua maioria, não-estacionárias, podendo sofrer variações no contexto do processo gerador ou na distribuição dos dados.
+Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a acurácia da técnica de aprendizado aplicada.
+Objetivando mitigar este problema, foram desenvolvidas novas técnicas para detecção de mudanças de conceito.
+Entretanto, estas técnicas apresentam limitações ao serem aplicadas em cenários com fluxos contínuos, como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais.
+Neste trabalho de mestrado, busca-se desenvolver uma novo método de detecção baseado em redes de função de base radial.
+Estas redes realizam, em sua camada intermediária, uma transformação não-linear que, implicitamente, produz agrupamentos no plano de alta dimensionalidade criado.
+O algoritmo desenvolvido nesta pesquisa monitora o centro ativo desse agrupamento e detecta mudanças de conceito quando este é alterado.
+O método proposto se diferencia dos trabalhos presentes na literatura por ser computacionalmente eficiente, independente de rótulos e apresentar precisão equivalente ao estado da arte.
+Os resultados preliminares obtidos podem ser considerados promissores, 
+já que a técnica proposta teve um desempenho superior ou similar ao de algoritmos conhecidos como ADWIN, CuSum e PageHinkley, em termos de acurácia média e tempo de processamento.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
     Aprendizado de Máquina, Fluxos Contínuos de Dados, Mudanças de Conceito, Redes de Função de Base Radial, Não supervisionado
 \end{keywords}
 
-\abstract
-
-\blindtext
+% \abstract
+% \blindtext
 
 % Palavras-chave do resumo em Ingles
-\begin{keywords}
-    Machine Learning, Data Streams, Concept Drift, Radial Basis Function Networks, RBF Network, Unlabeled
-\end{keywords}
+%\begin{keywords}
+%    Machine Learning, Data Streams, Concept Drift, Radial Basis Function Networks, RBF Network, Unlabeled
+%\end{keywords}
 
 %%%%%%%%%%%%%%%%%%%
 % Sumario / Indice
@@ -647,7 +658,7 @@ Na próxima seção, as ferramentas utilizadas para implementação e validaçã
 Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
 Estas ferramentas permitem a implementação e a validação de novas técnicas de detecção de mudanças de conceito.
 Além de possibilitarem a comparação com o estado da arte, pois dispõem de um vasto conjunto de algoritmos já implementados.
-Ambas as ferramentas foram utilizadas durante o desenvolvimento deste projeto de trabalho de mestrado.
+Ambas as ferramentas serão utilizadas durante para o desenvolvimento deste projeto de trabalho de mestrado.
 
 \subsection{MOA}
 
@@ -709,7 +720,7 @@ Na próxima subseção, o framework \textit{Tornado} será discutido.
 
 \subsection{Tornado}
 
-O \textit{Tornado} é um framework para avaliação de algoritmos de detecção de mudança de conceito \cite{Pesaranghader:Tornado}.
+O \textit{Tornado} é um framework especializado na avaliação de algoritmos de detecção de mudança de conceito \cite{Pesaranghader:Tornado}.
 O projeto é desenvolvido na linguagem Python e o seu código está disponível\footnote{https://github.com/alipsgh/tornado}.
 O framework se diferencia do \textit{MOA} por apresentar um cenário de avaliação específico: 
 analisar a execução, em paralelo, de pares (classificador, detector de mudança de conceito), 
