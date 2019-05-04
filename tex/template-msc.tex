@@ -101,7 +101,7 @@
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
-\date{17 de Maio de 2019}
+\date{24 de Maio de 2019}
 % e.g. \defenseyear{2013}
 \defenseyear{2019}
 
@@ -148,11 +148,11 @@
 % Termo de aprovacaoo
 %%%%%%%%%%%%%%%%%%%%%
 
-\approvalsheet{Salvador, 17 de Maio de 2019}{
-   \comittemember{Prof. Dr. Ricardo Araújo Rios}{UFBA}  
-   %\comittemember{Profa. Dr...}{UFBA}
-   %\comittemember{Prof. Dr...}{USP} 
-}
+% \approvalsheet{Salvador, 24 de Maio de 2019}{
+%    \comittemember{Prof. Dr. Ricardo Araújo Rios}{UFBA}  
+%    %\comittemember{Profa. Dr...}{UFBA}
+%    %\comittemember{Prof. Dr...}{USP} 
+% }
    % Para mestrado, apenas 3.
    % \comittemember{Prof. Dr. Professor 4}{Universidade HJKL}
    % \comittemember{Profa. Dra. Professora 5}{Universidade QWERTY}
@@ -186,12 +186,12 @@ Dessa forma, pesquisadores passaram a aplicar técnicas de aprendizado de máqui
 Contudo, uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
 Esses fluxos são, em sua maioria, não-estacionários, ou seja, podem sofrer variações na distribuição dos dados ou no contexto do processo gerador.
 Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a acurácia da técnica de aprendizado aplicada.
-Para mitigar este problema, foram desenvolvidas novas técnicas para detecção de mudanças de conceito.
-Entretanto, as técnicas disponíveis na literatura ainda apresentam limitações ao serem aplicadas em cenários com fluxos contínuos, como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais.
-Neste trabalho de mestrado, busca-se desenvolver uma novo método de detecção baseado em redes de função de base radial.
+Para mitigar este problema, foram desenvolvidos novos métodos para detecção de mudanças de conceito.
+Entretanto, os métodos disponíveis na literatura ainda apresentam limitações ao serem aplicados em cenários com fluxos contínuos, como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais.
+Neste trabalho de mestrado, busca-se desenvolver um novo método de detecção baseado em redes de função de base radial.
 Estas redes realizam, em sua camada intermediária, uma transformação não-linear que, implicitamente, produz agrupamentos no plano de alta dimensionalidade criado.
-O algoritmo desenvolvido nesta pesquisa monitora o centro ativo desse agrupamento e detecta mudanças de conceito quando este é alterado.
-O método proposto se diferencia dos trabalhos presentes na literatura por ser computacionalmente eficiente, independente de rótulos e apresentar precisão equivalente ao estado da arte.
+O algoritmo desenvolvido nesta pesquisa, denominado RBFDriftDetector, monitora o centro ativo desse agrupamento e detecta mudanças de conceito quando este centro é alterado.
+O método proposto se diferencia dos trabalhos presentes na literatura por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 Os resultados preliminares obtidos podem ser considerados promissores, 
 já que a técnica proposta teve um desempenho superior ou similar ao de algoritmos conhecidos como ADWIN, CuSum e PageHinkley, em termos de acurácia média e tempo de processamento.
 
@@ -252,7 +252,7 @@ a pervasividade dos dispositivos móveis,
 a popularização das redes sociais e 
 a expansão da internet das coisas \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
 %
-A dimensão desse aumento é verificada em \cite{idc_report}, 
+A dimensão desse aumento é verificada em \citeonline{idc_report}, 
 no qual se estima que, entre os anos de 2014 e 2020,
 a quantidade de informações produzidas anualmente irá aumentar de 4,4 zettabytes (trilhões de gigabytes) para 44 zettabytes.
 
@@ -278,7 +278,7 @@ quando aplicadas em contextos com fluxos contínuos,
 também devem lidar com variações na distribuição dos dados ou no contexto do processo gerador.
 %
 Essas alterações são denominadas Mudanças de Conceito \cite{Gama:2010:KDD:1855075} e 
-a sua ocorrência pode impactar a acurácia do algoritmo.
+a sua ocorrência pode impactar a acurácia da técnica de aprendizado aplicada.
 
 Inicialmente, a atualização periódica do modelo foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
 %
@@ -286,7 +286,7 @@ Contudo, esta solução é pouco sofisticada e computacionalmente custosa.
 % 
 Diante disso, pesquisadores propuseram técnicas de detecção de mudanças de conceito baseadas em monitoramento \cite{Gama:2014:SCD:2597757.2523813}.
 % 
-Estes métodos identificam o momento exato da mudança, permitindo que o modelo de decisão seja atualizado somente quando necessário.
+Estes métodos identificam a ocorrência de mudanças com maior precisão, permitindo que o modelo de decisão seja atualizado somente quando necessário.
 %
 Exemplos de algoritmos baseados nesta abordagem, incluem: 
 DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
@@ -298,7 +298,7 @@ Entretanto, as técnicas baseadas em monitoramento necessitam que o rótulo corr
 Em muitos cenários, o tempo ou o custo para obter esses rótulos é proibitivo \cite{Aggarwal:2006:DSM:1196418}.
 %
 Consequentemente, foram desenvolvidos novos algoritmos independentes de rótulos.
-Nestes métodos, a detecção se baseia na identificação de exemplos que não se enquadram na estrutura dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
+Nestes métodos, a detecção se baseia na identificação de exemplos que não se enquadram na estrutura conhecida dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
 % 
 Essa análise é implementada com base em técnicas de agrupamento, detecção de \textit{outliers} e medidas de dissimilaridade \cite{Ryu:Kantardzic:2012}.
 %
@@ -318,7 +318,7 @@ Enquanto as técnicas independentes têm dificuldade em atender as severas restr
 Visando resolver essas limitações, 
 este projeto de mestrado discute uma abordagem baseada em redes de função de base radial 
 para detecção de mudanças de conceito em fluxos contínuos de dados.
-A metodologia proposta se diferencia por detectar as mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+% A metodologia proposta se diferencia por detectar as mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 
 \section{Hipótese e Objetivo}
 
