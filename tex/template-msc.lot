@@ -4,11 +4,11 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces Terminologia - Mudan\IeC {\c c}a de Conceito \cite {Zliobaite:2010}}}{9}{table.2.1}
 \contentsline {table}{\numberline {2.2}{\ignorespaces Resumo - Algoritmos de detec\IeC {\c c}\IeC {\~a}o \cite {Sethi:2017:RDC:3096751.3096864}}}{12}{table.2.2}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Cronograma de atividades}}{24}{table.3.1}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Cronograma de atividades}}{22}{table.3.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Configura\IeC {\c c}\IeC {\~a}o da classe \textit {BasicConceptDriftPerformanceEvaluator}}}{28}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Indicadores analisados}}{29}{table.4.2}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Par\IeC {\^a}metros utilizados para cada algoritmo}}{29}{table.4.3}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Experimento 1 - Fluxo sem mudan\IeC {\c c}as de conceito}}{30}{table.4.4}
-\contentsline {table}{\numberline {4.5}{\ignorespaces Experimento 2 - Fluxo com mudan\IeC {\c c}as de conceito abruptas}}{30}{table.4.5}
-\contentsline {table}{\numberline {4.6}{\ignorespaces Experimento 3 - Fluxo com mudan\IeC {\c c}as de conceito graduais}}{31}{table.4.6}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Configura\IeC {\c c}\IeC {\~a}o da classe \textit {BasicConceptDriftPerformanceEvaluator}}}{26}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Indicadores analisados}}{27}{table.4.2}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Par\IeC {\^a}metros utilizados para cada algoritmo}}{27}{table.4.3}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Experimento 1 - Fluxo sem mudan\IeC {\c c}as de conceito}}{28}{table.4.4}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Experimento 2 - Fluxo com mudan\IeC {\c c}as de conceito abruptas}}{28}{table.4.5}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Experimento 3 - Fluxo com mudan\IeC {\c c}as de conceito graduais}}{29}{table.4.6}
