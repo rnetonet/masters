@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {2.3.3}Ferramentas}{12}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}MOA}{12}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}Tornado}{14}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{16}{section.2.4}
+\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{15}{section.2.4}
 \contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{18}{section.2.5}
 \contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{18}{section.2.6}
 \contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{19}{chapter.3}

@@ -655,9 +655,9 @@ Na próxima seção, as ferramentas utilizadas para implementação e validaçã
 \subsection{Ferramentas}
 
 Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
-Estes frameworks foram utilizados neste projeto de mestrado para a implementação e validação da técnica proposta.
-Além disso, essas ferramentas também foram utilizadas para comparar o algoritmo desenvolvido com o estado da arte, 
-pois possuem implementações para os principais métodos existentes na literatura.
+Estes frameworks serão utilizados para implementar e validar a técnica de detecção proposta neste trabalho.
+Além disso, essas ferramentas possuem implementações para os principais algoritmos de detecção de mudança de conceito presentes na literatura, 
+possibilitando a comparação deste trabalho com o estado da arte.
 
 \subsection{MOA} 
 
@@ -697,9 +697,8 @@ Esse processo é realizado através de uma função sigmóide, que modela o even
 que caracterizam os conceitos-alvo antes e depois da mudança.
 Além destes conceitos, o usuário também pode definir o momento da mudança e a sua duração \cite{Bifet:2010:MMO:1756006.1859903}.
 
-Os principais métodos para detecção de mudança de conceito propostos na literatura estão disponíveis no MOA.
-Além disso, a arquitetura do framework é modular, permitindo a implementação de novos detectores de forma trivial.
-Por exemplo, para criar um novo detector, basta estender a classe abstrata \textit{AbstractChangeDetector} e implementar o algoritmo desejado.
+A arquitetura do framework é modular, o que permite a implementação de novos detectores de forma trivial.
+Para tanto, basta estender a classe abstrata \textit{AbstractChangeDetector} e implementar o algoritmo desejado.
 A janela de configuração deste detector, similar a Figura \ref{fig:moa_detector}, será criada dinamicamente, a partir dos atributos definidos na classe.
 
 \begin{figure}[H]
@@ -722,7 +721,7 @@ O framework se diferencia do \textit{MOA}, pois apresenta um cenário de avalia�
 analisar a execução, em paralelo, de pares formados por um classificador e um detector de mudanças, 
 para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
 
-\begin{figure}[ht]
+\begin{figure}[H]
 \begin{center}
     \includegraphics[scale=0.75]{imagens/tornado.png}
     \caption{Framework Tornado \cite{Pesaranghader:Tornado}.}
@@ -863,8 +862,9 @@ No próximo capítulo, o plano de pesquisa será detalhado.
 \xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
 \section{Considerações Iniciais}
 
-Este capítulo descreve como a pesquisa proposta neste mestrado será desenvolvida para permitir que redes de função de base radial sejam aplicadas para detectar mudanças de conceito em fluxos contínuos de dados.
-Espera-se que com a utilização de redes RBF, seja possível detectar mudanças de conceito em fluxos contínuos em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+Este capítulo descreve como o trabalho de mestrado será desenvolvido.
+A abordagem proposta utiliza redes de função de base radial para detectar mudanças de conceito em fluxos contínuos de dados.
+Espera-se que a utilização de redes RBF permita detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
 
 \section{Descrição do Problema}
@@ -893,7 +893,7 @@ Por fim, a camada de saída produz o resultado final da rede através de uma com
 
 A camada intermediária das redes de função de base radial forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
 O centro ativo deste agrupamento pode se alterar, conforme o valor processado.
-Assim, este trabalho de mestrado implementa as camadas inicial e intermediária, 
+Assim, este trabalho de mestrado implementa as camadas inicial e intermediária das redes RBF  
 e utiliza as alterações de centro no espaço de alta dimensionalidade como indicadores da ocorrência de mudanças de conceito.
 
 O método proposto, denominado \textit{RBFDriftDetector}, utiliza a Gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
@@ -1009,7 +1009,7 @@ e nos meses subsequentes. Além disso, durante a execução desta tarefa foi rea
 As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados. 
 Essas atividades foram divididas em duas partes. 
 A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho. 
-Nesta parte, fluxos contínuos de dados sintéticos com mudança de conceito foram analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}. 
+Nesta parte, conjuntos de dados sintéticos foram analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}. 
 A segunda parte dos experimentos e suas análises serão realizadas após a qualificação.
 
 As atividades 5 e 8 estão relacionadas com o componente curricular MATD75 -- Exame de qualificação. A atividade 5 refere-se à escrita deste texto e as atividades 6 e 7 representam os componentes curriculares MATA32 -- Estágio Docente e MATA31 -- Pesquisa Orientada, respectivamente. A atividade 8 está relacionada à apresentação desta qualificação de mestrado.
@@ -1019,7 +1019,7 @@ A escrita de artigos, listada no item 9 do cronograma, será realizada com base 
 \section{Considerações Finais}
 
 Neste capítulo, apresentou-se de maneira detalhada o projeto de pesquisa, o plano de atividades e o cronograma planejado para a conclusão do mestrado. 
-No próximo capítulo, serão discutidos os resultados preliminares realizados com o objetivo de analisar a viabilidade da proposta de mestrado.
+No próximo capítulo, serão discutidos os experimentos iniciais, realizados com o objetivo de analisar a viabilidade da proposta de mestrado.
 
 \xchapter{Experimentos Iniciais}{} \label{experimentos_iniciais}
 \section{Considerações Iniciais}
