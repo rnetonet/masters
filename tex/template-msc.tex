@@ -755,7 +755,7 @@ A seguir, as redes de função de base radial são detalhadas.
 
 \section{Redes de Função de Base Radial}
 
-Uma Rede de Função de Base Radial (\textit{radial basis function, RBF,} em inglês) pode ser definida como um modelo de múltiplas camadas alimentadas adiante (\textit{feedforward}), 
+Uma Rede de Função de Base Radial (redes RBF, \textit{radial basis function, RBF network}), pode ser definida como um modelo de múltiplas camadas alimentadas adiante (\textit{feedforward}), 
 capaz de analisar padrões complexos e resolver problemas não-linearmente separáveis, utilizando uma abordagem de aproximação de funções.
 Estas redes têm como principal diferencial a sua forma de ativação, realizada através do cálculo da distância entre o dado e um centro definido \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 
@@ -851,7 +851,7 @@ permitindo a identificação de exemplos divergentes dos padrões conhecidos.
 
 \section{Considerações Finais}
 
-Neste capítulo foram apresentados os principais conceitos utilizados neste projeto de trabalho de mestrado.
+Neste capítulo foram apresentados os principais conceitos utilizados na pesquisa.
 Foram discutidos conceitos de fluxos contínuos de dados, 
 técnicas de aprendizado de máquina, 
 mudança de conceito,
@@ -875,29 +875,31 @@ Parte significativa dessas informações é produzida na forma de fluxos contín
 Devido a esse crescimento, pesquisadores passaram a utilizar técnicas de aprendizado de máquina para extrair informações úteis de grandes volumes de dados.
 Essas técnicas precisaram ser adaptadas para contextos com fluxos contínuos, pois estes cenários apresentam severas restrições de tempo de execução e de uso dos recursos computacionais.
 
-Contudo, as adaptações propostas não tratam variações na distribuição dos dados ou no contexto do processo gerador do fluxo.
-Estas alterações são denominadas mudanças de conceito e podem afetar negativamente a acurácia do algoritmo \cite{Gama:2014:SCD:2597757.2523813}.
+Contudo, as adaptações propostas não tratam modificações na distribuição dos dados ou no contexto do processo gerador do fluxo.
+Estas modificações são denominadas mudanças de conceito e podem afetar negativamente a acurácia do algoritmo \cite{Gama:2014:SCD:2597757.2523813}.
 
 Para mitigar este problema, técnicas de detecção de mudanças de conceito foram desenvolvidas. 
 Estes métodos identificam com precisão o momento da mudança, permitindo que o modelo de decisão seja atualizado de forma eficiente e tempestiva.
 
 Entretanto, as técnicas de detecção encontradas na literatura apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
-Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que os torna inviáveis, por causa do custo e do tempo de rotulação.
-Enquanto as técnicas não supervisionadas/implícitas têm dificuldade para antender às restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
+Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que pode torná-los inviáveis, por causa do custo e ou do tempo para rotulação.
+Enquanto as técnicas não supervisionadas/implícitas têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
+Diante disso, este trabalho propõe uma nova abordagem para detecção de mudanças de conceito baseada em redes de função de base radial.
 
-Redes de função de base radial são modelos de redes neurais multicamadas, alimentadas adiante, capazes de analisar padrões complexos e resolver problemas não-linearmente separáveis \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+As redes RBF podem ser definidas como redes neurais multicamadas, alimentadas adiante, capazes de analisar padrões complexos e resolver problemas não-linearmente separáveis \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 A arquitetura básica dessas redes é composta por três camadas.
 A camada de entrada recepciona os dados.
 A camada intermediária, através de funções de base radial, realiza uma transformação não-linear dos dados para um espaço com alta dimensionalidade, buscando tornar o problema linearmente separável \cite{cover1965browse}.
 Por fim, a camada de saída produz o resultado final da rede através de uma combinação linear dos resultados da camada intermediária \cite{Rojas:1996:NNS:235222}.
 
-A camada intermediária das redes de função de base radial forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
-O centro ativo deste agrupamento pode se alterar, conforme o valor processado.
-Assim, este trabalho de mestrado implementa as camadas inicial e intermediária das redes RBF  
-e utiliza as alterações de centro no espaço de alta dimensionalidade como indicadores da ocorrência de mudanças de conceito.
+Este trabalho de mestrado utiliza apenas as camadas inicial e intermediária dessa arquitetura.
+Isto ocorre, pois a camada intermediária forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
+Este agrupamento possui um centro ativo que muda conforme o valor processado.
+O algoritmo desenvolvido nesta pesquisa monitora o agrupamento formado para identificar quando esse centro é alterado.
+Estas alterações são utilizadas como indícios de possíveis mudanças de conceito.
 
 O método proposto, denominado \textit{RBFDriftDetector}, utiliza a Gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
-\textit{$\sigma$}, responsável por limitar o raio da função gaussiana, e \textit{$\lambda$}, que define o valor mínimo para ativação de um centro.
+\textit{$\sigma$}, responsável por limitar o raio da radial, e \textit{$\lambda$}, que define o valor mínimo para ativação de um centro.
 A técnica é descrita na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo}, 
 tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/fjGuv}}, para realização dos experimentos na plataforma MOA.
 
@@ -1070,7 +1072,7 @@ sendo parametrizada para produzir exemplos não binários e conceitos compostos 
 % \end{figure}
 
 Por fim, a classe \textit{NoChangeGenerator}, que produz fluxos sem ocorrência de mudanças de conceito, também foi modificada\footnote{\url{https://git.io/fjGu3}} para permitir a incidência de ruído nos resultados gerados.
-Esta versão foi utilizada para produzir um fluxo sintético sem mudanças, com ruído entre $[-0.1, 0.1]$, para ser utilizado como \textit{baseline} nos experimentos.
+Esta versão foi utilizada para produzir um fluxo sintético sem mudanças, com ruído entre $[-0.1, 0.1]$.
 
 \section{Critérios de avaliação}
 
@@ -1125,7 +1127,7 @@ A Tabela \ref{tbl:indicadores_analisado} apresenta os indicadores analisados nes
 
 \section{RBFD\element{rift}D\element{etector}}
 
-Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o método de detecção de mudanças de conceito proposto (\textbf{RBFDriftDetector}).
+Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o método desenvolvido nesta pesquisa (\textbf{RBFDriftDetector}).
 Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta, 
 a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de redes de função de base radial para detecção de mudanças de conceito em fluxos contínuos de dados.
 
