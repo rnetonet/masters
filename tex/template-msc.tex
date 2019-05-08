@@ -184,16 +184,16 @@
 A quantidade de informações produzidas por sistemas computacionais tem crescido de forma acentuada nas últimas décadas.
 Diante disso, pesquisadores passaram a aplicar técnicas de aprendizado de máquina para extrair informações úteis de grandes conjuntos de dados.
 Contudo, uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
-Esses fluxos são, em sua maioria, não-estacionários, ou seja, podem sofrer variações na distribuição dos dados ou no contexto do processo gerador.
+Esses fluxos são, em sua maioria, não-estacionários, podendo sofrer variações na distribuição dos dados ou no contexto do processo gerador.
 Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a acurácia da técnica de aprendizado aplicada.
-Para mitigar este problema, foram desenvolvidos novos métodos para detecção de mudanças de conceito.
-Entretanto, os métodos disponíveis na literatura apresentam limitações ao serem aplicados em cenários com fluxos contínuos, como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais.
-Neste trabalho de mestrado, busca-se desenvolver um novo método de detecção baseado em redes de função de base radial.
-Estas redes realizam, em sua camada intermediária, uma transformação não-linear que, implicitamente, produz agrupamentos no plano de alta dimensionalidade criado.
-O algoritmo desenvolvido nesta pesquisa, denominado RBFDriftDetector, monitora o centro ativo desse agrupamento e detecta mudanças de conceito quando este centro é alterado.
+Para mitigar este problema, pesquisadores desenvolveram métodos especializados na detecção de mudanças de conceito.
+Entretanto, os métodos propostos apresentam limitações ao serem aplicados em cenários com fluxos contínuos, como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
+Este projeto de trabalho de mestrado propõe um novo método de detecção baseado em redes de função de base radial.
+As redes RBF são utilizadas pois realizam, em sua camada intermediária, uma transformação não-linear que, implicitamente, produz agrupamentos no plano de alta dimensionalidade criado.
+O algoritmo desenvolvido, denominado RBFDriftDetector, monitora o centro ativo desse agrupamento e detecta mudanças de conceito quando este centro é alterado.
 O método proposto se diferencia dos trabalhos presentes na literatura por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 Os resultados preliminares obtidos podem ser considerados promissores, 
-já que a técnica proposta teve um desempenho superior ou similar ao de algoritmos conhecidos como ADWIN, CuSum e PageHinkley, em termos de acurácia média e tempo de processamento.
+já que a técnica proposta teve um desempenho superior ou similar ao de algoritmos conhecidos como ADWIN, CUSUM e PageHinkley, em termos de acurácia média e tempo de processamento.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
@@ -1035,7 +1035,7 @@ A próxima seção apresenta como os dados sintéticos foram produzidos para con
 \section{Configuração dos Experimentos}
 \label{sec:configuracao_experimentos}
 
-Os fluxos de dados sintéticos foram produzidos através de classes geradoras do framework \textit{MOA} e salvos em arquivos no formato \textit{ARFF}, para que pudessem ser reutilizados entre os experimentos.
+Os fluxos de dados sintéticos foram produzidos através de classes geradoras do framework MOA e salvos em arquivos no formato ARFF. %, permitindo para que pudessem ser reutilizados entre os experimentos.
 Cada fluxo produzido representa até dois conceitos e é composto por 2.500 observações, com valores entre 0 e 1.
 O restante desta seção apresenta as classes geradoras utilizadas, as modificações realizadas e os parâmetros aplicados.
 
@@ -1057,7 +1057,7 @@ O gerador foi parametrizado para produzir exemplos não binários, com conceitos
 
 A classe \textit{GradualChangeGenerator} produz fluxos sintéticos com mudanças de conceito graduais.
 Durante sua configuração, percebeu-se uma limitação, pois a classe só gera uma mudança gradual, independente do tamanho dos conceitos.
-Para mitigar esta limitação, a classe foi modificada\footnote{\url{https://git.io/fjGue}} para gerar uma quantidade de mudanças coerente com o tamanho definido.
+Para superar esta limitação, a classe foi modificada\footnote{\url{https://git.io/fjGue}} para gerar uma quantidade de mudanças coerente com o tamanho definido.
 A classe modificada foi utilizada para gerar o fluxo sintético com mudanças graduais utilizado nos experimentos, 
 sendo parametrizada para produzir exemplos não binários e conceitos compostos por 400 instâncias.
 
@@ -1076,11 +1076,10 @@ Esta versão foi utilizada para produzir um fluxo sintético sem mudanças, com 
 
 \section{Critérios de avaliação}
 
-A classe de avaliação \textit{BasicConceptDriftPerformanceEvaluator}, pertencente ao framework \textit{MOA}, será utilizada para avaliar o método proposto neste trabalho.
-Esta classe permite mensurar a acurácia e o desemprenho de algoritmos para detecção de mudanças de conceito.
+A classe de avaliação \textit{BasicConceptDriftPerformanceEvaluator}, pertencente ao framework MOA, foi utilizada para avaliar o método proposto neste trabalho.
+Esta classe permite mensurar a acurácia e o desempenho de algoritmos para detecção de mudanças de conceito.
 Para utilizá-la, é necessário construir uma tarefa do tipo \textit{EvaluateConceptDrift} através da aba \textit{Concept Drift}, presente na tela inicial da aplicação.
-
-Para condução dos experimentos deste trabalho de mestrado, a classe foi configurada conforme descrito na Tabela \ref{tbl:configuracao_tarefa}.
+Para condução dos experimentos deste trabalho, a tarefa \textit{EvaluateConceptDrift} foi configurada conforme descrito na Tabela \ref{tbl:configuracao_tarefa}.
 
 \begin{center} 
     \begin{table}[h]
@@ -1127,7 +1126,7 @@ A Tabela \ref{tbl:indicadores_analisado} apresenta os indicadores analisados nes
 
 \section{RBFD\element{rift}D\element{etector}}
 
-Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o método desenvolvido nesta pesquisa (\textbf{RBFDriftDetector}).
+Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o algoritmo desenvolvido nesta pesquisa, denominado RBFDriftDetector.
 Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta, 
 a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de redes de função de base radial para detecção de mudanças de conceito em fluxos contínuos de dados.
 
@@ -1176,10 +1175,11 @@ O resultado desta análise pode ser visto na Tabela \ref{tbl:exp1}.
     \end{table}
 \end{center}
 
-Todos algoritmos testados demonstraram capacidade de lidar com ruídos e não indicaram nenhum falso positivo.
-O algoritmo proposto obteve a segunda melhor média em tempo de processamento, apenas o algoritmo ADWIN teve melhor performance.
+Como pode ser observado, todos algoritmos testados demonstraram tolerância a ruídos e não indicaram nenhum falso positivo.
+Quanto a performance, o algoritmo proposto obteve a segunda melhor média em tempo de processamento.
+O algoritmo ADWIN obteve, por um pequena margem, o melhor tempo médio de processamento.
 
-Em seguida, utilizou-se a base de dados com mudanças abruptas para realização do experimento. 
+Em seguida, utilizou-se a base de dados com mudanças abruptas como base de testes. 
 Os resultados obtidos são apresentados na Tabela \ref{tbl:exp2}.
 
 \begin{center} 
@@ -1201,7 +1201,7 @@ Os resultados obtidos são apresentados na Tabela \ref{tbl:exp2}.
     \end{table}
 \end{center}
 
-Conforme os resultados, pode-se verificar que apenas o algoritmo proposto neste trabalho, RBFDriftDetector, identificou corretamente todas as mudanças de conceito existentes no fluxo, sendo também o algoritmo com menor atraso de detecção.
+Conforme os resultados, pode-se verificar que o algoritmo proposto neste trabalho identificou todas as mudanças de conceito existentes no fluxo sem indicar nenhum falso-positivo, sendo também o algoritmo com menor atraso de detecção.
 No quesito performance, a técnica desenvolvida obteve o terceiro melhor resultado.
 Paralelamente, os outros algoritmos analisados apresentaram baixa acurácia.
 O algoritmo CUSUM detectou apenas metade das mudanças e apresentou a maior taxa de atraso.
@@ -1249,7 +1249,7 @@ ii) integrar uma Cadeia de Markov ao método proposto, permitindo analisar seu c
 iii) implementar os algoritmos OLINDDA, MINAS e DETECNOD para serem comparados; 
 iv) implementar e validar o algoritmo no framework Tornado; e
 v) alterar o algoritmo para permitir que o centro se desloque dentro do grupo formado.
-Espera-se ainda realizar uma aplicação prática da abordagem proposta, aplicando-a em um conjunto de dados oriundo de um sistema do mundo real.
+Espera-se ainda realizar uma aplicação prática da abordagem proposta, utilizando-a em um conjunto de dados oriundo de um sistema do mundo real.
 
 %% Parte pos-textual
 \backmatter
