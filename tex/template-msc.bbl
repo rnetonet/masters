@@ -440,6 +440,12 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.2307/2333009}.}
   2018.
 Dispon{\'\i}vel em: \url{http://ruor.uottawa.ca/handle/10393/38190}.}
 
+\bibitem[Pettitt 1979]{Pettitt}
+\abntrefinfo{Pettitt}{PETTITT}{1979}
+{PETTITT, A. A non-parametric approach to the change-point problem.
+\emph{Journal of the Royal Statistical Society. Series C. Applied Statistics},
+  v.~28, 01 1979.}
+
 \bibitem[{Roberts}, {Penny} e {Pillot} 1996]{Roberts:Penny:Novelty:Confidence}
 \abntrefinfo{{Roberts}, {Penny} e {Pillot}}{{Roberts}; {Penny}; {Pillot}}{1996}
 {{Roberts}, S.~J.; {Penny}, W.; {Pillot}, D. Novelty, confidence and errors in
