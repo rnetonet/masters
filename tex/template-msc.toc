@@ -11,18 +11,18 @@
 \contentsline {subsection}{\numberline {2.3.3}Ferramentas}{12}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}MOA}{12}{subsection.2.3.4}
 \contentsline {subsection}{\numberline {2.3.5}Tornado}{14}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{15}{section.2.4}
+\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{16}{section.2.4}
 \contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{18}{section.2.5}
-\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{18}{section.2.6}
-\contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{19}{section.3.2}
-\contentsline {section}{\numberline {3.3}Atividades de Pesquisa}{22}{section.3.3}
-\contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{23}{section.3.4}
-\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{25}{section.4.1}
-\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{25}{section.4.2}
-\contentsline {section}{\numberline {4.3}Crit\IeC {\'e}rios de avalia\IeC {\c c}\IeC {\~a}o}{26}{section.4.3}
-\contentsline {section}{\numberline {4.4}P\element {ettitt}}{27}{section.4.4}
-\contentsline {section}{\numberline {4.5}RBFD\element {rift}D\element {etector}}{27}{section.4.5}
-\contentsline {section}{\numberline {4.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{29}{section.4.6}
+\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{20}{section.2.6}
+\contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{21}{section.3.1}
+\contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{21}{section.3.2}
+\contentsline {section}{\numberline {3.3}Atividades de Pesquisa}{24}{section.3.3}
+\contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{25}{section.3.4}
+\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{27}{section.4.1}
+\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{27}{section.4.2}
+\contentsline {section}{\numberline {4.3}Crit\IeC {\'e}rios de avalia\IeC {\c c}\IeC {\~a}o}{28}{section.4.3}
+\contentsline {section}{\numberline {4.4}P\element {ettitt}}{29}{section.4.4}
+\contentsline {section}{\numberline {4.5}RBFD\element {rift}D\element {etector}}{30}{section.4.5}
+\contentsline {section}{\numberline {4.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{34}{section.4.6}

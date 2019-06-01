@@ -97,11 +97,11 @@
 \majorfield{Ci\^{e}ncia da Computa\c{c}\~{a}o}
 
 % Titulo da dissertacao
-\title{Aplicando redes de função de base radial para a detecção de mudanças de conceito em fluxos contínuos de dados}
+\title{Proposta de uma abordagem para a detecção online de mudanças de conceito em fluxos contínuos de dados}
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
-\date{24 de Maio de 2019}
+\date{14 de Junho de 2019}
 % e.g. \defenseyear{2013}
 \defenseyear{2019}
 
@@ -182,18 +182,19 @@
 \resumo
 
 A quantidade de informações produzidas por sistemas computacionais tem crescido de forma acentuada nas últimas décadas.
-Diante disso, pesquisadores passaram a aplicar técnicas de aprendizado de máquina para extrair informações úteis de grandes conjuntos de dados.
+Diante disso, pesquisadores passaram a aplicar técnicas de Aprendizado de Máquina para extrair informações úteis de grandes conjuntos de dados.
 Contudo, uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
 Esses fluxos são, em sua maioria, não-estacionários, podendo sofrer variações na distribuição dos dados ou no contexto do processo gerador.
 Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a acurácia da técnica de aprendizado aplicada.
 Para mitigar este problema, pesquisadores desenvolveram métodos especializados na detecção de mudanças de conceito.
-Entretanto, os métodos propostos apresentam limitações ao serem aplicados em cenários com fluxos contínuos, como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
-Este projeto de trabalho de mestrado propõe um novo método de detecção baseado em redes de função de base radial.
-As redes RBF são utilizadas pois realizam, em sua camada intermediária, uma transformação não-linear que, implicitamente, produz agrupamentos no plano de alta dimensionalidade criado.
-O algoritmo desenvolvido, denominado RBFDriftDetector, monitora o centro ativo desse agrupamento e detecta mudanças de conceito quando este centro é alterado.
-O método proposto se diferencia dos trabalhos presentes na literatura por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
-Os resultados preliminares obtidos podem ser considerados promissores, 
-já que a técnica proposta teve um desempenho superior ou similar ao de algoritmos conhecidos como ADWIN, CUSUM e PageHinkley, em termos de acurácia média e tempo de processamento.
+Entretanto, os métodos propostos apresentam limitações ao serem aplicados em cenários com fluxos contínuos, 
+como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
+Este projeto de trabalho de mestrado propõe um novo método de detecção baseado em Redes de Função de Base Radial (RBF).
+As redes RBF realizam, em sua camada intermediária, um processo de ativação de neurônios que, implicitamente, produz agrupamentos das observações recepcionadas ao longo do tempo.
+O algoritmo proposto nesta pesquisa visa monitorar o centro ativo desse agrupamento e detecta mudanças de conceito quando este centro é alterado.
+O método proposto se diferencia dos trabalhos existentes na literatura por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+Os resultados preliminares obtidos permitem demonstrar a viabilidade desta proposta de mestrado, 
+apresentando um desempenho superior ou similar ao de algoritmos conhecidos como ADWIN, CUSUM e PageHinkley, em termos de acurácia média e tempo de processamento.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
@@ -252,14 +253,13 @@ a pervasividade dos dispositivos móveis,
 a popularização das redes sociais e 
 a expansão da internet das coisas \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
 %
-A dimensão desse aumento é verificada em \citeonline{idc_report}, 
-no qual se estima que, entre os anos de 2014 e 2020,
+A dimensão desse aumento foi verificada por \citeonline{idc_report}, 
+os quais estimaram que, entre os anos de 2014 e 2020,
 a quantidade de informações produzidas anualmente irá aumentar de 4,4 zettabytes (trilhões de gigabytes) para 44 zettabytes.
 
 Parte significativa dessas informações é produzida na forma de sequências ininterruptas e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
 %
-Na literatura, sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em diversos domínios de aplicação, por exemplo:
-monitoramento do mercado financeiro \cite{ZHOU:2015},
+Na literatura, sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em diversos domínios de aplicação como, por exemplo, monitoramento do mercado financeiro \cite{ZHOU:2015},
 acompanhamento de tráfico rodoviário \cite{Wang:2015:EOV:2843092.2843464}, 
 gerenciamento de redes de telecomunicação \cite{delattre2015method}, 
 análise de sentimento em tempo real \cite{KRANJC2015187} e 
@@ -269,18 +269,18 @@ Para extrair informações úteis dessa grande quantidade de dados,
 pesquisadores têm aplicado técnicas da área de Aprendizado de Máquina (AM), 
 a qual estuda algoritmos que melhoram seu desempenho conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
 %
-Entretanto, as estratégias tradicionais de aprendizado de máquina têm aplicação limitada para contextos com fluxos contínuos de dados, 
+Entretanto, as estratégias tradicionais de Aprendizado de Máquina têm aplicação limitada para contextos com fluxos contínuos de dados, 
 pois nesses cenários os algoritmos devem atender a severas restrições de tempo de execução e de uso dos recursos computacionais \cite{bifet2009data}.
 
 Além dessas limitações, 
-as técnicas de aprendizado de máquina, 
+as técnicas de Aprendizado de Máquina, 
 quando aplicadas em contextos com fluxos contínuos, 
 também devem lidar com variações na distribuição dos dados ou no contexto do processo gerador.
 %
 Essas alterações são denominadas Mudanças de Conceito \cite{Gama:2010:KDD:1855075} e 
 a sua ocorrência pode impactar a acurácia da técnica de aprendizado aplicada.
 
-Inicialmente, a atualização periódica do modelo foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
+Inicialmente, a atualização periódica de modelos obtidos a partir das técnicas de AM foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
 %
 Contudo, esta solução é pouco sofisticada e computacionalmente custosa.
 % 
@@ -316,7 +316,7 @@ Os algoritmos dependentes de rótulo se tornam inviáveis, por causa do custo e 
 Enquanto as técnicas independentes têm dificuldade em atender as severas restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
 
 Visando resolver essas limitações, 
-este projeto de mestrado discute uma abordagem baseada em redes de função de base radial 
+este projeto de mestrado discute uma abordagem baseada em Redes de Função de Base Radial (RBF) 
 para detecção de mudanças de conceito em fluxos contínuos de dados.
 % A metodologia proposta se diferencia por detectar as mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 
@@ -325,14 +325,12 @@ para detecção de mudanças de conceito em fluxos contínuos de dados.
 Com base nas observações citadas anteriormente, a seguinte hipótese foi formulada:
 
 \begin{center}
-\textit{``
-A aplicação de redes de função de base radial a fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
-''}
+\textit{``A aplicação de Redes de Função de Base Radial em fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.''}
 \end{center}
 
 Assim, o objetivo deste trabalho de mestrado será a validação desta hipótese.
 %
-Para atingir este objetivo, será desenvolvido um método para detecção de mudanças de conceito baseado em redes de função de base radial.
+Para atingir este objetivo, será desenvolvido um método para detecção de mudanças de conceito baseado em Redes de Função de Base Radial.
 %
 A técnica proposta será validada através de comparações com o estado da arte.
 %
@@ -344,7 +342,8 @@ O outro conjunto será composto por dados obtidos a partir de sistemas computaci
 
 O restante deste projeto está organizado conforme a seguinte estrutura: 
 %
-O \textbf{Capítulo \ref{revisao_bibliografica}} apresenta uma revisão bibliográfica dos principais conceitos utilizados como, por exemplo, fluxos contínuos de dados e aprendizado de máquina, mudança de conceito, e redes de função de base radial; 
+O \textbf{Capítulo \ref{revisao_bibliografica}} apresenta uma revisão bibliográfica dos principais conceitos utilizados como, 
+por exemplo, Fluxos Contínuos de Dados e Aprendizado de Máquina, Mudança de Conceito e Redes de Função de Base Radial; 
 %
 No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa é detalhado, identificando a metodologia que será aplicada na pesquisa e o cronograma de atividades. 
 %
@@ -355,11 +354,11 @@ Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} apresenta um conjunto 
 
 Este capítulo apresenta uma discussão geral sobre os principais conceitos utilizados neste projeto.
 %
-Inicialmente, será abordada a relação entre fluxos contínuos de dados e técnicas de aprendizado de máquina.
+Inicialmente, será abordada a relação entre fluxos contínuos de dados e técnicas de Aprendizado de Máquina.
 %
 Em seguida, o fenômeno mudança de conceito e os métodos de detecção serão discutidos.
 %
-Posteriormente, as redes de função de base radial serão detalhadas.
+Posteriormente, as Redes de Função de Base Radial serão detalhadas.
 %
 Por fim, serão apresentados os trabalhos relacionados encontrados na literatura.
 
@@ -424,7 +423,7 @@ novos algoritmos supervisionados foram propostos para esses contextos \cite{Domi
 
 As especializações mencionadas buscam atender às restrições de uso de memória e de tempo de execução dos contextos com fluxos contínuos de dados.
 Contudo, não consideram que na maioria desses cenários as informações são geradas de forma não estacionária, e que a distribuição dos dados ou o contexto do processo gerador podem sofrer variações, alterando os resultados esperados.
-Na literatura, essas alterações são denominadas mudanças de conceito e a sua ocorrência pode impactar a acurácia da técnica aplicada \cite{Gama:2010:KDD:1855075}.
+Na literatura, essas variações são denominadas mudanças de conceito e a sua ocorrência pode impactar a acurácia da técnica aplicada \cite{Gama:2010:KDD:1855075}.
 
 Neste projeto de mestrado, considera-se que os dados são obtidos a partir de fluxos contínuos de dados com ocorrência de mudanças de conceito.
 Na próxima seção, o fenômeno mudança de conceito será discutido em detalhes.
@@ -432,8 +431,8 @@ Na próxima seção, o fenômeno mudança de conceito será discutido em detalhe
 \section{Mudança de Conceito}
 \label{sec:mudanca_de_conceito}
 
-Técnicas de aprendizado de máquina aplicadas a cenários com fluxos contínuos de dados devem ser capazes de lidar com alterações na distribuição dos dados ou no contexto do processo gerador.
-Essas alterações são denominadas mudanças de conceito (\textit{concept drift}) e podem alterar os resultados esperados (conceitos-alvo) dos algoritmos, prejudicando sua acurácia \cite{Widmer:1996:LPC:226791.226798}.
+Técnicas de Aprendizado de Máquina aplicadas a cenários com fluxos contínuos de dados devem ser capazes de lidar com alterações na distribuição dos dados ou no contexto do processo gerador.
+Essas alterações são denominadas Mudanças de Conceito (\textit{Concept Drift} ou \textit{Concept Shift}, em inglês) e podem alterar os resultados esperados (conceitos-alvo) dos algoritmos, prejudicando sua acurácia \cite{Widmer:1996:LPC:226791.226798}.
 
 Na literatura, é comum utilizar a Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} para descrever a tarefa de classificação.
 Esta descrição será utilizada como base para formalização do fenômeno de mudança de conceito.
@@ -464,7 +463,7 @@ Em outras palavras, um conjunto de dados possui resultados esperados legítimos 
 
 De acordo com \citeonline{Gama:2014:SCD:2597757.2523813}, as mudanças de conceito podem ser categorizadas como virtuais ou reais.
 As mudanças virtuais são causadas por alterações na probabilidade a priori das classes, $P(c)$, e não alteram os conceitos-alvo.
-Enquanto as mudanças de conceito reais surgem a partir de alterações na probabilidade a posteriori, $p(c|X)$, e modificam os resultados esperados.
+Enquanto que as mudanças de conceito reais surgem a partir de alterações na probabilidade a posteriori, $p(c|X)$, e modificam os resultados esperados.
 Os dois tipos de mudança de conceito estão representados na Figura \ref{fig:real_and_virtual_concept_drift}. 
 
 \begin{figure}[H]
@@ -502,13 +501,13 @@ Portanto, as mudanças são notáveis apenas à longo prazo (Figura \ref{fig:con
 A mudança recorrente acontece quando um conceito anteriormente ativo reaparece após um determinado período de tempo. 
 Contudo, não se trata de uma sazonalidade periódica, pois não é evidente o momento no qual o conceito voltará a ser ativo (Figura \ref{fig:concept_drift_patterns} (d)).
 
-Este trabalho de mestrado propõe um método baseado em redes de função de base radial para detecção de mudanças de conceito em fluxos contínuos de dados, independente do padrão de ocorrência.
+Este trabalho de mestrado propõe um método baseado em Redes de Função de Base Radial para detecção de mudanças de conceito em fluxos contínuos de dados, independente do padrão de ocorrência.
 Na próxima subseção, será apresentada a terminologia do fenômeno mudança de conceito.
 
 \subsection{Terminologia}
 
-O fenômeno mudança de conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo mineração de dados, 
-aprendizado de máquina, estatística e recuperação de informação \cite{Zliobaite:2010}.
+O fenômeno mudança de conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo Mineração de Dados, 
+Aprendizado de Máquina, Estatística e Recuperação de Informação \cite{Zliobaite:2010}.
 Contudo, o tema apresenta diferentes nomeclaturas em cada comunidade.
 Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a mudança de conceito em cada área de pesquisa.
 
@@ -662,8 +661,8 @@ possibilitando a comparação deste trabalho com o estado da arte.
 \subsection{MOA} 
 
 Atualmente, o \textit{MOA – Massive Online Analysis}\footnote{https://moa.cms.waikato.ac.nz/} é o principal framework para mineração de dados em fluxos contínuos \cite{Bifet:2010:MMO:1756006.1859903}.
-O projeto é de código-aberto\footnote{https://github.com/Waikato/moa} e apresenta uma comunidade bastante ativa e crescente.
-A aplicação é composta por uma ampla coleção de algoritmos da área de aprendizado de máquina, contemplando técnicas de classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
+O framework é de código-aberto\footnote{https://github.com/Waikato/moa} e apresenta uma comunidade bastante ativa e crescente.
+A aplicação é composta por uma ampla coleção de algoritmos da área de Aprendizado de Máquina, contemplando técnicas de classificação, regressão, agrupamento, busca por padrões, detecção de \textit{outliers}, detecção de mudanças de conceito e sistemas de recomendação.
 Além das implementações, também estão disponíveis rotinas para avaliação dessas técnicas.
 A aplicação é desenvolvida em Java, o que permite a sua execução nos principais sistemas operacionais e a integração com o projeto WEKA \cite{Hall:2009:WDM:1656274.1656278}.
 
@@ -681,7 +680,7 @@ A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
 \end{center}
 \end{figure}
 
-A aplicação é capaz de ler arquivos em formato \textit{ARFF}, além de permitir a produção de fluxos de dados dinamicamente, através de geradores.
+A aplicação é capaz de ler arquivos em formato ARFF\footnote{\textit{Attribute-Relation File Format}}, além de permitir a produção de fluxos de dados dinamicamente, através de geradores.
 Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{Random Trees} \cite{Domingos:2000:MHD:347090.347107}
 \textit{SEA} \cite{Street:2001:SEA:502512.502568}, 
@@ -709,15 +708,15 @@ A janela de configuração deste detector, similar a Figura \ref{fig:moa_detecto
 \end{center}
 \end{figure}
     
-Além de possuir implementações para diversos algoritmos da área de aprendizado de máquina e de áreas correlatas, o framework também dispõe de classes para avaliar a acurácia e a performance dessas técnicas.
+Além de possuir implementações para diversos algoritmos da área de Aprendizado de Máquina e de áreas correlatas, o framework também dispõe de classes para avaliar a acurácia e a performance dessas técnicas.
 Neste trabalho de mestrado, a classe \textit{BasicConceptDriftPerformanceEvaluator} será utilizada para avaliar a acurácia e a performance do método proposto.
 Na próxima subseção, o framework \textit{Tornado} será apresentado.
 
 \subsection{Tornado}
 
-O \textit{Tornado} é um framework desenvolvido especificamente para analisar algoritmos de detecção de mudanças de conceito \cite{Pesaranghader:Tornado}.
+O \textit{Tornado} é um framework desenvolvido para analisar algoritmos de detecção de mudanças de conceito \cite{Pesaranghader:Tornado}.
 O projeto é construído na linguagem Python e o seu código está disponível\footnote{https://github.com/alipsgh/tornado}.
-O framework se diferencia do \textit{MOA}, pois apresenta um cenário de avaliação próprio:
+O framework se diferencia do \textit{MOA}, pois apresenta um cenário de avaliação específico:
 analisar a execução, em paralelo, de pares formados por um classificador e um detector de mudanças, 
 para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
 
@@ -751,22 +750,35 @@ A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado da ferramenta.
 
 Neste trabalho, o algoritmo proposto será implementado e testado nas duas ferramentas apresentadas.
 Os detalhes de implementação e os resultados desses testes serão discutidos no Capítulo \ref{experimentos_iniciais}.
-A seguir, as redes de função de base radial são detalhadas.
+A seguir, as Redes de Função de Base Radial são detalhadas.
+\newpage
 
 \section{Redes de Função de Base Radial}
 
-Uma Rede de Função de Base Radial (redes RBF, \textit{radial basis function, RBF network}), pode ser definida como um modelo de múltiplas camadas alimentadas adiante (\textit{feedforward}), 
+Uma Rede de Função de Base Radial (redes RBF, em português,  ou \textit{radial basis function network, RBF network}, em inglês) pode ser definida como um modelo de múltiplas camadas alimentadas adiante (\textit{feedforward}), 
 capaz de analisar padrões complexos e resolver problemas não-linearmente separáveis, utilizando uma abordagem de aproximação de funções.
 Estas redes têm como principal diferencial a sua forma de ativação, realizada através do cálculo da distância entre o dado e um centro definido \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 
 A arquitetura de uma rede de função de base radial, em sua forma mais básica, envolve três camadas.
-A camada de entrada conecta a rede ao seu ambiente, recepcionando novos dados.
-A camada intermediária, única camada oculta da rede, 
-utiliza funções de base radial para realizar uma transformação não-linear dos dados de entrada para um espaço de alta dimensionalidade.
-Por fim, a camada de saída, através de uma combinação linear, fornece a resposta final da rede \cite{Rojas:1996:NNS:235222}. 
+A camada de entrada representa os atributos do problema. As unidades dessa camada não realizam processamento e simplesmente distribuem as entradas para os neurônios na camada intermediária.
+A camada intermediária, única camada oculta da rede, é constituída por funções de ativação de base radial, que atuam como os neurônios da rede.
+Por fim, a camada de saída pondera, através de pesos, os resultados da camada intermediária, agregando-os linearmente para compor a resposta final da rede \cite{Rojas:1996:NNS:235222}. 
 A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 
-\begin{figure}[ht]
+Na literatura, as funções Gaussianas (Função \ref{eq:gaussiana}) são as funções de ativação mais usuais em redes RBF, sendo definidas por seus centros e larguras:
+
+\begin{equation}
+    \label{eq:gaussiana}
+    \varphi (v_{i})=e^{-(\sigma r)^{2}}
+\end{equation}
+
+% A camada intermediária, através de suas funções de ativação de base radial, realiza uma transformação não-linear dos dados de entrada para um espaço de alta dimensionalidade. A importância dessa transformação é justificada matematicamente pelo teorema de \citeonline{cover1965browse}, 
+% segundo o qual, ``um problema complexo de classificação de padrões disposto não linearmente em um espaço de alta dimensionalidade tem maior probabilidade de ser linearmente separável do que em um espaço de baixa dimensionalidade''.
+
+% r=
+onde, $r$ é a distância euclidiana ($\|\mathbf {v_{i}} - \mathbf {c_{i}}\|$), $v$ é o valor de entrada, $c_i$ representa o centro e $\sigma$ é o parâmetro limitador do raio.
+
+\begin{figure}[H]
 \begin{center}
     \includegraphics[scale=1]{imagens/rbf_arq.png}
     \caption{Arquitetura RBF}
@@ -774,96 +786,127 @@ A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 \end{center}
 \end{figure}
 
-A transformação não-linear dos dados de entrada para um espaço de alta dimensionalidade é justificada matematicamente pelo teorema de \citeonline{cover1965browse}, 
-segundo o qual, ``um problema complexo de classificação de padrões disposto não linearmente em um espaço de alta dimensionalidade tem maior probabilidade de ser linearmente separável do que em um espaço de baixa dimensionalidade''.
-
-Essa transformação é realizada por funções de base radial presentes na camada intermediária. 
-Na literatura, uma das funções mais utilizadas para esta tarefa é a função Gaussiana, representada na Equação \ref{eq:gaussiana}:
-
-\begin{equation}
-    \label{eq:gaussiana}
-    \varphi (v_{i})=e^{-(\sigma r)^{2}}
-\end{equation}
-
-% r=
-onde, $r$ é a distância euclidiana ($\|\mathbf {v_{i}} - \mathbf {c_{i}}\|$), $v$ é o valor de entrada, $c_i$ representa o centro e $\sigma$ é o parâmetro limitador do raio.
-Assim, a classificação realizada por uma rede de função de base radial consiste na resolução das funções \ref{eq:rbf1} e \ref{eq:rbf2}:
+A modelagem das redes RBF define a entrada como um vetor de números reais ${x} \in {R} ^{n}$ e o resultado da rede como uma função escalar desse vetor $\varphi : {R} ^{n} \to {R}$.
+Esta função é obtida a partir da combinação linear dos resultados das funções de ativação (Equação \ref{eq:rbf1}).
 
 \begin{equation} \label{eq:rbf1}
-    f(x)=\sum _{{i=1}}^{N}w_{ij}\varphi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||)
+    \varphi ({x})=\sum _{{i=1}}^{N}a_{i}\rho (||{x}-{c}_{i}||)
 \end{equation}
 
-\begin{equation} \label{eq:rbf2}
-    y_i=\sum _{{i=1}}^{N}w_{ij}\phi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||) + w_{j_0}
-\end{equation}
+% where {\displaystyle N} N is the number of neurons in the hidden layer, {\displaystyle \mathbf } {\mathbf  c}_{i} is the center vector for neuron {\displaystyle i} i, and {\displaystyle } a_{i} is the weight of neuron {\displaystyle i} i in the linear output neuron.
 
-A resolução dessas equações dá origem ao sistema responsável por produzir o resultado final da rede (Equação \ref{eq:rbf3}):
+onde $N$ é o número de neurônios na camada intermediária, ${c}_{i}$ é o centro do neurônio $i$, $||\ldots||$ é a norma euclidiana e $a_{i}$ é o peso (bias) atribuído ao neurônio para realização da combinação linear.
 
-\begin{equation} \label{eq:rbf3}
-\begin{bmatrix}
-    \varphi (||{{x_1}}-{{t}}_{1}||) & \varphi (||{{x_1}}-{{t}}_{2}||) & \dots & \varphi (||{{x_1}}-{{t}}_{N}||) \\
-    \varphi (||{{x_2}}-{{t}}_{1}||) & \varphi (||{{x_2}}-{{t}}_{2}||) & \dots & \varphi (||{{x_2}}-{{t}}_{N}||) \\
-    \hdotsfor{5} \\
-    \varphi (||{{x_N}}-{{t}}_{1}||) & \varphi (||{{x_N}}-{{t}}_{2}||) & \dots & \varphi (||{{x_N}}-{{t}}_{N}||)
-\end{bmatrix}
-\begin{bmatrix}
-    w_1 \\
-    w_2 \\
-    \vdots \\
-    w_N \\
-\end{bmatrix}
-=
-\begin{bmatrix}
-    y_1 \\
-    y_2 \\
-    \vdots \\
-    y_N \\
-\end{bmatrix}
-\end{equation}
+% Assim, a classificação realizada por uma rede de função de base radial consiste na resolução das funções
+% \ref{eq:rbf1} e \ref{eq:rbf2}:
 
-onde $w_{ij}$ são os pesos de cada conexão, $\phi$ é a matriz de interpolação originada do conjunto de $N$ funções
-de base radial aplicadas nas entradas $x$ e dos seus respectivos centros $t_i$,
-$w_{j_0}$ representa o bias, $\varphi (||{{x}}-{{t}}_{i}||)$ é o conjunto de $N$ funções de base radial,
-$||\ldots||$ é a norma euclidiana e $y$ são as saídas geradas pela rede.
+% \begin{equation} \label{eq:rbf2}
+%     y_i=\sum _{{i=1}}^{N}w_{ij}\phi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||) + w_{j_0}
+% \end{equation}
 
-O algoritmo proposto neste trabalho utiliza as camadas inicial e intermediária das redes de função de base radial para compôr um novo método de detecção de mudanças de conceito.
-Isto é possível, pois a camada intermediária cria, de forma implícita, agrupamentos no espaço oculto de alta dimensionalidade.
-Dessa forma, a criação de novos centros e a mudança do centro ativo podem sinalizar a ocorrência de mudanças de conceito.
+% Considerando uma condição de interpolação exata, é possível obter os pesos  atráves de uma relação matricial (Equação \ref{eq:rbf3}):
+
+% \begin{equation} \label{eq:rbf3}
+% \begin{bmatrix}
+%     \varphi (||{{x_1}}-{{t}}_{1}||) & \varphi (||{{x_1}}-{{t}}_{2}||) & \dots & \varphi (||{{x_1}}-{{t}}_{N}||) \\
+%     \varphi (||{{x_2}}-{{t}}_{1}||) & \varphi (||{{x_2}}-{{t}}_{2}||) & \dots & \varphi (||{{x_2}}-{{t}}_{N}||) \\
+%     \hdotsfor{5} \\
+%     \varphi (||{{x_N}}-{{t}}_{1}||) & \varphi (||{{x_N}}-{{t}}_{2}||) & \dots & \varphi (||{{x_N}}-{{t}}_{N}||)
+% \end{bmatrix}
+% \begin{bmatrix}
+%     w_1 \\
+%     w_2 \\
+%     \vdots \\
+%     w_N \\
+% \end{bmatrix}
+% =
+% \begin{bmatrix}
+%     y_1 \\
+%     y_2 \\
+%     \vdots \\
+%     y_N \\
+% \end{bmatrix}
+% \end{equation}
+
+% onde $w_{ij}$ são os pesos de cada conexão, $\varphi$ é a matriz de interpolação originada do conjunto de $N$ funções
+% de base radial aplicadas nas entradas $x$ e dos seus respectivos centros $t_i$,
+% $w_{j_0}$ representa o bias, $\varphi (||{{x}}-{{t}}_{i}||)$ é o conjunto de $N$ funções de base radial,
+%  e $y$ são as saídas geradas pela rede.
+
+O algoritmo proposto neste trabalho utiliza as camadas inicial e intermediária das Redes de Função de Base Radial para compôr um novo método de detecção de mudanças de conceito.
+Isto é possível, pois a camada intermediária cria, de forma implícita, agrupamentos durante o processo de ativação.
+Dessa forma, a criação de novos centros e a mudança do centro ativo dos neurônios podem sinalizar a ocorrência de mudanças de conceito.
 A técnica desenvolvida será discutida em detalhes no Capítulo \ref{plano_pesquisa}.
 Na próxima seção, os trabalhos relacionados encontrados na literatura são apresentados.
 
 \section{Trabalhos Relacionados}
 
-Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura visando identificar trabalhos 
-que utilizam redes de função de base radial para identificação de mudanças de conceito ou para outras tarefas correlatas.
+Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura em busca de trabalhos que propõem métodos para identificação de mudanças de conceito, de forma online e independente de rótulos, em fluxos contínuos de dados. Também foram estudadas técnicas que pudessem subsidiar o desenvolvimento de novos algoritmos que atendam a esses requisitos.
 
-\citeonline{Roberts:Penny:Novelty:Confidence} propuseram um método para detecção de novidades baseado em um comitê de redes de função de base radial.
-Neste método, novos padrões são detectados a partir do monitoramento das taxas de erro e confiança do comitê.
-A técnica foi utilizada para classificação de pacientes com problemas de tremor muscular.
+Inicialmente, foram analisados os algoritmos \textit{Implícitos / Não Supervisionados} pertencentes a subcategoria \textit{Detecção de Novidade / Métodos de Agrupamento}. Estes algoritmos são descritos a seguir.
 
-\citeonline{Jianping:Venkateswarlu:RBF:SpeakerIdentification} também utilizaram as redes de função de base radial em tarefas de detecção de novidades.
-A técnica proposta atua sobre cenários estacionários e foi aplicada ao problema de identificação da fala.
-Seu principal diferencial é a utilização do algoritmo \textit{k-means} para definir os centros e as matrizes de covariância da rede.
+% Métodos de Detecção de Novidade utilizam cálculos de distância e/ou densidade da informação para detectar padrões de dados ainda não observados. Estes métodos são capazes de identificar exemplos que podem provocar incerteza, demandando uma avaliação mais apurada. Os algoritmos atribuem a estes exemplos um rótulo \textbf{Desconhecido} para indicar que estas amostras não se enquadram na visão corrente dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
+% Técnicas de Agrupamento e Detecção de Outliers são estratégias populares para implementar tais métodos, pois resumem os dados correntes e aplicam métricas de dissimilaridade para identificar novos padrões \cite{Ryu:Kantardzic:2012}.
 
-Por fim, \citeonline{Bazargani2018RadialBF} utilizaram redes RBF para detecção de anomalias em fluxos de dados.
-O método proposto modifica as funções de perda, transformando as redes de função de base radial em classificadores de classe única, 
-permitindo a identificação de exemplos divergentes dos padrões conhecidos.
+O algoritmo \textit{OnLIne Novelty and Drift Detection Algorithm} (OLINDDA) utiliza a técnica de agrupamento \textit{K-means} para monitorar e se adaptar ao surgimento de novos padrões \cite{Spinosa:2007:OCA:1244002.1244107}.
+Os exemplos recepcionados são incluídos em uma fila e são periodicamente agrupados. Os grupos resultantes desse processamento definem se os exemplos devem ser incorporados a um grupo existente ou formar um novo grupo.
+
+O algoritmo MINAS, proposto por \citeonline{Faria:2013:NDA:2480362.2480515}, atua de forma similar ao algoritmo OLLINDA, contudo utiliza \textit{micro clusters} obtidos a partir da aplicação de uma técnica de agrupamento específica para fluxos contínuos de dados (CluStream) e estende a abordagem para permitir a aplicação em problemas multiclasse.
+
+O algoritmo DETECTNOD \cite{Hashemi:Hayat:DETECTNOD:2010} utiliza um modelo de clusterização para delimitar os exemplos observados.
+Uma representação compacta desses grupos é produzida através da Transformada Discreta de Cosseno. Esta representação é utilizada, em conjunto com o algoritmo de vizinho mais próximo, para aproximar novos exemplos.
+Estes exemplos são categorizados como desvios ou novidades, conforme o grau de similaridade calculado.
+
+Os algoritmos Woo \cite{Lee:Wang:Ryu:2007} e ECSMiner \cite{Masud:2011:CNC:1978259.1978529} também se baseiam no conceito de \textit{micro clusters}. A técnica Woo atribui um classificador para cada cluster formado. Estes classificadores são utilizados para verificar a similaridade de novos exemplos em relação ao cluster. Exemplos que não se enquadram em nenhum grupo são marcados como suspeitos e passam a ter sua densidade monitorada. Um número crescente de vizinhos no raio dos exemplos monitorados indica o surgimento de um novo conceito, induzindo o retreino do modelo e ajuste do centróide do agrupamento. 
+O ECSMiner \cite{Masud:2011:CNC:1978259.1978529} utiliza o conceito de Outliers Filtrados, que se refere a amostras que estão fora do limite de todos os clusters existentes, em uma abordagem similiar ao algoritmo Woo.
+
+O algoritmo GC3 \cite{Sethi2016b:GC3} estende a ideia de \textit{micro clusters} ao aplicar um algoritmo de agrupamento baseado em grade e densidade. Dessa forma, novos padrões são identificados a partir do surgimento de novas áreas de alta densidade.
+
+Os algoritmos baseados em técnicas de detecção de novidade utilizam métodos de agrupamento para identificar padrões emergentes. Portanto, também apresentam dificuldade para lidar com alta dimensionalidade e/ou dados binários, por dependerem do cálculo de distância, e são computacionalmente custosos. 
+
+A segunda etapa da pesquisa analisou técnicas para detecção de mudanças de conceito em séries temporais que atuam de forma online. Estas técnicas também são comumente denominadas como técnicas para detecção de \textit{change points}. A maioria dos trabalhos identificados se baseia no monitoramento dos valores residuais da aplicação de um modelo. Nesta abordagem, um modelo estatístico ou de Aprendizado de Máquina é aplicado a um conjunto de observações extraídas da série temporal, representando um conceito. 
+Assume-se que se não houver mudança de conceito, os valores residuais dessa aplicação devem ser estacionários. Os trabalhos identificados são apresentados a seguir.
+
+\citeonline{Yamanishi:2002:UFD:775047.775148} propõem um método de detecção online capaz de identificar outliers e mudanças de conceito em séries temporais. 
+A abordagem aplica um modelo autoregressivo aos dados e atualiza os parâmetros de forma incremental, para que o peso de exemplos passados diminua ao longo do tempo. Atribui-se uma pontuação para cada observação, calculada com base na função de perda. Esta pontuação indica o grau de desvio do dado em relação ao modelo aplicado. Pontuações elevadas indicam alta possibilidade de que o dado seja um outlier. A detecção de mudança de conceito é feita através do monitoramento da média das funções de perda ao longo da série temporal. Todavia, esta abordagem só é aplicável a séries temporais com comportamento autoregressivo, o que limita o seu escopo de uso.
+
+\citeonline{GOMBAY2009715} propõem um método diferente, também online, para detecção de mudanças em séries temporais autoregressivas, baseado no monitoramento dos parâmetros do modelo. Um adaptação do método CUSUM \cite{Page:CUSUM:PageHinkley:1954} é aplicada para identificar alterações nos parâmetros. A hipótese nula do algoritmo assume que estes parâmetros devem permanecer estacionários ao longo do tempo. Esta hipótese é testada para cada nova observação recepcionada e a mudança de conceito é sinalizada quando a diferença ultrapassa um limiar estabelecido. Esta abordagem também apresenta limitação de escopo, pois é aplicável apenas a séries temporais autoregressivas.
+
+A utilização de valores residuais para detecção de mudanças de conceito  apresenta desvantagens. Por serem baseados na acurácia do modelo aplicado, estes métodos sofrem influência de problemas ocorridos durante a parametrização ou fase de treinamento. Em teoria, o monitoramento direto de características dos dados pode permitir uma identificação de mudanças de conceito mais robusta.
+
+Poucos estudos utilizam as características das séries temporais para identificar mudanças de conceito. Neste contexto, o trabalho proposto por  \citeonline{Boracchi2014ExploitingSF} se destaca por apresentar um método de detecção de mudanças de conceito em séries temporais que atua de forma online, baseando-se no monitoramento da característica de auto-similaridade da série.
+Entretanto, o método proposto tem como principal limitação o fato de ser especializado para séries que apresentam auto-similaridade e periodicidade. Além disso, a abordagem utiliza uma considerável quantidade de memória, pois armazena uma sequência de dados que representa o comportamento estável ou regular da série temporal.
+
+Para cenários nos quais os fluxos de dados não apresentam as propriedades esperadas pelas técnicas discutidas anteriormente, \citeonline{StableApproachToDetectConceptDrift:Mello} propõem um novo método para detecção de mudanças de conceito que atua de forma online.
+Este trabalho se diferencia por utilizar um algoritmo de agrupamento hierárquico estável, conforme a propriedade proposta por \citeonline{Carlsson:2010:CSC:1756006.1859898}.
+A abordagem cria janelas consecutivas de dados. A técnica de agrupamento é aplicada em cada janela e os dendogramas resultantes comparados, a fim de identificar mudanças de conceito na distribuição dos dados.
+
+As técnicas para detecção de mudanças de conceito são, geralmente, aplicadas para minimizar o intervalo entre a ocorrência da mudança e a atualização do modelo aplicado. Diante disso, um método de detecção ideal deve:
+
+\begin{itemize}
+    \item ser transparente para o usuário, detectando e informando explicitamente sobre a ocorrência de mudanças;
+    \item ser computacionalmente eficiente;
+    \item atuar de forma online, buscando minimizar o atraso de atualização do modelo; e
+    \item basear-se em características dos dados que reflitam os conceitos presentes.
+\end{itemize}
+
+Por fim, a pesquisa realizada evidenciou a inexistência de técnicas que atendam a esses requisitos e que sejam computacionalmente eficientes, independentes de rótulos e aplicáveis a fluxos de dados de qualquer natureza. Este projeto de trabalho de mestrado tem como objetivo tentar preencher esta lacuna na literatura, através da proposição de um novo método, baseado em Redes de Função de Base Radial,  para identificação de mudanças de conceito em fluxos contínuos de dados.
 
 \section{Considerações Finais}
 
 Neste capítulo foram apresentados os principais conceitos utilizados na pesquisa.
-Foram discutidos conceitos de fluxos contínuos de dados, 
-técnicas de aprendizado de máquina, 
-mudança de conceito,
-técnicas de detecção e redes de função de base radial.
+Foram discutidos conceitos de Fluxos Contínuos de Dados, 
+técnicas de Aprendizado de Máquina, 
+Mudança de Conceito,
+Técnicas de Detecção e Redes de Função de Base Radial.
 Por fim, foram apresentados os trabalhos relacionados encontrados na literatura.
 No próximo capítulo, o plano de pesquisa será detalhado.
 
 \xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
 \section{Considerações Iniciais}
 
-Este capítulo descreve como o trabalho de mestrado será desenvolvido.
-A abordagem proposta utiliza redes de função de base radial para detectar mudanças de conceito em fluxos contínuos de dados.
+Este capítulo descreve como este projeto de mestrado será desenvolvido.
+A abordagem proposta utiliza Redes de Função de Base Radial para detectar mudanças de conceito em fluxos contínuos de dados.
 Espera-se que a utilização de redes RBF permita detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
 
@@ -872,34 +915,34 @@ A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do proj
 Nos últimos anos, a quantidade de dados produzidos por sistemas computacionais tem crescido de forma exponencial \cite{idc_report}.
 Parte significativa dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências potencialmente infinitas e de alta frequência \cite{Aggarwal:2006:DSM:1196418}.
 
-Devido a esse crescimento, pesquisadores passaram a utilizar técnicas de aprendizado de máquina para extrair informações úteis de grandes volumes de dados.
+Devido a esse crescimento, pesquisadores passaram a utilizar técnicas de Aprendizado de Máquina para extrair informações úteis de grandes volumes de dados.
 Essas técnicas precisaram ser adaptadas para contextos com fluxos contínuos, pois estes cenários apresentam severas restrições de tempo de execução e de uso dos recursos computacionais.
 
-Contudo, as adaptações propostas não tratam modificações na distribuição dos dados ou no contexto do processo gerador do fluxo.
-Estas modificações são denominadas mudanças de conceito e podem afetar negativamente a acurácia do algoritmo \cite{Gama:2014:SCD:2597757.2523813}.
+Contudo, as adaptações propostas não tratam alterações na distribuição dos dados ou no contexto do processo gerador do fluxo.
+Estas alterações são denominadas mudanças de conceito e podem afetar negativamente a acurácia do algoritmo \cite{Gama:2014:SCD:2597757.2523813}.
 
-Para mitigar este problema, técnicas de detecção de mudanças de conceito foram desenvolvidas. 
-Estes métodos identificam com precisão o momento da mudança, permitindo que o modelo de decisão seja atualizado de forma eficiente e tempestiva.
+Para mitigar este problema, métodos de detecção de mudanças de conceito foram desenvolvidos. 
+Estes métodos identificam o momento da mudança com maior precisão, permitindo que o modelo de decisão seja atualizado de forma eficiente.
 
 Entretanto, as técnicas de detecção encontradas na literatura apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
-Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que pode torná-los inviáveis, por causa do custo e ou do tempo para rotulação.
-Enquanto as técnicas não supervisionadas/implícitas têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
-Diante disso, este trabalho propõe uma nova abordagem para detecção de mudanças de conceito baseada em redes de função de base radial.
+Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que pode torná-los inviáveis, por causa do custo e/ou do tempo para rotulação.
+Enquanto que as técnicas não supervisionadas/implícitas têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
+Diante disso, este trabalho propõe uma nova abordagem para detecção de mudanças de conceito baseada em Redes de Função de Base Radial.
 
-As redes RBF podem ser definidas como redes neurais multicamadas, alimentadas adiante, capazes de analisar padrões complexos e resolver problemas não-linearmente separáveis \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+As redes RBF podem ser definidas como redes neurais multicamadas, alimentadas adiante, capazes de analisar padrões complexos e resolver problemas que não são linearmente separáveis \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 A arquitetura básica dessas redes é composta por três camadas.
-A camada de entrada recepciona os dados.
-A camada intermediária, através de funções de base radial, realiza uma transformação não-linear dos dados para um espaço com alta dimensionalidade, buscando tornar o problema linearmente separável \cite{cover1965browse}.
-Por fim, a camada de saída produz o resultado final da rede através de uma combinação linear dos resultados da camada intermediária \cite{Rojas:1996:NNS:235222}.
+A camada de entrada recepciona os dados e repassa para a camada seguinte.
+A camada intermediária realiza a ativação dos neurônios através de funções de base radial.
+E, por fim, a camada de saída produz o resultado final da rede através de uma combinação linear dos resultados da camada intermediária \cite{Rojas:1996:NNS:235222}.
 
 Este trabalho de mestrado utiliza apenas as camadas inicial e intermediária dessa arquitetura.
-Isto ocorre, pois a camada intermediária forma, implicitamente, grupos (\textit{clusters}) no espaço de alta dimensionalidade criado.
+Isto ocorre, pois a camada intermediária forma, implicitamente, grupos (\textit{clusters}) durante o processo de ativação.
 Este agrupamento possui um centro ativo que muda conforme o valor processado.
 O algoritmo desenvolvido nesta pesquisa monitora o agrupamento formado para identificar quando esse centro é alterado.
 Estas alterações são utilizadas como indícios de possíveis mudanças de conceito.
 
-O método proposto, denominado \textit{RBFDriftDetector}, utiliza a Gaussiana (Equação \ref{eq:gaussiana}) como função de base radial e requer a definição de dois parâmetros: 
-\textit{$\sigma$}, responsável por limitar o raio da radial, e \textit{$\lambda$}, que define o valor mínimo para ativação de um centro.
+O método proposto, denominado \textit{RBFDriftDetector}, utiliza a função Gaussiana para ativação dos neurônios e requer a definição de dois parâmetros: 
+\textit{$\sigma$}, responsável por limitar o raio da radial, e \textit{$\lambda$}, que define um limiar para ativação de um centro.
 A técnica é descrita na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo}, 
 tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/fjGuv}}, para realização dos experimentos na plataforma MOA.
 
@@ -1016,7 +1059,7 @@ A segunda parte dos experimentos e suas análises serão realizadas após a qual
 
 As atividades 5 e 8 estão relacionadas com o componente curricular MATD75 -- Exame de qualificação. A atividade 5 refere-se à escrita deste texto e as atividades 6 e 7 representam os componentes curriculares MATA32 -- Estágio Docente e MATA31 -- Pesquisa Orientada, respectivamente. A atividade 8 está relacionada à apresentação desta qualificação de mestrado.
  
-A escrita de artigos, listada no item 9 do cronograma, será realizada com base nos resultados gerados com os experimentos (Atividades $3$ e $4$) e nas contribuições obtidas com a apresentação da qualificação. Por fim, como requisito para a defesa de dissertação, fica pendente a atividade MATE93 -– Defesa de Proposta de Mestrado, a qual se refere aos itens 10 e 11 da Tabela \ref{cronograma}. 
+A escrita de artigos, listada no item 9 do cronograma, será realizada com base nos resultados gerados com os experimentos (Atividades $3$ e $4$) e nas contribuições obtidas com a apresentação da qualificação. Por fim, como requisito para a defesa de dissertação, fica pendente a atividade MATE93 - Defesa de Proposta de Mestrado, a qual se refere aos itens 10 e 11 da Tabela \ref{cronograma}. 
 
 \section{Considerações Finais}
 
@@ -1041,9 +1084,9 @@ O restante desta seção apresenta as classes geradoras utilizadas, as modifica�
 
 A classe geradora \textit{AbruptChangeGenerator} produz fluxos de dados sintéticos com mudanças de conceito abruptas.
 Os fluxos gerados simulam as mudanças através da intercalação de sequências com o valor $0.2$ e sequências com o valor $0.8$, conforme o tamanho definido para os conceitos.
-Com o objetivo de tornar os dados produzidos mais próximos da realidade, a classe foi alterada\footnote{\url{https://git.io/fjGEj}} para permitir a adição de um ruído randômico, com amplitude configurável, para cada exemplo produzido.
-A versão com suporte a ruído foi utilizada na produção do fluxo com mudanças abruptas utilizado nos experimentos.
-O gerador foi parametrizado para produzir exemplos não binários, com conceitos formados por 400 instâncias e ruído limitado ao intervalo $[-0.1, 0.2]$.
+Com o objetivo de tornar os dados produzidos mais próximos da realidade, essa classe foi alterada\footnote{\url{https://git.io/fjGEj}} para permitir a adição de um ruído randômico, com amplitude configurável, para cada exemplo produzido.
+A versão com suporte a ruído foi utilizada nos experimentos para produção do fluxo com mudanças abruptas.
+O gerador foi parametrizado para produzir exemplos não binários, com conceitos formados com 400 instâncias e ruído limitado ao intervalo $[-0.1, 0.2]$ seguindo uma distribuição uniforme.
 
 % Esta configuração é apresentada na Figura \ref{fig:abrupt_change_generator}.
 
@@ -1126,22 +1169,51 @@ A Tabela \ref{tbl:indicadores_analisado} apresenta os indicadores analisados nes
 
 \section{P\element{ettitt}}
 
-Antes de implementar o algoritmo proposto nesta pesquisa, investigou-se a aplicação de técnicas para detecção de \textit{changing points} na detecção de mudanças de conceito.
-Para tanto, foi realizada a implementação no framework MOA de um método de detecção baseado no teste estatístico não-paramétrico de Pettit \cite{Pettitt}.
+Durante a revisão da literatura, investigou-se a aplicabilidade das técnicas para detecção de \textit{changing points} em problemas de detecção de mudança de conceito. 
+Para tanto, foi realizada a implementação, no framework MOA\footnote{\url{https://git.io/fj8xu}}, de um novo algoritmo baseado no método estatístico proposto por \citeonline{Pettitt}.
 
-Para obter familiaridade com a arquitetura do framework MOA e verificar se métodos para detecção de \textit{changing points} podem ser aplicados ao problema de mudança de conceito, 
-foi realizada a implementação do método de Pettitt.
+O método de Pettitt é um teste não paramétrico, no qual se verifica se duas amostras $Y_1,...,Y_t$ e $Y_{t+1},...,Y_T$ são da mesma população. A estatística $U_{t,T}$ faz uma contagem do número de vezes que um membro da primeira amostra é maior que um membro da segunda. 
+A estatística $U_{t,T}$ é obtida através da Equação \ref{eq:pettitt}:
 
-Uma das tarefas executadas durante a elaboração deste projeto, consistiu na implementação do método de Pettitt \cite{Pettitt} na plataforma MOA.
-A tarefa tinha dois objetivos: familirizar-se com a arquitetura do framework e testar a aplicabilidade de técnicas \textit{changing point} ao problema de detecção de mudanças de conceito.
+\begin{equation}
+    \label{eq:pettitt}
+    U_{t,T} = U_{t-1,T} + \sum_{j=1}^{T}sgn(Y_t-Y_j)
+\end{equation}
 
+Onde $t = 2,....,T$; $sgn(x) = 1$ para $x>0$; $sgn(x)= 0$ para $x=0$ e $sgn(x)=-1$ para $x<0$.
+A estatística $U_{t,T}$ é então calculada para os
+valores de $1 \leq t \leq T$ e a estatística $k(t)$ do teste de
+Pettitt é o máximo valor absoluto de $U_{t,T}$.
 
+Os testes foram executados com os conjuntos de dados sintéticos produzidos na Seção \ref{sec:configuracao_experimentos}. Os resultados obtidos são apresentados a seguir, na Tabela \ref{tbl:pettitt}.
+
+\begin{center} 
+    \begin{table}[H]
+    \caption{Resultados - Método de Pettitt}
+    \label{tbl:pettitt}
+    \resizebox{\textwidth}{!} {%
+    \begin{tabular}{llllll}
+    \toprule
+    Conjunto de Dados & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
+    \midrule
+    Sem mudanças           &  $3.19$ & $0$ & $0$ & $4$ & $-$ \\
+    Mudanças Abruptas      &  $2.09$ & $6$ & $3$ & $2$ & $132$ \\
+    Mudanças Incrementais  &  $1.48$ & $6$ & $4$ & $2$ & $133$ \\
+    \bottomrule
+    \end{tabular}
+    }
+    \end{table}
+\end{center}
+
+A análise dos resultados demonstra que o algoritmo se mostrou propenso à produção de falsos-positivo e, em comparação aos outros algoritmos abordados neste trabalho, computacionalmente ineficiente.
+
+Por não apresentar resultados competitivos em relação ao estado da arte, esta linha de pesquisa foi suspensa, permitindo que os esforços se voltassem para a análise da aplicação de Redes de Função de Base Radial para detecção de mudanças de conceito.
 
 \section{RBFD\element{rift}D\element{etector}}
 
 Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o algoritmo desenvolvido nesta pesquisa, denominado RBFDriftDetector.
 Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta, 
-a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de redes de função de base radial para detecção de mudanças de conceito em fluxos contínuos de dados.
+a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de Redes de Função de Base Radial para detecção de mudanças de conceito em fluxos contínuos de dados.
 
 Para execução dos experimentos, foram utilizados três conjuntos de dados sintéticos, conforme descrito na seção \ref{sec:configuracao_experimentos}.
 Além disso, os seguintes algoritmos foram utilizados para comparação: CUSUM, PageHinkley e ADWIN.
@@ -1170,7 +1242,7 @@ O primeiro experimento utilizou o fluxo de dados sintético sem mudanças de con
 O resultado desta análise pode ser visto na Tabela \ref{tbl:exp1}.
 
 \begin{center} 
-    \begin{table}[ht]
+    \begin{table}[H]
     \caption{Experimento 1 - Fluxo sem mudanças de conceito}
     \label{tbl:exp1}
     \resizebox{\textwidth}{!} {%
@@ -1189,14 +1261,22 @@ O resultado desta análise pode ser visto na Tabela \ref{tbl:exp1}.
 \end{center}
 
 Como pode ser observado, todos algoritmos testados demonstraram tolerância a ruídos e não indicaram nenhum falso positivo.
-Quanto a performance, o algoritmo proposto obteve a segunda melhor média em tempo de processamento.
-O algoritmo ADWIN obteve, por um pequena margem, o melhor tempo médio de processamento.
+Quanto a performance, o algoritmo proposto obteve a segunda melhor média em tempo de processamento. Superado pelo algoritmo ADWIN, por uma pequena margem. 
+O comportamento dos algoritmos e do conjunto de dados utilizado é apresentado graficamente na Figura \ref{fig:exp_sem_mudancas}.
+
+\begin{figure}[ht]
+\begin{center}
+    \includegraphics[width=\textwidth]{imagens/nochange.pdf}
+    \caption{Representação Gráfica - Sem mudanças de conceito}
+    \label{fig:exp_sem_mudancas}
+\end{center}
+\end{figure}
 
 Em seguida, utilizou-se a base de dados com mudanças abruptas como base de testes. 
 Os resultados obtidos são apresentados na Tabela \ref{tbl:exp2}.
 
 \begin{center} 
-    \begin{table}[ht]
+    \begin{table}[H]
     \caption{Experimento 2 - Fluxo com mudanças de conceito abruptas}
     \label{tbl:exp2}
     \resizebox{\textwidth}{!} {%
@@ -1214,13 +1294,23 @@ Os resultados obtidos são apresentados na Tabela \ref{tbl:exp2}.
     \end{table}
 \end{center}
 
-Conforme os resultados, pode-se verificar que o algoritmo proposto neste trabalho identificou todas as mudanças de conceito existentes no fluxo sem indicar nenhum falso-positivo, sendo também o algoritmo com menor atraso de detecção.
+Ao analisar este resultado, verifica-se que o algoritmo proposto neste trabalho identificou todas as mudanças de conceito existentes no fluxo sem indicar nenhum falso-positivo, sendo também o algoritmo com menor atraso de detecção.
 No quesito performance, a técnica desenvolvida obteve o terceiro melhor resultado.
 Paralelamente, os outros algoritmos analisados apresentaram baixa acurácia.
 O algoritmo CUSUM detectou apenas metade das mudanças e apresentou a maior taxa de atraso.
 Enquanto o método PageHinkley detectou apenas uma mudança.
-Por fim, o algoritmo ADWIN apresentou a melhor performance e detectou as 6 mudanças existentes, 
-contudo se mostrou hipersensível, pois foram detectados 2046 falsos-positivo.
+Por fim, o algoritmo ADWIN apresentou maior eficiência computacional e apesar de detectar as 6 mudanças existentes, 
+mostrou-se hipersensível, pois foram detectados 2046 falsos-positivo.
+
+Os resultados do segundo experimento são demonstrados graficamente na Figura \ref{fig:exp_abrupta}. Nesta imagem, as linhas sólidas na cor verde representam as mudanças de conceito existentes no conjunto de dados analisado. As linhas tracejadas azuis representam mudanças de conceito identificadas corretamente, enquanto que as linhas tracejadas de cor vermelha representam falsos-positivo.
+
+\begin{figure}[H]
+\begin{center}
+    \includegraphics[width=\textwidth]{imagens/abrupt.pdf}
+    \caption{Representação Gráfica - Mudanças Abruptas}
+    \label{fig:exp_abrupta}
+\end{center}
+\end{figure}
 
 O último experimento realizado utilizou o fluxo sintético com mudanças de conceito graduais.
 Seu resultado é demonstrado na Tabela \ref{tbl:exp3}.
@@ -1251,14 +1341,25 @@ O algoritmo CUSUM identificou metade das mudanças.
 O método PageHinkley identificou apenas uma alteração de conceito.
 E, finalmente, o algoritmo ADWIN voltou a se mostrar muito sensível, ao identificar $2238$ falsos-positivo.
 
+Por fim, o comportamento do conjunto de dados e dos algoritmos neste último experimento é apresentado na Figura \ref{fig:exp_gradual}. 
+Na imagem, as linhas sólidas na cor verde representam as mudanças de conceito existentes no conjunto de dados analisado. As linhas tracejadas azuis representam mudanças de conceito identificadas corretamente, enquanto que as linhas tracejadas de cor vermelha representam falsos-positivo.
+
+\begin{figure}[ht]
+\begin{center}
+    \includegraphics[width=\textwidth]{imagens/gradual.pdf}
+    \caption{Representação Gráfica - Mudanças Graduais}
+    \label{fig:exp_gradual}
+\end{center}
+\end{figure}
+
 \section{Considerações Finais}
 
-Nesta seção, foram apresentados os resultados dos primeiros experimentos executados neste trabalho, 
-os quais visavam confirmar a aplicabilidade de redes de função de base radial na detecção de mudanças de conceito em fluxos contínuos de dados.
+Nesta seção foram apresentados os resultados dos experimentos iniciais deste trabalho de pesquisa, 
+os quais visavam confirmar a aplicabilidade das Redes de Função de Base Radial na detecção de mudanças de conceito em fluxos contínuos de dados.
 
-As seguintes atividades estão previstas como experimentos futuros: 
+As seguintes etapas estão previstas para serem executadas: 
 i) realizar experimentos com fluxos recorrentes e incrementais;
-ii) integrar uma Cadeia de Markov ao método proposto, permitindo analisar seu comportamento e aprimorar a acurácia das detecções;
+ii) integrar uma cadeia de Markov ao método proposto, permitindo a análise do comportamento das mudanças e o aprimoramento da acurácia das detecções;
 iii) implementar os algoritmos OLINDDA, MINAS e DETECNOD para serem comparados; 
 iv) implementar e validar o algoritmo no framework Tornado; e
 v) alterar o algoritmo para permitir que o centro se desloque dentro do grupo formado.
@@ -1276,7 +1377,7 @@ Espera-se ainda realizar uma aplicação prática da abordagem proposta, utiliza
 
 % Apendices
 % Comente se naoo houver apendices
-%\appendix
+% \appendix
 
 %\xchapter{Exemplo de Ap\^endice}{} %sem preambulo
 %\lipsum

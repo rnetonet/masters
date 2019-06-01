@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+# Legends
+from matplotlib.lines import Line2D
+
 path = sys.argv[1]
 files = os.listdir(path)
 
@@ -41,7 +44,7 @@ plt.rc("font", family="serif")
 
 fig = plt.figure()
 fig.suptitle(dataset, fontsize=12)
-fig.subplots_adjust(hspace=0.3, wspace=0.2)
+fig.subplots_adjust(hspace=0.2, wspace=0.2)
 
 # For each experiment result, add subplot
 for file in files:
@@ -79,5 +82,21 @@ for file in files:
 
     ax.plot(range(0, len(data)), data, color="#D3D3D3", linestyle="-", linewidth=0.25)
 
+# Legend
+custom_legends = [
+    Line2D([0], [0], color="#D3D3D3", linestyle="-", linewidth=0.25),
+    Line2D([0], [0], color="g", ls="-", linewidth=1),
+    Line2D([0], [0], color="b", ls="--", linewidth=1),
+    Line2D([0], [0], color="r", ls="--", linewidth=1),
+]
+fig.legend(
+    custom_legends,
+    ["Fluxo de Dados", "Mudança de Conceito", "Mudança Detectada", "Falso-positivo"],
+    ncol=2,
+    borderaxespad=0,
+    loc="lower center",
+)
+
+# Showing and saving
 plt.show()
 fig.savefig(dataset_key + ".pdf")

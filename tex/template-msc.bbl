@@ -85,11 +85,6 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/507515.507519}.}
   Application}. Upper Saddle River, NJ, USA: Prentice-Hall, Inc., 1993.
 ISBN 0-13-126780-9.}
 
-\bibitem[Bazargani e Namee 2018]{Bazargani2018RadialBF}
-\abntrefinfo{Bazargani e Namee}{BAZARGANI; NAMEE}{2018}
-{BAZARGANI, M.~H.; NAMEE, B.~M. Radial basis function data descriptor ( rbfdd )
-  network : An anomaly detection approach. In:  . [S.l.: s.n.], 2018.}
-
 \bibitem[Bifet e Gavaldà 2007]{BifetG07}
 \abntrefinfo{Bifet e Gavaldà}{BIFET; GAVALDà}{2007}
 {BIFET, A.; GAVALDà, R. Learning from time-changing data with adaptive
@@ -123,6 +118,12 @@ ISBN 978-1-4503-1656-9. Dispon{\'\i}vel em:
   based on hoeffding's bounds.
 \emph{{IEEE} Trans. Knowl. Data Eng.}, v.~27, n.~3, p. 810--823, 2015.}
 
+\bibitem[Boracchi e Roveri 2014]{Boracchi2014ExploitingSF}
+\abntrefinfo{Boracchi e Roveri}{BORACCHI; ROVERI}{2014}
+{BORACCHI, G.; ROVERI, M. Exploiting self-similarity for change detection.
+\emph{2014 International Joint Conference on Neural Networks (IJCNN)}, p.
+  3339--3346, 2014.}
+
 \bibitem[Braga, Carvalho e Ludermir 2007]{Braga:RedesNeuraisTeoriaAplicacoes}
 \abntrefinfo{Braga, Carvalho e Ludermir}{BRAGA; CARVALHO; LUDERMIR}{2007}
 {BRAGA, A.; CARVALHO, A.~C.; LUDERMIR, T.~B. \emph{{Redes Neurais Artificiais:
@@ -142,6 +143,14 @@ ISBN 9788521615644. Dispon{\'\i}vel em:
 ISBN 978-1-61197-276-4. Dispon{\'\i}vel em:
   \url{http://dblp.uni-trier.de/db/conf/sdm/sdm2006.html\#CaoEQZ06}.}
 
+\bibitem[Carlsson e M{\'e}moli 2010]{Carlsson:2010:CSC:1756006.1859898}
+\abntrefinfo{Carlsson e M{\'e}moli}{CARLSSON; M{\'E}MOLI}{2010}
+{CARLSSON, G.; M{\'E}MOLI, F. Characterization, stability and convergence of
+  hierarchical clustering methods.
+\emph{J. Mach. Learn. Res.}, JMLR.org, v.~11, p. 1425--1470, ago. 2010.
+ISSN 1532-4435.
+Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1756006.1859898}.}
+
 \bibitem[Chandola, Banerjee e Kumar 2009]{Chandola:2009:ADS:1541880.1541882}
 \abntrefinfo{Chandola, Banerjee e Kumar}{CHANDOLA; BANERJEE; KUMAR}{2009}
 {CHANDOLA, V.; BANERJEE, A.; KUMAR, V. Anomaly detection: A survey.
@@ -157,14 +166,11 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1541880.1541882}.}
 ISSN 2150-8097.
 Dispon{\'\i}vel em: \url{https://doi.org/10.14778/1687553.1687576}.}
 
-\bibitem[Cover 1965]{cover1965browse}
-\abntrefinfo{Cover}{COVER}{1965}
-{COVER, T.~M. Geometrical and statistical properties of systems of linear
-  inequalities with applications in pattern recognition.
-\emph{Electronic Computers, IEEE Transactions on}, EC-14, n.~3, p. 326--334,
-  1965.
-Dispon{\'\i}vel em:
-  \url{http://hebb.mit.edu/courses/9.641/2002/readings/Cover65.pdf}.}
+\bibitem[{Costa} e {Mello} 2014]{StableApproachToDetectConceptDrift:Mello}
+\abntrefinfo{{Costa} e {Mello}}{{Costa}; {Mello}}{2014}
+{{Costa}, F.~G. d.; {Mello}, R.~F. d. A stable and online approach to detect
+  concept drift in data streams. In:  \emph{2014 Brazilian Conference on
+  Intelligent Systems}. [S.l.: s.n.], 2014. p. 330--335.}
 
 \bibitem[Delattre e Imbert 2015]{delattre2015method}
 \abntrefinfo{Delattre e Imbert}{DELATTRE; IMBERT}{2015}
@@ -265,6 +271,15 @@ ISBN 1-58113-737-0. Dispon{\'\i}vel em:
 ISSN 0360-0300.
 Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/2523813}.}
 
+\bibitem[Gombay e Serban 2009]{GOMBAY2009715}
+\abntrefinfo{Gombay e Serban}{GOMBAY; SERBAN}{2009}
+{GOMBAY, E.; SERBAN, D. Monitoring parameter change in ar(p) time series
+  models.
+\emph{Journal of Multivariate Analysis}, v.~100, n.~4, p. 715 -- 725, 2009.
+ISSN 0047-259X.
+Dispon{\'\i}vel em:
+  \url{http://www.sciencedirect.com/science/article/pii/S0047259X08001826}.}
+
 \bibitem[Gonçalves et al. 2014]{GONCALVES20148144}
 \abntrefinfo{Gonçalves et al.}{GONçALVES et al.}{2014}
 {GONçALVES, P.~M. et al. A comparative study on concept drift detectors.
@@ -292,15 +307,6 @@ Dispon{\'\i}vel em: \url{http://doi.acm.org/10.1145/1656274.1656278}.}
 {JAIN, A.~K.; DUBES, R.~C. \emph{Algorithms for Clustering Data}. Upper Saddle
   River, NJ, USA: Prentice-Hall, Inc., 1988.
 ISBN 0-13-022278-X.}
-
-\bibitem[Jianping e Venkateswarlu
-  2002]{Jianping:Venkateswarlu:RBF:SpeakerIdentification}
-\abntrefinfo{Jianping e Venkateswarlu}{JIANPING; VENKATESWARLU}{2002}
-{JIANPING, D.; VENKATESWARLU, R. Speaker recognition using radial basis
-  function neural networks. In:  ABRAHAM, A.; K{\"O}PPEN, M. (Ed.).
-  \emph{Hybrid Information Systems}. Heidelberg: Physica-Verlag HD, 2002. p.
-  57--64.
-ISBN 978-3-7908-1782-9.}
 
 \bibitem[Jin e Agrawal 2003]{Jin:2003:EDT:956750.956821}
 \abntrefinfo{Jin e Agrawal}{JIN; AGRAWAL}{2003}
@@ -376,6 +382,12 @@ Cited By 70.}
   Computing and Communication 2012 IEEE 9th International Conference on
   Embedded Software and Systems}. [S.l.: s.n.], 2012. p. 241--245.}
 
+\bibitem[{Lee}, {Wang} e {Ryu} 2007]{Lee:Wang:Ryu:2007}
+\abntrefinfo{{Lee}, {Wang} e {Ryu}}{{Lee}; {Wang}; {Ryu}}{2007}
+{{Lee}, Y.~K.; {Wang}, L.; {Ryu}, K.~H. A system architecture for monitoring
+  sensor data stream. In:  \emph{7th IEEE International Conference on Computer
+  and Information Technology (CIT 2007)}. [S.l.: s.n.], 2007. p. 1026--1031.}
+
 \bibitem[Lindstrom, Namee e Delany 2013]{Lindstrom:CDBD:2013}
 \abntrefinfo{Lindstrom, Namee e Delany}{LINDSTROM; NAMEE; DELANY}{2013}
 {LINDSTROM, P.; NAMEE, B. M.; DELANY, S.~J. Drift detection using uncertainty
@@ -445,12 +457,6 @@ Dispon{\'\i}vel em: \url{http://ruor.uottawa.ca/handle/10393/38190}.}
 {PETTITT, A. A non-parametric approach to the change-point problem.
 \emph{Journal of the Royal Statistical Society. Series C. Applied Statistics},
   v.~28, 01 1979.}
-
-\bibitem[{Roberts}, {Penny} e {Pillot} 1996]{Roberts:Penny:Novelty:Confidence}
-\abntrefinfo{{Roberts}, {Penny} e {Pillot}}{{Roberts}; {Penny}; {Pillot}}{1996}
-{{Roberts}, S.~J.; {Penny}, W.; {Pillot}, D. Novelty, confidence and errors in
-  connectionist systems. In:  \emph{IEE Colloquium on Intelligent Sensors
-  (Digest No: 1996/261)}. [S.l.: s.n.], 1996. p. 10/1--10/6.}
 
 \bibitem[Roberts 2000]{Roberts:2000:CCT:338441.338464}
 \abntrefinfo{Roberts}{ROBERTS}{2000}
@@ -564,6 +570,15 @@ ISBN 1-58113-737-0. Dispon{\'\i}vel em:
   p. 69--101, abr. 1996.
 ISSN 0885-6125.
 Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1023/A:1018046501280}.}
+
+\bibitem[Yamanishi e Takeuchi 2002]{Yamanishi:2002:UFD:775047.775148}
+\abntrefinfo{Yamanishi e Takeuchi}{YAMANISHI; TAKEUCHI}{2002}
+{YAMANISHI, K.; TAKEUCHI, J.-i. A unifying framework for detecting outliers and
+  change points from non-stationary time series data. In:  \emph{Proceedings of
+  the Eighth ACM SIGKDD International Conference on Knowledge Discovery and
+  Data Mining}. New York, NY, USA: ACM, 2002.  (KDD '02), p. 676--681.
+ISBN 1-58113-567-X. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/775047.775148}.}
 
 \bibitem[Zhou et al. 2015]{ZHOU:2015}
 \abntrefinfo{Zhou et al.}{ZHOU et al.}{2015}
