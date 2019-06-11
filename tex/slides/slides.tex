@@ -16,12 +16,19 @@
 \usepackage[utf8]{inputenc}
 \usepackage[brazilian]{babel}
 
-\title{Mudança de Conceito}
-\subtitle{Definição, técnicas e ferramentas}
+\usepackage{blindtext}
+
+\title{}
+\subtitle{Proposta de uma abordagem para a detecção online de mudanças de conceito em fluxos contínuos de dados}
 \date{}
-\author{Ruivaldo Neto}
-\institute{UFBA - PGCOMP}
-\titlegraphic{\hfill\includegraphics[scale=0.43]{logo.png}}
+\author{\textbf{Discente:} Ruivaldo Neto \newline \textbf{Orientador:} Ricardo Rios}
+\institute{Universidade Federal da Bahia \newline Departamento de Ciência da Computação \newline Programa de Pós-Graduação em Ciência da Computação \newline\newline Contato: rneto@rneto.dev \newline\newline 14 de Junho de 2019}
+
+\titlegraphic{%
+  \begin{picture}(0,0)
+    \put(330, 0){\makebox(0,0)[rt]{\includegraphics[scale=0.25]{logo.png}}}
+  \end{picture}
+}
 
 \begin{document}
 
@@ -36,289 +43,248 @@
 
 \section{Introdução}
 
-\begin{frame}{Introdução}
-    Algoritmos de aprendizagem não melhoram pelo simples passar do tempo.
+%\subsection{Contexto e Motivação}
 
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.8]{wine.png}
-        \end{center}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Introdução}
-    Parte significativa das técnicas foi projetada para cenários \textbf{estacionários}, 
-    onde se assume que: 
-    
-    \texttt{distribuição de treinamento} $=$ \texttt{distribuição de operação}.
-
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.5]{treinamento_operacao_estacionario.png}
-        \end{center}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Introdução}
-    As aplicações reais são, em sua maioria, \textbf{não-estacionárias}, isto é:
-
-    \texttt{distribuição de treinamento} $\neq$ \texttt{distribuição de operação}.
-
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.45]{mudanca_populacao_conceitos_emergentes.png}
-        \end{center}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Introdução}
-    Uma solução comum, mas \textbf{pobre}, é a execução de treinamentos recorrentes.
-
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.45]{treinamentos_recorrentes.png}
-        \end{center}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Introdução}
-    Técnicas de aprendizado ativo diminuem o custo de rotulação, mas não são capazes de lidar com mudanças de conceito.
-
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.45]{active_learning.png}
-        \end{center}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Introdução}
-    Solução: \textbf{monitoramento}.
-    
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.45]{solucao_melhor.png}
-        \end{center}
-    \end{figure}
-\end{frame}
-
-\section{Formalização}
-
-\begin{frame}{Formalização}
-    A Teoria Bayesiana é comumente aplicada para descrever as tarefas de classificação \cite{Duda:2000:PC:954544}.
-    A partir dela, também é possível formalizar o problema de mudança de conceito.
-\end{frame}
-
-
-\begin{frame}{Formalização}
-    Considerando $X \in \mathbb{R}^p$ uma instância em um espaço $p$-dimensional de atributos e $X \in c_i$ onde $c_1$, $c_2$, \ldots, $c_k$ é o conjunto de classes, 
-    o classificador ótimo para classificar $x \rightarrow c_i$ é determinado pelas probabilidades a priori das classes, $P(c_i)$, e a função de densidade de probabilidade condicionada às classes, $p(X|c_i)$, para $i = 1, \ldots, k$.
-\end{frame}
-
-\begin{frame}{Formalização}
-Dessa forma, um conceito pode ser definido como um conjunto de probabilidades a priori e condicionais das classes (Eq. \ref{eq:conceito}):
-
-\begin{equation} \label{eq:conceito}
-    S = \{(P(c_1), P(X|c_1)), (P(c_2), P(X|c_2)), ..., (P(c_k), P(X|c_k))\}
-\end{equation}
-\end{frame}
-
-\begin{frame}{Formalização}
-Ainda segundo a Teoria Bayesiana, a classificação baseada na máxima probabilidade a posteriori de uma instância $X$ pode ser obtida através da Equação \ref{eq:classificacao}:
-
-\begin{equation} \label{eq:classificacao}
-    p(c_i|X) = \frac{p(c_i) * p(X|c_i)}{p(X)}
-\end{equation}
-\end{frame}
-
-\begin{frame}{Formalização}
-Sendo possível definir formalmente que há mudança de conceito entre os instantes $t_0$ e $t_1$ se:
-
-\begin{equation} \label{eq:3}
-    {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
-\end{equation}
-
-onde, $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
-para $X$ e $c$ \cite{Gama:2014:SCD:2597757.2523813}. 
-\end{frame}
-
-\begin{frame}{Formalização}
-Com base na formalização exposta \cite{Zliobaite:2010}, pode-se definir que mudanças de conceito ocorrem devido a:
-
-\begin{enumerate}
-    \item Alterações na probabilidade a priori das classes $P(c)$;
-    \item Alterações na distribuição de uma ou mais classes $p(X|c)$;
-    \item Alterações nas distribuições a posteriori das classes $p(c|X)$.
-\end{enumerate}
-\end{frame}
-
-\section{Tipos, Padrões e Taxonomia}
-
-\begin{frame}{Tipos}
+\begin{frame}{Contexto e Motivação}
     \begin{itemize}
-        \item \textbf{Virtuais:} indicam mudanças na probabilidade a priori das classes, $P(c)$, e não têm impacto nos conceitos-alvo.
-        \item \textbf{Reais:} referem-se a mudanças na probabilidade a posteriori, $p(c|X)$, e afetam os conceitos-alvo.
-    \end{itemize} 
-
-    \begin{figure}[H]
-    \begin{center}
-        \includegraphics[scale=0.5]{imagens/concept_drift.png}
-    \end{center}
-    \end{figure}
+        \item<1 -> Avanços tecnológicos recentes favoreceram o aumento no volume de dados produzidos por sistemas computacionais.
+        \item<2 -> Muitos desses dados são produzidos na forma de sequências ininterruptas e potencialmente infinitas, denominadas \alert{Fluxos Contínuos de Dados (FCDs)} \cite{Aggarwal:2006:DSM:1196418}.
+      \end{itemize}
 \end{frame}
- 
-\begin{frame}{Padrões}
-    As mudanças de conceito podem ocorrer de forma abrupta, gradual, incremental ou recorrente \cite{Gama:2014:SCD:2597757.2523813}:
 
-    \begin{figure}[H]
+\begin{frame}{Contexto e Motivação}
+    \begin{itemize}
+        \item<1 -> Para extrair informações úteis desses grandes conjuntos, técnicas da área de Aprendizado de Máquina (AM) têm sido aplicadas.
+        \item<2 -> Contudo, além das restrições impostas pelos fluxos contínuos, estas técnicas também devem lidar com alterações no contexto do processo gerador do fluxo e/ou na distribuição dos dados. 
+        \item<3 -> Estas alterações são denominadas \alert{Mudanças de Conceito} e podem impactar a acurácia do modelo.
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{Contexto e Motivação}
+    \begin{itemize}
+        \item<1 -> Inicialmente, a atualização periódica do modelo foi utilizada como técnica para mitigar a perda causada por essas mudanças.
+        \item<2 -> Com o avanço da pesquisa, métodos de detecção de mudança baseados em monitoramento foram propostos.
+      \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Contexto e Motivação}
+    \begin{itemize}
+        \item<1 -> Os métodos existentes na literatura apresentam limitações ao serem aplicados em cenários com fluxos contínuos de dados.
+        \item<2 -> As principais limitações são: a necessidade de rótulação e/ou tempo de resposta elevado.
+        \item<3 -> Visando mitigá-las, este trabalho discute uma abordagem baseada em Redes de Função de Base Radial (RBF) para detecção de mudanças de conceito em FCDs.
+      \end{itemize}
+\end{frame}
+
+%\subsection{Hipótese}
+
+\begin{frame}{Hipótese}
+
+    \begin{center}
+        \textit{``A aplicação de Redes de Função de Base Radial em fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.''}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}{Hipótese}
+    \begin{itemize}
+        \item<1 -> O objetivo deste trabalho é a validação da hipótese. Para tanto, um novo método de detecção, baseado em redes RBF, será desenvolvido.
+        \item<2 -> O método será validado através de comparações com o estado da arte.
+        \item<3 -> Dois conjuntos de dados serão utilizados nos experimentos, um sintético e outro oriundo de uma aplicação do mundo real.
+      \end{itemize}
+\end{frame}
+
+\section{Revisão Bibliográfica}
+
+%\subsection{Fluxos Contínuos de Dados e Aprendizado de Máquina}
+
+\begin{frame}{Fluxos Contínuos de Dados e Aprendizado de Máquina}
+    \begin{itemize}
+        \item<1 -> \alert{Fluxos Contínuos de Dados (FCDs)} podem ser definidos como sequências ininterruptas e potencialmente infinitas de eventos \cite{Aggarwal:2006:DSM:1196418}
+        \item<2 -> Estes fluxos não podem ser armazenados em sua totalidade e, por serem de alta frequência, devem ser analisados em tempo real.
+        \item<3 -> Algoritmos supervisionados \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813} e não-supervisionados \cite{Aggarwal:2003:FCE:1315451.1315460, Ackermann:2012:SCA:2133803.2184450, Kranen:2011:CIM:2134350.2134352} foram adaptados para atenderem a essas restrições.
+        \item<4 -> Entretanto, o contexto do processo gerador ou a distribuição dos dados gerados podem sofrer alterações.
+        \item<5 -> Estas alterações são denominadas \alert{mudanças de conceito} e podem impactar as técnicas de aprendizado aplicadas.
+      \end{itemize}
+\end{frame}
+
+%\subsection{Mudança de Conceito}
+
+\begin{frame}{Mudança de Conceito}
+    \begin{itemize}
+        \item<1 -> A Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} é comumente utilizada para descrever a tarefa de classificação.
+        \item<2 -> Baseando-se nesta teoria e considerando que $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, é possível afirmar que há mudança de conceito entre os instantes $t_0$ e $t_1$ se:
+        \begin{equation} \label{eq:3}
+            {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
+        \end{equation}
+        \item<3 -> Um conjunto de dados possui resultados esperados legítimos em $t_0$, mas este mesmo conjunto passa a ter resultados esperados diferentes, também legítimos, em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mudança de Conceito}
+    \begin{itemize}
+        \item<1 -> As mudanças de conceito podem ser categorizadas como virtuais ou reais \cite{Gama:2014:SCD:2597757.2523813}.
+        \item<2 -> As mudanças virtuais são causadas por alterações na probabilidade a priori das classes, $P(c)$, e não alteram os conceitos-alvo.
+        \item<3 -> Enquanto que as mudanças de conceito reais surgem a partir de alterações na probabilidade a posteriori, $p(c|X)$, e modificam os resultados esperados.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mudança de Conceito}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.5]{../text/imagens/concept_drift.png}
+        \caption{Mudança de Conceito Virtual vs. Mudança de Conceito Real}
+        \label{fig:real_and_virtual_concept_drift}
+    \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Mudança de Conceito}
+    \begin{itemize}
+        \item<1 -> As mudanças de conceito podem podem ocorrer de forma abrupta, gradual, incremental ou recorrente.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mudança de Conceito}
+\begin{figure}[H]
     \begin{center}
         \includegraphics[scale=0.5]{imagens/concept_drift_patterns.png}
+        \caption{Padrões de ocorrência de Mudanças de Conceito}
+        \label{fig:concept_drift_patterns}
     \end{center}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Taxonomia}
-    Termos correspondentes a \textbf{mudança de conceito} em cada área de pesquisa \cite{Zliobaite:2010}:
-
-    \begin{center} 
-    \begin{table}[H]
-    \label{tbl:taxonomy}
-    \begin{tabularx}{\textwidth}{|l|X|}
-    \cline{1-2}
-    \multicolumn{1}{|c|}{\textbf{Área}} & \multicolumn{1}{c|}{\textbf{Termos}}       \\ \cline{1-2}
-    Mineração de Dados                  & Mudança de Conceito                        \\ \cline{1-2}
-    Aprendizado de Máquina              & Mudança de Conceito, Mudança de Covariável \\ \cline{1-2}
-    Computação Evolucionária            & Ambiente Evolutivo, Ambiente em Mudança    \\ \cline{1-2}
-    IA e Robótica                       & Ambiente Dinâmico                          \\ \cline{1-2}
-    Estatísticas, Séries Temporais      & Não Estacionário                           \\ \cline{1-2}
-    Recuperação de Informação           & Evolução Temporal                          \\ \cline{1-2}
-    \end{tabularx}
-    
-    \end{table}
-    \end{center}
-\end{frame}
-
-\begin{frame}{Taxonomia}
-    Os termos Detecção de \textit{Outliers}, Detecção de Novidade, Detecção de \textit{Change Points} e Detecção de Mudança de Conceito, apesar de próximos, possuem significados diferentes:
-
+\begin{frame}{Mudança de Conceito}
     \begin{itemize}
-        \item \textbf{Detecção de \textit{Outliers}}: identificam padrões em desacordo com o comportamento esperado \cite{Chandola:2009:ADS:1541880.1541882}.
-        \item \textbf{Detecção de Novidade}: identificam padrões ainda não observados e incorporam ao modelo \cite{Chandola:2009:ADS:1541880.1541882}.
-        \item \textbf{Detecção de \textit{Change Points}}: identificam variações abruptas de valor, que podem representar transições entre estados, em séries temporais unidimensionais estacionárias \cite{Aminikhanghahi:2017:SMT:3086013.3086037}.
+        \item<1 -> O fenômeno mudança de conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo Mineração de Dados, Aprendizado de Máquina, Estatística e Recuperação de Informação \cite{Zliobaite:2010}. Contudo, o tema apresenta diferentes nomeclaturas em cada comunidade.
     \end{itemize}
 \end{frame}
 
-\section{Técnicas de detecção}
-
-\begin{frame}{Técnicas de detecção - Categorias}
-    \begin{itemize}
-        \item \textbf{Algoritmos Explícitos/Supervisionados}: Dependem da rotulação dos dados, pois são utilizados no cálculo das medidas de performance.
-        \item \textbf{Algoritmos Implícitos/Não Supervisionados}: Independem de rotulação. Baseiam-se nas características dos dados. 
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Técnicas de detecção - Supervisionados}
-    Os algoritmos supervisionados dividem-se em três grupos principais \cite{Gama:2014:SCD:2597757.2523813}:
-
-    \begin{itemize}
-        \item \textbf{Métodos Baseados em Análise Sequencial}: Monitoram os resultados das predições (taxa de erro).
-        \item \textbf{Abordagens baseadas em Estatística}: Monitoram os resultados das predições conforme parâmetros estatísticos (média, desvio padrão, etc).
-        \item \textbf{Métodos baseados em Janelas}: Mantém o sumário da distribuição de uma janela passada como treinamento. Comparam este sumário com a distribuição da janela atual.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Técnicas de detecção - Não Supervisionados}
-    Os algoritmos não supervisionados também foram divididos em três grupos \cite{GONCALVES20148144}:
-
-    \begin{itemize}
-        \item \textbf{Detecção de Novidade / Métodos de Agrupamento}: Utilizam a distância e/ou a densidade dos dados para detectar novos padrões.
-        \item \textbf{Monitoramento de distribuição multivariada}: Monitoram diretamente a distribuição dos dados, considerando seus atributos.
-        \item \textbf{Monitoramento dependente de modelo}: Restringem-se aos classificadores probabilísticos, pois monitoram as probabilidades a posteriori.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Técnicas de detecção - Resumo}
-    Resumo das categorias, grupos e técnicas:
-
-    % Please add the following required packages to your document preamble:
-    % \usepackage{graphicx}
+\begin{frame}{Mudança de Conceito}
     \begin{table}[!ht]
+        \caption{Terminologia - Mudança de Conceito \cite{Zliobaite:2010}}
+        \label{tbl:taxonomy}
         \centering
         \resizebox{\textwidth}{!}{%
-        \begin{tabular}[t]{@{}lllll@{}}
-        \hline \\
-        Algoritmos Explícitos/Supervisionados     & Métodos Baseados em Análise Sequencial        & \begin{tabular}[t]{@{}l@{}} Cumulative Sum (CUSUM) \\ PageHinkley (PH) \cite{Page:CUSUM:PageHinkley:1954} \\ Geometric Moving Average (GMA) \cite{Roberts:2000:CCT:338441.338464}\end{tabular}                                                                                                                        &  &  \\ \\
-                                                & Abordagens baseadas em Estatística            & \begin{tabular}[t]{@{}l@{}} Drift Detection Method (DDM) \cite{GamaMCR04} \\  Early Drift Detection Method (EDDM) \cite{EDDM} \\  Exponentially Weighted Moving Average (EWMA) \cite{Ross:2012:EWM:2076039.2076307} \\ Reactive Drift Detection Method (RDDM) \cite{Barros:RDDM:2017} \end{tabular}                                                                &  &  \\ \\
-                                                & Métodos baseados em Janelas                   & \begin{tabular}[t]{@{}l@{}} Adaptive Windowing (ADWIN) \cite{BifetG07} \\   SeqDrift \cite{PearsSK14:SeqDrift:2014} \\   HDDMA/HDDMW \cite{BlancoCRBDM15:HDDMA:HDDMW:2015} \end{tabular}                                                                                            &  &  \\ \\
-        
-        Algoritmos Implícitos/Não Supervisionados & Detecção de Novidade / Métodos de Agrupamento & \begin{tabular}[t]{@{}l@{}} OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107} \\   MINAS \cite{Faria:2013:NDA:2480362.2480515} \\   Woo \cite{Ryu:Kantardzic:2012} \\   DETECTNOD \cite{Hashemi:Hayat:DETECTNOD:2010} \\   ECSMiner \cite{Masud:2011:CNC:1978259.1978529} \\   GC3 \cite{Sethi2016b:GC3} \end{tabular} &  &  \\ \\
-                                                & Monitoramento de distribuição multivariada    & \begin{tabular}[t]{@{}l@{}} CoC \cite{Lee:Magoules:CoC:2012} \\ HDDDM \cite{Ditzler:Polikar:HDDDM:2011} \\ PCA-detect \cite{Kuncheva:PCADetect:20085} \end{tabular}                                       &  &  \\ \\
-                                                & Monitoramento dependente de modelo            & \begin{tabular}[t]{@{}l@{}} A-distance \cite{Dredze:ADistance:2010585} \\ CDBD \cite{Lindstrom:CDBD:2013} \\ Margin \cite{Dries:Margin:2009} \end{tabular}                                                                                        &  &  \\ \\
-        \hline
+        \begin{tabular}[t]{ll}
+        \toprule
+        Área & Termos \\
+        \midrule
+        Mineração de Dados                  & Mudança de Conceito                        \\
+        Aprendizado de Máquina              & Mudança de Conceito, Mudança de Covariável \\
+        Computação Evolucionária            & Ambiente Evolutivo, Ambiente em Mudança    \\
+        IA e Robótica                       & Ambiente Dinâmico                          \\
+        Estatística, Séries Temporais      & Não Estacionário                           \\
+        Recuperação de Informação           & Evolução Temporal                          \\
+        \bottomrule
         \end{tabular}%
         }
     \end{table}
 \end{frame}
 
-\section{Ferramentas}
+%\subsection{Redes de Função de Base Radial}
 
-\begin{frame}{MOA – Massive Online Analysis}
+\begin{frame}{Redes de Função de Base Radial}
     \begin{itemize}
-        \item Principal framework para mineração de dados em fluxos contínuos.
-        \item Código-aberto\footnote{https://github.com/Waikato/moa} e multi-plataforma (Java).
-        \item Grande base de algoritmos e integração com o WEKA \cite{Hall:2009:WDM:1656274.1656278}.
-        \item Ferramentas para avaliação de desempenho desses algoritmos.
-    \end{itemize}
-
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.2]{imagens/moa.png}
-        \end{center}
-    \end{figure}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
 \end{frame}
 
-\begin{frame}{MOA - Massive Online Analysis}
-    \begin{itemize}
-        \item Novos detectores de mudança de conceito podem ser criados estendo a classe abstrata \texttt{AbstractChangeDetector}.
-        \item Interface de configuração é criada dinamicamente, a partir dos atributos da classe.
-    \end{itemize}
+%\subsection{Trabalhos Relacionados}
 
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.5]{imagens/detector.png}
-        \end{center}
-    \end{figure}
+\begin{frame}{Trabalhos Relacionados}
+    \begin{itemize}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
 \end{frame}
 
-\begin{frame}{MOA - Massive Online Analysis}
-    \begin{itemize}
-        \item Algoritmos para detecção de mudança de conceito podem ser avaliados pelos métodos \texttt{DriftDetectionMethodClassifier} ou \texttt{BasicConceptDriftPerformanceEvaluator}.
-    \end{itemize}
+\section{Plano de Pesquisa}
 
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.25]{imagens/moa_avaliacao_cd.png}
-        \end{center}
-    \end{figure}
+%\subsection{Descrição do Problema}
+
+\begin{frame}{Descrição do Problema}
+    \begin{itemize}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
+\end{frame}
+ 
+%\subsection{Atividades de Pesquisa}
+
+\begin{frame}{Atividades de Pesquisa}
+    \begin{itemize}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
 \end{frame}
 
-\begin{frame}{Tornado}
-    \begin{itemize}
-        \item Framework para avaliação de pares (classificador, detector de mudança de conceito) ao longo do tempo \cite{Pesaranghader:Tornado}.
-        \item Código-aberto\footnote{https://github.com/alipsgh/tornado} e multi-plataforma (Python).
-        \item Grande base de algoritmos implementados.
-    \end{itemize}
+\section{Experimentos Iniciais}
 
-    \begin{figure}[H]
-        \begin{center}
-            \includegraphics[scale=0.4]{imagens/tornado_out2.png}
-        \end{center}
-    \end{figure}
+\begin{frame}{Configuração dos Experimentos}
+    \begin{itemize}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{Critérios de Avaliação}
+    \begin{itemize}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{Pettitt}
+    \begin{itemize}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{RBFDriftDetector}
+    \begin{itemize}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
 \end{frame}
 
 \section{Conclusão}
 
-\begin{frame}[standout]
-  Obrigado! Dúvidas ?
+\begin{frame}{Conclusão}
+    \begin{itemize}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{Trabalhos Futuros}
+    \begin{itemize}
+        \item<1 -> A
+        \item<2 -> B
+        \item<3 -> C
+        \item<4 -> D
+      \end{itemize}
 \end{frame}
 
 % \begin{frame}[fragile]{Metropolis}

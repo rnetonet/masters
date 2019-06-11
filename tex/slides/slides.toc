@@ -1,7 +1,6 @@
 \babel@toc {brazilian}{}
 \beamer@sectionintoc {1}{Introdu\IeC {\c c}\IeC {\~a}o}{3}{0}{1}
-\beamer@sectionintoc {2}{Formaliza\IeC {\c c}\IeC {\~a}o}{10}{0}{2}
-\beamer@sectionintoc {3}{Tipos, Padr\IeC {\~o}es e Taxonomia}{17}{0}{3}
-\beamer@sectionintoc {4}{T\IeC {\'e}cnicas de detec\IeC {\c c}\IeC {\~a}o}{22}{0}{4}
-\beamer@sectionintoc {5}{Ferramentas}{27}{0}{5}
-\beamer@sectionintoc {6}{Conclus\IeC {\~a}o}{32}{0}{6}
+\beamer@sectionintoc {2}{Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{18}{0}{2}
+\beamer@sectionintoc {3}{Plano de Pesquisa}{43}{0}{3}
+\beamer@sectionintoc {4}{Experimentos Iniciais}{52}{0}{4}
+\beamer@sectionintoc {5}{Conclus\IeC {\~a}o}{69}{0}{5}

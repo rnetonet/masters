@@ -3,46 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: slides.aux
 The style file: abbrv.bst
 Database file #1: slides.bib
-Warning--empty booktitle in Dredze:ADistance:2010585
-You've used 29 entries,
+You've used 13 entries,
             2118 wiz_defined-function locations,
-            720 strings with 10511 characters,
-and the built_in function-call counts, 11512 in all, are:
-= -- 1142
-> -- 543
-< -- 11
-+ -- 219
-- -- 182
-* -- 860
-:= -- 1838
-add.period$ -- 93
-call.type$ -- 29
-change.case$ -- 175
+            594 strings with 6647 characters,
+and the built_in function-call counts, 5488 in all, are:
+= -- 569
+> -- 252
+< -- 6
++ -- 102
+- -- 86
+* -- 395
+:= -- 872
+add.period$ -- 45
+call.type$ -- 13
+change.case$ -- 80
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 429
-empty$ -- 887
-format.name$ -- 182
-if$ -- 2452
+cite$ -- 13
+duplicate$ -- 212
+empty$ -- 412
+format.name$ -- 86
+if$ -- 1184
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 29
-newline$ -- 149
-num.names$ -- 62
-pop$ -- 172
+int.to.str$ -- 13
+missing$ -- 15
+newline$ -- 68
+num.names$ -- 26
+pop$ -- 78
 preamble$ -- 1
-purify$ -- 147
+purify$ -- 69
 quote$ -- 0
-skip$ -- 325
+skip$ -- 158
 stack$ -- 0
-substring$ -- 806
-swap$ -- 121
-text.length$ -- 11
+substring$ -- 386
+swap$ -- 64
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 114
-warning$ -- 1
-while$ -- 111
-width$ -- 31
-write$ -- 331
-(There was 1 warning)
+type$ -- 48
+warning$ -- 0
+while$ -- 52
+width$ -- 15
+write$ -- 162
