@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.8)  11 JUN 2019 01:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.8)  12 JUN 2019 02:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -614,6 +614,12 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@thisruleclass=\count168
 \@lastruleclass=\count169
 \@thisrulewidth=\dimen271
+) (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip69
+\multirow@cntb=\count170
+\multirow@dima=\skip70
+\bigstrutjot=\dimen272
 ) (/usr/share/texlive/texmf-dist/tex/latex/ccicons/ccicons.sty
 Package: ccicons 2017/10/30 v1.6 LaTeX support for Creative Commons icons
  (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
@@ -622,7 +628,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks47
 \XKV@tempa@toks=\toks48
 )
-\XKV@depth=\count170
+\XKV@depth=\count171
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2017/06/05 v1.15 Data Visualization (1.15)
@@ -630,64 +636,64 @@ Package: pgfplots 2017/06/05 v1.15 Data Visualization (1.15)
 \t@pgfplots@toka=\toks49
 \t@pgfplots@tokb=\toks50
 \t@pgfplots@tokc=\toks51
-\pgfplots@tmpa=\dimen272
-\c@pgfplots@coordindex=\count171
-\c@pgfplots@scanlineindex=\count172
+\pgfplots@tmpa=\dimen273
+\c@pgfplots@coordindex=\count172
+\c@pgfplots@scanlineindex=\count173
  (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary arithmetics for your pgf version...
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgflibraryfpu.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count173
+\c@pgfmathroundto@lastzeros=\count174
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count174
+\c@pgfplotsarray@tmp=\count175
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count175
+\c@pgfplotstable@counta=\count176
 \t@pgfplotstable@a=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count176
+\c@pgfplotslibrarysurf@no=\count177
  (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen273
-\pgfdecoratedremainingdistance=\dimen274
-\pgfdecoratedinputsegmentcompleteddistance=\dimen275
-\pgfdecoratedinputsegmentremainingdistance=\dimen276
-\pgf@decorate@distancetomove=\dimen277
-\pgf@decorate@repeatstate=\count177
-\pgfdecorationsegmentamplitude=\dimen278
-\pgfdecorationsegmentlength=\dimen279
+\pgfdecoratedcompleteddistance=\dimen274
+\pgfdecoratedremainingdistance=\dimen275
+\pgfdecoratedinputsegmentcompleteddistance=\dimen276
+\pgfdecoratedinputsegmentremainingdistance=\dimen277
+\pgf@decorate@distancetomove=\dimen278
+\pgf@decorate@repeatstate=\count178
+\pgfdecorationsegmentamplitude=\dimen279
+\pgfdecorationsegmentlength=\dimen280
 )
 \tikz@lib@dec@box=\box58
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count178
-\pgfplots@xmin@reg=\dimen280
-\pgfplots@xmax@reg=\dimen281
-\pgfplots@ymin@reg=\dimen282
-\pgfplots@ymax@reg=\dimen283
-\pgfplots@zmin@reg=\dimen284
-\pgfplots@zmax@reg=\dimen285
+\pgfplots@numplots=\count179
+\pgfplots@xmin@reg=\dimen281
+\pgfplots@xmax@reg=\dimen282
+\pgfplots@ymin@reg=\dimen283
+\pgfplots@ymax@reg=\dimen284
+\pgfplots@zmin@reg=\dimen285
+\pgfplots@zmax@reg=\dimen286
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2015/08/03 v3.0.1a (rcs-revision 1.14)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.dateplot.code.tex (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
 File: pgfcalendar.code.tex 2007/07/23 v3.0.1a (rcs-revision 1.11)
-\pgfcalendarcurrentjulian=\count179
+\pgfcalendarcurrentjulian=\count180
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
  (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen286
-\extrarowheight=\dimen287
+\col@sep=\dimen287
+\extrarowheight=\dimen288
 \NC@list=\toks53
-\extratabsurround=\skip69
-\backup@length=\skip70
+\extratabsurround=\skip71
+\backup@length=\skip72
 )
-\TX@col@width=\dimen288
-\TX@old@table=\dimen289
-\TX@old@col=\dimen290
-\TX@target=\dimen291
-\TX@delta=\dimen292
-\TX@cols=\count180
+\TX@col@width=\dimen289
+\TX@old@table=\dimen290
+\TX@old@col=\dimen291
+\TX@target=\dimen292
+\TX@delta=\dimen293
+\TX@cols=\count181
 \TX@ftn=\toks54
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -1012,58 +1018,58 @@ File: switch.def 2018/02/14 3.18 Babel switching mechanism
 Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
  (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2018/02/14 3.18 Babel common definitions
-\babel@savecnt=\count181
-\U@D=\dimen293
+\babel@savecnt=\count182
+\U@D=\dimen294
  (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 LaTeX Info: Redefining \textlatin on input line 1839.
-\bbl@dirlevel=\count182
+\bbl@dirlevel=\count183
 )
 \l@brazilian = a dialect from \language\l@portuges 
 Package babel Info: Making " an active character on input line 145.
 )) (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
-\c@blindtext=\count183
-\c@Blindtext=\count184
-\c@blind@countparstart=\count185
-\blind@countxx=\count186
-\blindtext@numBlindtext=\count187
-\blind@countyy=\count188
-\c@blindlist=\count189
-\c@blindlistlevel=\count190
-\c@blindlist@level=\count191
-\blind@listitem=\count192
-\c@blind@listcount=\count193
-\c@blind@levelcount=\count194
-\blind@mathformula=\count195
-\blind@Mathformula=\count196
-\c@blind@randomcount=\count197
-\c@blind@randommax=\count198
-\c@blind@pangramcount=\count199
-\c@blind@pangrammax=\count266
+\c@blindtext=\count184
+\c@Blindtext=\count185
+\c@blind@countparstart=\count186
+\blind@countxx=\count187
+\blindtext@numBlindtext=\count188
+\blind@countyy=\count189
+\c@blindlist=\count190
+\c@blindlistlevel=\count191
+\c@blindlist@level=\count192
+\blind@listitem=\count193
+\c@blind@listcount=\count194
+\c@blind@levelcount=\count195
+\blind@mathformula=\count196
+\blind@Mathformula=\count197
+\c@blind@randomcount=\count198
+\c@blind@randommax=\count199
+\c@blind@pangramcount=\count266
+\c@blind@pangrammax=\count267
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\newline' on input line 24.
+(hyperref)                removing `\newline' on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamertheme-metropolis/pgfplotsthemetol.sty
 Package: pgfplotsthemetol 2017/01/23 PGFplots colors based on Paul Tol's SRON technical note
 ) (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.aux)
 \openout1 = `slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1101,16 +1107,16 @@ LaTeX Font Info:    ... okay on input line 33.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count267
-\scratchdimen=\dimen294
+\scratchcounter=\count268
+\scratchdimen=\dimen295
 \scratchbox=\box59
-\nofMPsegments=\count268
-\nofMParguments=\count269
+\nofMPsegments=\count269
+\nofMParguments=\count270
 \everyMPshowfont=\toks57
-\MPscratchCnt=\count270
-\MPscratchDim=\dimen295
-\MPnumerator=\count271
-\makeMPintoPDFobject=\count272
+\MPscratchCnt=\count271
+\MPscratchDim=\dimen296
+\MPnumerator=\count272
+\makeMPintoPDFobject=\count273
 \everyMPtoPDFconversion=\toks58
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1125,70 +1131,70 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring OFF on input line 33.
+Package hyperref Info: Link coloring OFF on input line 35.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count273
+\c@section@level=\count274
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
  (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.out) (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.out)
 \@outlinefile=\write5
 \openout5 = `slides.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 33.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 35.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 35.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 35.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 33.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 35.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 33.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 33.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 35.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 35.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 35.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 33.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 33.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 33.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 35.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 33.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 33.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 35.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 35.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
-(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 33.
+(Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 35.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 33.
+(Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 35.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 33.
+(Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on input line 35.
  (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
@@ -1208,38 +1214,38 @@ Package pgfplots notification 'compat/show suggested version=true': you might be
 <logo.png, id=33, 200.75pt x 200.75pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 35.
+Package pdftex.def Info: logo.png  used on input line 37.
 (pdftex.def)             Requested size: 50.18736pt x 50.18736pt.
 
-Overfull \vbox (20.00003pt too high) detected at line 35
+Overfull \vbox (20.00003pt too high) detected at line 37
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
 
  []
 
 
-Overfull \vbox (13.79993pt too high) detected at line 35
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+
+ []
+
+
+Overfull \vbox (13.79993pt too high) detected at line 37
  []
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/logo.png>] (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.toc)
-LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input line 42.
+LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input line 44.
  (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 ) [2
@@ -1247,13 +1253,13 @@ File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/mat
 ] [3
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 53.
-LaTeX Font Info:    No file OMScmss.fd. on input line 53.
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 61.
+LaTeX Font Info:    No file OMScmss.fd. on input line 61.
 
 
 LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 53.
+(Font)              for symbol `textbullet' on input line 61.
 
 [4
 
@@ -1307,21 +1313,21 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 
 ] [29
 
+] [30
+
 ]
-<../text/imagens/concept_drift.png, id=276, 558.58687pt x 209.28188pt>
+<../text/imagens/concept_drift.png, id=282, 558.58687pt x 209.28188pt>
 File: ../text/imagens/concept_drift.png Graphic file (type png)
 <use ../text/imagens/concept_drift.png>
-Package pdftex.def Info: ../text/imagens/concept_drift.png  used on input line 140.
+Package pdftex.def Info: ../text/imagens/concept_drift.png  used on input line 153.
 (pdftex.def)             Requested size: 279.29276pt x 104.64067pt.
- [30
+ [31
 
- <../text/imagens/concept_drift.png>] [31
-
-]
-<imagens/concept_drift_patterns.png, id=291, 565.36218pt x 207.02344pt>
+ <../text/imagens/concept_drift.png>]
+<imagens/concept_drift_patterns.png, id=292, 565.36218pt x 207.02344pt>
 File: imagens/concept_drift_patterns.png Graphic file (type png)
 <use imagens/concept_drift_patterns.png>
-Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 156.
+Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 166.
 (pdftex.def)             Requested size: 282.68039pt x 103.51146pt.
  [32
 
@@ -1351,11 +1357,27 @@ Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 
 
 ] [45
 
-] [46
+]
+<imagens/moa.png, id=490, 1016.29688pt x 763.35187pt>
+File: imagens/moa.png Graphic file (type png)
+<use imagens/moa.png>
+Package pdftex.def Info: imagens/moa.png  used on input line 261.
+(pdftex.def)             Requested size: 203.25577pt x 152.66766pt.
 
-] [47
+Overfull \vbox (26.15465pt too high) detected at line 261
+ []
 
-] [48
+[46
+
+ </home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/imagens/moa.png>]
+<imagens/tornado_out2.png, id=498, 753.0534pt x 331.9602pt>
+File: imagens/tornado_out2.png Graphic file (type png)
+<use imagens/tornado_out2.png>
+Package pdftex.def Info: imagens/tornado_out2.png  used on input line 274.
+(pdftex.def)             Requested size: 307.28987pt x 135.46126pt.
+ [47
+
+ </home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/imagens/tornado_out2.png>] [48
 
 ] [49
 
@@ -1367,9 +1389,19 @@ Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 
 
 ] [53
 
-] [54
+]
+<../text/imagens/rbf_arq.png, id=546, 330.48468pt x 313.17pt>
+File: ../text/imagens/rbf_arq.png Graphic file (type png)
+<use ../text/imagens/rbf_arq.png>
+Package pdftex.def Info: ../text/imagens/rbf_arq.png  used on input line 299.
+(pdftex.def)             Requested size: 198.29233pt x 187.90344pt.
 
-] [55
+Overfull \vbox (10.28928pt too high) detected at line 299
+ []
+
+[54
+
+ <../text/imagens/rbf_arq.png>] [55
 
 ] [56
 
@@ -1383,9 +1415,15 @@ Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 
 
 ] [61
 
-] [62
+]
+<../text/imagens/funcionamento_algoritmo.png, id=592, 933.7284pt x 483.4863pt>
+File: ../text/imagens/funcionamento_algoritmo.png Graphic file (type png)
+<use ../text/imagens/funcionamento_algoritmo.png>
+Package pdftex.def Info: ../text/imagens/funcionamento_algoritmo.png  used on input line 336.
+(pdftex.def)             Requested size: 307.28987pt x 159.11569pt.
+ [62
 
-] [63
+ <../text/imagens/funcionamento_algoritmo.png>] [63
 
 ] [64
 
@@ -1411,27 +1449,103 @@ Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 
 
 ] [75
 
-] [76
+]
+<../text/imagens/nochange.pdf, id=677, 558.6471pt x 424.22491pt>
+File: ../text/imagens/nochange.pdf Graphic file (type pdf)
+<use ../text/imagens/nochange.pdf>
+Package pdftex.def Info: ../text/imagens/nochange.pdf  used on input line 518.
+(pdftex.def)             Requested size: 251.38885pt x 190.89943pt.
 
-] [77
+Overfull \vbox (13.28526pt too high) detected at line 518
+ []
+
+[76
+
+ <../text/imagens/nochange.pdf>] [77
+
+] [78
+
+]
+<../text/imagens/abrupt.pdf, id=718, 610.68152pt x 462.52798pt>
+File: ../text/imagens/abrupt.pdf Graphic file (type pdf)
+<use ../text/imagens/abrupt.pdf>
+Package pdftex.def Info: ../text/imagens/abrupt.pdf  used on input line 556.
+(pdftex.def)             Requested size: 274.80415pt x 208.13567pt.
+
+Overfull \vbox (30.5215pt too high) detected at line 556
+ []
+
+[79
+
+ <../text/imagens/abrupt.pdf>] [80
+
+] [81
+
+] [82
+
+]
+<../text/imagens/gradual.pdf, id=756, 662.7159pt x 492.1587pt>
+File: ../text/imagens/gradual.pdf Graphic file (type pdf)
+<use ../text/imagens/gradual.pdf>
+Package pdftex.def Info: ../text/imagens/gradual.pdf  used on input line 595.
+(pdftex.def)             Requested size: 298.21939pt x 221.46936pt.
+
+Overfull \vbox (43.8552pt too high) detected at line 595
+ []
+
+[83
+
+ <../text/imagens/gradual.pdf>] [84
+
+] [85
+
+] [86
+
+] [87
+
+] [88
 
 ] (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.bbl
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
 (Font)              using `OT1/cmss/bx/n' instead on input line 11.
 
-) [78
+) [89
 
- </usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [79
-
-
-] [80
+ </usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [90
 
 
-] [81
+] [91
 
 
-] [82
+] [92
+
+
+] [93
+
+
+] [94
+
+
+] [95
+
+
+] [96
+
+
+] [97
+
+
+] [98
+
+
+] [99
+
+
+] [100
+
+
+] [101
 
 
 ]
@@ -1444,11 +1558,11 @@ LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 593.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 593.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 920.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 920.
  (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 593.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 593.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 920.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 920.
 Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: AEDB604FAFE9796E058C016ED2902DEE;268.
 
@@ -1457,18 +1571,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 31885 strings out of 492982
- 763637 string characters out of 6134897
- 966129 words of memory out of 5000000
- 34592 multiletter control sequences out of 15000+600000
- 10186 words of font info for 37 fonts, out of 8000000 for 9000
+ 32222 strings out of 492982
+ 770470 string characters out of 6134897
+ 991841 words of memory out of 5000000
+ 34830 multiletter control sequences out of 15000+600000
+ 14309 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,13n,98p,1865b,709s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.pdf (82 pages, 275474 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on /home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.pdf (101 pages, 1147478 bytes).
 PDF statistics:
- 646 PDF objects out of 1000 (max. 8388607)
- 532 compressed objects within 6 object streams
- 187 named destinations out of 1000 (max. 500000)
- 98 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 986 PDF objects out of 1000 (max. 8388607)
+ 832 compressed objects within 9 object streams
+ 267 named destinations out of 1000 (max. 500000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

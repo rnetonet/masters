@@ -25,12 +25,50 @@ C.~C. Aggarwal, J.~Han, J.~Wang, and P.~S. Yu.
   on Knowledge Discovery and Data Mining}, KDD '04, pages 503--508, New York,
   NY, USA, 2004. ACM.
 
+\bibitem{EDDM}
+M.~Baena-Garc{\'{\i}}a, J.~del Campo-{\'{A}}vila, R.~Fidalgo, A.~Bifet,
+  R.~Gavald{\'{a}}, and R.~Morales-Bueno.
+\newblock {Early drift detection method}.
+\newblock In {\em In Fourth International Workshop on Knowledge Discovery from
+  Data Streams}, 2006.
+
+\bibitem{BifetG07}
+A.~Bifet and R.~Gavaldà.
+\newblock Learning from time-changing data with adaptive windowing.
+\newblock In {\em SDM}, pages 443--448. SIAM, 2007.
+
 \bibitem{Bifet:2013:EDS:2480362.2480516}
 A.~Bifet, B.~Pfahringer, J.~Read, and G.~Holmes.
 \newblock Efficient data stream classification via probabilistic adaptive
   windows.
 \newblock In {\em Proceedings of the 28th Annual ACM Symposium on Applied
   Computing}, SAC '13, pages 801--806, New York, NY, USA, 2013. ACM.
+
+\bibitem{BlancoCRBDM15:HDDMA:HDDMW:2015}
+I.~I.~F. Blanco, J.~del Campo{-}{\'{A}}vila, G.~Ramos{-}Jim{\'{e}}nez, R.~M.
+  Bueno, A.~A.~O. D{\'{\i}}az, and Y.~C. Mota.
+\newblock Online and non-parametric drift detection methods based on
+  hoeffding's bounds.
+\newblock {\em {IEEE} Trans. Knowl. Data Eng.}, 27(3):810--823, 2015.
+
+\bibitem{Braga:RedesNeuraisTeoriaAplicacoes}
+A.~Braga, A.~C. Carvalho, and T.~B. Ludermir.
+\newblock {\em {Redes Neurais Artificiais: Teoria e aplica\c{c}\~{o}es}},
+  volume~2.
+\newblock LTC Editora, 2007.
+
+\bibitem{Barros:RDDM:2017}
+R.~S.~M. de~Barros, D.~R. de~Lima~Cabral, P.~M.~G. Jr., and S.~G.~T.
+  de~Carvalho~Santos.
+\newblock {RDDM:} reactive drift detection method.
+\newblock {\em Expert Syst. Appl.}, 90:344--355, 2017.
+
+\bibitem{Ditzler:Polikar:HDDDM:2011}
+G.~{Ditzler} and R.~{Polikar}.
+\newblock Hellinger distance based drift detection for nonstationary
+  environments.
+\newblock In {\em 2011 IEEE Symposium on Computational Intelligence in Dynamic
+  and Uncertain Environments (CIDUE)}, pages 41--48, April 2011.
 
 \bibitem{Domingos:2000:MHD:347090.347107}
 P.~Domingos and G.~Hulten.
@@ -39,10 +77,34 @@ P.~Domingos and G.~Hulten.
   on Knowledge Discovery and Data Mining}, KDD '00, pages 71--80, New York, NY,
   USA, 2000. ACM.
 
+\bibitem{Dredze:ADistance:2010585}
+M.~Dredze, T.~Oates, and C.~Piatko.
+\newblock We're not in kansas anymore: Detecting domain changes in streams.
+\newblock pages 585--595, 2010.
+\newblock cited By 13.
+
+\bibitem{Dries:Margin:2009}
+A.~Dries and U.~Rückert.
+\newblock Adaptive concept drift detection.
+\newblock {\em Statistical Analysis and Data Mining: The ASA Data Science
+  Journal}, 2(5‐6):311--327, 2009.
+
 \bibitem{Duda:2000:PC:954544}
 R.~O. Duda, P.~E. Hart, and D.~G. Stork.
 \newblock {\em Pattern Classification (2Nd Edition)}.
 \newblock Wiley-Interscience, New York, NY, USA, 2000.
+
+\bibitem{Faria:2013:NDA:2480362.2480515}
+E.~R. Faria, J.~a. Gama, and A.~C. P. L.~F. Carvalho.
+\newblock Novelty detection algorithm for data streams multi-class problems.
+\newblock In {\em Proceedings of the 28th Annual ACM Symposium on Applied
+  Computing}, SAC '13, pages 795--800, New York, NY, USA, 2013. ACM.
+
+\bibitem{GamaMCR04}
+J.~Gama, P.~Medas, G.~Castillo, and P.~P. Rodrigues.
+\newblock Learning with drift detection.
+\newblock In A.~L.~C. Bazzan and S.~Labidi, editors, {\em SBIA}, volume 3171 of
+  {\em Lecture Notes in Computer Science}, pages 286--295. Springer, 2004.
 
 \bibitem{Gama:2003:ADT:956750.956813}
 J.~a. Gama, R.~Rocha, and P.~Medas.
@@ -56,6 +118,18 @@ J.~a. Gama, I.~\v{Z}liobait\.{e}, A.~Bifet, M.~Pechenizkiy, and A.~Bouchachia.
 \newblock A survey on concept drift adaptation.
 \newblock {\em ACM Comput. Surv.}, 46(4):44:1--44:37, Mar. 2014.
 
+\bibitem{GONCALVES20148144}
+P.~M. Gonçalves, S.~G. de~Carvalho~Santos, R.~S. Barros, and D.~C. Vieira.
+\newblock A comparative study on concept drift detectors.
+\newblock {\em Expert Systems with Applications}, 41(18):8144 -- 8156, 2014.
+
+\bibitem{Hashemi:Hayat:DETECTNOD:2010}
+M.~Z. {Hayat} and M.~R. {Hashemi}.
+\newblock A dct based approach for detecting novelty and concept drift in data
+  streams.
+\newblock In {\em 2010 International Conference of Soft Computing and Pattern
+  Recognition}, pages 373--378, Dec 2010.
+
 \bibitem{Kolter:2007:DWM:1314498.1390333}
 J.~Z. Kolter and M.~A. Maloof.
 \newblock Dynamic weighted majority: An ensemble method for drifting concepts.
@@ -65,6 +139,85 @@ J.~Z. Kolter and M.~A. Maloof.
 P.~Kranen, I.~Assent, C.~Baldauf, and T.~Seidl.
 \newblock The clustree: Indexing micro-clusters for anytime stream mining.
 \newblock {\em Knowl. Inf. Syst.}, 29(2):249--272, Nov. 2011.
+
+\bibitem{Kuncheva:PCADetect:20085}
+L.~Kuncheva.
+\newblock Classifier ensembles for detecting concept change in streaming data:
+  Overview and perspectives.
+\newblock {\em Proc. Eur. Conf. Artif. Intell.}, pages 5--10, 2008.
+\newblock cited By 70.
+
+\bibitem{Lee:Magoules:CoC:2012}
+J.~{Lee} and F.~{Magoulès}.
+\newblock Detection of concept drift for learning from stream data.
+\newblock In {\em 2012 IEEE 14th International Conference on High Performance
+  Computing and Communication 2012 IEEE 9th International Conference on
+  Embedded Software and Systems}, pages 241--245, June 2012.
+
+\bibitem{Lindstrom:CDBD:2013}
+P.~Lindstrom, B.~Mac~Namee, and S.~J. Delany.
+\newblock Drift detection using uncertainty distribution divergence.
+\newblock {\em Evolving Systems}, 4(1):13--25, Mar 2013.
+
+\bibitem{Masud:2011:CNC:1978259.1978529}
+M.~Masud, J.~Gao, L.~Khan, J.~Han, and B.~M. Thuraisingham.
+\newblock Classification and novel class detection in concept-drifting data
+  streams under time constraints.
+\newblock {\em IEEE Trans. on Knowl. and Data Eng.}, 23(6):859--874, June 2011.
+
+\bibitem{Page:CUSUM:PageHinkley:1954}
+E.~S. Page.
+\newblock {Continuous Inspection Schemes}.
+\newblock {\em Biometrika}, 41(1/2):100--115, 1954.
+
+\bibitem{PearsSK14:SeqDrift:2014}
+R.~Pears, S.~Sakthithasan, and Y.~S. Koh.
+\newblock Detecting concept change in dynamic data streams - {A} sequential
+  approach based on reservoir sampling.
+\newblock {\em Machine Learning}, 97(3):259--293, 2014.
+
+\bibitem{Pesaranghader:Tornado}
+A.~Pesaranghader.
+\newblock A reservoir of adaptive algorithms for online learning from evolving
+  data streams, 2018.
+
+\bibitem{Pettitt}
+A.~Pettitt.
+\newblock A non-parametric approach to the change-point problem.
+\newblock {\em Journal of the Royal Statistical Society. Series C. Applied
+  Statistics}, 28, 01 1979.
+
+\bibitem{Roberts:2000:CCT:338441.338464}
+S.~W. Roberts.
+\newblock Control chart tests based on geometric moving averages.
+\newblock {\em Technometrics}, 42(1):97--101, Feb. 2000.
+
+\bibitem{Ross:2012:EWM:2076039.2076307}
+G.~J. Ross, N.~M. Adams, D.~K. Tasoulis, and D.~J. Hand.
+\newblock Exponentially weighted moving average charts for detecting concept
+  drift.
+\newblock {\em Pattern Recogn. Lett.}, 33(2):191--198, Jan. 2012.
+
+\bibitem{Ryu:Kantardzic:2012}
+J.~W. Ryu, M.~M. Kantardzic, M.-W. Kim, and A.~Ra~Khil.
+\newblock An efficient method of building an ensemble of classifiers in
+  streaming data.
+\newblock In S.~Srinivasa and V.~Bhatnagar, editors, {\em Big Data Analytics},
+  pages 122--133, Berlin, Heidelberg, 2012. Springer Berlin Heidelberg.
+
+\bibitem{Sethi2016b:GC3}
+T.~S. Sethi, M.~Kantardzic, and H.~Hu.
+\newblock A grid density based framework for classifying streaming data in the
+  presence of concept drift.
+\newblock {\em Journal of Intelligent Information Systems}, 46(1):179--211, Feb
+  2016.
+
+\bibitem{Spinosa:2007:OCA:1244002.1244107}
+E.~J. Spinosa, A.~P. de~Leon F.~de Carvalho, and J.~a. Gama.
+\newblock Olindda: A cluster-based approach for detecting novelty and concept
+  drift in data streams.
+\newblock In {\em Proceedings of the 2007 ACM Symposium on Applied Computing},
+  SAC '07, pages 448--452, New York, NY, USA, 2007. ACM.
 
 \bibitem{Wang:2003:MCD:956750.956778}
 H.~Wang, W.~Fan, P.~S. Yu, and J.~Han.
@@ -77,5 +230,12 @@ H.~Wang, W.~Fan, P.~S. Yu, and J.~Han.
 I.~Zliobaite.
 \newblock Learning under concept drift: an overview.
 \newblock {\em CoRR}, abs/1010.4784, 2010.
+
+\bibitem{idc_report}
+M.~Zwolenski and L.~Weatherill.
+\newblock The digital universe rich data and the increasing value of the
+  internet of things.
+\newblock {\em Australian Journal of Telecommunications and the Digital
+  Economy}, 2, 10 2014.
 
 \end{thebibliography}
