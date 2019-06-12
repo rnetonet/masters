@@ -63,15 +63,15 @@
 \begin{frame}{Contexto e Motivação}
     \begin{itemize}
         \item<1 -> Técnicas de \alert{Aprendizado de Máquina (AM)} têm sido aplicadas para extrair informações úteis de grandes conjuntos de dados.
-        \item<2 -> Cenários com FCDs limitam a aplicação de técnicas de AM, pois impõem restrições de tempo de resposta, de uso dos recursos computacionais e apresentam comportamento \alert{não-estacionário}.
-        \item<3 -> Em cenários não-estacionários, o contexto do processo gerador e/ou a distribuição dos dados podem sofrer alterações (\alert{mudanças de conceito}) ao longo do tempo.
+        \item<2 -> Cenários com FCDs limitam a aplicação de técnicas de AM, pois impõem restrições de tempo de resposta, de uso dos recursos computacionais e apresentam comportamento \alert{não estacionário}.
+        \item<3 -> Em cenários não estacionários, o contexto do processo gerador e/ou a distribuição dos dados podem sofrer alterações (\alert{mudanças de conceito}) ao longo do tempo.
         \item<4 -> A ocorrência de mudanças de conceito pode impactar a acurácia da técnica aplicada.
       \end{itemize}
 \end{frame}
 
 \begin{frame}{Contexto e Motivação}
     \begin{itemize}
-        \item<1 -> A atualização periódica de modelos, apesar de computacionalmente ineficente, foi utilizada como medida para mitigar a perda de acurácia causada por tais mudanças.
+        \item<1 -> A atualização periódica de modelos, apesar de computacionalmente ineficiente, foi utilizada como estratégia para mitigar a perda de acurácia causada por tais mudanças.
         \item<2 -> Visando obter soluções computacionalmente eficientes e com maior precisão, pesquisadores propuseram novos métodos de detecção de mudança de conceito baseados em monitoramento.
       \end{itemize}
 \end{frame}
@@ -154,7 +154,7 @@
 
 \begin{frame}{Mudança de Conceito}
     \begin{itemize}
-        \item<1 -> As mudanças de conceito podem ocorrer de forma \alert{abrupta}, \alert{gradual}, \alert{incremental} ou \alert{recorrente}.
+        \item<1 -> As mudanças de conceito podem ocorrer de forma \alert{abrupta}, \alert{gradual}, \alert{incremental} ou \alert{recorrente} \cite{Zliobaite:2010}.
     \end{itemize}
     \begin{figure}[H]
         \begin{center}
@@ -239,9 +239,9 @@
     \begin{itemize}
         \item<1 -> Os algoritmos \alert{Implícitos/Não Supervisionados} também podem ser segmentados em três subcategorias \cite{GONCALVES20148144}:
         \begin{itemize}
-        \item<2 -> \alert{Detecção de Novidade / Métodos de Agrupamento}: Utilizam técnicas derivadas dos métodos de agrupamento e de detecção de \textit{outliers}. \textit{OLINDDA} \cite{Spinosa:2007:OCA:1244002.1244107}, \textit{MINAS} \cite{Faria:2013:NDA:2480362.2480515}, \textit{Woo} \cite{Ryu:Kantardzic:2012}, \textit{DETECTNOD} \cite{Hashemi:Hayat:DETECTNOD:2010}, \textit{ECSMiner} \cite{Masud:2011:CNC:1978259.1978529} e \textit{GC3} \cite{Sethi2016b:GC3}.
-        \item<3 -> \alert{Monitoramento de distribuição multivariada}: Monitoram diretamente a distribuição dos dados para cada atributo. \textit{CoC} \cite{Lee:Magoules:CoC:2012}, \textit{HDDDM} \cite{Ditzler:Polikar:HDDDM:2011}, \textit{PCA-detect} \cite{Kuncheva:PCADetect:20085}.
-        \item<4 -> \alert{Monitoramento dependente de modelo}: Requerem a aplicação de um algoritmo de classificação probabilístico, pois as mudanças de conceito são detectadas a partir do monitoramento da probabilidade a posteriori. \textit{A-distance} \cite{Dredze:ADistance:2010585}, \textit{CDBD} \cite{Lindstrom:CDBD:2013} e \textit{Margin} \cite{Dries:Margin:2009}.
+        \item<2 -> \alert{Detecção de Novidade / Métodos de Agrupamento}: Utilizam técnicas derivadas dos métodos de agrupamento e de detecção de \textit{outliers}. Exemplos: \textit{OLINDDA} \cite{Spinosa:2007:OCA:1244002.1244107}, \textit{MINAS} \cite{Faria:2013:NDA:2480362.2480515}, \textit{Woo} \cite{Ryu:Kantardzic:2012}, \textit{DETECTNOD} \cite{Hashemi:Hayat:DETECTNOD:2010}, \textit{ECSMiner} \cite{Masud:2011:CNC:1978259.1978529} e \textit{GC3} \cite{Sethi2016b:GC3}.
+        \item<3 -> \alert{Monitoramento de distribuição multivariada}: Monitoram diretamente a distribuição dos dados para cada atributo. Exemplos: \textit{CoC} \cite{Lee:Magoules:CoC:2012}, \textit{HDDDM} \cite{Ditzler:Polikar:HDDDM:2011}, \textit{PCA-detect} \cite{Kuncheva:PCADetect:20085}.
+        \item<4 -> \alert{Monitoramento dependente de modelo}: Requerem a aplicação de um algoritmo de classificação probabilístico, pois as mudanças de conceito são detectadas a partir do monitoramento da probabilidade a posteriori. Exemplos: \textit{A-distance} \cite{Dredze:ADistance:2010585}, \textit{CDBD} \cite{Lindstrom:CDBD:2013} e \textit{Margin} \cite{Dries:Margin:2009}.
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -277,10 +277,10 @@
 
 \begin{frame}{Redes de Função de Base Radial}
     \begin{itemize}
-        \item<1 -> \alert{Redes de Função de Base Radial} são redes neurais cuja principal característica é a forma de ativação, realizada através do cálculo da distância entre o dado e um centro definido \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+        \item<1 -> \alert{Redes de Função de Base Radial} são redes neurais cujo principal diferencial é a forma de ativação, realizada através do cálculo da distância entre o dado e um centro definido \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
         \item<2 -> A arquitetura de uma rede RBF, em sua forma mais básica, envolve três camadas: 
         \begin{itemize}
-            \item<3 -> \alert{Entrada}: Recepciona os dados e encaminha para intermediária.
+            \item<3 -> \alert{Entrada}: Recepciona os dados e encaminha para camada intermediária.
             \item<4 -> \alert{Intermediária}: Composta por funções de ativação de base radial que atuam como neurônios.
             \item<5 -> \alert{Saída}: Pondera os resultados da camada intermediária, agregando-os linearmente para compor a resposta final da rede.
         \end{itemize}
@@ -299,6 +299,13 @@
 \end{frame}
 
 %\subsection{Trabalhos Relacionados}
+
+\begin{frame}{Trabalhos Relacionados}
+    \begin{itemize}
+        \item<1 -> Pesquisa na literatura em busca de trabalhos que propõem métodos para identificação de mudanças de conceito em fluxos contínuos de dados, de forma online e independente de rótulos. 
+        \item<2 -> Também foram estudadas técnicas que pudessem subsidiar o desenvolvimento de novos algoritmos que atendam a esses requisitos.
+    \end{itemize}
+\end{frame}
 
 \begin{frame}{Trabalhos Relacionados}
     \begin{itemize}
@@ -340,8 +347,6 @@
 \begin{frame}{Atividades de Pesquisa}
     \begin{table}[ht]
         \begin{center}
-        \caption{Cronograma de atividades}     % mude aqui para seu título da tabela
-        \label{cronograma} % para referencia no texto.
         \resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
         \begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
         \hline
@@ -364,6 +369,8 @@
         \hline
         \end{tabular}
         } % fecha resizebox
+        \caption{Cronograma de atividades}     % mude aqui para seu título da tabela
+        \label{cronograma} % para referencia no texto.
         \end{center}
     \end{table}
 \end{frame}
@@ -372,10 +379,30 @@
 
 \begin{frame}{Configuração dos Experimentos}
     \begin{itemize}
-        \item<1 -> Conjuntos de dados sintéticos construídos através de especializações das classes geradoras (\texttt{AbruptChangeGenerator}, \texttt{GradualChangeGenerator} e \texttt{NoChangeGenerator}) do MOA.
-        \item<2 -> As classes originais do MOA foram alteradas para permitir a inclusão de ruídos com distribuição uniforme e corrigir limitações.
-        \item<3 -> Cada conjunto de dados é composto por $2.500$ observações, com valores entre $0$ e $1$ e conceitos compostos por $400$ registros.
+        \item<1 -> Conjuntos de dados sintéticos construídos através de especializações das classes geradoras do MOA.
+        \item<2 -> As classes geradoras originais foram alteradas para permitir a inclusão de ruídos com distribuição uniforme e corrigir limitações.
+        \item<3 -> Cada conjunto de dados é composto por \alert{$2.500$} observações, com valores \alert{entre $0$ e $1$} e conceitos compostos por \alert{$400$} registros.
       \end{itemize}
+\end{frame}
+
+\begin{frame}{Configuração dos Experimentos}
+      \begin{center} 
+        \begin{table}[h]
+        \resizebox{\textwidth}{!} {%
+        \begin{tabular}{llllm{7.5cm}}
+        \toprule
+        Conjunto & Classe utilizada & Qtd. Observações & Tamanho Conceito & Ruído \\
+        \midrule
+        Mudanças Abruptas          & \textit{AbruptChangeGenerator}  & $2.500$ & $400$ & $[-0.1, 0.2]$  \\
+        Mudanças Graduais          & \textit{GradualChangeGenerator} & $2.500$ & $400$ & -  \\
+        Sem Mudanças               & \textit{NoChangeGenerator}      & $2.500$ & -     & $[-0.1, 0.2]$  \\
+        \bottomrule
+        \end{tabular}
+        }
+        \caption{Conjuntos de dados produzidos}
+        \label{tbl:configuracao_tarefa}
+        \end{table}
+    \end{center}
 \end{frame}
 
 \begin{frame}{Configuração dos Experimentos}
@@ -481,7 +508,7 @@
 % Exp 1
 \begin{frame}{Experimento 1 - Fluxo sem mudanças de conceito}
     \begin{itemize}
-        \item<1 -> Experimento utilizando o fluxo de dados sintético \alert{sem mudanças de conceito}, a fim de avaliar a tendência de produção de falsos-positivo.
+        \item<1 -> Experimento realizado utilizando o conjunto de dados \alert{\textbf{sem} mudanças de conceito}, visando avaliar a tendência de produção de falsos-positivo.
     \end{itemize}
     \begin{center} 
         \begin{table}[H]
@@ -520,7 +547,7 @@
 % Exp 2
 \begin{frame}{Experimento 2 - Fluxo com mudanças de conceito abruptas}
     \begin{itemize}
-        \item<1 -> Experimento utilizando a base de dados com mudanças \alert{abruptas} como base de testes.
+        \item<1 -> Experimento realizado utilizando o conjunto de dados \alert{com mudanças de conceito \textbf{abruptas}}.
     \end{itemize}
     \begin{center} 
         \begin{table}[H]
@@ -558,7 +585,7 @@
 % Exp 3
 \begin{frame}{Experimento 3 - Fluxo com mudanças de conceito graduais}
     \begin{itemize}
-        \item<1 -> Experimento utilizou o fluxo sintético com mudanças de conceito \alert{graduais}.
+        \item<1 -> Experimento realizado utilizando o conjunto de dados \alert{com mudanças de conceito \textbf{graduais}}.
     \end{itemize}
     \begin{center} 
         \begin{table}[ht]

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.8)  12 JUN 2019 02:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.8)  12 JUN 2019 09:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1053,7 +1053,11 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamertheme-metropolis/pgfplotsthemetol.sty
 Package: pgfplotsthemetol 2017/01/23 PGFplots colors based on Paul Tol's SRON technical note
-) (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.aux)
+) (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.aux
+
+LaTeX Warning: Label `tbl:configuracao_tarefa' multiply defined.
+
+)
 \openout1 = `slides.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -1324,7 +1328,7 @@ Package pdftex.def Info: ../text/imagens/concept_drift.png  used on input line 1
  [31
 
  <../text/imagens/concept_drift.png>]
-<imagens/concept_drift_patterns.png, id=292, 565.36218pt x 207.02344pt>
+<imagens/concept_drift_patterns.png, id=293, 565.36218pt x 207.02344pt>
 File: imagens/concept_drift_patterns.png Graphic file (type png)
 <use imagens/concept_drift_patterns.png>
 Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 166.
@@ -1358,7 +1362,7 @@ Package pdftex.def Info: imagens/concept_drift_patterns.png  used on input line 
 ] [45
 
 ]
-<imagens/moa.png, id=490, 1016.29688pt x 763.35187pt>
+<imagens/moa.png, id=491, 1016.29688pt x 763.35187pt>
 File: imagens/moa.png Graphic file (type png)
 <use imagens/moa.png>
 Package pdftex.def Info: imagens/moa.png  used on input line 261.
@@ -1370,7 +1374,7 @@ Overfull \vbox (26.15465pt too high) detected at line 261
 [46
 
  </home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/imagens/moa.png>]
-<imagens/tornado_out2.png, id=498, 753.0534pt x 331.9602pt>
+<imagens/tornado_out2.png, id=499, 753.0534pt x 331.9602pt>
 File: imagens/tornado_out2.png Graphic file (type png)
 <use imagens/tornado_out2.png>
 Package pdftex.def Info: imagens/tornado_out2.png  used on input line 274.
@@ -1390,7 +1394,7 @@ Package pdftex.def Info: imagens/tornado_out2.png  used on input line 274.
 ] [53
 
 ]
-<../text/imagens/rbf_arq.png, id=546, 330.48468pt x 313.17pt>
+<../text/imagens/rbf_arq.png, id=547, 330.48468pt x 313.17pt>
 File: ../text/imagens/rbf_arq.png Graphic file (type png)
 <use ../text/imagens/rbf_arq.png>
 Package pdftex.def Info: ../text/imagens/rbf_arq.png  used on input line 299.
@@ -1415,19 +1419,19 @@ Overfull \vbox (10.28928pt too high) detected at line 299
 
 ] [61
 
+] [62
+
+] [63
+
 ]
-<../text/imagens/funcionamento_algoritmo.png, id=592, 933.7284pt x 483.4863pt>
+<../text/imagens/funcionamento_algoritmo.png, id=603, 933.7284pt x 483.4863pt>
 File: ../text/imagens/funcionamento_algoritmo.png Graphic file (type png)
 <use ../text/imagens/funcionamento_algoritmo.png>
-Package pdftex.def Info: ../text/imagens/funcionamento_algoritmo.png  used on input line 336.
+Package pdftex.def Info: ../text/imagens/funcionamento_algoritmo.png  used on input line 343.
 (pdftex.def)             Requested size: 307.28987pt x 159.11569pt.
- [62
+ [64
 
- <../text/imagens/funcionamento_algoritmo.png>] [63
-
-] [64
-
-] [65
+ <../text/imagens/funcionamento_algoritmo.png>] [65
 
 ] [66
 
@@ -1439,7 +1443,11 @@ Package pdftex.def Info: ../text/imagens/funcionamento_algoritmo.png  used on in
 
 ] [70
 
-] [71
+]pdfTeX warning (ext4): destination with the same identifier (name{tbl:configuracao_tarefa}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.431 \end{frame}
+                  [71
 
 ] [72
 
@@ -1449,79 +1457,76 @@ Package pdftex.def Info: ../text/imagens/funcionamento_algoritmo.png  used on in
 
 ] [75
 
-]
-<../text/imagens/nochange.pdf, id=677, 558.6471pt x 424.22491pt>
-File: ../text/imagens/nochange.pdf Graphic file (type pdf)
-<use ../text/imagens/nochange.pdf>
-Package pdftex.def Info: ../text/imagens/nochange.pdf  used on input line 518.
-(pdftex.def)             Requested size: 251.38885pt x 190.89943pt.
+] [76
 
-Overfull \vbox (13.28526pt too high) detected at line 518
- []
-
-[76
-
- <../text/imagens/nochange.pdf>] [77
+] [77
 
 ] [78
 
 ]
-<../text/imagens/abrupt.pdf, id=718, 610.68152pt x 462.52798pt>
-File: ../text/imagens/abrupt.pdf Graphic file (type pdf)
-<use ../text/imagens/abrupt.pdf>
-Package pdftex.def Info: ../text/imagens/abrupt.pdf  used on input line 556.
-(pdftex.def)             Requested size: 274.80415pt x 208.13567pt.
+<../text/imagens/nochange.pdf, id=693, 558.6471pt x 424.22491pt>
+File: ../text/imagens/nochange.pdf Graphic file (type pdf)
+<use ../text/imagens/nochange.pdf>
+Package pdftex.def Info: ../text/imagens/nochange.pdf  used on input line 545.
+(pdftex.def)             Requested size: 251.38885pt x 190.89943pt.
 
-Overfull \vbox (30.5215pt too high) detected at line 556
+Overfull \vbox (13.28526pt too high) detected at line 545
  []
 
 [79
 
- <../text/imagens/abrupt.pdf>] [80
+ <../text/imagens/nochange.pdf>] [80
 
 ] [81
 
-] [82
-
 ]
-<../text/imagens/gradual.pdf, id=756, 662.7159pt x 492.1587pt>
-File: ../text/imagens/gradual.pdf Graphic file (type pdf)
-<use ../text/imagens/gradual.pdf>
-Package pdftex.def Info: ../text/imagens/gradual.pdf  used on input line 595.
-(pdftex.def)             Requested size: 298.21939pt x 221.46936pt.
+<../text/imagens/abrupt.pdf, id=734, 610.68152pt x 462.52798pt>
+File: ../text/imagens/abrupt.pdf Graphic file (type pdf)
+<use ../text/imagens/abrupt.pdf>
+Package pdftex.def Info: ../text/imagens/abrupt.pdf  used on input line 583.
+(pdftex.def)             Requested size: 274.80415pt x 208.13567pt.
 
-Overfull \vbox (43.8552pt too high) detected at line 595
+Overfull \vbox (30.5215pt too high) detected at line 583
  []
 
-[83
+[82
 
- <../text/imagens/gradual.pdf>] [84
+ <../text/imagens/abrupt.pdf>] [83
+
+] [84
 
 ] [85
 
-] [86
+]
+<../text/imagens/gradual.pdf, id=772, 662.7159pt x 492.1587pt>
+File: ../text/imagens/gradual.pdf Graphic file (type pdf)
+<use ../text/imagens/gradual.pdf>
+Package pdftex.def Info: ../text/imagens/gradual.pdf  used on input line 622.
+(pdftex.def)             Requested size: 298.21939pt x 221.46936pt.
 
-] [87
+Overfull \vbox (43.8552pt too high) detected at line 622
+ []
+
+[86
+
+ <../text/imagens/gradual.pdf>] [87
 
 ] [88
+
+] [89
+
+] [90
+
+] [91
 
 ] (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.bbl
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
 (Font)              using `OT1/cmss/bx/n' instead on input line 11.
 
-) [89
+) [92
 
- </usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [90
-
-
-] [91
-
-
-] [92
-
-
-] [93
+ </usr/share/texlive/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>] [93
 
 
 ] [94
@@ -1548,6 +1553,15 @@ LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
 ] [101
 
 
+] [102
+
+
+] [103
+
+
+] [104
+
+
 ]
 \tf@nav=\write6
 \openout6 = `slides.nav'.
@@ -1558,31 +1572,34 @@ LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 920.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 920.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 947.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 947.
  (/home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 920.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 920.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 947.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 947.
 Package rerunfilecheck Info: File `slides.out' has not changed.
 (rerunfilecheck)             Checksum: AEDB604FAFE9796E058C016ED2902DEE;268.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 32222 strings out of 492982
- 770470 string characters out of 6134897
- 991841 words of memory out of 5000000
- 34830 multiletter control sequences out of 15000+600000
- 14309 words of font info for 52 fonts, out of 8000000 for 9000
+ 32230 strings out of 492982
+ 770548 string characters out of 6134897
+ 991842 words of memory out of 5000000
+ 34833 multiletter control sequences out of 15000+600000
+ 14141 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,13n,98p,1865b,709s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.pdf (101 pages, 1147478 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on /home/rnetodev/Workspace/pgcomp_qualificacao/tex/slides/slides.pdf (104 pages, 1139296 bytes).
 PDF statistics:
- 986 PDF objects out of 1000 (max. 8388607)
- 832 compressed objects within 9 object streams
- 267 named destinations out of 1000 (max. 500000)
+ 1000 PDF objects out of 1000 (max. 8388607)
+ 844 compressed objects within 9 object streams
+ 273 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 
