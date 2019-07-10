@@ -115,7 +115,7 @@
         \item<1 -> \alert{Fluxos Contínuos de Dados (FCDs)} são sequências ininterruptas e potencialmente infinitas de eventos \cite{Aggarwal:2006:DSM:1196418}.
         \item<2 -> Não podem ser armazenados em sua totalidade e, por serem de alta frequência, devem ser analisados em tempo real.
         \item<3 -> Algoritmos supervisionados \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813} e não-supervisionados \cite{Aggarwal:2003:FCE:1315451.1315460, Ackermann:2012:SCA:2133803.2184450, Kranen:2011:CIM:2134350.2134352} da área de AM foram adaptados para atenderem a essas restrições.
-        \item<4 -> Contudo, estas especializações não tratam a ocorrência de \alert{mudanças de conceito}.
+        \item<4 -> Contudo, essas especializações não tratam a ocorrência de \alert{mudanças de conceito}.
       \end{itemize}
 \end{frame}
 
@@ -500,7 +500,7 @@
         \label{tbl:pettitt}
         \end{table}
     \begin{itemize}
-        \item<2 -> Propenso à produção de falsos-positivo e computacionalmente ineficiente.
+        \item<2 -> Propenso à produção de falso-positivos e computacionalmente ineficiente.
     \end{itemize}
     \end{center}
 \end{frame}
@@ -508,7 +508,7 @@
 % Exp 1
 \begin{frame}{Experimento 1 - Fluxo sem mudanças de conceito}
     \begin{itemize}
-        \item<1 -> Experimento realizado utilizando o conjunto de dados \alert{\textbf{sem} mudanças de conceito}, visando avaliar a tendência de produção de falsos-positivo.
+        \item<1 -> Experimento realizado utilizando o conjunto de dados \alert{\textbf{sem} mudanças de conceito}, visando avaliar a tendência de produção de falso-positivos.
     \end{itemize}
     \begin{center} 
         \begin{table}[H]
@@ -529,7 +529,7 @@
         \end{table}
     \end{center}
     \begin{itemize}
-        \item<2 -> Todos algoritmos testados demonstraram tolerância a ruídos e baixa propensão a identificar falsos-positivo.
+        \item<2 -> Todos algoritmos testados demonstraram tolerância a ruídos e baixa propensão a identificar falso-positivos.
         \item<3 -> O algoritmo proposto obteve a segunda melhor performance, superado pelo ADWIN por uma pequena margem.
     \end{itemize}
 \end{frame}
@@ -559,7 +559,7 @@
         RBFDriftDetector          &  $0.23$ & $6$ & $6$    & $0$    & $1$ \\
         CUSUM                     &  $0.29$ & $6$ & $3$    & $0$    & $68$ \\
         PageHinkley               &  $0.22$ & $6$ & $1$    & $0$    & $17$ \\
-        ADWIN                     &  $0.21$ & $6$ & $2052$ & $2046$ & $9$ \\
+        ADWIN                     &  $0.21$ & $6$ & $6$    & $2046$ & $9$ \\
         \bottomrule
         \end{tabular}
         }
@@ -568,7 +568,7 @@
         \end{table}
     \end{center}
     \begin{itemize}
-        \item<2 -> Método proposto identificou todas mudanças, sem falsos-positivo e com menor atraso de detecção.
+        \item<2 -> Método proposto identificou todas mudanças, sem falso-positivos e com menor atraso de detecção.
     \end{itemize}
 \end{frame}
 
@@ -597,7 +597,7 @@
         RBFDriftDetector          &  $0.24$ & $6$ & $5$    & $1$    & $171$ \\
         CUSUM                     &  $0.65$ & $6$ & $3$    & $0$    & $32$ \\
         PageHinkley               &  $0.26$ & $6$ & $1$    & $0$    & $4$ \\
-        ADWIN                     &  $0.27$ & $6$ & $2244$ & $2238$ & $1$ \\
+        ADWIN                     &  $0.27$ & $6$ & $6$ & $2238$ & $1$ \\
         \bottomrule
         \end{tabular}
         }
@@ -625,9 +625,9 @@
 
 \begin{frame}{Conclusão}
     \begin{itemize}
-        \item<1 -> Os resultados obtidos se mostraram promissores, indicando que o tema de pesquisa deve continuar a ser investigado.
-        \item<2 -> Algoritmo apresenta bom desempenho e acurácia.
-        \item<3 -> Método proposto tem dificuldade para lidar com mudanças graduais.
+        \item<1 -> Algoritmo apresenta bom desempenho e acurácia.
+        \item<2 -> Método proposto pode ser aprimorado para detecção de mudanças graduais.
+        \item<3 -> Os resultados obtidos, apesar de preliminares, mostraram-se promissores, indicando que o tema de pesquisa deve continuar a ser investigado.
       \end{itemize}
 \end{frame}
 
