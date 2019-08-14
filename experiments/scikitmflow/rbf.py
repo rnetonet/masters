@@ -32,6 +32,10 @@ class MarkovChain:
     def to_graphviz(self, output_filename):
         dot = Digraph(comment="RBF")
 
+        dot.attr("node", fontsize="8")
+        dot.attr("edge", fontsize="8")
+        dot.attr("edge", labelfloat="false")
+
         # nodes
         for origin in self.system.keys():
             dot.node(str(origin))
@@ -47,8 +51,7 @@ class MarkovChain:
                 )
 
         print(dot.source)
-        dot.render('markov.gv', view=True)
-
+        dot.render("markov.gv", view=True)
 
 
 class RBF(BaseDriftDetector):
@@ -133,7 +136,7 @@ class RBF(BaseDriftDetector):
 
 
 if __name__ == "__main__":
-    rbf = RBF(sigma=2, lambda_=0.5, alpha=0.25)
+    rbf = RBF(sigma=2.5, lambda_=0.5, alpha=0.25)
 
     data_stream = [
         0.1,
@@ -174,19 +177,32 @@ if __name__ == "__main__":
         0.5,
         0.1,
         0.1,
+        0.21,
+        0.22,
+        0.23,
+        0.26,
+        0.27,
+        0.11,
+        0.10,
+        0.9,
+        0.3,
+        0.2,
+        0.2,
+        0.2,
+        0.1,
     ]
 
     for index, value in enumerate(data_stream):
         rbf.add_element(value)
 
-        print(f"index={index}/value={value}/markov={rbf.markov.system}")
+        # print(f"index={index}/value={value}/markov={rbf.markov.system}")
 
-        if rbf.detected_change():
-            print(
-                "\t * Change has been detected in data: "
-                + str(value)
-                + " - of index: "
-                + str(index)
-            )
+        # if rbf.detected_change():
+        #     print(
+        #         "\t * Change has been detected in data: "
+        #         + str(value)
+        #         + " - of index: "
+        #         + str(index)
+        #     )
 
     rbf.markov.to_graphviz(None)
