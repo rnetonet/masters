@@ -1,6 +1,5 @@
 import math
 
-import numpy as np
 from graphviz import Digraph
 from skmultiflow.drift_detection.base_drift_detector import BaseDriftDetector
 
@@ -67,13 +66,17 @@ class RBF(BaseDriftDetector):
 
     alpha: float (default=0.25)
         Value to increase the probability in the Markov Chain.
+
+    delta: float (default=1.0)
+        Minimum threshold to consider the probability as a Concept Drift indication.
     """
 
-    def __init__(self, sigma=2, lambda_=0.5, alpha=0.25):
+    def __init__(self, sigma=2, lambda_=0.5, alpha=0.25, delta=1.0):
         super().__init__()
         self.sigma = sigma
         self.lambda_ = lambda_
         self.alpha = alpha
+        self.delta = delta
 
         self.actual_center = None
         self.centers = []
@@ -130,79 +133,11 @@ class RBF(BaseDriftDetector):
                 self.markov.add(self.actual_center, activated_center, self.alpha)
             else:
                 self.markov.add(self.actual_center, activated_center, self.alpha)
+                probability = self.markov.system[self.actual_center][activated_center]
 
                 self.actual_center = activated_center
-                self.in_concept_change = True
 
-
-if __name__ == "__main__":
-    rbf = RBF(sigma=2.5, lambda_=0.5, alpha=0.25)
-
-    data_stream = [
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.9,
-        0.10,
-        0.11,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.2,
-        0.3,
-        0.4,
-        0.5,
-        0.6,
-        0.7,
-        0.8,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.1,
-        0.16,
-        0.16,
-        0.16,
-        0.15,
-        0.6,
-        0.5,
-        0.1,
-        0.1,
-        0.21,
-        0.22,
-        0.23,
-        0.26,
-        0.27,
-        0.11,
-        0.10,
-        0.9,
-        0.3,
-        0.2,
-        0.2,
-        0.2,
-        0.1,
-    ]
-
-    for index, value in enumerate(data_stream):
-        rbf.add_element(value)
-
-        # print(f"index={index}/value={value}/markov={rbf.markov.system}")
-
-        # if rbf.detected_change():
-        #     print(
-        #         "\t * Change has been detected in data: "
-        #         + str(value)
-        #         + " - of index: "
-        #         + str(index)
-        #     )
-
-    rbf.markov.to_graphviz(None)
+                if probability >= self.delta:
+                    self.in_concept_change = True
+                else:
+                    self.in_warning_zone = True
