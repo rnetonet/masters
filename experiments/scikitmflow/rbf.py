@@ -11,22 +11,21 @@ class MarkovChain:
     def add(self, origin, destination, alpha):
         if origin not in self.system:
             self.system[origin] = {}
-            self.system[origin][destination] = 1.0
-            return
 
         if destination not in self.system[origin]:
             self.system[origin][destination] = 0.0
 
-        for prev_destination in self.system[origin].keys():
-            if prev_destination == destination:
-                new_probability = self.system[origin][prev_destination] + alpha
-                self.system[origin][prev_destination] = (
+        for _destination in self.system[origin].keys():
+            if math.isclose(_destination, destination):
+                new_probability = self.system[origin][_destination] + alpha
+                self.system[origin][_destination] = (
                     new_probability if new_probability <= 1 else 1
                 )
             else:
-                self.system[origin][prev_destination] -= alpha / (
-                    len(self.system[origin]) - 1
-                )
+                factor_to_decrease = alpha / (len(self.system[origin]) - 1)
+                if self.system[origin][_destination] >= factor_to_decrease:
+                    self.system[origin][_destination] -= factor_to_decrease
+
 
     def to_graphviz(self, output_filename):
         dot = Digraph(comment="RBF")
@@ -104,6 +103,8 @@ class RBF(BaseDriftDetector):
         ----------
         prediction: float
         """
+        self.in_warning_zone = False
+
         if self.in_concept_change:
             self.reset()
 

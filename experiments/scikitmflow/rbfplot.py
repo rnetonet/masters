@@ -41,24 +41,22 @@ class RBFPlot:
         ax.grid(False)
         ax.autoscale(True)
         ax.set_xlim(0, 2500)
-        ax.set_ylim(0, 1)
+        ax.set_ylim(0, max(self.data))
 
         for index, _ in enumerate(self.data):
             if self.data_change_history[index]:
-                ax.axvline(index - 25, color="g", ls="-", linewidth=1)
+                ax.axvline(index, color="g", ls="-", linewidth=1)
 
             if self.warning_zone_history[index]:
-                ax.axvline(index + 25, color="y", ls="--", linewidth=0.1)
+                ax.axvline(index + 5, color="y", ls="--", linewidth=1, alpha=0.5)
 
             if self.concept_drift_history[index]:
-                ax.axvline(index + 25, color="b", ls="--", linewidth=1)
-                print(self.markov_history[index])
+                ax.axvline(index + 10, color="b", ls="--", linewidth=1)
 
         ax.plot(
             range(0, len(self.data)),
             self.data,
             color="k",
-            #color="#D3D3D3",
             linestyle="-",
             linewidth=0.25,
         )
