@@ -3,32 +3,41 @@ import math
 from graphviz import Digraph
 from skmultiflow.drift_detection.base_drift_detector import BaseDriftDetector
 
+from decimal import Decimal
 
 class MarkovChain:
     def __init__(self):
         self.system = {}
+        self.current_origin = None
+        self.current_destination = None
 
-    def add(self, origin, destination, alpha):
-        if origin not in self.system:
-            self.system[origin] = {}
+    def update(self, origin, destination, alpha):
+        origin = f"{origin:.2f}"
+        destination = f"{destination:.2f}"
 
-        if destination not in self.system[origin]:
-            self.system[origin][destination] = 0.0
+        if origin != destination or (not self.current_origin and not self.current_destination):
+            self.current_origin = origin
+            self.current_destination = destination
 
-        for _destination in self.system[origin].keys():
-            if math.isclose(_destination, destination):
-                new_probability = self.system[origin][_destination] + alpha
-                self.system[origin][_destination] = (
-                    new_probability if new_probability <= 1 else 1
-                )
+        if self.current_origin not in self.system:
+            self.system[self.current_origin] = {}
+
+        if self.current_destination not in self.system[self.current_origin]:
+            self.system[self.current_origin][self.current_destination] = 0.0
+
+        for possible_destination in self.system[self.current_origin]:
+            if possible_destination == self.current_destination:
+                self.system[self.current_origin][possible_destination] += alpha
             else:
-                factor_to_decrease = alpha / (len(self.system[origin]) - 1)
-                if self.system[origin][_destination] >= factor_to_decrease:
-                    self.system[origin][_destination] -= factor_to_decrease
+                self.system[self.current_origin][possible_destination] -= alpha
+
+        return self.system[self.current_origin][self.current_destination]
 
 
-    def to_graphviz(self, output_filename):
+    def to_graphviz(self):
         dot = Digraph(comment="RBF")
+
+        dot.attr(dpi="600")
 
         dot.attr("node", fontsize="8")
         dot.attr("edge", fontsize="8")
@@ -36,20 +45,19 @@ class MarkovChain:
 
         # nodes
         for origin in self.system.keys():
-            dot.node(str(origin))
+            dot.node(origin)
 
         # edges
         for origin in self.system.keys():
             for destination in self.system[origin].keys():
                 dot.edge(
-                    str(origin),
-                    str(destination),
+                    origin,
+                    destination,
                     constraint="false",
-                    label=str(self.system[origin][destination]),
+                    label=format(self.system[origin][destination], ".2f"),
                 )
 
-        print(dot.source)
-        dot.render("markov.gv", view=True)
+        return dot
 
 
 class RBF(BaseDriftDetector):
@@ -127,18 +135,18 @@ class RBF(BaseDriftDetector):
             self.centers.append(input_data)
             activated_center = input_data
 
-        if activated_center != self.actual_center:
-            if self.actual_center is None:
-                self.actual_center = activated_center
+        if self.actual_center is None:
+            self.actual_center = activated_center
 
-                self.markov.add(self.actual_center, activated_center, self.alpha)
+        # Update markov
+        probability = self.markov.update(self.actual_center, activated_center, self.alpha)
+
+        # If center changed
+        if self.actual_center != activated_center:
+            if probability >= self.delta:
+                self.in_concept_change = True
             else:
-                self.markov.add(self.actual_center, activated_center, self.alpha)
-                probability = self.markov.system[self.actual_center][activated_center]
+                self.in_warning_zone = True
 
-                self.actual_center = activated_center
-
-                if probability >= self.delta:
-                    self.in_concept_change = True
-                else:
-                    self.in_warning_zone = True
+            # Update actual center
+            self.actual_center = activated_center
