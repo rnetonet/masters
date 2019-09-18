@@ -1,0 +1,6 @@
+outOfBoundsNb:	556
+outOfBoundsMeanDur:	1
+fixationMaintainedDur:	2246
+fixationsDur:	217
+saccadesNb:	9
+fixationsNb:	10

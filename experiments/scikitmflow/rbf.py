@@ -22,14 +22,22 @@ class MarkovChain:
         if self.current_origin not in self.system:
             self.system[self.current_origin] = {}
 
+        # if self.current_destination not in self.system[self.current_origin] and not self.system[self.current_origin]:
+        #     self.system[self.current_origin][self.current_destination] = 1.0
+
         if self.current_destination not in self.system[self.current_origin]:
             self.system[self.current_origin][self.current_destination] = 0.0
 
         for possible_destination in self.system[self.current_origin]:
             if possible_destination == self.current_destination:
                 self.system[self.current_origin][possible_destination] += alpha
+                if self.system[self.current_origin][possible_destination] > 1:
+                    self.system[self.current_origin][possible_destination] = 1
             else:
-                self.system[self.current_origin][possible_destination] -= alpha
+                reduction_factor = alpha / (len(self.system[self.current_origin]) - 1)
+                self.system[self.current_origin][possible_destination] -= reduction_factor
+                if self.system[self.current_origin][possible_destination] < 0:
+                    self.system[self.current_origin][possible_destination] = 0
 
         return self.system[self.current_origin][self.current_destination]
 
@@ -111,7 +119,7 @@ class RBF(BaseDriftDetector):
         ----------
         prediction: float
         """
-        self.in_warning_zone = False
+        # self.in_warning_zone = False
 
         if self.in_concept_change:
             self.reset()
@@ -150,3 +158,6 @@ class RBF(BaseDriftDetector):
 
             # Update actual center
             self.actual_center = activated_center
+
+        if probability >= self.delta and self.in_warning_zone:
+            self.in_concept_change = True

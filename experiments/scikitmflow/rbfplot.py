@@ -1,10 +1,14 @@
-import matplotlib.pyplot as plt
-import matplotlib.image as plt_img
 import io
-import numpy as np
-import imageio
-from matplotlib.lines import Line2D
+import os
 import webbrowser
+
+import matplotlib.image as plt_img
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.lines import Line2D
+
+import imageio
+
 
 class RBFPlot:
     def __init__(self, suptitle="RBF", step=50):
@@ -53,7 +57,7 @@ class RBFPlot:
         stream.grid(False)
         stream.autoscale(True)
         stream.set_xlim(0, 2500)
-        stream.set_ylim(0, max(data))
+        stream.set_ylim(0, max(data, default=2500))
 
         markov.grid(False)
         markov.autoscale(True)
@@ -111,14 +115,11 @@ class RBFPlot:
     def plot_animation(self):
         length = len(self.data)
 
-        filename = "./" + self.suptitle + ".mp4"
+        filename = os.path.join(os.getcwd(), self.suptitle + ".mp4")
         writer = imageio.get_writer(filename, fps=1, quality=5)
 
         for instant_in_time in range(0, length, self.step):
-            try:
-                writer.append_data(self.plot(instant_in_time))
-            except:
-                pass
+            writer.append_data(self.plot(instant_in_time))
 
         writer.close()
         webbrowser.open(filename)
