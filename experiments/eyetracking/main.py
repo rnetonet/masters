@@ -1,16 +1,8 @@
-import json
 import os
-import sys
-from pathlib import Path
 
 import matplotlib.pyplot as plt
-import numpy as np
 
-# Adjust sys.path, allowing to import scikitmflow RBF implemetation
-parent_dir = Path(os.path.dirname(os.path.abspath(__file__))).parent
-sys.path.append(parent_dir.as_posix())
-
-from scikitmflow import rbf, rbfplot
+import rbf
 
 # Reading dataset
 filepath = os.path.join(
@@ -39,67 +31,101 @@ x, y, x_filt, y_filt, vel_x, vel_y, vel, acc, velx_filt, vely_filt, vel_filt, ac
     cleaned_data
 )
 
+# ---
+# Plot an overview of the data
+# ---
+
 # Creating the grid spec
-fig = plt.figure()
-gs = fig.add_gridspec(nrows=3, ncols=2)
+# fig = plt.figure()
+# gs = fig.add_gridspec(nrows=3, ncols=2)
 
-x_plot = fig.add_subplot(gs[0, 0])
-y_plot = fig.add_subplot(gs[0, 1])
-points_plot = fig.add_subplot(gs[1, :])
-velocity_plot = fig.add_subplot(gs[2, 0])
-acc_plot = fig.add_subplot(gs[2, 1])
+# x_plot = fig.add_subplot(gs[0, 0])
+# y_plot = fig.add_subplot(gs[0, 1])
+# points_plot = fig.add_subplot(gs[1, :])
+# velocity_plot = fig.add_subplot(gs[2, 0])
+# acc_plot = fig.add_subplot(gs[2, 1])
 
-fig.subplots_adjust(hspace=0.2, wspace=0.2)
+# fig.subplots_adjust(hspace=0.2, wspace=0.2)
 
-x_plot.grid(False)
-x_plot.autoscale(True)
-x_plot.set_title("x")
+# x_plot.grid(False)
+# x_plot.autoscale(True)
+# x_plot.set_title("x")
 
-y_plot.grid(False)
-y_plot.autoscale(True)
-y_plot.set_title("y")
+# y_plot.grid(False)
+# y_plot.autoscale(True)
+# y_plot.set_title("y")
 
-points_plot.grid(False)
-points_plot.autoscale(True)
-points_plot.set_title("(x, y)")
+# points_plot.grid(False)
+# points_plot.autoscale(True)
+# points_plot.set_title("(x, y)")
 
-velocity_plot.grid(False)
-velocity_plot.autoscale(True)
-velocity_plot.set_title("vel")
+# velocity_plot.grid(False)
+# velocity_plot.autoscale(True)
+# velocity_plot.set_title("vel")
 
-acc_plot.grid(False)
-acc_plot.autoscale(True)
-acc_plot.set_title("acc")
+# acc_plot.grid(False)
+# acc_plot.autoscale(True)
+# acc_plot.set_title("acc")
 
-x_plot.plot(x)
-y_plot.plot(y)
-points_plot.plot(x, y, "bo")
-velocity_plot.plot(vel)
-acc_plot.plot(acc)
+# x_plot.plot(x)
+# y_plot.plot(y)
+# points_plot.plot(x, y, "bo")
+# velocity_plot.plot(vel)
+# acc_plot.plot(acc)
 
-plt.show(block=True)
+# plt.show(block=True)
+
+# ---
+# Deal with the data, identify fixations and saccadas using RBF and Markov
+# ---
 
 # RBF
-plot = rbfplot.RBFPlot(suptitle="Fixation", step=100)
 rbf = rbf.RBF(sigma=0.005, lambda_=0.005, alpha=0.001, delta=0.250)
 
-for index, input_data in enumerate(vel):
+# --
+# Plot setup
+# --
+fig = plt.figure()
+fig.gca().set_xlim(0, 40_000)
+fig.gca().set_ylim(-40_000, 0)
+
+# Which feature will be analyzed?
+feature_analyzed = vel  # Velocity!
+
+# ---
+# Detect fixations
+# ---
+fixations = []
+
+for index, input_data in enumerate(feature_analyzed):
+    # Ignore zeros
     if not input_data:
         continue
 
-    rbf.add_element(input_data)
+    # Get correspondent x,y using index
+    current_x, current_y = x[index], y[index]
 
-    if rbf.in_concept_change:
-        print(f"\t data: {input_data}, rbf.centers={sorted(rbf.centers)}, rbf.actual_center={rbf.actual_center} \n")
-        print(json.dumps(rbf.markov.system, indent=4))
-    else:
-        print(f"data: {input_data}, rbf.centers={sorted(rbf.centers)}, rbf.actual_center={rbf.actual_center} \n")
+    # Plot point
+    plt.plot(current_x, current_y, "ko", markersize=0.5)
 
-    # print(json.dumps(rbf.markov.system, indent=4))
+    # Add to the rbf
+    probability = rbf.add_element(input_data)
 
-    # change = 1 if index in (2800, 3000, 3100, 3400, 4900, 6150) else 0
-    # plot.update(input_data, change, rbf)
+    # Debug
+    print(f"#{index}-({current_x},{current_y})->{probability}")
 
-# plt.show( plot.plot(len(vel)) )
+    # Is it a fixation ?
+    if probability >= 0.5:
+        fixations.append((current_x, current_y))
 
-# plot.plot_animation()
+
+# --
+# Plotting
+# --
+plt.plot(x, y, "k-", linewidth=0.25)
+
+for fixation_point in fixations:
+    _x, _y = fixation_point
+    plt.plot(_x, _y, "r+", markersize=1)
+
+plt.show()
