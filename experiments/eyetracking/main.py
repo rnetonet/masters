@@ -5,19 +5,29 @@ import matplotlib.pyplot as plt
 import rbf
 
 # Reading dataset
+
+# ded - less noisy
 filepath = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     "sample_trials_preprocessed",
     "ded005a06",
     "ded005a06-Export-ReplaceEyeOut.txt",
 )
+
+# juj - more noisy
+# filepath = os.path.join(
+#     os.path.dirname(os.path.abspath(__file__)),
+#     "sample_trials_preprocessed",
+#     "juj003b06",
+#     "juj003b06-Export-ReplaceEyeOut.txt",
+# )
+
+#
+# Read, split and parse the lines
+#
 fp = open(filepath, "r")
 file_lines = list(fp.readlines())
 fp.close()
-
-#
-# Split and parse the lines
-#
 
 # Lines that should be converted to int
 cleaned_data = []
@@ -80,17 +90,23 @@ x, y, x_filt, y_filt, vel_x, vel_y, vel, acc, velx_filt, vely_filt, vel_filt, ac
 # ---
 
 # RBF
-rbf = rbf.RBF(sigma=0.005, lambda_=0.005, alpha=0.001, delta=0.250)
+rbf = rbf.RBF(sigma=0.25, lambda_=0.005, alpha=0.001, delta=0.250)
 
 # --
 # Plot setup
 # --
+
 fig = plt.figure()
-fig.gca().set_xlim(0, 40_000)
-fig.gca().set_ylim(-40_000, 0)
+
+# Title
+fig.gca().set_title(filepath.split("/")[-1])
+
+# Size limits
+fig.gca().set_xlim(-40_000, 40_000)
+fig.gca().set_ylim(-40_000, 40_000)
 
 # Which feature will be analyzed?
-feature_analyzed = vel  # Velocity!
+feature_analyzed = vel_filt  # Velocity!
 
 # ---
 # Detect fixations
@@ -115,7 +131,7 @@ for index, input_data in enumerate(feature_analyzed):
     print(f"#{index}-({current_x},{current_y})->{probability}")
 
     # Is it a fixation ?
-    if probability >= 0.5:
+    if probability >= 0.25:
         fixations.append((current_x, current_y))
 
 
