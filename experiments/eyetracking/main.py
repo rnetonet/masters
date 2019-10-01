@@ -7,20 +7,20 @@ import rbf
 # Reading dataset
 
 # ded - less noisy
-filepath = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
-    "sample_trials_preprocessed",
-    "ded005a06",
-    "ded005a06-Export-ReplaceEyeOut.txt",
-)
-
-# juj - more noisy
 # filepath = os.path.join(
 #     os.path.dirname(os.path.abspath(__file__)),
 #     "sample_trials_preprocessed",
-#     "juj003b06",
-#     "juj003b06-Export-ReplaceEyeOut.txt",
+#     "ded005a06",
+#     "ded005a06-Export-ReplaceEyeOut.txt",
 # )
+
+# juj - more noisy
+filepath = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "sample_trials_preprocessed",
+    "juj003b06",
+    "juj003b06-Export-ReplaceEyeOut.txt",
+)
 
 #
 # Read, split and parse the lines
