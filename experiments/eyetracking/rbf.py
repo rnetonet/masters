@@ -1,9 +1,9 @@
+from decimal import Decimal
 import math
 
 from graphviz import Digraph
 from skmultiflow.drift_detection.base_drift_detector import BaseDriftDetector
 
-from decimal import Decimal
 
 class MarkovChain:
     def __init__(self):
@@ -15,7 +15,9 @@ class MarkovChain:
         origin = f"{origin:.2f}"
         destination = f"{destination:.2f}"
 
-        if origin != destination or (not self.current_origin and not self.current_destination):
+        if origin != destination or (
+            not self.current_origin and not self.current_destination
+        ):
             self.current_origin = origin
             self.current_destination = destination
 
@@ -35,12 +37,13 @@ class MarkovChain:
                     self.system[self.current_origin][possible_destination] = 1
             else:
                 reduction_factor = alpha / (len(self.system[self.current_origin]) - 1)
-                self.system[self.current_origin][possible_destination] -= reduction_factor
+                self.system[self.current_origin][
+                    possible_destination
+                ] -= reduction_factor
                 if self.system[self.current_origin][possible_destination] < 0:
                     self.system[self.current_origin][possible_destination] = 0
 
         return self.system[self.current_origin][self.current_destination]
-
 
     def to_graphviz(self):
         dot = Digraph(comment="RBF")
@@ -77,13 +80,14 @@ class RBF(BaseDriftDetector):
         Delimits the Gaussian radius.
 
     lambda_: float (default=0.5)
-        Minimum threshold.
+        Minimum threshold to activate a center.
 
     alpha: float (default=0.25)
-        Value to increase the probability in the Markov Chain.
+        Probability increase factor in Markov Chain.
 
     delta: float (default=1.0)
-        Minimum threshold to consider the probability as a Concept Drift indication.
+        Minimum threshold to consider probability in the Markov Chain as a
+        Concept Drift indication.
     """
 
     def __init__(self, sigma=2, lambda_=0.5, alpha=0.25, delta=1.0):
@@ -147,7 +151,9 @@ class RBF(BaseDriftDetector):
             self.actual_center = activated_center
 
         # Update markov
-        probability = self.markov.update(self.actual_center, activated_center, self.alpha)
+        probability = self.markov.update(
+            self.actual_center, activated_center, self.alpha
+        )
 
         # If center changed
         if self.actual_center != activated_center:

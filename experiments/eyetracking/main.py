@@ -1,5 +1,6 @@
 import os
 
+from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
 
 import rbf
@@ -7,20 +8,20 @@ import rbf
 # Reading dataset
 
 # ded - less noisy
-# filepath = os.path.join(
-#     os.path.dirname(os.path.abspath(__file__)),
-#     "sample_trials_preprocessed",
-#     "ded005a06",
-#     "ded005a06-Export-ReplaceEyeOut.txt",
-# )
-
-# juj - more noisy
 filepath = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     "sample_trials_preprocessed",
-    "juj003b06",
-    "juj003b06-Export-ReplaceEyeOut.txt",
+    "ded005a06",
+    "ded005a06-Export-ReplaceEyeOut.txt",
 )
+
+# juj - more noisy
+# filepath = os.path.join(
+#     os.path.dirname(os.path.abspath(__file__)),
+#     "sample_trials_preprocessed",
+#     "juj003b06",
+#     "juj003b06-Export-ReplaceEyeOut.txt",
+# )
 
 #
 # Read, split and parse the lines
@@ -89,59 +90,62 @@ x, y, x_filt, y_filt, vel_x, vel_y, vel, acc, velx_filt, vely_filt, vel_filt, ac
 # Deal with the data, identify fixations and saccadas using RBF and Markov
 # ---
 
+# Which feature will be analyzed?
+feature_analyzed = vel_filt  # Velocity!
+
 # RBF
 rbf = rbf.RBF(sigma=0.25, lambda_=0.005, alpha=0.001, delta=0.250)
 
 # --
 # Plot setup
 # --
-
 fig = plt.figure()
 
 # Title
 fig.gca().set_title(filepath.split("/")[-1])
 
-# Size limits
-fig.gca().set_xlim(-40_000, 40_000)
-fig.gca().set_ylim(-40_000, 40_000)
+# Datasets
+xdata, ydata = [], []
+fixations_x, fixations_y = [], []
 
-# Which feature will be analyzed?
-feature_analyzed = vel_filt  # Velocity!
+# Lines/Points
+ln, = plt.plot(xdata, ydata, "k-", linewidth=0.25)
+fixations, = plt.plot(fixations_x, fixations_y, "ro", markersize=0.5)
 
-# ---
-# Detect fixations
-# ---
-fixations = []
 
-for index, input_data in enumerate(feature_analyzed):
+def init():
+    fig.gca().set_xlim(-20_000, 40_000)
+    fig.gca().set_ylim(-40_000, 10_000)
+    return (ln,)
+
+
+# --
+# Detecting fixations and updating canvas
+# --
+def handle(frame_index):
+    input_data = feature_analyzed[frame_index]
+
     # Ignore zeros
     if not input_data:
-        continue
-
-    # Get correspondent x,y using index
-    current_x, current_y = x[index], y[index]
-
-    # Plot point
-    plt.plot(current_x, current_y, "ko", markersize=0.5)
+        return (ln, fixations)
 
     # Add to the rbf
     probability = rbf.add_element(input_data)
 
-    # Debug
-    print(f"#{index}-({current_x},{current_y})->{probability}")
+    xdata.append(x[frame_index])
+    ydata.append(y[frame_index])
+    ln.set_data(xdata, ydata)
 
     # Is it a fixation ?
-    if probability >= 0.25:
-        fixations.append((current_x, current_y))
+    if probability >= rbf.delta:
+        fixations_x.append(x[frame_index])
+        fixations_y.append(y[frame_index])
+        fixations.set_data(fixations_x, fixations_y)
+
+    return (ln, fixations)
 
 
-# --
-# Plotting
-# --
-plt.plot(x, y, "k-", linewidth=0.25)
-
-for fixation_point in fixations:
-    _x, _y = fixation_point
-    plt.plot(_x, _y, "r+", markersize=1)
-
+ani = FuncAnimation(
+    fig, handle, frames=len(x), init_func=init, interval=1, blit=True, repeat=False
+)
 plt.show()
