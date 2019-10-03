@@ -1,32 +1,58 @@
+import argparse
 import os
 
 from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
+import numpy as np
 
 import rbf
 
-# Reading dataset
-
-# ded - less noisy
-filepath = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)),
-    "sample_trials_preprocessed",
-    "ded005a06",
-    "ded005a06-Export-ReplaceEyeOut.txt",
+# --
+# Argument parser
+# --
+args_parser = argparse.ArgumentParser(
+    description="Track some primatal friends \U0001F435"
+)
+args_parser.add_argument(
+    "-d", "--dataset", nargs=1, type=str, choices=("dede", "juju"), required=True
+)
+args_parser.add_argument(
+    "-f",
+    "--feature",
+    nargs=1,
+    type=str,
+    choices=("dist_filt", "vel_filt"),
+    required=True,
 )
 
-# juj - more noisy
-# filepath = os.path.join(
-#     os.path.dirname(os.path.abspath(__file__)),
-#     "sample_trials_preprocessed",
-#     "juj003b06",
-#     "juj003b06-Export-ReplaceEyeOut.txt",
-# )
+args = args_parser.parse_args()
 
-#
+dataset, = args.dataset
+feature, = args.feature
+
+# --
+# Reading dataset
+# --
+
+filepaths = {
+    "dede": os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "sample_trials_preprocessed",
+        "ded005a06",
+        "ded005a06-Export-ReplaceEyeOut.txt",
+    ),
+    "juju": os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "sample_trials_preprocessed",
+        "juj003b06",
+        "juj003b06-Export-ReplaceEyeOut.txt",
+    ),
+}
+
+# --
 # Read, split and parse the lines
-#
-fp = open(filepath, "r")
+# --
+fp = open(filepaths[dataset], "r")
 file_lines = list(fp.readlines())
 fp.close()
 
@@ -37,64 +63,37 @@ for index, line in enumerate(file_lines):
     parser = int if index <= 1 else float
     cleaned_data.append(list(map(parser, line.split())))
 
-# Unpack
+# Unpack dataset
 x, y, x_filt, y_filt, vel_x, vel_y, vel, acc, velx_filt, vely_filt, vel_filt, acc_filt = (
     cleaned_data
 )
 
-# ---
-# Plot an overview of the data
-# ---
+# --
+# Calculating distances
+# --
+dist_filt = []
+for _x, _y in zip(x_filt, y_filt):
+    d = np.sqrt(np.power(_x, 2) + np.power(_y, 2))
+    dist_filt.append(d)
 
-# Creating the grid spec
-# fig = plt.figure()
-# gs = fig.add_gridspec(nrows=3, ncols=2)
+# --
+# Which feature will be analyzed? And which params should be aplied to the RBF ?
+# --
+features = {
+    "dist_filt": {
+        "data": dist_filt,
+        "kwargs": {"sigma": 0.005, "lambda_": 0.5, "alpha": 0.05, "delta": 0.75},
+    },
+    "vel_filt": {
+        "data": vel_filt,
+        "kwargs": {"sigma": 0.25, "lambda_": 0.005, "alpha": 0.001, "delta": 0.250},
+    },
+}
 
-# x_plot = fig.add_subplot(gs[0, 0])
-# y_plot = fig.add_subplot(gs[0, 1])
-# points_plot = fig.add_subplot(gs[1, :])
-# velocity_plot = fig.add_subplot(gs[2, 0])
-# acc_plot = fig.add_subplot(gs[2, 1])
-
-# fig.subplots_adjust(hspace=0.2, wspace=0.2)
-
-# x_plot.grid(False)
-# x_plot.autoscale(True)
-# x_plot.set_title("x")
-
-# y_plot.grid(False)
-# y_plot.autoscale(True)
-# y_plot.set_title("y")
-
-# points_plot.grid(False)
-# points_plot.autoscale(True)
-# points_plot.set_title("(x, y)")
-
-# velocity_plot.grid(False)
-# velocity_plot.autoscale(True)
-# velocity_plot.set_title("vel")
-
-# acc_plot.grid(False)
-# acc_plot.autoscale(True)
-# acc_plot.set_title("acc")
-
-# x_plot.plot(x)
-# y_plot.plot(y)
-# points_plot.plot(x, y, "bo")
-# velocity_plot.plot(vel)
-# acc_plot.plot(acc)
-
-# plt.show(block=True)
-
-# ---
-# Deal with the data, identify fixations and saccadas using RBF and Markov
-# ---
-
-# Which feature will be analyzed?
-feature_analyzed = vel_filt  # Velocity!
-
-# RBF
-rbf = rbf.RBF(sigma=0.25, lambda_=0.005, alpha=0.001, delta=0.250)
+# --
+# Setup RBF
+# --
+rbf = rbf.RBF(**features[feature]["kwargs"])
 
 # --
 # Plot setup
@@ -102,7 +101,7 @@ rbf = rbf.RBF(sigma=0.25, lambda_=0.005, alpha=0.001, delta=0.250)
 fig = plt.figure()
 
 # Title
-fig.gca().set_title(filepath.split("/")[-1])
+fig.gca().set_title(dataset + " - " + feature)
 
 # Datasets
 xdata, ydata = [], []
@@ -123,7 +122,7 @@ def init():
 # Detecting fixations and updating canvas
 # --
 def handle(frame_index):
-    input_data = feature_analyzed[frame_index]
+    input_data = features[feature]["data"][frame_index]
 
     # Ignore zeros
     if not input_data:
@@ -146,6 +145,6 @@ def handle(frame_index):
 
 
 ani = FuncAnimation(
-    fig, handle, frames=len(x), init_func=init, interval=1, blit=True, repeat=False
+    fig, handle, frames=len(x), init_func=init, interval=0.5, blit=True, repeat=False
 )
 plt.show()
