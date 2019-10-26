@@ -1,0 +1,161 @@
+\begin{thebibliography}{20}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Otero-Millan et~al.(2008)Otero-Millan, Troncoso, Macknik,
+  Serrano-Pedraza, and
+  Martinez-Conde}]{otero:jorge:troncoso:saccades_and_fixations}
+\bibinfo{author}{J.~Otero-Millan}, \bibinfo{author}{X.~G. Troncoso},
+  \bibinfo{author}{S.~L. Macknik}, \bibinfo{author}{I.~Serrano-Pedraza},
+  \bibinfo{author}{S.~Martinez-Conde},
+\newblock \bibinfo{title}{{Saccades and microsaccades during visual fixation,
+  exploration, and search: Foundations for a common saccadic generator}},
+\newblock \bibinfo{journal}{Journal of Vision} \bibinfo{volume}{8}
+  (\bibinfo{year}{2008}) \bibinfo{pages}{21--21}.
+%Type = Article
+\bibitem[{Berg et~al.(2009)Berg, Boehnke, Marino, Munoz, and Itti}]{Berg2009}
+\bibinfo{author}{D.~J. Berg}, \bibinfo{author}{S.~E. Boehnke},
+  \bibinfo{author}{R.~A. Marino}, \bibinfo{author}{D.~P. Munoz},
+  \bibinfo{author}{L.~Itti},
+\newblock \bibinfo{title}{{Free viewing of dynamic stimuli by humans and
+  monkeys}},
+\newblock \bibinfo{journal}{Journal of Vision} \bibinfo{volume}{9}
+  (\bibinfo{year}{2009}) \bibinfo{pages}{19--19}.
+%Type = Article
+\bibitem[{Andersson et~al.(2017)Andersson, Larsson, Holmqvist, Stridh, and
+  Nystr{\"o}m}]{Anderson:OneAlgorithmToRuleThemAll:2017}
+\bibinfo{author}{R.~Andersson}, \bibinfo{author}{L.~Larsson},
+  \bibinfo{author}{K.~Holmqvist}, \bibinfo{author}{M.~Stridh},
+  \bibinfo{author}{M.~Nystr{\"o}m},
+\newblock \bibinfo{title}{One algorithm to rule them all?: An evaluation and
+  discussion of ten eye movement event-detection algorithms},
+\newblock \bibinfo{journal}{Behavior Research Methods \& Instrumentation}
+  \bibinfo{volume}{49} (\bibinfo{year}{2017}) \bibinfo{pages}{616--637}.
+%Type = Article
+\bibitem[{Gama and Donsez(2014)}]{Gama:2014:DAF:2670967.2670971}
+\bibinfo{author}{K.~Gama}, \bibinfo{author}{D.~Donsez},
+\newblock \bibinfo{title}{Deployment and activation of faulty components at
+  runtime for testing self-recovery mechanisms},
+\newblock \bibinfo{journal}{SIGAPP Appl. Comput. Rev.} \bibinfo{volume}{14}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{44--54}.
+%Type = Article
+\bibitem[{Tsymbal(2004)}]{tsymbal2004problem}
+\bibinfo{author}{A.~Tsymbal},
+\newblock \bibinfo{title}{The problem of concept drift: definitions and related
+  work},
+\newblock \bibinfo{journal}{Computer Science Department, Trinity College
+  Dublin} \bibinfo{volume}{106} (\bibinfo{year}{2004}) \bibinfo{pages}{58}.
+%Type = Article
+\bibitem[{{Elwell} and {Polikar}(2011)}]{Elwell:2011}
+\bibinfo{author}{R.~{Elwell}}, \bibinfo{author}{R.~{Polikar}},
+\newblock \bibinfo{title}{Incremental learning of concept drift in
+  nonstationary environments},
+\newblock \bibinfo{journal}{IEEE Transactions on Neural Networks}
+  \bibinfo{volume}{22} (\bibinfo{year}{2011}) \bibinfo{pages}{1517--1531}.
+%Type = Book
+\bibitem[{Basseville and Nikiforov(1993)}]{Basseville:1993:DAC:151741}
+\bibinfo{author}{M.~Basseville}, \bibinfo{author}{I.~V. Nikiforov},
+  \bibinfo{title}{Detection of Abrupt Changes: Theory and Application},
+  \bibinfo{publisher}{Prentice-Hall, Inc.}, \bibinfo{address}{Upper Saddle
+  River, NJ, USA}, \bibinfo{year}{1993}.
+%Type = Article
+\bibitem[{Zliobaite(2010)}]{Zliobaite:2010}
+\bibinfo{author}{I.~Zliobaite},
+\newblock \bibinfo{title}{Learning under concept drift: an overview},
+\newblock \bibinfo{journal}{CoRR} \bibinfo{volume}{abs/1010.4784}
+  (\bibinfo{year}{2010}).
+%Type = Book
+\bibitem[{Leigh and Zee(2015)}]{leigh2015neurology}
+\bibinfo{author}{R.~Leigh}, \bibinfo{author}{D.~Zee}, \bibinfo{title}{The
+  Neurology of Eye Movements}, Contemporary neurology series,
+  \bibinfo{publisher}{Oxford University Press}, \bibinfo{year}{2015}.
+%Type = Inbook
+\bibitem[{Privitera and Stark(2005)}]{privitera:2005:scanpath_theory}
+\bibinfo{author}{C.~Privitera}, \bibinfo{author}{L.~Stark},
+  \bibinfo{title}{Scanpath Theory, Attention, and Image Processing Algorithms
+  for Predicting Human Eye Fixations}, pp. \bibinfo{pages}{296--299}.
+%Type = Inproceedings
+\bibitem[{Salvucci and Goldberg(2000)}]{Salvucci:2000:IFS:355017.355028}
+\bibinfo{author}{D.~D. Salvucci}, \bibinfo{author}{J.~H. Goldberg},
+\newblock \bibinfo{title}{Identifying fixations and saccades in eye-tracking
+  protocols},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 2000 Symposium on Eye
+  Tracking Research \& Applications}, ETRA '00, \bibinfo{publisher}{ACM},
+  \bibinfo{address}{New York, NY, USA}, \bibinfo{year}{2000}, pp.
+  \bibinfo{pages}{71--78}.
+%Type = Article
+\bibitem[{Komogortsev and Karpov(2013)}]{Komogortsev2013}
+\bibinfo{author}{O.~V. Komogortsev}, \bibinfo{author}{A.~Karpov},
+\newblock \bibinfo{title}{Automated classification and scoring of smooth
+  pursuit eye movements in the presence of fixations and saccades},
+\newblock \bibinfo{journal}{Behavior Research Methods} \bibinfo{volume}{45}
+  (\bibinfo{year}{2013}) \bibinfo{pages}{203--215}.
+%Type = Inproceedings
+\bibitem[{Tafaj et~al.(2012)Tafaj, Kasneci, Rosenstiel, and
+  Bogdan}]{Tafaj:2012:BOC:2168556.2168617}
+\bibinfo{author}{E.~Tafaj}, \bibinfo{author}{G.~Kasneci},
+  \bibinfo{author}{W.~Rosenstiel}, \bibinfo{author}{M.~Bogdan},
+\newblock \bibinfo{title}{Bayesian online clustering of eye movement data},
+\newblock in: \bibinfo{booktitle}{Proceedings of the Symposium on Eye Tracking
+  Research and Applications}, ETRA '12, \bibinfo{publisher}{ACM},
+  \bibinfo{address}{New York, NY, USA}, \bibinfo{year}{2012}, pp.
+  \bibinfo{pages}{285--288}.
+%Type = Book
+\bibitem[{Holmqvist et~al.(2011)Holmqvist, Nyström, Andersson, Dewhurst,
+  Halszka, and van~de
+  Weijer}]{holmqvist-eye-tracking-a-comprehensive-guide-to-methods-and-measures}
+\bibinfo{author}{K.~Holmqvist}, \bibinfo{author}{M.~Nyström},
+  \bibinfo{author}{R.~Andersson}, \bibinfo{author}{R.~Dewhurst},
+  \bibinfo{author}{J.~Halszka}, \bibinfo{author}{J.~van~de Weijer},
+  \bibinfo{title}{Eye Tracking : A Comprehensive Guide to Methods and
+  Measures}, \bibinfo{publisher}{Oxford University Press},
+  \bibinfo{year}{2011}.
+%Type = Article
+\bibitem[{Blignaut(2009)}]{Blignaut2009}
+\bibinfo{author}{P.~Blignaut},
+\newblock \bibinfo{title}{Fixation identification: The optimum threshold for a
+  dispersion algorithm},
+\newblock \bibinfo{journal}{Attention, Perception, {\&} Psychophysics}
+  \bibinfo{volume}{71} (\bibinfo{year}{2009}) \bibinfo{pages}{881--895}.
+%Type = Inproceedings
+\bibitem[{Shic et~al.(2008)Shic, Scassellati, and
+  Chawarska}]{Shic:2008:IFM:1344471.1344500}
+\bibinfo{author}{F.~Shic}, \bibinfo{author}{B.~Scassellati},
+  \bibinfo{author}{K.~Chawarska},
+\newblock \bibinfo{title}{The incomplete fixation measure},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 2008 Symposium on Eye
+  Tracking Research \&\#38; Applications}, ETRA '08, \bibinfo{publisher}{ACM},
+  \bibinfo{address}{New York, NY, USA}, \bibinfo{year}{2008}, pp.
+  \bibinfo{pages}{111--114}.
+%Type = Inproceedings
+\bibitem[{Santella and DeCarlo(2004)}]{Santella:2004:RCE:968363.968368}
+\bibinfo{author}{A.~Santella}, \bibinfo{author}{D.~DeCarlo},
+\newblock \bibinfo{title}{Robust clustering of eye movement recordings for
+  quantification of visual interest},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 2004 Symposium on Eye
+  Tracking Research \& Applications}, ETRA '04, \bibinfo{publisher}{ACM},
+  \bibinfo{address}{New York, NY, USA}, \bibinfo{year}{2004}, pp.
+  \bibinfo{pages}{27--34}.
+%Type = Article
+\bibitem[{Urruty et~al.(2007)Urruty, Lew, Ihadaddene, and
+  Simovici}]{Urruty:2007:DEF:1314303.1314308}
+\bibinfo{author}{T.~Urruty}, \bibinfo{author}{S.~Lew},
+  \bibinfo{author}{N.~Ihadaddene}, \bibinfo{author}{D.~A. Simovici},
+\newblock \bibinfo{title}{Detecting eye fixations by projection clustering},
+\newblock \bibinfo{journal}{ACM Trans. Multimedia Comput. Commun. Appl.}
+  \bibinfo{volume}{3} (\bibinfo{year}{2007}) \bibinfo{pages}{5:1--5:20}.
+%Type = Book
+\bibitem[{Bishop(2006)}]{Bishop:2006:PRM:1162264}
+\bibinfo{author}{C.~M. Bishop}, \bibinfo{title}{Pattern Recognition and Machine
+  Learning (Information Science and Statistics)},
+  \bibinfo{publisher}{Springer-Verlag}, \bibinfo{address}{Berlin, Heidelberg},
+  \bibinfo{year}{2006}.
+%Type = Book
+\bibitem[{Theodoridis and Koutroumbas(2008)}]{Theodoridis:2008:PRF:1457541}
+\bibinfo{author}{S.~Theodoridis}, \bibinfo{author}{K.~Koutroumbas},
+  \bibinfo{title}{Pattern Recognition, Fourth Edition},
+  \bibinfo{publisher}{Academic Press, Inc.}, \bibinfo{address}{Orlando, FL,
+  USA}, \bibinfo{edition}{4th} edition, \bibinfo{year}{2008}.
+
+\end{thebibliography}

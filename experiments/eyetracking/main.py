@@ -76,6 +76,7 @@ for _x, _y in zip(x_filt, y_filt):
     d = np.sqrt(np.power(_x, 2) + np.power(_y, 2))
     dist_filt.append(d)
 
+
 # --
 # Which feature will be analyzed? And which params should be aplied to the RBF ?
 # --
@@ -145,6 +146,6 @@ def handle(frame_index):
 
 
 ani = FuncAnimation(
-    fig, handle, frames=len(x), init_func=init, interval=0.5, blit=True, repeat=False
+    fig, handle, frames=len(x), init_func=init, interval=0.1, blit=True, repeat=False
 )
 plt.show()
