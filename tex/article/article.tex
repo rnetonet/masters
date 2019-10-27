@@ -108,12 +108,18 @@
 \address{Salvador, Brazil}
 
 \begin{abstract}
-Most real-world problems experience a phenomenon known as concept drift,
-a change in data distribution that can affect the system performance.
+The amount of information produced by computer systems has grown sharply in recent decades.
+Most of this information is presented in the form of uninterrupted and potentially infinite sequences known as data streams.
+These streams are usually produced in non-stationary environments,
+in which the data distribution can change over time,
+possibly deteriorating the system performance.
+In the literature,
+this phenomenon is named concept drift.
 %
-However, the majority of drift detection methods are unsuited for non-stationary environments with data streams.
+Nevertheless,
+most drift detection methods are unsuited for non-stationary environments with data streams.
 These algorithms or require the correct labeling of data - infeasible in these settings,
-or do not match the severe response time and resource usage restrictions inherent to data streams.
+or do not match the strict response time and resource usage restrictions inherent to data streams.
 %
 In an attempt to mitigate the aforementioned problem,
 this paper proposes a novel proactive method for on-line drift detection,
@@ -129,7 +135,8 @@ and results were compared to the most established algorithms in the literature.
 Furthermore, the algorithm was applied to the real-world problem of eye-tracking.
 A problem with impact in different areas of knowledge,
 since many behavioral experiments use eye-tracking information as a relevant analysis factor.
-Performed experiments reveal that RBFChain can classify fixations and saccades in real-time, with high accuracy, noise tolerance, and using limited resources.
+Performed experiments reveal that RBFChain can classify fixations and saccades in real-time,
+with high accuracy, noise tolerance, and using limited resources.
 \end{abstract}
 
 \begin{keyword}
@@ -191,9 +198,9 @@ Performed experiments reveal that RBFChain can classify fixations and saccades i
 
 The rest of the paper is organized as follows:
 Section 2 describes the concept drift phenomenon and the main detection techniques;
-Section 3 presents the fixations and saccades detection problem;
+Section 3 presents the eye-tracking problem, with a focus on the identification of fixations and saccades;
 Section 4 describes the RBFChain algorithm and its pseudo-code;
-Section 5 shows the experiment configuration for synthetic datasets  and results obtained;
+Section 5 shows the experiment configuration for synthetic datasets and the obtained results;
 Section 6 presents the examination setup with a real-world eye-tracking problem and observed outcomes; and, finally, Section 7 provides conclusions
 and discusses future work.
 
