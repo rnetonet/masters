@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex article"] 1572152238 "article.aux" "article.bbl" "article" 1572154205
+["bibtex article"] 1572152238 "article.aux" "article.bbl" "article" 1572154534
   "./model1-num-names.bst" 1572040732 25451 3a63f4c903f71e219900325462df0fe1 ""
   "article.aux" 1572154137 5328 220c7fe3b16ac3b22f49a949ef166c12 ""
   "article.bcf" 0 -1 0 ""
   "references.bib" 1572145435 17123 76ce34f1900fa14390398262d00e5ee0 ""
   (generated)
-  "article.blg"
   "article.bbl"
-["pdflatex"] 1572154137 "/home/rnetodev/Workspace/masters/tex/article/article.tex" "/home/rnetodev/Workspace/masters/tex/article/article.pdf" "article" 1572154205
+  "article.blg"
+["pdflatex"] 1572154137 "/home/rnetodev/Workspace/masters/tex/article/article.tex" "/home/rnetodev/Workspace/masters/tex/article/article.pdf" "article" 1572154534
   "/etc/texmf/web2c/texmf.cnf" 1560035643 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/rnetodev/Workspace/masters/tex/article/article.aux" 1572154137 5328 220c7fe3b16ac3b22f49a949ef166c12 ""
-  "/home/rnetodev/Workspace/masters/tex/article/article.tex" 1572154204 26977 2e3e44de693034f29bd7693e8f1b5d6b ""
+  "/home/rnetodev/Workspace/masters/tex/article/article.tex" 1572154534 26977 2e3e44de693034f29bd7693e8f1b5d6b ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -151,14 +151,14 @@
   "article.aux" 1572154137 5328 220c7fe3b16ac3b22f49a949ef166c12 ""
   "article.bbl" 1572152238 10526 4ac380c8ae73d2f10ba5dacb39e0d08a "bibtex article"
   "article.spl" 1572154137 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "article.tex" 1572154204 26977 2e3e44de693034f29bd7693e8f1b5d6b ""
+  "article.tex" 1572154534 26977 2e3e44de693034f29bd7693e8f1b5d6b ""
   "elsarticle.cls" 1572040732 31580 04fc199fbc8aabf13d438fd319ad2ed6 ""
   "img/concept_drift_patterns.png" 1572040734 37258 c5c98e53e2c4f09d409689f3780cbfce ""
   "img/rbf_arq.png" 1572040732 42667 ce8b0732b7617d265187c5efab80ec99 ""
   (generated)
   "article.pdf"
+  "/home/rnetodev/Workspace/masters/tex/article/article.log"
   "/home/rnetodev/Workspace/masters/tex/article/article.pdf"
   "article.spl"
   "article.log"
   "article.aux"
-  "/home/rnetodev/Workspace/masters/tex/article/article.log"
