@@ -74,7 +74,7 @@
 
 %% Title, authors and addresses
 
-\title{Applying Radial Basis Networks and Markov Chains to detect concept drift in non-stationary environments}
+\title{Applying Radial Basis Networks and Markov Chains for on-line detection of concept drift in non-stationary environments}
 
 %% use the tnoteref command within \title for footnotes;
 %% use the tnotetext command for the associated footnote;
@@ -111,27 +111,24 @@
 Most real-world problems experience a phenomenon known as concept drift,
 which is a change in data distribution that can affect the system performance.
 %
-However, the majority of drift detection methods work reactively.
-These algorithms continuously monitor the system performance
-and detect concept drifts when the performance drops past a threshold.
-Nevertheless, some environments can not afford this deterioration in performance.
+However, the majority of drift detection methods are unfit for non-stationary environments with data streams.
+These algorithms or require the correct labeling of data and detect drift through the monitoring of the system performance,
+or do not attend the severe response time and resource usage restrictions inherent to data streams.
 %
 In an attempt to mitigate the aforementioned problem,
 this paper proposes a novel proactive method for on-line drift detection,
 called RBFChain.
 The proposed method relies on Radial Basis Networks implicit clustering property,
-besides using Markov Chains to model the transitions and for better noise tolerance.
+besides using Markov Chains to model the transitions and achieve noise tolerance.
 %
 To assess the proposed method as a viable concept drift detector,
 an analysis of sensitivity, accuracy,
-and noise tolerance was performed using synthetic datasets.
-Moreover, results were compared to the most established algorithms in the literature,
-demonstrating the competitivity of the method.
+and noise tolerance was performed using synthetic datasets,
+and results were compared to the most established algorithms in the literature.
 %
-Furthermore, the algorithm was also tested with the real-world problem of eye-tracking.
-This problem is relevant because many behavioral experiments use eye-tracking information (fixations and saccades) as a relevant analysis factor.
+Furthermore, the algorithm was applied to the real-world problem of eye-tracking.
+A relevant problem with impact in different areas of knowledge, since many behavioral experiments use eye-tracking information (fixations and saccades) as a relevant analysis factor.
 Performed experiments reveal that RBFChain can classify fixations and saccades in real-time, with high accuracy, noise tolerance, and using limited resources.
-
 \end{abstract}
 
 \begin{keyword}
@@ -149,58 +146,98 @@ Concept Drift \sep Drift Detection \sep Eye tracking
 \section{Introduction}
 \label{sec:intro}
 
-\todo[inline]{Add concept drift paragraph}
+In recent years,
+the volume of data produced by computer systems has grown dramatically.
+Technological advances favored this growth,
+such as the pervasiveness of mobile devices,
+the popularization of social networks and
+the expansion of the internet of things \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
 
-Eye movements are one of the most natural and repetitive motions of the human being.
-Worldly activities, such as reading a book or watching television, are only possible because of these.
-This regular movement, known as saccadic movement, is required by the retina to obtain a clean image.
-%
-During the analysis of a scene, the eye tends to fixate during a few milliseconds on the most significant areas.
-After this fixation, it moves towards a new area of interest.
-%
-Therefore, it is possible to describe the trajectory of the eye as a sequence of fixation periods interrupted by saccades.
-%
-Fixation periods allow the brain to process information, given that during saccades, the brain does not have time to process the images transmitted by the visual system.
-%
-Hence, the brain assigns semantics to the image only during fixation periods.
-Thus, the study of fixations and saccades is essential for the interpretation and understanding of the eye movements.
+A significant portion of this information is produced in the form of uninterrupted and potentially infinite sequences \cite{Aggarwal:2006:DSM:1196418}.
+In literature,
+sequences with these characteristics are called data streams and
+are present in various fields of application such as
+financial market monitoring  \cite{ZHOU:2015},
+road traffic monitoring \cite{Wang:2015:EOV:2843092.2843464},
+telecom network management \cite{delattre2015method},
+real-time sentiment analysis  \cite{KRANJC2015187}
+and intruder prevention and identification systems \cite{KENKRE:PAI:COLACO:2015}.
 
-Most commercial eye-tracking systems provide horizontal and vertical coordinates of the point of regard (POR) relative to the screen of a monitor.
-The results presented are composed of sequences of points corresponding to positions of the eyes of an individual.
-The generated eye path consists of eye fixations (with a high density of points) separated by vast spaces where only a few isolated points (saccades) are present.
+Most of the environments that produce data streams are non-stationary.
+That is,
+the joint probability distribution changes arbitrarily over time,
+such as a switch in the conditional probability distribution on a classification problem,
+or a change of some moment (such as mean and variance) on a time series forecasting problem \cite{tsymbal2004problem}.
+Systems applied to these environments may be unable to adapt to the new information, hence dramatically deteriorating their performance.
+This phenomenon is known as concept drift \cite{Gama:2014:DAF:2670967.2670971}.
 
-Automated identification of fixation and saccades is a necessary aspect in the analysis of visual behavior.
-These classifications serve as underlying knowledge for the metrics used for interpreting eye movements (number of saccades, the average amplitude of saccades, number of fixations, duration of the first fixation, etc).
-%
-Unfortunately, the majority of the algorithms still employ a velocity, acceleration, or dispersion threshold to detect potential saccades \cite{otero:jorge:troncoso:saccades_and_fixations}.
-Some techniques differ by applying additional procedures, such as principal component analysis, to distinguish between smooth search, saccades, and noise \cite{Berg2009}.
-%
-% One exception is the algorithm presented by \cite{Urruty:2007:DEF:1314303.1314308}, which uses dispersion
-% and projection clustering into arbitrary subspace to detect fixations.
+Still, most concept drift detection methods adopt a reactive approach and require the correct labeling of incoming data.
+Generally, this approach is unfit for non-stationary environments with data streams.
+In these circumstances,
+correct labeling of data can be costly or simply unviable,
+and an on-line treatment of data is required since it is a continuous flow.
 
-However, advances in the area of behavioral analysis have made measured eye movements more variable and complex, thus making the main methods found in the literature less effective \cite{Anderson:OneAlgorithmToRuleThemAll:2017}.
+In an attempt to mitigate the aforementioned problem,
+this paper proposes a novel proactive method for on-line drift detection,
+called RBFChain.
+The proposed method relies on Radial Basis Networks implicit clustering property,
+besides using Markov Chains to model the transitions and achieve noise tolerance.
 
-This paper proposes a novel algorithm, called RBFChain, which applies Radial Basis Function Networks and Markov Chains to classify scan paths into fixations and saccades in real-time, with high accuracy, noise tolerance, and using limited resources.
-Besides that, experiments conducted in this work show that the true detection rate obtained by RBFChain is comparable to that obtained by state of the art.
+To assess the proposed method as a viable concept drift detector,
+an analysis of sensitivity, accuracy,
+and noise tolerance was performed using synthetic datasets,
+and results were compared to the most established algorithms in the literature.
 
-The rest of the paper is organized as follows:
-Section 2 describes the concept drift phenomenon and the main detection techniques;
-Section 3 presents the fixations and saccades detection problem;
-Section 4 describes the RBFChain algorithm and its pseudo-code;
-Section 5 shows the experiment configuration for synthetic datasets  and results obtained;
-Section 6 presents the examination setup with a real-world eye-tracking problem and observed outcomes; and, finally, Section 7 provides conclusions
-and discusses future work.
+Furthermore, the algorithm was also tested with the real-world problem of eye-tracking.
+This problem is relevant because many behavioral experiments use eye-tracking information (fixations and saccades) as a relevant analysis factor.
+Performed experiments reveal that RBFChain can classify fixations and saccades in real-time, with high accuracy, noise tolerance, and using limited resources.
+
+
+% Eye movements are one of the most natural and repetitive motions of the human being.
+% Worldly activities, such as reading a book or watching television, are only possible because of these.
+% This regular movement, known as saccadic movement, is required by the retina to obtain a clean image.
+% %
+% During the analysis of a scene, the eye tends to fixate during a few milliseconds on the most significant areas.
+% After this fixation, it moves towards a new area of interest.
+% %
+% Therefore, it is possible to describe the trajectory of the eye as a sequence of fixation periods interrupted by saccades.
+% %
+% Fixation periods allow the brain to process information, given that during saccades, the brain does not have time to process the images transmitted by the visual system.
+% %
+% Hence, the brain assigns semantics to the image only during fixation periods.
+% Thus, the study of fixations and saccades is essential for the interpretation and understanding of the eye movements.
+
+% Most commercial eye-tracking systems provide horizontal and vertical coordinates of the point of regard (POR) relative to the screen of a monitor.
+% The results presented are composed of sequences of points corresponding to positions of the eyes of an individual.
+% The generated eye path consists of eye fixations (with a high density of points) separated by vast spaces where only a few isolated points (saccades) are present.
+
+% Automated identification of fixation and saccades is a necessary aspect in the analysis of visual behavior.
+% These classifications serve as underlying knowledge for the metrics used for interpreting eye movements (number of saccades, the average amplitude of saccades, number of fixations, duration of the first fixation, etc).
+% %
+% Unfortunately, the majority of the algorithms still employ a velocity, acceleration, or dispersion threshold to detect potential saccades \cite{otero:jorge:troncoso:saccades_and_fixations}.
+% Some techniques differ by applying additional procedures, such as principal component analysis, to distinguish between smooth search, saccades, and noise \cite{Berg2009}.
+% %
+% % One exception is the algorithm presented by \cite{Urruty:2007:DEF:1314303.1314308}, which uses dispersion
+% % and projection clustering into arbitrary subspace to detect fixations.
+
+% However, advances in the area of behavioral analysis have made measured eye movements more variable and complex, thus making the main methods found in the literature less effective \cite{Anderson:OneAlgorithmToRuleThemAll:2017}.
+
+% This paper proposes a novel algorithm, called RBFChain, which applies Radial Basis Function Networks and Markov Chains to classify scan paths into fixations and saccades in real-time, with high accuracy, noise tolerance, and using limited resources.
+% Besides that, experiments conducted in this work show that the true detection rate obtained by RBFChain is comparable to that obtained by state of the art.
+
+% The rest of the paper is organized as follows:
+% Section 2 describes the concept drift phenomenon and the main detection techniques;
+% Section 3 presents the fixations and saccades detection problem;
+% Section 4 describes the RBFChain algorithm and its pseudo-code;
+% Section 5 shows the experiment configuration for synthetic datasets  and results obtained;
+% Section 6 presents the examination setup with a real-world eye-tracking problem and observed outcomes; and, finally, Section 7 provides conclusions
+% and discusses future work.
 
 \section{Concept Drift}
 \label{sec:concept_drift}
 
-Most real-world problems experience a phenomenon known as
-concept drift \cite{Gama:2014:DAF:2670967.2670971}.
-This situation happens in datasets where the
-joint probability distribution changes arbitrarily over time, such as a switch in the conditional probability distribution on a classification problem, or a change of some moment (such as mean and variance) on a time series forecasting problem \cite{tsymbal2004problem}.
 
-Environments that generate this kind of data are considered non-stationary.
-In these environments, concepts tend to evolve frequently, and the system may be unable to adapt to the new information, hence dramatically deteriorating its performance.
+
 %
 Many relevant real-world problems can be considered as non-stationary environments.
 Examples include financial market monitoring, telecom networks, intruder detection, spam filtering, among others \cite{Gama:2014:DAF:2670967.2670971}.
