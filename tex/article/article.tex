@@ -110,16 +110,16 @@
 \begin{abstract}
 The amount of information produced by computer systems has grown sharply in recent decades.
 Most of this information is presented in the form of uninterrupted and potentially infinite sequences known as data streams.
-These streams are usually produced in non-stationary environments,
+Generally, these streams are produced by non-stationary environments,
 in which the data distribution can change over time,
 possibly deteriorating the system performance.
-In the literature,
-this phenomenon is named concept drift.
+In literature,
+this phenomenon is named as concept drift.
 %
 Nevertheless,
 most drift detection methods are unsuited for non-stationary environments with data streams.
-These algorithms or require the correct labeling of data - infeasible in these settings,
-or do not match the strict response time and resource usage restrictions inherent to scenarios with data streams.
+These algorithms usually require the correct labeling of data - infeasible in these settings -
+ or do not match the strict response time and resource usage restrictions inherent to scenarios with data streams.
 %
 In an attempt to mitigate the aforementioned problem,
 this paper proposes a novel proactive method for on-line drift detection,
@@ -162,7 +162,7 @@ such as the pervasiveness of mobile devices,
 the popularization of social networks, and
 the expansion of the internet of things \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
 
-A significant portion of this information is produced in the form of uninterrupted and potentially infinite sequences \cite{Aggarwal:2006:DSM:1196418}.
+A significant portion of this data is produced in the form of uninterrupted and potentially infinite sequences \cite{Aggarwal:2006:DSM:1196418}.
 In literature,
 sequences with these characteristics are called data streams.
 These streams are present in various fields of application,
@@ -181,8 +181,8 @@ Systems applied to these environments may be unable to adapt to the new informat
 This phenomenon is known as concept drift \cite{Gama:2014:DAF:2670967.2670971}.
 
 Still, most drift detection methods are unsuitable for non-stationary environments with data streams.
-These methods or require the correct labeling of data - impracticable in these contexts,
-or do not meet the severe response time and resource usage restrictions inherent to contexts with data streams.
+These methods usually require the correct labeling of data - impracticable in these contexts -
+ or do not meet the severe response time and resource usage restrictions inherent to contexts with data streams.
 
 This paper proposes a novel proactive method for on-line drift detection,
 called RBFChain.
@@ -195,11 +195,13 @@ and results were compared to the most established algorithms in the literature.
 
 Moreover, the algorithm was also applied to the real-world problem of eye-tracking.
 A problem with impact in different areas of knowledge, since many behavioral experiments use eye-tracking information as a relevant analysis factor.
-Performed experiments reveal that RBFChain can classify fixations and saccades in real-time, with high accuracy, noise tolerance, and using limited resources.
+
+Experimental results suggest that RBFChain is statistically better or equivalent to other detectors as it offers greater or equal overall classification accuracy in most situations.
+Also, the technique is applicable to eye-tracking problems as it was able to identify fixations and saccades in real-time with precision comparable to state of the art.
 
 The rest of the paper is organized as follows:
 Section 2 describes the concept drift phenomenon and the main detection techniques;
-Section 3 presents the eye-tracking problem, with a focus on the identification of fixations and saccades;
+Section 3 presents the eye-tracking problem;
 Section 4 describes the RBFChain algorithm and its pseudo-code;
 Section 5 shows the configuration and results for the experiment with synthetic datasets;
 Section 6 presents the configuration and results for the experiment with the eye-tracking problem; and, finally, Section 7 provides conclusions and discusses future work.
