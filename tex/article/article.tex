@@ -108,13 +108,11 @@
 \address{Salvador, Brazil}
 
 \begin{abstract}
-The amount of information produced by computer systems has grown sharply in recent decades.
-Most of this information is presented in the form of uninterrupted and potentially infinite sequences known as data streams.
+The amount of data produced by computer systems has grown sharply in recent decades,
+and a significant part of it is generated as uninterrupted and potentially infinite sequences known as data streams.
 Generally, these streams are produced by non-stationary environments,
-in which the data distribution can change over time,
-possibly deteriorating the system performance.
-In literature,
-this phenomenon is named as concept drift.
+in which the data distribution can change over time, possibly deteriorating the system performance.
+In the literature, this phenomenon is named concept drift.
 %
 Nevertheless,
 most drift detection methods are unsuited for non-stationary environments with data streams.
@@ -133,11 +131,12 @@ and noise tolerance was performed using synthetic datasets,
 and results were compared to the most established algorithms in the literature.
 %
 Furthermore, the algorithm was applied to the real-world problem of eye-tracking.
-A problem with impact in different areas of knowledge,
+A critical issue for different areas of knowledge,
 since many behavioral experiments use eye-tracking information as a relevant analysis factor.
 %
-Experimental results suggest that RBFChain is statistically better or equivalent to other detectors as it offers greater or equal overall classification accuracy in most situations.
-Also, the technique is applicable to eye-tracking problems as it was able to identify fixations and saccades in real-time with precision comparable to state of the art.
+Experimental results suggest that RBFChain is statistically better or equivalent to other detectors as it offers greater or equal overall classification accuracy.
+Also, the technique demonstrated good performance in the eye-tracking problem,
+ being able to identify fixations and saccades in real-time with precision comparable to state of the art.
 
 \end{abstract}
 
@@ -205,13 +204,21 @@ Section 3 presents the eye-tracking problem;
 Section 4 describes the RBFChain algorithm and its pseudo-code;
 Section 5 shows the configuration and results for the experiment with synthetic datasets;
 Section 6 presents the configuration and results for the experiment with the eye-tracking problem; and, finally, Section 7 provides conclusions and discusses future work.
+
 \section{Concept Drift}
 \label{sec:concept_drift}
 
-Many relevant real-world problems can be considered as non-stationary environments.
-Examples include financial market monitoring, telecom networks, intruder detection, spam filtering, among others \cite{Gama:2014:DAF:2670967.2670971}.
+Non-stationary environments generate most real-world problems data \cite{Gama:2014:DAF:2670967.2670971}.
+In these environments, the joint probability distribution can change over time,
+such as a switch in the conditional probability distribution on a classification problem,
+or a change of some moment (such as mean and variance) on a time series forecasting problem \cite{tsymbal2004problem}.
 
-In the literature, Bayesian Theory is commonly used as a background to define the concept drift phenomenon formally \cite{Elwell:2011}: consider the posterior probability of a sample $x$ belonging to a class $y$, a concept drift happens when this probability changes over time, that is, $Pt + 1 (y | x) \neq Pt (y | x)$. In a supervised learning scenario, this can be interpreted as when the relationship between the input data and the target variable change over time.
+Systems applied to these environments may be unable to adapt to the new information,
+hence dramatically deteriorating its performance.
+In the literature, this phenomenon is called concept drift.
+
+Bayesian Theory is commonly used as a background to define concept drift formally \cite{Elwell:2011}:
+consider the posterior probability of a sample $x$ belonging to a class $y$, a concept drift happens when this probability changes over time, that is, $Pt + 1 (y | x) \neq Pt (y | x)$. In a supervised learning scenario, this can be interpreted as when the relationship between the input data and the target variable change over time.
 
 According to \cite{tsymbal2004problem, Gama:2014:DAF:2670967.2670971}, concept drifts can occur in four main patterns:
 
@@ -247,7 +254,7 @@ Changes in the generated cluster (a different center is activated) reflect in a 
 
 To assess the proposed method as a viable concept drift detector, an analysis of sensitivity, accuracy, and noise tolerance was performed using synthetic datasets. Moreover, results were compared to the most established algorithms in the literature, demonstrating the competitivity of the method.
 
-\section{Fixations and Saccades detection}
+\section{Eye-tracking}
 \label{sec:eye_tracking}
 
 Visual perception involves six types of eye movements \cite{leigh2015neurology}, among which fixations and saccades are the most relevant.
