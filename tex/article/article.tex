@@ -161,9 +161,9 @@ such as the pervasiveness of mobile devices,
 the popularization of social networks, and
 the expansion of the internet of things \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
 
-A significant portion of this data is produced in the form of uninterrupted and potentially infinite sequences \cite{Aggarwal:2006:DSM:1196418}.
+A significant share of this data is produced in the form of uninterrupted and potentially infinite sequences \cite{Aggarwal:2006:DSM:1196418}.
 In the literature,
-sequences with these characteristics are called data streams.
+sequences with these characteristics are known as data streams.
 These streams are present in various fields of application,
 such as financial market monitoring  \cite{ZHOU:2015},
 road traffic monitoring \cite{Wang:2015:EOV:2843092.2843464},
@@ -203,34 +203,33 @@ The rest of the paper is organized as follows:
 Section 2 describes the concept drift phenomenon and the main detection techniques;
 Section 3 presents the eye-tracking problem;
 Section 4 describes the RBFChain algorithm and its pseudo-code;
-Section 5 shows the configuration and results for the experiment with synthetic datasets;
-Section 6 presents the configuration and results for the experiment with the eye-tracking problem; and, finally, Section 7 provides conclusions and discusses future work.
+Section 5 presents the setup and results of the experiment with synthetic datasets;
+Section 6 shows the setup and results of the eye-tracking experiment;
+and, finally, Section 7 provides conclusions and discusses future work.
 
 \section{Concept Drift}
 \label{sec:concept_drift}
 
-Most real-world problems can be regarded as non-stationary environments \cite{Gama:2014:DAF:2670967.2670971}.
+Most real-world problems scenarios can be regarded as non-stationary environments \cite{Gama:2014:DAF:2670967.2670971}.
 In these environments, the joint probability distribution can change over time,
 such as a switch in the conditional probability distribution on a classification problem,
 or a change of some moment (such as mean and variance) on a time series forecasting problem \cite{tsymbal2004problem}.
 %
-Systems applied to these environments may be unable to adapt to the new information,
-hence dramatically deteriorating its performance.
+Systems applied to these settings may be unable to adapt to the changes, hence dramatically deteriorating their performance.
 This phenomenon is called concept drift.
 
-The Bayesian Theory can be used as a background to formally define the concept drift phenomenon \cite{Elwell:2011}:
+The Bayesian Theory can be used to formally define the concept drift phenomenon \cite{Elwell:2011}:
 consider the posterior probability of a sample $x$ belonging to a class $y$, a concept drift happens when this probability changes over time, that is, $Pt + 1 (y | x) \neq Pt (y | x)$. In a supervised learning scenario, this can be interpreted as when the relationship between the input data and the target variable change over time.
 
-According to \cite{tsymbal2004problem, Gama:2014:DAF:2670967.2670971}, concept drifts can occur in four main patterns:
+According to \cite{tsymbal2004problem, Gama:2014:DAF:2670967.2670971}, concept drifts can occur in four main patterns.
+These patterns are demonstrated in Figure \ref{fig:concept_drift_patterns} and described below:
 
 \begin{itemize}
     \item \textbf{Abrupt:} occurs when a concept A switches abruptly to another concept B.
-    \item \textbf{Gradual:} occurs when a concept A is being exchanged for the B concept gradually. In this case, while there is no definitive change from concept A to concept B, occurrences of B become more frequent, while fewer events of A are observed.
+    \item \textbf{Gradual:} occurs when a concept A is being exchanged for the B concept slowly. In this case, while there is no definitive change from concept A to concept B, occurrences of B become more frequent, while fewer events of A are observed.
     \item \textbf{Incremental:} occurs when a concept A is being exchanged for B through intermediate concepts.  These concepts differ little from its predecessor and successor, so changes are noticeable only in the long run.
-    \item \textbf{Recurrent:} occurs when a previously active concept reappears after a certain period. However, this can not be understood as a periodic seasonality.
+    \item \textbf{Recurrent:} occurs when a previously active concept reappears after a certain period. However, this cannot be understood as a periodic seasonality.
 \end{itemize}
-
-Figure \ref{fig:concept_drift_patterns} demonstrates these patterns:
 
 \begin{figure}[h!]
 \begin{center}
@@ -240,20 +239,22 @@ Figure \ref{fig:concept_drift_patterns} demonstrates these patterns:
 \end{center}
 \end{figure}
 
-Algorithms for detecting concept drift characterize and quantify concept drifts through the delimitation of the moments or time intervals in which changes occur \cite{Basseville:1993:DAC:151741}.
+Concept drift detection methods characterize and quantify concept drifts through the delimitation of moments or time intervals in which change happens \cite{Basseville:1993:DAC:151741}.
 %
 These algorithms fall into two categories, according to the need for data labeling \cite{Zliobaite:2010}:
 
 \begin{itemize}
-    \item \textbf{Explicit Algorithms/Supervised}: Adopt a passive approach, as they depend on the correct labeling of the data.
+    \item \textbf{Explicit Algorithms/Supervised}: Adopt a reactive approach, as they depend on the correct labeling of the data.
     The model performance is monitored continuously, and drifts are detected when its performance starts to deteriorate, passing past a threshold.
     \item \textbf{Implicit Algorithms/Unsupervised:} Implement a proactive approach and are independent of correct data labeling.
     Concept drifts are detected through the analysis of incoming data or indicators produced by the applied learning techniques.
-    Although they are more prone to false alarms, they are an alternative to scenarios where obtaining labels is expensive, time-consuming or unviable.
+    Although more prone to false alarms, they are an alternative to scenarios where obtaining labels is expensive, time-consuming, or unviable.
     Also, this approach can lead to better results, since it is possible to refit the model or adjust the data before the deterioration of the predictions.
 \end{itemize}
 
-The algorithm proposed in this paper, RBFChain, classifies as an unsupervised algorithm with a proactive approach.
+This paper proposes a novel unsupervised and proactive concept drift detection method.
+The algorithm continually groups the incoming data through Radial Basis Function Networks and maintains a model of the drift transitions in a Markov Chain.
+Drifts are detected when the probability of a transition reaches a parametric threshold.
 
 \section{Eye-tracking}
 \label{sec:eye_tracking}
