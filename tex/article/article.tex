@@ -245,10 +245,10 @@ Algorithms for detecting concept drift characterize and quantify concept drifts 
 These algorithms fall into two categories, according to the need for data labeling \cite{Zliobaite:2010}:
 
 \begin{itemize}
-    \item \textbf{Explicit Algorithms/Supervised}: These methods adopt a passive approach, as they depend on the correct labeling of the data.
+    \item \textbf{Explicit Algorithms/Supervised}: Adopt a passive approach, as they depend on the correct labeling of the data.
     The model performance is monitored continuously, and drifts are detected when its performance starts to deteriorate, passing past a threshold.
-    \item \textbf{Implicit Algorithms/Unsupervised:} These algorithms take a proactive approach and are independent of correct data labeling.
-    Concept drifts are detected through the analysis of incoming data or of indicators produced by the applied learning techniques.
+    \item \textbf{Implicit Algorithms/Unsupervised:} Implement a proactive approach and are independent of correct data labeling.
+    Concept drifts are detected through the analysis of incoming data or indicators produced by the applied learning techniques.
     Although they are more prone to false alarms, they are an alternative to scenarios where obtaining labels is expensive, time-consuming or unviable.
     Also, this approach can lead to better results, since it is possible to refit the model or adjust the data before the deterioration of the predictions.
 \end{itemize}
