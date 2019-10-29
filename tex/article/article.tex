@@ -161,7 +161,7 @@ the expansion of the internet of things \cite{Cohen:BigData:2009:MSN:1687553.168
 A significant share of this data is produced in the form of uninterrupted and potentially infinite sequences \cite{Aggarwal:2006:DSM:1196418}.
 In the literature,
 sequences with these characteristics are known as data streams.
-These streams are present in various fields of application,
+This kind of stream is present in various fields of application,
 such as financial market monitoring  \cite{ZHOU:2015},
 road traffic monitoring \cite{Wang:2015:EOV:2843092.2843464},
 telecom network management \cite{delattre2015method},
@@ -176,9 +176,9 @@ or a change of some moment (such as mean and variance) on a time series forecast
 Systems applied to these environments may be unable to adapt to the new information, hence dramatically deteriorating their performance.
 This phenomenon is known as concept drift \cite{Gama:2014:DAF:2670967.2670971}.
 %
-Still, most concept drift detection methods are inapplicable in those environments.
-These methods usually require the correct labeling of data - impracticable in those contexts -
- or do not meet the severe response time and resource usage restrictions inherent to scenarios with data streams.
+Still, most concept drift detection methods are unsuited for non-stationary environments with data streams.
+These algorithms usually require the correct labeling of data - infeasible in these settings -
+ or do not match the strict response time and resource usage requirements.
 
 This paper proposes a novel proactive on-line concept drift detection method, called RBFChain.
 The proposed algorithm is based on Radial Basis Function Networks implicit clustering property
