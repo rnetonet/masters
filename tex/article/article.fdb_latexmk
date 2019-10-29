@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex article"] 1572312380 "article.aux" "article.bbl" "article" 1572372058
+["bibtex article"] 1572312380 "article.aux" "article.bbl" "article" 1572372556
   "./model1-num-names.bst" 1572040732 25451 3a63f4c903f71e219900325462df0fe1 ""
-  "article.aux" 1572372034 3529 c68e6685e4a2e46c7e1e107b26d85c96 ""
+  "article.aux" 1572372483 3529 c68e6685e4a2e46c7e1e107b26d85c96 ""
   "article.bcf" 0 -1 0 ""
   "references.bib" 1572354287 17123 76ce34f1900fa14390398262d00e5ee0 ""
   (generated)
-  "article.blg"
   "article.bbl"
-["pdflatex"] 1572372033 "/home/rnetodev/Workspace/masters/tex/article/article.tex" "/home/rnetodev/Workspace/masters/tex/article/article.pdf" "article" 1572372058
+  "article.blg"
+["pdflatex"] 1572372482 "/home/rnetodev/Workspace/masters/tex/article/article.tex" "/home/rnetodev/Workspace/masters/tex/article/article.pdf" "article" 1572372556
   "/etc/texmf/web2c/texmf.cnf" 1560035643 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/rnetodev/Workspace/masters/tex/article/article.aux" 1572372034 3529 c68e6685e4a2e46c7e1e107b26d85c96 ""
-  "/home/rnetodev/Workspace/masters/tex/article/article.tex" 1572372058 18741 fe736a5c43e19c487374112bd6e6a8cd ""
+  "/home/rnetodev/Workspace/masters/tex/article/article.aux" 1572372483 3529 c68e6685e4a2e46c7e1e107b26d85c96 ""
+  "/home/rnetodev/Workspace/masters/tex/article/article.tex" 1572372556 18737 23eb118030421405c10f63a65fae0048 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -148,17 +148,17 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1560035717 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1560035752 4127194 0a4d7bd343ce7d30c7c8d38e0c2edcdf ""
-  "article.aux" 1572372034 3529 c68e6685e4a2e46c7e1e107b26d85c96 ""
+  "article.aux" 1572372483 3529 c68e6685e4a2e46c7e1e107b26d85c96 ""
   "article.bbl" 1572312380 6121 22bb85638ffa068f83fb83f75b62f713 "bibtex article"
-  "article.spl" 1572372033 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "article.tex" 1572372058 18741 fe736a5c43e19c487374112bd6e6a8cd ""
+  "article.spl" 1572372482 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "article.tex" 1572372556 18737 23eb118030421405c10f63a65fae0048 ""
   "elsarticle.cls" 1572040732 31580 04fc199fbc8aabf13d438fd319ad2ed6 ""
   "img/concept_drift_patterns.png" 1572040734 37258 c5c98e53e2c4f09d409689f3780cbfce ""
   "img/rbf_arq.png" 1572040732 42667 ce8b0732b7617d265187c5efab80ec99 ""
   (generated)
-  "article.pdf"
-  "article.log"
-  "/home/rnetodev/Workspace/masters/tex/article/article.log"
   "/home/rnetodev/Workspace/masters/tex/article/article.pdf"
   "article.aux"
+  "article.pdf"
   "article.spl"
+  "article.log"
+  "/home/rnetodev/Workspace/masters/tex/article/article.log"
