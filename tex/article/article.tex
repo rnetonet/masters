@@ -112,30 +112,27 @@ The amount of data produced by computer systems has grown sharply in recent deca
 and a significant part of it is generated as uninterrupted and potentially infinite sequences known as data streams.
 Generally, these streams are produced by non-stationary environments,
 in which the data distribution can change over time, possibly deteriorating the system performance.
-In the literature, this phenomenon is named concept drift.
+In the literature, this phenomenon is named as concept drift.
 %
 Nevertheless,
-most drift detection methods are unsuited for non-stationary environments with data streams.
+most concept drift detection methods are unsuited for non-stationary environments with data streams.
 These algorithms usually require the correct labeling of data - infeasible in these settings -
- or do not match the strict response time and resource usage restrictions inherent to scenarios with data streams.
+ or do not match the strict response time and resource usage requirements.
 %
-In an attempt to mitigate the aforementioned problem,
-this paper proposes a novel proactive method for on-line drift detection,
-called RBFChain.
-The proposed method relies on Radial Basis Function Networks implicit clustering property
-and uses Markov Chains to model the drifts transitions.
+This paper proposes a novel proactive on-line concept drift detection method, called RBFChain.
+The proposed method relies on Radial Basis Function Networks implicit clustering property and uses Markov Chains to model the drifts transitions.
 %
-To assess the proposed method as a viable concept drift detector,
+To assess RBFChain as a viable concept drift detector,
 an analysis of sensitivity, accuracy,
 and noise tolerance was performed using synthetic datasets,
 and results were compared to the most established algorithms in the literature.
 %
-Furthermore, the algorithm was applied to the real-world problem of eye-tracking.
+Furthermore, the technique was applied to the real-world problem of eye-tracking.
 A critical issue for different areas of knowledge,
 since many behavioral experiments use eye-tracking information as a relevant analysis factor.
 %
 Experimental results suggest that RBFChain is statistically better or equivalent to other detectors as it offers greater or equal overall classification accuracy.
-Also, the technique demonstrated good performance in the eye-tracking problem,
+Also, the method demonstrated good performance in the eye-tracking problem,
  being able to identify fixations and saccades in real-time with precision comparable to state of the art.
 
 \end{abstract}
@@ -178,20 +175,19 @@ such as a switch in the conditional probability distribution on a classification
 or a change of some moment (such as mean and variance) on a time series forecasting problem \cite{tsymbal2004problem}.
 Systems applied to these environments may be unable to adapt to the new information, hence dramatically deteriorating their performance.
 This phenomenon is known as concept drift \cite{Gama:2014:DAF:2670967.2670971}.
+%
+Still, most concept drift detection methods are inapplicable in those environments.
+These methods usually require the correct labeling of data - impracticable in those contexts -
+ or do not meet the severe response time and resource usage restrictions inherent to scenarios with data streams.
 
-Still, most drift detection methods are unsuitable for non-stationary environments with data streams.
-These methods usually require the correct labeling of data - impracticable in these contexts -
- or do not meet the severe response time and resource usage restrictions inherent to contexts with data streams.
-
-This paper proposes a novel proactive method for on-line drift detection,
-called RBFChain.
+This paper proposes a novel proactive on-line concept drift detection method, called RBFChain.
 The proposed algorithm is based on Radial Basis Function Networks implicit clustering property
 and employs Markov Chains to model the drifts transitions.
 To validate the proposed method as a viable concept drift detector,
 an examination of sensitivity, accuracy,
 and noise tolerance was performed using synthetic datasets,
 and results were compared to the most established algorithms in the literature.
-
+%
 Moreover, the algorithm was also applied to the real-world problem of eye-tracking.
 A problem with impact in different areas of knowledge, since many behavioral experiments use eye-tracking information as a relevant analysis factor.
 
@@ -216,7 +212,7 @@ such as a switch in the conditional probability distribution on a classification
 or a change of some moment (such as mean and variance) on a time series forecasting problem \cite{tsymbal2004problem}.
 %
 Systems applied to these settings may be unable to adapt to the changes, hence dramatically deteriorating their performance.
-This phenomenon is called concept drift.
+This phenomenon is known as concept drift.
 
 The Bayesian Theory can be used to formally define the concept drift phenomenon \cite{Elwell:2011}:
 consider the posterior probability of a sample $x$ belonging to a class $y$, a concept drift happens when this probability changes over time, that is, $Pt + 1 (y | x) \neq Pt (y | x)$. In a supervised learning scenario, this can be interpreted as when the relationship between the input data and the target variable change over time.
@@ -233,7 +229,7 @@ These patterns are demonstrated in Figure \ref{fig:concept_drift_patterns} and d
 
 \begin{figure}[h!]
 \begin{center}
-    \includegraphics[scale=0.65]{img/concept_drift_patterns.png}
+    \includegraphics[scale=0.7]{img/concept_drift_patterns.png}
     \caption{Concept Drift Patterns}
     \label{fig:concept_drift_patterns}
 \end{center}
@@ -246,105 +242,20 @@ These algorithms fall into two categories, according to the need for data labeli
 \begin{itemize}
     \item \textbf{Explicit Algorithms/Supervised}: Adopt a reactive approach, as they depend on the correct labeling of the data.
     The model performance is monitored continuously, and drifts are detected when its performance starts to deteriorate, passing past a threshold.
-    \item \textbf{Implicit Algorithms/Unsupervised:} Implement a proactive approach and are independent of correct data labeling.
+    \item \textbf{Implicit Algorithms/Unsupervised:} Implement a proactive approach and are independent of data labels.
     Concept drifts are detected through the analysis of incoming data or indicators produced by the applied learning techniques.
     Although more prone to false alarms, they are an alternative to scenarios where obtaining labels is expensive, time-consuming, or unviable.
     Also, this approach can lead to better results, since it is possible to refit the model or adjust the data before the deterioration of the predictions.
 \end{itemize}
 
 This paper proposes a novel unsupervised and proactive concept drift detection method.
-The algorithm continually groups the incoming data through Radial Basis Function Networks and maintains a model of the drift transitions in a Markov Chain.
-Drifts are detected when the probability of a transition reaches a parametric threshold.
+The algorithm continually groups the incoming data through Radial Basis Function Networks and maintains a model of the center transitions in a Markov Chain.
+Drifts are detected when the probability of a transition in the formed cluster reaches a parametric threshold.
 
 \section{Eye-tracking}
 \label{sec:eye_tracking}
 
-Visual perception involves six types of eye movements \cite{leigh2015neurology}, among which fixations and saccades are the most relevant.
-During fixation, the eye is kept relatively stable on an area of interest (AOI). In contrast, saccades are fast eye movements enabling the fovea to fixate different regions of the scene \cite{privitera:2005:scanpath_theory}.
-Thus, the process of looking at a scene can be represented by a sequence of fixations and saccades, the so-called visual scan path.
-Research on scan path analysis and visual perception has benefited from the recent development of eye trackers.
-Today’s eye-tracking systems allow a precise recording of eye movements at high sampling rates, thus enabling a detailed analysis of the viewing behavior.
-
-Despite recent advances, reliable automated clustering of eye movements is still challenging, even more so in dynamic scenarios.
-In many applications, e.g., human-computer gaze-based interaction, driving assistance systems, online adaptation of digital content based on gaze analysis, the identification of fixations and saccades has to occur in an online fashion.
-There is a wide variety of methods for the online analysis of eye-tracking data and the recognition of fixations and saccades.
-However, only a few of them are suited for online applicability to dynamic scenes.
-Such methods have to quickly adapt not only to the individual viewing behavior but also to the changes occurring in the viewing scene.
-This small group of highly promising methods is based on probabilistic formalizations, e.g.,
-as Markov Models \cite{Salvucci:2000:IFS:355017.355028, Komogortsev2013},
-Bayesian Mixture Models \cite{Tafaj:2012:BOC:2168556.2168617}, etc.
-
-Prior techniques for the automated recognition of different types of eye movements from eye-tracking data fall into two main categories:
-(i) threshold-based methods, where the distinction of fixations from saccades is based on dispersion, velocity, or acceleration thresholds, and
-(ii) probabilistic methods. These groups of techniques will be briefly discussed in the following.
-
-Threshold-based methods distinguish between fixations and saccades based on the assumption that the distances, velocities, or accelerations occurring between subsequent fixations differ from those occurring between saccades.
-The goal then is to identify a threshold based on which saccades can be reliably distinguished from fixations.
-
-When distance thresholds are used, fixation clusters are usually identified by searching for data points that are close enough to each other (i.e., below the established threshold) within a predefined time window \cite{holmqvist-eye-tracking-a-comprehensive-guide-to-methods-and-measures}.
-A representative of this group, is the Dispersion Threshold Identification (I-DT) algorithm \cite{Salvucci:2000:IFS:355017.355028}.
-Other similar approaches differ mainly in the way the threshold is calculated \cite{Blignaut2009, Shic:2008:IFM:1344471.1344500}.
-
-Other algorithms in this realm are based on the computation of Minimum Spanning Trees (MST).
-In \cite{Salvucci:2000:IFS:355017.355028} an MST is built on the eye-tracking points within a temporal window of predefined length.
-An edge (i.e., representing the distance between two points) is classified as a saccade if its length is significantly larger than the lengths of neighboring edges,
-which have been previously classified as distances between fixations.
-Yet other methods employ smart clustering algorithms, e.g., \cite{Santella:2004:RCE:968363.968368, Urruty:2007:DEF:1314303.1314308}
-but have serious limitations concerning their applicability to dynamic online scenarios,
-since, in such scenarios, the cluster properties for fixations and saccades show high variability.
-
-Methods that are based on velocity or acceleration thresholds work similarly.
-A representative of this group is the Velocity-Threshold Identification (I-VT) algorithm,
-where a point is identified as a saccade point,
-if the implicit velocity along the distance from the previous data point to that point exceeds a predefined threshold.
-Otherwise the data point is assigned to a fixation cluster \cite{Salvucci:2000:IFS:355017.355028}.
-
-In summary, the major drawback of threshold-based methods is that they rely on thresholds that have to be empirically adjusted to the individual viewing behavior,
-the viewing area, and the specific task.
-Each of these parameters can have significant influence on the classification result \cite{Komogortsev2013, Salvucci:2000:IFS:355017.355028}.
-For this reason and because of the fact that the viewing behavior is strongly physically and physiologically-dependent, such methods are not reliable, especially when real-time analysis of eye-tracking data is needed.
-
-Probabilistic methods are built on soft decision rules, which are formalized as probabilities, e.g.,  the probability of a data point being a saccade given the previous observations. The probabilities – and thus, the decisions – are adjusted to the observations.
-
-One of the most prominent probabilistic methods applied to the identification of fixations and saccades is the Hidden Markov Model (HMM).
-An HMM is a simple dynamic Bayesian network with variables representing values from a discrete state and observation space.
-The state of a variable represents the class of the current observation. It is only dependent on the state (i.e., class of the previous observation).
-Because of this sequential nature, such models are a popular choice for the analysis of successively arising data points (i.e., observations).
-For the detection of fixations and saccades from eye data, HMMs have been used with velocity observations between successive data points,
-thus allowing the adaptation of the model to the physiological viewing behavior \cite{Salvucci:2000:IFS:355017.355028}.
-In the model of \cite{Salvucci:2000:IFS:355017.355028} (coined I-HMM),
-the two states used represent discretized velocity distributions over fixations and saccades.
-Transition probabilities between the states represent the probability of the current sample belonging to a fixation cluster or a saccade,
-given the previous state \cite{holmqvist-eye-tracking-a-comprehensive-guide-to-methods-and-measures}.
-Due to the above probabilistic representation, no thresholds are needed.
-The I-HMM is reported to outperform fixed-threshold methods,
-such as I-VT \cite{Salvucci:2000:IFS:355017.355028}.
-In summary, the sequential, dynamic,
-and probabilistic nature of HMMs makes them an adequate choice for data arising in an online fashion and containing variability in its features.
-
-Probabilistic mixture models, such as the Bayesian Mixture Model (BMM) presented in \cite{Tafaj:2012:BOC:2168556.2168617},
-build on the assumption that the observed data is generated from a mixture of unknown density distributions.
-The goal is to estimate the parameters of these distributions based on observed data points and to derive the most probable distribution that might have generated a given data point.
-
-The algorithm presented in \cite{Tafaj:2012:BOC:2168556.2168617} could distinguish between fixations and saccades in an online fashion,
-only by considering the Euclidean distances between subsequent data points.
-The underlying model is based on the assumption
-that distances between subsequent fixation points will, in general, be shorter than distances between subsequent saccade points;
-that is, distances between subsequent fixation points would be generated from a specific Gaussian distribution and those between subsequent saccade points from another.
-This intuition was modeled by a Bayesian Online Mixture Model.
-The benefit of the Bayesian formalization of the mixture model
-is that the parameters of the two distributions are updated and learned in an online fashion as more and more data is observed.
-For every new data point, the prior probabilities are replaced by the latest estimates.
-For practical purposes, this means that for every new user the algorithm needs a relatively small number of data points to
-adjust to that user and learn user- or scene-dependent parameters.
-
-In summary, probabilistic methods come with three main advantages over threshold-based ones:
-
-\begin{enumerate}
-    \item No fixed thresholds are needed. Instead, the parameters of the model (e.g., state transition probabilities, label emission probabilities, and other settings) are learned from labeled data.
-    \item Both HMMs and BMMs can adapt to the individual (i.e., physiological) viewing behavior of a subject and the specific task.
-    \item Given the dynamic nature of the underlying models, the methods are naturally suited for data arising in an online fashion, such as eye-tracking data.
-\end{enumerate}
+\ldots
 
 \section{RBFChain algorithm}
 \label{sec:rbfchain_algorithm}

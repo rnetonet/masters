@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: article.aux
 The style file: model1-num-names.bst
 Database file #1: references.bib
-You've used 24 entries,
+You've used 14 entries,
             2616 wiz_defined-function locations,
-            755 strings with 9818 characters,
-and the built_in function-call counts, 15035 in all, are:
-= -- 1114
-> -- 632
-< -- 22
-+ -- 240
-- -- 210
-* -- 1829
-:= -- 2208
-add.period$ -- 25
-call.type$ -- 24
-change.case$ -- 186
-chr.to.int$ -- 24
-cite$ -- 24
-duplicate$ -- 995
-empty$ -- 1019
-format.name$ -- 294
-if$ -- 2780
+            686 strings with 7557 characters,
+and the built_in function-call counts, 8462 in all, are:
+= -- 604
+> -- 379
+< -- 11
++ -- 142
+- -- 126
+* -- 1066
+:= -- 1272
+add.period$ -- 15
+call.type$ -- 14
+change.case$ -- 111
+chr.to.int$ -- 14
+cite$ -- 14
+duplicate$ -- 555
+empty$ -- 555
+format.name$ -- 172
+if$ -- 1525
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 227
-newline$ -- 110
-num.names$ -- 100
-pop$ -- 233
+missing$ -- 134
+newline$ -- 66
+num.names$ -- 60
+pop$ -- 125
 preamble$ -- 1
-purify$ -- 187
+purify$ -- 109
 quote$ -- 0
-skip$ -- 329
+skip$ -- 162
 stack$ -- 0
-substring$ -- 696
-swap$ -- 895
-text.length$ -- 7
+substring$ -- 354
+swap$ -- 517
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 195
+type$ -- 114
 warning$ -- 0
-while$ -- 109
+while$ -- 59
 width$ -- 0
-write$ -- 318
+write$ -- 182
