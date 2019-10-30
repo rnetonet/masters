@@ -1,4 +1,4 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{12}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
@@ -28,31 +28,12 @@
   (Eds.), \bibinfo{booktitle}{Computer Engineering and Technology},
   \bibinfo{publisher}{Springer Berlin Heidelberg}, \bibinfo{address}{Berlin,
   Heidelberg}, \bibinfo{year}{2015}, pp. \bibinfo{pages}{69--77}.
-%Type = Article
-\bibitem[{Wang et~al.(2015)Wang, Hu, Zhou, Sun, Hu, and
-  Zhao}]{Wang:2015:EOV:2843092.2843464}
-\bibinfo{author}{F.~Wang}, \bibinfo{author}{L.~Hu}, \bibinfo{author}{D.~Zhou},
-  \bibinfo{author}{R.~Sun}, \bibinfo{author}{J.~Hu}, \bibinfo{author}{K.~Zhao},
-\newblock \bibinfo{title}{Estimating online vacancies in real-time road traffic
-  monitoring with traffic sensor data stream},
-\newblock \bibinfo{journal}{Ad Hoc Netw.} \bibinfo{volume}{35}
-  (\bibinfo{year}{2015}) \bibinfo{pages}{3--13}.
 %Type = Misc
 \bibitem[{Delattre and Imbert(2015)}]{delattre2015method}
 \bibinfo{author}{M.~Delattre}, \bibinfo{author}{B.~Imbert},
   \bibinfo{title}{Method for management of data stream exchanges in an
   autonomic telecommunications network}, \bibinfo{year}{2015}.
   \bibinfo{note}{US Patent 8,949,412}.
-%Type = Article
-\bibitem[{Kranjc et~al.(2015)Kranjc, Smailović, Podpečan, Grčar,
-  Žnidaršič, and Lavrač}]{KRANJC2015187}
-\bibinfo{author}{J.~Kranjc}, \bibinfo{author}{J.~Smailović},
-  \bibinfo{author}{V.~Podpečan}, \bibinfo{author}{M.~Grčar},
-  \bibinfo{author}{M.~Žnidaršič}, \bibinfo{author}{N.~Lavrač},
-\newblock \bibinfo{title}{Active learning for sentiment analysis on data
-  streams: Methodology and workflow implementation in the clowdflows platform},
-\newblock \bibinfo{journal}{Information Processing \& Management}
-  \bibinfo{volume}{51} (\bibinfo{year}{2015}) \bibinfo{pages}{187 -- 203}.
 %Type = Inproceedings
 \bibitem[{Kenkre et~al.(2015)Kenkre, Pai, and Colaco}]{KENKRE:PAI:COLACO:2015}
 \bibinfo{author}{P.~S. Kenkre}, \bibinfo{author}{A.~Pai},
@@ -65,19 +46,19 @@
   \bibinfo{publisher}{Springer International Publishing},
   \bibinfo{address}{Cham}, \bibinfo{year}{2015}, pp. \bibinfo{pages}{405--411}.
 %Type = Article
-\bibitem[{Tsymbal(2004)}]{tsymbal2004problem}
-\bibinfo{author}{A.~Tsymbal},
-\newblock \bibinfo{title}{The problem of concept drift: definitions and related
-  work},
-\newblock \bibinfo{journal}{Computer Science Department, Trinity College
-  Dublin} \bibinfo{volume}{106} (\bibinfo{year}{2004}) \bibinfo{pages}{58}.
-%Type = Article
 \bibitem[{Gama and Donsez(2014)}]{Gama:2014:DAF:2670967.2670971}
 \bibinfo{author}{K.~Gama}, \bibinfo{author}{D.~Donsez},
 \newblock \bibinfo{title}{Deployment and activation of faulty components at
   runtime for testing self-recovery mechanisms},
 \newblock \bibinfo{journal}{SIGAPP Appl. Comput. Rev.} \bibinfo{volume}{14}
   (\bibinfo{year}{2014}) \bibinfo{pages}{44--54}.
+%Type = Article
+\bibitem[{Tsymbal(2004)}]{tsymbal2004problem}
+\bibinfo{author}{A.~Tsymbal},
+\newblock \bibinfo{title}{The problem of concept drift: definitions and related
+  work},
+\newblock \bibinfo{journal}{Computer Science Department, Trinity College
+  Dublin} \bibinfo{volume}{106} (\bibinfo{year}{2004}) \bibinfo{pages}{58}.
 %Type = Article
 \bibitem[{{Elwell} and {Polikar}(2011)}]{Elwell:2011}
 \bibinfo{author}{R.~{Elwell}}, \bibinfo{author}{R.~{Polikar}},

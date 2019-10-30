@@ -110,31 +110,28 @@
 \begin{abstract}
 The volume of data produced by computer systems has grown sharply in recent decades.
 A significant part of this volume is generated as uninterrupted and potentially infinite sequences known as data streams.
-Generally, these streams are produced by non-stationary environments, in which the data distribution can change over time.
-Systems applied to these environments may not be able to adapt to the new information, consequently deteriorating their performance.
+Usually, these streams are produced by non-stationary environments, in which the data distribution can change over time.
+Systems applied to these environments may not be able to adapt to the new distribution, consequently deteriorating their performance.
 In the literature, this phenomenon is named as concept drift.
 %
 Nevertheless,
-most concept drift detection methods are unsuited for non-stationary environments with data streams.
-These algorithms usually require the correct labeling of data - infeasible in these settings -
- or do not match the strict response time and resource usage requirements.
+most concept drift detection methods are unsuited for non-stationary environments with data streams,
+because these algorithms often require the correct labeling of data or do not match the strict response time and resource usage requirements.
 %
-This paper proposes a novel proactive on-line concept drift detection method, called RBFChain.
+In this context, this paper proposes a novel proactive on-line concept drift detection method, called RBFChain.
 The proposed method relies on Radial Basis Function Networks implicit clustering property and uses Markov Chains to model the drifts transitions.
 %
 To assess RBFChain as a viable concept drift detector,
 an analysis of sensitivity, accuracy,
 and noise tolerance was performed using synthetic datasets,
-and results were compared to the most established algorithms in the literature.
+and results were compared to the main algorithms found in the literature.
 %
 Furthermore, the technique was applied to the real-world problem of eye-tracking:
 a critical issue in different areas of knowledge,
 since many behavioral experiments use eye-tracking information as a relevant analysis factor.
 %
-Synthetic data experimental results suggest that RBFChain is statistically better or equivalent to other detectors as it offers greater or equal overall classification accuracy.
-Also, the method demonstrated good performance in the eye-tracking problem,
-being able to identify fixations and saccades in real-time with precision comparable to state of the art.
-
+Experimental results suggest that RBFChain is statistically better or equivalent to other detectors as it offers greater or equal overall classification accuracy with synthetic datasets.
+Besides, the algorithm showed to apply to the eye monitoring problem, as it was able to classify fixations and saccades in real-time with accuracy comparable to state of the art.
 \end{abstract}
 
 \begin{keyword}
@@ -153,32 +150,29 @@ Concept Drift \sep Drift Detection \sep Eye tracking
 \label{sec:intro}
 In recent years,
 the volume of data produced by computer systems has grown dramatically.
-Technological advances favored this growth,
-such as the pervasiveness of mobile devices,
+This growth was favored by technological advances like
+the pervasiveness of mobile devices,
 the popularization of social networks, and
 the expansion of the internet of things \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
-
+%
 A significant share of this data is produced in the form of uninterrupted and potentially infinite sequences \cite{Aggarwal:2006:DSM:1196418}.
 In the literature,
-sequences with these characteristics are known as data streams.
-This kind of stream is present in various fields of application,
+sequences with these characteristics are known as data streams,
+and are present in various fields of application,
 such as financial market monitoring  \cite{ZHOU:2015},
-road traffic monitoring \cite{Wang:2015:EOV:2843092.2843464},
+%road traffic monitoring \cite{Wang:2015:EOV:2843092.2843464},
 telecom network management \cite{delattre2015method},
-real-time sentiment analysis  \cite{KRANJC2015187}
-and intruder prevention and identification systems \cite{KENKRE:PAI:COLACO:2015}.
+%real-time sentiment analysis  \cite{KRANJC2015187},
+ intruder prevention \cite{KENKRE:PAI:COLACO:2015},
+ among others.
 
 Most of the environments that produce data streams are non-stationary.
-That is,
-the joint probability distribution changes arbitrarily over time,
-such as a switch in the conditional probability distribution on a classification problem,
-or a change of some moment (such as mean and variance) on a time series forecasting problem \cite{tsymbal2004problem}.
+In these environments, the data distribution can arbitrarily change over time.
 Systems applied to these environments may be unable to adapt to the new information, hence dramatically deteriorating their performance.
 This phenomenon is known as concept drift \cite{Gama:2014:DAF:2670967.2670971}.
-
-However, most concept drift detection methods are unfit for non-stationary environments with data streams.
-These algorithms usually require the correct labeling of data - infeasible in these settings -
- or do not match the strict response time and resource usage requirements.
+%
+However, most concept drift detection methods are unfit for non-stationary environments with data streams,
+because these algorithms often require the correct labeling of data or do not match the strict response time and resource usage requirements.
 
 This paper proposes a novel proactive on-line concept drift detection method, called RBFChain.
 The proposed algorithm is based on Radial Basis Function Networks implicit clustering property
@@ -189,7 +183,7 @@ and noise tolerance was performed using synthetic datasets,
 and results were compared to the most established algorithms in the literature.
 %
 Moreover, the algorithm was also applied to the real-world problem of eye-tracking.
-A pertinent matter for different areas of knowledge, since many behavioral experiments use eye-tracking information as a relevant analysis factor.
+An important issue in different areas of knowledge, since many behavioral experiments use eye-tracking information as a relevant analysis factor.
 
 Experimental results suggest that RBFChain is statistically better or equivalent to other detectors as it offers greater or equal overall classification accuracy.
 Additionally, the method demonstrated good performance in the eye-tracking problem,
