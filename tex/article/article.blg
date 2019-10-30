@@ -3,44 +3,47 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: article.aux
 The style file: model1-num-names.bst
 Database file #1: references.bib
-You've used 12 entries,
+Warning--empty pages in EDDM
+Warning--empty booktitle in Dredze:ADistance:2010585
+You've used 34 entries,
             2616 wiz_defined-function locations,
-            669 strings with 6918 characters,
-and the built_in function-call counts, 6877 in all, are:
-= -- 494
-> -- 277
-< -- 11
-+ -- 104
-- -- 90
-* -- 846
-:= -- 1030
-add.period$ -- 13
-call.type$ -- 12
-change.case$ -- 89
-chr.to.int$ -- 12
-cite$ -- 12
-duplicate$ -- 467
-empty$ -- 472
-format.name$ -- 130
-if$ -- 1249
+            840 strings with 12337 characters,
+and the built_in function-call counts, 21822 in all, are:
+= -- 1675
+> -- 882
+< -- 30
++ -- 334
+- -- 292
+* -- 2619
+:= -- 3192
+add.period$ -- 37
+call.type$ -- 34
+change.case$ -- 271
+chr.to.int$ -- 34
+cite$ -- 36
+duplicate$ -- 1441
+empty$ -- 1468
+format.name$ -- 406
+if$ -- 4066
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 110
-newline$ -- 56
-num.names$ -- 52
-pop$ -- 105
+missing$ -- 317
+newline$ -- 166
+num.names$ -- 144
+pop$ -- 325
 preamble$ -- 1
-purify$ -- 87
+purify$ -- 263
 quote$ -- 0
-skip$ -- 144
+skip$ -- 483
 stack$ -- 0
-substring$ -- 287
-swap$ -- 421
-text.length$ -- 2
+substring$ -- 1085
+swap$ -- 1295
+text.length$ -- 12
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
-warning$ -- 0
-while$ -- 50
+type$ -- 294
+warning$ -- 2
+while$ -- 161
 width$ -- 0
-write$ -- 156
+write$ -- 455
+(There were 2 warnings)

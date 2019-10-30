@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{34}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
@@ -78,6 +78,195 @@
 \newblock \bibinfo{title}{Learning under concept drift: an overview},
 \newblock \bibinfo{journal}{CoRR} \bibinfo{volume}{abs/1010.4784}
   (\bibinfo{year}{2010}).
+%Type = Article
+\bibitem[{Sethi and Kantardzic(2017)}]{Sethi:2017:RDC:3096751.3096864}
+\bibinfo{author}{T.~S. Sethi}, \bibinfo{author}{M.~Kantardzic},
+\newblock \bibinfo{title}{On the reliable detection of concept drift from
+  streaming unlabeled data},
+\newblock \bibinfo{journal}{Expert Syst. Appl.} \bibinfo{volume}{82}
+  (\bibinfo{year}{2017}) \bibinfo{pages}{77--99}.
+%Type = Article
+\bibitem[{Page(1954)}]{Page:CUSUM:PageHinkley:1954}
+\bibinfo{author}{E.~S. Page},
+\newblock \bibinfo{title}{{Continuous Inspection Schemes}},
+\newblock \bibinfo{journal}{Biometrika} \bibinfo{volume}{41}
+  (\bibinfo{year}{1954}) \bibinfo{pages}{100--115}.
+%Type = Article
+\bibitem[{Roberts(2000)}]{Roberts:2000:CCT:338441.338464}
+\bibinfo{author}{S.~W. Roberts},
+\newblock \bibinfo{title}{Control chart tests based on geometric moving
+  averages},
+\newblock \bibinfo{journal}{Technometrics} \bibinfo{volume}{42}
+  (\bibinfo{year}{2000}) \bibinfo{pages}{97--101}.
+%Type = Inproceedings
+\bibitem[{Gama et~al.(2004)Gama, Medas, Castillo, and Rodrigues}]{GamaMCR04}
+\bibinfo{author}{J.~Gama}, \bibinfo{author}{P.~Medas},
+  \bibinfo{author}{G.~Castillo}, \bibinfo{author}{P.~P. Rodrigues},
+\newblock \bibinfo{title}{Learning with drift detection.},
+\newblock in: \bibinfo{editor}{A.~L.~C. Bazzan}, \bibinfo{editor}{S.~Labidi}
+  (Eds.), \bibinfo{booktitle}{SBIA}, volume \bibinfo{volume}{3171} of
+  \textit{\bibinfo{series}{Lecture Notes in Computer Science}},
+  \bibinfo{publisher}{Springer}, \bibinfo{year}{2004}, pp.
+  \bibinfo{pages}{286--295}.
+%Type = Inproceedings
+\bibitem[{Baena-Garc{\'{\i}}a et~al.(2006)Baena-Garc{\'{\i}}a, del
+  Campo-{\'{A}}vila, Fidalgo, Bifet, Gavald{\'{a}}, and Morales-Bueno}]{EDDM}
+\bibinfo{author}{M.~Baena-Garc{\'{\i}}a}, \bibinfo{author}{J.~del
+  Campo-{\'{A}}vila}, \bibinfo{author}{R.~Fidalgo}, \bibinfo{author}{A.~Bifet},
+  \bibinfo{author}{R.~Gavald{\'{a}}}, \bibinfo{author}{R.~Morales-Bueno},
+\newblock \bibinfo{title}{{Early drift detection method}},
+\newblock in: \bibinfo{booktitle}{In Fourth International Workshop on Knowledge
+  Discovery from Data Streams}.
+%Type = Article
+\bibitem[{Ross et~al.(2012)Ross, Adams, Tasoulis, and
+  Hand}]{Ross:2012:EWM:2076039.2076307}
+\bibinfo{author}{G.~J. Ross}, \bibinfo{author}{N.~M. Adams},
+  \bibinfo{author}{D.~K. Tasoulis}, \bibinfo{author}{D.~J. Hand},
+\newblock \bibinfo{title}{Exponentially weighted moving average charts for
+  detecting concept drift},
+\newblock \bibinfo{journal}{Pattern Recogn. Lett.} \bibinfo{volume}{33}
+  (\bibinfo{year}{2012}) \bibinfo{pages}{191--198}.
+%Type = Article
+\bibitem[{de~Barros et~al.(2017)de~Barros, de~Lima~Cabral, Jr., and
+  de~Carvalho~Santos}]{Barros:RDDM:2017}
+\bibinfo{author}{R.~S.~M. de~Barros}, \bibinfo{author}{D.~R. de~Lima~Cabral},
+  \bibinfo{author}{P.~M.~G. Jr.}, \bibinfo{author}{S.~G.~T.
+  de~Carvalho~Santos},
+\newblock \bibinfo{title}{{RDDM:} reactive drift detection method},
+\newblock \bibinfo{journal}{Expert Syst. Appl.} \bibinfo{volume}{90}
+  (\bibinfo{year}{2017}) \bibinfo{pages}{344--355}.
+%Type = Inproceedings
+\bibitem[{Bifet and Gavaldà(2007)}]{BifetG07}
+\bibinfo{author}{A.~Bifet}, \bibinfo{author}{R.~Gavaldà},
+\newblock \bibinfo{title}{Learning from time-changing data with adaptive
+  windowing.},
+\newblock in: \bibinfo{booktitle}{SDM}, \bibinfo{publisher}{SIAM},
+  \bibinfo{year}{2007}, pp. \bibinfo{pages}{443--448}.
+%Type = Article
+\bibitem[{Pears et~al.(2014)Pears, Sakthithasan, and
+  Koh}]{PearsSK14:SeqDrift:2014}
+\bibinfo{author}{R.~Pears}, \bibinfo{author}{S.~Sakthithasan},
+  \bibinfo{author}{Y.~S. Koh},
+\newblock \bibinfo{title}{Detecting concept change in dynamic data streams -
+  {A} sequential approach based on reservoir sampling},
+\newblock \bibinfo{journal}{Machine Learning} \bibinfo{volume}{97}
+  (\bibinfo{year}{2014}) \bibinfo{pages}{259--293}.
+%Type = Article
+\bibitem[{Blanco et~al.(2015)Blanco, del Campo{-}{\'{A}}vila,
+  Ramos{-}Jim{\'{e}}nez, Bueno, D{\'{\i}}az, and
+  Mota}]{BlancoCRBDM15:HDDMA:HDDMW:2015}
+\bibinfo{author}{I.~I.~F. Blanco}, \bibinfo{author}{J.~del
+  Campo{-}{\'{A}}vila}, \bibinfo{author}{G.~Ramos{-}Jim{\'{e}}nez},
+  \bibinfo{author}{R.~M. Bueno}, \bibinfo{author}{A.~A.~O. D{\'{\i}}az},
+  \bibinfo{author}{Y.~C. Mota},
+\newblock \bibinfo{title}{Online and non-parametric drift detection methods
+  based on hoeffding's bounds},
+\newblock \bibinfo{journal}{{IEEE} Trans. Knowl. Data Eng.}
+  \bibinfo{volume}{27} (\bibinfo{year}{2015}) \bibinfo{pages}{810--823}.
+%Type = Inproceedings
+\bibitem[{Spinosa et~al.(2007)Spinosa, de~Leon F.~de Carvalho, and
+  Gama}]{Spinosa:2007:OCA:1244002.1244107}
+\bibinfo{author}{E.~J. Spinosa}, \bibinfo{author}{A.~P. de~Leon F.~de
+  Carvalho}, \bibinfo{author}{J.~a. Gama},
+\newblock \bibinfo{title}{Olindda: A cluster-based approach for detecting
+  novelty and concept drift in data streams},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 2007 ACM Symposium on
+  Applied Computing}, SAC '07, \bibinfo{publisher}{ACM}, \bibinfo{address}{New
+  York, NY, USA}, \bibinfo{year}{2007}, pp. \bibinfo{pages}{448--452}.
+%Type = Inproceedings
+\bibitem[{Faria et~al.(2013)Faria, Gama, and
+  Carvalho}]{Faria:2013:NDA:2480362.2480515}
+\bibinfo{author}{E.~R. Faria}, \bibinfo{author}{J.~a. Gama},
+  \bibinfo{author}{A.~C. P. L.~F. Carvalho},
+\newblock \bibinfo{title}{Novelty detection algorithm for data streams
+  multi-class problems},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 28th Annual ACM Symposium
+  on Applied Computing}, SAC '13, \bibinfo{publisher}{ACM},
+  \bibinfo{address}{New York, NY, USA}, \bibinfo{year}{2013}, pp.
+  \bibinfo{pages}{795--800}.
+%Type = Inproceedings
+\bibitem[{Ryu et~al.(2012)Ryu, Kantardzic, Kim, and
+  Ra~Khil}]{Ryu:Kantardzic:2012}
+\bibinfo{author}{J.~W. Ryu}, \bibinfo{author}{M.~M. Kantardzic},
+  \bibinfo{author}{M.-W. Kim}, \bibinfo{author}{A.~Ra~Khil},
+\newblock \bibinfo{title}{An efficient method of building an ensemble of
+  classifiers in streaming data},
+\newblock in: \bibinfo{editor}{S.~Srinivasa}, \bibinfo{editor}{V.~Bhatnagar}
+  (Eds.), \bibinfo{booktitle}{Big Data Analytics}, \bibinfo{publisher}{Springer
+  Berlin Heidelberg}, \bibinfo{address}{Berlin, Heidelberg},
+  \bibinfo{year}{2012}, pp. \bibinfo{pages}{122--133}.
+%Type = Inproceedings
+\bibitem[{{Hayat} and {Hashemi}(2010)}]{Hashemi:Hayat:DETECTNOD:2010}
+\bibinfo{author}{M.~Z. {Hayat}}, \bibinfo{author}{M.~R. {Hashemi}},
+\newblock \bibinfo{title}{A dct based approach for detecting novelty and
+  concept drift in data streams},
+\newblock in: \bibinfo{booktitle}{2010 International Conference of Soft
+  Computing and Pattern Recognition}, pp. \bibinfo{pages}{373--378}.
+%Type = Article
+\bibitem[{Masud et~al.(2011)Masud, Gao, Khan, Han, and
+  Thuraisingham}]{Masud:2011:CNC:1978259.1978529}
+\bibinfo{author}{M.~Masud}, \bibinfo{author}{J.~Gao},
+  \bibinfo{author}{L.~Khan}, \bibinfo{author}{J.~Han}, \bibinfo{author}{B.~M.
+  Thuraisingham},
+\newblock \bibinfo{title}{Classification and novel class detection in
+  concept-drifting data streams under time constraints},
+\newblock \bibinfo{journal}{IEEE Trans. on Knowl. and Data Eng.}
+  \bibinfo{volume}{23} (\bibinfo{year}{2011}) \bibinfo{pages}{859--874}.
+%Type = Article
+\bibitem[{Sethi et~al.(2016)Sethi, Kantardzic, and Hu}]{Sethi2016b:GC3}
+\bibinfo{author}{T.~S. Sethi}, \bibinfo{author}{M.~Kantardzic},
+  \bibinfo{author}{H.~Hu},
+\newblock \bibinfo{title}{A grid density based framework for classifying
+  streaming data in the presence of concept drift},
+\newblock \bibinfo{journal}{Journal of Intelligent Information Systems}
+  \bibinfo{volume}{46} (\bibinfo{year}{2016}) \bibinfo{pages}{179--211}.
+%Type = Inproceedings
+\bibitem[{{Lee} and {Magoulès}(2012)}]{Lee:Magoules:CoC:2012}
+\bibinfo{author}{J.~{Lee}}, \bibinfo{author}{F.~{Magoulès}},
+\newblock \bibinfo{title}{Detection of concept drift for learning from stream
+  data},
+\newblock in: \bibinfo{booktitle}{2012 IEEE 14th International Conference on
+  High Performance Computing and Communication 2012 IEEE 9th International
+  Conference on Embedded Software and Systems}, pp. \bibinfo{pages}{241--245}.
+%Type = Inproceedings
+\bibitem[{{Ditzler} and {Polikar}(2011)}]{Ditzler:Polikar:HDDDM:2011}
+\bibinfo{author}{G.~{Ditzler}}, \bibinfo{author}{R.~{Polikar}},
+\newblock \bibinfo{title}{Hellinger distance based drift detection for
+  nonstationary environments},
+\newblock in: \bibinfo{booktitle}{2011 IEEE Symposium on Computational
+  Intelligence in Dynamic and Uncertain Environments (CIDUE)}, pp.
+  \bibinfo{pages}{41--48}.
+%Type = Article
+\bibitem[{Kuncheva(2008)}]{Kuncheva:PCADetect:20085}
+\bibinfo{author}{L.~Kuncheva},
+\newblock \bibinfo{title}{Classifier ensembles for detecting concept change in
+  streaming data: Overview and perspectives},
+\newblock \bibinfo{journal}{Proc. Eur. Conf. Artif. Intell.}
+  (\bibinfo{year}{2008}) \bibinfo{pages}{5--10}. \bibinfo{note}{Cited By 70}.
+%Type = Inproceedings
+\bibitem[{Dredze et~al.(2010)Dredze, Oates, and
+  Piatko}]{Dredze:ADistance:2010585}
+\bibinfo{author}{M.~Dredze}, \bibinfo{author}{T.~Oates},
+  \bibinfo{author}{C.~Piatko},
+\newblock \bibinfo{title}{We're not in kansas anymore: Detecting domain changes
+  in streams},
+\newblock pp. \bibinfo{pages}{585--595}. \bibinfo{note}{Cited By 13}.
+%Type = Article
+\bibitem[{Lindstrom et~al.(2013)Lindstrom, Mac~Namee, and
+  Delany}]{Lindstrom:CDBD:2013}
+\bibinfo{author}{P.~Lindstrom}, \bibinfo{author}{B.~Mac~Namee},
+  \bibinfo{author}{S.~J. Delany},
+\newblock \bibinfo{title}{Drift detection using uncertainty distribution
+  divergence},
+\newblock \bibinfo{journal}{Evolving Systems} \bibinfo{volume}{4}
+  (\bibinfo{year}{2013}) \bibinfo{pages}{13--25}.
+%Type = Article
+\bibitem[{Dries and Rückert(2009)}]{Dries:Margin:2009}
+\bibinfo{author}{A.~Dries}, \bibinfo{author}{U.~Rückert},
+\newblock \bibinfo{title}{Adaptive concept drift detection},
+\newblock \bibinfo{journal}{Statistical Analysis and Data Mining: The ASA Data
+  Science Journal} \bibinfo{volume}{2} (\bibinfo{year}{2009})
+  \bibinfo{pages}{311--327}.
 %Type = Book
 \bibitem[{Bishop(2006)}]{Bishop:2006:PRM:1162264}
 \bibinfo{author}{C.~M. Bishop}, \bibinfo{title}{Pattern Recognition and Machine

@@ -40,6 +40,9 @@
 %% \usepackage{amsthm}
 \usepackage{todonotes}
 
+\usepackage{tabularx}
+\usepackage{booktabs}
+
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers after \end{frontmatter}.
@@ -230,20 +233,49 @@ These patterns are demonstrated in Figure \ref{fig:concept_drift_patterns} and d
 
 Concept drift detection methods characterize and quantify concept drifts through the delimitation of moments or time intervals in which change happens \cite{Basseville:1993:DAC:151741}.
 %
-These algorithms fall into two categories, according to the need for data labeling \cite{Zliobaite:2010}:
+These methods fall into two categories, according to the need for data labeling \cite{Zliobaite:2010}.
+The categories are described below and summarized in Table \ref{tbl:algorithms}, together with the main algorithms found in the literature.
 
 \begin{itemize}
     \item \textbf{Explicit Algorithms/Supervised}: Adopt a reactive approach, as they depend on the correct labeling of the data.
     The model performance is monitored continuously, and drifts are detected when its performance starts to deteriorate, passing past a threshold.
-    \item \textbf{Implicit Algorithms/Unsupervised:} Implement a proactive approach and are independent of data labels.
+    \item \textbf{Implicit Algorithms/Unsupervised}: Implement a proactive approach and are independent of data labels.
     Concept drifts are detected through the analysis of incoming data or indicators produced by the applied learning techniques.
     Although more prone to false alarms, they are an alternative to scenarios where obtaining labels is expensive, time-consuming, or unviable.
     Also, this approach can lead to better results, since it is possible to refit the model or adjust the data before the deterioration of the predictions.
 \end{itemize}
 
-This paper proposes a novel unsupervised and proactive concept drift detection method.
-The algorithm continually groups the incoming data through Radial Basis Function Networks and maintains a model of the center transitions in a Markov Chain.
-Drifts are detected when the probability of a transition in the formed cluster reaches a parametric threshold.
+\begin{table}[h]
+    \centering
+
+    \caption{Summary - Concept Drift Detection methods \cite{Sethi:2017:RDC:3096751.3096864}}
+    \label{tbl:algorithms}
+
+    \begin{tabularx}{\textwidth}{l|X}
+    \toprule
+    Category & Algorithms \\
+    \midrule
+    Explicit/Supervised              & Cumulative Sum (CUSUM), PageHinkley (PH) \cite{Page:CUSUM:PageHinkley:1954}, Geometric Moving Average (GMA) \cite{Roberts:2000:CCT:338441.338464} \\
+                                     & \\
+                                     & Drift Detection Method (DDM) \cite{GamaMCR04}, Early Drift Detection Method (EDDM) \cite{EDDM}, Exponentially Weighted Moving Average (EWMA) \cite{Ross:2012:EWM:2076039.2076307}, Reactive Drift Detection Method (RDDM) \cite{Barros:RDDM:2017} \\
+                                     & \\
+                                     & Adaptive Windowing (ADWIN) \cite{BifetG07}, SeqDrift \cite{PearsSK14:SeqDrift:2014}, HDDMA/HDDMW \cite{BlancoCRBDM15:HDDMA:HDDMW:2015} \\
+                                     & \\
+                                     & \\
+    Implicit/Unsupervised            & OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107}, MINAS \cite{Faria:2013:NDA:2480362.2480515}, Woo \cite{Ryu:Kantardzic:2012}, DETECTNOD \cite{Hashemi:Hayat:DETECTNOD:2010}, ECSMiner \cite{Masud:2011:CNC:1978259.1978529}, GC3 \cite{Sethi2016b:GC3} \\
+                                     & \\
+                                     & CoC \cite{Lee:Magoules:CoC:2012}, HDDDM \cite{Ditzler:Polikar:HDDDM:2011}, PCA-detect \cite{Kuncheva:PCADetect:20085} \\
+                                     & \\
+                                     & A-distance \cite{Dredze:ADistance:2010585}, CDBD \cite{Lindstrom:CDBD:2013}, Margin \cite{Dries:Margin:2009} \\
+                                     & \\
+    \bottomrule
+    \end{tabularx}
+\end{table}
+
+The method proposed in this paper classifies as an \textbf{Implicit/Unsupervised} algorithm and is suited to detect concept drifts in any pattern.
+It continually groups the incoming data through Radial Basis Function Networks and maintains a model of the center transitions in a Markov Chain.
+Concept drifts are detected when the probability of a transition in the formed cluster reaches a parametric threshold.
+This design allows the method to detect concept drifts in real-time and independently of labels.
 
 \section{Eye-tracking}
 \label{sec:eye_tracking}
