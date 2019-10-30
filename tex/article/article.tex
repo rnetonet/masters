@@ -119,7 +119,7 @@ most concept drift detection methods are unsuited for non-stationary environment
 because these algorithms often require the correct labeling of data or do not match the strict response time and resource usage requirements.
 %
 In this context, this paper proposes a novel proactive on-line concept drift detection method, called RBFChain.
-The proposed method relies on Radial Basis Function Networks implicit clustering property and uses Markov Chains to model the drifts transitions.
+The proposed method relies on Radial Basis Function Networks implicit clustering property and uses Markov Chains to model the transitions.
 %
 To assess RBFChain as a viable concept drift detector,
 an analysis of sensitivity, accuracy,
@@ -155,9 +155,9 @@ the pervasiveness of mobile devices,
 the popularization of social networks, and
 the expansion of the internet of things \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
 %
-A significant share of this data is produced in the form of uninterrupted and potentially infinite sequences \cite{Aggarwal:2006:DSM:1196418}.
+A significant share of this data is produced in the form of uninterrupted and potentially infinite sequences.
 In the literature,
-sequences with these characteristics are known as data streams,
+sequences with these characteristics are known as data streams \cite{Aggarwal:2006:DSM:1196418},
 and are present in various fields of application,
 such as financial market monitoring  \cite{ZHOU:2015},
 %road traffic monitoring \cite{Wang:2015:EOV:2843092.2843464},
@@ -168,26 +168,25 @@ telecom network management \cite{delattre2015method},
 
 Most of the environments that produce data streams are non-stationary.
 In these environments, the data distribution can arbitrarily change over time.
-Systems applied to these environments may be unable to adapt to the new information, hence dramatically deteriorating their performance.
+Systems applied to these environments may be unable to adapt to the new distribution, hence dramatically deteriorating their performance.
 This phenomenon is known as concept drift \cite{Gama:2014:DAF:2670967.2670971}.
 %
 However, most concept drift detection methods are unfit for non-stationary environments with data streams,
 because these algorithms often require the correct labeling of data or do not match the strict response time and resource usage requirements.
 
-This paper proposes a novel proactive on-line concept drift detection method, called RBFChain.
-The proposed algorithm is based on Radial Basis Function Networks implicit clustering property
-and employs Markov Chains to model the drifts transitions.
+In this context, this paper proposes a novel proactive on-line concept drift detection method, called RBFChain.
+The proposed method is based on Radial Basis Function Networks implicit clustering property
+and employs Markov Chains to model the transitions.
 To validate the proposed method as a viable concept drift detector,
 an examination of sensitivity, accuracy,
 and noise tolerance was performed using synthetic datasets,
-and results were compared to the most established algorithms in the literature.
+and results were compared to the main algorithms found in the literature.
 %
-Moreover, the algorithm was also applied to the real-world problem of eye-tracking.
-An important issue in different areas of knowledge, since many behavioral experiments use eye-tracking information as a relevant analysis factor.
+Moreover, the algorithm was applied to the real-world problem of eye-tracking: a critical issue in different areas of knowledge,
+since many behavioral experiments use eye-tracking information as a relevant analysis factor.
 
-Experimental results suggest that RBFChain is statistically better or equivalent to other detectors as it offers greater or equal overall classification accuracy.
-Additionally, the method demonstrated good performance in the eye-tracking problem,
-being able to identify fixations and saccades in real-time with precision comparable to state of the art.
+Experimental results suggest that RBFChain is statistically better or equivalent to other detectors as it offers greater or equal overall classification accuracy with synthetic datasets.
+Besides, the algorithm showed to apply to the eye monitoring problem, as it was able to classify fixations and saccades in real-time with accuracy comparable to state of the art.
 
 The rest of the paper is organized as follows:
 Section 2 describes the concept drift phenomenon and the main detection techniques;
