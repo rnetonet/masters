@@ -185,7 +185,7 @@ A quantidade de informações produzidas por sistemas computacionais tem crescid
 % Diante disso, pesquisadores passaram a aplicar técnicas de Aprendizado de Máquina para extrair informações úteis de grandes conjuntos de dados.
 Uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
 Esses fluxos são, em sua maioria, não-estacionários, podendo sofrer variações na distribuição dos dados ou no contexto do processo gerador.
-Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a performance de sistemas ou modelos consumidores dos dados.
+Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a performance de modelos de aprendizado aplicados.
 Para mitigar este problema, pesquisadores desenvolveram métodos especializados na detecção de mudanças de conceito.
 Entretanto, os métodos propostos apresentam limitações ao serem aplicados em cenários com fluxos contínuos,
 como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
@@ -194,8 +194,7 @@ As redes RBF realizam, em sua camada intermediária, um processo de ativação q
 Simultaneamente, cadeias de Markov modelam as transições de centro ocorridas no agrupamento formado.
 Mudanças de conceito são detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limiar.
 O método proposto se diferencia dos trabalhos existentes na literatura por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
-Os resultados obtidos com conjuntos de dados sintéticos permitem demonstrar a viabilidade do método,
-tendo sido apresentado um desempenho superior ou similar ao de algoritmos consolidados na literatura, em termos de acurácia média e tempo de processamento.
+Os resultados obtidos com conjuntos de dados sintéticos apresentaram desempenho superior ou similar ao de algoritmos consolidados na literatura, em termos de acurácia média e tempo de processamento.
 Além disso, o método foi aplicado ao problema de classificação de fixações e sacadas na atividade de monitoramento ocular.
 A técnica desenvolvida foi capaz de classificar fixações e sacadas em tempo de execução e com acurácia similar ao estado da arte.
 
