@@ -25,7 +25,7 @@
 %%           twoside - para impressao em frente e verso (padrao)
 
 % Atenção: Manter 'classic' na declaracao abaixo:
-\documentclass[qual, classic, a4paper]{ufbathesis}
+\documentclass[msc, classic, a4paper]{ufbathesis}
 
 %% Preambulo:
 \usepackage[utf8]{inputenc}
@@ -38,7 +38,7 @@
 
 \usepackage{pifont}
 \usepackage{multirow}
-\usepackage{listings} 
+\usepackage{listings}
 \usepackage[portuguese, noend, plain]{algorithm2e}
 \usepackage{colortbl}
 \usepackage{xfrac}
@@ -59,7 +59,7 @@
 \presetkeys%
     {todonotes}%
     {inline,backgroundcolor=yellow}{}
-    
+
 \usepackage{blindtext}
 
 \makeatletter
@@ -81,7 +81,7 @@
 % Universidade
 \university{Universidade Federal da Bahia}
 
-% Endereco (cidade) 
+% Endereco (cidade)
 \address{Salvador}
 
 % Instituto ou Centro Academico
@@ -97,11 +97,11 @@
 \majorfield{Ci\^{e}ncia da Computa\c{c}\~{a}o}
 
 % Titulo da dissertacao
-\title{Proposta de uma abordagem para a detecção online de mudanças de conceito em fluxos contínuos de dados}
+\title{Aplicando Redes de Função de Base Radial e Cadeias de Markov para a detecção online de mudanças de conceito em fluxos contínuos de dados}
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
-\date{14 de Junho de 2019}
+\date{13 de Dezembro de 2019}
 % e.g. \defenseyear{2013}
 \defenseyear{2019}
 
@@ -141,7 +141,7 @@
 
 %\catalogtopics{1. Primeira palavra-chave. 2. Segunda palavra-chave. 3. Terceira palavra-chave} % Listar palavras-chave do trabalho para a FICHA CATALOGRAFICA}, por exemplo, ``1. Complexidade Estrutural. 2. Qualidade de Software 3. Engenharia de Software''
 %\catalogcdd{XXX.XX} % e.g.  XXX.XX (número nesse formato serah dado pela biblioteca)
-%\catalogcdu{XXX.XX.XXX} % e.g.  XXX.XX.XXX (idem) 
+%\catalogcdu{XXX.XX.XXX} % e.g.  XXX.XX.XXX (idem)
 %\catalogingsheet
 
 %%%%%%%%%%%%%%%%%%%%%
@@ -149,15 +149,15 @@
 %%%%%%%%%%%%%%%%%%%%%
 
 % \approvalsheet{Salvador, 24 de Maio de 2019}{
-%    \comittemember{Prof. Dr. Ricardo Araújo Rios}{UFBA}  
+%    \comittemember{Prof. Dr. Ricardo Araújo Rios}{UFBA}
 %    %\comittemember{Profa. Dr...}{UFBA}
-%    %\comittemember{Prof. Dr...}{USP} 
+%    %\comittemember{Prof. Dr...}{USP}
 % }
    % Para mestrado, apenas 3.
    % \comittemember{Prof. Dr. Professor 4}{Universidade HJKL}
    % \comittemember{Profa. Dra. Professora 5}{Universidade QWERTY}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dedicatoria, Agradecimentos, Epigrafe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -177,28 +177,31 @@
 %\end{epigraph}
 
 %%%%%%%%%%%%%%%%%%%%%
-% Resumo 
+% Resumo
 %%%%%%%%%%%%%%%%%%%%%
 \resumo
 
 A quantidade de informações produzidas por sistemas computacionais tem crescido de forma acentuada nas últimas décadas.
-Diante disso, pesquisadores passaram a aplicar técnicas de Aprendizado de Máquina para extrair informações úteis de grandes conjuntos de dados.
-Contudo, uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
+% Diante disso, pesquisadores passaram a aplicar técnicas de Aprendizado de Máquina para extrair informações úteis de grandes conjuntos de dados.
+Uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
 Esses fluxos são, em sua maioria, não-estacionários, podendo sofrer variações na distribuição dos dados ou no contexto do processo gerador.
-Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a acurácia da técnica de aprendizado aplicada.
+Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a performance de sistemas ou modelos consumidores dos dados.
 Para mitigar este problema, pesquisadores desenvolveram métodos especializados na detecção de mudanças de conceito.
-Entretanto, os métodos propostos apresentam limitações ao serem aplicados em cenários com fluxos contínuos, 
+Entretanto, os métodos propostos apresentam limitações ao serem aplicados em cenários com fluxos contínuos,
 como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
-Este projeto de trabalho de mestrado propõe um novo método de detecção baseado em Redes de Função de Base Radial (RBF).
-As redes RBF realizam, em sua camada intermediária, um processo de ativação de neurônios que, implicitamente, produz agrupamentos das observações recepcionadas ao longo do tempo.
-O algoritmo proposto nesta pesquisa visa monitorar o centro ativo desse agrupamento e detecta mudanças de conceito quando este centro é alterado.
+Este trabalho de mestrado propõe um novo método de detecção baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov.
+As redes RBF realizam, em sua camada intermediária, um processo de ativação que implicitamente produz grupos das observações recepcionadas ao longo do tempo.
+Simultaneamente, cadeias de Markov modelam as transições de centro ocorridas no agrupamento formado.
+Mudanças de conceito são detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limiar.
 O método proposto se diferencia dos trabalhos existentes na literatura por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
-Os resultados preliminares obtidos permitem demonstrar a viabilidade desta proposta de mestrado, 
-apresentando um desempenho superior ou similar ao de algoritmos conhecidos como ADWIN, CUSUM e PageHinkley, em termos de acurácia média e tempo de processamento.
+Os resultados obtidos com conjuntos de dados sintéticos permitem demonstrar a viabilidade do método,
+tendo sido apresentado um desempenho superior ou similar ao de algoritmos consolidados na literatura, em termos de acurácia média e tempo de processamento.
+Além disso, o método foi aplicado ao problema de classificação de fixações e sacadas na atividade de monitoramento ocular.
+A técnica desenvolvida foi capaz de classificar fixações e sacadas em tempo de execução e com acurácia similar ao estado da arte.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-    Aprendizado de Máquina, Fluxos Contínuos de Dados, Mudanças de Conceito, Redes de Função de Base Radial, Não supervisionado
+    Fluxos Contínuos de Dados, Mudanças de Conceito, Redes de Função de Base Radial, Cadeias de Markov, Monitoramento Ocular
 \end{keywords}
 
 % \abstract
@@ -238,7 +241,7 @@ apresentando um desempenho superior ou similar ao de algoritmos conhecidos como 
 % ...
 % \include{capituloN}
 %
-% Importante: 
+% Importante:
 % Use \xchapter{}{} ao inves de \chapter{}; se não quiser colocar texto antes do inicio do capitulo, use \xchapter{texto}{}.
 
 %%%
@@ -248,49 +251,49 @@ apresentando um desempenho superior ou similar ao de algoritmos conhecidos como 
 
 Nos últimos anos, o volume de dados produzidos por sistemas computacionais tem crescido de forma acentuada.
 %
-Esse crescimento foi favorecido por avanços tecnológicos recentes, como  
+Esse crescimento foi favorecido por avanços tecnológicos recentes, como
 a pervasividade dos dispositivos móveis,
-a popularização das redes sociais e 
+a popularização das redes sociais e
 a expansão da internet das coisas \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
 %
-A dimensão desse aumento foi verificada por \citeonline{idc_report}, 
+A dimensão desse aumento foi verificada por \citeonline{idc_report},
 os quais estimaram que, entre os anos de 2014 e 2020,
 a quantidade de informações produzidas anualmente irá aumentar de 4,4 zettabytes (trilhões de gigabytes) para 44 zettabytes.
 
 Parte significativa dessas informações é produzida na forma de sequências ininterruptas e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
 %
 Na literatura, sequências com essas características são denominadas Fluxos Contínuos de Dados (FCDs) e estão presentes em diversos domínios de aplicação como, por exemplo, monitoramento do mercado financeiro \cite{ZHOU:2015},
-acompanhamento de tráfico rodoviário \cite{Wang:2015:EOV:2843092.2843464}, 
-gerenciamento de redes de telecomunicação \cite{delattre2015method}, 
-análise de sentimento em tempo real \cite{KRANJC2015187} e 
+acompanhamento de tráfico rodoviário \cite{Wang:2015:EOV:2843092.2843464},
+gerenciamento de redes de telecomunicação \cite{delattre2015method},
+análise de sentimento em tempo real \cite{KRANJC2015187} e
 sistemas de prevenção e identificação de intrusos \cite{KENKRE:PAI:COLACO:2015}.
 
-Para extrair informações úteis dessa grande quantidade de dados, 
-pesquisadores têm aplicado técnicas da área de Aprendizado de Máquina (AM), 
+Para extrair informações úteis dessa grande quantidade de dados,
+pesquisadores têm aplicado técnicas da área de Aprendizado de Máquina (AM),
 a qual estuda algoritmos que melhoram seu desempenho conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
 %
-Entretanto, as estratégias tradicionais de Aprendizado de Máquina têm aplicação limitada para contextos com fluxos contínuos de dados, 
+Entretanto, as estratégias tradicionais de Aprendizado de Máquina têm aplicação limitada para contextos com fluxos contínuos de dados,
 pois nesses cenários os algoritmos devem atender a severas restrições de tempo de execução e de uso dos recursos computacionais \cite{bifet2009data}.
 
-Além dessas limitações, 
-as técnicas de Aprendizado de Máquina, 
-quando aplicadas em contextos com fluxos contínuos, 
+Além dessas limitações,
+as técnicas de Aprendizado de Máquina,
+quando aplicadas em contextos com fluxos contínuos,
 também devem lidar com variações na distribuição dos dados ou no contexto do processo gerador.
 %
-Essas alterações são denominadas Mudanças de Conceito \cite{Gama:2010:KDD:1855075} e 
+Essas alterações são denominadas Mudanças de Conceito \cite{Gama:2010:KDD:1855075} e
 a sua ocorrência pode impactar a acurácia da técnica de aprendizado aplicada.
 
 Inicialmente, a atualização periódica de modelos obtidos a partir das técnicas de AM foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
 %
 Contudo, esta solução é pouco sofisticada e computacionalmente custosa.
-% 
+%
 Diante disso, pesquisadores propuseram técnicas de detecção de mudanças de conceito baseadas em monitoramento \cite{Gama:2014:SCD:2597757.2523813}.
-% 
+%
 Estes métodos identificam a ocorrência de mudanças com maior precisão, permitindo que o modelo de decisão seja atualizado somente quando necessário.
 %
-Exemplos de algoritmos baseados nesta abordagem, incluem: 
-DDM \cite{GamaMCR04}, EDDM \cite{EDDM},  
-ADWIN \cite{BifetG07}, ECDD \cite{Ross:2012:EWM:2076039.2076307}, 
+Exemplos de algoritmos baseados nesta abordagem, incluem:
+DDM \cite{GamaMCR04}, EDDM \cite{EDDM},
+ADWIN \cite{BifetG07}, ECDD \cite{Ross:2012:EWM:2076039.2076307},
 PL \cite{Bach:PL:2008}, FCWM \cite{FCWM} e STEPD \cite{STEPD}.
 
 Entretanto, as técnicas baseadas em monitoramento necessitam que o rótulo correto de cada exemplo esteja disponível.
@@ -299,24 +302,24 @@ Em muitos cenários, o tempo ou o custo para obter esses rótulos é proibitivo 
 %
 Consequentemente, foram desenvolvidos novos algoritmos independentes de rótulos.
 Nestes métodos, a detecção se baseia na identificação de exemplos que não se enquadram na estrutura conhecida dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
-% 
+%
 Essa análise é implementada com base em técnicas de agrupamento, detecção de \textit{outliers} e medidas de dissimilaridade \cite{Ryu:Kantardzic:2012}.
 %
 Os seguintes algoritmos são exemplos desta abordagem:
 OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107},
 MINAS \cite{Faria:2013:NDA:2480362.2480515},
-ECSMiner \cite{Masud:2011:CNC:1978259.1978529} e 
+ECSMiner \cite{Masud:2011:CNC:1978259.1978529} e
 GC3 \cite{Sethi2016b:GC3}.
 
 Todavia, segundo \citeonline{Aggarwal:2006:DSM:1196418},
 as técnicas de detecção de mudanças de conceito presentes na literatura ainda apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
-% 
+%
 Os algoritmos dependentes de rótulo se tornam inviáveis, por causa do custo e do tempo necessário para obter os rótulos corretos.
 %
 Enquanto as técnicas independentes têm dificuldade em atender as severas restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
 
-Visando resolver essas limitações, 
-este projeto de mestrado discute uma abordagem baseada em Redes de Função de Base Radial (RBF) 
+Visando resolver essas limitações,
+este projeto de mestrado discute uma abordagem baseada em Redes de Função de Base Radial (RBF)
 para detecção de mudanças de conceito em fluxos contínuos de dados.
 % A metodologia proposta se diferencia por detectar as mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 
@@ -338,14 +341,14 @@ Os dados utilizados durante a validação serão divididos em dois conjuntos.
 %
 Um conjunto formado por dados sintéticos, que permitirão uma análise detalhada da abordagem, uma vez que as características e os comportamentos dos fluxos serão conhecidos.
 %
-O outro conjunto será composto por dados obtidos a partir de sistemas computacionais utilizados na indústria, visando apresentar uma aplicação prática para a solução proposta. 
+O outro conjunto será composto por dados obtidos a partir de sistemas computacionais utilizados na indústria, visando apresentar uma aplicação prática para a solução proposta.
 
-O restante deste projeto está organizado conforme a seguinte estrutura: 
+O restante deste projeto está organizado conforme a seguinte estrutura:
 %
-O \textbf{Capítulo \ref{revisao_bibliografica}} apresenta uma revisão bibliográfica dos principais conceitos utilizados como, 
-por exemplo, Fluxos Contínuos de Dados e Aprendizado de Máquina, Mudança de Conceito e Redes de Função de Base Radial; 
+O \textbf{Capítulo \ref{revisao_bibliografica}} apresenta uma revisão bibliográfica dos principais conceitos utilizados como,
+por exemplo, Fluxos Contínuos de Dados e Aprendizado de Máquina, Mudança de Conceito e Redes de Função de Base Radial;
 %
-No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa é detalhado, identificando a metodologia que será aplicada na pesquisa e o cronograma de atividades. 
+No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa é detalhado, identificando a metodologia que será aplicada na pesquisa e o cronograma de atividades.
 %
 Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos.
 
@@ -381,7 +384,7 @@ As características dos fluxos contínuos de dados implicam as seguintes restri�
 
 A área de Aprendizado de Máquina (AM) estuda algoritmos que melhoram o seu desempenho conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
 %
-Esses algoritmos se dividem em duas categorias principais: 
+Esses algoritmos se dividem em duas categorias principais:
 %
 não supervisionados (agrupamento ou \textit{clustering}) e supervisionados (classificação ou regressão).
 %
@@ -394,7 +397,7 @@ Essas técnicas têm como objetivo a formação de grupos com alta similaridade 
 Os seguintes algoritmos são exemplos de técnicas não supervisionadas para cenários em lote:
 K-Means \cite{Lloyd:2006:LSQ:2263356.2269955},
 DBSCAN \cite{Ester:1996:DAD:3001460.3001507},
-PAM \cite{kaufman:clustering1990} e 
+PAM \cite{kaufman:clustering1990} e
 OPTICS \cite{Ankerst:1999:OOP:304181.304187}.
 
 De acordo com \citeonline{Gama:2010:KDD:1855075}, a principal dificuldade ao aplicar técnicas não supervisionadas em cenários com fluxos contínuos é a manutenção da qualidade e consistência dos grupos formados conforme novos dados são observados.
@@ -411,14 +414,14 @@ Se a predição é categórica, entende-se como um problema de classificação.
 Se a predição resulta em um valor numérico, trata-se de uma tarefa de regressão.
 Exemplos de algoritmos supervisionados para cenários em lote, incluem:
 árvores de decisão \cite{Breiman:Classification_Regression_Trees},
-métodos baseados em regras, 
+métodos baseados em regras,
 redes neurais e máquinas de vetores suporte (SVM) \cite{Vapnik1998}.
 
-Segundo \citeonline{Gama:2010:LDS:1951990}, 
-as técnicas supervisionadas tradicionais não podem ser aplicadas a contextos com fluxos contínuos de dados, 
+Segundo \citeonline{Gama:2010:LDS:1951990},
+as técnicas supervisionadas tradicionais não podem ser aplicadas a contextos com fluxos contínuos de dados,
 pois estes métodos não contemplam as severas restrições de uso de memória e de tempo de execução desses cenários.
 %
-Dessa forma, 
+Dessa forma,
 novos algoritmos supervisionados foram propostos para esses contextos \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813}.
 
 As especializações mencionadas buscam atender às restrições de uso de memória e de tempo de execução dos contextos com fluxos contínuos de dados.
@@ -437,7 +440,7 @@ Essas alterações são denominadas Mudanças de Conceito (\textit{Concept Drift
 Na literatura, é comum utilizar a Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} para descrever a tarefa de classificação.
 Esta descrição será utilizada como base para formalização do fenômeno de mudança de conceito.
 
-Sendo $X \in \mathbb{R}^p$ uma instância em um espaço $p$-dimensional de atributos e $X \in c_i$ onde $c_1$, $c_2$, \ldots, $c_k$ é o conjunto de classes, 
+Sendo $X \in \mathbb{R}^p$ uma instância em um espaço $p$-dimensional de atributos e $X \in c_i$ onde $c_1$, $c_2$, \ldots, $c_k$ é o conjunto de classes,
 o classificador ótimo para classificar $x \rightarrow c_i$ é determinado a partir das probabilidades a priori das classes $P(c_i)$ e pela função de densidade de probabilidade condicionada às classes $p(X|c_i), i = 1, \ldots, k$.
 É possível definir um conceito como um conjunto de probabilidades a priori e condicionais das classes, como mostra a Equação \ref{eq:conceito}:
 
@@ -457,14 +460,14 @@ Assim, é possível afirmar que há mudança de conceito entre os instantes $t_0
     {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
 \end{equation}
 
-onde $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente, 
-para $X$ e $c$ \cite{Gama:2014:SCD:2597757.2523813}. 
+onde $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, respectivamente,
+para $X$ e $c$ \cite{Gama:2014:SCD:2597757.2523813}.
 Em outras palavras, um conjunto de dados possui resultados esperados legítimos em $t_0$, mas este mesmo conjunto passa a ter resultados esperados diferentes, também legítimos, em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
 
 De acordo com \citeonline{Gama:2014:SCD:2597757.2523813}, as mudanças de conceito podem ser categorizadas como virtuais ou reais.
 As mudanças virtuais são causadas por alterações na probabilidade a priori das classes, $P(c)$, e não alteram os conceitos-alvo.
 Enquanto que as mudanças de conceito reais surgem a partir de alterações na probabilidade a posteriori, $p(c|X)$, e modificam os resultados esperados.
-Os dois tipos de mudança de conceito estão representados na Figura \ref{fig:real_and_virtual_concept_drift}. 
+Os dois tipos de mudança de conceito estão representados na Figura \ref{fig:real_and_virtual_concept_drift}.
 
 \begin{figure}[H]
 \begin{center}
@@ -475,7 +478,7 @@ Os dois tipos de mudança de conceito estão representados na Figura \ref{fig:re
 \end{figure}
 
 Conforme \citeonline{Zliobaite:2010}, as mudanças de conceito podem ocorrer de forma abrupta, gradual, incremental ou recorrente.
-A Figura \ref{fig:concept_drift_patterns} ilustra estes padrões, 
+A Figura \ref{fig:concept_drift_patterns} ilustra estes padrões,
 utilizando círculos na cor azul para representar o conceito \textit{A} e círculos na cor bege para o conceito \textit{B}:
 
 \begin{figure}[H]
@@ -498,7 +501,7 @@ Essa evolução pode ser discretizada como uma sequência de conceitos consecuti
 Nesta sequência, cada conceito intermediário difere pouco dos seus conceitos antecessor e sucessor.
 Portanto, as mudanças são notáveis apenas à longo prazo (Figura \ref{fig:concept_drift_patterns} (c)).
 
-A mudança recorrente acontece quando um conceito anteriormente ativo reaparece após um determinado período de tempo. 
+A mudança recorrente acontece quando um conceito anteriormente ativo reaparece após um determinado período de tempo.
 Contudo, não se trata de uma sazonalidade periódica, pois não é evidente o momento no qual o conceito voltará a ser ativo (Figura \ref{fig:concept_drift_patterns} (d)).
 
 Este trabalho de mestrado propõe um método baseado em Redes de Função de Base Radial para detecção de mudanças de conceito em fluxos contínuos de dados, independente do padrão de ocorrência.
@@ -506,7 +509,7 @@ Na próxima subseção, será apresentada a terminologia do fenômeno mudança d
 
 \subsection{Terminologia}
 
-O fenômeno mudança de conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo Mineração de Dados, 
+O fenômeno mudança de conceito tem sido estudado em diferentes comunidades de pesquisa, incluindo Mineração de Dados,
 Aprendizado de Máquina, Estatística e Recuperação de Informação \cite{Zliobaite:2010}.
 Contudo, o tema apresenta diferentes nomeclaturas em cada comunidade.
 Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a mudança de conceito em cada área de pesquisa.
@@ -571,17 +574,17 @@ Segundo \citeonline{Gama:2014:SCD:2597757.2523813}, os algoritmos \textit{explí
     são representantes desta subcategoria.
 
     \item[Abordagens baseadas em Estatística] Identificam mudanças de conceito através da análise de parâmetros estatísticos como média e desvio padrão associados aos resultados das predições.
-    Os métodos \textit{Drift Detection Method (DDM)} \cite{GamaMCR04}, 
-    \textit{Early Drift Detection Method (EDDM)} \cite{EDDM}, 
-    \textit{Exponentially Weighted Moving Average (EWMA)} \cite{Ross:2012:EWM:2076039.2076307} e 
+    Os métodos \textit{Drift Detection Method (DDM)} \cite{GamaMCR04},
+    \textit{Early Drift Detection Method (EDDM)} \cite{EDDM},
+    \textit{Exponentially Weighted Moving Average (EWMA)} \cite{Ross:2012:EWM:2076039.2076307} e
     \textit{Reactive Drift Detection Method (RDDM)} \cite{Barros:RDDM:2017} são exemplos desta subcategoria.
 
     \item[Métodos baseados em Janelas] Utilizam uma janela de tamanho fixo para sumarizar informações passadas e uma janela deslizante para sumarizar os dados recentes.
     Uma diferença significativa entre as distribuições dessas janelas implica na ocorrência de mudança de conceito.
     Esta diferença é verificada a partir de testes estatísticos ou desigualdades matemáticas, considerando como hipótese nula a igualdade das distribuições.
-    Os algoritmos 
-    \textit{Adaptive Windowing (ADWIN)} \cite{BifetG07}, 
-    \textit{SeqDrift} \cite{PearsSK14:SeqDrift:2014}, 
+    Os algoritmos
+    \textit{Adaptive Windowing (ADWIN)} \cite{BifetG07},
+    \textit{SeqDrift} \cite{PearsSK14:SeqDrift:2014},
     \textit{HDDMA} e \textit{HDDMW} \cite{BlancoCRBDM15:HDDMA:HDDMW:2015}
     pertencem a esta subcategoria.
 \end{description}
@@ -589,17 +592,17 @@ Segundo \citeonline{Gama:2014:SCD:2597757.2523813}, os algoritmos \textit{explí
 De forma similar, os algoritmos \textit{implícitos / não supervisionados} também foram divididos em três subcategorias \cite{GONCALVES20148144}:
 
 \begin{description}
-    \item[Detecção de Novidade / Métodos de Agrupamento] 
+    \item[Detecção de Novidade / Métodos de Agrupamento]
     Utilizam técnicas derivadas dos métodos de agrupamento e de detecção de \textit{outliers} para identificar padrões ainda não observados.
     A partir dessa identificação, são realizados cálculos de distância e/ou densidade para confirmar a ocorrência de mudança de conceito \cite{Ryu:Kantardzic:2012}.
-    Os métodos 
+    Os métodos
     \textit{OLINDDA} \cite{Spinosa:2007:OCA:1244002.1244107},
     \textit{MINAS} \cite{Faria:2013:NDA:2480362.2480515},
     \textit{Woo} \cite{Ryu:Kantardzic:2012},
     \textit{DETECTNOD} \cite{Hashemi:Hayat:DETECTNOD:2010},
     \textit{ECSMiner} \cite{Masud:2011:CNC:1978259.1978529} e
     \textit{GC3} \cite{Sethi2016b:GC3} fazem parte desta subcategoria.
-    
+
     \item[Monitoramento de distribuição multivariada]
     Monitoram diretamente a distribuição dos dados para cada atributo.
     A distribuição de um conjunto de treinamento é sumarizada e utilizada como referência.
@@ -612,10 +615,10 @@ De forma similar, os algoritmos \textit{implícitos / não supervisionados} tamb
     são representantes desta subcategoria.
 
     \item[Monitoramento dependente de modelo]
-    Requerem a aplicação de um algoritmo de classificação probabilístico, 
+    Requerem a aplicação de um algoritmo de classificação probabilístico,
     pois as mudanças de conceito são detectadas a partir do monitoramento da probabilidade a posteriori calculada \cite{Zliobaite:2010}.
-    Esta restrição permite reduzir a ocorrência de falsos positivos e torna o processo computacionalmente eficiente, pois apenas um único fluxo univariado de valores é observado. 
-    Os métodos 
+    Esta restrição permite reduzir a ocorrência de falsos positivos e torna o processo computacionalmente eficiente, pois apenas um único fluxo univariado de valores é observado.
+    Os métodos
     \textit{A-distance} \cite{Dredze:ADistance:2010585},
     \textit{CDBD} \cite{Lindstrom:CDBD:2013} e
     \textit{Margin} \cite{Dries:Margin:2009} integram esta subcategoria.
@@ -633,7 +636,7 @@ Na próxima seção, as ferramentas utilizadas para implementação e validaçã
     \begin{tabular}[t]{@{}lllll@{}}
     \toprule
     Categoria & Subcategoria & Algoritmos \\
-    \midrule 
+    \midrule
     Algoritmos Explícitos/Supervisionados     & Métodos Baseados em Análise Sequencial        & \begin{tabular}[t]{@{}l@{}} Cumulative Sum (CUSUM) \\ PageHinkley (PH) \cite{Page:CUSUM:PageHinkley:1954} \\ Geometric Moving Average (GMA) \cite{Roberts:2000:CCT:338441.338464}\end{tabular}                                                                                                                        &  &  \\
     \addlinespace[2mm]
                                               & Abordagens baseadas em Estatística            & \begin{tabular}[t]{@{}l@{}} Drift Detection Method (DDM) \cite{GamaMCR04} \\  Early Drift Detection Method (EDDM) \cite{EDDM} \\  Exponentially Weighted Moving Average (EWMA) \cite{Ross:2012:EWM:2076039.2076307} \\ Reactive Drift Detection Method (RDDM) \cite{Barros:RDDM:2017} \end{tabular}                   &  &  \\
@@ -655,10 +658,10 @@ Na próxima seção, as ferramentas utilizadas para implementação e validaçã
 
 Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
 Estes frameworks serão utilizados para implementar e validar a técnica de detecção proposta neste trabalho.
-Além disso, essas ferramentas possuem implementações para os principais algoritmos de detecção de mudança de conceito presentes na literatura, 
+Além disso, essas ferramentas possuem implementações para os principais algoritmos de detecção de mudança de conceito presentes na literatura,
 possibilitando a comparação deste trabalho com o estado da arte.
 
-\subsection{MOA} 
+\subsection{MOA}
 
 Atualmente, o \textit{MOA – Massive Online Analysis}\footnote{https://moa.cms.waikato.ac.nz/} é o principal framework para mineração de dados em fluxos contínuos \cite{Bifet:2010:MMO:1756006.1859903}.
 O framework é de código-aberto\footnote{https://github.com/Waikato/moa} e apresenta uma comunidade bastante ativa e crescente.
@@ -668,7 +671,7 @@ A aplicação é desenvolvida em Java, o que permite a sua execução nos princi
 
 O MOA divide as suas funcionalidades em tarefas (\textit{tasks}).
 Estas tarefas podem ser executadas a partir da interface gráfica (GUI) ou por linha de comando.
-A interface gráfica permite executar múltiplas tarefas de forma concorrente, 
+A interface gráfica permite executar múltiplas tarefas de forma concorrente,
 controlar suas execuções e visualizar os resultados parciais.
 A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
 
@@ -683,16 +686,16 @@ A tela principal da aplicação é demonstrada na Figura \ref{fig:moa}.
 A aplicação é capaz de ler arquivos em formato ARFF\footnote{\textit{Attribute-Relation File Format}}, além de permitir a produção de fluxos de dados dinamicamente, através de geradores.
 Alguns dos geradores de fluxo disponíveis no MOA são:
 \textit{Random Trees} \cite{Domingos:2000:MHD:347090.347107}
-\textit{SEA} \cite{Street:2001:SEA:502512.502568}, 
-\textit{STAGGER} \cite{Schlimmer1986}, 
+\textit{SEA} \cite{Street:2001:SEA:502512.502568},
+\textit{STAGGER} \cite{Schlimmer1986},
 \textit{Rotating Hyperplane} \cite{Wang:2003:MCD:956750.956778},
-\textit{Random RBF}, 
-\textit{LED} \cite{Gama:2003:ADT:956750.956813}, 
-\textit{Waveform} \cite{Gama:2003:ADT:956750.956813}, 
+\textit{Random RBF},
+\textit{LED} \cite{Gama:2003:ADT:956750.956813},
+\textit{Waveform} \cite{Gama:2003:ADT:956750.956813},
  e \textit{Function} \cite{Jin:2003:EDT:956750.956821}.
 
 Outra funcionalidade importante do framework é a possibilidade de adicionar mudanças de conceito a fluxos estacionários existentes.
-Esse processo é realizado através de uma função sigmóide, que modela o evento de mudança de conceito como uma combinação balanceada de duas distribuições homogêneas, 
+Esse processo é realizado através de uma função sigmóide, que modela o evento de mudança de conceito como uma combinação balanceada de duas distribuições homogêneas,
 que caracterizam os conceitos-alvo antes e depois da mudança.
 Além destes conceitos, o usuário também pode definir o momento da mudança e a sua duração \cite{Bifet:2010:MMO:1756006.1859903}.
 
@@ -707,7 +710,7 @@ A janela de configuração deste detector, similar a Figura \ref{fig:moa_detecto
     \label{fig:moa_detector}
 \end{center}
 \end{figure}
-    
+
 Além de possuir implementações para diversos algoritmos da área de Aprendizado de Máquina e de áreas correlatas, o framework também dispõe de classes para avaliar a acurácia e a performance dessas técnicas.
 Neste trabalho de mestrado, a classe \textit{BasicConceptDriftPerformanceEvaluator} será utilizada para avaliar a acurácia e a performance do método proposto.
 Na próxima subseção, o framework \textit{Tornado} será apresentado.
@@ -717,7 +720,7 @@ Na próxima subseção, o framework \textit{Tornado} será apresentado.
 O \textit{Tornado} é um framework desenvolvido para analisar algoritmos de detecção de mudanças de conceito \cite{Pesaranghader:Tornado}.
 O projeto é construído na linguagem Python e o seu código está disponível\footnote{https://github.com/alipsgh/tornado}.
 O framework se diferencia do \textit{MOA}, pois apresenta um cenário de avaliação específico:
-analisar a execução, em paralelo, de pares formados por um classificador e um detector de mudanças, 
+analisar a execução, em paralelo, de pares formados por um classificador e um detector de mudanças,
 para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
 
 \begin{figure}[H]
@@ -728,15 +731,15 @@ para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
 \end{center}
 \end{figure}
 
-Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do framework são: 
+Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do framework são:
 \textit{Stream Reader}, \textit{Classifiers}, \textit{Detectors}, \textit{Classifier-Detector Pairs} e \textit{CAR Calculator}.
 A entrada de dados é composta por um fluxo (\textit{Stream}), uma lista de pares (classificador, detector) e um vetor com pesos.
-O componente \textit{Stream Reader} recepciona as instâncias e as encaminha para construção do modelo de forma incremental. 
+O componente \textit{Stream Reader} recepciona as instâncias e as encaminha para construção do modelo de forma incremental.
 Por seguir a abordagem \textit{prequential}, cada instância é primeiramente utilizada para testes e depois como treinamento.
 Simultaneamente, os classificadores enviam suas estatísticas aos detectores, para que a mudança de conceito possa ser sinalizada.
 Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par, baseada na taxa de erro, atraso para detecção (\textit{delay}), falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
 
-O resultado produzido identifica o par ótimo para cada instante da execução. 
+O resultado produzido identifica o par ótimo para cada instante da execução.
 Esta abordagem de avaliação se mostra relevante, pois o par ideal pode mudar ao longo do tempo, devido ao aprendizado incremental ou às mudanças de conceito.
 A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado da ferramenta.
 
@@ -755,14 +758,14 @@ A seguir, as Redes de Função de Base Radial são detalhadas.
 
 \section{Redes de Função de Base Radial}
 
-Uma Rede de Função de Base Radial (redes RBF, em português,  ou \textit{radial basis function network, RBF network}, em inglês) pode ser definida como um modelo de múltiplas camadas alimentadas adiante (\textit{feedforward}), 
+Uma Rede de Função de Base Radial (redes RBF, em português,  ou \textit{radial basis function network, RBF network}, em inglês) pode ser definida como um modelo de múltiplas camadas alimentadas adiante (\textit{feedforward}),
 capaz de analisar padrões complexos e resolver problemas não-linearmente separáveis, utilizando uma abordagem de aproximação de funções.
 Estas redes têm como principal diferencial a sua forma de ativação, realizada através do cálculo da distância entre o dado e um centro definido \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 
 A arquitetura de uma rede de função de base radial, em sua forma mais básica, envolve três camadas.
 A camada de entrada representa os atributos do problema. As unidades dessa camada não realizam processamento e simplesmente distribuem as entradas para os neurônios na camada intermediária.
 A camada intermediária, única camada oculta da rede, é constituída por funções de ativação de base radial, que atuam como os neurônios da rede.
-Por fim, a camada de saída pondera, através de pesos, os resultados da camada intermediária, agregando-os linearmente para compor a resposta final da rede \cite{Rojas:1996:NNS:235222}. 
+Por fim, a camada de saída pondera, através de pesos, os resultados da camada intermediária, agregando-os linearmente para compor a resposta final da rede \cite{Rojas:1996:NNS:235222}.
 A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
 
 Na literatura, as funções Gaussianas (Função \ref{eq:gaussiana}) são as funções de ativação mais usuais em redes RBF, sendo definidas por seus centros e larguras:
@@ -772,7 +775,7 @@ Na literatura, as funções Gaussianas (Função \ref{eq:gaussiana}) são as fun
     \varphi (v_{i})=e^{-(\sigma r)^{2}}
 \end{equation}
 
-% A camada intermediária, através de suas funções de ativação de base radial, realiza uma transformação não-linear dos dados de entrada para um espaço de alta dimensionalidade. A importância dessa transformação é justificada matematicamente pelo teorema de \citeonline{cover1965browse}, 
+% A camada intermediária, através de suas funções de ativação de base radial, realiza uma transformação não-linear dos dados de entrada para um espaço de alta dimensionalidade. A importância dessa transformação é justificada matematicamente pelo teorema de \citeonline{cover1965browse},
 % segundo o qual, ``um problema complexo de classificação de padrões disposto não linearmente em um espaço de alta dimensionalidade tem maior probabilidade de ser linearmente separável do que em um espaço de baixa dimensionalidade''.
 
 % r=
@@ -857,17 +860,17 @@ O algoritmo DETECTNOD \cite{Hashemi:Hayat:DETECTNOD:2010} utiliza um modelo de c
 Uma representação compacta desses grupos é produzida através da Transformada Discreta de Cosseno. Esta representação é utilizada, em conjunto com o algoritmo de vizinho mais próximo, para aproximar novos exemplos.
 Estes exemplos são categorizados como desvios ou novidades, conforme o grau de similaridade calculado.
 
-Os algoritmos Woo \cite{Lee:Wang:Ryu:2007} e ECSMiner \cite{Masud:2011:CNC:1978259.1978529} também se baseiam no conceito de \textit{micro clusters}. A técnica Woo atribui um classificador para cada cluster formado. Estes classificadores são utilizados para verificar a similaridade de novos exemplos em relação ao cluster. Exemplos que não se enquadram em nenhum grupo são marcados como suspeitos e passam a ter sua densidade monitorada. Um número crescente de vizinhos no raio dos exemplos monitorados indica o surgimento de um novo conceito, induzindo o retreino do modelo e ajuste do centróide do agrupamento. 
+Os algoritmos Woo \cite{Lee:Wang:Ryu:2007} e ECSMiner \cite{Masud:2011:CNC:1978259.1978529} também se baseiam no conceito de \textit{micro clusters}. A técnica Woo atribui um classificador para cada cluster formado. Estes classificadores são utilizados para verificar a similaridade de novos exemplos em relação ao cluster. Exemplos que não se enquadram em nenhum grupo são marcados como suspeitos e passam a ter sua densidade monitorada. Um número crescente de vizinhos no raio dos exemplos monitorados indica o surgimento de um novo conceito, induzindo o retreino do modelo e ajuste do centróide do agrupamento.
 O ECSMiner \cite{Masud:2011:CNC:1978259.1978529} utiliza o conceito de Outliers Filtrados, que se refere a amostras que estão fora do limite de todos os clusters existentes, em uma abordagem similiar ao algoritmo Woo.
 
 O algoritmo GC3 \cite{Sethi2016b:GC3} estende a ideia de \textit{micro clusters} ao aplicar um algoritmo de agrupamento baseado em grade e densidade. Dessa forma, novos padrões são identificados a partir do surgimento de novas áreas de alta densidade.
 
-Os algoritmos baseados em técnicas de detecção de novidade utilizam métodos de agrupamento para identificar padrões emergentes. Portanto, também apresentam dificuldade para lidar com alta dimensionalidade e/ou dados binários, por dependerem do cálculo de distância, e são computacionalmente custosos. 
+Os algoritmos baseados em técnicas de detecção de novidade utilizam métodos de agrupamento para identificar padrões emergentes. Portanto, também apresentam dificuldade para lidar com alta dimensionalidade e/ou dados binários, por dependerem do cálculo de distância, e são computacionalmente custosos.
 
-A segunda etapa da pesquisa analisou técnicas para detecção de mudanças de conceito em séries temporais que atuam de forma online. Estas técnicas também são comumente denominadas como técnicas para detecção de \textit{change points}. A maioria dos trabalhos identificados se baseia no monitoramento dos valores residuais da aplicação de um modelo. Nesta abordagem, um modelo estatístico ou de Aprendizado de Máquina é aplicado a um conjunto de observações extraídas da série temporal, representando um conceito. 
+A segunda etapa da pesquisa analisou técnicas para detecção de mudanças de conceito em séries temporais que atuam de forma online. Estas técnicas também são comumente denominadas como técnicas para detecção de \textit{change points}. A maioria dos trabalhos identificados se baseia no monitoramento dos valores residuais da aplicação de um modelo. Nesta abordagem, um modelo estatístico ou de Aprendizado de Máquina é aplicado a um conjunto de observações extraídas da série temporal, representando um conceito.
 Assume-se que se não houver mudança de conceito, os valores residuais dessa aplicação devem ser estacionários. Os trabalhos identificados são apresentados a seguir.
 
-\citeonline{Yamanishi:2002:UFD:775047.775148} propõem um método de detecção online capaz de identificar outliers e mudanças de conceito em séries temporais. 
+\citeonline{Yamanishi:2002:UFD:775047.775148} propõem um método de detecção online capaz de identificar outliers e mudanças de conceito em séries temporais.
 A abordagem aplica um modelo autoregressivo aos dados e atualiza os parâmetros de forma incremental, para que o peso de exemplos passados diminua ao longo do tempo. Atribui-se uma pontuação para cada observação, calculada com base na função de perda. Esta pontuação indica o grau de desvio do dado em relação ao modelo aplicado. Pontuações elevadas indicam alta possibilidade de que o dado seja um outlier. A detecção de mudança de conceito é feita através do monitoramento da média das funções de perda ao longo da série temporal. Todavia, esta abordagem só é aplicável a séries temporais com comportamento autoregressivo, o que limita o seu escopo de uso.
 
 \citeonline{GOMBAY2009715} propõem um método diferente, também online, para detecção de mudanças em séries temporais autoregressivas, baseado no monitoramento dos parâmetros do modelo. Um adaptação do método CUSUM \cite{Page:CUSUM:PageHinkley:1954} é aplicada para identificar alterações nos parâmetros. A hipótese nula do algoritmo assume que estes parâmetros devem permanecer estacionários ao longo do tempo. Esta hipótese é testada para cada nova observação recepcionada e a mudança de conceito é sinalizada quando a diferença ultrapassa um limiar estabelecido. Esta abordagem também apresenta limitação de escopo, pois é aplicável apenas a séries temporais autoregressivas.
@@ -895,8 +898,8 @@ Por fim, a pesquisa realizada evidenciou a inexistência de técnicas que atenda
 \section{Considerações Finais}
 
 Neste capítulo foram apresentados os principais conceitos utilizados na pesquisa.
-Foram discutidos conceitos de Fluxos Contínuos de Dados, 
-técnicas de Aprendizado de Máquina, 
+Foram discutidos conceitos de Fluxos Contínuos de Dados,
+técnicas de Aprendizado de Máquina,
 Mudança de Conceito,
 Técnicas de Detecção e Redes de Função de Base Radial.
 Por fim, foram apresentados os trabalhos relacionados encontrados na literatura.
@@ -921,7 +924,7 @@ Essas técnicas precisaram ser adaptadas para contextos com fluxos contínuos, p
 Contudo, as adaptações propostas não tratam alterações na distribuição dos dados ou no contexto do processo gerador do fluxo.
 Estas alterações são denominadas mudanças de conceito e podem afetar negativamente a acurácia do algoritmo \cite{Gama:2014:SCD:2597757.2523813}.
 
-Para mitigar este problema, métodos de detecção de mudanças de conceito foram desenvolvidos. 
+Para mitigar este problema, métodos de detecção de mudanças de conceito foram desenvolvidos.
 Estes métodos identificam o momento da mudança com maior precisão, permitindo que o modelo de decisão seja atualizado de forma eficiente.
 
 Entretanto, as técnicas de detecção encontradas na literatura apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
@@ -941,15 +944,15 @@ Este agrupamento possui um centro ativo que muda conforme o valor processado.
 O algoritmo desenvolvido nesta pesquisa monitora o agrupamento formado para identificar quando esse centro é alterado.
 Estas alterações são utilizadas como indícios de possíveis mudanças de conceito.
 
-O método proposto, denominado \textit{RBFDriftDetector}, utiliza a função Gaussiana para ativação dos neurônios e requer a definição de dois parâmetros: 
+O método proposto, denominado \textit{RBFDriftDetector}, utiliza a função Gaussiana para ativação dos neurônios e requer a definição de dois parâmetros:
 \textit{$\sigma$}, responsável por limitar o raio da radial, e \textit{$\lambda$}, que define um limiar para ativação de um centro.
-A técnica é descrita na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo}, 
+A técnica é descrita na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo},
 tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/fjGuv}}, para realização dos experimentos na plataforma MOA.
 
 \vspace{7pt}
 \begin{algorithm}[H]
     \SetAlgoLined
-    \Entrada{$valor, \sigma, \lambda$} 
+    \Entrada{$valor, \sigma, \lambda$}
     \Saida{booleano indicando a ocorrência ou não de mudança de conceito}
     \Inicio{
      $centros \longleftarrow ()$; $centroAtual \longleftarrow null$; $centroAtivo \longleftarrow null$\\
@@ -959,13 +962,13 @@ tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/f
          $ativacao \longleftarrow gaussiana(valor, centro, \sigma)$\\
          \Se{$ativacao >= \lambda$}{
             $centroAtivo \longleftarrow centro$ \\
-            $\lambda \longleftarrow ativacao$ \\ 
+            $\lambda \longleftarrow ativacao$ \\
          }
-    } 
+    }
     \Se{$centroAtivo == null$}{
-        $centros \longleftarrow valor$ \\    
+        $centros \longleftarrow valor$ \\
         $centroAtivo \longleftarrow valor$ \\
-    }   
+    }
     \Se{$centroAtual \neq centroAtivo$}{
         $centroAtual \longleftarrow centroAtivo$ \\
         $mudanca \longleftarrow verdadeiro$ \\
@@ -976,7 +979,7 @@ tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/f
     }
 
     \caption{\textsc{RBFDriftDetector}}
-    \label{alg:algoritmo} 
+    \label{alg:algoritmo}
 \end{algorithm}
 \vspace{7pt}
 
@@ -987,17 +990,17 @@ A seguir, será descrito o comportamento do algoritmo para cada dado recebido a 
 No instante $T1$, o valor $0.11$ é recepcionado. Como não existem centros estabelecidos, o valor é definido como centro e ativado.
 Em $T2$ e $T3$ são recebidos, respectivamente, os valores $0.12$ e $0.13$ que são imediatamente vinculados ao centro atualmente ativo ($0.11$), pois seus valores de ativação foram maiores que $0.6$ ($\lambda$).
 
-No instante $T4$, o valor $0.34$ não atinge o valor mínimo de ativação (\textit{$\lambda$}) para ser vinculado ao centro ativo ($0.11$). 
+No instante $T4$, o valor $0.34$ não atinge o valor mínimo de ativação (\textit{$\lambda$}) para ser vinculado ao centro ativo ($0.11$).
 Dessa forma, o valor é definido como um novo centro e ativado.
 Devido a alteração do centro ativo, o algoritmo sinaliza a ocorrência de mudança de conceito.
 
-Os valores dos instantes $T5$, $T6$, $T7$ e $T8$ são vinculados ao último centro ativo ($0.34$). 
-Contudo, em $T9$, o valor $0.14$ é recebido e apresenta maior valor de ativação para o centro $0.11$, que é reativado. 
+Os valores dos instantes $T5$, $T6$, $T7$ e $T8$ são vinculados ao último centro ativo ($0.34$).
+Contudo, em $T9$, o valor $0.14$ é recebido e apresenta maior valor de ativação para o centro $0.11$, que é reativado.
 Assim, uma nova mudança de conceito é sinalizada.
 Finalmente, o valor do instante $T10$, $0.10$, é vinculado ao centro ativo ($0.11$).
 
-A Figura \ref{fig:funcionamento_algoritmo} apresenta esse comportamento graficamente. 
-Os círculos na cor amarela representam valores vinculados ao primeiro centro estabelecido ($0.11$ no momento $T1$), 
+A Figura \ref{fig:funcionamento_algoritmo} apresenta esse comportamento graficamente.
+Os círculos na cor amarela representam valores vinculados ao primeiro centro estabelecido ($0.11$ no momento $T1$),
 enquanto os de cor lilás foram ativados pelo segundo centro definido ($0.34$ em $T4$).
 As linhas verticais tracejadas, de cor vermelha, indicam a ocorrência de mudança de conceito.
 
@@ -1011,7 +1014,7 @@ As linhas verticais tracejadas, de cor vermelha, indicam a ocorrência de mudan�
 
 \section{Atividades de Pesquisa}
 
-A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para a realização da pesquisa. Atividades concluídas são representadas pelo símbolo $X$ e as futuras por $\bullet$. 
+A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para a realização da pesquisa. Atividades concluídas são representadas pelo símbolo $X$ e as futuras por $\bullet$.
 
 \begin{table}[htbp]
 \begin{center}
@@ -1042,28 +1045,28 @@ A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para 
 \end{center}
 \end{table}
 
-Para a conclusão da atividade 1, 
-o Programa de Pós-Graduação em Ciência da Computação (PGCOMP) da Universidade Federal da Bahia (UFBA) exige que um mestrando obtenha um total de 18 créditos em disciplinas. 
-Nos semestres 2018.1 e 2018.2, foram obtidos os créditos exigidos ao cursar as disciplinas: 
+Para a conclusão da atividade 1,
+o Programa de Pós-Graduação em Ciência da Computação (PGCOMP) da Universidade Federal da Bahia (UFBA) exige que um mestrando obtenha um total de 18 créditos em disciplinas.
+Nos semestres 2018.1 e 2018.2, foram obtidos os créditos exigidos ao cursar as disciplinas:
 MATD74 -- Algoritmos e Grafos, MATE32 -- Tópicos em Inteligência Computacional II, MATE64 -- Seminários Científicos, MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I,
 MATE10 -- Tópicos em Inteligência Computacional I e MATE84 -- Tópicos em Fundamentos da Computação IV.
 
-A segunda atividade planejada neste cronograma foi realizada a partir da disciplina MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I 
+A segunda atividade planejada neste cronograma foi realizada a partir da disciplina MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I
 e nos meses subsequentes. Além disso, durante a execução desta tarefa foi realizada a prova de proficiência em inglês.
 
-As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados. 
-Essas atividades foram divididas em duas partes. 
-A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho. 
-Nesta parte, conjuntos de dados sintéticos foram analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}. 
+As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados.
+Essas atividades foram divididas em duas partes.
+A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho.
+Nesta parte, conjuntos de dados sintéticos foram analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}.
 A segunda parte dos experimentos e suas análises serão realizadas após a qualificação.
 
 As atividades 5 e 8 estão relacionadas com o componente curricular MATD75 -- Exame de qualificação. A atividade 5 refere-se à escrita deste texto e as atividades 6 e 7 representam os componentes curriculares MATA32 -- Estágio Docente e MATA31 -- Pesquisa Orientada, respectivamente. A atividade 8 está relacionada à apresentação desta qualificação de mestrado.
- 
-A escrita de artigos, listada no item 9 do cronograma, será realizada com base nos resultados gerados com os experimentos (Atividades $3$ e $4$) e nas contribuições obtidas com a apresentação da qualificação. Por fim, como requisito para a defesa de dissertação, fica pendente a atividade MATE93 - Defesa de Proposta de Mestrado, a qual se refere aos itens 10 e 11 da Tabela \ref{cronograma}. 
+
+A escrita de artigos, listada no item 9 do cronograma, será realizada com base nos resultados gerados com os experimentos (Atividades $3$ e $4$) e nas contribuições obtidas com a apresentação da qualificação. Por fim, como requisito para a defesa de dissertação, fica pendente a atividade MATE93 - Defesa de Proposta de Mestrado, a qual se refere aos itens 10 e 11 da Tabela \ref{cronograma}.
 
 \section{Considerações Finais}
 
-Neste capítulo, apresentou-se de maneira detalhada o projeto de pesquisa, o plano de atividades e o cronograma planejado para a conclusão do mestrado. 
+Neste capítulo, apresentou-se de maneira detalhada o projeto de pesquisa, o plano de atividades e o cronograma planejado para a conclusão do mestrado.
 No próximo capítulo, serão discutidos os experimentos iniciais, realizados com o objetivo de analisar a viabilidade da proposta de mestrado.
 
 \xchapter{Experimentos Iniciais}{} \label{experimentos_iniciais}
@@ -1101,7 +1104,7 @@ O gerador foi parametrizado para produzir exemplos não binários, com conceitos
 A classe \textit{GradualChangeGenerator} produz fluxos sintéticos com mudanças de conceito graduais.
 Durante sua configuração, percebeu-se uma limitação, pois a classe só gera uma mudança gradual, independente do tamanho dos conceitos.
 Para superar esta limitação, a classe foi modificada\footnote{\url{https://git.io/fjGue}} para gerar uma quantidade de mudanças coerente com o tamanho definido.
-A classe modificada foi utilizada para gerar o fluxo sintético com mudanças graduais utilizado nos experimentos, 
+A classe modificada foi utilizada para gerar o fluxo sintético com mudanças graduais utilizado nos experimentos,
 sendo parametrizada para produzir exemplos não binários e conceitos compostos por 400 instâncias.
 
 % A Figura \ref{fig:gradual_change_generator} apresenta a tela de configuração da aplicação.
@@ -1124,7 +1127,7 @@ Esta classe permite mensurar a acurácia e o desempenho de algoritmos para detec
 Para utilizá-la, é necessário construir uma tarefa do tipo \textit{EvaluateConceptDrift} através da aba \textit{Concept Drift}, presente na tela inicial da aplicação.
 Para condução dos experimentos deste trabalho, a tarefa \textit{EvaluateConceptDrift} foi configurada conforme descrito na Tabela \ref{tbl:configuracao_tarefa}.
 
-\begin{center} 
+\begin{center}
     \begin{table}[h]
     \caption{Configuração da classe \textit{BasicConceptDriftPerformanceEvaluator}}
     \label{tbl:configuracao_tarefa}
@@ -1134,9 +1137,9 @@ Para condução dos experimentos deste trabalho, a tarefa \textit{EvaluateConcep
     Parâmetro & Valor & Observação \\
     \midrule
     learner          & ChangeDetectorLearner  &  O algoritmo de detecção de mudanças de conceito a ser testado é definido no atributo \textit{driftDetectionMethod} da classe \textit{ChangeDetectorLearner}.                   \\
-    stream           & ARFFFileStream         &  Caminho para um dos arquivos \textit{ARFF} descrito na seção anterior. O atributo \textit{classIndex} deve ser definido como $0$, pois não existem rótulos nestes conjuntos de dados.  \\ 
+    stream           & ARFFFileStream         &  Caminho para um dos arquivos \textit{ARFF} descrito na seção anterior. O atributo \textit{classIndex} deve ser definido como $0$, pois não existem rótulos nestes conjuntos de dados.  \\
     instanceLimit    & $-1$                            &  Desabilita o limite de instâncias a serem processadas.  \\
-    timeLimit        & $-1$                            &  Desabilita o limite de tempo de execução.  \\ 
+    timeLimit        & $-1$                            &  Desabilita o limite de tempo de execução.  \\
     sampleFrequency  & \hspace{3mm}$1$                 &  Uma linha de resultado do avaliador deve ser gerada para cada instância processada.  \\
     \bottomrule
     \end{tabular}
@@ -1144,10 +1147,10 @@ Para condução dos experimentos deste trabalho, a tarefa \textit{EvaluateConcep
     \end{table}
 \end{center}
 
-A classe de avaliação utilizada produz diversos indicadores referentes a acurácia e performance do algoritmo executado. 
+A classe de avaliação utilizada produz diversos indicadores referentes a acurácia e performance do algoritmo executado.
 A Tabela \ref{tbl:indicadores_analisado} apresenta os indicadores analisados neste trabalho.
 
-\begin{center} 
+\begin{center}
     \begin{table}[h]
     \caption{Indicadores analisados}
     \label{tbl:indicadores_analisado}
@@ -1159,7 +1162,7 @@ A Tabela \ref{tbl:indicadores_analisado} apresenta os indicadores analisados nes
     Tempo de Processamento    &  Tempo médio (seg.) de processamento por instância. \\
     Mudanças Existentes       &  Quantidade de mudanças existentes. \\
     Mudanças Detectadas       &  Quantidade de mudanças detectadas corretamente. \\
-    Falso-positivos           &  Quantidade de mudanças detecatadas erroneamente. \\  
+    Falso-positivos           &  Quantidade de mudanças detecatadas erroneamente. \\
     Atraso de Detecção        &  Quantidade média de instâncias até a detecção. \\
     \bottomrule
     \end{tabular}
@@ -1169,10 +1172,10 @@ A Tabela \ref{tbl:indicadores_analisado} apresenta os indicadores analisados nes
 
 \section{P\element{ettitt}}
 
-Durante a revisão da literatura, investigou-se a aplicabilidade das técnicas para detecção de \textit{changing points} em problemas de detecção de mudança de conceito. 
+Durante a revisão da literatura, investigou-se a aplicabilidade das técnicas para detecção de \textit{changing points} em problemas de detecção de mudança de conceito.
 Para tanto, foi realizada a implementação, no framework MOA\footnote{\url{https://git.io/fj8xu}}, de um novo algoritmo baseado no método estatístico proposto por \citeonline{Pettitt}.
 
-O método de Pettitt é um teste não paramétrico, no qual se verifica se duas amostras $Y_1,...,Y_t$ e $Y_{t+1},...,Y_T$ são da mesma população. A estatística $U_{t,T}$ faz uma contagem do número de vezes que um membro da primeira amostra é maior que um membro da segunda. 
+O método de Pettitt é um teste não paramétrico, no qual se verifica se duas amostras $Y_1,...,Y_t$ e $Y_{t+1},...,Y_T$ são da mesma população. A estatística $U_{t,T}$ faz uma contagem do número de vezes que um membro da primeira amostra é maior que um membro da segunda.
 A estatística $U_{t,T}$ é obtida através da Equação \ref{eq:pettitt}:
 
 \begin{equation}
@@ -1187,7 +1190,7 @@ Pettitt é o máximo valor absoluto de $U_{t,T}$.
 
 Os testes foram executados com os conjuntos de dados sintéticos produzidos na Seção \ref{sec:configuracao_experimentos}. Os resultados obtidos são apresentados a seguir, na Tabela \ref{tbl:pettitt}.
 
-\begin{center} 
+\begin{center}
     \begin{table}[H]
     \caption{Resultados - Método de Pettitt}
     \label{tbl:pettitt}
@@ -1212,14 +1215,14 @@ Por não apresentar resultados competitivos em relação ao estado da arte, esta
 \section{RBFD\element{rift}D\element{etector}}
 
 Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o algoritmo desenvolvido nesta pesquisa, denominado RBFDriftDetector.
-Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta, 
+Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta,
 a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de Redes de Função de Base Radial para detecção de mudanças de conceito em fluxos contínuos de dados.
 
 Para execução dos experimentos, foram utilizados três conjuntos de dados sintéticos, conforme descrito na seção \ref{sec:configuracao_experimentos}.
 Além disso, os seguintes algoritmos foram utilizados para comparação: CUSUM, PageHinkley e ADWIN.
 A Tabela \ref{tbl:parametros_algoritmos} lista os parâmetros utilizados para cada algoritmo.
 
-\begin{center} 
+\begin{center}
     \begin{table}[H]
     \caption{Parâmetros utilizados para cada algoritmo}
     \label{tbl:parametros_algoritmos}
@@ -1241,7 +1244,7 @@ A Tabela \ref{tbl:parametros_algoritmos} lista os parâmetros utilizados para ca
 O primeiro experimento utilizou o fluxo de dados sintético sem mudanças de conceito, a fim de avaliar a tendência de produção de falsos-positivo.
 O resultado desta análise pode ser visto na Tabela \ref{tbl:exp1}.
 
-\begin{center} 
+\begin{center}
     \begin{table}[H]
     \caption{Experimento 1 - Fluxo sem mudanças de conceito}
     \label{tbl:exp1}
@@ -1261,7 +1264,7 @@ O resultado desta análise pode ser visto na Tabela \ref{tbl:exp1}.
 \end{center}
 
 Como pode ser observado, todos algoritmos testados demonstraram tolerância a ruídos e não indicaram nenhum falso positivo.
-Quanto a performance, o algoritmo proposto obteve a segunda melhor média em tempo de processamento. Superado pelo algoritmo ADWIN, por uma pequena margem. 
+Quanto a performance, o algoritmo proposto obteve a segunda melhor média em tempo de processamento. Superado pelo algoritmo ADWIN, por uma pequena margem.
 O comportamento dos algoritmos e do conjunto de dados utilizado é apresentado graficamente na Figura \ref{fig:exp_sem_mudancas}.
 
 \begin{figure}[ht]
@@ -1272,10 +1275,10 @@ O comportamento dos algoritmos e do conjunto de dados utilizado é apresentado g
 \end{center}
 \end{figure}
 
-Em seguida, utilizou-se a base de dados com mudanças abruptas como base de testes. 
+Em seguida, utilizou-se a base de dados com mudanças abruptas como base de testes.
 Os resultados obtidos são apresentados na Tabela \ref{tbl:exp2}.
 
-\begin{center} 
+\begin{center}
     \begin{table}[H]
     \caption{Experimento 2 - Fluxo com mudanças de conceito abruptas}
     \label{tbl:exp2}
@@ -1299,7 +1302,7 @@ No quesito performance, a técnica desenvolvida obteve o terceiro melhor resulta
 Paralelamente, os outros algoritmos analisados apresentaram baixa acurácia.
 O algoritmo CUSUM detectou apenas metade das mudanças e apresentou a maior taxa de atraso.
 Enquanto o método PageHinkley detectou apenas uma mudança.
-Por fim, o algoritmo ADWIN apresentou maior eficiência computacional e apesar de detectar as 6 mudanças existentes, 
+Por fim, o algoritmo ADWIN apresentou maior eficiência computacional e apesar de detectar as 6 mudanças existentes,
 mostrou-se hipersensível, pois foram detectados 2046 falsos-positivo.
 
 Os resultados do segundo experimento são demonstrados graficamente na Figura \ref{fig:exp_abrupta}. Nesta imagem, as linhas sólidas na cor verde representam as mudanças de conceito existentes no conjunto de dados analisado. As linhas tracejadas azuis representam mudanças de conceito identificadas corretamente, enquanto que as linhas tracejadas de cor vermelha representam falsos-positivo.
@@ -1315,7 +1318,7 @@ Os resultados do segundo experimento são demonstrados graficamente na Figura \r
 O último experimento realizado utilizou o fluxo sintético com mudanças de conceito graduais.
 Seu resultado é demonstrado na Tabela \ref{tbl:exp3}.
 
-\begin{center} 
+\begin{center}
     \begin{table}[ht]
     \caption{Experimento 3 - Fluxo com mudanças de conceito graduais}
     \label{tbl:exp3}
@@ -1337,11 +1340,11 @@ Seu resultado é demonstrado na Tabela \ref{tbl:exp3}.
 Neste experimento, o algoritmo RBFDriftDetector identificou 5 das 6 mudanças existentes e sinalizou um falso-positivo.
 Ainda assim, obteve a melhor acurácia, apesar de apresentar a maior taxa de atraso.
 Os outros algoritmos analisados apresentaram comportamentos similares aos do experimento anterior.
-O algoritmo CUSUM identificou metade das mudanças. 
+O algoritmo CUSUM identificou metade das mudanças.
 O método PageHinkley identificou apenas uma alteração de conceito.
 E, finalmente, o algoritmo ADWIN voltou a se mostrar muito sensível, ao identificar $2238$ falsos-positivo.
 
-Por fim, o comportamento do conjunto de dados e dos algoritmos neste último experimento é apresentado na Figura \ref{fig:exp_gradual}. 
+Por fim, o comportamento do conjunto de dados e dos algoritmos neste último experimento é apresentado na Figura \ref{fig:exp_gradual}.
 Na imagem, as linhas sólidas na cor verde representam as mudanças de conceito existentes no conjunto de dados analisado. As linhas tracejadas azuis representam mudanças de conceito identificadas corretamente, enquanto que as linhas tracejadas de cor vermelha representam falsos-positivo.
 
 \begin{figure}[ht]
@@ -1354,13 +1357,13 @@ Na imagem, as linhas sólidas na cor verde representam as mudanças de conceito 
 
 \section{Considerações Finais}
 
-Nesta seção foram apresentados os resultados dos experimentos iniciais deste trabalho de pesquisa, 
+Nesta seção foram apresentados os resultados dos experimentos iniciais deste trabalho de pesquisa,
 os quais visavam confirmar a aplicabilidade das Redes de Função de Base Radial na detecção de mudanças de conceito em fluxos contínuos de dados.
 
-As seguintes etapas estão previstas para serem executadas: 
+As seguintes etapas estão previstas para serem executadas:
 i) realizar experimentos com fluxos recorrentes e incrementais;
 ii) integrar uma cadeia de Markov ao método proposto, permitindo a análise do comportamento das mudanças e o aprimoramento da acurácia das detecções;
-iii) implementar os algoritmos OLINDDA, MINAS e DETECNOD para serem comparados; 
+iii) implementar os algoritmos OLINDDA, MINAS e DETECNOD para serem comparados;
 iv) implementar e validar o algoritmo no framework Tornado; e
 v) alterar o algoritmo para permitir que o centro se desloque dentro do grupo formado.
 Espera-se ainda realizar uma aplicação prática da abordagem proposta, utilizando-a em um conjunto de dados oriundo de um sistema do mundo real.

@@ -1,0 +1,28 @@
+\babel@toc {brazil}{}
+\contentsline {chapter}{Cap\'{\i }tulo~1---Introdu\IeC {\c c}\IeC {\~a}o}{1}
+\contentsline {section}{\numberline {1.1}Contexto e Motiva\IeC {\c c}\IeC {\~a}o}{1}
+\contentsline {section}{\numberline {1.2}Hip\IeC {\'o}tese e Objetivo}{2}
+\contentsline {chapter}{Cap\'{\i }tulo~2---Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{5}
+\contentsline {section}{\numberline {2.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{5}
+\contentsline {section}{\numberline {2.2}Fluxos Cont\IeC {\'\i }nuos de Dados e Aprendizado de M\IeC {\'a}quina}{5}
+\contentsline {section}{\numberline {2.3}Mudan\IeC {\c c}a de Conceito}{6}
+\contentsline {subsection}{\numberline {2.3.1}Terminologia}{9}
+\contentsline {subsection}{\numberline {2.3.2}Algoritmos para Detec\IeC {\c c}\IeC {\~a}o de Mudan\IeC {\c c}a de Conceito}{10}
+\contentsline {subsection}{\numberline {2.3.3}Ferramentas}{11}
+\contentsline {subsection}{\numberline {2.3.4}MOA}{12}
+\contentsline {subsection}{\numberline {2.3.5}Tornado}{14}
+\contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{16}
+\contentsline {section}{\numberline {2.5}Trabalhos Relacionados}{18}
+\contentsline {section}{\numberline {2.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{20}
+\contentsline {chapter}{Cap\'{\i }tulo~3---Plano de Pesquisa}{21}
+\contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{21}
+\contentsline {section}{\numberline {3.2}Descri\IeC {\c c}\IeC {\~a}o do Problema}{21}
+\contentsline {section}{\numberline {3.3}Atividades de Pesquisa}{23}
+\contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{25}
+\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos Iniciais}{27}
+\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{27}
+\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{27}
+\contentsline {section}{\numberline {4.3}Crit\IeC {\'e}rios de avalia\IeC {\c c}\IeC {\~a}o}{28}
+\contentsline {section}{\numberline {4.4}P\element {ettitt}}{29}
+\contentsline {section}{\numberline {4.5}RBFD\element {rift}D\element {etector}}{30}
+\contentsline {section}{\numberline {4.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{33}
