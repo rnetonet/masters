@@ -162,19 +162,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Comente para ocultar
-%\begin{dedicatory}
-%DIGITE A DEDICATORIA AQUI
-%\end{dedicatory}
+% \begin{dedicatory}
+%     Dedicatória...
+% \end{dedicatory}
 
 % Agradecimentos
 % Se preferir, crie um arquivo `a parte e o inclua via \include{}
-%\acknowledgements
-%DIGITE OS AGRADECIMENTOS AQUI
+% \acknowledgements
 
 % Epigrafe
-%\begin{epigraph}[NOTA]{AUTOR}
-%DIGITE AQUI A CITACAO
-%\end{epigraph}
+% \begin{epigraph}[]{Provérbios 4:23}
+% Sobre tudo o que se deve guardar, guarda o teu coração, porque dele procedem as fontes da vida.
+% \end{epigraph}
 
 %%%%%%%%%%%%%%%%%%%%%
 % Resumo
@@ -198,30 +197,43 @@ Para avaliar o RBFChain como um detector de mudanças de conceito viável,
 uma análise de sensibilidade, precisão e tolerância ao ruído foi realizada usando conjuntos de dados sintéticos,
 e os resultados comparados com os principais algoritmos disponíveis na literatura.
 %
-Além disso, a técnica foi aplicada ao problema de classificação de fixações e sacadas na ativade de rastreamento ocular:
+Além disso, a técnica foi aplicada ao problema de classificação de fixações e sacadas na atividade de rastreamento ocular:
 uma questão crítica para diferentes áreas do conhecimento,
 pois muitos experimentos comportamentais usam essas informações como um fator de análise relevante.
 %
 Os resultados com conjuntos de dados sintéticos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores encontrados na literatura.
-Ademais, a técnica desenvolvida apresentou bons resultados quando aplicada ao problema de monitoramento ocular, pois foi capaz de classificar fixações e sacadas em tempo real e com precisão comparável ao estado da arte.
-
-% Os resultados obtidos com conjuntos de dados sintéticos apresentaram desempenho superior ou similar ao de algoritmos consolidados na literatura, em termos de acurácia média e tempo de processamento.
-% Além disso, o método foi aplicado ao problema de classificação de fixações e sacadas na atividade de monitoramento ocular:
-% uma questão crítica para diferentes áreas do conhecimento, pois muitos experimentos comportamentais usam informações de rastreamento ocular como um fator de análise relevante.
-% A técnica desenvolvida foi capaz de classificar fixações e sacadas em tempo de execução e com acurácia similar ao estado da arte.
+Ademais, a técnica desenvolvida apresentou bons resultados quando aplicada ao problema de monitoramento ocular, pois foi capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-    Fluxos Contínuos de Dados, Mudanças de Conceito, Redes de Função de Base Radial, Cadeias de Markov, Monitoramento Ocular
+    Fluxo Contínuo de Dados, Mudança de Conceito, Rede de Função de Base Radial, Cadeia de Markov, Monitoramento Ocular
 \end{keywords}
 
-% \abstract
-% \blindtext
+\abstract
+The amount of information produced by computer systems has grown dramatically in recent decades.
+A significant portion of this information is produced as continuous streams of data, which are constant and potentially infinite sequences.
+These flows are mostly non-stationary and may vary in the distribution of data or in the context of the generating process.
+These changes are called concept drifts and can negatively impact the performance of applied learning models.
+To mitigate this problem, researchers developed specialized methods for detecting concept drifts.
+However, the proposed methods have limitations when applied in scenarios with continuous flows,
+such as the need for expert labeling or the inability to meet the processing time and computational resource constraints of these scenarios.
+This work proposes a new detection method based on Radial Base Function Networks (RBF) and Markov Chains, called RBFChain.
+RBF networks perform, in their intermediate layer, an activation process that implicitly produces groups of observations received over time.
+Simultaneously, Markov chains model the center transitions that occur in the formed cluster.
+Concept drifts are detected when the active center of the cluster changes and the probability of this transition in the Markov model exceeds a threshold.
+The proposed method differs from existing works in that it detects changes at run time,  in a computationally efficient and independent of labels way.
+%
+To assess RBFChain as a viable concept drift detector, an analysis of sensitivity, accuracy, and noise tolerance was performed using synthetic datasets, and results were compared to the main algorithms found in the literature.
+%
+Also, the technique was applied to the fixation and saccade classification problem in eye-tracking: a critical issue for different areas of knowledge, because many behavioral experiments use this information as a relevant analysis factor.
+%
+Results with synthetic datasets suggest that RBFChain is statistically better or equivalent to the main detectors found in the literature.
+Moreover, the developed technique presented good results when applied to the eye-tracking problem, as it was able to classify fixations and saccades in real-time and with accuracy equivalent to state of the art.
 
 % Palavras-chave do resumo em Ingles
-%\begin{keywords}
-%    Machine Learning, Data Streams, Concept Drift, Radial Basis Function Networks, RBF Network, Unlabeled
-%\end{keywords}
+\begin{keywords}
+   Data Stream, Concept Drift, Radial Basis Function Network, Markov Chain, Eye-tracking
+\end{keywords}
 
 %%%%%%%%%%%%%%%%%%%
 % Sumario / Indice
