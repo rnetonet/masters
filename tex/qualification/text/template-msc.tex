@@ -97,7 +97,7 @@
 \majorfield{Ci\^{e}ncia da Computa\c{c}\~{a}o}
 
 % Titulo da dissertacao
-\title{Aplicando Redes de Função de Base Radial e Cadeias de Markov para a detecção online de mudanças de conceito em fluxos contínuos de dados}
+\title{Aplicando Redes de Função de Base Radial e Cadeias de Markov para a detecção em tempo real de mudanças de conceito em fluxos contínuos de dados}
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
@@ -182,21 +182,33 @@
 \resumo
 
 A quantidade de informações produzidas por sistemas computacionais tem crescido de forma acentuada nas últimas décadas.
-% Diante disso, pesquisadores passaram a aplicar técnicas de Aprendizado de Máquina para extrair informações úteis de grandes conjuntos de dados.
 Uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
 Esses fluxos são, em sua maioria, não-estacionários, podendo sofrer variações na distribuição dos dados ou no contexto do processo gerador.
 Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a performance de modelos de aprendizado aplicados.
 Para mitigar este problema, pesquisadores desenvolveram métodos especializados na detecção de mudanças de conceito.
 Entretanto, os métodos propostos apresentam limitações ao serem aplicados em cenários com fluxos contínuos,
 como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
-Este trabalho de mestrado propõe um novo método de detecção baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov.
+Este trabalho propõe um novo método de detecção baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov, denominado RBFChain.
 As redes RBF realizam, em sua camada intermediária, um processo de ativação que implicitamente produz grupos das observações recepcionadas ao longo do tempo.
 Simultaneamente, cadeias de Markov modelam as transições de centro ocorridas no agrupamento formado.
 Mudanças de conceito são detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limiar.
-O método proposto se diferencia dos trabalhos existentes na literatura por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
-Os resultados obtidos com conjuntos de dados sintéticos apresentaram desempenho superior ou similar ao de algoritmos consolidados na literatura, em termos de acurácia média e tempo de processamento.
-Além disso, o método foi aplicado ao problema de classificação de fixações e sacadas na atividade de monitoramento ocular.
-A técnica desenvolvida foi capaz de classificar fixações e sacadas em tempo de execução e com acurácia similar ao estado da arte.
+O método proposto se diferencia dos trabalhos existentes por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+%
+Para avaliar o RBFChain como um detector de mudanças de conceito viável,
+uma análise de sensibilidade, precisão e tolerância ao ruído foi realizada usando conjuntos de dados sintéticos,
+e os resultados comparados com os principais algoritmos disponíveis na literatura.
+%
+Além disso, a técnica foi aplicada ao problema de classificação de fixações e sacadas na ativade de rastreamento ocular:
+uma questão crítica para diferentes áreas do conhecimento,
+pois muitos experimentos comportamentais usam essas informações como um fator de análise relevante.
+%
+Os resultados com conjuntos de dados sintéticos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores encontrados na literatura.
+Ademais, a técnica desenvolvida apresentou bons resultados quando aplicada ao problema de monitoramento ocular, pois foi capaz de classificar fixações e sacadas em tempo real e com precisão comparável ao estado da arte.
+
+% Os resultados obtidos com conjuntos de dados sintéticos apresentaram desempenho superior ou similar ao de algoritmos consolidados na literatura, em termos de acurácia média e tempo de processamento.
+% Além disso, o método foi aplicado ao problema de classificação de fixações e sacadas na atividade de monitoramento ocular:
+% uma questão crítica para diferentes áreas do conhecimento, pois muitos experimentos comportamentais usam informações de rastreamento ocular como um fator de análise relevante.
+% A técnica desenvolvida foi capaz de classificar fixações e sacadas em tempo de execução e com acurácia similar ao estado da arte.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
