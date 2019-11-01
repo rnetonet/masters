@@ -97,7 +97,7 @@
 \majorfield{Ci\^{e}ncia da Computa\c{c}\~{a}o}
 
 % Titulo da dissertacao
-\title{Aplicando Redes de Função de Base Radial e Cadeias de Markov para a detecção em tempo real de mudanças de conceito em fluxos contínuos de dados}
+\title{Aplicando Redes de Função de Base Radial e Cadeias de Markov para a detecção de mudanças de conceito em fluxos de dados}
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
@@ -192,17 +192,14 @@ As redes RBF realizam, em sua camada intermediária, um processo de ativação q
 Simultaneamente, cadeias de Markov modelam as transições de centro ocorridas no agrupamento formado.
 Mudanças de conceito são detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limiar.
 O método proposto se diferencia dos trabalhos existentes por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
-%
 Para avaliar o RBFChain como um detector de mudanças de conceito viável,
 uma análise de sensibilidade, precisão e tolerância ao ruído foi realizada usando conjuntos de dados sintéticos,
 e os resultados comparados com os principais algoritmos disponíveis na literatura.
-%
 Além disso, a técnica foi aplicada ao problema de classificação de fixações e sacadas na atividade de rastreamento ocular:
-uma questão crítica para diferentes áreas do conhecimento,
-pois muitos experimentos comportamentais usam essas informações como um fator de análise relevante.
-%
-Os resultados com conjuntos de dados sintéticos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores encontrados na literatura.
-Ademais, a técnica desenvolvida apresentou bons resultados quando aplicada ao problema de monitoramento ocular, pois foi capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
+uma questão relevante para diferentes áreas do conhecimento,
+pois muitos experimentos comportamentais usam essas informações como um fator de análise.
+Os resultados com conjuntos de dados sintéticos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores presentes na literatura.
+Ademais, a técnica desenvolvida apresentou bons resultados quando aplicada ao problema de monitoramento ocular, sendo capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
@@ -211,24 +208,21 @@ Ademais, a técnica desenvolvida apresentou bons resultados quando aplicada ao p
 
 \abstract
 The amount of information produced by computer systems has grown dramatically in recent decades.
-A significant portion of this information is produced as continuous streams of data, which are constant and potentially infinite sequences.
-These flows are mostly non-stationary and may vary in the distribution of data or in the context of the generating process.
+A significant share of this volume is produced as data streams, which are constant and potentially infinite sequences.
+Most of these streams are non-stationary and may vary over time.
 These changes are called concept drifts and can negatively impact the performance of applied learning models.
 To mitigate this problem, researchers developed specialized methods for detecting concept drifts.
-However, the proposed methods have limitations when applied in scenarios with continuous flows,
+However, the proposed methods have limitations when applied in scenarios with data streams,
 such as the need for expert labeling or the inability to meet the processing time and computational resource constraints of these scenarios.
-This work proposes a new detection method based on Radial Base Function Networks (RBF) and Markov Chains, called RBFChain.
+This work proposes a new detection method based on Radial Basis Function Networks (RBF) and Markov Chains, called RBFChain.
 RBF networks perform, in their intermediate layer, an activation process that implicitly produces groups of observations received over time.
-Simultaneously, Markov chains model the center transitions that occur in the formed cluster.
-Concept drifts are detected when the active center of the cluster changes and the probability of this transition in the Markov model exceeds a threshold.
+Simultaneously, the Markov Chain models the transitions between centers that occur in the formed cluster.
+Concept drifts are detected when the active center of the cluster changes, and the probability of this transition in the Markov model exceeds a threshold.
 The proposed method differs from existing works in that it detects changes at run time,  in a computationally efficient and independent of labels way.
-%
-To assess RBFChain as a viable concept drift detector, an analysis of sensitivity, accuracy, and noise tolerance was performed using synthetic datasets, and results were compared to the main algorithms found in the literature.
-%
-Also, the technique was applied to the fixation and saccade classification problem in eye-tracking: a critical issue for different areas of knowledge, because many behavioral experiments use this information as a relevant analysis factor.
-%
-Results with synthetic datasets suggest that RBFChain is statistically better or equivalent to the main detectors found in the literature.
-Moreover, the developed technique presented good results when applied to the eye-tracking problem, as it was able to classify fixations and saccades in real-time and with accuracy equivalent to state of the art.
+To assess RBFChain as a viable concept drift detector, an analysis of sensitivity, accuracy, and noise tolerance was performed using synthetic datasets, and results were compared to the main algorithms available in the literature.
+Also, the technique was applied to the fixation and saccade classification problem in eye-tracking: a relevant issue for different areas of knowledge, because many behavioral experiments use this information as an analysis factor.
+Results with synthetic datasets suggest that RBFChain is statistically better or equivalent to the main detectors present in the literature.
+Moreover, the developed method presented good results when applied to the eye-tracking problem, being able to classify fixations and saccades in real-time and with accuracy equivalent to the state of the art.
 
 % Palavras-chave do resumo em Ingles
 \begin{keywords}
@@ -967,7 +961,7 @@ Este agrupamento possui um centro ativo que muda conforme o valor processado.
 O algoritmo desenvolvido nesta pesquisa monitora o agrupamento formado para identificar quando esse centro é alterado.
 Estas alterações são utilizadas como indícios de possíveis mudanças de conceito.
 
-O método proposto, denominado \textit{RBFDriftDetector}, utiliza a função Gaussiana para ativação dos neurônios e requer a definição de dois parâmetros:
+O método proposto, denominado \textit{RBFChain}, utiliza a função Gaussiana para ativação dos neurônios e requer a definição de dois parâmetros:
 \textit{$\sigma$}, responsável por limitar o raio da radial, e \textit{$\lambda$}, que define um limiar para ativação de um centro.
 A técnica é descrita na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo},
 tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/fjGuv}}, para realização dos experimentos na plataforma MOA.
@@ -1001,7 +995,7 @@ tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/f
     \BlankLine
     }
 
-    \caption{\textsc{RBFDriftDetector}}
+    \caption{\textsc{RBFChain}}
     \label{alg:algoritmo}
 \end{algorithm}
 \vspace{7pt}
@@ -1235,9 +1229,9 @@ A análise dos resultados demonstra que o algoritmo se mostrou propenso à produ
 
 Por não apresentar resultados competitivos em relação ao estado da arte, esta linha de pesquisa foi suspensa, permitindo que os esforços se voltassem para a análise da aplicação de Redes de Função de Base Radial para detecção de mudanças de conceito.
 
-\section{RBFD\element{rift}D\element{etector}}
+\section{RBFC\element{hain}}
 
-Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o algoritmo desenvolvido nesta pesquisa, denominado RBFDriftDetector.
+Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o algoritmo desenvolvido nesta pesquisa, denominado RBFChain.
 Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta,
 a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de Redes de Função de Base Radial para detecção de mudanças de conceito em fluxos contínuos de dados.
 
@@ -1254,7 +1248,7 @@ A Tabela \ref{tbl:parametros_algoritmos} lista os parâmetros utilizados para ca
     \toprule
     Algoritmo & Parâmetros \\
     \midrule
-    RBFDriftDetector          &  $\sigma = 2$; $\lambda = 0.5$ \\
+    RBFChain                  &  $\sigma = 2$; $\lambda = 0.5$ \\
     CUSUM                     &  $MinNumInstances = 30; \delta = 0.005; \lambda = 50$ \\
     PageHinkley               &  $MinNumInstances = 30; \delta = 0.005; \lambda = 50; \alpha = 1$ \\
     ADWIN                     &  $\delta = 0.002$ \\
@@ -1276,7 +1270,7 @@ O resultado desta análise pode ser visto na Tabela \ref{tbl:exp1}.
     \toprule
     Algoritmo & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
     \midrule
-    RBFDriftDetector          &  $0.22$ & $0$ & $0$ & $0$ & $-$ \\
+    RBFChain          &  $0.22$ & $0$ & $0$ & $0$ & $-$ \\
     CUSUM                     &  $0.31$ & $0$ & $0$ & $0$ & $-$ \\
     PageHinkley               &  $0.24$ & $0$ & $0$ & $0$ & $-$ \\
     ADWIN                     &  $0.21$ & $0$ & $0$ & $0$ & $-$ \\
@@ -1310,7 +1304,7 @@ Os resultados obtidos são apresentados na Tabela \ref{tbl:exp2}.
     \toprule
     Algoritmo & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
     \midrule
-    RBFDriftDetector          &  $0.23$ & $6$ & $6$    & $0$    & $1$ \\
+    RBFChain          &  $0.23$ & $6$ & $6$    & $0$    & $1$ \\
     CUSUM                     &  $0.29$ & $6$ & $3$    & $0$    & $68$ \\
     PageHinkley               &  $0.22$ & $6$ & $1$    & $0$    & $17$ \\
     ADWIN                     &  $0.21$ & $6$ & $2052$ & $2046$ & $9$ \\
@@ -1350,7 +1344,7 @@ Seu resultado é demonstrado na Tabela \ref{tbl:exp3}.
     \toprule
     Algoritmo & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
     \midrule
-    RBFDriftDetector          &  $0.24$ & $6$ & $5$    & $1$    & $171$ \\
+    RBFChain          &  $0.24$ & $6$ & $5$    & $1$    & $171$ \\
     CUSUM                     &  $0.65$ & $6$ & $3$    & $0$    & $32$ \\
     PageHinkley               &  $0.26$ & $6$ & $1$    & $0$    & $4$ \\
     ADWIN                     &  $0.27$ & $6$ & $2244$ & $2238$ & $1$ \\
@@ -1360,7 +1354,7 @@ Seu resultado é demonstrado na Tabela \ref{tbl:exp3}.
     \end{table}
 \end{center}
 
-Neste experimento, o algoritmo RBFDriftDetector identificou 5 das 6 mudanças existentes e sinalizou um falso-positivo.
+Neste experimento, o algoritmo RBFChain identificou 5 das 6 mudanças existentes e sinalizou um falso-positivo.
 Ainda assim, obteve a melhor acurácia, apesar de apresentar a maior taxa de atraso.
 Os outros algoritmos analisados apresentaram comportamentos similares aos do experimento anterior.
 O algoritmo CUSUM identificou metade das mudanças.

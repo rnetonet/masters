@@ -24,5 +24,5 @@
 \contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{27}{section.4.2}
 \contentsline {section}{\numberline {4.3}Crit\IeC {\'e}rios de avalia\IeC {\c c}\IeC {\~a}o}{28}{section.4.3}
 \contentsline {section}{\numberline {4.4}P\element {ettitt}}{29}{section.4.4}
-\contentsline {section}{\numberline {4.5}RBFD\element {rift}D\element {etector}}{30}{section.4.5}
+\contentsline {section}{\numberline {4.5}RBFC\element {hain}}{30}{section.4.5}
 \contentsline {section}{\numberline {4.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{34}{section.4.6}
