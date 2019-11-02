@@ -304,7 +304,7 @@ Inicialmente, a atualização periódica dos modelos obtidos a partir das técni
 %
 Contudo, esta solução é pouco sofisticada e computacionalmente custosa.
 %
-Diante disso, pesquisadores propuseram técnicas de detecção de mudanças de conceito baseadas em monitoramento \cite{Gama:2014:SCD:2597757.2523813}.
+Diante disso, pesquisadores propuseram técnicas de detecção de mudanças de conceito baseadas em monitoramento da performance do modelo \cite{Gama:2014:SCD:2597757.2523813}.
 %
 Estes métodos identificam a ocorrência de mudanças com maior precisão, permitindo que o modelo de decisão seja atualizado somente quando necessário.
 %
@@ -363,18 +363,30 @@ Demonstrando uma aplicação prática e relevante para diferentes áreas do conh
 
 \section{Contribuições}
 
-\ldots
+A principal contribuição desta dissertação consiste em um novo método para detecção de mudanças de conceito em fluxos contínuos de dados,
+baseado em Redes de Função de Base Radial e Cadeias de Markov.
+%
+As principais vantanges da técnica desenvolvida em relação aos métodos existentes na literatura são:
+
+\begin{itemize}
+    \item Detecção de mudanças de conceito em tempo de execução;
+    \item Independência de rótulos;
+    \item Eficiência computacional.
+\end{itemize}
+
+A contribuição secundária deste trabalho reside na adptação do método desenvolvido para classificação de fixações e sacadas na atividade de monitoramento ocular.
+Um problema relevante para diferentes áreas do conhecimento,
+pois muitos experimentos comportamentais usam essas informações como fator de análise.
 
 \section{Organização do trabalho}
 
-O restante deste projeto está organizado conforme a seguinte estrutura:
+O restante deste trabalho está organizado da seguinte forma:
 %
-O \textbf{Capítulo \ref{fundamentacao_teorica}} apresenta os principais conceitos que fundamentam esta dissertação de mestrado,
-por exemplo, Fluxos Contínuos de Dados e Aprendizado de Máquina, Mudança de Conceito, Redes de Função de Base Radial e Cadeias de Markov;
-%
-No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa é detalhado, identificando a metodologia que será aplicada na pesquisa e o cronograma de atividades.
-%
-Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos.
+no Capítulo \ref{fundamentacao_teorica}, é apresentado o referencial teórico que fundamenta esta pesquisa.
+Os trabalhos relacionados são apresentados e discutidos no Capítulo \ref{trabalhos_relacionados}.
+A solução proposta é apresentada em detalhes no Capítulo \ref{rbfchain}.
+A configuração dos experimentos, a avaliação da proposta e os resultados alcançados são apresentados no Capítulo \ref{experimentos_iniciais}.
+Por fim, as conclusões obtidas e as discussões de trabalhos futuros são apresentadas no Capítulo \ref{conclusoes_e_trabalhos_futuros}.
 
 \xchapter{Fundamentação Teórica}{} \label{fundamentacao_teorica}
 \section{Considerações Iniciais}
@@ -868,7 +880,21 @@ Na próxima seção, os trabalhos relacionados encontrados na literatura são ap
 
 \ldots
 
-\section{Trabalhos Relacionados}
+\section{Considerações Finais}
+
+Neste capítulo foram apresentados os principais conceitos utilizados na pesquisa.
+Foram discutidos conceitos de Fluxos Contínuos de Dados,
+técnicas de Aprendizado de Máquina,
+Mudança de Conceito,
+Técnicas de Detecção e Redes de Função de Base Radial.
+Por fim, foram apresentados os trabalhos relacionados encontrados na literatura.
+No próximo capítulo, o plano de pesquisa será detalhado.
+
+\xchapter{Trabalhos Relacionados}{} \label{trabalhos_relacionados}
+
+\section{Considerações Iniciais}
+
+\ldots
 
 Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura em busca de trabalhos que propõem métodos para identificação de mudanças de conceito, de forma online e independente de rótulos, em fluxos contínuos de dados. Também foram estudadas técnicas que pudessem subsidiar o desenvolvimento de novos algoritmos que atendam a esses requisitos.
 
@@ -923,15 +949,10 @@ Por fim, a pesquisa realizada evidenciou a inexistência de técnicas que atenda
 
 \section{Considerações Finais}
 
-Neste capítulo foram apresentados os principais conceitos utilizados na pesquisa.
-Foram discutidos conceitos de Fluxos Contínuos de Dados,
-técnicas de Aprendizado de Máquina,
-Mudança de Conceito,
-Técnicas de Detecção e Redes de Função de Base Radial.
-Por fim, foram apresentados os trabalhos relacionados encontrados na literatura.
-No próximo capítulo, o plano de pesquisa será detalhado.
+\ldots
 
 \xchapter{RBFC\element{hain}}{} \label{rbfchain}
+
 \section{Considerações Iniciais}
 
 Este capítulo descreve como este projeto de mestrado será desenvolvido.
@@ -1383,6 +1404,14 @@ Na imagem, as linhas sólidas na cor verde representam as mudanças de conceito 
 
 \section{Considerações Finais}
 
+\ldots
+
+\xchapter{Conclusões e Trabalhos Futuros}{} \label{conclusoes_e_trabalhos_futuros}
+
+\section{Discussões}
+
+\ldots
+
 Nesta seção foram apresentados os resultados dos experimentos iniciais deste trabalho de pesquisa,
 os quais visavam confirmar a aplicabilidade das Redes de Função de Base Radial na detecção de mudanças de conceito em fluxos contínuos de dados.
 
@@ -1393,6 +1422,10 @@ iii) implementar os algoritmos OLINDDA, MINAS e DETECNOD para serem comparados;
 iv) implementar e validar o algoritmo no framework Tornado; e
 v) alterar o algoritmo para permitir que o centro se desloque dentro do grupo formado.
 Espera-se ainda realizar uma aplicação prática da abordagem proposta, utilizando-a em um conjunto de dados oriundo de um sistema do mundo real.
+
+\section{Trabalhos Futuros}
+
+\ldots
 
 %% Parte pos-textual
 \backmatter
