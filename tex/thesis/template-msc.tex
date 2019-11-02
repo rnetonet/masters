@@ -690,13 +690,6 @@ Na próxima seção, a ferramenta MOA, utilizada para implementar e validar o m�
     }
 \end{table}
 
-% \subsection{Ferramentas}
-
-% Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
-% Estes frameworks serão utilizados para implementar e validar a técnica de detecção proposta neste trabalho.
-% Além disso, essas ferramentas possuem implementações para os principais algoritmos de detecção de mudança de conceito presentes na literatura,
-% possibilitando a comparação deste trabalho com o estado da arte.
-
 \subsection{Ferramenta - MOA}
 
 Atualmente, o \textit{MOA – Massive Online Analysis}\footnote{https://moa.cms.waikato.ac.nz/} é o principal framework para mineração de dados em fluxos contínuos \cite{Bifet:2010:MMO:1756006.1859903}.
@@ -735,7 +728,7 @@ Esse processo é realizado através de uma função sigmóide, que modela o even
 que caracterizam os conceitos-alvo antes e depois da mudança.
 Além destes conceitos, o usuário também pode definir o momento da mudança e a sua duração \cite{Bifet:2010:MMO:1756006.1859903}.
 
-A arquitetura do framework é modular, o que permite a implementação de novos detectores de forma trivial.
+A arquitetura do framework é modular, o que permite a implementação de novos algoritmos de forma trivial.
 Para tanto, basta estender a classe abstrata \textit{AbstractChangeDetector} e implementar o algoritmo desejado.
 A janela de configuração deste detector, similar a Figura \ref{fig:moa_detector}, será criada dinamicamente, a partir dos atributos definidos na classe.
 
@@ -747,50 +740,13 @@ A janela de configuração deste detector, similar a Figura \ref{fig:moa_detecto
 \end{center}
 \end{figure}
 
-Além de possuir implementações para diversos algoritmos da área de Aprendizado de Máquina e de áreas correlatas, o framework também dispõe de classes para avaliar a acurácia e a performance dessas técnicas.
-Neste trabalho de mestrado, a classe \textit{BasicConceptDriftPerformanceEvaluator} será utilizada para avaliar a acurácia e a performance do método proposto.
-Na próxima subseção, o framework \textit{Tornado} será apresentado.
+O MOA possui implementações dos principais algoritmos para detecção de mudanças de conceito presentes na literatura.
+Além das implementações, a ferramenta também disponibiliza rotinas de avaliação, que analisam a acurácia e o desempenho desses métodos.
 
-% \subsection{Tornado}
-
-% O \textit{Tornado} é um framework desenvolvido para analisar algoritmos de detecção de mudanças de conceito \cite{Pesaranghader:Tornado}.
-% O projeto é construído na linguagem Python e o seu código está disponível\footnote{https://github.com/alipsgh/tornado}.
-% O framework se diferencia do \textit{MOA}, pois apresenta um cenário de avaliação específico:
-% analisar a execução, em paralelo, de pares formados por um classificador e um detector de mudanças,
-% para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
-
-% \begin{figure}[H]
-% \begin{center}
-%     \includegraphics[scale=0.75]{imagens/tornado.png}
-%     \caption{Framework Tornado \cite{Pesaranghader:Tornado}.}
-%     \label{fig:tornado}
-% \end{center}
-% \end{figure}
-
-% Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do framework são:
-% \textit{Stream Reader}, \textit{Classifiers}, \textit{Detectors}, \textit{Classifier-Detector Pairs} e \textit{CAR Calculator}.
-% A entrada de dados é composta por um fluxo (\textit{Stream}), uma lista de pares (classificador, detector) e um vetor com pesos.
-% O componente \textit{Stream Reader} recepciona as instâncias e as encaminha para construção do modelo de forma incremental.
-% Por seguir a abordagem \textit{prequential}, cada instância é primeiramente utilizada para testes e depois como treinamento.
-% Simultaneamente, os classificadores enviam suas estatísticas aos detectores, para que a mudança de conceito possa ser sinalizada.
-% Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par, baseada na taxa de erro, atraso para detecção (\textit{delay}), falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
-
-% O resultado produzido identifica o par ótimo para cada instante da execução.
-% Esta abordagem de avaliação se mostra relevante, pois o par ideal pode mudar ao longo do tempo, devido ao aprendizado incremental ou às mudanças de conceito.
-% A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado da ferramenta.
-
-% \begin{figure}[ht]
-% \begin{center}
-%     \includegraphics[scale=0.6]{imagens/tornado_out2.png}
-%     \caption{Tornado - Exemplo de resultado \cite{Pesaranghader:Tornado}}
-%     \label{fig:tornado_out2}
-% \end{center}
-% \end{figure}
-
-% Neste trabalho, o algoritmo proposto será implementado e testado nas duas ferramentas apresentadas.
-% Os detalhes de implementação e os resultados desses testes serão discutidos no Capítulo \ref{experimentos_iniciais}.
-% A seguir, as Redes de Função de Base Radial são detalhadas.
-% \newpage
+Nesta pesquisa, o MOA foi utilizado para realização do experimento com dados sintéticos.
+Os conjuntos de dados usados foram gerados a partir da ferramenta.
+A técnica proposta foi implementada e comparada aos principais algoritmos disponíveis.
+Por fim, os testes realizados foram avaliados atráves da classe \textit{BasicConceptDriftPerformanceEvaluator}.
 
 \section{Redes de Função de Base Radial}
 
@@ -830,47 +786,13 @@ Esta função é obtida a partir da combinação linear dos resultados das funç
 
 onde $N$ é o número de neurônios na camada intermediária, ${c}_{i}$ é o centro do neurônio $i$, $||\ldots||$ é a norma euclidiana e $a_{i}$ é o peso (bias) atribuído ao neurônio para realização da combinação linear.
 
-% Assim, a classificação realizada por uma rede de função de base radial consiste na resolução das funções
-% \ref{eq:rbf1} e \ref{eq:rbf2}:
+A técnica proposta nesta dissertação utiliza uma rede RBF adaptada.
+No método proposto, apenas as camadas inicial e intermediária são aplicadas.
+Esta adaptação é possível, pois a camada intermediária cria, implicitamente, durante o processo de ativação, grupos com os dados recebidos ao longo do tempo.
+Dessa forma, quando o centro ativo do agrupamento formado é alterado, uma possível mudança de conceito é sinalizada.
 
-% \begin{equation} \label{eq:rbf2}
-%     y_i=\sum _{{i=1}}^{N}w_{ij}\phi (||{\mathbf  {x}}-{\mathbf  {t}}_{i}||) + w_{j_0}
-% \end{equation}
-
-% Considerando uma condição de interpolação exata, é possível obter os pesos  atráves de uma relação matricial (Equação \ref{eq:rbf3}):
-
-% \begin{equation} \label{eq:rbf3}
-% \begin{bmatrix}
-%     \varphi (||{{x_1}}-{{t}}_{1}||) & \varphi (||{{x_1}}-{{t}}_{2}||) & \dots & \varphi (||{{x_1}}-{{t}}_{N}||) \\
-%     \varphi (||{{x_2}}-{{t}}_{1}||) & \varphi (||{{x_2}}-{{t}}_{2}||) & \dots & \varphi (||{{x_2}}-{{t}}_{N}||) \\
-%     \hdotsfor{5} \\
-%     \varphi (||{{x_N}}-{{t}}_{1}||) & \varphi (||{{x_N}}-{{t}}_{2}||) & \dots & \varphi (||{{x_N}}-{{t}}_{N}||)
-% \end{bmatrix}
-% \begin{bmatrix}
-%     w_1 \\
-%     w_2 \\
-%     \vdots \\
-%     w_N \\
-% \end{bmatrix}
-% =
-% \begin{bmatrix}
-%     y_1 \\
-%     y_2 \\
-%     \vdots \\
-%     y_N \\
-% \end{bmatrix}
-% \end{equation}
-
-% onde $w_{ij}$ são os pesos de cada conexão, $\varphi$ é a matriz de interpolação originada do conjunto de $N$ funções
-% de base radial aplicadas nas entradas $x$ e dos seus respectivos centros $t_i$,
-% $w_{j_0}$ representa o bias, $\varphi (||{{x}}-{{t}}_{i}||)$ é o conjunto de $N$ funções de base radial,
-%  e $y$ são as saídas geradas pela rede.
-
-O algoritmo proposto neste trabalho utiliza as camadas inicial e intermediária das Redes de Função de Base Radial para compôr um novo método de detecção de mudanças de conceito.
-Isto é possível, pois a camada intermediária cria, de forma implícita, agrupamentos durante o processo de ativação.
-Dessa forma, a criação de novos centros e a mudança do centro ativo dos neurônios podem sinalizar a ocorrência de mudanças de conceito.
-A técnica desenvolvida será discutida em detalhes no Capítulo \ref{plano_pesquisa}.
-Na próxima seção, os trabalhos relacionados encontrados na literatura são apresentados.
+Além da rede RBF adaptada, o método proposto também utiliza uma Cadeia de Markov para modelar as transições entre centros e obter tolerância a ruídos.
+As Cadeias de Markov serão apresentadas na próxima seção.
 
 \section{Cadeias de Markov}
 
