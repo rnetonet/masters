@@ -787,7 +787,7 @@ Esta função é obtida a partir da combinação linear dos resultados das funç
 onde $N$ é o número de neurônios na camada intermediária, ${c}_{i}$ é o centro do neurônio $i$, $||\ldots||$ é a norma euclidiana e $a_{i}$ é o peso (bias) atribuído ao neurônio para realização da combinação linear.
 
 A técnica proposta nesta dissertação utiliza uma rede RBF adaptada.
-No método proposto, apenas as camadas inicial e intermediária são aplicadas.
+No método proposto, apenas as camadas inicial e intermediária são aplicadas, e a Gaussiana é utilizada como função de ativação.
 Esta adaptação é possível, pois a camada intermediária cria, implicitamente, durante o processo de ativação, grupos com os dados recebidos ao longo do tempo.
 Dessa forma, quando o centro ativo do agrupamento formado é alterado, uma possível mudança de conceito é sinalizada.
 
@@ -798,19 +798,37 @@ As Cadeias de Markov serão apresentadas na próxima seção.
 
 \ldots
 
-\section{Monitoramento Ocular - Classificação de Fixações e Sacadas}
+\section{Monitoramento Ocular - Fixações e Sacadas}
 
 \ldots
 
 \section{Considerações Finais}
 
-Neste capítulo foram apresentados os principais conceitos utilizados na pesquisa.
-Foram discutidos conceitos de Fluxos Contínuos de Dados,
-técnicas de Aprendizado de Máquina,
-Mudança de Conceito,
-Técnicas de Detecção e Redes de Função de Base Radial.
-Por fim, foram apresentados os trabalhos relacionados encontrados na literatura.
+Neste capítulo foram apresentados os principais conceitos utilizados neste dissertação.
+
 No próximo capítulo, o plano de pesquisa será detalhado.
+
+% Neste capítulo foram apresentados os principais conceitos de séries temporais e compo-
+% nentes que descrevem o comportamento de suas observações. Com base nesses compor-
+% tamentos, foram discutidos modelos disponibilizados pela área Estatística e de Sistemas
+% dinâmicos, cujo principal objetivo é compreender o comportamento de séries temporais.
+% Além disso, foram discutidos trabalhos que modelam séries temporais no domínio de
+% frequências e técnicas que utilizam ferramentas disponibilizadas pela área de Aprendizado
+% de Máquina. Como pôde ser observado, esses trabalhos e técnicas possuem limitações,
+% principalmente quando o objetivo é realizar a modelagem segundo os componentes esto-
+% cásticos e determinísticos. Essas limitações motivaram o desenvolvimento deste trabalho,
+% que é detalhado no próximo capítulo.
+
+% Este capı́tulo discutiu os fundamentos gerais da abordagem de ICN, mostrou os seus
+% principais projetos e arquiteturas, além das direções dessas redes. Dentre as arquiteturas
+% abordadas, a CCN teve um maior enfoque, uma vez que é adotada pela NDN. Dessa
+% forma, foram apresentados os detalhes da arquitetura da CCN/NDN tais como nomeação,
+% 30
+%  REDES CENTRADAS NA INFORMAÇÃO
+% roteamento, armazenamento, segurança e mobilidade e, por fim, se discutiu as abordagens
+% existentes na literatura de apoio à mobilidade de produtores nessas redes.
+
+
 
 \xchapter{Trabalhos Relacionados}{} \label{trabalhos_relacionados}
 

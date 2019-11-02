@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {2.3.3}Ferramenta - MOA}{12}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{14}{section.2.4}
 \contentsline {section}{\numberline {2.5}Cadeias de Markov}{16}{section.2.5}
-\contentsline {section}{\numberline {2.6}Monitoramento Ocular - Classifica\IeC {\c c}\IeC {\~a}o de Fixa\IeC {\c c}\IeC {\~o}es e Sacadas}{16}{section.2.6}
+\contentsline {section}{\numberline {2.6}Monitoramento Ocular - Fixa\IeC {\c c}\IeC {\~o}es e Sacadas}{16}{section.2.6}
 \contentsline {section}{\numberline {2.7}Considera\IeC {\c c}\IeC {\~o}es Finais}{16}{section.2.7}
 \contentsline {chapter}{Cap\'{\i }tulo~3---Trabalhos Relacionados}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{17}{section.3.1}
