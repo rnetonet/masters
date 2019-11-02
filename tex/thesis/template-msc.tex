@@ -97,11 +97,11 @@
 \majorfield{Ci\^{e}ncia da Computa\c{c}\~{a}o}
 
 % Titulo da dissertacao
-\title{\dots}
+\title{Aplicando Redes de Função de Base Radial e Cadeias de Markov para a detecção de mudanças de conceito em fluxos de dados}
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
-\date{14 de Junho de 2019}
+\date{13 de Dezembro de 2019}
 % e.g. \defenseyear{2013}
 \defenseyear{2019}
 
@@ -162,19 +162,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Comente para ocultar
-%\begin{dedicatory}
-%DIGITE A DEDICATORIA AQUI
-%\end{dedicatory}
+% \begin{dedicatory}
+%     Dedicatória...
+% \end{dedicatory}
 
 % Agradecimentos
 % Se preferir, crie um arquivo `a parte e o inclua via \include{}
-%\acknowledgements
-%DIGITE OS AGRADECIMENTOS AQUI
+% \acknowledgements
 
 % Epigrafe
-%\begin{epigraph}[NOTA]{AUTOR}
-%DIGITE AQUI A CITACAO
-%\end{epigraph}
+% \begin{epigraph}[]{Provérbios 4:23}
+% Sobre tudo o que se deve guardar, guarda o teu coração, porque dele procedem as fontes da vida.
+% \end{epigraph}
 
 %%%%%%%%%%%%%%%%%%%%%
 % Resumo
@@ -182,32 +181,53 @@
 \resumo
 
 A quantidade de informações produzidas por sistemas computacionais tem crescido de forma acentuada nas últimas décadas.
-Diante disso, pesquisadores passaram a aplicar técnicas de Aprendizado de Máquina para extrair informações úteis de grandes conjuntos de dados.
-Contudo, uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
+Uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
 Esses fluxos são, em sua maioria, não-estacionários, podendo sofrer variações na distribuição dos dados ou no contexto do processo gerador.
-Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a acurácia da técnica de aprendizado aplicada.
+Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a performance de modelos de aprendizado aplicados.
 Para mitigar este problema, pesquisadores desenvolveram métodos especializados na detecção de mudanças de conceito.
 Entretanto, os métodos propostos apresentam limitações ao serem aplicados em cenários com fluxos contínuos,
 como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
-Este projeto de trabalho de mestrado propõe um novo método de detecção baseado em Redes de Função de Base Radial (RBF).
-As redes RBF realizam, em sua camada intermediária, um processo de ativação de neurônios que, implicitamente, produz agrupamentos das observações recepcionadas ao longo do tempo.
-O algoritmo proposto nesta pesquisa visa monitorar o centro ativo desse agrupamento e detecta mudanças de conceito quando este centro é alterado.
-O método proposto se diferencia dos trabalhos existentes na literatura por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
-Os resultados preliminares obtidos permitem demonstrar a viabilidade desta proposta de mestrado,
-apresentando um desempenho superior ou similar ao de algoritmos conhecidos como ADWIN, CUSUM e PageHinkley, em termos de acurácia média e tempo de processamento.
+Este trabalho propõe um novo método de detecção baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov, denominado RBFChain.
+As redes RBF realizam, em sua camada intermediária, um processo de ativação que implicitamente produz grupos das observações recepcionadas ao longo do tempo.
+Simultaneamente, cadeias de Markov modelam as transições de centro ocorridas no agrupamento formado.
+Mudanças de conceito são detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limiar.
+O método proposto se diferencia dos trabalhos existentes por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+Para avaliar o RBFChain como um detector de mudanças de conceito viável,
+uma análise de sensibilidade, precisão e tolerância ao ruído foi realizada usando conjuntos de dados sintéticos,
+e os resultados comparados com os principais algoritmos disponíveis na literatura.
+Além disso, a técnica foi aplicada ao problema de classificação de fixações e sacadas na atividade de rastreamento ocular:
+uma questão relevante para diferentes áreas do conhecimento,
+pois muitos experimentos comportamentais usam essas informações como um fator de análise.
+Os resultados com conjuntos de dados sintéticos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores presentes na literatura.
+Ademais, a técnica desenvolvida apresentou bons resultados quando aplicada ao problema de monitoramento ocular, sendo capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-    Aprendizado de Máquina, Fluxos Contínuos de Dados, Mudanças de Conceito, Redes de Função de Base Radial, Não supervisionado
+    Fluxo Contínuo de Dados. Mudança de Conceito. Rede de Função de Base Radial. Cadeia de Markov. Monitoramento Ocular.
 \end{keywords}
 
-% \abstract
-% \blindtext
+\abstract
+The amount of information produced by computer systems has grown dramatically in recent decades.
+A significant share of this volume is produced as data streams, which are constant and potentially infinite sequences.
+Most of these streams are non-stationary and may vary over time.
+These changes are called concept drifts and can negatively impact the performance of applied learning models.
+To mitigate this problem, researchers developed specialized methods for detecting concept drifts.
+However, the proposed methods have limitations when applied in scenarios with data streams,
+such as the need for expert labeling or the inability to meet the processing time and computational resource constraints of these scenarios.
+This work proposes a new detection method based on Radial Basis Function Networks (RBF) and Markov Chains, called RBFChain.
+RBF networks perform, in their intermediate layer, an activation process that implicitly produces groups of observations received over time.
+Simultaneously, the Markov Chain models the transitions between centers that occur in the formed cluster.
+Concept drifts are detected when the active center of the cluster changes, and the probability of this transition in the Markov model exceeds a threshold.
+The proposed method differs from existing works in that it detects changes at run time,  in a computationally efficient and independent of labels way.
+To assess RBFChain as a viable concept drift detector, an analysis of sensitivity, accuracy, and noise tolerance was performed using synthetic datasets, and results were compared to the main algorithms available in the literature.
+Also, the technique was applied to the fixation and saccade classification problem in eye-tracking: a relevant issue for different areas of knowledge, because many behavioral experiments use this information as an analysis factor.
+Results with synthetic datasets suggest that RBFChain is statistically better or equivalent to the main detectors present in the literature.
+Moreover, the developed method presented good results when applied to the eye-tracking problem, being able to classify fixations and saccades in real-time and with accuracy equivalent to the state of the art.
 
 % Palavras-chave do resumo em Ingles
-%\begin{keywords}
-%    Machine Learning, Data Streams, Concept Drift, Radial Basis Function Networks, RBF Network, Unlabeled
-%\end{keywords}
+\begin{keywords}
+   Data Stream. Concept Drift. Radial Basis Function Network. Markov Chain. Eye-tracking.
+\end{keywords}
 
 %%%%%%%%%%%%%%%%%%%
 % Sumario / Indice
@@ -270,7 +290,7 @@ pesquisadores têm aplicado técnicas da área de Aprendizado de Máquina (AM),
 a qual estuda algoritmos que melhoram seu desempenho conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
 %
 Entretanto, as estratégias tradicionais de Aprendizado de Máquina têm aplicação limitada para contextos com fluxos contínuos de dados,
-pois nesses cenários os algoritmos devem atender a severas restrições de tempo de execução e de uso dos recursos computacionais \cite{bifet2009data}.
+pois nesses cenários os algoritmos devem atender às severas restrições de tempo de execução e de uso dos recursos computacionais \cite{bifet2009data}.
 
 Além dessas limitações,
 as técnicas de Aprendizado de Máquina,
@@ -280,7 +300,7 @@ também devem lidar com variações na distribuição dos dados ou no contexto d
 Essas alterações são denominadas Mudanças de Conceito \cite{Gama:2010:KDD:1855075} e
 a sua ocorrência pode impactar a acurácia da técnica de aprendizado aplicada.
 
-Inicialmente, a atualização periódica de modelos obtidos a partir das técnicas de AM foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
+Inicialmente, a atualização periódica dos modelos obtidos a partir das técnicas de AM foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
 %
 Contudo, esta solução é pouco sofisticada e computacionalmente custosa.
 %
@@ -300,7 +320,7 @@ Em muitos cenários, o tempo ou o custo para obter esses rótulos é proibitivo 
 Consequentemente, foram desenvolvidos novos algoritmos independentes de rótulos.
 Nestes métodos, a detecção se baseia na identificação de exemplos que não se enquadram na estrutura conhecida dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
 %
-Essa análise é implementada com base em técnicas de agrupamento, detecção de \textit{outliers} e medidas de dissimilaridade \cite{Ryu:Kantardzic:2012}.
+Geralmente, essa análise é implementada com base em técnicas de agrupamento, detecção de \textit{outliers} ou medidas de dissimilaridade \cite{Ryu:Kantardzic:2012}.
 %
 Os seguintes algoritmos são exemplos desta abordagem:
 OLINDDA \cite{Spinosa:2007:OCA:1244002.1244107},
@@ -313,43 +333,50 @@ as técnicas de detecção de mudanças de conceito presentes na literatura aind
 %
 Os algoritmos dependentes de rótulo se tornam inviáveis, por causa do custo e do tempo necessário para obter os rótulos corretos.
 %
-Enquanto as técnicas independentes têm dificuldade em atender as severas restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
+Enquanto as técnicas independentes têm dificuldade em atender às severas restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
 
-Visando resolver essas limitações,
-este projeto de mestrado discute uma abordagem baseada em Redes de Função de Base Radial (RBF)
+Diante disso, esta dissertação de mestrado propõe uma nova abordagem baseada em Redes de Função de Base Radial (RBF) e Cadeias de Markov
 para detecção de mudanças de conceito em fluxos contínuos de dados.
-% A metodologia proposta se diferencia por detectar as mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+O método desenvolvido se diferencia dos trabalhos existentes por detectar mudanças de conceito em tempo de execução,
+de forma computacionalmente eficiente, independente de rótulos, tolerante a ruídos, e com acurácia equivalente ao estado da arte.
 
 \section{Hipótese e Objetivo}
 
 Com base nas observações citadas anteriormente, a seguinte hipótese foi formulada:
 
 \begin{center}
-\textit{``A aplicação de Redes de Função de Base Radial em fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.''}
+\textit{``A aplicação de Redes de Função de Base Radial e Cadeias de Markov em fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.''}
 \end{center}
 
-Assim, o objetivo deste trabalho de mestrado será a validação desta hipótese.
-%
-Para atingir este objetivo, será desenvolvido um método para detecção de mudanças de conceito baseado em Redes de Função de Base Radial.
-%
-A técnica proposta será validada através de comparações com o estado da arte.
-%
-Os dados utilizados durante a validação serão divididos em dois conjuntos.
-%
-Um conjunto formado por dados sintéticos, que permitirão uma análise detalhada da abordagem, uma vez que as características e os comportamentos dos fluxos serão conhecidos.
-%
-O outro conjunto será composto por dados obtidos a partir de sistemas computacionais utilizados na indústria, visando apresentar uma aplicação prática para a solução proposta.
+Assim, o objetivo principal deste trabalho foi a validação desta hipótese.
+Para atingir este objetivo, um novo método para detecção de mudanças de conceito baseado em Redes de Função de Base Radial e Cadeias de Markov foi desenvolvido.
+A técnica implementada foi validada através de dois experimentos principais, um com dados sintéticos e outro baseado em dados de um relevante problema do mundo real.
+
+No primeiro experimento, a técnica foi aplicada a conjuntos de dados sintéticos e
+comparada aos principais métodos presentes na literatura.
+Este experimento permitiu validar a efetividade do método proposto e realizar uma análise detalhada da abordagem,
+uma vez que as características e os comportamentos dos fluxos são conhecidos.
+
+No segundo experimento,
+o método foi adaptado para o problema de classificação de fixações e sacadas durante a atividade de monitoramento ocular.
+Demonstrando uma aplicação prática e relevante para diferentes áreas do conhecimento da solução proposta nesta dissertação de mestrado.
+
+\section{Contribuições}
+
+\ldots
+
+\section{Organização do trabalho}
 
 O restante deste projeto está organizado conforme a seguinte estrutura:
 %
-O \textbf{Capítulo \ref{revisao_bibliografica}} apresenta uma revisão bibliográfica dos principais conceitos utilizados como,
-por exemplo, Fluxos Contínuos de Dados e Aprendizado de Máquina, Mudança de Conceito e Redes de Função de Base Radial;
+O \textbf{Capítulo \ref{fundamentacao_teorica}} apresenta os principais conceitos que fundamentam esta dissertação de mestrado,
+por exemplo, Fluxos Contínuos de Dados e Aprendizado de Máquina, Mudança de Conceito, Redes de Função de Base Radial e Cadeias de Markov;
 %
 No \textbf{Capítulo \ref{plano_pesquisa}} o plano de pesquisa é detalhado, identificando a metodologia que será aplicada na pesquisa e o cronograma de atividades.
 %
 Por fim, o \textbf{Capítulo \ref{experimentos_iniciais}} apresenta um conjunto de experimentos preliminares e a análise dos resultados obtidos.
 
-\xchapter{Revisão Bibliográfica}{} \label{revisao_bibliografica}
+\xchapter{Fundamentação Teórica}{} \label{fundamentacao_teorica}
 \section{Considerações Iniciais}
 
 Este capítulo apresenta uma discussão geral sobre os principais conceitos utilizados neste projeto.
@@ -651,14 +678,14 @@ Na próxima seção, as ferramentas utilizadas para implementação e validaçã
     }
 \end{table}
 
-\subsection{Ferramentas}
+% \subsection{Ferramentas}
 
-Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
-Estes frameworks serão utilizados para implementar e validar a técnica de detecção proposta neste trabalho.
-Além disso, essas ferramentas possuem implementações para os principais algoritmos de detecção de mudança de conceito presentes na literatura,
-possibilitando a comparação deste trabalho com o estado da arte.
+% Nesta seção, os frameworks \textit{Massive Online Analysis} (MOA) e \textit{Tornado} serão apresentados.
+% Estes frameworks serão utilizados para implementar e validar a técnica de detecção proposta neste trabalho.
+% Além disso, essas ferramentas possuem implementações para os principais algoritmos de detecção de mudança de conceito presentes na literatura,
+% possibilitando a comparação deste trabalho com o estado da arte.
 
-\subsection{MOA}
+\subsection{Ferramenta - MOA}
 
 Atualmente, o \textit{MOA – Massive Online Analysis}\footnote{https://moa.cms.waikato.ac.nz/} é o principal framework para mineração de dados em fluxos contínuos \cite{Bifet:2010:MMO:1756006.1859903}.
 O framework é de código-aberto\footnote{https://github.com/Waikato/moa} e apresenta uma comunidade bastante ativa e crescente.
@@ -712,46 +739,46 @@ Além de possuir implementações para diversos algoritmos da área de Aprendiza
 Neste trabalho de mestrado, a classe \textit{BasicConceptDriftPerformanceEvaluator} será utilizada para avaliar a acurácia e a performance do método proposto.
 Na próxima subseção, o framework \textit{Tornado} será apresentado.
 
-\subsection{Tornado}
+% \subsection{Tornado}
 
-O \textit{Tornado} é um framework desenvolvido para analisar algoritmos de detecção de mudanças de conceito \cite{Pesaranghader:Tornado}.
-O projeto é construído na linguagem Python e o seu código está disponível\footnote{https://github.com/alipsgh/tornado}.
-O framework se diferencia do \textit{MOA}, pois apresenta um cenário de avaliação específico:
-analisar a execução, em paralelo, de pares formados por um classificador e um detector de mudanças,
-para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
+% O \textit{Tornado} é um framework desenvolvido para analisar algoritmos de detecção de mudanças de conceito \cite{Pesaranghader:Tornado}.
+% O projeto é construído na linguagem Python e o seu código está disponível\footnote{https://github.com/alipsgh/tornado}.
+% O framework se diferencia do \textit{MOA}, pois apresenta um cenário de avaliação específico:
+% analisar a execução, em paralelo, de pares formados por um classificador e um detector de mudanças,
+% para identificar o par ótimo ao longo do tempo, em relação ao fluxo de dados.
 
-\begin{figure}[H]
-\begin{center}
-    \includegraphics[scale=0.75]{imagens/tornado.png}
-    \caption{Framework Tornado \cite{Pesaranghader:Tornado}.}
-    \label{fig:tornado}
-\end{center}
-\end{figure}
+% \begin{figure}[H]
+% \begin{center}
+%     \includegraphics[scale=0.75]{imagens/tornado.png}
+%     \caption{Framework Tornado \cite{Pesaranghader:Tornado}.}
+%     \label{fig:tornado}
+% \end{center}
+% \end{figure}
 
-Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do framework são:
-\textit{Stream Reader}, \textit{Classifiers}, \textit{Detectors}, \textit{Classifier-Detector Pairs} e \textit{CAR Calculator}.
-A entrada de dados é composta por um fluxo (\textit{Stream}), uma lista de pares (classificador, detector) e um vetor com pesos.
-O componente \textit{Stream Reader} recepciona as instâncias e as encaminha para construção do modelo de forma incremental.
-Por seguir a abordagem \textit{prequential}, cada instância é primeiramente utilizada para testes e depois como treinamento.
-Simultaneamente, os classificadores enviam suas estatísticas aos detectores, para que a mudança de conceito possa ser sinalizada.
-Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par, baseada na taxa de erro, atraso para detecção (\textit{delay}), falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
+% Conforme apresentado na Figura \ref{fig:tornado}, os principais componentes do framework são:
+% \textit{Stream Reader}, \textit{Classifiers}, \textit{Detectors}, \textit{Classifier-Detector Pairs} e \textit{CAR Calculator}.
+% A entrada de dados é composta por um fluxo (\textit{Stream}), uma lista de pares (classificador, detector) e um vetor com pesos.
+% O componente \textit{Stream Reader} recepciona as instâncias e as encaminha para construção do modelo de forma incremental.
+% Por seguir a abordagem \textit{prequential}, cada instância é primeiramente utilizada para testes e depois como treinamento.
+% Simultaneamente, os classificadores enviam suas estatísticas aos detectores, para que a mudança de conceito possa ser sinalizada.
+% Por fim, o componente \textit{CAR Calculator} calcula uma pontuação para cada par, baseada na taxa de erro, atraso para detecção (\textit{delay}), falsos positivos, falsos negativos, quantidade de memória utilizada e tempo de execução \cite{Pesaranghader:Tornado}.
 
-O resultado produzido identifica o par ótimo para cada instante da execução.
-Esta abordagem de avaliação se mostra relevante, pois o par ideal pode mudar ao longo do tempo, devido ao aprendizado incremental ou às mudanças de conceito.
-A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado da ferramenta.
+% O resultado produzido identifica o par ótimo para cada instante da execução.
+% Esta abordagem de avaliação se mostra relevante, pois o par ideal pode mudar ao longo do tempo, devido ao aprendizado incremental ou às mudanças de conceito.
+% A Figura \ref{fig:tornado_out2} apresenta um exemplo de resultado da ferramenta.
 
-\begin{figure}[ht]
-\begin{center}
-    \includegraphics[scale=0.6]{imagens/tornado_out2.png}
-    \caption{Tornado - Exemplo de resultado \cite{Pesaranghader:Tornado}}
-    \label{fig:tornado_out2}
-\end{center}
-\end{figure}
+% \begin{figure}[ht]
+% \begin{center}
+%     \includegraphics[scale=0.6]{imagens/tornado_out2.png}
+%     \caption{Tornado - Exemplo de resultado \cite{Pesaranghader:Tornado}}
+%     \label{fig:tornado_out2}
+% \end{center}
+% \end{figure}
 
-Neste trabalho, o algoritmo proposto será implementado e testado nas duas ferramentas apresentadas.
-Os detalhes de implementação e os resultados desses testes serão discutidos no Capítulo \ref{experimentos_iniciais}.
-A seguir, as Redes de Função de Base Radial são detalhadas.
-\newpage
+% Neste trabalho, o algoritmo proposto será implementado e testado nas duas ferramentas apresentadas.
+% Os detalhes de implementação e os resultados desses testes serão discutidos no Capítulo \ref{experimentos_iniciais}.
+% A seguir, as Redes de Função de Base Radial são detalhadas.
+% \newpage
 
 \section{Redes de Função de Base Radial}
 
@@ -772,10 +799,6 @@ Na literatura, as funções Gaussianas (Função \ref{eq:gaussiana}) são as fun
     \varphi (v_{i})=e^{-(\sigma r)^{2}}
 \end{equation}
 
-% A camada intermediária, através de suas funções de ativação de base radial, realiza uma transformação não-linear dos dados de entrada para um espaço de alta dimensionalidade. A importância dessa transformação é justificada matematicamente pelo teorema de \citeonline{cover1965browse},
-% segundo o qual, ``um problema complexo de classificação de padrões disposto não linearmente em um espaço de alta dimensionalidade tem maior probabilidade de ser linearmente separável do que em um espaço de baixa dimensionalidade''.
-
-% r=
 onde, $r$ é a distância euclidiana ($\|\mathbf {v_{i}} - \mathbf {c_{i}}\|$), $v$ é o valor de entrada, $c_i$ representa o centro e $\sigma$ é o parâmetro limitador do raio.
 
 \begin{figure}[H]
@@ -792,7 +815,6 @@ Esta função é obtida a partir da combinação linear dos resultados das funç
 \begin{equation} \label{eq:rbf1}
     \varphi ({x})=\sum _{{i=1}}^{N}a_{i}\rho (||{x}-{c}_{i}||)
 \end{equation}
-
 
 onde $N$ é o número de neurônios na camada intermediária, ${c}_{i}$ é o centro do neurônio $i$, $||\ldots||$ é a norma euclidiana e $a_{i}$ é o peso (bias) atribuído ao neurônio para realização da combinação linear.
 
@@ -837,6 +859,14 @@ Isto é possível, pois a camada intermediária cria, de forma implícita, agrup
 Dessa forma, a criação de novos centros e a mudança do centro ativo dos neurônios podem sinalizar a ocorrência de mudanças de conceito.
 A técnica desenvolvida será discutida em detalhes no Capítulo \ref{plano_pesquisa}.
 Na próxima seção, os trabalhos relacionados encontrados na literatura são apresentados.
+
+\section{Cadeias de Markov}
+
+\ldots
+
+\section{Monitoramento Ocular}
+
+\ldots
 
 \section{Trabalhos Relacionados}
 
@@ -901,7 +931,7 @@ Técnicas de Detecção e Redes de Função de Base Radial.
 Por fim, foram apresentados os trabalhos relacionados encontrados na literatura.
 No próximo capítulo, o plano de pesquisa será detalhado.
 
-\xchapter{Plano de Pesquisa}{} \label{plano_pesquisa}
+\xchapter{RBFC\element{hain}}{} \label{rbfchain}
 \section{Considerações Iniciais}
 
 Este capítulo descreve como este projeto de mestrado será desenvolvido.
@@ -909,7 +939,7 @@ A abordagem proposta utiliza Redes de Função de Base Radial para detectar muda
 Espera-se que a utilização de redes RBF permita detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
 
-\section{Descrição do Problema}
+\section{RBFChain}
 
 Nos últimos anos, a quantidade de dados produzidos por sistemas computacionais tem crescido de forma exponencial \cite{idc_report}.
 Parte significativa dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências potencialmente infinitas e de alta frequência \cite{Aggarwal:2006:DSM:1196418}.
@@ -940,7 +970,7 @@ Este agrupamento possui um centro ativo que muda conforme o valor processado.
 O algoritmo desenvolvido nesta pesquisa monitora o agrupamento formado para identificar quando esse centro é alterado.
 Estas alterações são utilizadas como indícios de possíveis mudanças de conceito.
 
-O método proposto, denominado \textit{RBFDriftDetector}, utiliza a função Gaussiana para ativação dos neurônios e requer a definição de dois parâmetros:
+O método proposto, denominado \textit{RBFChain}, utiliza a função Gaussiana para ativação dos neurônios e requer a definição de dois parâmetros:
 \textit{$\sigma$}, responsável por limitar o raio da radial, e \textit{$\lambda$}, que define um limiar para ativação de um centro.
 A técnica é descrita na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo},
 tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/fjGuv}}, para realização dos experimentos na plataforma MOA.
@@ -974,7 +1004,7 @@ tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/f
     \BlankLine
     }
 
-    \caption{\textsc{RBFDriftDetector}}
+    \caption{\textsc{RBFChain}}
     \label{alg:algoritmo}
 \end{algorithm}
 \vspace{7pt}
@@ -1008,64 +1038,64 @@ As linhas verticais tracejadas, de cor vermelha, indicam a ocorrência de mudan�
 \end{center}
 \end{figure}
 
-\section{Atividades de Pesquisa}
+% \section{Atividades de Pesquisa}
 
-A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para a realização da pesquisa. Atividades concluídas são representadas pelo símbolo $X$ e as futuras por $\bullet$.
+% A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para a realização da pesquisa. Atividades concluídas são representadas pelo símbolo $X$ e as futuras por $\bullet$.
 
-\begin{table}[htbp]
-\begin{center}
-\caption{Cronograma de atividades}     % mude aqui para seu título da tabela
-\label{cronograma} % para referencia no texto.
-\resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
-\begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
-\hline
-\multicolumn{1}{|c|}{\multirow{2}{*}{Atividades}} & \multicolumn{24}{c|}{Meses} \\ \cline{2-25}
-\multicolumn{1}{|c|}{} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline
-%\rowcolor[HTML]{EFEFEF}
+% \begin{table}[htbp]
+% \begin{center}
+% \caption{Cronograma de atividades}     % mude aqui para seu título da tabela
+% \label{cronograma} % para referencia no texto.
+% \resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
+% \begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+% \hline
+% \multicolumn{1}{|c|}{\multirow{2}{*}{Atividades}} & \multicolumn{24}{c|}{Meses} \\ \cline{2-25}
+% \multicolumn{1}{|c|}{} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline
+% %\rowcolor[HTML]{EFEFEF}
 
-1-Disciplinas & X & X & X & X & X & X & X & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-2-Revisão da Literatura & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & X & X & ~ & ~ & ~ & ~ &  ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-3-Experimentos  & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X  & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-4-Análise dos Resultados & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & ~  & ~  & ~ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-5-Escrita da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-6-Estágio docente & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ \\ \hline
-7-Pesquisa Orientada & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & X & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
-8-Apresentação da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-9-Escrita de artigos& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~  & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ \\ \hline
-10-Escrita da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
-11- Defesa da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ \\ \hline
+% 1-Disciplinas & X & X & X & X & X & X & X & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+% 2-Revisão da Literatura & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & X & X & ~ & ~ & ~ & ~ &  ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+% 3-Experimentos  & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X  & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+% 4-Análise dos Resultados & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & ~  & ~  & ~ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+% 5-Escrita da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+% 6-Estágio docente & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ \\ \hline
+% 7-Pesquisa Orientada & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & X & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
+% 8-Apresentação da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+% 9-Escrita de artigos& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~  & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ \\ \hline
+% 10-Escrita da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
+% 11- Defesa da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ \\ \hline
 
-\hline
-\end{tabular}
-} % fecha resizebox
-\end{center}
-\end{table}
+% \hline
+% \end{tabular}
+% } % fecha resizebox
+% \end{center}
+% \end{table}
 
-Para a conclusão da atividade 1,
-o Programa de Pós-Graduação em Ciência da Computação (PGCOMP) da Universidade Federal da Bahia (UFBA) exige que um mestrando obtenha um total de 18 créditos em disciplinas.
-Nos semestres 2018.1 e 2018.2, foram obtidos os créditos exigidos ao cursar as disciplinas:
-MATD74 -- Algoritmos e Grafos, MATE32 -- Tópicos em Inteligência Computacional II, MATE64 -- Seminários Científicos, MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I,
-MATE10 -- Tópicos em Inteligência Computacional I e MATE84 -- Tópicos em Fundamentos da Computação IV.
+% Para a conclusão da atividade 1,
+% o Programa de Pós-Graduação em Ciência da Computação (PGCOMP) da Universidade Federal da Bahia (UFBA) exige que um mestrando obtenha um total de 18 créditos em disciplinas.
+% Nos semestres 2018.1 e 2018.2, foram obtidos os créditos exigidos ao cursar as disciplinas:
+% MATD74 -- Algoritmos e Grafos, MATE32 -- Tópicos em Inteligência Computacional II, MATE64 -- Seminários Científicos, MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I,
+% MATE10 -- Tópicos em Inteligência Computacional I e MATE84 -- Tópicos em Fundamentos da Computação IV.
 
-A segunda atividade planejada neste cronograma foi realizada a partir da disciplina MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I
-e nos meses subsequentes. Além disso, durante a execução desta tarefa foi realizada a prova de proficiência em inglês.
+% A segunda atividade planejada neste cronograma foi realizada a partir da disciplina MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I
+% e nos meses subsequentes. Além disso, durante a execução desta tarefa foi realizada a prova de proficiência em inglês.
 
-As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados.
-Essas atividades foram divididas em duas partes.
-A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho.
-Nesta parte, conjuntos de dados sintéticos foram analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}.
-A segunda parte dos experimentos e suas análises serão realizadas após a qualificação.
+% As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados.
+% Essas atividades foram divididas em duas partes.
+% A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho.
+% Nesta parte, conjuntos de dados sintéticos foram analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}.
+% A segunda parte dos experimentos e suas análises serão realizadas após a qualificação.
 
-As atividades 5 e 8 estão relacionadas com o componente curricular MATD75 -- Exame de qualificação. A atividade 5 refere-se à escrita deste texto e as atividades 6 e 7 representam os componentes curriculares MATA32 -- Estágio Docente e MATA31 -- Pesquisa Orientada, respectivamente. A atividade 8 está relacionada à apresentação desta qualificação de mestrado.
+% As atividades 5 e 8 estão relacionadas com o componente curricular MATD75 -- Exame de qualificação. A atividade 5 refere-se à escrita deste texto e as atividades 6 e 7 representam os componentes curriculares MATA32 -- Estágio Docente e MATA31 -- Pesquisa Orientada, respectivamente. A atividade 8 está relacionada à apresentação desta qualificação de mestrado.
 
-A escrita de artigos, listada no item 9 do cronograma, será realizada com base nos resultados gerados com os experimentos (Atividades $3$ e $4$) e nas contribuições obtidas com a apresentação da qualificação. Por fim, como requisito para a defesa de dissertação, fica pendente a atividade MATE93 - Defesa de Proposta de Mestrado, a qual se refere aos itens 10 e 11 da Tabela \ref{cronograma}.
+% A escrita de artigos, listada no item 9 do cronograma, será realizada com base nos resultados gerados com os experimentos (Atividades $3$ e $4$) e nas contribuições obtidas com a apresentação da qualificação. Por fim, como requisito para a defesa de dissertação, fica pendente a atividade MATE93 - Defesa de Proposta de Mestrado, a qual se refere aos itens 10 e 11 da Tabela \ref{cronograma}.
 
 \section{Considerações Finais}
 
 Neste capítulo, apresentou-se de maneira detalhada o projeto de pesquisa, o plano de atividades e o cronograma planejado para a conclusão do mestrado.
 No próximo capítulo, serão discutidos os experimentos iniciais, realizados com o objetivo de analisar a viabilidade da proposta de mestrado.
 
-\xchapter{Experimentos Iniciais}{} \label{experimentos_iniciais}
+\xchapter{Experimentos e Resultados}{} \label{experimentos_iniciais}
 \section{Considerações Iniciais}
 
 Este capítulo apresenta um conjunto de experimentos preliminares realizados com dados sintéticos, cujo objetivo foi demonstrar a viabilidade da proposta de mestrado.
@@ -1208,9 +1238,9 @@ A análise dos resultados demonstra que o algoritmo se mostrou propenso à produ
 
 Por não apresentar resultados competitivos em relação ao estado da arte, esta linha de pesquisa foi suspensa, permitindo que os esforços se voltassem para a análise da aplicação de Redes de Função de Base Radial para detecção de mudanças de conceito.
 
-\section{RBFD\element{rift}D\element{etector}}
+\section{RBFC\element{hain}}
 
-Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o algoritmo desenvolvido nesta pesquisa, denominado RBFDriftDetector.
+Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o algoritmo desenvolvido nesta pesquisa, denominado RBFChain.
 Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta,
 a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de Redes de Função de Base Radial para detecção de mudanças de conceito em fluxos contínuos de dados.
 
@@ -1227,7 +1257,7 @@ A Tabela \ref{tbl:parametros_algoritmos} lista os parâmetros utilizados para ca
     \toprule
     Algoritmo & Parâmetros \\
     \midrule
-    RBFDriftDetector          &  $\sigma = 2$; $\lambda = 0.5$ \\
+    RBFChain                  &  $\sigma = 2$; $\lambda = 0.5$ \\
     CUSUM                     &  $MinNumInstances = 30; \delta = 0.005; \lambda = 50$ \\
     PageHinkley               &  $MinNumInstances = 30; \delta = 0.005; \lambda = 50; \alpha = 1$ \\
     ADWIN                     &  $\delta = 0.002$ \\
@@ -1249,7 +1279,7 @@ O resultado desta análise pode ser visto na Tabela \ref{tbl:exp1}.
     \toprule
     Algoritmo & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
     \midrule
-    RBFDriftDetector          &  $0.22$ & $0$ & $0$ & $0$ & $-$ \\
+    RBFChain          &  $0.22$ & $0$ & $0$ & $0$ & $-$ \\
     CUSUM                     &  $0.31$ & $0$ & $0$ & $0$ & $-$ \\
     PageHinkley               &  $0.24$ & $0$ & $0$ & $0$ & $-$ \\
     ADWIN                     &  $0.21$ & $0$ & $0$ & $0$ & $-$ \\
@@ -1283,7 +1313,7 @@ Os resultados obtidos são apresentados na Tabela \ref{tbl:exp2}.
     \toprule
     Algoritmo & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
     \midrule
-    RBFDriftDetector          &  $0.23$ & $6$ & $6$    & $0$    & $1$ \\
+    RBFChain          &  $0.23$ & $6$ & $6$    & $0$    & $1$ \\
     CUSUM                     &  $0.29$ & $6$ & $3$    & $0$    & $68$ \\
     PageHinkley               &  $0.22$ & $6$ & $1$    & $0$    & $17$ \\
     ADWIN                     &  $0.21$ & $6$ & $2052$ & $2046$ & $9$ \\
@@ -1323,7 +1353,7 @@ Seu resultado é demonstrado na Tabela \ref{tbl:exp3}.
     \toprule
     Algoritmo & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
     \midrule
-    RBFDriftDetector          &  $0.24$ & $6$ & $5$    & $1$    & $171$ \\
+    RBFChain          &  $0.24$ & $6$ & $5$    & $1$    & $171$ \\
     CUSUM                     &  $0.65$ & $6$ & $3$    & $0$    & $32$ \\
     PageHinkley               &  $0.26$ & $6$ & $1$    & $0$    & $4$ \\
     ADWIN                     &  $0.27$ & $6$ & $2244$ & $2238$ & $1$ \\
@@ -1333,7 +1363,7 @@ Seu resultado é demonstrado na Tabela \ref{tbl:exp3}.
     \end{table}
 \end{center}
 
-Neste experimento, o algoritmo RBFDriftDetector identificou 5 das 6 mudanças existentes e sinalizou um falso-positivo.
+Neste experimento, o algoritmo RBFChain identificou 5 das 6 mudanças existentes e sinalizou um falso-positivo.
 Ainda assim, obteve a melhor acurácia, apesar de apresentar a maior taxa de atraso.
 Os outros algoritmos analisados apresentaram comportamentos similares aos do experimento anterior.
 O algoritmo CUSUM identificou metade das mudanças.
