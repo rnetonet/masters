@@ -858,9 +858,8 @@ Os centros ativados constituem os estados da Cadeia de Markov.
 Transições entre os centros são refletidas nas probabilidades mantidas pelo modelo markoviano, aumentando a probabilidade da transição vigente por um fator paramétrico e diminuindo proporcionalmente a probabilidade das outras transições.
 Esta operação é realizada respeitando as condições: $P_{ij} \geq 0$ e que a soma das probabilidades de todas transições a partir de um determinado estado seja sempre $1$.
 
-Além de modelar as transições da rede RBF em uso, a Cadeia de Markov também é responsável pela tolerância a ruídos do método de detecção proposto neste trabalho.
-Isto ocorre, pois apenas transições entre centros consideradas \textit{efetivas} podem sinalizar mudanças de conceito.
-As transições só são consideradas \textit{efetivas} quando sua probabilidade se iguala a $1$, evitando, assim, que anomalias sejam consideradas novos conceitos.
+Além de modelar o processo em execução, a Cadeia de Markov também é responsável pela tolerância a ruídos do método de detecção proposto neste trabalho.
+Isto ocorre, pois apenas transições consideradas \textit{efetivas} ($P_{ij} = 1$) podem sinalizar mudanças de conceito.
 
 Na próxima seção, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é apresentado.
 
