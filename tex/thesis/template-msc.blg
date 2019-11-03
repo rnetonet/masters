@@ -11,7 +11,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated field_info (elt_size=4) to 10520 items from 5000.
+Reallocated field_info (elt_size=4) to 10658 items from 5000.
 Database file #1: abntex2-options.bib
 Database file #2: biblio.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -23,44 +23,44 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-You've used 80 entries,
+You've used 82 entries,
             6711 wiz_defined-function locations,
-            1833 strings with 29328 characters,
-and the built_in function-call counts, 115853 in all, are:
-= -- 12482
-> -- 2885
-< -- 2276
-+ -- 3258
-- -- 857
-* -- 7938
-:= -- 14222
-add.period$ -- 407
-call.type$ -- 80
-change.case$ -- 958
-chr.to.int$ -- 191
-cite$ -- 79
-duplicate$ -- 9947
-empty$ -- 5439
-format.name$ -- 4176
-if$ -- 24616
+            1846 strings with 29726 characters,
+and the built_in function-call counts, 118387 in all, are:
+= -- 12755
+> -- 2951
+< -- 2326
++ -- 3333
+- -- 877
+* -- 8103
+:= -- 14537
+add.period$ -- 417
+call.type$ -- 82
+change.case$ -- 980
+chr.to.int$ -- 193
+cite$ -- 81
+duplicate$ -- 10169
+empty$ -- 5562
+format.name$ -- 4269
+if$ -- 25147
 int.to.chr$ -- 0
 int.to.str$ -- 0
-missing$ -- 1483
-newline$ -- 445
-num.names$ -- 402
-pop$ -- 1799
+missing$ -- 1522
+newline$ -- 455
+num.names$ -- 412
+pop$ -- 1853
 preamble$ -- 1
-purify$ -- 345
+purify$ -- 353
 quote$ -- 0
-skip$ -- 10017
+skip$ -- 10241
 stack$ -- 1
-substring$ -- 5136
-swap$ -- 4132
-text.length$ -- 163
+substring$ -- 5226
+swap$ -- 4215
+text.length$ -- 164
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 29
 warning$ -- 0
-while$ -- 667
+while$ -- 680
 width$ -- 0
-write$ -- 1422
+write$ -- 1453

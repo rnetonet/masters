@@ -798,7 +798,71 @@ As Cadeias de Markov serão apresentadas na próxima seção.
 
 \section{Cadeias de Markov}
 
-\ldots
+Equações determinísticas podem ser utilizadas para descrever sistemas que permitem traçar toda a sua evolução a partir da condição inicial.
+Contudo, em alguns sistemas isso não é possível, pois estes apresentam diferentes possibilidades evolutivas.
+Nestes casos, processos estocásticos são utilizados \cite{taylor1998introduction}.
+
+Um processo estocástico $\left\{ X _ { t } : t \in T \right\}$ é uma coleção de variáveis aleatórias indexadas no tempo.
+O conjunto de possíveis valores de $X_{t}, S = \left\{s_{1}, s_{2}, \ldots\right\}$, é denominado espaço dos estados e $T$ denota o espaço temporal.
+A partir desta definição e considerando que o processo estocástico esteja no estado $s_i$ e no tempo $t - 1$, a probabilidade
+do processo estar no estado $s_j$ no tempo $t$ é dada pela Equação \ref{eq:prob_proc_estoc}:
+
+\begin{equation}
+    \label{eq:prob_proc_estoc}
+    \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right)
+\end{equation}
+
+A probabilidade resultante desta equação é denominada probabilidade de transição (de um passo) do estado $s_i$ para o estado $s_j$.
+
+Uma Cadeia de Markov, ou Processo de Markov,
+é um processo estocástico no qual a probabilidade de um sistema estar em determinado estado em um dado período de tempo depende apenas do estado no período imediatamente anterior.
+Esse tipo de processo também é conhecido como \textit{memoryless process} (processo sem memória), pois os estados passados são ignorados.
+Esta característica é demonstrada através da Equação \ref{eq:markov}:
+
+\begin{equation}
+    \label{eq:markov}
+    \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right) = \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } \right) = p _ { i j }
+\end{equation}
+
+Isto é, um processo de Markov pode assumir os estados $a_1, a_2, \ldots, a_r$, de tal modo que a probabilidade
+de transição de um estado $a_i$ para um estado $a_j$ seja $P_{ij}$ (um valor dependente apenas de $i$ e $j$).
+Dessa forma, é possível constituir uma matriz das probabilidades de transição (matriz estocástica),
+demonstrada na Equação \ref{eq:matriz_estocastica}:
+
+\begin{equation}
+\label{eq:matriz_estocastica}
+P = \left[ \begin{array} { c c c c } { P _ { 11 } } & { P _ { 12 } } & { \dots } & { P _ { 1 r } } \\ { P _ { 21 } } & { P _ { 22 } } & { \dots } & { P _ { 2 r } } \\ { \vdots } & { \vdots } & { \vdots } & { \vdots } \\ { P _ { r 1 } } & { P _ { r 2 } } & { \cdots } & { P _ { r r } } \end{array} \right]
+\end{equation}
+
+A fim de ilustrar os conceitos apresentados, considere o diagrama de estados representado na Figura \ref{fig:cadeia_markov_tres_estados}.
+Este diagrama detalha um processo Markoviano com três estados possíveis, em um determinado instante de tempo:
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.75]{imagens/markov_chain_wikipedia.png}
+        \caption{Exemplo: Cadeia de Markov com três estados \cite{wiki:Markov_chain}}
+        \label{fig:cadeia_markov_tres_estados}
+    \end{center}
+\end{figure}
+
+Este diagrama pode também ser representado como uma matriz estocástica, demonstrada na Equação \ref{eq:matriz_estocastica_exemplo}.
+
+\begin{equation}
+\label{eq:matriz_estocastica_exemplo}
+P={\begin{bmatrix}0.9&0.075&0.025\\0.15&0.8&0.05\\0.25&0.25&0.5\end{bmatrix}}.
+\end{equation}
+
+Para detalhar o uso da Cadeia de Markov nesta dissertação, é importante relembrar que a rede RBF utilizada realiza o agrupamento dos dados recebidos ao longo do tempo.
+Durante este processo, o centro ativo do cluster formado muda conforme o dado em análise.
+Os centros ativados constituem os estados da Cadeia de Markov.
+Transições entre os centros são refletidas nas probabilidades mantidas pelo modelo markoviano, aumentando a probabilidade da transição vigente por um fator paramétrico e diminuindo proporcionalmente a probabilidade das outras transições.
+Esta operação é realizada respeitando as condições: $P_{ij} \geq 0$ e que a soma das probabilidades de todas transições a partir de um determinado estado seja sempre $1$.
+
+Além de modelar as transições da rede RBF em uso, a Cadeia de Markov também é responsável pela tolerância a ruídos do método de detecção proposto neste trabalho.
+Isto ocorre, pois apenas transições entre centros consideradas \textit{efetivas} podem sinalizar mudanças de conceito.
+As transições só são consideradas \textit{efetivas} quando sua probabilidade se iguala a $1$, evitando, assim, que anomalias sejam consideradas novos conceitos.
+
+Na próxima seção, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é apresentado.
 
 \section{Monitoramento Ocular - Fixações e Sacadas}
 

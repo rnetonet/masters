@@ -532,6 +532,13 @@ ISBN 1-59593-480-4. Dispon{\'\i}vel em:
 ISBN 1-58113-391-X. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/502512.502568}.}
 
+\bibitem[Taylor, Karlin e Taylor 1998]{taylor1998introduction}
+\abntrefinfo{Taylor, Karlin e Taylor}{TAYLOR; KARLIN; TAYLOR}{1998}
+{TAYLOR, H.; KARLIN, S.; TAYLOR, H. \emph{An Introduction to Stochastic
+  Modeling}. Elsevier Science, 1998.
+ISBN 9780126848878. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=UtPgVrVthF8C}.}
+
 \bibitem[Vapnik 1998]{Vapnik1998}
 \abntrefinfo{Vapnik}{VAPNIK}{1998}
 {VAPNIK, V.~N. \emph{Statistical Learning Theory}. [S.l.]: Wiley-Interscience,
@@ -563,6 +570,13 @@ ISBN 1-58113-737-0. Dispon{\'\i}vel em:
   p. 69--101, abr. 1996.
 ISSN 0885-6125.
 Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1023/A:1018046501280}.}
+
+\bibitem[Wikipedia 2019]{wiki:Markov_chain}
+\abntrefinfo{Wikipedia}{WIKIPEDIA}{2019}
+{WIKIPEDIA. \emph{{Markov chain} --- {W}ikipedia{,} The Free Encyclopedia}.
+  2019.
+  \url{http://en.wikipedia.org/w/index.php?title=Markov\%20chain&oldid=924413981}.
+[Online; accessed 03-November-2019].}
 
 \bibitem[Yamanishi e Takeuchi 2002]{Yamanishi:2002:UFD:775047.775148}
 \abntrefinfo{Yamanishi e Takeuchi}{YAMANISHI; TAKEUCHI}{2002}

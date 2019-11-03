@@ -13,22 +13,22 @@
 \contentsline {subsection}{\numberline {2.3.3}Ferramenta - MOA}{12}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{14}{section.2.4}
 \contentsline {section}{\numberline {2.5}Cadeias de Markov}{16}{section.2.5}
-\contentsline {section}{\numberline {2.6}Monitoramento Ocular - Fixa\IeC {\c c}\IeC {\~o}es e Sacadas}{16}{section.2.6}
-\contentsline {section}{\numberline {2.7}Considera\IeC {\c c}\IeC {\~o}es Finais}{16}{section.2.7}
-\contentsline {chapter}{Cap\'{\i }tulo~3---Trabalhos Relacionados}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{17}{section.3.1}
-\contentsline {section}{\numberline {3.2}Considera\IeC {\c c}\IeC {\~o}es Finais}{19}{section.3.2}
-\contentsline {chapter}{Cap\'{\i }tulo~4---RBFC\element {hain}}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}RBFChain}{21}{section.4.2}
-\contentsline {section}{\numberline {4.3}Considera\IeC {\c c}\IeC {\~o}es Finais}{24}{section.4.3}
-\contentsline {chapter}{Cap\'{\i }tulo~5---Experimentos e Resultados}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{25}{section.5.2}
-\contentsline {section}{\numberline {5.3}Crit\IeC {\'e}rios de avalia\IeC {\c c}\IeC {\~a}o}{26}{section.5.3}
-\contentsline {section}{\numberline {5.4}P\element {ettitt}}{27}{section.5.4}
-\contentsline {section}{\numberline {5.5}RBFC\element {hain}}{28}{section.5.5}
-\contentsline {section}{\numberline {5.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{32}{section.5.6}
-\contentsline {chapter}{Cap\'{\i }tulo~6---Conclus\IeC {\~o}es e Trabalhos Futuros}{33}{chapter.6}
-\contentsline {section}{\numberline {6.1}Discuss\IeC {\~o}es}{33}{section.6.1}
-\contentsline {section}{\numberline {6.2}Trabalhos Futuros}{33}{section.6.2}
+\contentsline {section}{\numberline {2.6}Monitoramento Ocular - Fixa\IeC {\c c}\IeC {\~o}es e Sacadas}{18}{section.2.6}
+\contentsline {section}{\numberline {2.7}Considera\IeC {\c c}\IeC {\~o}es Finais}{18}{section.2.7}
+\contentsline {chapter}{Cap\'{\i }tulo~3---Trabalhos Relacionados}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Considera\IeC {\c c}\IeC {\~o}es Finais}{21}{section.3.2}
+\contentsline {chapter}{Cap\'{\i }tulo~4---RBFC\element {hain}}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}RBFChain}{23}{section.4.2}
+\contentsline {section}{\numberline {4.3}Considera\IeC {\c c}\IeC {\~o}es Finais}{26}{section.4.3}
+\contentsline {chapter}{Cap\'{\i }tulo~5---Experimentos e Resultados}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{27}{section.5.2}
+\contentsline {section}{\numberline {5.3}Crit\IeC {\'e}rios de avalia\IeC {\c c}\IeC {\~a}o}{28}{section.5.3}
+\contentsline {section}{\numberline {5.4}P\element {ettitt}}{29}{section.5.4}
+\contentsline {section}{\numberline {5.5}RBFC\element {hain}}{30}{section.5.5}
+\contentsline {section}{\numberline {5.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{34}{section.5.6}
+\contentsline {chapter}{Cap\'{\i }tulo~6---Conclus\IeC {\~o}es e Trabalhos Futuros}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Discuss\IeC {\~o}es}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Trabalhos Futuros}{35}{section.6.2}
