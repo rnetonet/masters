@@ -338,7 +338,8 @@ Enquanto as técnicas independentes têm dificuldade em atender às severas rest
 Diante disso, esta dissertação de mestrado propõe uma nova abordagem baseada em Redes de Função de Base Radial (RBF) e Cadeias de Markov
 para detecção de mudanças de conceito em fluxos contínuos de dados.
 O método desenvolvido se diferencia dos trabalhos existentes por detectar mudanças de conceito em tempo de execução,
-de forma computacionalmente eficiente, independente de rótulos, tolerante a ruídos, e com acurácia equivalente ao estado da arte.
+de forma computacionalmente eficiente e independente de rótulos.
+Além de ser tolerante a ruídos e apresentar acurácia equivalente ao estado da arte.
 
 \section{Hipótese e Objetivo}
 
@@ -348,9 +349,9 @@ Com base nas observações citadas anteriormente, a seguinte hipótese foi formu
 \textit{``A aplicação de Redes de Função de Base Radial e Cadeias de Markov em fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.''}
 \end{center}
 
-Assim, o objetivo principal deste trabalho foi a validação desta hipótese.
-Para atingir este objetivo, um novo método para detecção de mudanças de conceito baseado em Redes de Função de Base Radial e Cadeias de Markov foi desenvolvido.
-A técnica implementada foi validada através de dois experimentos principais, um com dados sintéticos e outro baseado em dados de um relevante problema do mundo real.
+Assim, o objetivo principal deste trabalho foi a validação da hipótese elaborada.
+Para atingir este objetivo, um novo método para detecção de mudanças de conceito, baseado em Redes de Função de Base Radial e Cadeias de Markov, foi desenvolvido.
+A técnica implementada foi validada através de dois experimentos principais, um com dados sintéticos e outro baseado em dados de um problema do mundo real.
 
 No primeiro experimento, a técnica foi aplicada a conjuntos de dados sintéticos e
 comparada aos principais métodos presentes na literatura.
@@ -359,13 +360,12 @@ uma vez que as características e os comportamentos dos fluxos são conhecidos.
 
 No segundo experimento,
 o método foi adaptado para o problema de classificação de fixações e sacadas durante a atividade de monitoramento ocular.
-Demonstrando uma aplicação prática e relevante para diferentes áreas do conhecimento da solução proposta nesta dissertação de mestrado.
+Este experimento demonstrou uma aplicação prática e relevante da solução proposta neste trabalho.
 
 \section{Contribuições}
 
-A principal contribuição desta dissertação consiste em um novo método para detecção de mudanças de conceito em fluxos contínuos de dados,
-baseado em Redes de Função de Base Radial e Cadeias de Markov.
-%
+A principal contribuição desta dissertação consiste em um novo método para detecção de mudanças de conceito em fluxos contínuos de dados.
+O método desenvolvido é baseado em Redes de Função de Base Radial e Cadeias de Markov.
 As principais vantanges da técnica desenvolvida em relação aos métodos existentes na literatura são:
 
 \begin{itemize}
@@ -540,7 +540,9 @@ Portanto, as mudanças são notáveis apenas à longo prazo (Figura \ref{fig:con
 A mudança recorrente acontece quando um conceito anteriormente ativo reaparece após um determinado período de tempo.
 Contudo, não se trata de uma sazonalidade periódica, pois não é evidente o momento no qual o conceito voltará a ser ativo (Figura \ref{fig:concept_drift_patterns} (d)).
 
-Esta dissertação propõe um novo método baseado em Redes de Função de Base Radial e Cadeias de Markov para detecção de mudanças de conceito em fluxos contínuos de dados, independente do padrão de ocorrência.
+Esta dissertação propõe um novo método para detecção de mudanças de conceito reais em fluxos contínuos de dados.
+A técnica proposta é capaz de detectar mudanças independentemente do seu padrão de ocorrência.
+
 Na próxima subseção, será apresentada a terminologia do fenômeno mudança de conceito.
 
 \subsection{Terminologia}
@@ -740,12 +742,12 @@ A janela de configuração deste detector, similar a Figura \ref{fig:moa_detecto
 \end{center}
 \end{figure}
 
-O MOA possui implementações dos principais algoritmos para detecção de mudanças de conceito presentes na literatura.
-Além das implementações, a ferramenta também disponibiliza rotinas de avaliação, que analisam a acurácia e o desempenho desses métodos.
+Os principais algoritmos para detecção de mudanças de conceito possuem implementação disponível no MOA.
+Além dessas implementações, a ferramenta também disponibiliza rotinas de avaliação, que analisam a acurácia e o desempenho desses métodos.
 
-Nesta pesquisa, o MOA foi utilizado para realização do experimento com dados sintéticos.
-Os conjuntos de dados usados foram gerados a partir da ferramenta.
-A técnica proposta foi implementada e comparada aos principais algoritmos disponíveis.
+Nesta dissertação, o MOA foi utilizado para realização do experimento com dados sintéticos.
+Os próprios conjuntos de dados aplicados foram gerados a partir da ferramenta.
+A técnica proposta foi implementada no MOA e comparada aos principais algoritmos disponíveis.
 Por fim, os testes realizados foram avaliados atráves da classe \textit{BasicConceptDriftPerformanceEvaluator}.
 
 \section{Redes de Função de Base Radial}
