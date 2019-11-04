@@ -382,6 +382,16 @@ Dispon{\'\i}vel em:
 \emph{Proc. Eur. Conf. Artif. Intell.}, p. 5--10, 2008.
 Cited By 70.}
 
+\bibitem[König e Buffalo 2014]{KONIG2014121}
+\abntrefinfo{König e Buffalo}{KöNIG; BUFFALO}{2014}
+{KöNIG, S.~D.; BUFFALO, E.~A. A nonparametric method for detecting fixations
+  and saccades using cluster analysis: Removing the need for arbitrary
+  thresholds.
+\emph{Journal of Neuroscience Methods}, v.~227, p. 121 -- 131, 2014.
+ISSN 0165-0270.
+Dispon{\'\i}vel em:
+  \url{http://www.sciencedirect.com/science/article/pii/S0165027014000491}.}
+
 \bibitem[{Lee} e {Magoulès} 2012]{Lee:Magoules:CoC:2012}
 \abntrefinfo{{Lee} e {Magoulès}}{{Lee}; {Magoulès}}{2012}
 {{Lee}, J.; {Magoulès}, F. Detection of concept drift for learning from stream
@@ -438,6 +448,14 @@ ISBN 0070428077, 9780070428072.}
   In:  CORRUBLE, V.; TAKEDA, M.; SUZUKI, E. (Ed.). \emph{Discovery Science}.
   Berlin, Heidelberg: Springer Berlin Heidelberg, 2007. p. 264--269.
 ISBN 978-3-540-75488-6.}
+
+\bibitem[Otero-Millan et al. 2008]{Otero_Saccades_and_microsaccades}
+\abntrefinfo{Otero-Millan et al.}{OTERO-MILLAN et al.}{2008}
+{OTERO-MILLAN, J. et al. {Saccades and microsaccades during visual fixation,
+  exploration, and search: Foundations for a common saccadic generator}.
+\emph{Journal of Vision}, v.~8, n.~14, p. 21--21, 12 2008.
+ISSN 1534-7362.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1167/8.14.21}.}
 
 \bibitem[Page 1954]{Page:CUSUM:PageHinkley:1954}
 \abntrefinfo{Page}{PAGE}{1954}
@@ -593,11 +611,6 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1023/A:1018046501280}.}
   Data Mining}. New York, NY, USA: ACM, 2002.  (KDD '02), p. 676--681.
 ISBN 1-58113-567-X. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/775047.775148}.}
-
-\bibitem[Yarbus 1967]{Yarbus1967}
-\abntrefinfo{Yarbus}{YARBUS}{1967}
-{YARBUS, A.~L. \emph{Eye Movements and Vision}. Springer {US}, 1967.
-  Dispon{\'\i}vel em: \url{https://doi.org/10.1007/978-1-4899-5379-7}.}
 
 \bibitem[Zhou et al. 2015]{ZHOU:2015}
 \abntrefinfo{Zhou et al.}{ZHOU et al.}{2015}

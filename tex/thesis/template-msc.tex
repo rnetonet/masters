@@ -190,7 +190,7 @@ como a necessidade de rotulação por especialistas ou a incapacidade de atender
 Este trabalho propõe um novo método de detecção baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov, denominado RBFChain.
 As redes RBF realizam, em sua camada intermediária, um processo de ativação que implicitamente produz grupos das observações recepcionadas ao longo do tempo.
 Simultaneamente, cadeias de Markov modelam as transições de centro ocorridas no agrupamento formado.
-Mudanças de conceito são detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limiar.
+Mudanças de conceito são detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limite.
 O método proposto se diferencia dos trabalhos existentes por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 Para avaliar o RBFChain como um detector de mudanças de conceito viável,
 uma análise de sensibilidade, precisão e tolerância ao ruído foi realizada usando conjuntos de dados sintéticos,
@@ -382,8 +382,7 @@ pois muitos experimentos comportamentais usam essas informações como fator de 
 
 O restante deste trabalho está organizado da seguinte forma:
 %
-no Capítulo \ref{fundamentacao_teorica}, é apresentado o referencial teórico que fundamenta esta pesquisa.
-Os trabalhos relacionados são apresentados e discutidos no Capítulo \ref{trabalhos_relacionados}.
+no Capítulo \ref{fundamentacao_teorica}, é apresentado o referencial teórico que fundamenta esta pesquisa e os trabalhos relacionados.
 A solução proposta é apresentada em detalhes no Capítulo \ref{rbfchain}.
 A configuração dos experimentos, a avaliação da proposta e os resultados alcançados são apresentados no Capítulo \ref{experimentos_iniciais}.
 Por fim, as conclusões obtidas e as discussões de trabalhos futuros são apresentadas no Capítulo \ref{conclusoes_e_trabalhos_futuros}.
@@ -391,7 +390,7 @@ Por fim, as conclusões obtidas e as discussões de trabalhos futuros são apres
 \xchapter{Fundamentação Teórica}{} \label{fundamentacao_teorica}
 \section{Considerações Iniciais}
 
-Este capítulo apresenta uma discussão geral sobre os principais conceitos utilizados nesta dissertação.
+Este capítulo apresenta os principais conceitos utilizados nesta dissertação e discute os trabalhos relacionados observados na literatura.
 %
 Inicialmente, será abordada a relação entre Fluxos Contínuos de Dados e técnicas de Aprendizado de Máquina.
 %
@@ -399,7 +398,9 @@ Em seguida, o fenômeno Mudança de Conceito, os métodos de detecção e as fer
 %
 Logo após, as Redes de Função de Base Radial e as Cadeias de Markov são apresentadas.
 %
-Por fim, o problema de classificação de fixações e sacadas em atividades de rastreamento ocular é detalhado.
+Posteriormente, o problema de classificação de fixações e sacadas em atividades de rastreamento ocular é detalhado.
+%
+Por fim, os trabalhos relacionados observados na literatura são discutidos.
 
 \section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
 
@@ -857,67 +858,69 @@ Este diagrama pode ser representado como uma matriz estocástica, demonstrada na
 P={\begin{bmatrix}0.9&0.075&0.025\\0.15&0.8&0.05\\0.25&0.25&0.5\end{bmatrix}}.
 \end{equation}
 
-Para detalhar o uso da Cadeia de Markov nesta dissertação, é importante relembrar que a rede RBF utilizada realiza o agrupamento dos dados recebidos ao longo do tempo.
-Durante este processo, o centro ativo do cluster formado muda conforme o dado em análise.
-Os centros ativados constituem os estados da Cadeia de Markov.
-Transições entre os centros são refletidas nas probabilidades mantidas pelo modelo markoviano, aumentando a probabilidade da transição vigente por um fator paramétrico e diminuindo proporcionalmente a probabilidade das outras transições.
+Neste trabalho, os estados da Cadeia de Markov são formados pelos centros ativados durante o processo de agrupamento realizado pela rede RBF.
+As transições de centro ativo são refletidas nas probabilidades, aumentando a probabilidade da transição vigente por um valor parametrizável ($\alpha$) e diminuindo proporcionalmente a probabilidade das outras transições.
 Esta operação é realizada respeitando as condições: $P_{ij} \geq 0$ e que a soma das probabilidades de todas transições a partir de um determinado estado seja sempre $1$.
 
-Além de modelar o processo em execução, a Cadeia de Markov também é responsável pela tolerância a ruídos do método de detecção proposto neste trabalho.
-Isto ocorre, pois apenas transições consideradas \textit{efetivas} ($P_{ij} = 1$) podem sinalizar mudanças de conceito.
+Além de modelar as mudanças de conceito ocorridas, a Cadeia de Markov também é responsável pela tolerância a ruídos.
+Isto ocorre, pois apenas transições cuja probabilidade $P_{ij} \geq \delta$, onde $\delta$ é um valor parametrizável, podem sinalizar mudanças de conceito.
 
 % Na próxima seção, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é apresentado.
 
 \section{Rastreamento Ocular - Fixações e Sacadas}
 
-A análise rigorosa dos movimentos oculares não é uma atividade experimental recente, remontando ao seminal trabalho de \citeonline{Yarbus1967}.
-Entretanto, o desenvolvimento de tecnologias não invasivas de rastreamento ocular por infravermelho favoreceu a utilização dessa técnica.
-Atualmente, a técnica de rastreamento ocular é utilizada em diferentes tarefas experimentais \cite{Duchowski_EyeTrackingSurvey}, como, por exemplo:
+A análise rigorosa dos movimentos oculares não é uma técnica experimental recente.
+Entretanto, o desenvolvimento de tecnologias não invasivas de rastreamento favoreceu a sua utilização.
+Atualmente, a técnica é empregada em diferentes tarefas experimentais \cite{Duchowski_EyeTrackingSurvey}, como, por exemplo:
 localização da atenção visual,
 detecção de deficiências cognitivas,
 avaliação de estratégias de pesquisa visual, entre outras.
-Estas tarefas produzem informações utilizadas como fatores de análise para um vasta gama de pesquisas em diferentes áreas do conhecimento.
+Estas tarefas produzem informações que são utilizadas como fator de análise por um vasta gama de pesquisas, em diferentes áreas do conhecimento.
 
-\section{Considerações Finais}
+Antes de descrever a atividade de rastreamento ocular, é necessário apresentar alguns conceitos básicos sobre o funcionamento da visão.
+Os olhos precisam estar em constante movimento para que a retina possa formar uma imagem nítida.
+Este movimento frequente é conhecido como movimento sacádico.
+Ao analisar uma imagem ou cena, o olho tende a permanecer fixo durante alguns milissegundos nas áreas mais significativas (fixações);
+depois disso, o olho se move em direção a uma nova zona de interesse (sacadas).
+Este processo é demonstrado na Figura \ref{fig:exemplo_fixacoes_e_sacadas}.
 
-Neste capítulo foram apresentados os principais conceitos utilizados neste dissertação.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=1]{imagens/exemplo_fixacao_e_sacadas.png}
+        \caption{Exemplo: Trajetória Ocular - Fixações e Sacadas \cite{KONIG2014121}}
+        \label{fig:exemplo_fixacoes_e_sacadas}
+    \end{center}
+\end{figure}
 
-No próximo capítulo, o plano de pesquisa será detalhado.
+Durante as sacadas, o cérebro não tem tempo hábil para processar as imagens transmitidas pelo sistema visual, causando uma deterioração da imagem formada na retina.
+Por esse motivo, o cérebro só atribui semântica às imagens formadas durante os períodos de fixação.
+Isso implica que o estudo das fixações é essencial para a compreensão e interpretação dos movimentos oculares.
 
-% Neste capítulo foram apresentados os principais conceitos de séries temporais e compo-
-% nentes que descrevem o comportamento de suas observações. Com base nesses compor-
-% tamentos, foram discutidos modelos disponibilizados pela área Estatística e de Sistemas
-% dinâmicos, cujo principal objetivo é compreender o comportamento de séries temporais.
-% Além disso, foram discutidos trabalhos que modelam séries temporais no domínio de
-% frequências e técnicas que utilizam ferramentas disponibilizadas pela área de Aprendizado
-% de Máquina. Como pôde ser observado, esses trabalhos e técnicas possuem limitações,
-% principalmente quando o objetivo é realizar a modelagem segundo os componentes esto-
-% cásticos e determinísticos. Essas limitações motivaram o desenvolvimento deste trabalho,
-% que é detalhado no próximo capítulo.
+Portanto, é fundamental utilizar técnicas automatizadas para segmentar fixações e sacadas durante a análise de trajetórias oculares.
+A literatura dispõe de diversos algoritmos para realização desta tarefa.
+As técnicas mais utilizadas realizam a segmentação com base em limites de velocidade e/ou aceleração,
+pois estes valores são significativamente maiores durante as sacadas \cite{Otero_Saccades_and_microsaccades}.
+Enquanto outros algoritmos realizam a segmentação atráves de características como densidade, dispersão ou áreas de interesse.
 
-% Este capı́tulo discutiu os fundamentos gerais da abordagem de ICN, mostrou os seus
-% principais projetos e arquiteturas, além das direções dessas redes. Dentre as arquiteturas
-% abordadas, a CCN teve um maior enfoque, uma vez que é adotada pela NDN. Dessa
-% forma, foram apresentados os detalhes da arquitetura da CCN/NDN tais como nomeação,
-% 30
-%  REDES CENTRADAS NA INFORMAÇÃO
-% roteamento, armazenamento, segurança e mobilidade e, por fim, se discutiu as abordagens
-% existentes na literatura de apoio à mobilidade de produtores nessas redes.
+Contudo, a aplicação de diferentes algoritmos em uma mesma trajetória pode produzir resultados divergentes.
+Isto ocorre, pois a maioria dos métodos disponíveis na literatura é afetada pela escolha dos parâmetros e pelas características do experimento em análise (frequência, amplitude, etc.).
+Consequentemente, a atividade de identificação de fixações e sacadas permanece altamente subjetiva.
 
+Visando mitigar este problema, \citeonline{KONIG2014121} propõem um novo método, denominado ClusterFix.
+Este método se diferencia por ser completamente automatizado e independente de parâmetros.
+Essas características permitem que a técnica seja utilizada como um padrão referencial,
+possibilitando a comparação da segmentação de trajetórias oculares entre experimentos, laboratórios e algoritmos.
 
+Nesta dissertação, o método desenvolvido para identificação de mudanças de conceito em fluxos de dados é adaptado para segmentação de fixações e sacadas.
+A técnica adaptada foi empregada em dois conjuntos de dados, oriundos do monitoramento ocular de dois símios.
+Para validar a aplicabilidada da técnica, os mesmos conjuntos de dados foram submetidos ao algoritmo ClusterFix e comparados.
+A configuração e os resultados obtidos neste experimento são detalhados no Capítulo \ref{experimentos_iniciais}.
 
-\xchapter{Trabalhos Relacionados}{} \label{trabalhos_relacionados}
+\section{Trabalhos Relacionados}
 
-\section{Considerações Iniciais}
-
-\ldots
-
-Além das referências básicas apresentadas neste capítulo, foi realizada uma pesquisa na literatura em busca de trabalhos que propõem métodos para identificação de mudanças de conceito, de forma online e independente de rótulos, em fluxos contínuos de dados. Também foram estudadas técnicas que pudessem subsidiar o desenvolvimento de novos algoritmos que atendam a esses requisitos.
+Durante a elaboração desta dissertação, foi realizada uma pesquisa na literatura em busca de trabalhos que propõem métodos para identificação de mudanças de conceito, de forma online e independente de rótulos, em fluxos contínuos de dados. Também foram estudadas técnicas que pudessem subsidiar o desenvolvimento de novos algoritmos que atendam a esses requisitos.
 
 Inicialmente, foram analisados os algoritmos \textit{Implícitos / Não Supervisionados} pertencentes a subcategoria \textit{Detecção de Novidade / Métodos de Agrupamento}. Estes algoritmos são descritos a seguir.
-
-% Métodos de Detecção de Novidade utilizam cálculos de distância e/ou densidade da informação para detectar padrões de dados ainda não observados. Estes métodos são capazes de identificar exemplos que podem provocar incerteza, demandando uma avaliação mais apurada. Os algoritmos atribuem a estes exemplos um rótulo \textbf{Desconhecido} para indicar que estas amostras não se enquadram na visão corrente dos dados \cite{Spinosa:2007:OCA:1244002.1244107}.
-% Técnicas de Agrupamento e Detecção de Outliers são estratégias populares para implementar tais métodos, pois resumem os dados correntes e aplicam métricas de dissimilaridade para identificar novos padrões \cite{Ryu:Kantardzic:2012}.
 
 O algoritmo \textit{OnLIne Novelty and Drift Detection Algorithm} (OLINDDA) utiliza a técnica de agrupamento \textit{K-means} para monitorar e se adaptar ao surgimento de novos padrões \cite{Spinosa:2007:OCA:1244002.1244107}.
 Os exemplos recepcionados são incluídos em uma fila e são periodicamente agrupados. Os grupos resultantes desse processamento definem se os exemplos devem ser incorporados a um grupo existente ou formar um novo grupo.
@@ -941,7 +944,7 @@ Assume-se que se não houver mudança de conceito, os valores residuais dessa ap
 \citeonline{Yamanishi:2002:UFD:775047.775148} propõem um método de detecção online capaz de identificar outliers e mudanças de conceito em séries temporais.
 A abordagem aplica um modelo autoregressivo aos dados e atualiza os parâmetros de forma incremental, para que o peso de exemplos passados diminua ao longo do tempo. Atribui-se uma pontuação para cada observação, calculada com base na função de perda. Esta pontuação indica o grau de desvio do dado em relação ao modelo aplicado. Pontuações elevadas indicam alta possibilidade de que o dado seja um outlier. A detecção de mudança de conceito é feita através do monitoramento da média das funções de perda ao longo da série temporal. Todavia, esta abordagem só é aplicável a séries temporais com comportamento autoregressivo, o que limita o seu escopo de uso.
 
-\citeonline{GOMBAY2009715} propõem um método diferente, também online, para detecção de mudanças em séries temporais autoregressivas, baseado no monitoramento dos parâmetros do modelo. Um adaptação do método CUSUM \cite{Page:CUSUM:PageHinkley:1954} é aplicada para identificar alterações nos parâmetros. A hipótese nula do algoritmo assume que estes parâmetros devem permanecer estacionários ao longo do tempo. Esta hipótese é testada para cada nova observação recepcionada e a mudança de conceito é sinalizada quando a diferença ultrapassa um limiar estabelecido. Esta abordagem também apresenta limitação de escopo, pois é aplicável apenas a séries temporais autoregressivas.
+\citeonline{GOMBAY2009715} propõem um método diferente, também online, para detecção de mudanças em séries temporais autoregressivas, baseado no monitoramento dos parâmetros do modelo. Um adaptação do método CUSUM \cite{Page:CUSUM:PageHinkley:1954} é aplicada para identificar alterações nos parâmetros. A hipótese nula do algoritmo assume que estes parâmetros devem permanecer estacionários ao longo do tempo. Esta hipótese é testada para cada nova observação recepcionada e a mudança de conceito é sinalizada quando a diferença ultrapassa um limite estabelecido. Esta abordagem também apresenta limitação de escopo, pois é aplicável apenas a séries temporais autoregressivas.
 
 A utilização de valores residuais para detecção de mudanças de conceito  apresenta desvantagens. Por serem baseados na acurácia do modelo aplicado, estes métodos sofrem influência de problemas ocorridos durante a parametrização ou fase de treinamento. Em teoria, o monitoramento direto de características dos dados pode permitir uma identificação de mudanças de conceito mais robusta.
 
@@ -961,11 +964,32 @@ As técnicas para detecção de mudanças de conceito são, geralmente, aplicada
     \item basear-se em características dos dados que reflitam os conceitos presentes.
 \end{itemize}
 
-Por fim, a pesquisa realizada evidenciou a inexistência de técnicas que atendam a esses requisitos e que sejam computacionalmente eficientes, independentes de rótulos e aplicáveis a fluxos de dados de qualquer natureza. Este projeto de trabalho de mestrado tem como objetivo tentar preencher esta lacuna na literatura, através da proposição de um novo método, baseado em Redes de Função de Base Radial,  para identificação de mudanças de conceito em fluxos contínuos de dados.
+Por fim, a pesquisa realizada evidenciou a inexistência de técnicas que atendam a esses requisitos e que sejam computacionalmente eficientes,
+independentes de rótulos e aplicáveis a fluxos de dados de qualquer natureza.
+Esta dissertação de mestrado tem como objetivo preencher esta lacuna na literatura,
+através da proposição de um novo método, baseado em Redes de Função de Base Radial e Cadeias de Markov,
+para identificação de mudanças de conceito em fluxos contínuos de dados.
 
 \section{Considerações Finais}
 
-\ldots
+\todo[inline]{Todo}
+
+% Este capı́tulo discutiu os fundamentos gerais da abordagem de ICN, mostrou os seus
+% principais projetos e arquiteturas, além das direções dessas redes. Dentre as arquiteturas
+% abordadas, a CCN teve um maior enfoque, uma vez que é adotada pela NDN. Dessa
+% forma, foram apresentados os detalhes da arquitetura da CCN/NDN tais como nomeação,
+% roteamento, armazenamento, segurança e mobilidade e, por fim, se discutiu as abordagens
+% existentes na literatura de apoio à mobilidade de produtores nessas redes.
+
+% Neste capı́tulo foram discutidos vários trabalhos que se relacionam com a presente dis-
+% sertação. Além dos trabalhos apresentados, ainda, existem outros na literatura. Pode-se
+% notar que alguns trabalhos já abordaram a problemática da mobilidade do produtor na
+% NDN. Entretanto, os trabalhos propostos até então não consideram a capacidade compu-
+% tacional dos dispositivos móveis para apoiar a mobilidade do produtor, enquanto outros
+% trabalhos investigaram a capacidade computacional desses dispositivos na ICN para ou-
+% tras finalidades. Dessa forma, o presente trabalho é pioneiro por considerar os recursos
+% computacionais de armazenamento dos dispositivos, localizados na borda da rede sem fio,
+% para auxiliar no suporte à mobilidade do produtor.
 
 \xchapter{RBFC\element{hain}}{} \label{rbfchain}
 
@@ -1008,7 +1032,7 @@ O algoritmo desenvolvido nesta pesquisa monitora o agrupamento formado para iden
 Estas alterações são utilizadas como indícios de possíveis mudanças de conceito.
 
 O método proposto, denominado \textit{RBFChain}, utiliza a função Gaussiana para ativação dos neurônios e requer a definição de dois parâmetros:
-\textit{$\sigma$}, responsável por limitar o raio da radial, e \textit{$\lambda$}, que define um limiar para ativação de um centro.
+\textit{$\sigma$}, responsável por limitar o raio da radial, e \textit{$\lambda$}, que define um limite para ativação de um centro.
 A técnica é descrita na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo},
 tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/fjGuv}}, para realização dos experimentos na plataforma MOA.
 
