@@ -209,6 +209,13 @@ ISBN 1-58113-233-6. Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/sam.10054}.}
 
+\bibitem[Duchowski 2002]{Duchowski_EyeTrackingSurvey}
+\abntrefinfo{Duchowski}{DUCHOWSKI}{2002}
+{DUCHOWSKI, A. A breadth-first survey of eye tracking applications. behav res
+  meth instrum comput (brmic).
+\emph{Behavior research methods, instruments, \& computers : a journal of the
+  Psychonomic Society, Inc}, v.~34, p. 455--70, 12 2002.}
+
 \bibitem[Duda, Hart e Stork 2000]{Duda:2000:PC:954544}
 \abntrefinfo{Duda, Hart e Stork}{DUDA; HART; STORK}{2000}
 {DUDA, R.~O.; HART, P.~E.; STORK, D.~G. \emph{Pattern Classification (2Nd
@@ -586,6 +593,11 @@ Dispon{\'\i}vel em: \url{http://dx.doi.org/10.1023/A:1018046501280}.}
   Data Mining}. New York, NY, USA: ACM, 2002.  (KDD '02), p. 676--681.
 ISBN 1-58113-567-X. Dispon{\'\i}vel em:
   \url{http://doi.acm.org/10.1145/775047.775148}.}
+
+\bibitem[Yarbus 1967]{Yarbus1967}
+\abntrefinfo{Yarbus}{YARBUS}{1967}
+{YARBUS, A.~L. \emph{Eye Movements and Vision}. Springer {US}, 1967.
+  Dispon{\'\i}vel em: \url{https://doi.org/10.1007/978-1-4899-5379-7}.}
 
 \bibitem[Zhou et al. 2015]{ZHOU:2015}
 \abntrefinfo{Zhou et al.}{ZHOU et al.}{2015}

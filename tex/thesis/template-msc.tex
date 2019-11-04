@@ -199,11 +199,11 @@ Além disso, a técnica foi aplicada ao problema de classificação de fixaçõe
 uma questão relevante para diferentes áreas do conhecimento,
 pois muitos experimentos comportamentais usam essas informações como um fator de análise.
 Os resultados com conjuntos de dados sintéticos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores presentes na literatura.
-Ademais, a técnica desenvolvida também apresentou bons resultados quando aplicada ao problema de monitoramento ocular, sendo capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
+Ademais, a técnica desenvolvida também apresentou bons resultados quando aplicada ao problema de rastreamento ocular, sendo capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-    Fluxo Contínuo de Dados. Mudança de Conceito. Rede de Função de Base Radial. Cadeia de Markov. Monitoramento Ocular.
+    Fluxo Contínuo de Dados. Mudança de Conceito. Rede de Função de Base Radial. Cadeia de Markov. Rastreamento Ocular.
 \end{keywords}
 
 \abstract
@@ -359,7 +359,7 @@ Este experimento permitiu validar a efetividade do método proposto e realizar u
 uma vez que as características e os comportamentos dos fluxos são conhecidos.
 
 No segundo experimento,
-o método foi adaptado para o problema de classificação de fixações e sacadas durante a atividade de monitoramento ocular.
+o método foi adaptado para o problema de classificação de fixações e sacadas durante a atividade de rastreamento ocular.
 Este experimento permitiu demonstrar uma aplicação prática e relevante da solução proposta neste trabalho.
 
 \section{Contribuições}
@@ -374,7 +374,7 @@ As principais vantanges da técnica proposta em relação aos métodos existente
     \item Eficiência computacional.
 \end{itemize}
 
-A contribuição secundária deste trabalho reside na adptação do método desenvolvido para classificação de fixações e sacadas na atividade de monitoramento ocular.
+A contribuição secundária deste trabalho reside na adptação do método desenvolvido para classificação de fixações e sacadas na atividade de rastreamento ocular.
 Um problema relevante para diferentes áreas do conhecimento,
 pois muitos experimentos comportamentais usam essas informações como fator de análise.
 
@@ -399,13 +399,13 @@ Em seguida, o fenômeno Mudança de Conceito, os métodos de detecção e as fer
 %
 Logo após, as Redes de Função de Base Radial e as Cadeias de Markov são apresentadas.
 %
-Por fim, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é detalhado.
+Por fim, o problema de classificação de fixações e sacadas em atividades de rastreamento ocular é detalhado.
 
 \section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
 
 Fluxos Contínuos de Dados (FCDs) podem ser definidos como sequências ininterruptas e potencialmente infinitas de eventos \cite{Aggarwal:2006:DSM:1196418}.
 %
-Nestes fluxos, os eventos ocorrem em alta frequência, sendo necessário processá-los em tempo real.
+Nestes fluxos, os eventos ocorrem em alta frequência, sendo necessário processá-los em tempo de execução.
 %
 Além disso, por serem de tamanho potencialmente ilimitado, não é possível armazená-los de forma permanente em memória.
 %
@@ -414,7 +414,7 @@ As características dos fluxos contínuos de dados implicam as seguintes restri�
 %
 \begin{enumerate}
     \item É impossível armazenar todos os dados do fluxo. Somente uma pequena parcela pode ser processada e armazenada, enquanto o restante é descartado;
-    \item A velocidade de chegada dos eventos exige que os elementos sejam processados em tempo real;
+    \item A velocidade de chegada dos eventos exige que os elementos sejam processados em tempo de execução;
     \item A distribuição dos dados pode mudar com o tempo. Assim, os dados do passado podem se tornar irrelevantes ou mesmo prejudiciais para a descrição dos conceitos atuais.
 \end{enumerate}
 
@@ -465,7 +465,8 @@ Contudo, não consideram que na maioria desses cenários as informações são g
 Na literatura, essas variações são denominadas mudanças de conceito e a sua ocorrência pode impactar a acurácia da técnica aplicada \cite{Gama:2010:KDD:1855075}.
 
 Nesta dissertação, considera-se que os dados são obtidos a partir de fluxos contínuos de dados com ocorrência de mudanças de conceito.
-Na próxima seção, o fenômeno mudança de conceito será discutido em detalhes.
+
+% Na próxima seção, o fenômeno mudança de conceito será discutido em detalhes.
 
 \section{Mudança de Conceito}
 \label{sec:mudanca_de_conceito}
@@ -540,10 +541,11 @@ Portanto, as mudanças são notáveis apenas à longo prazo (Figura \ref{fig:con
 A mudança recorrente acontece quando um conceito anteriormente ativo reaparece após um determinado período de tempo.
 Contudo, não se trata de uma sazonalidade periódica, pois não é evidente o momento no qual o conceito voltará a ser ativo (Figura \ref{fig:concept_drift_patterns} (d)).
 
-Esta dissertação propõe um novo método para detecção de mudanças de conceito reais em fluxos contínuos de dados.
-A técnica proposta é capaz de detectar mudanças independentemente do seu padrão de ocorrência.
+O método proposto nesta dissertação atua diretamente sobre o fluxo em análise, sem necessitar da correta rotulação dos dados.
+Consequentemente, todas mudanças de conceito identificadas são tratadas como possíveis mudanças de conceito reais.
+Além disso, a técnica desenvolvida pode identificar mudanças independentemente do padrão de ocorrência.
 
-Na próxima subseção, será apresentada a terminologia do fenômeno mudança de conceito.
+% Na próxima subseção, será apresentada a terminologia do fenômeno mudança de conceito.
 
 \subsection{Terminologia}
 
@@ -585,7 +587,7 @@ As estratégias para detecção de \textit{change points} identificam variaçõe
 Por fim,  cabe definir o que é detecção de mudança de conceito.
 Este termo abrange técnicas que monitoram a distribuição dos dados ou indicadores produzidos pelas técnicas de aprendizado aplicadas, com o objetivo de identificar variações que possam impactar a acurácia do modelo em uso \cite{Gama:2014:SCD:2597757.2523813}.
 
-Na próxima subseção, os principais algoritmos para detecção de mudança de conceito serão discutidos.
+% Na próxima subseção, os algoritmos para detecção de mudança de conceito serão discutidos.
 
 \subsection{Algoritmos para Detecção de Mudança de Conceito}
 
@@ -606,7 +608,7 @@ Esses algoritmos se dividem em duas categorias, conforme a necessidade de rotula
 Segundo \citeonline{Gama:2014:SCD:2597757.2523813}, os algoritmos \textit{explícitos / supervisionados} podem ser segmentados em três subcategorias:
 
 \begin{description}
-    \item[Métodos Baseados em Análise Sequencial] Avaliam continuamente os indicadores de performance (por exemplo: taxa de erro) do algoritmo de aprendizado aplicado.
+    \item[Métodos Baseados em Análise Sequencial] Avaliam continuamente os indicadores de performance (por exemplo: taxa de erro) da técnica de aprendizado aplicada.
     A mudança de conceito é detectada quando esses indicadores atingem um limite pré-definido.
     Os algoritmos \textit{Cumulative Sum (CUSUM)}, \textit{PageHinkley (PH)} \cite{Page:CUSUM:PageHinkley:1954} e \textit{Geometric Moving Average (GMA)} \cite{Roberts:2000:CCT:338441.338464}
     são representantes desta subcategoria.
@@ -662,9 +664,9 @@ De forma similar, os algoritmos \textit{implícitos / não supervisionados} tamb
     \textit{Margin} \cite{Dries:Margin:2009} integram esta subcategoria.
 \end{description}
 
-Por fim, a Tabela \ref{tbl:abordagens} resume as categorias, as subcategorias e as técnicas apresentadas.
-O método de detecção proposto neste trabalho se enquadra na categoria de algoritmos \textit{implícitos / não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}.
-Na próxima seção, a ferramenta MOA, utilizada para implementar e validar o método proposto neste trabalho, é apresentada.
+Um resumo das categorias, subcategorias e técnicas elencadas é apresentado na Tabela \ref{tbl:abordagens}.
+
+\newpage
 
 \begin{table}[ht]
     \caption{Resumo - Algoritmos de detecção \cite{Sethi:2017:RDC:3096751.3096864}}
@@ -691,6 +693,10 @@ Na próxima seção, a ferramenta MOA, utilizada para implementar e validar o m�
     \end{tabular}%
     }
 \end{table}
+
+O método de detecção proposto neste trabalho se enquadra na categoria de algoritmos \textit{implícitos / não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}.
+
+% Na próxima seção, a ferramenta MOA, utilizada para validação da técnica desenvolvida, é apresentada.
 
 \subsection{Ferramenta - MOA}
 
@@ -745,10 +751,9 @@ A janela de configuração deste detector, similar a Figura \ref{fig:moa_detecto
 Os principais algoritmos para detecção de mudanças de conceito possuem implementação disponível no MOA.
 Além dessas implementações, a ferramenta também disponibiliza rotinas de avaliação, que analisam a acurácia e o desempenho desses métodos.
 
-Nesta dissertação, o MOA foi utilizado para realização do experimento com dados sintéticos.
-Os próprios conjuntos de dados aplicados foram gerados a partir da ferramenta.
-A técnica proposta foi implementada no MOA e comparada aos principais algoritmos disponíveis.
-Por fim, os testes realizados foram avaliados atráves da classe \textit{BasicConceptDriftPerformanceEvaluator}.
+Nesta dissertação, o MOA foi utilizado para realização do experimento com dados sintéticos, gerados a partir da própria ferramenta.
+A técnica proposta foi implementada na aplicação e comparada aos principais algoritmos disponíveis.
+Por fim, os testes realizados foram avaliados atráves da classe \textit{BasicConceptDriftPerformanceEvaluator}, disponibilizada pelo framework.
 
 \section{Redes de Função de Base Radial}
 
@@ -845,7 +850,7 @@ Este diagrama detalha um processo Markoviano com três estados possíveis, em um
     \end{center}
 \end{figure}
 
-Este diagrama pode também ser representado como uma matriz estocástica, demonstrada na Equação \ref{eq:matriz_estocastica_exemplo}.
+Este diagrama pode ser representado como uma matriz estocástica, demonstrada na Equação \ref{eq:matriz_estocastica_exemplo}.
 
 \begin{equation}
 \label{eq:matriz_estocastica_exemplo}
@@ -861,11 +866,17 @@ Esta operação é realizada respeitando as condições: $P_{ij} \geq 0$ e que a
 Além de modelar o processo em execução, a Cadeia de Markov também é responsável pela tolerância a ruídos do método de detecção proposto neste trabalho.
 Isto ocorre, pois apenas transições consideradas \textit{efetivas} ($P_{ij} = 1$) podem sinalizar mudanças de conceito.
 
-Na próxima seção, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é apresentado.
+% Na próxima seção, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é apresentado.
 
-\section{Monitoramento Ocular - Fixações e Sacadas}
+\section{Rastreamento Ocular - Fixações e Sacadas}
 
-\ldots
+A análise rigorosa dos movimentos oculares não é uma atividade experimental recente, remontando ao seminal trabalho de \citeonline{Yarbus1967}.
+Entretanto, o desenvolvimento de tecnologias não invasivas de rastreamento ocular por infravermelho favoreceu a utilização dessa técnica.
+Atualmente, a técnica de rastreamento ocular é utilizada em diferentes tarefas experimentais \cite{Duchowski_EyeTrackingSurvey}, como, por exemplo:
+localização da atenção visual,
+detecção de deficiências cognitivas,
+avaliação de estratégias de pesquisa visual, entre outras.
+Estas tarefas produzem informações utilizadas como fatores de análise para um vasta gama de pesquisas em diferentes áreas do conhecimento.
 
 \section{Considerações Finais}
 
