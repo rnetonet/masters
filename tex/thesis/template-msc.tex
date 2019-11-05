@@ -195,15 +195,15 @@ O método proposto se diferencia dos trabalhos existentes por detectar mudanças
 Para avaliar o RBFChain como um detector de mudanças de conceito viável,
 uma análise de sensibilidade, precisão e tolerância ao ruído foi realizada usando conjuntos de dados sintéticos,
 e os resultados comparados com os principais algoritmos disponíveis na literatura.
-Além disso, a técnica foi aplicada ao problema de classificação de fixações e sacadas na atividade de rastreamento ocular:
+Além disso, a técnica foi aplicada ao problema de classificação de fixações e sacadas na atividade de monitoramento ocular:
 uma questão relevante para diferentes áreas do conhecimento,
 pois muitos experimentos comportamentais usam essas informações como um fator de análise.
 Os resultados com conjuntos de dados sintéticos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores presentes na literatura.
-Ademais, a técnica desenvolvida também apresentou bons resultados quando aplicada ao problema de rastreamento ocular, sendo capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
+Ademais, a técnica desenvolvida também apresentou bons resultados quando aplicada ao problema de monitoramento ocular, sendo capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
-    Fluxo Contínuo de Dados. Mudança de Conceito. Rede de Função de Base Radial. Cadeia de Markov. Rastreamento Ocular.
+    Fluxo Contínuo de Dados. Mudança de Conceito. Rede de Função de Base Radial. Cadeia de Markov. Monitoramento Ocular.
 \end{keywords}
 
 \abstract
@@ -359,7 +359,7 @@ Este experimento permitiu validar a efetividade do método proposto e realizar u
 uma vez que as características e os comportamentos dos fluxos são conhecidos.
 
 No segundo experimento,
-o método foi adaptado para o problema de classificação de fixações e sacadas durante a atividade de rastreamento ocular.
+o método foi adaptado para o problema de classificação de fixações e sacadas durante a atividade de monitoramento ocular.
 Este experimento permitiu demonstrar uma aplicação prática e relevante da solução proposta neste trabalho.
 
 \section{Contribuições}
@@ -375,7 +375,7 @@ As principais vantanges da técnica proposta em relação aos métodos existente
     \item Eficiência computacional.
 \end{itemize}
 
-A contribuição secundária deste trabalho reside na adptação do método desenvolvido para classificação de fixações e sacadas na atividade de rastreamento ocular.
+A contribuição secundária deste trabalho reside na adptação do método desenvolvido para classificação de fixações e sacadas na atividade de monitoramento ocular.
 Um problema relevante para diferentes áreas do conhecimento,
 pois muitos experimentos comportamentais usam essas informações como fator de análise.
 
@@ -399,7 +399,7 @@ Em seguida, o fenômeno Mudança de Conceito, os métodos de detecção e as fer
 %
 Logo após, as Redes de Função de Base Radial e as Cadeias de Markov são apresentadas.
 %
-Posteriormente, o problema de classificação de fixações e sacadas em atividades de rastreamento ocular é detalhado.
+Posteriormente, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é detalhado.
 %
 Por fim, os trabalhos relacionados observados na literatura são examinados.
 
@@ -873,17 +873,17 @@ Isto ocorre, pois apenas transições cuja probabilidade $P_{ij} \geq \delta$, o
 
 % Na próxima seção, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é apresentado.
 
-\section{Rastreamento Ocular - Fixações e Sacadas}
+\section{Monitoramento Ocular - Fixações e Sacadas}
 
 A análise rigorosa dos movimentos oculares não é uma técnica experimental recente.
-Entretanto, o desenvolvimento de tecnologias não invasivas de rastreamento favoreceu o aumento da sua utilização.
+Entretanto, o desenvolvimento de tecnologias não invasivas de monitoramento favoreceu o aumento da sua utilização.
 Atualmente, a técnica é empregada em diferentes tarefas experimentais \cite{Duchowski_EyeTrackingSurvey}, como, por exemplo:
 localização da atenção visual,
 detecção de deficiências cognitivas,
 avaliação de estratégias de pesquisa visual, entre outras.
 Estas tarefas produzem informações que são utilizadas como fator de análise por um vasta gama de pesquisas, em diferentes áreas do conhecimento.
 
-Antes de descrever a atividade de rastreamento ocular, é necessário apresentar alguns conceitos básicos sobre o funcionamento da visão.
+Antes de descrever a atividade de monitoramento ocular, é necessário apresentar alguns conceitos básicos sobre o funcionamento da visão.
 Os olhos precisam estar em constante movimento para que a retina possa formar uma imagem nítida.
 Este movimento frequente é conhecido como movimento sacádico.
 Ao analisar uma imagem ou cena, o olho tende a permanecer fixo durante alguns milissegundos nas áreas mais significativas (fixações);
@@ -982,7 +982,7 @@ Este capítulo apresentou os principais conceitos utilizados nesta dissertação
 A relação entre Fluxos Contínuos de Dados e técnicas de Aprendizado de Máquina foi abordada,
 o fenômeno Mudança de Conceito e os métodos de detecção foram detalhados,
 as Redes de Função de Base Radial e as Cadeias de Markov foram retratadas, e, por fim,
-o problema de classificação em sacadas e fixações durante atividades de rastreamento ocular foi discutido.
+o problema de classificação em sacadas e fixações durante atividades de monitoramento ocular foi discutido.
 
 Também foram apresentados trabalhos que se relacionam com a proposta desta dissertação,
 permitindo notar que até o presente momento inexistem métodos para detecção de mudanças de conceito
@@ -994,100 +994,122 @@ ao propor um novo método capaz de identificar mudanças de conceito em fluxos d
 
 \section{Considerações Iniciais}
 
-Este capítulo apresenta o RBFChain, um novo método de detecção de mudanças de conceito proposto por esta dissertação.
-A técnica desenvolvida é apresentada da seguinte forma:
-a Seção \ref{sec:rbfchain_visao_geral} inicia o capítulo com uma visão geral da proposta.
-Na Seção \ref{sec:rbfchain_detalhes}, o algoritmo desenvolvido é apresentado em formato pseudocódigo e seu funcionamento é detalhado.
-Por fim, são discutidas as considerações finais do Capítulo na Seção \ref{sec:rbfchain_consideracoes_finais}.
+Este capítulo apresenta o RBFChain, que é o método de detecção de mudanças de conceito proposto nesta dissertação.
+A proposta é apresentada da seguinte forma:
+a Seção \ref{sec:rbfchain_visao_geral} inicia o capítulo com uma visão geral, identificando a arquitetura e a interação dos componentes.
+Na Seção \ref{sec:rbfchain_detalhes}, o algoritmo desenvolvido é demonstrado em pseudocódigo e o seu funcionamento é detalhado.
+Por fim, na Seção \ref{sec:rbfchain_consideracoes_finais}, são discutidas as considerações finais do capítulo.
 
 \section{Visão Geral}
 \label{sec:rbfchain_visao_geral}
 
-% Este trabalho apresenta uma solução que visa minimizar os impactos causados na rede,
-% pela mobilidade de produtores na NDN, através do uso oportunista da cache dos nós
-% presentes na borda da rede sem fio. Ao usar sua cache, um nó móvel pode até servir como
-% meio de rede entre áreas desconectadas ou fornecer conectividade atrasada em enlaces
-% esporadicamente conectados (JACOBSON et al., 2009). O objetivo é proporcionar que os
-% produtores sejam capazes de replicar seus dados, de forma a manter a maior diversidade
-% de conteúdos entre os nós e que estes possam armazenar os dados com o mı́nimo de
-% esforço, para que os interesses futuros consigam ser satisfeitos mesmo durante o perı́odo
-% de indisponibilidade do produtor.
+A arquitetura do RBFChain é composta por dois componentes principais: uma Rede de Função de Base Radial e uma Cadeia de Markov.
+A rede RBF é responsável por agrupar os eventos recebidos, formando um cluster, cujo centro ativo é alterado conforme o evento em análise.
+As mudanças no centro ativo do cluster são modeladas através da Cadeia de Markov.
+No modelo Markoviano, os centros ativados formam os estados e as mudanças de centro, as transições.
+Estes componentes são representados graficamente na Figura \ref{fig:arquitetura}.
+O restante desta seção discute o papel desempenhado por cada componente.
 
-% A solução se baseia no princı́pio básico de armazenar os dados que trafegam na rede
-% sem fio, de modo a evitar as replicações em todos os nós do domı́nio, com o intuito de
-% alcançar uma maior diversidade de conteúdos na rede. Isso é possı́vel, pois a NDN possui
-% caracterı́sticas como cache na camada de rede e entrega multicast, além de viabilizar
-% que os dados possam ser facilmente retirados dos produtores originais, uma vez que a
-% proteção é aplicada diretamente sobre os mesmos e não no meio de acesso, como no
-% caso da rede IP (ZHANG et al., 2016). A SCaN-Mob se beneficia dessas caracterı́sticas
-% da NDN e permite que os dados sejam armazenados sem esforço e oportunisticamente,
-% através da comunicação broadcast das redes sem fio. Por outro lado, as retransmissões
-% de interesses inundam a rede, devido à caracterı́stica citada do canal sem fio, por isso, a
-% solução controla essas retransmissões.
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.7]{imagens/arquitetura_rbfchain.png}
+        \caption{Arquitetura RBFChain}
+        \label{fig:arquitetura}
+    \end{center}
+\end{figure}
 
+Antes de iniciar a descrição da arquitetura e do papel desempenhado por cada componente,
+é importante destacar que o método proposto requer a definição de quatro parâmetros para o seu funcionamento.
+Sendo dois relacionados a Rede de Função de Base Radial e dois a Cadeia de Markov:
+
+\begin{itemize}
+    \item \textbf{Parâmetros relacionados a Rede de Função de Base Radial}:
+    \begin{itemize}
+        \item \textbf{$\sigma$}: limita o raio da função Gaussiana utilizada durante o processo de ativação;
+        \item \textbf{$\lambda$}: estabelece um valor mínimo para ativação de um centro;
+    \end{itemize}
+
+    \item \textbf{Parâmetros relacionados a Cadeia de Markov}:
+    \begin{itemize}
+        \item \textbf{$\alpha$}: fator de incremento da probabilidade de transições ocorridas;
+        \item \textbf{$\delta$}: probabilidade para considerar uma transição uma mudança de conceito.
+    \end{itemize}
+
+\end{itemize}
+
+O RBFChain atua diretamente sobre o fluxo de dados.
+Os eventos observados são imediatamente submetidos ao processo de ativação da rede RBF.
+Neste processo, o valor de ativação do evento é calculado para cada um dos centros da rede, através da função Gaussiana.
+Dessa forma, o evento é vinculado ao centro com maior valor de ativação, desde que esse valor seja maior que $\lambda$.
+Se o evento não formar vínculo com nenhum dos centros anteriores, o próprio evento passa a ser o novo centro ativo da rede.
+
+A rede RBF mantém em memória a informação do último centro ativado, permitindo identificar quando há alteração do centro ativo.
+Essas mudanças são modeladas na Cadeia de Markov, que aumenta a probabilidade da transição ocorrida pelo fator $\alpha$ e diminui proporcionalmente o valor das outras transições possíveis para o estado originário.
+Após esta operação, o algoritmo verifica se o centro ativo anterior é diferente do atual.
+Se esta condição for verdadeira e a probabilidade da transição for maior que $\delta$, uma mudança de conceito é sinalizada.
+Contudo, se a condição for verdadeira mas o valor da probabilidade é inferior a $\delta$, o algoritmo apenas sinaliza uma \textit{zona de alerta} (\textit{warning zone}).
 
 \section{RBFChain}
 \label{sec:rbfchain_detalhes}
 
-Nos últimos anos, a quantidade de dados produzidos por sistemas computacionais tem crescido de forma exponencial \cite{idc_report}.
-Parte significativa dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências potencialmente infinitas e de alta frequência \cite{Aggarwal:2006:DSM:1196418}.
-
-Devido a esse crescimento, pesquisadores passaram a utilizar técnicas de Aprendizado de Máquina para extrair informações úteis de grandes volumes de dados.
-Essas técnicas precisaram ser adaptadas para contextos com fluxos contínuos, pois estes cenários apresentam severas restrições de tempo de execução e de uso dos recursos computacionais.
-
-Contudo, as adaptações propostas não tratam alterações na distribuição dos dados ou no contexto do processo gerador do fluxo.
-Estas alterações são denominadas mudanças de conceito e podem afetar negativamente a acurácia do algoritmo \cite{Gama:2014:SCD:2597757.2523813}.
-
-Para mitigar este problema, métodos de detecção de mudanças de conceito foram desenvolvidos.
-Estes métodos identificam o momento da mudança com maior precisão, permitindo que o modelo de decisão seja atualizado de forma eficiente.
-
-Entretanto, as técnicas de detecção encontradas na literatura apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
-Os métodos de detecção supervisionados/explícitos necessitam que o rótulo correto de cada exemplo processado seja informado, o que pode torná-los inviáveis, por causa do custo e/ou do tempo para rotulação.
-Enquanto que as técnicas não supervisionadas/implícitas têm dificuldade para atender às restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
-Diante disso, este trabalho propõe uma nova abordagem para detecção de mudanças de conceito baseada em Redes de Função de Base Radial.
-
-As redes RBF podem ser definidas como redes neurais multicamadas, alimentadas adiante, capazes de analisar padrões complexos e resolver problemas que não são linearmente separáveis \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
-A arquitetura básica dessas redes é composta por três camadas.
-A camada de entrada recepciona os dados e repassa para a camada seguinte.
-A camada intermediária realiza a ativação dos neurônios através de funções de base radial.
-E, por fim, a camada de saída produz o resultado final da rede através de uma combinação linear dos resultados da camada intermediária \cite{Rojas:1996:NNS:235222}.
-
-Este trabalho de mestrado utiliza apenas as camadas inicial e intermediária dessa arquitetura.
-Isto ocorre, pois a camada intermediária forma, implicitamente, grupos (\textit{clusters}) durante o processo de ativação.
-Este agrupamento possui um centro ativo que muda conforme o valor processado.
-O algoritmo desenvolvido nesta pesquisa monitora o agrupamento formado para identificar quando esse centro é alterado.
-Estas alterações são utilizadas como indícios de possíveis mudanças de conceito.
-
-O método proposto, denominado \textit{RBFChain}, utiliza a função Gaussiana para ativação dos neurônios e requer a definição de dois parâmetros:
-\textit{$\sigma$}, responsável por limitar o raio da radial, e \textit{$\lambda$}, que define um limite para ativação de um centro.
-A técnica é descrita na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo},
-tendo sido também implementada na linguagem Java\footnote{\url{https://git.io/fjGuv}}, para realização dos experimentos na plataforma MOA.
+O método proposto é demonstrado na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo}.
+O restante desta seção detalha o funcionamento do algoritmo através de uma execução de exemplo.
 
 \vspace{7pt}
 \begin{algorithm}[H]
     \SetAlgoLined
-    \Entrada{$valor, \sigma, \lambda$}
-    \Saida{booleano indicando a ocorrência ou não de mudança de conceito}
+    \Entrada{$evento, \sigma, \lambda, \alpha, \delta$}
+    \Saida{$nulo, alerta$ ou $mudanca$}
     \Inicio{
-     $centros \longleftarrow ()$; $centroAtual \longleftarrow null$; $centroAtivo \longleftarrow null$\\
-     $mudanca \longleftarrow falso$
+
+     $centros \longleftarrow ()$; $centroAtual \longleftarrow null$; $centroAtivo \longleftarrow null$\;
+     $mudanca \longleftarrow falso$\;
+
+     \BlankLine
+     \BlankLine
 
      \ParaTodo{centro}{
-         $ativacao \longleftarrow gaussiana(valor, centro, \sigma)$\\
+         $ativacao \longleftarrow gaussiana(evento, centro, \sigma)$\\
          \Se{$ativacao >= \lambda$}{
-            $centroAtivo \longleftarrow centro$ \\
-            $\lambda \longleftarrow ativacao$ \\
+            $centroAtivo \longleftarrow centro$\;
+            $\lambda \longleftarrow ativacao$\;
          }
     }
-    \Se{$centroAtivo == null$}{
-        $centros \longleftarrow valor$ \\
-        $centroAtivo \longleftarrow valor$ \\
+
+    \BlankLine
+    \BlankLine
+
+    \Se{$centroAtivo == nulo$}{
+        $centros \longleftarrow evento$\;
+        $centroAtivo \longleftarrow evento$\;
     }
+
+    \BlankLine
+    \BlankLine
+
     \Se{$centroAtual \neq centroAtivo$}{
-        $centroAtual \longleftarrow centroAtivo$ \\
-        $mudanca \longleftarrow verdadeiro$ \\
+        $mudanca \longleftarrow verdadeiro$\;
     }
-    \Retorna{mudanca}\\
+
+    \BlankLine
+    \BlankLine
+
+    $probabilidade \longleftarrow markov(centroAtual, centroAtivo, \alpha)$\;
+    $centroAtual \longleftarrow centroAtivo$\;
+
+    \BlankLine
+    \BlankLine
+
+    \Se{$mudanca == verdadeiro$ e $probabilidade \geq \delta$}{
+        \Retorna{$mudanca$}\;
+    }
+    \SenaoSe{$mudanca == verdadeiro$ e $probabilidade < \delta$}{
+        \Retorna{$alerta$}\;
+    }
+    \Senao{
+        \Retorna{$nulo$}\;
+    }
+
     \BlankLine
     \BlankLine
     }

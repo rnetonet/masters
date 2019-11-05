@@ -13,13 +13,13 @@
 \contentsline {subsection}{\numberline {2.3.3}Ferramenta - MOA}{12}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}Redes de Fun\IeC {\c c}\IeC {\~a}o de Base Radial}{14}{section.2.4}
 \contentsline {section}{\numberline {2.5}Cadeias de Markov}{16}{section.2.5}
-\contentsline {section}{\numberline {2.6}Rastreamento Ocular - Fixa\IeC {\c c}\IeC {\~o}es e Sacadas}{18}{section.2.6}
+\contentsline {section}{\numberline {2.6}Monitoramento Ocular - Fixa\IeC {\c c}\IeC {\~o}es e Sacadas}{18}{section.2.6}
 \contentsline {section}{\numberline {2.7}Trabalhos Relacionados}{19}{section.2.7}
 \contentsline {section}{\numberline {2.8}Considera\IeC {\c c}\IeC {\~o}es Finais}{22}{section.2.8}
 \contentsline {chapter}{Cap\'{\i }tulo~3---RBFC\element {hain}}{23}{chapter.3}
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{23}{section.3.1}
 \contentsline {section}{\numberline {3.2}Vis\IeC {\~a}o Geral}{23}{section.3.2}
-\contentsline {section}{\numberline {3.3}RBFChain}{23}{section.3.3}
+\contentsline {section}{\numberline {3.3}RBFChain}{25}{section.3.3}
 \contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{26}{section.3.4}
 \contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos e Resultados}{27}{chapter.4}
 \contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{27}{section.4.1}
