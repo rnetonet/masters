@@ -382,7 +382,7 @@ pois muitos experimentos comportamentais usam essas informações como fator de 
 
 O restante deste trabalho está organizado da seguinte forma:
 %
-no Capítulo \ref{fundamentacao_teorica}, é apresentado o referencial teórico que fundamenta esta pesquisa e os trabalhos relacionados.
+o Capítulo \ref{fundamentacao_teorica} apresenta o referencial teórico que fundamenta esta pesquisa e os trabalhos relacionados.
 A solução proposta é apresentada em detalhes no Capítulo \ref{rbfchain}.
 A configuração dos experimentos, a avaliação da proposta e os resultados alcançados são apresentados no Capítulo \ref{experimentos_iniciais}.
 Por fim, as conclusões obtidas e as discussões de trabalhos futuros são apresentadas no Capítulo \ref{conclusoes_e_trabalhos_futuros}.
@@ -390,7 +390,7 @@ Por fim, as conclusões obtidas e as discussões de trabalhos futuros são apres
 \xchapter{Fundamentação Teórica}{} \label{fundamentacao_teorica}
 \section{Considerações Iniciais}
 
-Este capítulo apresenta os principais conceitos utilizados nesta dissertação e discute os trabalhos relacionados observados na literatura.
+Este capítulo apresenta os principais conceitos utilizados nesta pesquisa e discute os trabalhos relacionados observados na literatura.
 %
 Inicialmente, será abordada a relação entre Fluxos Contínuos de Dados e técnicas de Aprendizado de Máquina.
 %
@@ -400,7 +400,7 @@ Logo após, as Redes de Função de Base Radial e as Cadeias de Markov são apre
 %
 Posteriormente, o problema de classificação de fixações e sacadas em atividades de rastreamento ocular é detalhado.
 %
-Por fim, os trabalhos relacionados observados na literatura são discutidos.
+Por fim, os trabalhos relacionados observados na literatura são examinados.
 
 \section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
 
@@ -542,9 +542,9 @@ Portanto, as mudanças são notáveis apenas à longo prazo (Figura \ref{fig:con
 A mudança recorrente acontece quando um conceito anteriormente ativo reaparece após um determinado período de tempo.
 Contudo, não se trata de uma sazonalidade periódica, pois não é evidente o momento no qual o conceito voltará a ser ativo (Figura \ref{fig:concept_drift_patterns} (d)).
 
-O método proposto nesta dissertação atua diretamente sobre o fluxo em análise, sem necessitar da correta rotulação dos dados.
-Consequentemente, todas mudanças de conceito identificadas são tratadas como possíveis mudanças de conceito reais.
-Além disso, a técnica desenvolvida pode identificar mudanças independentemente do padrão de ocorrência.
+O método proposto nesta dissertação atua diretamente sobre o fluxo de dados, independentemente de rótulos.
+Logo, todas mudanças de conceito identificadas são tratadas como mudanças de conceito reais.
+Além disso, a técnica desenvolvida pode identificar mudanças em qualquer padrão de ocorrência.
 
 % Na próxima subseção, será apresentada a terminologia do fenômeno mudança de conceito.
 
@@ -753,8 +753,8 @@ Os principais algoritmos para detecção de mudanças de conceito possuem implem
 Além dessas implementações, a ferramenta também disponibiliza rotinas de avaliação, que analisam a acurácia e o desempenho desses métodos.
 
 Nesta dissertação, o MOA foi utilizado para realização do experimento com dados sintéticos, gerados a partir da própria ferramenta.
-A técnica proposta foi implementada na aplicação e comparada aos principais algoritmos disponíveis.
-Por fim, os testes realizados foram avaliados atráves da classe \textit{BasicConceptDriftPerformanceEvaluator}, disponibilizada pelo framework.
+A técnica proposta foi implementada no MOA e comparada aos principais algoritmos disponíveis.
+Por fim, os testes realizados foram avaliados atráves da classe \textit{BasicConceptDriftPerformanceEvaluator}, disponibilizada pela ferramenta.
 
 \section{Redes de Função de Base Radial}
 
@@ -795,9 +795,9 @@ Esta função é obtida a partir da combinação linear dos resultados das funç
 onde $N$ é o número de neurônios na camada intermediária, ${c}_{i}$ é o centro do neurônio $i$, $||\ldots||$ é a norma euclidiana e $a_{i}$ é o peso (bias) atribuído ao neurônio para realização da combinação linear.
 
 A técnica proposta nesta dissertação utiliza uma rede RBF adaptada.
-No método proposto, apenas as camadas inicial e intermediária são aplicadas, e a Gaussiana é utilizada como função de ativação.
+Na versão adaptada, apenas as camadas inicial e intermediária são aplicadas, e a Gaussiana é utilizada como função de ativação.
 Esta adaptação é possível, pois a camada intermediária cria, implicitamente, durante o processo de ativação, grupos com os dados recebidos ao longo do tempo.
-Dessa forma, quando o centro ativo do agrupamento formado é alterado, uma possível mudança de conceito é sinalizada.
+Dessa forma, quando o centro ativo do cluster formado é alterado, uma possível mudança de conceito é sinalizada.
 
 Além da rede RBF adaptada, o método proposto também utiliza uma Cadeia de Markov para modelar as transições entre centros e obter tolerância a ruídos.
 As Cadeias de Markov serão apresentadas na próxima seção.
@@ -846,7 +846,7 @@ Este diagrama detalha um processo Markoviano com três estados possíveis, em um
 \begin{figure}[H]
     \begin{center}
         \includegraphics[scale=0.75]{imagens/markov_chain_wikipedia.png}
-        \caption{Exemplo: Cadeia de Markov com três estados \cite{wiki:Markov_chain}}
+        \caption{Exemplo: Cadeia de Markov com três estados. Fonte: \citeonline{wiki:Markov_chain}.}
         \label{fig:cadeia_markov_tres_estados}
     \end{center}
 \end{figure}
@@ -858,9 +858,14 @@ Este diagrama pode ser representado como uma matriz estocástica, demonstrada na
 P={\begin{bmatrix}0.9&0.075&0.025\\0.15&0.8&0.05\\0.25&0.25&0.5\end{bmatrix}}.
 \end{equation}
 
-Neste trabalho, os estados da Cadeia de Markov são formados pelos centros ativados durante o processo de agrupamento realizado pela rede RBF.
-As transições de centro ativo são refletidas nas probabilidades, aumentando a probabilidade da transição vigente por um valor parametrizável ($\alpha$) e diminuindo proporcionalmente a probabilidade das outras transições.
-Esta operação é realizada respeitando as condições: $P_{ij} \geq 0$ e que a soma das probabilidades de todas transições a partir de um determinado estado seja sempre $1$.
+Neste trabalho, os estados da Cadeia de Markov são formados pelos centros ativados na rede RBF adaptada.
+As transições entre centros (ativação) são refletidas no modelo markoviano, aumentando a probabilidade da transição vigente por um valor parametrizável ($\alpha$) e diminuindo proporcionalmente a probabilidade das outras transições.
+Esta operação é realizada respeitando as seguintes condições:
+
+\begin{itemize}
+    \item A probabilidade de uma transição deve ser sempre maior ou igual a zero ($P_{ij} \geq 0$);
+    \item A soma das probabilidades de todas transições a partir de um determinado estado deve ser sempre igual a um ($\sum_{1}^{j} P_{ij} = 1$).
+\end{itemize}
 
 Além de modelar as mudanças de conceito ocorridas, a Cadeia de Markov também é responsável pela tolerância a ruídos.
 Isto ocorre, pois apenas transições cuja probabilidade $P_{ij} \geq \delta$, onde $\delta$ é um valor parametrizável, podem sinalizar mudanças de conceito.
@@ -882,12 +887,12 @@ Os olhos precisam estar em constante movimento para que a retina possa formar um
 Este movimento frequente é conhecido como movimento sacádico.
 Ao analisar uma imagem ou cena, o olho tende a permanecer fixo durante alguns milissegundos nas áreas mais significativas (fixações);
 depois disso, o olho se move em direção a uma nova zona de interesse (sacadas).
-Este processo é demonstrado na Figura \ref{fig:exemplo_fixacoes_e_sacadas}.
+Este processo é demonstrado na Figura \ref{fig:exemplo_fixacoes_e_sacadas}, utilizando pontos mais densos para representar as fixações e linhas para as sacadas.
 
 \begin{figure}[H]
     \begin{center}
         \includegraphics[scale=1]{imagens/exemplo_fixacao_e_sacadas.png}
-        \caption{Exemplo: Trajetória Ocular - Fixações e Sacadas \cite{KONIG2014121}}
+        \caption{Exemplo de identificação de fixações e sacadas. Fonte: \citeonline{KONIG2014121}.}
         \label{fig:exemplo_fixacoes_e_sacadas}
     \end{center}
 \end{figure}
@@ -999,6 +1004,10 @@ Este capítulo descreve como este projeto de mestrado será desenvolvido.
 A abordagem proposta utiliza Redes de Função de Base Radial para detectar mudanças de conceito em fluxos contínuos de dados.
 Espera-se que a utilização de redes RBF permita detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
+
+\section{Visão Geral}
+
+\todo[inline]{TODO}
 
 \section{RBFChain}
 
