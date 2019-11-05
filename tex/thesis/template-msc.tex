@@ -987,23 +987,47 @@ o problema de classificação em sacadas e fixações durante atividades de rast
 Também foram apresentados trabalhos que se relacionam com a proposta desta dissertação,
 permitindo notar que até o presente momento inexistem métodos para detecção de mudanças de conceito
 que possam ser aplicados a fluxos contínuos de dados de forma satisfatória.
-Dessa forma, o presente trabalho demonstra relevância,
+Diante disso, o presente trabalho demonstra relevância,
 ao propor um novo método capaz de identificar mudanças de conceito em fluxos de dados em tempo de execução, de forma computacionalmente eficiente, com tolerância a ruídos e sem depender de rótulos.
 
 \xchapter{RBFC\element{hain}}{} \label{rbfchain}
 
 \section{Considerações Iniciais}
 
-Este capítulo descreve como este projeto de mestrado será desenvolvido.
-A abordagem proposta utiliza Redes de Função de Base Radial para detectar mudanças de conceito em fluxos contínuos de dados.
-Espera-se que a utilização de redes RBF permita detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
-A seguir, são apresentados detalhes sobre cada etapa do desenvolvimento do projeto.
+Este capítulo apresenta o RBFChain, um novo método de detecção de mudanças de conceito proposto por esta dissertação.
+A técnica desenvolvida é apresentada da seguinte forma:
+a Seção \ref{sec:rbfchain_visao_geral} inicia o capítulo com uma visão geral da proposta.
+Na Seção \ref{sec:rbfchain_detalhes}, o algoritmo desenvolvido é apresentado em formato pseudocódigo e seu funcionamento é detalhado.
+Por fim, são discutidas as considerações finais do Capítulo na Seção \ref{sec:rbfchain_consideracoes_finais}.
 
 \section{Visão Geral}
+\label{sec:rbfchain_visao_geral}
 
-\todo[inline]{TODO}
+% Este trabalho apresenta uma solução que visa minimizar os impactos causados na rede,
+% pela mobilidade de produtores na NDN, através do uso oportunista da cache dos nós
+% presentes na borda da rede sem fio. Ao usar sua cache, um nó móvel pode até servir como
+% meio de rede entre áreas desconectadas ou fornecer conectividade atrasada em enlaces
+% esporadicamente conectados (JACOBSON et al., 2009). O objetivo é proporcionar que os
+% produtores sejam capazes de replicar seus dados, de forma a manter a maior diversidade
+% de conteúdos entre os nós e que estes possam armazenar os dados com o mı́nimo de
+% esforço, para que os interesses futuros consigam ser satisfeitos mesmo durante o perı́odo
+% de indisponibilidade do produtor.
+
+% A solução se baseia no princı́pio básico de armazenar os dados que trafegam na rede
+% sem fio, de modo a evitar as replicações em todos os nós do domı́nio, com o intuito de
+% alcançar uma maior diversidade de conteúdos na rede. Isso é possı́vel, pois a NDN possui
+% caracterı́sticas como cache na camada de rede e entrega multicast, além de viabilizar
+% que os dados possam ser facilmente retirados dos produtores originais, uma vez que a
+% proteção é aplicada diretamente sobre os mesmos e não no meio de acesso, como no
+% caso da rede IP (ZHANG et al., 2016). A SCaN-Mob se beneficia dessas caracterı́sticas
+% da NDN e permite que os dados sejam armazenados sem esforço e oportunisticamente,
+% através da comunicação broadcast das redes sem fio. Por outro lado, as retransmissões
+% de interesses inundam a rede, devido à caracterı́stica citada do canal sem fio, por isso, a
+% solução controla essas retransmissões.
+
 
 \section{RBFChain}
+\label{sec:rbfchain_detalhes}
 
 Nos últimos anos, a quantidade de dados produzidos por sistemas computacionais tem crescido de forma exponencial \cite{idc_report}.
 Parte significativa dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências potencialmente infinitas e de alta frequência \cite{Aggarwal:2006:DSM:1196418}.
@@ -1102,62 +1126,10 @@ As linhas verticais tracejadas, de cor vermelha, indicam a ocorrência de mudan�
 \end{center}
 \end{figure}
 
-% \section{Atividades de Pesquisa}
-
-% A Tabela \ref{cronograma} apresenta o cronograma das atividades planejadas para a realização da pesquisa. Atividades concluídas são representadas pelo símbolo $X$ e as futuras por $\bullet$.
-
-% \begin{table}[htbp]
-% \begin{center}
-% \caption{Cronograma de atividades}     % mude aqui para seu título da tabela
-% \label{cronograma} % para referencia no texto.
-% \resizebox{\textwidth}{!}{ % abre resizebox, setar tabela da largura da página.
-% \begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
-% \hline
-% \multicolumn{1}{|c|}{\multirow{2}{*}{Atividades}} & \multicolumn{24}{c|}{Meses} \\ \cline{2-25}
-% \multicolumn{1}{|c|}{} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 \\ \hline
-% %\rowcolor[HTML]{EFEFEF}
-
-% 1-Disciplinas & X & X & X & X & X & X & X & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-% 2-Revisão da Literatura & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & X & X & ~ & ~ & ~ & ~ &  ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-% 3-Experimentos  & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X  & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-% 4-Análise dos Resultados & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & ~  & ~  & ~ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-% 5-Escrita da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-% 6-Estágio docente & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & ~ & ~ & ~ \\ \hline
-% 7-Pesquisa Orientada & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & X & X & X & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
-% 8-Apresentação da qualificação & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
-% 9-Escrita de artigos& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~  & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & ~ & ~ & ~ & ~ & ~ \\ \hline
-% 10-Escrita da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & X & X & X & ~ & ~ & ~ & ~ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ & $\bullet$ \\ \hline
-% 11- Defesa da dissertação& ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & $\bullet$ \\ \hline
-
-% \hline
-% \end{tabular}
-% } % fecha resizebox
-% \end{center}
-% \end{table}
-
-% Para a conclusão da atividade 1,
-% o Programa de Pós-Graduação em Ciência da Computação (PGCOMP) da Universidade Federal da Bahia (UFBA) exige que um mestrando obtenha um total de 18 créditos em disciplinas.
-% Nos semestres 2018.1 e 2018.2, foram obtidos os créditos exigidos ao cursar as disciplinas:
-% MATD74 -- Algoritmos e Grafos, MATE32 -- Tópicos em Inteligência Computacional II, MATE64 -- Seminários Científicos, MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I,
-% MATE10 -- Tópicos em Inteligência Computacional I e MATE84 -- Tópicos em Fundamentos da Computação IV.
-
-% A segunda atividade planejada neste cronograma foi realizada a partir da disciplina MATE65 -- Fundamentos de Pesquisa em Ciência da Computação I
-% e nos meses subsequentes. Além disso, durante a execução desta tarefa foi realizada a prova de proficiência em inglês.
-
-% As atividades 3 e 4 do cronograma consistem na realização dos experimentos e análise dos resultados.
-% Essas atividades foram divididas em duas partes.
-% A primeira contém apenas experimentos preliminares que foram realizados para validar esta proposta de trabalho.
-% Nesta parte, conjuntos de dados sintéticos foram analisados conforme apresentado no Capítulo \ref{experimentos_iniciais}.
-% A segunda parte dos experimentos e suas análises serão realizadas após a qualificação.
-
-% As atividades 5 e 8 estão relacionadas com o componente curricular MATD75 -- Exame de qualificação. A atividade 5 refere-se à escrita deste texto e as atividades 6 e 7 representam os componentes curriculares MATA32 -- Estágio Docente e MATA31 -- Pesquisa Orientada, respectivamente. A atividade 8 está relacionada à apresentação desta qualificação de mestrado.
-
-% A escrita de artigos, listada no item 9 do cronograma, será realizada com base nos resultados gerados com os experimentos (Atividades $3$ e $4$) e nas contribuições obtidas com a apresentação da qualificação. Por fim, como requisito para a defesa de dissertação, fica pendente a atividade MATE93 - Defesa de Proposta de Mestrado, a qual se refere aos itens 10 e 11 da Tabela \ref{cronograma}.
-
 \section{Considerações Finais}
+\label{sec:rbfchain_consideracoes_finais}
 
-Neste capítulo, apresentou-se de maneira detalhada o projeto de pesquisa, o plano de atividades e o cronograma planejado para a conclusão do mestrado.
-No próximo capítulo, serão discutidos os experimentos iniciais, realizados com o objetivo de analisar a viabilidade da proposta de mestrado.
+\todo[inline]{TODO}
 
 \xchapter{Experimentos e Resultados}{} \label{experimentos_iniciais}
 \section{Considerações Iniciais}
