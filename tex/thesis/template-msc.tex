@@ -298,7 +298,7 @@ quando aplicadas em contextos com fluxos contínuos,
 também devem lidar com variações na distribuição dos dados ou no contexto do processo gerador.
 %
 Essas alterações são denominadas Mudanças de Conceito \cite{Gama:2010:KDD:1855075} e
-a sua ocorrência pode impactar a acurácia da técnica de aprendizado aplicada.
+a sua ocorrência pode impactar a acurácia do modelo.
 
 Inicialmente, a atualização periódica dos modelos obtidos a partir das técnicas de AM foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
 %
@@ -338,19 +338,19 @@ Enquanto as técnicas independentes têm dificuldade em atender às severas rest
 Diante disso, esta dissertação de mestrado propõe uma nova abordagem baseada em Redes de Função de Base Radial (RBF) e Cadeias de Markov
 para detecção de mudanças de conceito em fluxos contínuos de dados.
 O método desenvolvido se diferencia dos trabalhos existentes por detectar mudanças de conceito em tempo de execução,
-de forma computacionalmente eficiente e independente de rótulos.
-Além de ser tolerante a ruídos e apresentar acurácia equivalente ao estado da arte.
+de forma computacionalmente eficiente, tolerante a ruídos e independente de rótulos.
+
 
 \section{Hipótese e Objetivo}
 
 Com base nas observações citadas anteriormente, a seguinte hipótese foi formulada:
 
 \begin{center}
-\textit{``A aplicação de Redes de Função de Base Radial e Cadeias de Markov em fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.''}
+\textit{``A aplicação de Redes de Função de Base Radial e Cadeias de Markov em fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente, tolerante a ruídos e independente de rótulos.''}
 \end{center}
 
 Assim, o objetivo principal deste trabalho foi a validação da hipótese elaborada.
-Para atingir este objetivo, um novo método para detecção de mudanças de conceito, baseado em Redes de Função de Base Radial e Cadeias de Markov, foi desenvolvido.
+Para atingir este objetivo, um novo método de detecção de mudanças de conceito, baseado em Redes de Função de Base Radial e Cadeias de Markov, foi desenvolvido.
 A técnica implementada foi validada através de dois experimentos principais, um com dados sintéticos e outro baseado em dados de um problema do mundo real.
 
 No primeiro experimento, a técnica foi aplicada a conjuntos de dados sintéticos e
@@ -371,6 +371,7 @@ As principais vantanges da técnica proposta em relação aos métodos existente
 \begin{itemize}
     \item Detecção de mudanças de conceito em tempo de execução;
     \item Independência de rótulos;
+    \item Tolerância a ruídos;
     \item Eficiência computacional.
 \end{itemize}
 
@@ -380,12 +381,12 @@ pois muitos experimentos comportamentais usam essas informações como fator de 
 
 \section{Organização do trabalho}
 
-O restante deste trabalho está organizado da seguinte forma:
+O restante do texto está organizado da seguinte forma:
 %
 o Capítulo \ref{fundamentacao_teorica} apresenta o referencial teórico que fundamenta esta pesquisa e os trabalhos relacionados.
 A solução proposta é apresentada em detalhes no Capítulo \ref{rbfchain}.
 A configuração dos experimentos, a avaliação da proposta e os resultados alcançados são apresentados no Capítulo \ref{experimentos_iniciais}.
-Por fim, as conclusões obtidas e as discussões de trabalhos futuros são apresentadas no Capítulo \ref{conclusoes_e_trabalhos_futuros}.
+Por fim, as conclusões obtidas e os trabalhos futuros são apresentados no Capítulo \ref{conclusoes_e_trabalhos_futuros}.
 
 \xchapter{Fundamentação Teórica}{} \label{fundamentacao_teorica}
 \section{Considerações Iniciais}
@@ -415,7 +416,7 @@ As características dos fluxos contínuos de dados implicam as seguintes restri�
 %
 \begin{enumerate}
     \item É impossível armazenar todos os dados do fluxo. Somente uma pequena parcela pode ser processada e armazenada, enquanto o restante é descartado;
-    \item A velocidade de chegada dos eventos exige que os elementos sejam processados em tempo de execução;
+    \item A velocidade de chegada dos eventos exige que sejam processados em tempo de execução;
     \item A distribuição dos dados pode mudar com o tempo. Assim, os dados do passado podem se tornar irrelevantes ou mesmo prejudiciais para a descrição dos conceitos atuais.
 \end{enumerate}
 
@@ -738,7 +739,7 @@ que caracterizam os conceitos-alvo antes e depois da mudança.
 Além destes conceitos, o usuário também pode definir o momento da mudança e a sua duração \cite{Bifet:2010:MMO:1756006.1859903}.
 
 A arquitetura do framework é modular, o que permite a implementação de novos algoritmos de forma trivial.
-Para tanto, basta estender a classe abstrata \textit{AbstractChangeDetector} e implementar o algoritmo desejado.
+Por exemplo, para incluir um novo algoritmo de detecção de mudanças de conceito, basta estender a classe abstrata \textit{AbstractChangeDetector} e implementar o algoritmo desejado.
 A janela de configuração deste detector, similar a Figura \ref{fig:moa_detector}, será criada dinamicamente, a partir dos atributos definidos na classe.
 
 \begin{figure}[H]
@@ -832,8 +833,8 @@ Esta característica é demonstrada através da Equação \ref{eq:markov}:
 
 Isto é, um processo de Markov pode assumir os estados $a_1, a_2, \ldots, a_r$, de tal modo que a probabilidade
 de transição de um estado $a_i$ para um estado $a_j$ seja $P_{ij}$ (um valor dependente apenas de $i$ e $j$).
-Dessa forma, é possível constituir uma matriz das probabilidades de transição (matriz estocástica),
-demonstrada na Equação \ref{eq:matriz_estocastica}:
+Dessa forma, é possível constituir uma matriz com todas probabilidades de transição entre os estados.
+Esta matriz é denominada como matriz estocástica e um exemplo é apresentado na Equação \ref{eq:matriz_estocastica}:
 
 \begin{equation}
 \label{eq:matriz_estocastica}
@@ -875,7 +876,7 @@ Isto ocorre, pois apenas transições cuja probabilidade $P_{ij} \geq \delta$, o
 \section{Rastreamento Ocular - Fixações e Sacadas}
 
 A análise rigorosa dos movimentos oculares não é uma técnica experimental recente.
-Entretanto, o desenvolvimento de tecnologias não invasivas de rastreamento favoreceu a sua utilização.
+Entretanto, o desenvolvimento de tecnologias não invasivas de rastreamento favoreceu o aumento da sua utilização.
 Atualmente, a técnica é empregada em diferentes tarefas experimentais \cite{Duchowski_EyeTrackingSurvey}, como, por exemplo:
 localização da atenção visual,
 detecção de deficiências cognitivas,
@@ -969,7 +970,7 @@ As técnicas para detecção de mudanças de conceito são, geralmente, aplicada
     \item basear-se em características dos dados que reflitam os conceitos presentes.
 \end{itemize}
 
-Por fim, a pesquisa realizada evidenciou a inexistência de técnicas que atendam a esses requisitos e que sejam computacionalmente eficientes,
+Por fim, a pesquisa realizada evidenciou a inexistência de técnicas que atendam a todos esses requisitos e que sejam computacionalmente eficientes,
 independentes de rótulos e aplicáveis a fluxos de dados de qualquer natureza.
 Esta dissertação de mestrado tem como objetivo preencher esta lacuna,
 através da proposição de um novo método, baseado em Redes de Função de Base Radial e Cadeias de Markov,
@@ -977,24 +978,17 @@ para identificação de mudanças de conceito em fluxos contínuos de dados.
 
 \section{Considerações Finais}
 
-\todo[inline]{Todo}
+Este capítulo apresentou os principais conceitos utilizados nesta dissertação.
+A relação entre Fluxos Contínuos de Dados e técnicas de Aprendizado de Máquina foi abordada,
+o fenômeno Mudança de Conceito e os métodos de detecção foram detalhados,
+as Redes de Função de Base Radial e as Cadeias de Markov foram retratadas, e, por fim,
+o problema de classificação em sacadas e fixações durante atividades de rastreamento ocular foi discutido.
 
-% Este capı́tulo discutiu os fundamentos gerais da abordagem de ICN, mostrou os seus
-% principais projetos e arquiteturas, além das direções dessas redes. Dentre as arquiteturas
-% abordadas, a CCN teve um maior enfoque, uma vez que é adotada pela NDN. Dessa
-% forma, foram apresentados os detalhes da arquitetura da CCN/NDN tais como nomeação,
-% roteamento, armazenamento, segurança e mobilidade e, por fim, se discutiu as abordagens
-% existentes na literatura de apoio à mobilidade de produtores nessas redes.
-
-% Neste capı́tulo foram discutidos vários trabalhos que se relacionam com a presente dis-
-% sertação. Além dos trabalhos apresentados, ainda, existem outros na literatura. Pode-se
-% notar que alguns trabalhos já abordaram a problemática da mobilidade do produtor na
-% NDN. Entretanto, os trabalhos propostos até então não consideram a capacidade compu-
-% tacional dos dispositivos móveis para apoiar a mobilidade do produtor, enquanto outros
-% trabalhos investigaram a capacidade computacional desses dispositivos na ICN para ou-
-% tras finalidades. Dessa forma, o presente trabalho é pioneiro por considerar os recursos
-% computacionais de armazenamento dos dispositivos, localizados na borda da rede sem fio,
-% para auxiliar no suporte à mobilidade do produtor.
+Também foram apresentados trabalhos que se relacionam com a proposta desta dissertação,
+permitindo notar que até o presente momento inexistem métodos para detecção de mudanças de conceito
+que possam ser aplicados a fluxos contínuos de dados de forma satisfatória.
+Dessa forma, o presente trabalho demonstra relevância,
+ao propor um novo método capaz de identificar mudanças de conceito em fluxos de dados em tempo de execução, de forma computacionalmente eficiente, com tolerância a ruídos e sem depender de rótulos.
 
 \xchapter{RBFC\element{hain}}{} \label{rbfchain}
 
