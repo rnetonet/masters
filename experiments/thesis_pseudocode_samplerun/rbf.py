@@ -99,6 +99,7 @@ class RBF(BaseDriftDetector):
         self.actual_center = None
         self.centers = []
         self.sample_count = 0
+        self.last_concept_center = None
 
         self.markov = MarkovChain()
 
@@ -112,6 +113,8 @@ class RBF(BaseDriftDetector):
         """
         super().reset()
         self.sample_count = 1
+        self.last_concept_center = None
+
         # Reset or not the markov
         # self.markov = MarkovChain()
 
@@ -154,17 +157,25 @@ class RBF(BaseDriftDetector):
             self.actual_center, activated_center, self.alpha
         )
 
-        # If center changed
-        if self.actual_center != activated_center:
-            if probability >= self.delta:
+        if probability >= self.delta:
+            if not self.last_concept_center:
+                self.last_concept_center = activated_center
+            elif self.last_concept_center != activated_center:
                 self.in_concept_change = True
-            else:
-                self.in_warning_zone = True
+                self.last_concept_center = activated_center
 
-            # Update actual center
-            self.actual_center = activated_center
+        # # If center changed
+        # if self.actual_center != activated_center:
 
-        if probability >= self.delta and self.in_warning_zone:
-            self.in_concept_change = True
+        #     if probability >= self.delta:
+        #         self.in_concept_change = True
+        #     else:
+        #         self.in_warning_zone = True
+
+        # Update actual center
+        self.actual_center = activated_center
+
+        # if probability >= self.delta and self.in_warning_zone:
+        #         self.in_concept_change = True
 
         return probability
