@@ -97,7 +97,7 @@
 \majorfield{Ci\^{e}ncia da Computa\c{c}\~{a}o}
 
 % Titulo da dissertacao
-\title{Aplicando Redes de Função de Base Radial e Cadeias de Markov para a detecção de mudanças de conceito em fluxos de dados}
+\title{Uso de Redes de Função de Base Radial e Cadeias de Markov para detecção online de mudanças de conceito em fluxos contínuos de dados}
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
@@ -181,25 +181,24 @@
 \resumo
 
 A quantidade de informações produzidas por sistemas computacionais tem crescido de forma acentuada nas últimas décadas.
-Uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos de dados, que são sequências constantes e potencialmente infinitas.
-Esses fluxos são, em sua maioria, não-estacionários, podendo sofrer variações na distribuição dos dados ou no contexto do processo gerador.
+Uma parcela expressiva dessas informações é produzida na forma de fluxos contínuos, que são sequências constantes e potencialmente infinitas de dados.
+Esses fluxos são, em sua maioria, não-estacionários, podendo sofrer alterações na distribuição dos dados ou no contexto do processo gerador.
 Estas alterações são denominadas mudanças de conceito e podem impactar negativamente a performance de modelos de aprendizado aplicados.
-Para mitigar este problema, pesquisadores desenvolveram métodos especializados na detecção de mudanças de conceito.
-Entretanto, os métodos propostos apresentam limitações ao serem aplicados em cenários com fluxos contínuos,
-como a necessidade de rotulação por especialistas ou a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
-Este trabalho propõe um novo método de detecção baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov, denominado RBFChain.
-As redes RBF realizam, em sua camada intermediária, um processo de ativação que implicitamente produz grupos das observações recepcionadas ao longo do tempo.
-Simultaneamente, cadeias de Markov modelam as transições de centro ocorridas no agrupamento formado.
-Mudanças de conceito são detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limite.
-O método proposto se diferencia dos trabalhos existentes por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
-Para avaliar o RBFChain como um detector de mudanças de conceito viável,
-uma análise de sensibilidade, precisão e tolerância ao ruído foi realizada usando conjuntos de dados sintéticos,
-e os resultados comparados com os principais algoritmos disponíveis na literatura.
-Além disso, a técnica foi aplicada ao problema de classificação de fixações e sacadas na atividade de monitoramento ocular:
-uma questão relevante para diferentes áreas do conhecimento,
-pois muitos experimentos comportamentais usam essas informações como um fator de análise.
-Os resultados com conjuntos de dados sintéticos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores presentes na literatura.
-Ademais, a técnica desenvolvida também apresentou bons resultados quando aplicada ao problema de monitoramento ocular, sendo capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
+Para mitigar este problema, pesquisadores vêm desenvolvendo métodos especializados na detecção de mudanças de conceito.
+Entretanto, os métodos propostos apresentam limitações ao serem aplicados em alguns cenários de fluxos contínuos como, por exemplo,
+a necessidade de rotulação por especialistas e a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
+Visando superar essas limitações, este trabalho apresenta um novo método de detecção de mudança de conceito, denominado RBFChain, baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov.
+Resumidamente, as redes RBF realizam, em sua camada intermediária, um processo de ativação que, implicitamente, produz grupos a partir das observações recebidas ao longo do tempo.
+De maneira complementar, as cadeias de Markov permitem modelar as transições de centro ocorridas em tais grupos de observações.
+Mudanças de conceito são, então, detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limiar.
+O método apresentado se diferencia dos trabalhos existentes por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+Para avaliar o método RBFChain como um detector de mudanças de conceito viável, uma análise de sensibilidade, precisão e tolerância ao ruído foi realizada usando conjuntos de dados sintéticos,
+e seus resultados foram comparados com os principais algoritmos disponíveis na literatura.
+Além disso, a técnica foi aplicada a um problema real de classificação de fixações e sacadas na atividade de monitoramento ocular.
+Com essa aplicação, foi possível investigar e propor uma solução para um problema relevante que envolve a área de Neurociência e Computação.
+Os resultados obtidos com os conjuntos de dados sintéticos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores presentes na literatura.
+Ademais, a técnica desenvolvida apresentou bons resultados quando aplicada ao problema de monitoramento ocular,
+sendo capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
 
 % Palavras-chave do resumo em Portugues
 \begin{keywords}
@@ -207,6 +206,7 @@ Ademais, a técnica desenvolvida também apresentou bons resultados quando aplic
 \end{keywords}
 
 \abstract
+
 The amount of information produced by computer systems has grown dramatically in recent decades.
 A significant share of this volume is produced as data streams, which are constant and potentially infinite sequences.
 Most of these streams are non-stationary and may vary over time.
@@ -222,11 +222,11 @@ The proposed method differs from existing works in that it detects changes at ru
 To assess RBFChain as a viable concept drift detector, an analysis of sensitivity, accuracy, and noise tolerance was performed using synthetic datasets, and results were compared to the main algorithms available in the literature.
 Also, the technique was applied to the fixation and saccade classification problem in eye-tracking: a relevant issue for different areas of knowledge, because many behavioral experiments use this information as an analysis factor.
 Results with synthetic datasets suggest that RBFChain is statistically better or equivalent to the main detectors present in the literature.
-Moreover, the developed method also presented good results when applied to the eye-tracking problem, being able to classify fixations and saccades in real-time and with accuracy equivalent to the state of the art.
+Moreover, the developed method presented good results when applied to the eye-tracking problem, being able to classify fixations and saccades in real-time and with accuracy equivalent to the state of the art.
 
 % Palavras-chave do resumo em Ingles
 \begin{keywords}
-   Data Stream. Concept Drift. Radial Basis Function Network. Markov Chain. Eye-tracking.
+    Data Stream. Concept Drift. Radial Basis Function Network. Markov Chain. Eye-tracking.
 \end{keywords}
 
 %%%%%%%%%%%%%%%%%%%
@@ -994,18 +994,18 @@ ao propor um novo método capaz de identificar mudanças de conceito em fluxos d
 
 \section{Considerações Iniciais}
 
-Este capítulo apresenta o RBFChain, que é o método de detecção de mudanças de conceito proposto nesta dissertação.
-A proposta é apresentada da seguinte forma:
-a Seção \ref{sec:rbfchain_visao_geral} inicia o capítulo com uma visão geral, identificando a arquitetura e a interação dos componentes.
+Este capítulo detalha o método de detecção de mudanças de conceito proposto nesta dissertação, denominado RBFChain.
+A técnica desenvolvida é apresentada da seguinte forma:
+a Seção \ref{sec:rbfchain_visao_geral} inicia o capítulo com uma visão geral, abordando a arquitetura e o papel desempenhado por cada componente.
 Na Seção \ref{sec:rbfchain_detalhes}, o algoritmo desenvolvido é demonstrado em pseudocódigo e o seu funcionamento é detalhado.
 Por fim, na Seção \ref{sec:rbfchain_consideracoes_finais}, são discutidas as considerações finais do capítulo.
 
 \section{Visão Geral}
 \label{sec:rbfchain_visao_geral}
 
-A arquitetura do RBFChain é composta por dois componentes principais: uma Rede de Função de Base Radial e uma Cadeia de Markov.
+A arquitetura do RBFChain é composta por dois componentes principais: uma Rede de Função de Base Radial (RBF) e uma Cadeia de Markov.
 A rede RBF é responsável por agrupar os eventos recebidos, formando um cluster, cujo centro ativo é alterado conforme o evento em análise.
-As mudanças no centro ativo do cluster são modeladas através da Cadeia de Markov.
+As mudanças de centro desse cluster são modeladas através da Cadeia de Markov.
 No modelo Markoviano, os centros ativados formam os estados e as mudanças de centro, as transições.
 Estes componentes são representados graficamente na Figura \ref{fig:arquitetura}.
 O restante desta seção discute o papel desempenhado por cada componente.
@@ -1038,13 +1038,16 @@ Sendo dois relacionados a Rede de Função de Base Radial e dois a Cadeia de Mar
 \end{itemize}
 
 O RBFChain atua diretamente sobre o fluxo de dados.
-Os eventos observados são imediatamente submetidos ao processo de ativação da rede RBF.
-Neste processo, o valor de ativação do evento é calculado para cada um dos centros da rede, através da função Gaussiana.
-Dessa forma, o evento é vinculado ao centro com maior valor de ativação, desde que esse valor seja maior que $\lambda$.
-Se o evento não formar vínculo com nenhum dos centros anteriores, o próprio evento passa a ser o novo centro ativo da rede.
+Ao observar um novo evento, este é submetido ao processo de ativação da rede RBF.
+Durante o processo, o valor de ativação do evento é calculado para cada centro da rede, através da função Gaussiana.
+O evento é, então, vinculado ao centro com maior valor de ativação, desde que esse valor seja maior que $\lambda$.
+Se não for possível vincular o evento a nenhum dos centros, o próprio evento se torna o novo centro ativo da rede.
 
-A rede RBF mantém em memória a informação do último centro ativado, permitindo identificar quando há alteração do centro ativo.
-Essas mudanças são modeladas na Cadeia de Markov, que aumenta a probabilidade da transição ocorrida pelo fator $\alpha$ e diminui proporcionalmente o valor das outras transições possíveis para o estado originário.
+As ativações de novos ou diferentes centros são modeladas pela Cadeia de Markov,
+
+A Cadeia de Markov é responsável pela modelagem das mudanças de centro ativo,
+aumentando a probabilidade da transição ocorrida pelo fator $\alpha$ e diminuindo proporcionalmente o valor das outras transições possíveis para o estado originário.
+
 Após esta operação, o algoritmo verifica se o centro ativo anterior é diferente do atual.
 Se esta condição for verdadeira e a probabilidade da transição for maior que $\delta$, uma mudança de conceito é sinalizada.
 Contudo, se a condição for verdadeira mas o valor da probabilidade é inferior a $\delta$, o algoritmo apenas sinaliza uma \textit{zona de alerta} (\textit{warning zone}).

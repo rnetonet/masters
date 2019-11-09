@@ -1,9 +1,13 @@
+import matplotlib
+
+matplotlib.use("TKAgg", warn=False, force=True)
+
 import matplotlib.colors as mcolors
+import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
 import rbf
 from rbfplot import RBFPlot
-
 
 # --
 # Setup RBF
@@ -19,9 +23,10 @@ dataset = [0.11, 0.12, 0.13, 0.33, 0.34, 0.45, 0.6, 0.33, 0.25, 0.14, 0.11, 0.15
 #
 
 # Font size
-font = {"family": "normal", "size": 8}
+font = {"family": "normal", "size": 7}
 plt.rc("font", **font)
 
+# Subplots
 fig = plt.figure()
 gs = fig.add_gridspec(nrows=3, ncols=4)
 plots = []
@@ -39,8 +44,10 @@ fig.subplots_adjust(hspace=0.3, wspace=0.3)
 
 # Processing and plotting
 
-points = []  # {"position": None, "value": None, "center": None, "color": None}
+points = []
 concept_drifts_positions = []
+warnings_zones_positions = []
+
 colors = list(mcolors.TABLEAU_COLORS.keys())
 
 for position, value in enumerate(dataset):
@@ -48,21 +55,29 @@ for position, value in enumerate(dataset):
     rbfplot.update(value, rbf.in_concept_change, rbf)
 
     print(
-        f"{position}: value={value} | rbf.centers={rbf.centers} | rbf.last_concept_center={rbf.last_concept_center} | rbf.actual_center={rbf.actual_center} | probability={probability} | rbf.in_warning_zone={rbf.in_warning_zone} | rbf.in_concept_change={rbf.in_concept_change}"
+        f"{position}: {value=} | {rbf.centers=} | {rbf.concept_center=} | {rbf.activated_center=} | {probability=} | {rbf.in_warning_zone=} | {rbf.in_concept_change=}"
     )
     points.append(
         {
-            "position": position + 1, # Fake starting with 1
+            "position": position + 1,  # Fake starting with 1
             "value": value,
-            "center": rbf.actual_center,
-            "color": colors[rbf.centers.index(rbf.actual_center)],
+            "concept_center": rbf.concept_center,
+            "activated_center": rbf.activated_center,
+            "probability": probability,
+            "color": colors[rbf.centers.index(rbf.activated_center)],
         }
     )
 
+    if rbf.in_warning_zone:
+        warnings_zones_positions.append(position + 1)  # Fake start with 1
+
     if rbf.in_concept_change:
         # print(rbf.markov.to_graphviz())
-        concept_drifts_positions.append(position + 1) # Fake start with 1
+        concept_drifts_positions.append(position + 1)  # Fake start with 1
 
+    #
+    # plot
+    #
     for point in points:
         plots[position].plot(
             point["position"],
@@ -73,10 +88,19 @@ for position, value in enumerate(dataset):
             linestyle="solid",
             color=point["color"],
         )
-        plots[position].set_title(f"T{point['position']} | V={point['value']} | C={point['center']}")
+        plots[position].set_title(
+            f"T{point['position']} | E={point['value']} | CC={point['concept_center']} | CA={point['activated_center']}"
+        )
+
+    for warning_position in warnings_zones_positions:
+        plots[position].axvline(
+            x=warning_position, linewidth=0.12, linestyle="-", color="y"
+        )
 
     for drift_position in concept_drifts_positions:
         plots[position].axvline(x=drift_position, linewidth=0.25, color="r")
+
+    rbf.markov.to_png(f"img/T{position + 1}")  # Fake start with 1
 
 # Plot
 plt.show(block=True)

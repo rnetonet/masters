@@ -4,50 +4,51 @@ import math
 from graphviz import Digraph
 from skmultiflow.drift_detection.base_drift_detector import BaseDriftDetector
 
+
 class MarkovChain:
     def __init__(self):
         self.system = {}
-        self.current_origin = None
-        self.current_destination = None
+
+    def get_probability(self, origin, destination):
+        if not isinstance(origin, str):
+            origin = f"{origin:.2f}"
+        if not isinstance(destination, str):
+            destination = f"{destination:.2f}"
+        return self.system[origin].get(destination, 0)
 
     def update(self, origin, destination, alpha):
         origin = f"{origin:.2f}"
         destination = f"{destination:.2f}"
 
-        if origin != destination or (
-            not self.current_origin and not self.current_destination
-        ):
-            self.current_origin = origin
-            self.current_destination = destination
+        if not self.system.get(origin):
+            self.system[origin] = {}
 
-        if self.current_origin not in self.system:
-            self.system[self.current_origin] = {}
+        if not self.system[origin].get(destination):
+            self.system[origin][destination] = 0.0
 
-        # if self.current_destination not in self.system[self.current_origin] and not self.system[self.current_origin]:
-        #     self.system[self.current_origin][self.current_destination] = 1.0
+        # Increment
+        self.system[origin][destination] += alpha
 
-        if self.current_destination not in self.system[self.current_origin]:
-            self.system[self.current_origin][self.current_destination] = 0.0
+        # Decrement
+        if len(self.system[origin]) > 1:
+            reduction_factor = alpha / (len(self.system[origin]) - 1)
+            for possible_destination in self.system[origin]:
+                if possible_destination != destination:
+                    self.system[origin][possible_destination] -= reduction_factor
 
-        for possible_destination in self.system[self.current_origin]:
-            if possible_destination == self.current_destination:
-                self.system[self.current_origin][possible_destination] += alpha
-                if self.system[self.current_origin][possible_destination] > 1:
-                    self.system[self.current_origin][possible_destination] = 1
-            else:
-                reduction_factor = alpha / (len(self.system[self.current_origin]) - 1)
-                self.system[self.current_origin][
-                    possible_destination
-                ] -= reduction_factor
-                if self.system[self.current_origin][possible_destination] < 0:
-                    self.system[self.current_origin][possible_destination] = 0
+        # Adjust
+        for possible_destination in self.system[origin]:
+            if self.system[origin][possible_destination] > 1:
+                self.system[origin][possible_destination] = 1
+            elif self.system[origin][possible_destination] < 0:
+                self.system[origin][possible_destination] = 0
 
-        return self.system[self.current_origin][self.current_destination]
+        return self.system[origin][destination]
 
     def to_graphviz(self):
         dot = Digraph(comment="RBF")
 
-        dot.attr(dpi="600")
+        dot.attr(dpi="100")
 
         dot.attr("node", fontsize="8")
         dot.attr("edge", fontsize="8")
@@ -68,6 +69,11 @@ class MarkovChain:
                 )
 
         return dot
+
+    def to_png(self, filename="markov"):
+        dot = self.to_graphviz()
+        dot.format = "png"
+        return dot.render(filename)
 
 
 class RBF(BaseDriftDetector):
@@ -96,10 +102,10 @@ class RBF(BaseDriftDetector):
         self.alpha = alpha
         self.delta = delta
 
-        self.actual_center = None
         self.centers = []
         self.sample_count = 0
-        self.last_concept_center = None
+        self.activated_center = None
+        self.concept_center = None
 
         self.markov = MarkovChain()
 
@@ -112,11 +118,10 @@ class RBF(BaseDriftDetector):
 
         """
         super().reset()
-        self.sample_count = 1
-        self.last_concept_center = None
 
-        # Reset or not the markov
-        # self.markov = MarkovChain()
+        self.sample_count = 1
+        self.activated_center = None
+        self.concept_center = None
 
     def add_element(self, input_data):
         """ Add a new element to the statistics
@@ -125,8 +130,6 @@ class RBF(BaseDriftDetector):
         ----------
         prediction: float
         """
-        # self.in_warning_zone = False
-
         if self.in_concept_change:
             self.reset()
 
@@ -135,47 +138,35 @@ class RBF(BaseDriftDetector):
         activation = 0.0
         activation_lambda = self.lambda_
         distance = 0.0
-        activated_center = None
 
+        self.activated_center = None
         for center in self.centers:
             distance = math.sqrt(math.pow(input_data - center, 2.0))
             activation = math.exp(-math.pow(self.sigma * distance, 2))
 
             if activation >= activation_lambda:
-                activated_center = center
+                self.activated_center = center
                 activation_lambda = activation
 
-        if not activated_center:
+        if self.activated_center is None:
             self.centers.append(input_data)
-            activated_center = input_data
+            self.activated_center = input_data
 
-        if self.actual_center is None:
-            self.actual_center = activated_center
+        # First concept ?
+        if not self.concept_center:
+            self.concept_center = self.activated_center
 
         # Update markov
         probability = self.markov.update(
-            self.actual_center, activated_center, self.alpha
+            self.concept_center, self.activated_center, self.alpha
         )
 
-        if probability >= self.delta:
-            if not self.last_concept_center:
-                self.last_concept_center = activated_center
-            elif self.last_concept_center != activated_center:
+        if self.activated_center != self.concept_center:
+            if probability < self.delta:
+                self.in_warning_zone = True
+            else:
                 self.in_concept_change = True
-                self.last_concept_center = activated_center
-
-        # # If center changed
-        # if self.actual_center != activated_center:
-
-        #     if probability >= self.delta:
-        #         self.in_concept_change = True
-        #     else:
-        #         self.in_warning_zone = True
-
-        # Update actual center
-        self.actual_center = activated_center
-
-        # if probability >= self.delta and self.in_warning_zone:
-        #         self.in_concept_change = True
+                self.in_warning_zone = False
+                self.concept_center = self.activated_center
 
         return probability

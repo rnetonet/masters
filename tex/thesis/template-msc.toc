@@ -20,14 +20,14 @@
 \contentsline {section}{\numberline {3.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{23}{section.3.1}
 \contentsline {section}{\numberline {3.2}Vis\IeC {\~a}o Geral}{23}{section.3.2}
 \contentsline {section}{\numberline {3.3}RBFChain}{25}{section.3.3}
-\contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{26}{section.3.4}
-\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos e Resultados}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{27}{section.4.2}
-\contentsline {section}{\numberline {4.3}Crit\IeC {\'e}rios de avalia\IeC {\c c}\IeC {\~a}o}{28}{section.4.3}
-\contentsline {section}{\numberline {4.4}P\element {ettitt}}{29}{section.4.4}
-\contentsline {section}{\numberline {4.5}RBFC\element {hain}}{30}{section.4.5}
-\contentsline {section}{\numberline {4.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{34}{section.4.6}
-\contentsline {chapter}{Cap\'{\i }tulo~5---Conclus\IeC {\~o}es e Trabalhos Futuros}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Discuss\IeC {\~o}es}{35}{section.5.1}
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{35}{section.5.2}
+\contentsline {section}{\numberline {3.4}Considera\IeC {\c c}\IeC {\~o}es Finais}{27}{section.3.4}
+\contentsline {chapter}{Cap\'{\i }tulo~4---Experimentos e Resultados}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Considera\IeC {\c c}\IeC {\~o}es Iniciais}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}Configura\IeC {\c c}\IeC {\~a}o dos Experimentos}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}Crit\IeC {\'e}rios de avalia\IeC {\c c}\IeC {\~a}o}{30}{section.4.3}
+\contentsline {section}{\numberline {4.4}P\element {ettitt}}{31}{section.4.4}
+\contentsline {section}{\numberline {4.5}RBFC\element {hain}}{32}{section.4.5}
+\contentsline {section}{\numberline {4.6}Considera\IeC {\c c}\IeC {\~o}es Finais}{36}{section.4.6}
+\contentsline {chapter}{Cap\'{\i }tulo~5---Conclus\IeC {\~o}es e Trabalhos Futuros}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Discuss\IeC {\~o}es}{37}{section.5.1}
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{37}{section.5.2}
