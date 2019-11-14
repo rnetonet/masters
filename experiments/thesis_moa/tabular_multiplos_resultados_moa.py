@@ -52,9 +52,6 @@ for key in map_path_dataset:
         dataset = map_path_dataset[dataset_key]
         break
 
-# Output dataframe
-output_df = pd.DataFrame()
-
 # Processing
 for file in files:
     file_absolute_path = os.path.abspath(os.path.join(path, file))
@@ -71,8 +68,9 @@ for file in files:
     output_table_row["Mudanças Existentes"] = df.iloc[-1]["true changes"]
     output_table_row["Mudanças Detectadas"] = df.iloc[-1]["detected changes"]
     output_table_row["Falso-positivos"] = output_table_row["Mudanças Detectadas"] - output_table_row["Mudanças Existentes"] if output_table_row["Mudanças Detectadas"] - output_table_row["Mudanças Existentes"] > 0 else 0
+    output_table_row["Atraso de Detecção"] = df.iloc[-1]["delay detection (average)"]
 
-
-import prettyprinter
-prettyprinter.pprint(output_table)
-
+# Printing
+print(f"{dataset_key:^80}")
+for table in output_table:
+    print(table)
