@@ -1,0 +1,9 @@
+// RBF
+digraph {
+	dpi=100
+	node [fontsize=8]
+	edge [fontsize=8]
+	edge [labelfloat=false]
+	0.17
+	0.17 -> 0.17 [label=0.25 constraint=false]
+}
