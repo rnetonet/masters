@@ -2,12 +2,14 @@ import os
 import os.path
 import sys
 
+import matplotlib
+
+matplotlib.use("TKAgg", warn=False, force=True)
+
+from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
-# Legends
-from matplotlib.lines import Line2D
 
 path = sys.argv[1]
 files = os.listdir(path)

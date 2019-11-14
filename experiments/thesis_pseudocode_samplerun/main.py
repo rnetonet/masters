@@ -89,7 +89,7 @@ for position, value in enumerate(dataset):
             color=point["color"],
         )
         plots[position].set_title(
-            f"T{point['position']} | E={point['value']} | CC={point['concept_center']} | CA={point['activated_center']}"
+            f"T{point['position']} | E={point['value']} | GA={point['activated_center']} | GC={point['concept_center']}"
         )
 
     for warning_position in warnings_zones_positions:
