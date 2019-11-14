@@ -1,6 +1,7 @@
 # tabular_multiplos_resultados_moa.py
 import os
 import os.path
+import re
 import sys
 
 import pandas as pd
@@ -27,11 +28,11 @@ map_path_dataset = {
 
 output_row_template = {
     "Algoritmo": None,
-    "Tempo de processamento": None,
-    "Mudanças Existentes": None,
-    "Mudanças Detectadas": None,
-    "Falso-positivos": None,
-    "Atraso de Detecção": None,
+    "TP": None,
+    "MR": None,
+    "VP": None,
+    "FP": None,
+    "ATR": None,
 }
 
 output_table = {
@@ -64,13 +65,56 @@ for file in files:
     output_table_row = output_table[filename]
 
     output_table_row["Algoritmo"] = algorithm
-    output_table_row["Tempo de processamento"] = df.iloc[-1]["evaluation time (cpu seconds)"] / df["evaluation time (cpu seconds)"].size
-    output_table_row["Mudanças Existentes"] = df.iloc[-1]["true changes"]
-    output_table_row["Mudanças Detectadas"] = df.iloc[-1]["detected changes"]
-    output_table_row["Falso-positivos"] = output_table_row["Mudanças Detectadas"] - output_table_row["Mudanças Existentes"] if output_table_row["Mudanças Detectadas"] - output_table_row["Mudanças Existentes"] > 0 else 0
-    output_table_row["Atraso de Detecção"] = df.iloc[-1]["delay detection (average)"]
+    output_table_row["TP"] = float(
+        df.iloc[-1]["evaluation time (cpu seconds)"]
+        / df["evaluation time (cpu seconds)"].size
+    )
+    output_table_row["MR"] = int(df.iloc[-1]["true changes"])
+    output_table_row["VP"] = int(df.iloc[-1]["detected changes"])
+
+    if (
+        output_table_row["VP"]
+        - output_table_row["MR"]
+        > 0
+    ):
+        output_table_row["FP"] = (
+            output_table_row["VP"]
+            - output_table_row["MR"]
+        )
+    else:
+        output_table_row["FP"] = 0
+
+    try:
+        output_table_row["ATR"] = float(
+            df.iloc[-1]["delay detection (average)"]
+        )
+    except ValueError:
+        output_table_row["ATR"] = 0
 
 # Printing
-print(f"{dataset_key:^80}")
-for table in output_table:
-    print(table)
+print("*" * 80)
+print(f"*** {dataset_key:^72} ***")
+print("*" * 80)
+print()
+print()
+
+print("\\toprule")
+
+headers = []
+for header in output_row_template.keys():
+    headers.append(f"{header:<22}")
+
+print(" & ".join(headers), end=" \\\\ ")
+print()
+
+print("\\midrule")
+for filename in output_table:
+    output_table_row = output_table[filename]
+    print(f"{output_table_row['Algoritmo']:<22}", end=" & ")
+    print(f"{output_table_row['TP']:<22.3f}", end=" & ")
+    print(f"{output_table_row['MR']:<22}", end=" & ")
+    print(f"{output_table_row['VP']:<22}", end=" & ")
+    print(f"{output_table_row['FP']:<22}", end=" & ")
+    print(f"{output_table_row['ATR']:<22.2f}", end=" \\\\ ")
+    print()
+print("\\bottomrule")

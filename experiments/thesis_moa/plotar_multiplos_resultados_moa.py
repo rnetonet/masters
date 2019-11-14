@@ -118,4 +118,4 @@ fig.legend(
 
 # Showing and saving
 plt.show()
-fig.savefig(dataset_key + ".pdf")
+fig.savefig(dataset_key + ".png")
