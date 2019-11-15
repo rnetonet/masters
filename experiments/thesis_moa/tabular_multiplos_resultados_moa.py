@@ -28,14 +28,14 @@ map_path_dataset = {
 
 output_row_template = {
     "Algoritmo": None,
-    "TP": None,
-    "MR": None,
-    "VP": None,
-    "FP": None,
-    "ATR": None,
+    "TP": 0.0,
+    "MR": 0.0,
+    "VP": 0,
+    "FP": 0,
+    "ATR": 0.0,
 }
 
-output_table = {
+table = {
     filename: output_row_template.copy() for filename in map_filename_algorithm.keys()
 }
 
@@ -62,34 +62,37 @@ for file in files:
 
     df = pd.read_csv(file_absolute_path)
 
-    output_table_row = output_table[filename]
+    table_row = table[filename]
 
-    output_table_row["Algoritmo"] = algorithm
-    output_table_row["TP"] = float(
+    table_row["Algoritmo"] = algorithm
+    table_row["TP"] = float(
         df.iloc[-1]["evaluation time (cpu seconds)"]
         / df["evaluation time (cpu seconds)"].size
     )
-    output_table_row["MR"] = int(df.iloc[-1]["true changes"])
-    output_table_row["VP"] = int(df.iloc[-1]["detected changes"])
-
-    if (
-        output_table_row["VP"]
-        - output_table_row["MR"]
-        > 0
-    ):
-        output_table_row["FP"] = (
-            output_table_row["VP"]
-            - output_table_row["MR"]
-        )
-    else:
-        output_table_row["FP"] = 0
-
+    table_row["MR"] = int(df.iloc[-1]["true changes"])
     try:
-        output_table_row["ATR"] = float(
-            df.iloc[-1]["delay detection (average)"]
-        )
+        table_row["ATR"] = float(df.iloc[-1]["delay detection (average)"])
     except ValueError:
-        output_table_row["ATR"] = 0
+        table_row["ATR"] = 0
+
+    # Counting VP and FP
+    true_changes = 0
+    detected_changes = 0
+    pending_drift = False
+
+    for index, row in df.iterrows():
+        if row["true changes"] > true_changes:
+            true_changes += 1
+            pending_drift = True
+
+        if row["detected changes"] > detected_changes:
+            detected_changes += 1
+
+            if pending_drift:
+                table_row["VP"] += 1
+                pending_drift = False
+            else:
+                table_row["FP"] += 1
 
 # Printing
 print("*" * 80)
@@ -108,13 +111,13 @@ print(" & ".join(headers), end=" \\\\ ")
 print()
 
 print("\\midrule")
-for filename in output_table:
-    output_table_row = output_table[filename]
-    print(f"{output_table_row['Algoritmo']:<22}", end=" & ")
-    print(f"{output_table_row['TP']:<22.3f}", end=" & ")
-    print(f"{output_table_row['MR']:<22}", end=" & ")
-    print(f"{output_table_row['VP']:<22}", end=" & ")
-    print(f"{output_table_row['FP']:<22}", end=" & ")
-    print(f"{output_table_row['ATR']:<22.2f}", end=" \\\\ ")
+for filename in table:
+    row = table[filename]
+    print(f"{row['Algoritmo']:<22}", end=" & ")
+    print(f"{row['TP']:<22.3f}", end=" & ")
+    print(f"{row['MR']:<22}", end=" & ")
+    print(f"{row['VP']:<22}", end=" & ")
+    print(f"{row['FP']:<22}", end=" & ")
+    print(f"{row['ATR']:<22.2f}", end=" \\\\ ")
     print()
 print("\\bottomrule")
