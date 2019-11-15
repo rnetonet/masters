@@ -71,9 +71,10 @@ for file in files:
     )
     table_row["MR"] = int(df.iloc[-1]["true changes"])
     try:
-        table_row["ATR"] = float(df.iloc[-1]["delay detection (average)"])
-    except ValueError:
-        table_row["ATR"] = 0
+        assert float(df.iloc[-1]['delay detection (average)']) > 0.0
+        table_row["ATR"] = f"{float(df.iloc[-1]['delay detection (average)']):.2f}"
+    except (ValueError, AssertionError):
+        table_row["ATR"] = "---"
 
     # Counting VP and FP
     true_changes = 0
@@ -118,6 +119,6 @@ for filename in table:
     print(f"{row['MR']:<22}", end=" & ")
     print(f"{row['VP']:<22}", end=" & ")
     print(f"{row['FP']:<22}", end=" & ")
-    print(f"{row['ATR']:<22.2f}", end=" \\\\ ")
+    print(f"{row['ATR']:<22}", end=" \\\\ ")
     print()
 print("\\bottomrule")

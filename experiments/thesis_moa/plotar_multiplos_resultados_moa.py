@@ -87,7 +87,7 @@ for file in files:
         data.append(row["input values"])
 
         if row["true changes"] > true_changes:
-            ax.axvline(index - 25, color="g", ls="-", linewidth=1)
+            ax.axvline(index, color="g", ls="-", linewidth=1)
             true_changes += 1
             pending_drift = True
 

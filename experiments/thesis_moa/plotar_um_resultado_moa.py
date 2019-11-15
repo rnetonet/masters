@@ -44,7 +44,7 @@ for index, row in df.iterrows():
 
     if row["detected changes"] > detected_changes:
         if not pending_drift:
-            plt.axvline(index, color="r", ls="--", linewidth=0.25, alpha=0.1)
+            plt.axvline(index, color="r", ls="--", linewidth=1)
         else:
             plt.axvline(index, color="b", ls="--", linewidth=1)
             pending_drift = False
