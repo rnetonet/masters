@@ -23,8 +23,8 @@ plotVel=true;
 plotAcc=false;
 %logDir='ded014a04';
 %logDir='Data/ded00800';
-%logDir='Data/ded005a06';
-logDir='Data/juj003b06';
+%logDir='data/ded005a06/';
+logDir='data/juj003b06';
 
 %% Retrieve eye tracking data
 [xData,yData,pupData,info] = parseLogsEyetracking(logDir,false,false);
@@ -35,7 +35,7 @@ end
 %% Wen plotting some figures, pick your trial(s) numbers here, for instance [10] for trial 10, [10:15] for trials from 10 to 15
 %% If not, set the condition to true, and it will process them all (you should remove the plotting options above in that case)
 if true
-      eyedatTrial=[10];
+      eyedatTrial=[46]; % 4 dede, 46 juju
 else
     eyedatTrial=1:info.nbTrials;
 end
@@ -117,16 +117,28 @@ if plotSac == true
         hold on
         plot(xy(1,:),xy(2,:),'g'); %green for saccades
         for ii = 1:length(fixationtimes);
+            disp(ii);
+            disp(fixationtimes(1,ii));
+            disp(fixationtimes(2,ii));
+            disp(xy(1,fixationtimes(1,ii):fixationtimes(2,ii)));
+            
             plot(xy(1,fixationtimes(1,ii):fixationtimes(2,ii)),...
                 xy(2,fixationtimes(1,ii):fixationtimes(2,ii)),'r'); %red for fixations
             plot(fixations(1,ii),fixations(2,ii),'k*'); %plot mean fixation location
         end
-        legend('Saccades','Fixations')
+        
+        csvwrite("fixations.txt", fixations);
+        csvwrite("fixationtimes.txt", fixationtimes);
+        csvwrite("xy.txt", xy);
+        
+        legend('Sacadas','Fixações')
+        legend('Location','best')
+        
         %axis([-35000 35000 -35000 35000]);
         axis square
-        titleFig=['Saccades (' logDir ' - trial ' num2str(eyedatTrial(i)) ')'] ;
-        t=title(titleFig);
-        set(t,'Interpreter','none');
+        %titleFig=['Saccades (' logDir ' - trial ' num2str(eyedatTrial(i)) ')'] ;
+        %t=title(titleFig);
+        %set(t,'Interpreter','none');
         
         %% SaveFig
         hold off

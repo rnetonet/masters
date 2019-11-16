@@ -1,0 +1,4 @@
+Record name: ded005a06N of trials: 40Trial length: 6200N of spike channels: 3N of spikewave channels: 3N of analog channels: 7
+Spike channels: 1, 2, 3
+Spikewave channels: 1, 2, 3
+Analog channels: 1, 2, 3, 4, 5, 6, 7

@@ -32,6 +32,7 @@ output_row_template = {
     "MR": 0.0,
     "VP": 0,
     "FP": 0,
+    "ACC": 0.0,
     "ATR": 0.0,
 }
 
@@ -95,6 +96,10 @@ for file in files:
             else:
                 table_row["FP"] += 1
 
+    # Calculating ACC
+    if (table_row["VP"] - table_row["FP"]) > 0 and table_row["MR"] > 0:
+        table_row["ACC"] = (table_row["VP"] - table_row["FP"]) / table_row["MR"]
+
 # Printing
 print("*" * 80)
 print(f"*** {dataset_key:^72} ***")
@@ -119,6 +124,15 @@ for filename in table:
     print(f"{row['MR']:<22}", end=" & ")
     print(f"{row['VP']:<22}", end=" & ")
     print(f"{row['FP']:<22}", end=" & ")
+    print(f"{row['ACC']:<22.2f}", end=" & ")
     print(f"{row['ATR']:<22}", end=" \\\\ ")
     print()
 print("\\bottomrule")
+
+print()
+
+accuracies = []
+for filename in table:
+    row = table[filename]
+    accuracies.append(f"{row['ACC']:.2f}")
+print(", ".join(accuracies))

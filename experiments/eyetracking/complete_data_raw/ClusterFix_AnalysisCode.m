@@ -34,7 +34,7 @@ if false
     fixedDurationPlot=true;
 else
     freq=1000;
-    [xData,yData,pupData,info] = parseLogsEyetracking('ded014a04',false,false);
+    [xData,yData,pupData,info] = parseLogsEyetracking('data/ded005a06/',false,false);
     for i=1:info.nbTrials
         eyedat{i}=double(vertcat(xData(i,:),yData(i,:)));
     end
@@ -77,6 +77,7 @@ for i = 1:length(fixationstats);
     fixationtimes = fixationstats{i}.fixationtimes;
     xy = fixationstats{i}.XY;
     
+
     x = xy(1,:);
     y = xy(2,:);
     x = [x(20:-1:1) x x(end:-1:end-20)]; %add 20 ms buffer for filtering
@@ -159,17 +160,17 @@ end
 % Run to line 131: Clusters consolidated into fixations (red) vs saccades (green)
 
 %uses weird variable names because in debug mode and to not overwrite important variables
-ia = 'rgbmk';
-figure
-hold on
-for TIND = 1:max(T);
-    plot3(points((T == TIND),2),points((T == TIND),3),points((T == TIND),4),...
-        [ia(TIND)  '.'],'markersize',6); %points((T == TIND),1) will plot distance
-end
-xlabel('velocity')
-ylabel('acceleration')
-zlabel('Angular Velocity')
-view(-7,32)
+%ia = 'rgbmk';
+%figure
+%hold on
+%for TIND = 1:max(T);
+%    plot3(points((T == TIND),2),points((T == TIND),3),points((T == TIND),4),...
+%        [ia(TIND)  '.'],'markersize',6); %points((T == TIND),1) will plot distance
+%end
+%xlabel('velocity')
+%ylabel('acceleration')
+%zlabel('Angular Velocity')
+%view(-7,32)
 %% [6] Plot Scan Path by global cluster
 % Plots scan path (x's and y's) for global clustering results prior to local re-clustering
 % Run ClusterFix in debug mode with a break point at line 110 or line 131

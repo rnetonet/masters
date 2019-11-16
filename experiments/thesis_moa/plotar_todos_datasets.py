@@ -7,6 +7,8 @@ import matplotlib
 matplotlib.use("TKAgg", warn=False, force=True)
 
 import matplotlib.pyplot as plt
+plt.style.use('seaborn-white')
+
 import pandas as pd
 from scipy.io import arff
 
@@ -43,12 +45,13 @@ class DatasetPlotter:
             self._setup_ax(arff_file_name)
 
         plt.show()
+        self.fig.savefig("conjuntos_dados_sinteticos" + ".png", bbox_inches='tight', pad_inches=0.1)
 
     def _setup_figure(self):
-        font = {"family": "monospace", "size": 9}
-        plt.rc("font", **font)
-        plt.rc("text", usetex=True)
-        plt.rc("font", family="serif")
+        # font = {"family": "monospace", "size": 9}
+        # plt.rc("font", **font)
+        # plt.rc("text", usetex=True)
+        # plt.rc("font", family="serif")
 
         self.fig, self.axs = plt.subplots(2, 2)
         self.fig.subplots_adjust(hspace=0.3, wspace=0.1)

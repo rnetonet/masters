@@ -8,6 +8,8 @@ matplotlib.use("TKAgg", warn=False, force=True)
 
 from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
+plt.style.use('seaborn-white')
+
 import numpy as np
 import pandas as pd
 
@@ -54,14 +56,14 @@ for key in map_path_dataset:
         dataset = map_path_dataset[dataset_key]
         break
 
-# Setup matplotlib font size and figure title
-font = {"family": "monospace", "size": 8}
-plt.rc("font", **font)
-plt.rc("text", usetex=True)
-plt.rc("font", family="serif")
+# # Setup matplotlib font size and figure title
+# font = {"family": "monospace", "size": 8}
+# plt.rc("font", **font)
+# plt.rc("text", usetex=True)
+# plt.rc("font", family="serif")
 
 fig = plt.figure()
-fig.suptitle(dataset, fontsize=12)
+# fig.suptitle(dataset, fontsize=12)
 fig.subplots_adjust(hspace=0.5, wspace=0.2)
 
 # For each experiment result, add subplot
@@ -99,7 +101,7 @@ for file in files:
                 pending_drift = False
             detected_changes += 1
 
-    ax.plot(range(0, len(data)), data, color="#D3D3D3", linestyle="-", linewidth=0.25)
+    ax.plot(range(0, len(data)), data, color="#D3D3D3", linestyle="-", linewidth=0.25, alpha=0.5)
 
 # Legend
 custom_legends = [
@@ -118,4 +120,4 @@ fig.legend(
 
 # Showing and saving
 plt.show()
-fig.savefig(dataset_key + ".png")
+fig.savefig(dataset_key + ".png", bbox_inches='tight', pad_inches=0.1)

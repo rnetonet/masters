@@ -1,0 +1,4 @@
+Record name: juj003b06N of trials: 80Trial length: 4700N of spike channels: 3N of spikewave channels: 3N of analog channels: 6
+Spike channels: 1, 2, 4
+Spikewave channels: 1, 2, 4
+Analog channels: 1, 2, 4, 5, 6, 7
