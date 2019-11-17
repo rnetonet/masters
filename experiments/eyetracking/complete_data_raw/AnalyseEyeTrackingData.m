@@ -132,7 +132,7 @@ if plotSac == true
         csvwrite("xy.txt", xy);
         
         legend('Sacadas','Fixações')
-        legend('Location','best')
+        legend('Location','southoutside')
         
         %axis([-35000 35000 -35000 35000]);
         axis square

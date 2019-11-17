@@ -6,8 +6,7 @@ import matplotlib
 matplotlib.use("TKAgg", warn=False, force=True)
 
 import matplotlib.pyplot as plt
-
-plt.style.use("seaborn-white")
+plt.style.use('seaborn-white')
 
 import numpy as np
 from matplotlib.animation import FuncAnimation
@@ -60,11 +59,20 @@ filepaths = {
     ),
 }
 
-clusterfixs = {"dede": dede_clusterfix, "juju": juju_clusterfix}
+clusterfixs = {
+    "dede": dede_clusterfix,
+    "juju": juju_clusterfix
+}
 
 plot_limits = {
-    "dede": {"xlim": (0, 3.5), "ylim": (-2.5, 0)},
-    "juju": {"xlim": (-1, 2.5), "ylim": (-3.5, 0)},
+    "dede": {
+        "xlim": (0, 3.5),
+        "ylim": (-2.5, 0)
+    },
+    "juju": {
+        "xlim": (-1, 2.5),
+        "ylim": (-3.5, 0)
+    },
 }
 
 # --
@@ -129,20 +137,22 @@ fig.gca().set_title(dataset + " - " + feature)
 
 # Datasets
 xdata, ydata = [], []
-fixations_x, fixations_y = [], []
-fixations_times = []
+start_x, start_y = [], []
+end_x, end_y = [], []
 
 # Lines/Points
 ln, = plt.plot(xdata, ydata, "-", color=(0, 1, 0), linewidth=0.5)
-fixations, = plt.plot(fixations_x, fixations_y, "ro", markersize=0.25)
+start, = plt.plot(start_x, start_y, marker="$Início$", color="red", markersize=20)
+end, = plt.plot(end_x, end_y, marker="$Fim$", color="gold", markersize=20)
 
 custom_legends = [
     Line2D([0], [0], color=(0, 1, 0), ls="-", linewidth=1),
     Line2D([0], [0], color="r", ls="-", linewidth=1),
+    Line2D([0], [0], color="gold", ls="-", linewidth=1),
 ]
 fig.legend(
     custom_legends,
-    ["Sacadas", "Fixações"],
+    ["Trajetória", "Início", "Fim"],
     ncol=1,
     borderaxespad=0,
     loc="lower center",
@@ -152,7 +162,6 @@ fig.legend(
 font = {"size": 8}
 plt.rc("font", **font)
 plt.rc("text", usetex=True)
-
 
 def init():
     fig.gca().set_xlim(*plot_limits[dataset]["xlim"])
@@ -164,15 +173,6 @@ def init():
 # Detecting fixations and updating canvas
 # --
 def handle(frame_index):
-    input_data = features[feature]["data"][frame_index]
-
-    # Ignore zeros
-    if not input_data:
-        return (ln, fixations)
-
-    # Add to the rbf
-    probability = rbf.add_element(input_data)
-
     # Scale down
     scale_factor = 10 ** 4
     scaled_x = x[frame_index] / scale_factor
@@ -182,60 +182,17 @@ def handle(frame_index):
     ydata.append(scaled_y)
     ln.set_data(xdata, ydata)
 
-    # Is it a fixation ?
-    if probability >= rbf.delta:
-        fixations_x.append(scaled_x)
-        fixations_y.append(scaled_y)
-        fixations_times.append(frame_index + 1)
-        fixations.set_data(fixations_x, fixations_y)
+    start_x, start_y = [xdata[0]], [ydata[0]]
+    start.set_data(start_x, start_y)
 
-    return (ln, fixations)
+    end_x, end_y = [xdata[-1]], [ydata[-1]]
+    end.set_data(end_x, end_y)
+
+    return (ln, start, end)
 
 
 ani = FuncAnimation(
-    fig,
-    handle,
-    frames=len(x),
-    init_func=init,
-    interval=0.000000001,
-    blit=True,
-    repeat=False,
+    fig, handle, frames=len(x), init_func=init, interval=0.000000001, blit=True, repeat=False
 )
 
 plt.show()
-
-# --
-# Validation against clusterfix data
-# --
-print(f"{'SUMMARY: ' + dataset:^80}")
-print(f"total_points={len(features[feature]['data'])}")
-print()
-
-fixations_times = set(sorted(fixations_times))
-fixation_times_intersection = list(fixations_times & clusterfix.fixations_times)
-
-print(f"{len(fixations_times)=}")
-print(f"{len(clusterfix.fixations_times)=}")
-print(f"{len(fixation_times_intersection)=}")
-print()
-
-# Metrics
-from sklearn import metrics
-
-y_true = [
-    1 if time in clusterfix.fixations_times else 0
-    for time in range(1, len(features[feature]["data"]) + 1)
-]
-y_pred = [
-    1 if time in fixations_times else 0
-    for time in range(1, len(features[feature]["data"]) + 1)
-]
-
-print(f"{metrics.accuracy_score(y_true, y_pred)=:.2f}")
-print()
-
-print(f"{metrics.precision_score(y_true, y_pred)=:.2f}")
-print()
-
-print(f"{metrics.recall_score(y_true, y_pred)=:.2f}")
-print()
