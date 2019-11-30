@@ -133,7 +133,7 @@ rbf = rbf.RBF(**features[feature]["kwargs"])
 fig = plt.figure()
 
 # Title
-fig.gca().set_title(dataset + " - " + feature)
+# fig.gca().set_title(dataset + " - " + feature)
 
 # Datasets
 xdata, ydata = [], []
@@ -142,17 +142,15 @@ end_x, end_y = [], []
 
 # Lines/Points
 ln, = plt.plot(xdata, ydata, "-", color=(0, 1, 0), linewidth=0.5)
-start, = plt.plot(start_x, start_y, marker="$Início$", color="red", markersize=20)
-end, = plt.plot(end_x, end_y, marker="$Fim$", color="gold", markersize=20)
+start, = plt.plot(start_x, start_y, marker="$Início$", color="black", markersize=30)
+end, = plt.plot(end_x, end_y, marker="$Fim$", color="black", markersize=30)
 
 custom_legends = [
     Line2D([0], [0], color=(0, 1, 0), ls="-", linewidth=1),
-    Line2D([0], [0], color="r", ls="-", linewidth=1),
-    Line2D([0], [0], color="gold", ls="-", linewidth=1),
 ]
 fig.legend(
     custom_legends,
-    ["Trajetória", "Início", "Fim"],
+    ["Trajetória", ],
     ncol=1,
     borderaxespad=0,
     loc="lower center",
