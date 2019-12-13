@@ -39,7 +39,7 @@
 \usepackage{pifont}
 \usepackage{multirow}
 \usepackage{listings}
-\usepackage[portuguese, noend, plain]{algorithm2e}
+\usepackage[portuguese, noend, plain, linesnumbered]{algorithm2e}
 \usepackage{colortbl}
 \usepackage{xfrac}
 \usepackage[FIGTOPCAP]{subfigure}
@@ -54,7 +54,7 @@
 \usepackage{amssymb}
 \usepackage{placeins}
 \usepackage{arydshln}
-\usepackage{lscape}
+\usepackage{pdflscape}
 
 \presetkeys%
     {todonotes}%
@@ -77,6 +77,7 @@
 \acrodef{DE}[DE] {{Distância Euclidiana}}
 \acrodef{FCD}[FCD] {{\textit {Fluxo de Dados Contínuos}}}
 \acrodef{DN}[DN] {{\textit {Detecção de Novidade}}}
+\acrodef{RBF}[RBF] {{\textit {Rede de Função de Base Radial}}}
 
 % Universidade
 \university{Universidade Federal da Bahia}
@@ -101,7 +102,7 @@
 
 % Data da defesa
 % e.g. \date{19 de fevereiro de 2013}
-\date{13 de Dezembro de 2019}
+\date{16 de Dezembro de 2019}
 % e.g. \defenseyear{2013}
 \defenseyear{2019}
 
@@ -187,10 +188,10 @@ Estas alterações são denominadas mudanças de conceito e podem impactar negat
 Para mitigar este problema, pesquisadores vêm desenvolvendo métodos especializados na detecção de mudanças de conceito.
 Entretanto, os métodos propostos apresentam limitações ao serem aplicados em alguns cenários de fluxos contínuos como, por exemplo,
 a necessidade de rotulação por especialistas e a incapacidade de atender às restrições de tempo de processamento e de uso dos recursos computacionais desses cenários.
-Visando superar essas limitações, este trabalho apresenta um novo método de detecção de mudança de conceito, denominado RBFChain, baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov.
+Visando superar essas limitações, este trabalho apresenta um novo método de detecção de mudanças de conceito, denominado RBFChain, baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov.
 Resumidamente, as redes RBF realizam, em sua camada intermediária, um processo de ativação que, implicitamente, produz grupos a partir das observações recebidas ao longo do tempo.
-De maneira complementar, as cadeias de Markov permitem modelar as transições de centro ocorridas em tais grupos de observações.
-Mudanças de conceito são, então, detectadas quando o centro ativo do agrupamento é alterado e a probabilidade da transição, no modelo markoviano, excede um limiar.
+De maneira complementar, as cadeias de Markov permitem modelar as transições entre esses grupos.
+Mudanças de conceito são, então, detectadas quando o grupo ativo é alterado e a probabilidade da transição, no modelo markoviano, excede um limiar.
 O método apresentado se diferencia dos trabalhos existentes por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 Para avaliar o método RBFChain como um detector de mudanças de conceito viável, uma análise de sensibilidade, precisão e tolerância ao ruído foi realizada usando conjuntos de dados sintéticos,
 e seus resultados foram comparados com os principais algoritmos disponíveis na literatura.
@@ -216,8 +217,8 @@ However, the proposed methods have limitations when applied in scenarios with da
 such as the need for expert labeling or the inability to meet the processing time and computational resource constraints of these scenarios.
 This work proposes a new detection method based on Radial Basis Function Networks (RBF) and Markov Chains, called RBFChain.
 RBF networks perform, in their intermediate layer, an activation process that implicitly produces groups of observations received over time.
-Simultaneously, the Markov Chain models the transitions between centers that occur in the formed cluster.
-Concept drifts are detected when the active center of the cluster changes, and the probability of this transition in the Markov model exceeds a threshold.
+Simultaneously, the Markov Chain models the transitions between groups in the formed cluster.
+Concept drifts are detected when the active group of the cluster changes, and the probability of this transition in the Markov model exceeds a threshold.
 The proposed method differs from existing works in that it detects changes at run time,  in a computationally efficient and independent of labels way.
 To assess RBFChain as a viable concept drift detector, an analysis of sensitivity, accuracy, and noise tolerance was performed using synthetic datasets, and results were compared to the main algorithms available in the literature.
 Also, the technique was applied to the fixation and saccade classification problem in eye-tracking: a relevant issue for different areas of knowledge, because many behavioral experiments use this information as an analysis factor.
@@ -266,7 +267,7 @@ Moreover, the developed method presented good results when applied to the eye-tr
 
 \section{Contexto e Motivação}
 
-Nos últimos anos, o volume de dados produzidos por sistemas computacionais tem crescido de forma acentuada.
+Nos últimos anos, o volume de dados produzidos por sistemas computacionais aumentou significativamente.
 %
 Esse crescimento foi favorecido por avanços tecnológicos recentes, como
 a pervasividade dos dispositivos móveis,
@@ -274,7 +275,7 @@ a popularização das redes sociais e
 a expansão da internet das coisas \cite{Cohen:BigData:2009:MSN:1687553.1687576}.
 %
 A dimensão desse aumento foi verificada por \citeonline{idc_report},
-os quais estimaram que, entre os anos de 2014 e 2020,
+cujo trabalho estima que, até 2020,
 a quantidade de informações produzidas anualmente irá aumentar de 4,4 zettabytes (trilhões de gigabytes) para 44 zettabytes.
 
 Parte significativa dessas informações é produzida na forma de sequências ininterruptas e potencialmente infinitas \cite{Aggarwal:2006:DSM:1196418}.
@@ -290,7 +291,7 @@ pesquisadores têm aplicado técnicas da área de Aprendizado de Máquina (AM),
 a qual estuda algoritmos que melhoram seu desempenho conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
 %
 Entretanto, as estratégias tradicionais de Aprendizado de Máquina têm aplicação limitada para contextos com fluxos contínuos de dados,
-pois nesses cenários os algoritmos devem atender às severas restrições de tempo de execução e de uso dos recursos computacionais \cite{bifet2009data}.
+pois nesses cenários os algoritmos devem atender a restrições de tempo de execução e de uso dos recursos computacionais \cite{bifet2009data}.
 
 Além dessas limitações,
 as técnicas de Aprendizado de Máquina,
@@ -300,11 +301,11 @@ também devem lidar com variações na distribuição dos dados ou no contexto d
 Essas alterações são denominadas Mudanças de Conceito \cite{Gama:2010:KDD:1855075} e
 a sua ocorrência pode impactar a acurácia do modelo.
 
-Inicialmente, a atualização periódica dos modelos obtidos a partir das técnicas de AM foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
+Inicialmente, a atualização periódica dos modelos foi utilizada como estratégia para evitar a perda de acurácia causada por tais mudanças.
 %
 Contudo, esta solução é pouco sofisticada e computacionalmente custosa.
 %
-Diante disso, pesquisadores propuseram técnicas de detecção de mudanças de conceito baseadas em monitoramento da performance do modelo \cite{Gama:2014:SCD:2597757.2523813}.
+Diante disso, pesquisadores propuseram técnicas de detecção de mudanças de conceito baseadas no monitoramento da performance do modelo \cite{Gama:2014:SCD:2597757.2523813}.
 %
 Estes métodos identificam a ocorrência de mudanças com maior precisão, permitindo que o modelo de decisão seja atualizado somente quando necessário.
 %
@@ -329,55 +330,43 @@ ECSMiner \cite{Masud:2011:CNC:1978259.1978529} e
 GC3 \cite{Sethi2016b:GC3}.
 
 Todavia, segundo \citeonline{Aggarwal:2006:DSM:1196418},
-as técnicas de detecção de mudanças de conceito presentes na literatura ainda apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
+as técnicas de detecção de mudanças de conceito presentes na literatura, ainda, apresentam limitações ao serem aplicadas em cenários com fluxos contínuos de dados.
 %
 Os algoritmos dependentes de rótulo se tornam inviáveis, por causa do custo e do tempo necessário para obter os rótulos corretos.
 %
-Enquanto as técnicas independentes têm dificuldade em atender às severas restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
+Enquanto as técnicas independentes têm dificuldade em atender às restrições de tempo de execução e de uso dos recursos computacionais desses cenários.
 
-Diante disso, esta dissertação de mestrado propõe uma nova abordagem baseada em Redes de Função de Base Radial (RBF) e Cadeias de Markov
-para detecção de mudanças de conceito em fluxos contínuos de dados.
-O método desenvolvido se diferencia dos trabalhos existentes por detectar mudanças de conceito em tempo de execução,
-de forma computacionalmente eficiente, tolerante a ruídos e independente de rótulos.
-
+Visando superar essas limitações, esta dissertação propõe um novo método de detecção de mudanças de conceito, denominado RBFChain, baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov.
+O método proposto se diferencia dos trabalhos existentes por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
+A técnica desenvolvida foi avaliada através de dois experimentos.
+O primeiro, analisou a acurácia e a performance do método utilizando dados sintéticos, e os resultados obtidos foram comparados com os principais algoritmos disponíveis na literatura.
+O segundo, aplicou a técnica a um problema real de classificação de fixações e sacadas na atividade de monitoramento ocular, um problema relevante que envolve a área de Neurociência e Computação.
 
 \section{Hipótese e Objetivo}
 
 Com base nas observações citadas anteriormente, a seguinte hipótese foi formulada:
 
 \begin{center}
-\textit{``A aplicação de Redes de Função de Base Radial e Cadeias de Markov em fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente, tolerante a ruídos e independente de rótulos.''}
+\textit{``A aplicação de Redes de Função de Base Radial e Cadeias de Markov em fluxos contínuos de dados permite a detecção de mudanças de conceito em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.''}
 \end{center}
 
-Assim, o objetivo principal deste trabalho foi a validação da hipótese elaborada.
+Assim, o objetivo principal deste trabalho é a validação dessa hipótese.
 Para atingir este objetivo, um novo método de detecção de mudanças de conceito, baseado em Redes de Função de Base Radial e Cadeias de Markov, foi desenvolvido.
-A técnica implementada foi validada através de dois experimentos principais, um com dados sintéticos e outro baseado em dados de um problema do mundo real.
+A técnica proposta foi validada através de dois experimentos.
 
-No primeiro experimento, a técnica foi aplicada a conjuntos de dados sintéticos e
-comparada aos principais métodos presentes na literatura.
-Este experimento permitiu validar a efetividade do método proposto e realizar uma análise detalhada da abordagem,
-uma vez que as características e os comportamentos dos fluxos são conhecidos.
+O primeiro experimento utilizou dados sintéticos para realizar uma análise detalhada de sensibilidade, precisão e tolerância ao ruído, confrontando o método proposto com os principais algoritmos disponíveis na literatura.
 
-No segundo experimento,
-o método foi adaptado para o problema de classificação de fixações e sacadas durante a atividade de monitoramento ocular.
-Este experimento permitiu demonstrar uma aplicação prática e relevante da solução proposta neste trabalho.
+O segundo experimento aplicou a técnica a um problema real de classificação de fixações e sacadas na atividade de monitoramento ocular, um relevante problema relacionado à área de Neurociência.
 
 \section{Contribuições}
 
-A principal contribuição desta dissertação consiste em um novo método para detecção de mudanças de conceito em fluxos contínuos de dados.
-O método desenvolvido é baseado em Redes de Função de Base Radial e Cadeias de Markov.
-As principais vantanges da técnica proposta em relação aos métodos existentes na literatura são:
+As principais contribuições desta dissertação são as seguintes:
 
 \begin{itemize}
-    \item Detecção de mudanças de conceito em tempo de execução;
-    \item Independência de rótulos;
-    \item Tolerância a ruídos;
-    \item Eficiência computacional.
+    \item Um novo método de detecção de mudanças de conceito, denominado RBFChain, baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov, que se diferencia por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos;
+    \item Uma nova abordagem, baseada em uma versão adaptada do RBFChain, para o problema real de classificação de fixações e sacadas em atividades de monitoramento ocular.
+    A abordagem proposta se diferencia por realizar a classificação em tempo de execução e apresentar acurácia semelhante ao estado da arte.
 \end{itemize}
-
-A contribuição secundária deste trabalho reside na adptação do método desenvolvido para classificação de fixações e sacadas na atividade de monitoramento ocular.
-Um problema relevante para diferentes áreas do conhecimento,
-pois muitos experimentos comportamentais usam essas informações como fator de análise.
 
 \section{Organização do trabalho}
 
@@ -385,25 +374,19 @@ O restante do texto está organizado da seguinte forma:
 %
 o Capítulo \ref{fundamentacao_teorica} apresenta o referencial teórico que fundamenta esta pesquisa e os trabalhos relacionados.
 A solução proposta é apresentada em detalhes no Capítulo \ref{rbfchain}.
-A configuração dos experimentos, a avaliação da proposta e os resultados alcançados são apresentados no Capítulo \ref{experimentos_iniciais}.
-Por fim, as conclusões obtidas e os trabalhos futuros são apresentados no Capítulo \ref{conclusoes_e_trabalhos_futuros}.
+A configuração dos experimentos, os critérios de avaliação e os resultados obtidos são apresentados no Capítulo \ref{experimentos_e_resultados}.
+Por fim, as conclusões da dissertação e os trabalhos futuros são apresentados no Capítulo \ref{conclusoes_e_trabalhos_futuros}.
 
 \xchapter{Fundamentação Teórica}{} \label{fundamentacao_teorica}
 \section{Considerações Iniciais}
 
-Este capítulo apresenta os principais conceitos utilizados nesta pesquisa e discute os trabalhos relacionados observados na literatura.
-%
-Inicialmente, será abordada a relação entre Fluxos Contínuos de Dados e técnicas de Aprendizado de Máquina.
-%
-Em seguida, o fenômeno Mudança de Conceito, os métodos de detecção e as ferramentas de análise serão discutidas.
-%
-Logo após, as Redes de Função de Base Radial e as Cadeias de Markov são apresentadas.
-%
-Posteriormente, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é detalhado.
-%
-Por fim, os trabalhos relacionados observados na literatura são examinados.
+Este capítulo apresenta os conceitos que fundamentaram o desenvolvimento desta dissertação e discute os trabalhos relacionados encontrados na literatura.
+As duas primeiras seções abordam a aplicação de Aprendizado de Máquina em Fluxos Contínuos de Dados (Seção \ref{sec:fluxos_continuos_am}) e o fenômeno Mudança de Conceito (Seção \ref{sec:mudanca_de_conceito}).
+As duas seções seguintes detalham as Redes de Função de Base Radial (RBF) (Seção \ref{sec:rbf}) e as Cadeias de Markov (Seção \ref{sec:markov}).
+Por fim, os trabalhos relacionados são discutidos (Seção \ref{sec:trabalhos_relacionados}) e as considerações finais do capítulo apresentadas.
 
 \section{Fluxos Contínuos de Dados e Aprendizado de Máquina}
+\label{sec:fluxos_continuos_am}
 
 Fluxos Contínuos de Dados (FCDs) podem ser definidos como sequências ininterruptas e potencialmente infinitas de eventos \cite{Aggarwal:2006:DSM:1196418}.
 %
@@ -414,11 +397,11 @@ Além disso, por serem de tamanho potencialmente ilimitado, não é possível ar
 
 As características dos fluxos contínuos de dados implicam as seguintes restrições aos algoritmos que os processam \cite{bifet2009data}:
 %
-\begin{enumerate}
+\begin{itemize}
     \item É impossível armazenar todos os dados do fluxo. Somente uma pequena parcela pode ser processada e armazenada, enquanto o restante é descartado;
     \item A velocidade de chegada dos eventos exige que sejam processados em tempo de execução;
     \item A distribuição dos dados pode mudar com o tempo. Assim, os dados do passado podem se tornar irrelevantes ou mesmo prejudiciais para a descrição dos conceitos atuais.
-\end{enumerate}
+\end{itemize}
 
 A área de Aprendizado de Máquina (AM) estuda algoritmos que melhoram o seu desempenho conforme ganham experiência \cite{Mitchell:1997:ML:541177}.
 %
@@ -438,7 +421,7 @@ DBSCAN \cite{Ester:1996:DAD:3001460.3001507},
 PAM \cite{kaufman:clustering1990} e
 OPTICS \cite{Ankerst:1999:OOP:304181.304187}.
 
-De acordo com \citeonline{Gama:2010:KDD:1855075}, a principal dificuldade ao aplicar técnicas não supervisionadas em cenários com fluxos contínuos é a manutenção da qualidade e consistência dos grupos formados conforme novos dados são observados.
+De acordo com \citeonline{Gama:2010:KDD:1855075}, a principal dificuldade ao aplicar técnicas não supervisionadas em cenários com fluxos contínuos é a manutenção da consistência e qualidade dos grupos formados, conforme novos dados são observados.
 Portanto, é necessário que os algoritmos atuem de forma incremental, evoluindo os grupos formados ao longo do tempo \cite{Barbara:2002:RCD:507515.507519}.
 Sendo assim, foram desenvolvidos métodos não supervisionados especializados para fluxos contínuos de dados.
 Os seguintes trabalhos são exemplos dessas especializações:
@@ -466,8 +449,7 @@ As especializações mencionadas buscam atender às restrições de uso de memó
 Contudo, não consideram que na maioria desses cenários as informações são geradas de forma não estacionária, e que a distribuição dos dados ou o contexto do processo gerador podem sofrer variações, alterando os resultados esperados.
 Na literatura, essas variações são denominadas mudanças de conceito e a sua ocorrência pode impactar a acurácia da técnica aplicada \cite{Gama:2010:KDD:1855075}.
 
-Nesta dissertação, considera-se que os dados são obtidos a partir de fluxos contínuos de dados com ocorrência de mudanças de conceito.
-
+% Nesta dissertação, considera-se que os dados são obtidos a partir de fluxos contínuos de dados com ocorrência de mudanças de conceito.
 % Na próxima seção, o fenômeno mudança de conceito será discutido em detalhes.
 
 \section{Mudança de Conceito}
@@ -493,7 +475,7 @@ Ainda segundo a Teoria Bayesiana, a classificação de uma instância $X$ basead
     p(c_i|X) = \frac{p(c_i) * p(X|c_i)}{p(X)}
 \end{equation}
 
-Assim, é possível afirmar que há mudança de conceito entre os instantes $t_0$ e $t_1$ se:
+Assim, é possível afirmar que há mudança de conceito entre os instantes $t_0$ e $t_1$ se
 
 \begin{equation} \label{eq:3}
     {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
@@ -528,24 +510,17 @@ utilizando círculos na cor azul para representar o conceito \textit{A} e círcu
 \end{center}
 \end{figure}
 
-Na mudança abrupta, o conceito \textit{A} é repentinamente substituído pelo conceito \textit{B} (Figura \ref{fig:concept_drift_patterns} (a)).
+\begin{itemize}
+    \item Na mudança abrupta, o conceito \textit{A} é repentinamente substituído pelo conceito \textit{B} (Figura \ref{fig:concept_drift_patterns} (a)).
+    
+    \item Na mudança gradual, ocorre uma transição mais suave entre os conceitos \textit{A} e \textit{B}. Inicialmente, eventos pertencentes a ambos os conceitos coexistem. Com o passar do tempo, os eventos pertencentes ao conceito \textit{A} diminuem de frequência, até pararem de ocorrer. Por fim, os eventos pertencentes a \textit{B} se tornam predominantes (Figura \ref{fig:concept_drift_patterns} (b)).
+    
+    \item A mudança incremental descreve a evolução de um único conceito ao longo do tempo. Essa evolução pode ser discretizada como uma sequência de conceitos consecutivos. Nesta sequência, cada conceito intermediário difere pouco dos seus conceitos antecessor e sucessor. Portanto, as mudanças são notáveis apenas à longo prazo (Figura \ref{fig:concept_drift_patterns} (c)).
+    
+    \item A mudança recorrente acontece quando um conceito anteriormente ativo reaparece após um determinado período de tempo. Contudo, não se trata de uma sazonalidade periódica, pois não é evidente o momento no qual o conceito voltará a ser ativo (Figura \ref{fig:concept_drift_patterns} (d)).
+\end{itemize}
 
-Na mudança gradual, ocorre uma transição mais suave entre os conceitos \textit{A} e \textit{B}.
-Inicialmente, eventos pertencentes a ambos os conceitos coexistem.
-Com o passar do tempo, os eventos pertencentes ao conceito \textit{A} diminuem de frequência, até pararem de ocorrer.
-Por fim, os eventos pertencentes a \textit{B} se tornam predominantes (Figura \ref{fig:concept_drift_patterns} (b)).
-
-A mudança incremental descreve a evolução de um único conceito ao longo do tempo.
-Essa evolução pode ser discretizada como uma sequência de conceitos consecutivos.
-Nesta sequência, cada conceito intermediário difere pouco dos seus conceitos antecessor e sucessor.
-Portanto, as mudanças são notáveis apenas à longo prazo (Figura \ref{fig:concept_drift_patterns} (c)).
-
-A mudança recorrente acontece quando um conceito anteriormente ativo reaparece após um determinado período de tempo.
-Contudo, não se trata de uma sazonalidade periódica, pois não é evidente o momento no qual o conceito voltará a ser ativo (Figura \ref{fig:concept_drift_patterns} (d)).
-
-O método proposto nesta dissertação atua diretamente sobre o fluxo de dados, independentemente de rótulos.
-Logo, todas mudanças de conceito identificadas são tratadas como mudanças de conceito reais.
-Além disso, a técnica desenvolvida pode identificar mudanças em qualquer padrão de ocorrência.
+O método de detecção proposto neste trabalho é capaz de identificar mudanças de conceito sob qualquer padrão de ocorrência e, por ser independente de rótulos, considera todas mudanças de conceito detectadas como reais.
 
 % Na próxima subseção, será apresentada a terminologia do fenômeno mudança de conceito.
 
@@ -556,12 +531,13 @@ Aprendizado de Máquina, Estatística e Recuperação de Informação \cite{Zlio
 Contudo, o tema apresenta diferentes nomeclaturas em cada comunidade.
 Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a mudança de conceito em cada área de pesquisa.
 
-\begin{table*}[!ht]
+
+\begin{table}[ht]
     \caption{Terminologia - Mudança de Conceito \cite{Zliobaite:2010}}
     \label{tbl:taxonomy}
     \centering
-    \resizebox{\textwidth}{!}{%
-    \begin{tabular}[t]{ll}
+    
+    \begin{tabularx}{\textwidth}{ l l }
     \toprule
     Área & Termos \\
     \midrule
@@ -572,11 +548,10 @@ Na Tabela \ref{tbl:taxonomy} são listados os termos correspondentes a mudança 
     Estatística, Séries Temporais      & Não Estacionário                           \\
     Recuperação de Informação           & Evolução Temporal                          \\
     \bottomrule
-    \end{tabular}%
-    }
-\end{table*}
+    \end{tabularx}
+\end{table}
 
-Outra fonte comum de equívocos são os termos detecção de \textit{outliers}, detecção de novidade, detecção de \textit{change points} e detecção de mudança de conceito.
+Outra fonte comum de equívocos são os termos detecção de \textit{outliers}, detecção de novidade, detecção de \textit{change points} e detecção de mudanças de conceito.
 Estes termos são muitas vezes utilizados de forma indistinta, mas, para o contexto deste trabalho, é importante distingui-los.
 
 As técnicas para detecção de \textit{outliers} têm como objetivo identificar padrões de dados em desacordo com o comportamento esperado. Estes padrões são geralmente classificados como anomalias ou ruídos \cite{Chandola:2009:ADS:1541880.1541882}.
@@ -586,14 +561,14 @@ Estes métodos se diferenciam das técnicas para detecção de \textit{outliers}
 
 As estratégias para detecção de \textit{change points} identificam variações abruptas de valor, que podem representar transições entre estados, em séries temporais unidimensionais estacionárias \cite{Aminikhanghahi:2017:SMT:3086013.3086037}.
 
-Por fim,  cabe definir o que é detecção de mudança de conceito.
+Por fim,  cabe definir o que é detecção de mudanças de conceito.
 Este termo abrange técnicas que monitoram a distribuição dos dados ou indicadores produzidos pelas técnicas de aprendizado aplicadas, com o objetivo de identificar variações que possam impactar a acurácia do modelo em uso \cite{Gama:2014:SCD:2597757.2523813}.
 
 % Na próxima subseção, os algoritmos para detecção de mudança de conceito serão discutidos.
 
-\subsection{Algoritmos para Detecção de Mudança de Conceito}
+\subsection{Algoritmos para Detecção de Mudanças de Conceito}
 
-Os algoritmos para detecção de mudança de conceito caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
+Os algoritmos para detecção de mudanças de conceito caracterizam e quantificam as mudanças de conceito através da delimitação dos instantes ou intervalos de tempo em que as mudanças ocorrem \cite{Basseville:1993:DAC:151741}.
 
 Esses algoritmos se dividem em duas categorias, conforme a necessidade de rotulação dos dados \cite{Zliobaite:2010}:
 
@@ -659,14 +634,14 @@ De forma similar, os algoritmos \textit{implícitos / não supervisionados} tamb
     \item[Monitoramento dependente de modelo]
     Requerem a aplicação de um algoritmo de classificação probabilístico,
     pois as mudanças de conceito são detectadas a partir do monitoramento da probabilidade a posteriori calculada \cite{Zliobaite:2010}.
-    Esta restrição permite reduzir a ocorrência de falsos positivos e torna o processo computacionalmente eficiente, pois apenas um único fluxo univariado de valores é observado.
+    Esta restrição permite reduzir a ocorrência de falso positivos e torna o processo computacionalmente eficiente, pois apenas um único fluxo univariado de valores é observado.
     Os métodos
     \textit{A-distance} \cite{Dredze:ADistance:2010585},
     \textit{CDBD} \cite{Lindstrom:CDBD:2013} e
     \textit{Margin} \cite{Dries:Margin:2009} integram esta subcategoria.
 \end{description}
 
-Um resumo das categorias, subcategorias e técnicas elencadas é apresentado na Tabela \ref{tbl:abordagens}.
+Um resumo das categorias, subcategorias e algoritmos é apresentado na Tabela \ref{tbl:abordagens}:
 
 \newpage
 
@@ -696,8 +671,9 @@ Um resumo das categorias, subcategorias e técnicas elencadas é apresentado na 
     }
 \end{table}
 
-O método de detecção proposto neste trabalho se enquadra na categoria de algoritmos \textit{implícitos / não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}.
-
+ O algoritmo de detecção de mudanças de conceito proposto nesta dissertação
+ se baseia em técnicas de agrupamento e detecção de \textit{outliers}, enquadrando-se, portanto, na categoria de algoritmos \textit{implícitos / não supervisionados}, mais especificamente na subcategoria \textit{detecção de novidades / métodos de agrupamento}. 
+ 
 % Na próxima seção, a ferramenta MOA, utilizada para validação da técnica desenvolvida, é apresentada.
 
 \subsection{Ferramenta - MOA}
@@ -753,18 +729,19 @@ A janela de configuração deste detector, similar a Figura \ref{fig:moa_detecto
 Os principais algoritmos para detecção de mudanças de conceito possuem implementação disponível no MOA.
 Além dessas implementações, a ferramenta também disponibiliza rotinas de avaliação, que analisam a acurácia e o desempenho desses métodos.
 
-Nesta dissertação, o MOA foi utilizado para realização do experimento com dados sintéticos, gerados a partir da própria ferramenta.
-A técnica proposta foi implementada no MOA e comparada aos principais algoritmos disponíveis.
-Por fim, os testes realizados foram avaliados atráves da classe \textit{BasicConceptDriftPerformanceEvaluator}, disponibilizada pela ferramenta.
+Esta dissertação utilizou o MOA como plataforma para realização do experimento com dados sintéticos.
+Os conjuntos de dados usados foram gerados através da ferramenta e o método proposto foi implementado e comparado aos principais algoritmos disponíveis. 
+Por fim, os testes realizados foram avaliados através da classe \textit{BasicConceptDriftPerformanceEvaluator}.
 
 \section{Redes de Função de Base Radial}
+\label{sec:rbf}
 
 Uma Rede de Função de Base Radial (redes RBF, em português,  ou \textit{radial basis function network, RBF network}, em inglês) pode ser definida como um modelo de múltiplas camadas alimentadas adiante (\textit{feedforward}),
 capaz de analisar padrões complexos e resolver problemas não-linearmente separáveis, utilizando uma abordagem de aproximação de funções.
 Estas redes têm como principal diferencial a sua forma de ativação, realizada através do cálculo da distância entre o dado e um centro definido \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
 
 A arquitetura de uma rede de função de base radial, em sua forma mais básica, envolve três camadas.
-A camada de entrada representa os atributos do problema. As unidades dessa camada não realizam processamento e simplesmente distribuem as entradas para os neurônios na camada intermediária.
+A camada de entrada representa os atributos do problema. As unidades dessa camada não realizam processamento e simplesmente distribuem as entradas para a camada intermediária.
 A camada intermediária, única camada oculta da rede, é constituída por funções de ativação de base radial, que atuam como os neurônios da rede.
 Por fim, a camada de saída pondera, através de pesos, os resultados da camada intermediária, agregando-os linearmente para compor a resposta final da rede \cite{Rojas:1996:NNS:235222}.
 A Figura \ref{fig:rbg_arq} demonstra essa arquitetura.
@@ -795,22 +772,19 @@ Esta função é obtida a partir da combinação linear dos resultados das funç
 
 onde $N$ é o número de neurônios na camada intermediária, ${c}_{i}$ é o centro do neurônio $i$, $||\ldots||$ é a norma euclidiana e $a_{i}$ é o peso (bias) atribuído ao neurônio para realização da combinação linear.
 
-A técnica proposta nesta dissertação utiliza uma rede RBF adaptada.
-Na versão adaptada, apenas as camadas inicial e intermediária são aplicadas, e a Gaussiana é utilizada como função de ativação.
-Esta adaptação é possível, pois a camada intermediária cria, implicitamente, durante o processo de ativação, grupos com os dados recebidos ao longo do tempo.
-Dessa forma, quando o centro ativo do cluster formado é alterado, uma possível mudança de conceito é sinalizada.
-
-Além da rede RBF adaptada, o método proposto também utiliza uma Cadeia de Markov para modelar as transições entre centros e obter tolerância a ruídos.
-As Cadeias de Markov serão apresentadas na próxima seção.
+O método de detecção proposto nesta dissertação utiliza uma rede RBF adaptada, composta apenas pelas camadas inicial e intermediária.
+Esta adaptação é possível, pois o processo de ativação realizado na camada intermediária produz, implicitamente, grupos a partir das observações recebidas ao longo do tempo.
+Possíveis mudanças de conceito são, então, identificadas quando o grupo ativo deste agrupamento é alterado.
 
 \section{Cadeias de Markov}
+\label{sec:markov}
 
-Equações determinísticas podem ser utilizadas para descrever sistemas que permitem traçar toda a sua evolução a partir da condição inicial.
-Contudo, em alguns sistemas isso não é possível, pois estes apresentam diferentes possibilidades evolutivas.
+Equações determinísticas são utilizadas para descrever sistemas cuja evolução pode ser traçada a partir de uma condição inicial.
+Entretanto, isto nem sempre é viável, pois alguns sistemas apresentam diferentes possibilidades evolutivas.
 Nestes casos, processos estocásticos são utilizados \cite{taylor1998introduction}.
 
-Um processo estocástico $\left\{ X _ { t } : t \in T \right\}$ é uma coleção de variáveis aleatórias indexadas no tempo.
-O conjunto de possíveis valores de $X_{t}, S = \left\{s_{1}, s_{2}, \ldots\right\}$, é denominado espaço dos estados e $T$ denota o espaço temporal.
+Um processo estocástico, $\left\{ X _ { t } : t \in T \right\}$, é uma coleção de variáveis aleatórias indexadas no tempo.
+O conjunto de possíveis valores, $X_{t}, S = \left\{s_{1}, s_{2}, \ldots\right\}$, é denominado espaço dos estados e $T$ denota o espaço temporal.
 A partir desta definição e considerando que o processo estocástico esteja no estado $s_i$ e no tempo $t - 1$, a probabilidade
 do processo estar no estado $s_j$ no tempo $t$ é dada pela Equação \ref{eq:prob_proc_estoc}:
 
@@ -819,11 +793,11 @@ do processo estar no estado $s_j$ no tempo $t$ é dada pela Equação \ref{eq:pr
     \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right)
 \end{equation}
 
-A probabilidade resultante desta equação é denominada probabilidade de transição (de um passo) do estado $s_i$ para o estado $s_j$.
+% A probabilidade resultante desta equação é denominada probabilidade de transição (de um passo) do estado $s_i$ para o estado $s_j$.
 
 Uma Cadeia de Markov, ou Processo de Markov,
 é um processo estocástico no qual a probabilidade de um sistema estar em determinado estado em um dado período de tempo depende apenas do estado no período imediatamente anterior.
-Esse tipo de processo também é conhecido como \textit{memoryless process} (processo sem memória), pois os estados passados são ignorados.
+Esse tipo de processo também é conhecido como processo sem memória (\textit{memoryless process}, em inglês), pois os estados passados são ignorados.
 Esta característica é demonstrada através da Equação \ref{eq:markov}:
 
 \begin{equation}
@@ -831,10 +805,10 @@ Esta característica é demonstrada através da Equação \ref{eq:markov}:
     \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right) = \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } \right) = p _ { i j }
 \end{equation}
 
-Isto é, um processo de Markov pode assumir os estados $a_1, a_2, \ldots, a_r$, de tal modo que a probabilidade
+Ou seja, um processo de Markov pode assumir os estados $a_1, a_2, \ldots, a_r$, de tal modo que a probabilidade
 de transição de um estado $a_i$ para um estado $a_j$ seja $P_{ij}$ (um valor dependente apenas de $i$ e $j$).
-Dessa forma, é possível constituir uma matriz com todas probabilidades de transição entre os estados.
-Esta matriz é denominada como matriz estocástica e um exemplo é apresentado na Equação \ref{eq:matriz_estocastica}:
+Portanto, é viável elaborar uma matriz com as probabilidades de todas transições.
+Esta matriz é denominada matriz estocástica e um exemplo é apresentado na Equação \ref{eq:matriz_estocastica}:
 
 \begin{equation}
 \label{eq:matriz_estocastica}
@@ -844,85 +818,29 @@ P = \left[ \begin{array} { c c c c } { P _ { 11 } } & { P _ { 12 } } & { \dots }
 A fim de ilustrar os conceitos apresentados, considere o diagrama de estados representado na Figura \ref{fig:cadeia_markov_tres_estados}.
 Este diagrama detalha um processo Markoviano com três estados possíveis, em um determinado instante de tempo:
 
+
+
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[scale=0.75]{imagens/markov_chain_wikipedia.png}
-        \caption{Exemplo: Cadeia de Markov com três estados. Fonte: \citeonline{wiki:Markov_chain}.}
+        \includegraphics[scale=0.35]{imagens/markov_chain_wikipedia.png}
+        \caption{Exemplo: Cadeia de Markov com três estados.}
         \label{fig:cadeia_markov_tres_estados}
     \end{center}
 \end{figure}
 
-Este diagrama pode ser representado como uma matriz estocástica, demonstrada na Equação \ref{eq:matriz_estocastica_exemplo}.
+Este diagrama também pode ser representado como uma matriz estocástica, demonstrada na Equação \ref{eq:matriz_estocastica_exemplo}.
 
 \begin{equation}
 \label{eq:matriz_estocastica_exemplo}
 P={\begin{bmatrix}0.9&0.075&0.025\\0.15&0.8&0.05\\0.25&0.25&0.5\end{bmatrix}}.
 \end{equation}
 
-Neste trabalho, os estados da Cadeia de Markov são formados pelos centros ativados na rede RBF adaptada.
-As transições entre centros (ativação) são refletidas no modelo markoviano, aumentando a probabilidade da transição vigente por um valor parametrizável ($\alpha$) e diminuindo proporcionalmente a probabilidade das outras transições.
-Esta operação é realizada respeitando as seguintes condições:
+O algoritmo de detecção de mudanças de conceito proposto nesta dissertação utiliza uma Cadeia de Markov para modelar o agrupamento criado na rede RBF. Os grupos formados representam os estados do modelo markoviano e as mudanças (ativações) entre estes grupos, as transições.
+Estas mudanças são refletidas no modelo através do aumento da probabilidade  correspondente e a diminuição proporcional das outras transições. Estas alterações são realizadas respeitando a condição $0 \leq P_{ij} \leq 1$.
 
-\begin{itemize}
-    \item A probabilidade de uma transição deve ser sempre maior ou igual a zero ($P_{ij} \geq 0$);
-    \item A soma das probabilidades de todas transições a partir de um determinado estado deve ser sempre igual a um ($\sum_{1}^{j} P_{ij} = 1$).
-\end{itemize}
-
-Além de modelar as mudanças de conceito ocorridas, a Cadeia de Markov também é responsável pela tolerância a ruídos.
-Isto ocorre, pois apenas transições cuja probabilidade $P_{ij} \geq \delta$, onde $\delta$ é um valor parametrizável, podem sinalizar mudanças de conceito.
-
-% Na próxima seção, o problema de classificação de fixações e sacadas em atividades de monitoramento ocular é apresentado.
-
-\section{Monitoramento Ocular - Fixações e Sacadas}
-
-A análise rigorosa dos movimentos oculares não é uma técnica experimental recente.
-Entretanto, o desenvolvimento de tecnologias não invasivas de monitoramento favoreceu o aumento da sua utilização.
-Atualmente, a técnica é empregada em diferentes tarefas experimentais \cite{Duchowski_EyeTrackingSurvey}, como, por exemplo:
-localização da atenção visual,
-detecção de deficiências cognitivas,
-avaliação de estratégias de pesquisa visual, entre outras.
-Estas tarefas produzem informações que são utilizadas como fator de análise por um vasta gama de pesquisas, em diferentes áreas do conhecimento.
-
-Antes de descrever a atividade de monitoramento ocular, é necessário apresentar alguns conceitos básicos sobre o funcionamento da visão.
-Os olhos precisam estar em constante movimento para que a retina possa formar uma imagem nítida.
-Este movimento frequente é conhecido como movimento sacádico.
-Ao analisar uma imagem ou cena, o olho tende a permanecer fixo durante alguns milissegundos nas áreas mais significativas (fixações);
-depois disso, o olho se move em direção a uma nova zona de interesse (sacadas).
-Este processo é demonstrado na Figura \ref{fig:exemplo_fixacoes_e_sacadas}, utilizando pontos mais densos para representar as fixações e linhas para as sacadas.
-
-\begin{figure}[H]
-    \begin{center}
-        \includegraphics[scale=1]{imagens/exemplo_fixacao_e_sacadas.png}
-        \caption{Exemplo de identificação de fixações e sacadas. Fonte: \citeonline{KONIG2014121}.}
-        \label{fig:exemplo_fixacoes_e_sacadas}
-    \end{center}
-\end{figure}
-
-Durante as sacadas, o cérebro não tem tempo hábil para processar as imagens transmitidas pelo sistema visual, causando uma deterioração da imagem formada na retina.
-Por esse motivo, o cérebro só atribui semântica às imagens formadas durante os períodos de fixação.
-Isso implica que o estudo das fixações é essencial para a compreensão e interpretação dos movimentos oculares.
-
-Portanto, é fundamental utilizar técnicas automatizadas para segmentar fixações e sacadas durante a análise de trajetórias oculares.
-A literatura dispõe de diversos algoritmos para realização desta tarefa.
-As técnicas mais utilizadas realizam a segmentação com base em limites de velocidade e/ou aceleração,
-pois estes valores são significativamente maiores durante as sacadas \cite{Otero_Saccades_and_microsaccades}.
-Enquanto outros algoritmos realizam a segmentação atráves de características como densidade, dispersão ou áreas de interesse.
-
-Contudo, a aplicação de diferentes algoritmos em uma mesma trajetória pode produzir resultados divergentes.
-Isto ocorre, pois a maioria dos métodos disponíveis na literatura é afetada pela escolha dos parâmetros e pelas características do experimento em análise (frequência, amplitude, etc.).
-Consequentemente, a atividade de identificação de fixações e sacadas permanece altamente subjetiva.
-
-Visando mitigar este problema, \citeonline{KONIG2014121} propõem um novo método, denominado ClusterFix.
-Este método se diferencia por ser completamente automatizado e independente de parâmetros.
-Essas características permitem que a técnica seja utilizada como um padrão referencial,
-possibilitando a comparação da segmentação de trajetórias oculares entre experimentos, laboratórios e algoritmos.
-
-Nesta dissertação, o método desenvolvido para identificação de mudanças de conceito em fluxos de dados é adaptado para segmentação de fixações e sacadas.
-A técnica adaptada foi empregada em dois conjuntos de dados, oriundos do monitoramento ocular de dois símios.
-Para validar a aplicabilidade da técnica, os mesmos conjuntos de dados foram submetidos ao algoritmo ClusterFix e comparados.
-A configuração e os resultados obtidos neste experimento são detalhados no Capítulo \ref{experimentos_iniciais}.
 
 \section{Trabalhos Relacionados}
+\label{sec:trabalhos_relacionados}
 
 Durante a elaboração desta dissertação, foi realizada uma pesquisa na literatura em busca de trabalhos que propusessem métodos para identificação de mudanças de conceito, de forma online e independente de rótulos, em fluxos contínuos de dados. Também foram estudadas técnicas que pudessem subsidiar o desenvolvimento de novos algoritmos que atendam a esses requisitos.
 
@@ -948,7 +866,7 @@ A segunda etapa da pesquisa analisou técnicas para detecção de mudanças de c
 Assume-se que se não houver mudança de conceito, os valores residuais dessa aplicação devem ser estacionários. Os trabalhos identificados são apresentados a seguir.
 
 \citeonline{Yamanishi:2002:UFD:775047.775148} propõem um método de detecção online capaz de identificar outliers e mudanças de conceito em séries temporais.
-A abordagem aplica um modelo autoregressivo aos dados e atualiza os parâmetros de forma incremental, para que o peso de exemplos passados diminua ao longo do tempo. Atribui-se uma pontuação para cada observação, calculada com base na função de perda. Esta pontuação indica o grau de desvio do dado em relação ao modelo aplicado. Pontuações elevadas indicam alta possibilidade de que o dado seja um outlier. A detecção de mudança de conceito é feita através do monitoramento da média das funções de perda ao longo da série temporal. Todavia, esta abordagem só é aplicável a séries temporais com comportamento autoregressivo, o que limita o seu escopo de uso.
+A abordagem aplica um modelo autoregressivo aos dados e atualiza os parâmetros de forma incremental, para que o peso de exemplos passados diminua ao longo do tempo. Atribui-se uma pontuação para cada observação, calculada com base na função de perda. Esta pontuação indica o grau de desvio do dado em relação ao modelo aplicado. Pontuações elevadas indicam alta possibilidade de que o dado seja um outlier. A detecção de mudanças de conceito é feita através do monitoramento da média das funções de perda ao longo da série temporal. Todavia, esta abordagem só é aplicável a séries temporais com comportamento autoregressivo, o que limita o seu escopo de uso.
 
 \citeonline{GOMBAY2009715} propõem um método diferente, também online, para detecção de mudanças em séries temporais autoregressivas, baseado no monitoramento dos parâmetros do modelo. Um adaptação do método CUSUM \cite{Page:CUSUM:PageHinkley:1954} é aplicada para identificar alterações nos parâmetros. A hipótese nula do algoritmo assume que estes parâmetros devem permanecer estacionários ao longo do tempo. Esta hipótese é testada para cada nova observação recepcionada e a mudança de conceito é sinalizada quando a diferença ultrapassa um limite estabelecido. Esta abordagem também apresenta limitação de escopo, pois é aplicável apenas a séries temporais autoregressivas.
 
@@ -978,85 +896,54 @@ para identificação de mudanças de conceito em fluxos contínuos de dados.
 
 \section{Considerações Finais}
 
-Este capítulo apresentou os principais conceitos utilizados nesta dissertação.
-A relação entre Fluxos Contínuos de Dados e técnicas de Aprendizado de Máquina foi abordada,
-o fenômeno Mudança de Conceito e os métodos de detecção foram detalhados,
-as Redes de Função de Base Radial e as Cadeias de Markov foram retratadas, e, por fim,
-o problema de classificação em sacadas e fixações durante atividades de monitoramento ocular foi discutido.
-
-Também foram apresentados trabalhos que se relacionam com a proposta desta dissertação,
-permitindo notar que até o presente momento inexistem métodos para detecção de mudanças de conceito
-que possam ser aplicados a fluxos contínuos de dados de forma satisfatória.
-Diante disso, o presente trabalho demonstra relevância,
-ao propor um novo método capaz de identificar mudanças de conceito em fluxos de dados em tempo de execução, de forma computacionalmente eficiente, com tolerância a ruídos e sem depender de rótulos.
+Neste capítulo foram apresentados os conceitos que fundamentaram esta dissertação: Fluxos de Dados, Mudanças de Conceito, Redes de Função de Base Radial e as Cadeias de Markov.
+Por fim, os trabalhos relacionados identificados na literatura foram discutidos.
 
 \xchapter{RBFC\element{hain}}{} \label{rbfchain}
 
 \section{Considerações Iniciais}
 
-Este capítulo detalha o método de detecção de mudanças de conceito proposto nesta dissertação, denominado RBFChain.
-A técnica desenvolvida é apresentada da seguinte forma:
-a Seção \ref{sec:rbfchain_visao_geral} inicia o capítulo com uma visão geral, abordando a arquitetura e o papel desempenhado por cada componente.
-Na Seção \ref{sec:rbfchain_detalhes}, o algoritmo desenvolvido é demonstrado em pseudocódigo e o seu funcionamento é detalhado.
-Por fim, na Seção \ref{sec:rbfchain_consideracoes_finais}, são discutidas as considerações finais do capítulo.
+Este capítulo descreve o método para detecção de mudanças de conceito proposto por esta dissertação, denominado RBFChain.
+O método proposto é descrito da seguinte forma:
+a Seção \ref{sec:rbfchain_visao_geral} apresenta uma visão geral da solução, demonstrando a arquitetura, o ciclo de execução e a função desempenhada por cada componente.
+Em seguida, na Seção \ref{sec:rbfchain_detalhes}, o algoritmo desenvolvido é apresentado na forma de pseudocódigo e o seu comportamento é detalhado através de uma execução de exemplo.
+Por fim, na Seção \ref{sec:rbfchain_consideracoes_finais}, são emitidas as considerações finais do capítulo.
 
 \section{Visão Geral}
 \label{sec:rbfchain_visao_geral}
 
-A arquitetura do RBFChain é composta por dois componentes principais: uma Rede de Função de Base Radial (RBF) e uma Cadeia de Markov.
-A rede RBF é responsável por agrupar os eventos recebidos, formando um cluster, cujo centro ativo é alterado conforme o evento em análise.
-As mudanças de centro desse cluster são modeladas através da Cadeia de Markov.
-No modelo Markoviano, os centros ativados formam os estados e as mudanças de centro, as transições.
-Estes componentes são representados graficamente na Figura \ref{fig:arquitetura}.
-O restante desta seção discute o papel desempenhado por cada componente.
+O RBFChain atua diretamente sobre o fluxo de dados e é composto por dois componentes principais: uma Rede de Função de Base Radial (RBF) adaptada e uma Cadeia de Markov.
+A arquitetura da solução é demonstrada na Figura \ref{fig:arquitetura}. 
 
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[scale=0.7]{imagens/arquitetura_rbfchain.png}
+        \includegraphics[scale=0.6]{imagens/arquitetura_rbfchain.png}
         \caption{Arquitetura RBFChain}
         \label{fig:arquitetura}
     \end{center}
 \end{figure}
 
-Antes de iniciar a descrição da arquitetura e do papel desempenhado por cada componente,
-é importante destacar que o método proposto requer a definição de quatro parâmetros para o seu funcionamento.
-Sendo dois relacionados a Rede de Função de Base Radial e dois a Cadeia de Markov:
+O restante desta seção apresenta, resumidamente, o ciclo de execução e a função desempenhada por cada componente:
 
-\begin{itemize}
-    \item \textbf{Parâmetros relacionados a Rede de Função de Base Radial}:
-    \begin{itemize}
-        \item \textbf{$\sigma$}: limita o raio da função Gaussiana utilizada durante o processo de ativação;
-        \item \textbf{$\lambda$}: estabelece um valor mínimo para ativação de um centro;
-    \end{itemize}
+\begin{enumerate}
+    \item O ciclo de execução se inicia quando um novo evento é observado a partir do fluxo de dados;
+    
+    \item O evento é, então, encaminhado para rede RBF, que produz grupos das observações recebidas, representando os \textit{conceitos} do sistema.
+    Durante este processo, o evento pode ser vinculado ao mesmo \textit{conceito} que o evento anterior ou a um novo \textit{conceito}. 
+    A manutenção ou mudança do \textit{conceito} vinculado caracteriza uma \textit{transição};
+    
+    \item Em seguida, a Cadeia de Markov atualiza a probabilidade da \textit{transição} ocorrida;
+    
+    \item Logo após, a probabilidade resultante é informada ao RBFChain;
+    
+    \item Por fim, o RBFChain verifica se o \textit{conceito} mudou e compara a probabilidade da \textit{transição} ao valor mínimo para detecção de mudanças de conceito. Se for inferior, emite um sinal de \textit{zona de alerta}. Do contrário, indica a ocorrência de uma \textit{mudança de conceito}.
+\end{enumerate}
 
-    \item \textbf{Parâmetros relacionados a Cadeia de Markov}:
-    \begin{itemize}
-        \item \textbf{$\alpha$}: fator de incremento da probabilidade de transições ocorridas;
-        \item \textbf{$\delta$}: probabilidade para considerar uma transição uma mudança de conceito.
-    \end{itemize}
-
-\end{itemize}
-
-O RBFChain atua diretamente sobre o fluxo de dados.
-Ao observar um novo evento, este é submetido ao processo de ativação da rede RBF.
-Durante o processo, o valor de ativação do evento é calculado para cada centro da rede, através da função Gaussiana.
-O evento é, então, vinculado ao centro com maior valor de ativação, desde que esse valor seja maior que $\lambda$.
-Se não for possível vincular o evento a nenhum dos centros, o próprio evento se torna o novo centro ativo da rede.
-
-As ativações de novos ou diferentes centros são modeladas pela Cadeia de Markov,
-
-A Cadeia de Markov é responsável pela modelagem das mudanças de centro ativo,
-aumentando a probabilidade da transição ocorrida pelo fator $\alpha$ e diminuindo proporcionalmente o valor das outras transições possíveis para o estado originário.
-
-Após esta operação, o algoritmo verifica se o centro ativo anterior é diferente do atual.
-Se esta condição for verdadeira e a probabilidade da transição for maior que $\delta$, uma mudança de conceito é sinalizada.
-Contudo, se a condição for verdadeira mas o valor da probabilidade é inferior a $\delta$, o algoritmo apenas sinaliza uma \textit{zona de alerta} (\textit{warning zone}).
-
-\section{RBFChain}
+\section{Algoritmo}
 \label{sec:rbfchain_detalhes}
 
-O método proposto é demonstrado na forma de pseudocódigo em Algoritmo \ref{alg:algoritmo}.
-O restante desta seção detalha o funcionamento do algoritmo através de uma execução de exemplo.
+Esta seção apresenta o método proposto na forma de pseudocódigo\footnote{Implementações do algoritmo na linguagem Python e Java estão disponíveis, respectivamente, em: \url{https://github.com/rnetodev/masters/tree/master/experiments} e \url{https://github.com/rnetodev/moa}} em Algoritmo \ref{alg:algoritmo} e descreve o seu funcionamento. 
+Logo depois, uma execução de exemplo é detalhada.
 
 \vspace{7pt}
 \begin{algorithm}[H]
@@ -1065,62 +952,51 @@ O restante desta seção detalha o funcionamento do algoritmo através de uma ex
     \Saida{$nulo, alerta$ ou $mudanca$}
     \Inicio{
 
-     $centros \longleftarrow ()$; $centroAtual \longleftarrow null$; $centroAtivo \longleftarrow null$\;
-     $mudanca \longleftarrow falso$\;
-
+     $grupos \longleftarrow ()$\; 
+     $grupoAtivo \longleftarrow nulo$\; 
+     $grupoConceito \longleftarrow nulo$\;
+     $retorno \longleftarrow nulo$\;
+     
      \BlankLine
-     \BlankLine
-
-     \ParaTodo{centro}{
-         $ativacao \longleftarrow gaussiana(evento, centro, \sigma)$\\
-         \Se{$ativacao >= \lambda$}{
-            $centroAtivo \longleftarrow centro$\;
-            $\lambda \longleftarrow ativacao$\;
+     
+     $minAtivacao \longleftarrow \lambda$\;
+     \ParaTodo{grupo}{
+         $ativacao \longleftarrow gaussiana(evento, grupo, \sigma)$\\
+         \Se{$ativacao >= minAtivacao$}{
+            $grupoAtivo \longleftarrow grupo$\;
+            $minAtivacao \longleftarrow ativacao$\;
          }
     }
-
-    \BlankLine
-    \BlankLine
-
-    \Se{$centroAtivo == nulo$}{
-        $centros \longleftarrow evento$\;
-        $centroAtivo \longleftarrow evento$\;
+    \Se{$grupoAtivo == nulo$}{
+        $grupos \longleftarrow evento$\;
+        $grupoAtivo \longleftarrow evento$\;
     }
-
+    
     \BlankLine
-    \BlankLine
-
-    \Se{$centroAtual \neq centroAtivo$}{
-        $mudanca \longleftarrow verdadeiro$\;
+    
+    \Se{$grupoConceito == nulo$}{
+        $grupoConceito \longleftarrow grupoAtivo$\;
     }
+    
+    \BlankLine
+         
+    $probabilidade \longleftarrow markov(grupoConceito, grupoAtivo, \alpha)$\;
 
     \BlankLine
-    \BlankLine
-
-    $probabilidade \longleftarrow markov(centroAtual, centroAtivo, \alpha)$\;
-    $centroAtual \longleftarrow centroAtivo$\;
-
-    \BlankLine
-    \BlankLine
-
-    \Se{$mudanca == verdadeiro$ e $probabilidade \geq \delta$}{
-        \Retorna{$mudanca$}\;
+    
+    \Se{$grupoConceito \neq grupoAtivo$}{
+        \Se{$probabilidade < \delta$}{
+            $retorno \longleftarrow alerta$\;
+        }
+        \Senao{
+            $grupoConceito \longleftarrow grupoAtivo$\;
+            $retorno \longleftarrow mudanca$\;
+        }
     }
+    
+    \BlankLine
 
-    \BlankLine
-    \BlankLine
-    \SenaoSe{$mudanca == verdadeiro$ e $probabilidade < \delta$}{
-        \Retorna{$alerta$}\;
-    }
-
-    \BlankLine
-    \BlankLine
-    \Senao{
-        \Retorna{$nulo$}\;
-    }
-
-    \BlankLine
-    \BlankLine
+    \Retorna{$retorno$}\;
     }
 
     \caption{\textsc{RBFChain}}
@@ -1128,350 +1004,708 @@ O restante desta seção detalha o funcionamento do algoritmo através de uma ex
 \end{algorithm}
 \vspace{7pt}
 
-Para exemplificar a execução do algoritmo proposto neste projeto, considere o conjunto $S = \{0.11, 0.12, 0.13, 0.34, 0.45, 0.47, 0.33, 0.25, 0.14, 0.10\}$ como fonte de dados.
-Para este exemplo, os parâmetros foram definidos de forma empírica. O parâmetro \textit{$\sigma$} foi definido com o valor $0.2$ e o parâmetro \textit{$\lambda$} foi fixado em $0.6$.
-A seguir, será descrito o comportamento do algoritmo para cada dado recebido a partir de $S$.
+\newpage
 
-No instante $T1$, o valor $0.11$ é recepcionado. Como não existem centros estabelecidos, o valor é definido como centro e ativado.
-Em $T2$ e $T3$ são recebidos, respectivamente, os valores $0.12$ e $0.13$ que são imediatamente vinculados ao centro atualmente ativo ($0.11$), pois seus valores de ativação foram maiores que $0.6$ ($\lambda$).
+\subsection{Descrição do algoritmo}
 
-No instante $T4$, o valor $0.34$ não atinge o valor mínimo de ativação (\textit{$\lambda$}) para ser vinculado ao centro ativo ($0.11$).
-Dessa forma, o valor é definido como um novo centro e ativado.
-Devido a alteração do centro ativo, o algoritmo sinaliza a ocorrência de mudança de conceito.
+Para descrever o funcionamento do algoritmo, é necessário apresentar os quatro parâmetros de configuração requeridos. Destes, dois são relacionados à Rede de Função de Base Radial e dois à Cadeia de Markov:
 
-Os valores dos instantes $T5$, $T6$, $T7$ e $T8$ são vinculados ao último centro ativo ($0.34$).
-Contudo, em $T9$, o valor $0.14$ é recebido e apresenta maior valor de ativação para o centro $0.11$, que é reativado.
-Assim, uma nova mudança de conceito é sinalizada.
-Finalmente, o valor do instante $T10$, $0.10$, é vinculado ao centro ativo ($0.11$).
+\begin{itemize}
+    \item \textbf{Parâmetros relacionados à Rede de Função de Base Radial}:
+    \begin{itemize}
+        \item \textbf{$\sigma$}: limita o raio da função Gaussiana,  utilizada durante o processo de ativação;
+        \item \textbf{$\lambda$}: valor mínimo para ativação de um grupo.
+    \end{itemize}
 
-A Figura \ref{fig:funcionamento_algoritmo} apresenta esse comportamento graficamente.
-Os círculos na cor amarela representam valores vinculados ao primeiro centro estabelecido ($0.11$ no momento $T1$),
-enquanto os de cor lilás foram ativados pelo segundo centro definido ($0.34$ em $T4$).
-As linhas verticais tracejadas, de cor vermelha, indicam a ocorrência de mudança de conceito.
+    \item \textbf{Parâmetros relacionados à Cadeia de Markov}:
+    \begin{itemize}
+        \item \textbf{$\alpha$}: valor de incremento para as transições ocorridas;
+        \item \textbf{$\delta$}: probabilidade mínima para identificação de uma mudança de conceito.
+    \end{itemize}
+\end{itemize}
 
-\begin{figure}[H]
-\begin{center}
-    \includegraphics[width=\textwidth]{imagens/funcionamento_algoritmo.png}
-    \caption{Exemplo de funcionamento do algoritmo}
-    \label{fig:funcionamento_algoritmo}
-\end{center}
+A execução do algoritmo começa quando um novo evento é observado a partir do fluxo de dados. O evento é, então, submetido ao processo de ativação da rede RBF (linhas 6 a 14), que produz grupos das observações recebidas, representando os \textit{conceitos} do sistema. 
+
+Para execução do agrupamento, é necessário calcular o valor de ativação do evento para cada grupo, através da função Gaussiana (linha 8). 
+Como resultado, o grupo com maior valor de ativação é definido como \textit{grupo ativo}. Se nenhum grupo alcançar o valor mínimo de ativação ($\lambda$) (linha 12), define-se o próprio evento como um novo \textit{grupo ativo} (linhas 13 a 14). 
+
+Em seguida, o algoritmo verifica se o \textit{grupo conceito} (grupo que representa o conceito vigente) está definido. Se não estiver, define o \textit{grupo ativo} como \textit{grupo conceito} (linhas 15 e 16). Este passo ocorre durante a formação do primeiro grupo.
+
+Logo após, o RBFChain persiste na Cadeia de Markov a transição entre o \textit{grupo conceito} e o \textit{grupo ativo} (linha 17). 
+O procedimento de persistência incrementa a probabilidade da transição ocorrida pelo fator $\alpha$ e reduz proporcionalmente a probabilidade das outras transições.
+
+Por fim, o algoritmo verifica se o \textit{grupo conceito} é diferente do \textit{grupo ativo} (linhas 18 a 23).
+Se esta condição for verdadeira e a probabilidade da transição for inferior a $\delta$, emite o sinal de \textit{zona de alerta}. 
+Entretanto, se a probabilidade for superior, o \textit{grupo ativo} é definido como novo \textit{grupo conceito} e uma mudança de conceito é sinalizada.
+
+\subsection{Execução de exemplo}
+
+Esta subseção apresenta uma execução de exemplo do RBFChain, visando elucidar o seu funcionamento.
+Para este exemplo, o conjunto $S$ foi utilizado como fonte de dados e os parâmetros definidos de forma empírica:
+
+\[
+S = \{0.11, 0.12, 0.13, 0.33, 0.34, 0.45, 0.6, 0.33, 0.25, 0.14, 0.11, 0.15\}
+\]
+\[
+\sigma = 3, \lambda = 0.8, \alpha = 0.25, \delta = 0.5
+\]
+
+O comportamento do algoritmo durante a análise do conjunto $S$ é descrito a seguir.
+
+No instante $T1$ o evento $0.11$ é observado.
+Por não existir nenhum outro grupo, o evento é definido como \textit{grupo ativo} e \textit{grupo conceito}, e a transição $0.11 \rightarrow 0.11$ (\textit{grupo conceito} $\rightarrow$ \textit{grupo ativo}) persistida no modelo markoviano.
+
+Em $T2$ e $T3$ são recebidos, respectivamente, os valores $0.12$ e $0.13$, que são vinculados ao grupo $0.11$, pois seus valores de ativação são maiores que $0.8$ ($\lambda$). 
+O \textit{grupo conceito} permanece inalterado, logo a transição $0.11 \rightarrow 0.11$ é persistida duas vezes.
+
+No instante $T4$ o evento $0.33$ é recebido, mas não atinge o valor mínimo de ativação (\textit{$\lambda$}) para os grupos existentes ($\{0.11\}$).
+Dessa forma, o evento é definido como novo \textit{grupo ativo} e a probabilidade da transição $0.11 \longrightarrow 0.33$ é atualizada. 
+O \textit{grupo ativo} ($0.33$) é diferente do \textit{grupo conceito} ($0.11$), mas a probabilidade da transição ainda é inferior a $\delta$, portanto apenas o sinal de zona de alerta é emitido e o \textit{grupo conceito} permanece como $0.11$.
+
+No momento $T5$ o evento $0.34$ é recepcionado e vinculado ao grupo $0.33$, ativando-o.
+A transição do \textit{grupo conceito} para o \textit{grupo ativo} ($0.11 \rightarrow 0.33$) é persistida e a probabilidade da transição passa a ser maior que $\delta$, ocasionando uma mudança de conceito. O \textit{grupo conceito} passa, então, a ser $0.33$.
+Logo depois, no instante $T6$, o valor $0.45$ é observado e vinculado ao grupo $0.33$, persistindo a transição $0.33 \rightarrow 0.33$, pois o \textit{grupo conceito} foi alterado no instante anterior.
+
+Em $T7$, um \textit{outlier} de valor $0.6$ é observado, constituindo um novo \textit{grupo ativo}. A transição persistida ($0.33 \rightarrow 0.6$) tem valor inferior a $\delta$, portanto, apenas um sinal de zona de alerta é emitido.
+Este evento denota a tolerância a ruídos do método proposto, devido a modelagem na Cadeia de Markov.
+
+Em seguida, nos instantes $T8$ e $T9$, os eventos $0.33$ e $0.25$ são recebidos e vinculados ao grupo $0.33$. 
+Por fim, nos instantes $T10$, $T11$ e $T12$, ocorre uma nova mudança de conceito, tornando o grupo $0.11$ novamente o \textit{grupo conceito}.
+
+A Figura \ref{fig:funcionamento_algoritmo} apresenta o comportamento do algoritmo durante a análise do conjunto de dados. As cores dos círculos diferenciam o \textit{grupo ativo} de cada evento, as linhas sólidas na cor cinza demonstram os sinais de zona de alerta e as linhas sólidas na cor vermelha representam as mudanças de conceito. As seguintes abreviações também foram utilizadas: \textbf{E}, indicando o evento observado; \textbf{GA}, representando o \textit{grupo ativo} para o evento; e, \textbf{GC}, identificando o \textit{grupo conceito} definido após a análise do evento.
+
+De forma complementar, a Figura \ref{fig:evolucao_markov} evidencia a evolução do modelo markoviano ao longo da execução de exemplo. Na imagem, os estados na cor cinza representam o \textit{grupo conceito} no instante de tempo.
+
+\begin{landscape}
+    \begin{figure}[ht]
+    \begin{center}
+        \includegraphics[scale=0.7]{imagens/funcionamento_algoritmo.png}
+        \caption{Execução de exemplo do RBFChain}
+        \label{fig:funcionamento_algoritmo}
+    \end{center}
+    \end{figure}
+\end{landscape}
+
+\begin{landscape}
+\begin{figure}[ht]
+    \begin{center}
+        \includegraphics[scale=0.4]{imagens/evolucao_markov.png}
+        \caption{Evolução do modelo markoviano}
+        \label{fig:evolucao_markov}
+    \end{center}
 \end{figure}
+\end{landscape}
 
 \section{Considerações Finais}
 \label{sec:rbfchain_consideracoes_finais}
 
-\todo[inline]{TODO}
+Este capítulo descreveu o método para detecção de mudanças de conceito proposto nesta dissertação, denominado RBFChain.
+Inicialmente, apresentou-se a arquitetura da solução, o ciclo de execução e a função desempenhada por cada componente.
+Em seguida, o algoritmo desenvolvido foi demonstrado na forma de pseudocódigo.
+Por fim, o comportamento do RBFChain foi detalhado através de uma execução de exemplo.
 
-\xchapter{Experimentos e Resultados}{} \label{experimentos_iniciais}
-\section{Considerações Iniciais}
+\xchapter{Experimentos}{} \label{experimentos_e_resultados}
 
-Este capítulo apresenta um conjunto de experimentos preliminares realizados com dados sintéticos, cujo objetivo foi demonstrar a viabilidade da proposta de mestrado.
-%
-Os resultados obtidos se mostraram promissores, indicando que o tema de pesquisa deve continuar a ser investigado.
-%
-A próxima seção apresenta como os dados sintéticos foram produzidos para condução dos experimentos.
+Este capítulo descreve os experimentos realizados para validar o método de detecção de mudanças de conceito proposto nesta dissertação, denominado RBFChain.
+A descrição dos experimentos foi dividida em duas seções.
+A primeira seção apresenta o experimento com dados sintéticos, que avaliou a sensibilidade, precisão e tolerância a ruídos do RBFChain, além de compará-lo aos principais algoritmos disponíveis na literatura.
+A segunda seção descreve a aplicação da técnica a um problema real de classificação de fixações e sacadas na atividade de monitoramento ocular - um relevante problema relacionado à área de Neurociência. 
 
-\section{Configuração dos Experimentos}
-\label{sec:configuracao_experimentos}
+\section{Primeiro experimento: dados sintéticos}
 
-Os fluxos de dados sintéticos foram produzidos através de classes geradoras do framework MOA e salvos em arquivos no formato ARFF. %, permitindo para que pudessem ser reutilizados entre os experimentos.
-Cada fluxo produzido representa até dois conceitos e é composto por 2.500 observações, com valores entre 0 e 1.
-O restante desta seção apresenta as classes geradoras utilizadas, as modificações realizadas e os parâmetros aplicados.
+Esta seção apresenta a configuração, os critérios de avaliação e os resultados do experimento com dados sintéticos.
+A próxima subseção descreve o procedimento para criação dos dados utilizados.
 
-A classe geradora \textit{AbruptChangeGenerator} produz fluxos de dados sintéticos com mudanças de conceito abruptas.
-Os fluxos gerados simulam as mudanças através da intercalação de sequências com o valor $0.2$ e sequências com o valor $0.8$, conforme o tamanho definido para os conceitos.
-Com o objetivo de tornar os dados produzidos mais próximos da realidade, essa classe foi alterada\footnote{\url{https://git.io/fjGEj}} para permitir a adição de um ruído randômico, com amplitude configurável, para cada exemplo produzido.
-A versão com suporte a ruído foi utilizada nos experimentos para produção do fluxo com mudanças abruptas.
-O gerador foi parametrizado para produzir exemplos não binários, com conceitos formados com 400 instâncias e ruído limitado ao intervalo $[-0.1, 0.2]$ seguindo uma distribuição uniforme.
+\subsection{Configuração do experimento}
+\label{sec:configuracao_experimento_sintetico}
 
-% Esta configuração é apresentada na Figura \ref{fig:abrupt_change_generator}.
+Os dados utilizados durante o experimento foram produzidos através de versões adaptadas das classes geradoras do MOA.
+Estas adaptações permitiram a adição de um ruído randômico, com amplitude configurável, às observações produzidas, aproximando os conjuntos de dados sintéticos dos conjuntos de dados encontrados no mundo real. As modificações realizadas estão disponíveis em um repositório online \footnote{\url{https://github.com/rnetodev/moa}}.
 
-% \begin{figure}[H]
-%     \begin{center}
-%         \includegraphics[width=\textwidth]{imagens/abrupt_change_generator.png}
-%         \caption{Parametrização da classe \textit{AbruptChangeGenerator}}
-%         \label{fig:abrupt_change_generator}
-%     \end{center}
-% \end{figure}
+Os conjuntos de dados produzidos foram exportados para arquivos no formato ARFF, contendo, cada um, $2.500$ observações, com valores entre $0$ e $1$, representando até dois conceitos distintos. 
 
-A classe \textit{GradualChangeGenerator} produz fluxos sintéticos com mudanças de conceito graduais.
-Durante sua configuração, percebeu-se uma limitação, pois a classe só gera uma mudança gradual, independente do tamanho dos conceitos.
-Para superar esta limitação, a classe foi modificada\footnote{\url{https://git.io/fjGue}} para gerar uma quantidade de mudanças coerente com o tamanho definido.
-A classe modificada foi utilizada para gerar o fluxo sintético com mudanças graduais utilizado nos experimentos,
-sendo parametrizada para produzir exemplos não binários e conceitos compostos por 400 instâncias.
+A classe \textit{AbruptChangeGenerator} foi utilizada para produzir fluxos com mudanças abruptas, enquanto a classe \textit{GradualChangeGenerator} foi aplicada na geração de fluxos com mudanças graduais e incrementais. De forma similar, a classe \textit{NoChangeGenerator} foi empregada na produção de fluxos sem mudanças de conceito.
+Todas classes foram parametrizadas para gerar observações não binárias, com conceitos compostos por $400$ instâncias e 
+ruído limitado ao intervalo $[-0.1, 0.2]$.
+Não foi necessário produzir um conjunto de dados específico para o padrão \textit{recorrente}, pois o conjunto de dados com mudanças abruptas já apresenta recorrência.
 
-% A Figura \ref{fig:gradual_change_generator} apresenta a tela de configuração da aplicação.
+Por fim, a Figura \ref{fig:conjuntos_dados_sinteticos} demonstra graficamente os conjuntos de dados produzidos.
+Na imagem, o fluxo de dados é representado por linhas sólidas na cor preta e as mudanças de conceito são indicadas através de linhas sólidas na cor vermelha.
 
-% \begin{figure}[H]
-%     \begin{center}
-%         \includegraphics[width=\textwidth]{imagens/gradual_change_generator.png}
-%         \caption{Parametrização da classe \textit{GradualChangeGenerator}}
-%         \label{fig:gradual_change_generator}
-%     \end{center}
-% \end{figure}
+\begin{figure}[ht]
+\begin{center}
+    \includegraphics[width=\textwidth]{imagens/conjuntos_dados_sinteticos.png}
+    \caption{Representação gráfica dos conjuntos de dados sintéticos.}
+    \label{fig:conjuntos_dados_sinteticos}
+\end{center}
+\end{figure}
 
-Por fim, a classe \textit{NoChangeGenerator}, que produz fluxos sem ocorrência de mudanças de conceito, também foi modificada\footnote{\url{https://git.io/fjGu3}} para permitir a incidência de ruído nos resultados gerados.
-Esta versão foi utilizada para produzir um fluxo sintético sem mudanças, com ruído entre $[-0.1, 0.1]$.
+\subsection{Critérios de avaliação}
 
-\section{Critérios de avaliação}
-
-A classe de avaliação \textit{BasicConceptDriftPerformanceEvaluator}, pertencente ao framework MOA, foi utilizada para avaliar o método proposto neste trabalho.
-Esta classe permite mensurar a acurácia e o desempenho de algoritmos para detecção de mudanças de conceito.
+O experimento foi avaliado através da classe \textit{BasicConceptDriftPerformanceEvaluator}, pertencente ao framework MOA.
+Esta classe permite mensurar a acurácia e o desempenho de algoritmos de detecção de mudanças de conceito.
 Para utilizá-la, é necessário construir uma tarefa do tipo \textit{EvaluateConceptDrift} através da aba \textit{Concept Drift}, presente na tela inicial da aplicação.
 Para condução dos experimentos deste trabalho, a tarefa \textit{EvaluateConceptDrift} foi configurada conforme descrito na Tabela \ref{tbl:configuracao_tarefa}.
 
-\begin{center}
-    \begin{table}[h]
-    \caption{Configuração da classe \textit{BasicConceptDriftPerformanceEvaluator}}
-    \label{tbl:configuracao_tarefa}
-    \resizebox{\textwidth}{!} {%
-    \begin{tabular}{llm{7.5cm}}
-    \toprule
-    Parâmetro & Valor & Observação \\
-    \midrule
-    learner          & ChangeDetectorLearner  &  O algoritmo de detecção de mudanças de conceito a ser testado é definido no atributo \textit{driftDetectionMethod} da classe \textit{ChangeDetectorLearner}.                   \\
-    stream           & ARFFFileStream         &  Caminho para um dos arquivos \textit{ARFF} descrito na seção anterior. O atributo \textit{classIndex} deve ser definido como $0$, pois não existem rótulos nestes conjuntos de dados.  \\
-    instanceLimit    & $-1$                            &  Desabilita o limite de instâncias a serem processadas.  \\
-    timeLimit        & $-1$                            &  Desabilita o limite de tempo de execução.  \\
-    sampleFrequency  & \hspace{3mm}$1$                 &  Uma linha de resultado do avaliador deve ser gerada para cada instância processada.  \\
-    \bottomrule
-    \end{tabular}
-    }
-    \end{table}
-\end{center}
+\newpage
 
-A classe de avaliação utilizada produz diversos indicadores referentes a acurácia e performance do algoritmo executado.
+\begin{table}[h]
+\centering
+\caption{Configuração da classe \textit{BasicConceptDriftPerformanceEvaluator}}
+\label{tbl:configuracao_tarefa}
+\begin{tabularx}{\textwidth}{ l l X }
+\toprule
+Parâmetro & Valor & Observação \\
+\midrule
+learner          & ChangeDetectorLearner  &  Algoritmo a ser testado.               \\
+stream           & ARFFFileStream         &  Caminho do arquivo ARFF.  \\
+instanceLimit    & $-1$                            &  Desabilita o limite de instâncias.  \\
+timeLimit        & $-1$                            &  Desabilita o limite de tempo de execução.  \\
+sampleFrequency  & \hspace{2mm}$1$                 &  Imprime a avaliação de cada observação.  \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+A classe de avaliação utilizada produz diversos indicadores referentes à acurácia e performance do algoritmo executado.
 A Tabela \ref{tbl:indicadores_analisado} apresenta os indicadores analisados neste trabalho.
 
-\begin{center}
-    \begin{table}[h]
-    \caption{Indicadores analisados}
-    \label{tbl:indicadores_analisado}
-    \resizebox{\textwidth}{!} {%
-    \begin{tabular}{lm{10cm}}
-    \toprule
-    Indicador & Observação \\
-    \midrule
-    Tempo de Processamento    &  Tempo médio (seg.) de processamento por instância. \\
-    Mudanças Existentes       &  Quantidade de mudanças existentes. \\
-    Mudanças Detectadas       &  Quantidade de mudanças detectadas corretamente. \\
-    Falso-positivos           &  Quantidade de mudanças detecatadas erroneamente. \\
-    Atraso de Detecção        &  Quantidade média de instâncias até a detecção. \\
-    \bottomrule
-    \end{tabular}
-    }
-    \end{table}
-\end{center}
 
-\section{P\element{ettitt}}
+\begin{table}[h]
+\centering
+\caption{Indicadores analisados}
+\label{tbl:indicadores_analisado}
+\begin{tabularx}{\textwidth}{ll}
+\toprule
+Indicador & Observação \\
+\midrule
+TP       &  \textbf{Tempo de Processamento} por instância (média em seg.). \\
+MR       &  \textbf{Mudanças Reais} existentes no conjunto de dados. \\
+VP       &  \textbf{Verdadeiro Positivo}. Quantidade de detecções corretas. \\
+FP       &  \textbf{Falso Positivo}. Quantidade de detecções errôneas. \\
+ATR      &  \textbf{Atraso de detecção}. \\ 
+         &  Quantidade média de instâncias entre a mudança de conceito e a detecção. \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
-Durante a revisão da literatura, investigou-se a aplicabilidade das técnicas para detecção de \textit{changing points} em problemas de detecção de mudança de conceito.
-Para tanto, foi realizada a implementação, no framework MOA\footnote{\url{https://git.io/fj8xu}}, de um novo algoritmo baseado no método estatístico proposto por \citeonline{Pettitt}.
+\subsection{Resultados}
 
-O método de Pettitt é um teste não paramétrico, no qual se verifica se duas amostras $Y_1,...,Y_t$ e $Y_{t+1},...,Y_T$ são da mesma população. A estatística $U_{t,T}$ faz uma contagem do número de vezes que um membro da primeira amostra é maior que um membro da segunda.
-A estatística $U_{t,T}$ é obtida através da Equação \ref{eq:pettitt}:
+Esta subseção apresenta os resultados obtidos no experimento com dados sintéticos. O experimento realizado utilizou quatro conjuntos de dados, conforme descrito na subseção \ref{sec:configuracao_experimento_sintetico}, e comparou os resultados do método proposto, RBFChain, aos dos algoritmos: ADWIN, CUSUM, DDM, EDDM, EWMA, HDDMA, PageHinkley e SeqDrift1.
+Estes algoritmos foram escolhidos por serem tradicionalmente utilizados nas análises comparativas presentes na literatura \cite{Gama:2014:SCD:2597757.2523813, Ross:2012:EWM:2076039.2076307, Barros:RDDM:2017, BlancoCRBDM15:HDDMA:HDDMW:2015} e por apresentarem implementação disponível no MOA.
+Os parâmetros padrão dos algoritmos foram aplicados e estão listados na Tabela \ref{tbl:parametros_algoritmos}.
 
-\begin{equation}
-    \label{eq:pettitt}
-    U_{t,T} = U_{t-1,T} + \sum_{j=1}^{T}sgn(Y_t-Y_j)
-\end{equation}
+\begin{table}[H]
+\centering
+\caption{Parâmetros utilizados}
+\label{tbl:parametros_algoritmos}
+\begin{tabularx}{\textwidth}{lX}
+\toprule
+Algoritmo & Parâmetros \\
+\midrule
+RBFChain                  &  $\sigma = 2$; $\lambda = 0.5$; $\alpha = 0.005$; $\delta = 1.0$ \\
+ADWIN                     &  $\delta = 0.002$ \\
+CUSUM                     &  MinNumInstances = 30; $\delta = 0.005$; $\lambda = 50$ \\
+DDM & MinNumInstances = 30; WarningLevel = 2; OutControlLevel = 3 \\
+EDDM & --- \\
+EWMA &  MinNumInstances = 30; $\lambda = 0.2$ \\
+HDDMA & DriftConfidence = $0.001$; WarningConfidence = $0.005$; \\
+PageHinkley &  MinNumInstances = 30; $\delta = 0.005; \lambda = 50; \alpha = 1$ \\
+SeqDrift1 & delta = 0.01; deltaWarning = 0.1; block = 200 \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
-Onde $t = 2,....,T$; $sgn(x) = 1$ para $x>0$; $sgn(x)= 0$ para $x=0$ e $sgn(x)=-1$ para $x<0$.
-A estatística $U_{t,T}$ é então calculada para os
-valores de $1 \leq t \leq T$ e a estatística $k(t)$ do teste de
-Pettitt é o máximo valor absoluto de $U_{t,T}$.
-
-Os testes foram executados com os conjuntos de dados sintéticos produzidos na Seção \ref{sec:configuracao_experimentos}. Os resultados obtidos são apresentados a seguir, na Tabela \ref{tbl:pettitt}.
-
-\begin{center}
-    \begin{table}[H]
-    \caption{Resultados - Método de Pettitt}
-    \label{tbl:pettitt}
-    \resizebox{\textwidth}{!} {%
-    \begin{tabular}{llllll}
-    \toprule
-    Conjunto de Dados & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
-    \midrule
-    Sem mudanças           &  $3.19$ & $0$ & $0$ & $4$ & $-$ \\
-    Mudanças Abruptas      &  $2.09$ & $6$ & $3$ & $2$ & $132$ \\
-    Mudanças Incrementais  &  $1.48$ & $6$ & $4$ & $2$ & $133$ \\
-    \bottomrule
-    \end{tabular}
-    }
-    \end{table}
-\end{center}
-
-A análise dos resultados demonstra que o algoritmo se mostrou propenso à produção de falsos-positivo e, em comparação aos outros algoritmos abordados neste trabalho, computacionalmente ineficiente.
-
-Por não apresentar resultados competitivos em relação ao estado da arte, esta linha de pesquisa foi suspensa, permitindo que os esforços se voltassem para a análise da aplicação de Redes de Função de Base Radial para detecção de mudanças de conceito.
-
-\section{RBFC\element{hain}}
-
-Esta seção apresenta um conjunto de experimentos realizados com o objetivo de validar o algoritmo desenvolvido nesta pesquisa, denominado RBFChain.
-Embora os experimentos ainda não sejam suficientes para comprovar a hipótese proposta,
-a análise empírica aqui apresentada evidencia a importância de analisar a aplicação de Redes de Função de Base Radial para detecção de mudanças de conceito em fluxos contínuos de dados.
-
-Para execução dos experimentos, foram utilizados três conjuntos de dados sintéticos, conforme descrito na seção \ref{sec:configuracao_experimentos}.
-Além disso, os seguintes algoritmos foram utilizados para comparação: CUSUM, PageHinkley e ADWIN.
-A Tabela \ref{tbl:parametros_algoritmos} lista os parâmetros utilizados para cada algoritmo.
-
-\begin{center}
-    \begin{table}[H]
-    \caption{Parâmetros utilizados para cada algoritmo}
-    \label{tbl:parametros_algoritmos}
-    \resizebox{\textwidth}{!} {%
-    \begin{tabular}{lm{10cm}}
-    \toprule
-    Algoritmo & Parâmetros \\
-    \midrule
-    RBFChain                  &  $\sigma = 2$; $\lambda = 0.5$ \\
-    CUSUM                     &  $MinNumInstances = 30; \delta = 0.005; \lambda = 50$ \\
-    PageHinkley               &  $MinNumInstances = 30; \delta = 0.005; \lambda = 50; \alpha = 1$ \\
-    ADWIN                     &  $\delta = 0.002$ \\
-    \bottomrule
-    \end{tabular}
-    }
-    \end{table}
-\end{center}
-
-O primeiro experimento utilizou o fluxo de dados sintético sem mudanças de conceito, a fim de avaliar a tendência de produção de falsos-positivo.
+O primeiro teste utilizou o conjunto de dados sintético sem mudanças de conceito, visando avaliar a tendência de produção de falso positivos.
 O resultado desta análise pode ser visto na Tabela \ref{tbl:exp1}.
 
-\begin{center}
-    \begin{table}[H]
-    \caption{Experimento 1 - Fluxo sem mudanças de conceito}
-    \label{tbl:exp1}
-    \resizebox{\textwidth}{!} {%
-    \begin{tabular}{llllll}
-    \toprule
-    Algoritmo & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
-    \midrule
-    RBFChain          &  $0.22$ & $0$ & $0$ & $0$ & $-$ \\
-    CUSUM                     &  $0.31$ & $0$ & $0$ & $0$ & $-$ \\
-    PageHinkley               &  $0.24$ & $0$ & $0$ & $0$ & $-$ \\
-    ADWIN                     &  $0.21$ & $0$ & $0$ & $0$ & $-$ \\
-    \bottomrule
-    \end{tabular}
-    }
-    \end{table}
-\end{center}
+
+\begin{table}[h]
+\centering
+\caption{Resultados dos algoritmos para o conjunto de dados sem mudanças de conceito.}
+\label{tbl:exp1}
+\begin{tabular}{llllll}
+
+\toprule
+Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\ 
+\midrule
+RBFChain               & 0.013                  & 0                      & 0                      & 0                      & ---                    \\ 
+ADWIN                  & 0.025                  & 0                      & 0                      & 0                      & ---                    \\ 
+CUSUM                  & 0.016                  & 0                      & 0                      & 0                      & ---                    \\ 
+DDM                    & 0.014                  & 0                      & 0                      & 0                      & ---                    \\ 
+EDDM                   & 0.013                  & 0                      & 0                      & 0                      & ---                    \\ 
+EWMA                   & 0.014                  & 0                      & 0                      & 0                      & ---                    \\ 
+HDDMA                  & 0.017                  & 0                      & 0                      & 0                      & ---                    \\ 
+PageHinkley            & 0.015                  & 0                      & 0                      & 0                      & ---                    \\ 
+SeqDrift1              & 0.017                  & 0                      & 0                      & 0                      & ---                    \\ 
+\bottomrule
+
+
+\end{tabular}
+\end{table}
+
 
 Como pode ser observado, todos algoritmos testados demonstraram tolerância a ruídos e não indicaram nenhum falso positivo.
-Quanto a performance, o algoritmo proposto obteve a segunda melhor média em tempo de processamento. Superado pelo algoritmo ADWIN, por uma pequena margem.
+Quanto a performance, o algoritmo proposto obteve a melhor média em tempo de processamento, juntamente com o EDDM.
 O comportamento dos algoritmos e do conjunto de dados utilizado é apresentado graficamente na Figura \ref{fig:exp_sem_mudancas}.
 
-\begin{figure}[ht]
+\begin{landscape}
+\begin{figure}[t]
 \begin{center}
-    \includegraphics[width=\textwidth]{imagens/nochange.pdf}
-    \caption{Representação Gráfica - Sem mudanças de conceito}
+    \includegraphics[scale=0.65]{imagens/nochange.png}
+    \caption{Comportamento dos algoritmos para o conjunto de dados sem mudanças de conceito.}
     \label{fig:exp_sem_mudancas}
 \end{center}
 \end{figure}
+\end{landscape}
 
-Em seguida, utilizou-se a base de dados com mudanças abruptas como base de testes.
+Em seguida, utilizou-se o conjunto de dados com mudanças abruptas.
 Os resultados obtidos são apresentados na Tabela \ref{tbl:exp2}.
 
-\begin{center}
-    \begin{table}[H]
-    \caption{Experimento 2 - Fluxo com mudanças de conceito abruptas}
+
+    \begin{table}[ht]
+    \centering
+    \caption{Resultados dos algoritmos para o conjunto de dados com mudanças de conceito abruptas.}
     \label{tbl:exp2}
-    \resizebox{\textwidth}{!} {%
     \begin{tabular}{llllll}
-    \toprule
-    Algoritmo & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
-    \midrule
-    RBFChain          &  $0.23$ & $6$ & $6$    & $0$    & $1$ \\
-    CUSUM                     &  $0.29$ & $6$ & $3$    & $0$    & $68$ \\
-    PageHinkley               &  $0.22$ & $6$ & $1$    & $0$    & $17$ \\
-    ADWIN                     &  $0.21$ & $6$ & $2052$ & $2046$ & $9$ \\
-    \bottomrule
+
+\toprule
+Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\ 
+\midrule
+RBFChain               & 0.015                  & 6                      & 5                      & 0                      & 166.67                 \\ 
+ADWIN                  & 0.016                  & 6                      & 6                      & 2046                   & 9.00                   \\ 
+CUSUM                  & 0.021                  & 6                      & 3                      & 0                      & 68.83                  \\ 
+DDM                    & 0.015                  & 6                      & 3                      & 0                      & 38.83                  \\ 
+EDDM                   & 0.013                  & 6                      & 0                      & 0                      & ---                    \\ 
+EWMA                   & 0.014                  & 6                      & 1                      & 0                      & 1.00                   \\ 
+HDDMA                  & 0.014                  & 6                      & 3                      & 0                      & 10.00                    \\ 
+PageHinkley            & 0.015                  & 6                      & 1                      & 0                      & 16.17                  \\ 
+SeqDrift1              & 0.015                  & 6                      & 5                      & 0                      & 167.50                 \\ 
+\bottomrule
+
     \end{tabular}
-    }
     \end{table}
-\end{center}
 
-Ao analisar este resultado, verifica-se que o algoritmo proposto neste trabalho identificou todas as mudanças de conceito existentes no fluxo sem indicar nenhum falso-positivo, sendo também o algoritmo com menor atraso de detecção.
-No quesito performance, a técnica desenvolvida obteve o terceiro melhor resultado.
-Paralelamente, os outros algoritmos analisados apresentaram baixa acurácia.
-O algoritmo CUSUM detectou apenas metade das mudanças e apresentou a maior taxa de atraso.
-Enquanto o método PageHinkley detectou apenas uma mudança.
-Por fim, o algoritmo ADWIN apresentou maior eficiência computacional e apesar de detectar as 6 mudanças existentes,
-mostrou-se hipersensível, pois foram detectados 2046 falsos-positivo.
 
-Os resultados do segundo experimento são demonstrados graficamente na Figura \ref{fig:exp_abrupta}. Nesta imagem, as linhas sólidas na cor verde representam as mudanças de conceito existentes no conjunto de dados analisado. As linhas tracejadas azuis representam mudanças de conceito identificadas corretamente, enquanto que as linhas tracejadas de cor vermelha representam falsos-positivo.
+Ao analisar este resultado, verifica-se que os algoritmos RBFChain e SeqDrift1 apresentaram as melhores acurácias, identificando 5 das 6 mudanças existentes, sem produzir nenhum falso positivo.
+O método proposto apresentou o terceiro melhor tempo de processamento (TP), com uma pequena diferença para o primeiro.
+Os outros algoritmos analisados apresentaram acurácia inferior, e o algoritmo ADWIN se mostrou hipersensível.
 
-\begin{figure}[H]
+Os resultados deste teste são demonstrados graficamente na Figura \ref{fig:exp_abrupta}. Nesta imagem, as linhas sólidas na cor verde representam as mudanças de conceito existentes no conjunto de dados analisado. As linhas tracejadas azuis representam mudanças de conceito identificadas corretamente e as linhas tracejadas de cor vermelha representam falso positivos.
+
+\begin{landscape}
+\begin{figure}[h]
 \begin{center}
-    \includegraphics[width=\textwidth]{imagens/abrupt.pdf}
-    \caption{Representação Gráfica - Mudanças Abruptas}
+    \includegraphics[scale=0.65]{imagens/abrupt.png}
+    \caption{Comportamento dos algoritmos para o conjunto de dados com mudanças de conceito abruptas.}
     \label{fig:exp_abrupta}
 \end{center}
 \end{figure}
+\end{landscape}
 
-O último experimento realizado utilizou o fluxo sintético com mudanças de conceito graduais.
-Seu resultado é demonstrado na Tabela \ref{tbl:exp3}.
+Posteriormente, empregou-se o conjunto de dados com mudanças de conceito graduais.
+O resultado é demonstrado na Tabela \ref{tbl:exp3}.
 
-\begin{center}
-    \begin{table}[ht]
-    \caption{Experimento 3 - Fluxo com mudanças de conceito graduais}
-    \label{tbl:exp3}
-    \resizebox{\textwidth}{!} {%
-    \begin{tabular}{llllll}
-    \toprule
-    Algoritmo & Tempo de processamento & Mudanças Existentes & Mudanças Detectadas & Falso-positivos & Atraso de Detecção \\
-    \midrule
-    RBFChain          &  $0.24$ & $6$ & $5$    & $1$    & $171$ \\
-    CUSUM                     &  $0.65$ & $6$ & $3$    & $0$    & $32$ \\
-    PageHinkley               &  $0.26$ & $6$ & $1$    & $0$    & $4$ \\
-    ADWIN                     &  $0.27$ & $6$ & $2244$ & $2238$ & $1$ \\
-    \bottomrule
-    \end{tabular}
-    }
-    \end{table}
-\end{center}
+\begin{table}[ht]
+\centering
+\caption{Resultados dos algoritmos para o conjunto de dados com mudanças de conceito graduais.}
+\label{tbl:exp3}
+\begin{tabular}{llllll}
 
-Neste experimento, o algoritmo RBFChain identificou 5 das 6 mudanças existentes e sinalizou um falso-positivo.
-Ainda assim, obteve a melhor acurácia, apesar de apresentar a maior taxa de atraso.
-Os outros algoritmos analisados apresentaram comportamentos similares aos do experimento anterior.
-O algoritmo CUSUM identificou metade das mudanças.
-O método PageHinkley identificou apenas uma alteração de conceito.
-E, finalmente, o algoritmo ADWIN voltou a se mostrar muito sensível, ao identificar $2238$ falsos-positivo.
+\toprule
+Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\ 
+\midrule
+RBFChain               & 0.011                  & 3                      & 3                      & 0                      & 101.00                 \\ 
+ADWIN                  & 0.020                  & 3                      & 3                      & 2209                   & 1.00                   \\ 
+CUSUM                  & 0.014                  & 3                      & 2                      & 0                      & 83.33                  \\ 
+DDM                    & 0.014                  & 3                      & 1                      & 1                      & 58.33                  \\ 
+EDDM                   & 0.013                  & 3                      & 0                      & 0                      & ---                    \\ 
+EWMA                   & 0.015                  & 3                      & 0                      & 0                      & ---                    \\ 
+HDDMA                  & 0.014                  & 3                      & 2                      & 0                      & 100.67                 \\ 
+PageHinkley            & 0.014                  & 3                      & 1                      & 0                      & 22.33                  \\ 
+SeqDrift1              & 0.015                  & 3                      & 3                      & 1                      & 194.33                 \\ 
+\bottomrule
 
-Por fim, o comportamento do conjunto de dados e dos algoritmos neste último experimento é apresentado na Figura \ref{fig:exp_gradual}.
-Na imagem, as linhas sólidas na cor verde representam as mudanças de conceito existentes no conjunto de dados analisado. As linhas tracejadas azuis representam mudanças de conceito identificadas corretamente, enquanto que as linhas tracejadas de cor vermelha representam falsos-positivo.
 
+\end{tabular}
+\end{table}
+
+A análise do resultado indica que o RBFChain obteve a melhor acurácia, identificando todas as três mudanças de conceito, sem produzir falso positivos.
+O algoritmo SeqDrift1 apresentou a segunda melhor acurácia, pois também detectou as três mudanças corretamente, entretanto, apresentou um falso positivo e uma taxa de atraso significativamente maior.
+Os algoritmos CUSUM e HDDMA apresentaram uma acurácia média, ao identificar duas mudanças corretamente, sem incidência de falso positivos.
+Os outros algoritmos apresentaram uma baixa acurácia e o ADWIN mostrou-se, novamente, hipersensível.
+Por fim, o algoritmo proposto também apresentou o melhor resultado em relação ao tempo de processamento.
+
+O conjunto de dados e a execução de cada algoritmo estão representadas graficamente na Figura \ref{fig:exp_gradual}.
+
+\begin{landscape}
 \begin{figure}[ht]
 \begin{center}
-    \includegraphics[width=\textwidth]{imagens/gradual.pdf}
-    \caption{Representação Gráfica - Mudanças Graduais}
+    \includegraphics[scale=0.65]{imagens/gradual.png}
+    \caption{Comportamento dos algoritmos para o conjunto de dados com mudanças de conceito graduais.}
     \label{fig:exp_gradual}
 \end{center}
 \end{figure}
+\end{landscape}
+
+O último teste utilizou o conjunto de dados com mudanças de conceito incrementais.
+O resultado deste teste pode ser visto na Tabela \ref{tbl:exp4}.
+
+\begin{table}[ht]
+\centering
+\caption{Resultados dos algoritmos para o conjunto de dados com mudanças de conceito incrementais.}
+\label{tbl:exp4}
+\begin{tabular}{llllll}
+
+\toprule
+Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\ 
+\midrule
+RBFChain               & 0.020                  & 1                      & 1                      & 2                      & 501.00                 \\ 
+ADWIN                  & 0.017                  & 1                      & 1                      & 1923                   & 1.00                   \\ 
+CUSUM                  & 0.014                  & 1                      & 1                      & 1                      & 434.00                 \\ 
+DDM                    & 0.014                  & 1                      & 1                      & 1                      & 349.00                 \\ 
+EDDM                   & 0.013                  & 1                      & 0                      & 0                      & ---                    \\ 
+EWMA                   & 0.016                  & 1                      & 0                      & 1                      & ---                    \\ 
+HDDMA                  & 0.014                  & 1                      & 1                      & 1                      & 213.00                    \\ 
+PageHinkley            & 0.014                  & 1                      & 1                      & 1                      & 449.00                 \\ 
+SeqDrift1              & 0.016                  & 1                      & 1                      & 2                      & 331.00                 \\ 
+\bottomrule
+
+\end{tabular}
+\end{table}
+
+Verifica-se, através da análise do resultado, que a mudança de conceito incremental representa uma dificuldade, pois todos algoritmos que detectaram a mudança existente também produziram falso positivos.
+
+Os métodos RBFChain e SeqDrift1, que apresentaram os melhores resultados nos testes anteriores, tiveram a pior acurácia, pois emitiram dois falsos positivo cada.
+Contraditoriamente, os algoritmos que obtiveram menor acurácia em testes passados, indicaram apenas um falso positivo cada.
+
+Diante disso, considera-se o teste inconclusivo e ressalta-se a necessidade de uma investigação mais detalhada sobre a detecção de mudanças de conceito incrementais. Esta investigação, inclusive, consta como um dos trabalhos futuros propostos para esta dissertação.
+
+Os resultados deste teste são demonstrados graficamente na Figura \ref{fig:exp_incremental}.
+
+\begin{landscape}
+\begin{figure}[ht]
+\begin{center}
+    \includegraphics[scale=0.65]{imagens/incremental.png}
+    \caption{Comportamento dos algoritmos para o conjunto de dados com mudanças de conceito incrementais.}
+    \label{fig:exp_incremental}
+\end{center}
+\end{figure}
+\end{landscape}
+
+Por fim, objetivando verificar a existência de diferenças significativas entre os resultados dos detectores testados, aplicou-se o teste \textit{t-student} com nível de significância $\alpha = 0.05$. Este teste resultou em um \textit{p} valor igual a $0.0007587$, indicando a existência de uma diferença estatisticamente significativa.
+
+Ademais, os resultados obtidos comprovam a viabilidade do método proposto e sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores presentes na literatura.
+Deve-se ressaltar que a técnica desenvolvida se diferencia por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos, além de modelar as mudanças de conceito em um processo markoviano.
+
+\section{Segundo experimento: classificação de fixações e sacadas}
+
+% \section{Monitoramento Ocular - Fixações e Sacadas}
+% \label{sec:monitoramento_ocular}
+
+O monitoramento ocular não é uma técnica experimental recente.
+No entanto, o desenvolvimento de tecnologias não invasivas favoreceu o aumento da sua utilização.
+Atualmente, a técnica é empregada em diferentes tarefas experimentais \cite{Duchowski_EyeTrackingSurvey}, como, por exemplo:
+localização da atenção visual,
+detecção de deficiências cognitivas,
+avaliação de estratégias de pesquisa visual, entre outras.
+Estas tarefas produzem informações que são utilizadas como fator de análise por um vasta gama de pesquisas, em diferentes áreas do conhecimento.
+
+Antes de descrever a atividade de monitoramento ocular, é necessário apresentar alguns conceitos básicos sobre o funcionamento da visão.
+Os olhos precisam estar em constante movimento para que a retina possa formar uma imagem nítida.
+Este movimento frequente é conhecido como movimento sacádico.
+Ao analisar uma imagem ou cena, o olho tende a permanecer fixo durante alguns milissegundos nas áreas mais significativas (fixações);
+depois disso, o olho se move em direção a uma nova zona de interesse (sacadas).
+Este processo é demonstrado na Figura \ref{fig:exemplo_fixacoes_e_sacadas}, utilizando pontos mais densos para representar as fixações e linhas para as sacadas:
+
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=1]{imagens/exemplo_fixacao_e_sacadas.png}
+        \caption{Exemplo de identificação de fixações e sacadas. Fonte: \citeonline{KONIG2014121}.}
+        \label{fig:exemplo_fixacoes_e_sacadas}
+    \end{center}
+\end{figure}
+
+O cérebro não consegue processar as imagens transmitidas pelo sistema visual durante as sacadas, o que causa uma deterioração da imagem formada na retina.
+Por esse motivo, o cérebro atribui semântica apenas às imagens formadas durante os períodos de fixação.
+Isso implica que o estudo das fixações é essencial para a compreensão e interpretação dos movimentos oculares.
+
+Portanto, é fundamental utilizar técnicas automatizadas para classificar fixações e sacadas durante a análise de trajetórias oculares.
+A literatura dispõe de diversos algoritmos para realização desta tarefa.
+As técnicas mais utilizadas realizam a classificação com base em limites de velocidade e/ou aceleração,
+pois estes valores são significativamente maiores durante as sacadas \cite{Otero_Saccades_and_microsaccades}.
+Enquanto outros algoritmos realizam a classificação através de medidas como densidade, dispersão ou áreas de interesse.
+
+Contudo, a aplicação de diferentes algoritmos em uma mesma trajetória ocular pode produzir resultados divergentes, pois os métodos disponíveis na literatura são afetados pela escolha dos parâmetros e pelas características dos dados em análise (frequência, amplitude, etc.) \cite{KONIG2014121}.
+Consequentemente, a atividade de classificação de fixações e sacadas permanece altamente subjetiva.
+
+Visando solucionar esse problema, \citeonline{KONIG2014121} propõem um novo método de classificação, denominado ClusterFix.
+O método proposto apresenta acurácia equivalente ao estado da arte e se diferencia por ser completamente automatizado e independente de parâmetros.
+Essas características permitem que a técnica seja utilizada como um padrão referencial,
+possibilitando que classificações de trajetórias oculares sejam comparadas entre laboratórios, experimentos e algoritmos.
+
+Todavia, os algoritmos presentes na literatura, incluindo o ClusterFix, não permitem a classificação da trajetória ocular em tempo de execução, pois atuam em lote, através de rotinas computacionalmente custosas.
+Diante disso, investigou-se a aplicação do método proposto por esta dissertação, denominado RBFChain, na classificação de fixações e sacadas em atividades de monitoramento ocular.
+Esta investigação permitiu confirmar a aplicabilidade do RBFChain em problema reais, além de contribuir para solução de um relevante problema relacionado à área de Neurociência.
+
+Para validar o método proposto, foram utilizados dois conjuntos de dados oriundos do monitoramento de macacos-pregos e os resultados foram comparados com o algoritmo ClusterFix.
+As subseções seguintes apresentam a configuração, os critérios de avaliação e os resultados obtidos durante a prática.
+
+\subsection{Configuração do experimento}
+\label{sec:configuracao_experimento_fixacoes_sacadas}
+
+O experimento utilizou dois conjuntos de dados produzidos e cedidos, em parceria, pelo Instituto do Cérebro da Universidade Federal do Rio Grande do Norte (UFRN). 
+Os conjuntos de dados são denominados, respectivamente, \textit{Dede} e \textit{Juju}, pois representam os resultados do monitoramento ocular de dois macacos-pregos com esses nomes.
+Cada conjunto de dados contém $6.200$ observações formadas por pontos, $(x, y)$, que indicam a localização em análise pelos olhos em cada instante de tempo.
+
+O algoritmo RBFChain foi ligeiramente alterado para poder atuar como um classificador de fixações e sacadas. Nesta versão, o algoritmo deixou de verificar a diferença entre o \textit{centro conceito} e o \textit{centro ativo}, passando a analisar apenas se a probabilidade da transição corrente é maior do que $\delta$. Se esta condição for verdadeira, classifica-se o ponto como uma fixação, do contrário, como sacada. 
+Em outras palavras, o algoritmo classifica transições consolidadas - entre o mesmo conceito ou entre conceitos - como fixações e transições não consolidadas, como sacadas.
+A adaptação é apresentada em pseudocódigo em Algoritmo \ref{alg:rbfchain_adaptado}:
+
+\begin{algorithm}[H]
+    \SetAlgoLined
+    \Entrada{$evento, \sigma, \lambda, \alpha, \delta$}
+    \Saida{$sacada$ ou $fixacao$}
+    \Inicio{
+
+     $grupos \longleftarrow ()$\; 
+     $grupoAtivo \longleftarrow nulo$\; 
+     $grupoConceito \longleftarrow nulo$\;
+     $retorno \longleftarrow nulo$\;
+     
+     \BlankLine
+     
+     $minAtivacao \longleftarrow \lambda$\;
+     \ParaTodo{grupo}{
+         $ativacao \longleftarrow gaussiana(evento, grupo, \sigma)$\\
+         \Se{$ativacao >= minAtivacao$}{
+            $grupoAtivo \longleftarrow grupo$\;
+            $minAtivacao \longleftarrow ativacao$\;
+         }
+    }
+    \Se{$grupoAtivo == nulo$}{
+        $grupos \longleftarrow evento$\;
+        $grupoAtivo \longleftarrow evento$\;
+    }
+    
+    \BlankLine
+    
+    \Se{$grupoConceito == nulo$}{
+        $grupoConceito \longleftarrow grupoAtivo$\;
+    }
+    
+    \BlankLine
+         
+    $probabilidade \longleftarrow markov(grupoConceito, grupoAtivo, \alpha)$\;
+
+    \BlankLine
+    
+
+    \Se{$probabilidade < \delta$}{
+        $retorno \longleftarrow sacada$\;
+    }
+    \Senao{
+        $grupoConceito \longleftarrow grupoAtivo$\;
+        $retorno \longleftarrow fixacao$\;
+    }
+
+    \BlankLine
+
+    \Retorna{$retorno$}\;
+    }
+
+    \caption{\textsc{RBFChain-Adaptado}}
+    \label{alg:rbfchain_adaptado}
+\end{algorithm}
+\vspace{7pt}
+
+Contudo, a implementação presente do RBFChain atua sobre séries univariadas, logo foi necessário converter os pontos dos conjuntos de dados em valores únicos.
+Esta conversão foi feita atráves do cálculo da distância Euclidiana de cada ponto em relação ao ponto $(0, 0)$.
+Este novo conjunto de dados, formado pelas distâncias, foi utilizado pelo algoritmo.
+
+As métricas utilizadas para validar os resultados do RBFChain - acurácia, precisão e \textit{recall}, necessitam dos rótulos corretos das classificações para serem calculadas. Estes rótulos foram obtidos a partir da implementação oficial, em MATLAB, do algoritmo ClusterFix \cite{KONIG2014121}, utilizado como padrão referencial por esta dissertação.
+
+Por fim, a Figura \ref{fig:trajetorias} demonstra graficamente as trajetórias dos conjuntos de dados analisados.
+Na imagem, a trajetória é representada por uma linha sólida verde, e os pontos de \textit{início} e \textit{fim} por marcadores textuais.
+
+\begin{figure}[ht]%
+\centering
+\subfigure[Trajetória \textit{Dede}]{%
+\includegraphics[width=0.45\textwidth]{imagens/trajetoria_dede.png}
+}%
+\qquad
+\subfigure[Trajetória \textit{Juju}]{%
+\includegraphics[width=0.45\textwidth]{imagens/trajetoria_juju.png}
+}%
+\caption{Trajetórias dos conjuntos de dados.}
+\label{fig:trajetorias}%
+\end{figure}
+
+\subsection{Critérios de avaliação}
+
+Até o presente momento, não existe uma técnica de avaliação consolidada para analisar métodos de classificação de fixações e sacadas.
+Por conseguinte, esta dissertação adotou o ClusterFix como padrão referencial, devido as suas características, e os seus resultados foram utilizados como rótulos.
+Estes rótulos foram, então, usados para calcular métricas de avaliação para os resultados do RBFChain.
+Para tanto, as predições de ambos algoritmos foram transformadas em séries binárias, onde o valor $0$ representa um ponto classificado como sacada, e o valor $1$, uma fixação.
+
+Para entender as fórmulas das métricas utilizadas é preciso conhecer o significado das siglas utilizadas, estas são: Verdadeiros Positivos (TP), Falsos Positivos (FP), Verdadeiros Negativos (TN) e Falsos Negativos (FN).
+
+O parâmetro TP representa a quantidade de verdadeiros positivos que foram classificados corretamente para a classe positiva, o parâmetro TN representa a quantidade de verdadeiros negativos que foram classificados corretamente para a classe negativa. O parâmetro FP representa a quantidade de instâncias que foram classificadas incorretamente para a classe positiva (foram classificadas como positiva mas eram da classe negativa) e o parâmetro FN representa a quantidade de instâncias que foram classificadas incorretamente para a classe negativa (foram classificadas como negativa mas eram da classe positiva).
+
+As métricas utilizadas são apresentadas na Tabela \ref{tbl:metricas_rbfchain}.
+Em todas, o melhor valor esperado é $1$ e o pior valor esperado é $0$.
+
+\begin{table}[h]
+\centering
+\caption{Métricas utilizadas para avaliar as classificações do RBFChain}
+\label{tbl:metricas_rbfchain}
+\begin{tabularx}{\textwidth}{lXx}
+\toprule
+Métrica  & Observação & Fórmula \\
+\midrule
+QP       &  \textbf{Quantidade de Pontos} analisados. & --- \\
+AC       &  \textbf{Acurácia}.  &  $\text{AC} = \frac{\text{TP} + \text{TN}}{\text{TP + FP + FN + TN} }$ \\
+         & Fração de fixações e sacadas classificadas corretamente.  &  \\
+
+PR       &  \textbf{Precisão}.  &  $\text{PR} = \frac{\text{TP}}{\text{TP + FP} }$ \\
+         & Fração das fixações classificadas pelo algoritmo corretamente. &  \\
+         
+RE       &  \textbf{\textit{Recall}}.  &  $\text{RE} = \frac{\text{TP}}{\text{TP + FN}}$ \\
+         & Fração das fixações existentes (rotuladas) que também foram identificadas pelo algoritmo. &  \\
+                  
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Resultados}
+
+Esta subseção apresenta os resultados obtidos ao aplicar o método de detecção proposto nesta dissertação, denominado RBFChain, na classificação de fixações e sacadas em atividades de monitoramento ocular. 
+Para validar a aplicabilidade do método, foram utilizados dois conjuntos de dados, conforme descrito na subseção \ref{sec:configuracao_experimento_fixacoes_sacadas}. 
+Os resultados obtidos foram comparados, através de métricas para avaliação de classificadores, aos resultados produzidos pelo algoritmo ClusterFix, que foram utilizados como rótulos.
+Por fim, os seguintes parâmetros, definidos de forma empírica, foram empregados: $\sigma = 0.005$, $\lambda = 0.5$, $\alpha = 0.05$ e $\delta = 1.0$.
+
+O primeiro teste utilizou o conjunto de dados \textit{Dede}.
+Os resultados obtidos são demonstrados na Tabela \ref{tbl:dede}.
+
+\newpage
+
+\begin{table}[ht!]
+\centering
+\caption{Resultado da classificação de fixações e sacadas utilizando o RBFChain para o conjunto de dados \textit{Dede}.}
+\label{tbl:dede}
+\begin{tabular}{llll}
+
+\toprule
+QT              & AC                     & PR                     & RE         \\ 
+\midrule
+$6.200$         & $0.87$                 & $0.98$                 & $0.88$      \\ 
+\bottomrule
+
+\end{tabular}
+\end{table}
+
+A análise do resultado indica que $87\%$ das fixações e sacadas classificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix. Ao analisar apenas as fixações identificadas pelo RBFChain, pode-se afirmar que $98\%$ também foram classificadas como fixações pelo ClusterFix. Por fim, dentre todas fixações identificadas pelo ClusterFix, o RBFChain também identificou $88\%$ destas.
+
+As trajetórias traçadas e as fixações identificadas pelos algoritmos ClusterFix e RBFChain estão representadas graficamente na Figura \ref{fig:comparacao_dede}. Nas imagens, a linha verde sólida representa as sacadas e os pontos vermelhos indicam as fixações.
+
+\begin{figure}[ht]%
+\centering
+\subfigure[ClusterFix - \textit{Dede}]{%
+\includegraphics[width=0.45\textwidth]{imagens/dede_clusterfix.png}
+}%
+\qquad
+\subfigure[RBFChain - \textit{Dede}]{%
+\includegraphics[width=0.45\textwidth]{imagens/dede_rbfchain.png}
+}%
+\caption{Comportamento dos algoritmos ClusterFix e RBFChain ao analisar o conjunto de dados \textit{Dede}.}
+\label{fig:comparacao_dede}%
+\end{figure}
+
+O segundo teste utilizou o conjunto de dados \textit{Juju}.
+Os resultados obtidos são demonstrados na Tabela \ref{tbl:juju}.
+
+\newpage
+
+\begin{table}[ht!]
+\centering
+\caption{Resultado da classificação de fixações e sacadas utilizando o RBFChain para o conjunto de dados \textit{Juju}.}
+\label{tbl:juju}
+\begin{tabular}{llll}
+
+\toprule
+QT              & AC                     & PR                     & RE      \\ 
+\midrule
+$6.200$         & $0.82$                 & $0.98$                 & $0.83$      \\ 
+\bottomrule
+
+\end{tabular}
+\end{table}
+
+Com base nos resultados, verifica-se que $82\%$ das fixações e sacadas classificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix. Dentre as fixações identificadas pelo RBFChain, pode-se afirmar que $98\%$ também foram classificadas como fixações pelo ClusterFix. Por fim, dentre as fixações identificadas pelo ClusterFix, o RBFChain também identificou $83\%$ destas.
+
+As trajetórias traçadas e as fixações identificadas pelos algoritmos ClusterFix e RBFChain estão representadas graficamente na Figura \ref{fig:comparacao_juju}.
+
+\begin{figure}[ht]%
+\centering
+\subfigure[ClusterFix - \textit{Juju}]{%
+\includegraphics[width=0.45\textwidth]{imagens/juju_clusterfix.png}
+}%
+\qquad
+\subfigure[RBFChain - \textit{Juju}]{%
+\includegraphics[width=0.45\textwidth]{imagens/juju_rbfchain.png}
+}%
+\caption{Comportamento dos algoritmos ClusterFix e RBFChain ao analisar o conjunto de dados \textit{Juju}.}
+\label{fig:comparacao_juju}%
+\end{figure}
+
+Por fim, os resultados obtidos comprovam a aplicabilidade do método proposto ao problema de classificação de fixações e sacadas em atividades de monitoramento ocular.
+As métricas obtidas sugerem que o RBFChain é um classificador equivalente ao ClusterFix, considerado estado da arte.
+Deve-se ressaltar que o método proposto realiza a classificação dos pontos em tempo de execução, ao passo que o ClusterFix atua em lote, realizando diversas etapas de agrupamento.
+
 
 \section{Considerações Finais}
 
-\ldots
+Este capítulo abordou em detalhes a avaliação experimental realizada para o método de detecção proposto, denominado RBFChain.
+A técnica proposta foi validada através de dois experimentos.
+O primeiro experimento utilizou dados sintéticos para realizar uma análise detalhada de sensibilidade, precisão e tolerância ao ruído, confrontando o método proposto com os principais algoritmos disponíveis na literatura.
+O segundo experimento aplicou a técnica a um problema real de classificação de fixações e sacadas na atividade de monitoramento ocular, um relevante problema relacionado à área de Neurociência.
 
 \xchapter{Conclusões e Trabalhos Futuros}{} \label{conclusoes_e_trabalhos_futuros}
 
 \section{Discussões}
 
-\ldots
+Este trabalho apresentou um novo método de detecção de mudanças de conceito, denominado RBFChain, baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov.
+O método apresentado se diferencia dos trabalhos existentes por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
 
-Nesta seção foram apresentados os resultados dos experimentos iniciais deste trabalho de pesquisa,
-os quais visavam confirmar a aplicabilidade das Redes de Função de Base Radial na detecção de mudanças de conceito em fluxos contínuos de dados.
+O método proposto foi avaliado através de dois experimentos.
+O primeiro experimento utilizou dados sintéticos para realizar uma análise detalhada de sensibilidade, precisão e tolerância ao ruído, 
+além de comparar os resultados com os principais algoritmos disponíveis na literatura.
 
-As seguintes etapas estão previstas para serem executadas:
-i) realizar experimentos com fluxos recorrentes e incrementais;
-ii) integrar uma cadeia de Markov ao método proposto, permitindo a análise do comportamento das mudanças e o aprimoramento da acurácia das detecções;
-iii) implementar os algoritmos OLINDDA, MINAS e DETECNOD para serem comparados;
-iv) implementar e validar o algoritmo no framework Tornado; e
-v) alterar o algoritmo para permitir que o centro se desloque dentro do grupo formado.
-Espera-se ainda realizar uma aplicação prática da abordagem proposta, utilizando-a em um conjunto de dados oriundo de um sistema do mundo real.
+O segundo experimento aplicou a técnica desenvolvida a um problema real de classificação de fixações e sacadas na atividade de monitoramento ocular, 
+um problema relevante que envolve as áreas de Neurociência e Computação.
+
+Os resultados obtidos sugerem que o RBFChain é estatisticamente melhor ou equivalente aos principais detectores presentes na literatura.
+Ademais, o método proposto também apresentou bons resultados quando aplicada ao problema de monitoramento ocular, sendo capaz de classificar fixações e sacadas em tempo real e com precisão equivalente ao estado da arte.
 
 \section{Trabalhos Futuros}
 
-\ldots
+Alguns dos possíveis trabalhos futuros são descritos a seguir:
+
+\begin{itemize}
+
+    \item \textbf{Desenvolvimento de novas estratégias para o cálculo dos parâmetros:} A escolha dos
+parâmetros é um fator importante no desempenho do
+algoritmo proposto. Novas estratégias para calcular automaticamente estes valores devem ser estudadas.
+
+    \item \textbf{Criação de novas bases de dados experimentais:} Poucas bases de dados reais
+e artificiais estão disponíveis para serem usadas em experimentos envolvendo detecção de mudanças de conceito.
+Faltam bases que simulem mudanças de conceito em contextos diferentes e com presença de ruídos. 
+A criação de um repositório de dados que possa ser usado na validação de algoritmos para detecção de mudanças de conceito pode trazer importantes benefícios para a pesquisa na área.
+
+\item \textbf{Tratamento de contextos incrementais}: Mudanças de conceito com padrão de ocorrência incremental representam uma desafio para os algoritmos de detecção.
+No experimento realizado nesta dissertação, por exemplo, todos algoritmos apresentaram algum grau de imprecisão ao analisar este contexto.
+Portanto, testes mais elaborados devem ser realizados a fim de avaliar o desempenho do algoritmo RBFChain no tratamento de cenários incrementais.
+
+\end{itemize}
 
 %% Parte pos-textual
 \backmatter

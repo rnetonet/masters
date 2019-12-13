@@ -1,17 +1,17 @@
 # Fdb version 3
-["bibtex template-msc"] 1573039648 "template-msc.aux" "template-msc.bbl" "template-msc" 1573039778
+["bibtex template-msc"] 1573039648 "template-msc.aux" "template-msc.bbl" "template-msc" 1573039710
   "./abntex2-alf.bst" 1565744320 63287 1073317cf2aaa1ae7cb902d84de1bb0a ""
   "abntex2-options.bib" 1565744320 5396 4eb260dac60f150ae608d45252853090 ""
-  "biblio.bib" 1573039778 78257 719cd8d21470b6ff12da726c6ed01dfe ""
+  "biblio.bib" 1572923531 78257 719cd8d21470b6ff12da726c6ed01dfe ""
   "template-msc.aux" 1573039651 35802 6f5a76c902667177699cc45e7a23122c ""
   "template-msc.bcf" 0 -1 0 ""
   (generated)
   "template-msc.blg"
   "template-msc.bbl"
-["pdflatex"] 1573039648 "/home/rnetodev/Workspace/masters/tex/thesis/template-msc.tex" "/home/rnetodev/Workspace/masters/tex/thesis/template-msc.pdf" "template-msc" 1573039778
+["pdflatex"] 1573039648 "/home/rnetodev/Workspace/masters/tex/thesis/template-msc.tex" "/home/rnetodev/Workspace/masters/tex/thesis/template-msc.pdf" "template-msc" 1573039710
   "/etc/texmf/web2c/texmf.cnf" 1560035643 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/rnetodev/Workspace/masters/tex/thesis/template-msc.aux" 1573039651 35802 6f5a76c902667177699cc45e7a23122c ""
-  "/home/rnetodev/Workspace/masters/tex/thesis/template-msc.tex" 1573039774 92815 48b8efa1312cf3cfb9c1d9f696cef0c7 ""
+  "/home/rnetodev/Workspace/masters/tex/thesis/template-msc.tex" 1573039710 92815 48b8efa1312cf3cfb9c1d9f696cef0c7 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1480098689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -268,18 +268,18 @@
   "template-msc.lof" 1573039651 1749 f826dd027ec5f9aed82c30cbb06f194c ""
   "template-msc.lot" 1573039651 1311 f1ee2dc21d6b17bb06ccea2f18ec2272 ""
   "template-msc.out" 1573039651 2333 6234dc27997b27971282a27510c11c06 ""
-  "template-msc.tex" 1573039774 92815 48b8efa1312cf3cfb9c1d9f696cef0c7 ""
+  "template-msc.tex" 1573039710 92815 48b8efa1312cf3cfb9c1d9f696cef0c7 ""
   "template-msc.toc" 1573039651 3054 0716cca9c9d9c4988c180ecf7d554766 ""
   "ufba.pdf" 1565744320 305767 269f52de33709ea8677a2f628330b278 ""
   "ufbathesis.cls" 1565744320 40847 a3c4fbf5f4691ebb65e7c59350106c1c ""
   (generated)
-  "template-msc.log"
   "/home/rnetodev/Workspace/masters/tex/thesis/template-msc.log"
   "template-msc.aux"
   "template-msc.lof"
   "template-msc.lot"
-  "template-msc.pdf"
   "/home/rnetodev/Workspace/masters/tex/thesis/template-msc.pdf"
   "template-msc.out"
-  "template-msc.toc"
   "template-msc.loa"
+  "template-msc.pdf"
+  "template-msc.log"
+  "template-msc.toc"

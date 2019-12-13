@@ -131,7 +131,7 @@ if plotSac == true
         csvwrite("fixationtimes.txt", fixationtimes);
         csvwrite("xy.txt", xy);
         
-        legend('Sacadas','Fixações')
+        legend('Saccades','Fixations')
         legend('Location','southoutside')
         
         %axis([-35000 35000 -35000 35000]);

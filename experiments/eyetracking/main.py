@@ -125,7 +125,7 @@ rbf = rbf.RBF(**features[feature]["kwargs"])
 fig = plt.figure()
 
 # Title
-fig.gca().set_title(dataset + " - " + feature)
+# fig.gca().set_title(dataset + " - " + feature)
 
 # Datasets
 xdata, ydata = [], []
@@ -142,7 +142,7 @@ custom_legends = [
 ]
 fig.legend(
     custom_legends,
-    ["Sacadas", "Fixações"],
+    ["Saccades", "Fixations"],
     ncol=1,
     borderaxespad=0,
     loc="lower center",
