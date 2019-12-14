@@ -88,22 +88,96 @@
 
 \begin{frame}{Introdução}
     \begin{itemize}
-        \item<1 -> Visando superar essas limitações, este trabalho propõe um novo método de detecção de mudanças de conceito baseado em \alert{Redes de Função de Base Radial (redes RBF) e Cadeias de Markov};
+        \item<1 -> Visando superar essas limitações, este trabalho propõe um novo método de detecção de mudanças de conceito baseado em \alert{Redes de Função de Base Radial (redes RBF) e Cadeias de Markov}, denominado \textbf{\alert{RBFChain}};
         \item<2 -> O método proposto se diferencia por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos.
     \end{itemize}
 \end{frame}
 
 \section{Fundamentação Teórica}
 
-\begin{frame}{Lorem Ipsum}
+\begin{frame}{Fluxos Contínuos de Dados e Aprendizado de Máquina}
     \begin{itemize}
-        \item<1 -> A:
-        \begin{itemize}
-            \item<2 -> A1;
-            \item<2 -> A2.
-        \end{itemize}
-        \item<3 -> B
+        \item<1 -> \alert{Fluxos Contínuos de Dados (FCDs)} são sequências ininterruptas e potencialmente infinitas de eventos \cite{Aggarwal:2006:DSM:1196418}.
+        \item<2 -> Não podem ser armazenados em sua totalidade e, por serem de alta frequência, devem ser analisados em tempo real.
+        \item<3 -> Algoritmos supervisionados \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813} e não-supervisionados \cite{Aggarwal:2003:FCE:1315451.1315460, Ackermann:2012:SCA:2133803.2184450, Kranen:2011:CIM:2134350.2134352} da área de AM foram adaptados para atenderem a essas restrições.
+        \item<4 -> Contudo, essas especializações não tratam a ocorrência de \alert{mudanças de conceito}.
       \end{itemize}
+\end{frame}
+
+\begin{frame}{Mudança de Conceito}
+    \begin{itemize}
+        \item<1 -> A Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} é comumente utilizada para descrever a tarefa de classificação e pode ser utilizada para formalizar a noção de \alert{mudança de conceito}.
+        \item<2 -> Considerando que $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, é possível afirmar que há mudança de conceito entre os instantes $t_0$ e $t_1$ se:
+        \begin{equation} \label{eq:3}
+            {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
+        \end{equation}
+        \item<3 -> Um conjunto de dados possui resultados esperados legítimos em $t_0$, mas este mesmo conjunto passa a ter resultados esperados diferentes, também legítimos, em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mudança de Conceito}
+    \begin{itemize}
+        \item<1 -> As mudanças de conceito podem ser categorizadas como \alert{Virtuais} ou \alert{Reais} \cite{Gama:2014:SCD:2597757.2523813}:
+        \begin{itemize}
+        \item<2 -> \alert{Mudanças Virtuais} são causadas por alterações na probabilidade a priori das classes, $P(c)$, e não alteram os conceitos-alvo.
+        \item<3 -> \alert{Mudanças Reais} surgem a partir de alterações na probabilidade a posteriori, $p(c|X)$, e modificam os resultados esperados.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Mudança de Conceito}
+\begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.5]{imagens/concept_drift.png}
+        \caption{Mudança de Conceito Virtual vs. Mudança de Conceito Real}
+        \label{fig:real_and_virtual_concept_drift}
+    \end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Mudança de Conceito}
+    \begin{itemize}
+        \item<1 -> As mudanças de conceito podem ocorrer de forma \alert{abrupta}, \alert{gradual}, \alert{incremental} ou \alert{recorrente} \cite{Zliobaite:2010}.
+    \end{itemize}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.5]{imagens/concept_drift_patterns.png}
+            \caption{Padrões de ocorrência de Mudanças de Conceito}
+            \label{fig:concept_drift_patterns}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Algoritmos para Detecção de Mudança de Conceito}
+    \begin{itemize}
+        \item<1 -> Os algoritmos para Detecção de Mudanças de Conceito se dividem em duas categorias, conforme a necessidade de rotulação dos dados \cite{Zliobaite:2010}:
+        \begin{itemize}
+        \item<2 -> \alert{Explícitos/Supervisionados}: Dependem da rotulação dos dados, pois realizam a detecção a partir do monitoramento de medidas de performance como taxa de erro e acurácia.
+        \item<3 -> \alert{Implícitos/Não Supervisionados}: Independem da rotulação dos dados, realizando a detecção através do monitoramento de características dos próprios dados ou de indicadores produzidos pelas técnicas de aprendizado aplicadas.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Ferramenta: MOA}
+    \begin{itemize}
+        \item<1 -> Principal framework para mineração de dados em fluxos contínuos.
+        \item<1 -> Permite implementar e validar novos métodos de detecção de mudança de conceito de forma trivial.
+    \end{itemize}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.2]{imagens/moa.png}
+            \caption{MOA - Tela Inicial}
+            \label{fig:moa}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Mudança de Conceito - RBFChain}
+    \begin{itemize}
+        \item<1 -> O método proposto neste trabalho é capaz de identificar mudanças \alert{sob qualquer padrão de ocorrência};
+        \item<2 -> Por ser independente de rótulos, considera todas mudanças identificadas como \alert{mudanças reais};
+        \item<3 -> Implementado e validado através da plataforma MOA.
+    \end{itemize}
 \end{frame}
 
 \section{RBFChain}
