@@ -32,6 +32,12 @@ A.~Bifet, B.~Pfahringer, J.~Read, and G.~Holmes.
 \newblock In {\em Proceedings of the 28th Annual ACM Symposium on Applied
   Computing}, SAC '13, pages 801--806, New York, NY, USA, 2013. ACM.
 
+\bibitem{Braga:RedesNeuraisTeoriaAplicacoes}
+A.~Braga, A.~C. Carvalho, and T.~B. Ludermir.
+\newblock {\em {Redes Neurais Artificiais: Teoria e aplica\c{c}\~{o}es}},
+  volume~2.
+\newblock LTC Editora, 2007.
+
 \bibitem{Domingos:2000:MHD:347090.347107}
 P.~Domingos and G.~Hulten.
 \newblock Mining high-speed data streams.

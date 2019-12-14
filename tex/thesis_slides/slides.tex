@@ -180,6 +180,38 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Redes de Função de Base Radial}
+    \begin{itemize}
+        \item<1 -> \alert{Redes de Função de Base Radial} são redes neurais cujo principal diferencial é a forma de ativação, realizada através do cálculo da distância entre o dado e um centro definido \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+        \item<2 -> A arquitetura de uma rede RBF, em sua forma mais básica, envolve três camadas:
+        \begin{itemize}
+            \item<3 -> \alert{Entrada}: Recepciona os dados e encaminha para camada intermediária.
+            \item<4 -> \alert{Intermediária}: Composta por funções de ativação de base radial que atuam como neurônios.
+            \item<5 -> \alert{Saída}: Pondera os resultados da camada intermediária, agregando-os linearmente para compor a resposta final da rede.
+        \end{itemize}
+        \item<6 -> Na literatura, as funções Gaussianas são as funções de ativação mais usuais em redes RBF.
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{Redes de Função de Base Radial}
+    \begin{figure}[H]
+    \begin{center}
+        \includegraphics[scale=0.6]{imagens/rbf_arq.png}
+        \caption{Arquitetura RBF}
+        \label{fig:rbg_arq}
+    \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Redes de Função de Base Radial}
+    \begin{itemize}
+        \item<1 -> O RBFChain utilizar uma rede RBF adaptada, composta apenas pelas camadas inicial e intermediária;
+        \item<2 -> O processo de ativação realizado na camada intermediária produz, implicitamente, grupos a partir das observações recebidas ao longo do tempo;
+        \item<3 -> Mudanças de conceito podem ser identificadas quando o grupo ativo deste agrupamento é alterado.
+      \end{itemize}
+\end{frame}
+
+
 \section{RBFChain}
 
 \begin{frame}{Lorem Ipsum}

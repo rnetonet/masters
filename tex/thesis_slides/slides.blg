@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: slides.aux
 The style file: abbrv.bst
 Database file #1: slides.bib
-You've used 14 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            599 strings with 6839 characters,
-and the built_in function-call counts, 5736 in all, are:
-= -- 593
-> -- 265
-< -- 6
-+ -- 108
-- -- 90
-* -- 410
-:= -- 918
-add.period$ -- 48
-call.type$ -- 14
-change.case$ -- 85
+            604 strings with 7043 characters,
+and the built_in function-call counts, 6029 in all, are:
+= -- 618
+> -- 283
+< -- 7
++ -- 115
+- -- 96
+* -- 430
+:= -- 969
+add.period$ -- 51
+call.type$ -- 15
+change.case$ -- 90
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 222
-empty$ -- 429
-format.name$ -- 90
-if$ -- 1233
+cite$ -- 15
+duplicate$ -- 234
+empty$ -- 451
+format.name$ -- 96
+if$ -- 1293
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 16
-newline$ -- 73
-num.names$ -- 28
-pop$ -- 81
+int.to.str$ -- 15
+missing$ -- 18
+newline$ -- 78
+num.names$ -- 30
+pop$ -- 90
 preamble$ -- 1
-purify$ -- 73
+purify$ -- 78
 quote$ -- 0
-skip$ -- 167
+skip$ -- 174
 stack$ -- 0
-substring$ -- 392
-swap$ -- 65
-text.length$ -- 6
+substring$ -- 397
+swap$ -- 67
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
+type$ -- 54
 warning$ -- 0
-while$ -- 54
-width$ -- 16
-write$ -- 173
+while$ -- 56
+width$ -- 17
+write$ -- 184
