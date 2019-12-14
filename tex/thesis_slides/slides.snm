@@ -3,3 +3,6 @@
 \beamer@slide {fig:concept_drift_patterns}{29}
 \beamer@slide {fig:moa}{33}
 \beamer@slide {fig:rbg_arq}{43}
+\beamer@slide {eq:prob_proc_estoc}{49}
+\beamer@slide {eq:markov}{51}
+\beamer@slide {eq:matriz_estocastica}{52}

@@ -205,9 +205,50 @@
 
 \begin{frame}{Redes de Função de Base Radial}
     \begin{itemize}
-        \item<1 -> O RBFChain utilizar uma rede RBF adaptada, composta apenas pelas camadas inicial e intermediária;
+        \item<1 -> O RBFChain utiliza uma rede RBF adaptada, composta apenas pelas camadas inicial e intermediária;
         \item<2 -> O processo de ativação realizado na camada intermediária produz, implicitamente, grupos a partir das observações recebidas ao longo do tempo;
-        \item<3 -> Mudanças de conceito podem ser identificadas quando o grupo ativo deste agrupamento é alterado.
+        \item<3 -> Mudanças de conceito são identificadas quando o grupo ativo deste agrupamento é alterado.
+      \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Cadeias de Markov}
+    \begin{itemize}
+        \item<1 -> Equações determinísticas não podem ser utilizadas para descrever sistemas com múltiplos caminhos evolutivos;
+        \item<2 -> Nestes casos, \alert{processos estocásticos} são utilizados \cite{taylor1998introduction};
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{Cadeias de Markov}
+    \begin{itemize}
+        \item<1 -> Um \alert{processo estocástico} é uma coleção de variáveis aleatórias indexadas no tempo: $\left\{ X _ { t } : t \in T \right\}$;
+        \item<2 -> Considerando que o processo estocástico esteja no estado $s_i$ e no tempo $t - 1$, a probabilidade
+        do processo estar no estado $s_j$ no tempo $t$ é dada pela Equação \ref{eq:prob_proc_estoc}:
+        \begin{equation}
+            \label{eq:prob_proc_estoc}
+            \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right)
+        \end{equation}
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{Cadeias de Markov}
+    \begin{itemize}
+        \item<1 -> Uma \alert{Cadeia de Markov}, ou \alert{Processo de Markov}, é um processo estocástico no qual a probabilidade do estado em um dado período de tempo depende apenas do estado no período imediatamente anterior:
+        \begin{equation}
+            \label{eq:markov}
+            \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right) = \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } \right) = p _ { i j }
+        \end{equation}
+      \end{itemize}
+\end{frame}
+
+\begin{frame}{Cadeias de Markov}
+    \begin{itemize}
+        \item<1 -> Um processo de Markov pode assumir os estados $a_1, a_2, \ldots, a_r$, de tal modo que a probabilidade de transição de um estado $a_i$ para um estado $a_j$ seja $P_{ij}$ (um valor dependente apenas de $i$ e $j$);
+        \item<2 -> Portanto, é viável elaborar uma matriz com as probabilidades de todas transições (matriz estocástica) - Equação \ref{eq:matriz_estocastica}:
+        \begin{equation}
+            \label{eq:matriz_estocastica}
+            P = \left[ \begin{array} { c c c c } { P _ { 11 } } & { P _ { 12 } } & { \dots } & { P _ { 1 r } } \\ { P _ { 21 } } & { P _ { 22 } } & { \dots } & { P _ { 2 r } } \\ { \vdots } & { \vdots } & { \vdots } & { \vdots } \\ { P _ { r 1 } } & { P _ { r 2 } } & { \cdots } & { P _ { r r } } \end{array} \right]
+        \end{equation}
       \end{itemize}
 \end{frame}
 

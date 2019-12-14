@@ -72,6 +72,11 @@ P.~Kranen, I.~Assent, C.~Baldauf, and T.~Seidl.
 \newblock The clustree: Indexing micro-clusters for anytime stream mining.
 \newblock {\em Knowl. Inf. Syst.}, 29(2):249--272, Nov. 2011.
 
+\bibitem{taylor1998introduction}
+H.~Taylor, S.~Karlin, and H.~Taylor.
+\newblock {\em An Introduction to Stochastic Modeling}.
+\newblock Elsevier Science, 1998.
+
 \bibitem{Wang:2003:MCD:956750.956778}
 H.~Wang, W.~Fan, P.~S. Yu, and J.~Han.
 \newblock Mining concept-drifting data streams using ensemble classifiers.
