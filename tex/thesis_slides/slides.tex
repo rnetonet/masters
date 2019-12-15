@@ -378,6 +378,127 @@
     \end{figure}
 \end{frame}
 
+\begin{frame}{Dados Sintéticos - Resultado: Mudanças Abruptas}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{llllll}
+
+    \toprule
+    Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\
+    \midrule
+    RBFChain               & 0.015                  & 6                      & 5                      & 0                      & 166.67                 \\
+    ADWIN                  & 0.016                  & 6                      & 6                      & 2046                   & 9.00                   \\
+    CUSUM                  & 0.021                  & 6                      & 3                      & 0                      & 68.83                  \\
+    DDM                    & 0.015                  & 6                      & 3                      & 0                      & 38.83                  \\
+    EDDM                   & 0.013                  & 6                      & 0                      & 0                      & ---                    \\
+    EWMA                   & 0.014                  & 6                      & 1                      & 0                      & 1.00                   \\
+    HDDMA                  & 0.014                  & 6                      & 3                      & 0                      & 10.00                    \\
+    PageHinkley            & 0.015                  & 6                      & 1                      & 0                      & 16.17                  \\
+    SeqDrift1              & 0.015                  & 6                      & 5                      & 0                      & 167.50                 \\
+    \bottomrule
+
+        \end{tabular}
+        \end{table}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos - Resultado: Mudanças Abruptas}
+    \begin{itemize}
+        \item RBFChain e SeqDrift1 apresentaram as melhores acurácias, identificando 5 das 6 mudanças existentes, sem produzir nenhum falso positivo.
+        \item RBFChain apresentou o terceiro melhor tempo de processamento (TP), com uma pequena diferença para o primeiro.
+        \item ADWIN se mostrou hipersensível.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos - Resultado: Mudanças Abruptas}
+    \begin{figure}[t]
+        \begin{center}
+            \includegraphics[width=\textwidth]{imagens/abrupt.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+
+
+\begin{frame}{Dados Sintéticos - Resultado: Mudanças Graduais}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{llllll}
+
+        \toprule
+        Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\
+        \midrule
+        RBFChain               & 0.011                  & 3                      & 3                      & 0                      & 101.00                 \\
+        ADWIN                  & 0.020                  & 3                      & 3                      & 2209                   & 1.00                   \\
+        CUSUM                  & 0.014                  & 3                      & 2                      & 0                      & 83.33                  \\
+        DDM                    & 0.014                  & 3                      & 1                      & 1                      & 58.33                  \\
+        EDDM                   & 0.013                  & 3                      & 0                      & 0                      & ---                    \\
+        EWMA                   & 0.015                  & 3                      & 0                      & 0                      & ---                    \\
+        HDDMA                  & 0.014                  & 3                      & 2                      & 0                      & 100.67                 \\
+        PageHinkley            & 0.014                  & 3                      & 1                      & 0                      & 22.33                  \\
+        SeqDrift1              & 0.015                  & 3                      & 3                      & 1                      & 194.33                 \\
+        \bottomrule
+
+
+        \end{tabular}
+        \end{table}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos - Resultado: Mudanças Graduais}
+    \begin{itemize}
+        \item RBFChain obteve a melhor acurácia, identificando todas as três mudanças de conceito, sem produzir falso positivos.
+        \item Algoritmo SeqDrift1 apresentou a segunda melhor acurácia, pois também detectou as três mudanças corretamente, entretanto, apresentou um falso positivo e uma taxa de atraso significativamente maior.
+        \item CUSUM e HDDMA apresentaram uma acurácia média, ao identificar duas mudanças corretamente, sem incidência de falso positivos.
+        \item RBFChain também apresentou o melhor resultado em relação ao tempo de processamento.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos - Resultado: Mudanças Graduais}
+    \begin{figure}[t]
+        \begin{center}
+            \includegraphics[width=\textwidth]{imagens/gradual.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos - Resultado: Mudanças Incrementais}
+    \begin{table}[ht]
+        \centering
+        \begin{tabular}{llllll}
+
+        \toprule
+        Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\
+        \midrule
+        RBFChain               & 0.020                  & 1                      & 1                      & 2                      & 501.00                 \\
+        ADWIN                  & 0.017                  & 1                      & 1                      & 1923                   & 1.00                   \\
+        CUSUM                  & 0.014                  & 1                      & 1                      & 1                      & 434.00                 \\
+        DDM                    & 0.014                  & 1                      & 1                      & 1                      & 349.00                 \\
+        EDDM                   & 0.013                  & 1                      & 0                      & 0                      & ---                    \\
+        EWMA                   & 0.016                  & 1                      & 0                      & 1                      & ---                    \\
+        HDDMA                  & 0.014                  & 1                      & 1                      & 1                      & 213.00                    \\
+        PageHinkley            & 0.014                  & 1                      & 1                      & 1                      & 449.00                 \\
+        SeqDrift1              & 0.016                  & 1                      & 1                      & 2                      & 331.00                 \\
+        \bottomrule
+
+        \end{tabular}
+        \end{table}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos - Resultado: Mudanças Incrementais}
+    \begin{itemize}
+        \item A mudança de conceito incremental representa uma dificuldade, pois todos algoritmos que detectaram a mudança existente também produziram falso positivos.
+        \item RBFChain e SeqDrift1, que apresentaram os melhores resultados nos testes anteriores, tiveram a pior acurácia, pois emitiram dois falsos positivo cada.
+        \item Teste considerado inconclusivo, ressaltando a necessidade de uma investigação mais detalhada sobre a detecção de mudanças de conceito incrementais.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos - Resultado: Mudanças Incrementais}
+    \begin{figure}[t]
+        \begin{center}
+            \includegraphics[width=\textwidth]{imagens/incremental.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+
 \section{Conclusões e Trabalhos Futuros}
 
 \begin{frame}{Lorem Ipsum}
