@@ -207,23 +207,23 @@
 \end{frame}
 
 
-\begin{frame}{Cadeias de Markov}
-    \begin{itemize}
-        \item<1 -> Equações determinísticas não podem ser utilizadas para descrever sistemas com múltiplos caminhos evolutivos;
-        \item<1 -> Nestes casos, \alert{processos estocásticos} são utilizados \cite{taylor1998introduction};
-        \item<1 -> Um \alert{processo estocástico} é uma coleção de variáveis aleatórias indexadas no tempo: $\left\{ X _ { t } : t \in T \right\}$;
-        \item<1 -> Considerando que o processo estocástico esteja no estado $s_i$ e no tempo $t - 1$, a probabilidade
-        do processo estar no estado $s_j$ no tempo $t$ é dada pela Equação \ref{eq:prob_proc_estoc}:
-        \begin{equation}
-            \label{eq:prob_proc_estoc}
-            \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right)
-        \end{equation}
-      \end{itemize}
-\end{frame}
+% \begin{frame}{Cadeias de Markov}
+%     \begin{itemize}
+%         \item<1 -> Equações determinísticas não podem ser utilizadas para descrever sistemas com múltiplos caminhos evolutivos;
+%         \item<1 -> Nestes casos, \alert{processos estocásticos} são utilizados \cite{taylor1998introduction};
+%         \item<1 -> Um \alert{processo estocástico} é uma coleção de variáveis aleatórias indexadas no tempo: $\left\{ X _ { t } : t \in T \right\}$;
+%         \item<1 -> Considerando que o processo estocástico esteja no estado $s_i$ e no tempo $t - 1$, a probabilidade
+%         do processo estar no estado $s_j$ no tempo $t$ é dada pela Equação \ref{eq:prob_proc_estoc}:
+%         \begin{equation}
+%             \label{eq:prob_proc_estoc}
+%             \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right)
+%         \end{equation}
+%       \end{itemize}
+% \end{frame}
 
 \begin{frame}{Cadeias de Markov}
     \begin{itemize}
-        \item<1 -> Uma \alert{Cadeia de Markov}, ou \alert{Processo de Markov}, é um processo estocástico no qual a probabilidade do estado em um determinado período de tempo depende apenas do estado no período imediatamente anterior:
+        \item<1 -> \alert{Cadeias de Markov} são processos estocásticos no qual a probabilidade do estado em um determinado período de tempo depende apenas do estado no período imediatamente anterior (Equação \ref{eq:markov}).
         \begin{equation}
             \label{eq:markov}
             \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right) = \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } \right) = p _ { i j }
@@ -233,8 +233,8 @@
 
 \begin{frame}{Cadeias de Markov}
     \begin{itemize}
-        \item<1 -> Um processo de Markov pode assumir os estados $a_1, a_2, \ldots, a_r$, de tal modo que a probabilidade de transição de um estado $a_i$ para um estado $a_j$ seja $P_{ij}$ (um valor dependente apenas de $i$ e $j$);
-        \item<1 -> Portanto, é viável elaborar uma matriz com as probabilidades de todas transições (matriz estocástica) - Equação \ref{eq:matriz_estocastica}:
+        \item<1 -> A Cadeia de Markov pode assumir os estados $a_1, a_2, \ldots, a_r$, de tal modo que a probabilidade de transição de um estado $a_i$ para um estado $a_j$ seja $P_{ij}$ (um valor dependente apenas de $i$ e $j$);
+        \item<1 -> As probabilidades entre estados podem ser representadas por uma matriz estocástica (Equação \ref{eq:matriz_estocastica}):
         \begin{equation}
             \label{eq:matriz_estocastica}
             P = \left[ \begin{array} { c c c c } { P _ { 11 } } & { P _ { 12 } } & { \dots } & { P _ { 1 r } } \\ { P _ { 21 } } & { P _ { 22 } } & { \dots } & { P _ { 2 r } } \\ { \vdots } & { \vdots } & { \vdots } & { \vdots } \\ { P _ { r 1 } } & { P _ { r 2 } } & { \cdots } & { P _ { r r } } \end{array} \right]
@@ -246,7 +246,7 @@
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=0.23]{imagens/markov_chain_wikipedia.png}
-            \caption{Exemplo: Cadeia de Markov com três estados.}
+            \caption{Representação Gráfica: Cadeia de Markov com três estados.}
             \label{fig:cadeia_markov_tres_estados}
         \end{center}
     \end{figure}
@@ -254,9 +254,9 @@
 
 \begin{frame}{Cadeias de Markov}
     \begin{itemize}
-        \item<1 -> O RBFChain utiliza uma Cadeia de Markov para modelar o agrupamento criado na rede RBF.
-        \item<1 -> Os grupos formados representam os estados do modelo markoviano e as mudanças (ativações) entre estes grupos, as transições.
-        \item<1 -> Estas mudanças são refletidas no modelo através do aumento da probabilidade  correspondente e a diminuição proporcional das outras transições. Estas alterações são realizadas respeitando a condição $0 \leq P_{ij} \leq 1$.
+        \item<1 -> O RBFChain utiliza uma Cadeia de Markov para modelar o agrupamento criado na rede RBF adaptada.
+        \item<1 -> Os grupos formados representam os estados e as ativações de novos grupos, as transições.
+        \item<1 -> As transições são refletidas no modelo markoviano através do aumento da probabilidade correspondente e a diminuição proporcional das outras transições, respeitando a condição: $0 \leq P_{ij} \leq 1$.
       \end{itemize}
 \end{frame}
 
@@ -329,12 +329,11 @@
 
 \begin{frame}{Dados Sintéticos}
     \begin{itemize}
-        \item Produzidos através de versões adaptadas dos geradores do MOA.
-        \item $4$ conjuntos de dados, com $2.500$ eventos cada.
-        \item Eventos com valores entre $0$ e $1$.
-        \item Ruído randômico $[-0.1, 0.2]$.
-        \item Até $2$ conceitos distintos representados.
-        \item Conceitos compostos por $400$ eventos.
+        \item O primeiro experimento utilizou dados sintéticos produzidos por versões adaptadas das classes geradoras do MOA.
+        \item Foram utilizados $4$ conjuntos de dados, com $2.500$ eventos cada.
+        \item Os eventos possuem valores entre $0$ e $1$, com adição de um ruído randômico entre $[-0.1, 0.2]$.
+        \item Cada conjunto de dados pode representar até $2$ conceitos distintos.
+        \item Cada conceito é composto por $400$ eventos.
     \end{itemize}
 \end{frame}
 
@@ -381,13 +380,6 @@
 
 
 \begin{frame}{Dados Sintéticos -  Sem mudanças de conceito}
-    \begin{itemize}
-        \item Todos algoritmos testados demonstraram tolerância a ruídos e não indicaram nenhum falso positivo.
-        \item RBFChain obteve a melhor média em tempo de processamento, juntamente com o EDDM.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Dados Sintéticos -  Sem mudanças de conceito}
     \begin{table}[h]
         \centering
         \caption{Resultados dos algoritmos para o conjunto de dados sem mudanças de conceito.}
@@ -412,6 +404,13 @@
     \end{table}
 \end{frame}
 
+\begin{frame}{Dados Sintéticos -  Sem mudanças de conceito}
+    \begin{itemize}
+        \item Todos algoritmos testados demonstraram tolerância a ruídos e não indicaram nenhum falso positivo.
+        \item RBFChain obteve a melhor média em tempo de processamento, juntamente com o EDDM.
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Dados Sintéticos -  Mudanças Abruptas}
     \begin{figure}[t]
         \begin{center}
@@ -420,14 +419,6 @@
             \label{fig:exp_abrupta}
         \end{center}
     \end{figure}
-\end{frame}
-
-\begin{frame}{Dados Sintéticos -  Mudanças Abruptas}
-    \begin{itemize}
-        \item RBFChain e SeqDrift1 apresentaram as melhores acurácias, identificando 5 das 6 mudanças existentes, sem produzir nenhum falso positivo.
-        \item RBFChain apresentou o terceiro melhor tempo de processamento (TP), com uma pequena diferença para o primeiro.
-        \item ADWIN se mostrou hipersensível.
-    \end{itemize}
 \end{frame}
 
 \begin{frame}{Dados Sintéticos -  Mudanças Abruptas}
@@ -455,6 +446,14 @@
         \end{table}
 \end{frame}
 
+\begin{frame}{Dados Sintéticos -  Mudanças Abruptas}
+    \begin{itemize}
+        \item RBFChain e SeqDrift1 apresentaram as melhores acurácias, identificando 5 das 6 mudanças existentes, sem produzir nenhum falso positivo.
+        \item RBFChain apresentou o terceiro melhor tempo de processamento (TP), com uma pequena diferença para o primeiro.
+        \item ADWIN se mostrou hipersensível.
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Dados Sintéticos -  Mudanças Graduais}
     \begin{figure}[t]
         \begin{center}
@@ -463,15 +462,6 @@
             \label{fig:exp_gradual}
         \end{center}
     \end{figure}
-\end{frame}
-
-\begin{frame}{Dados Sintéticos -  Mudanças Graduais}
-    \begin{itemize}
-        \item RBFChain obteve a melhor acurácia, identificando todas as três mudanças de conceito, sem produzir falso positivos.
-        \item Algoritmo SeqDrift1 apresentou a segunda melhor acurácia, pois também detectou as três mudanças corretamente, entretanto, apresentou um falso positivo e uma taxa de atraso significativamente maior.
-        \item CUSUM e HDDMA apresentaram uma acurácia média, ao identificar duas mudanças corretamente, sem incidência de falso positivos.
-        \item RBFChain também apresentou o melhor resultado em relação ao tempo de processamento.
-    \end{itemize}
 \end{frame}
 
 \begin{frame}{Dados Sintéticos -  Mudanças Graduais}
@@ -500,6 +490,14 @@
         \end{table}
 \end{frame}
 
+\begin{frame}{Dados Sintéticos -  Mudanças Graduais}
+    \begin{itemize}
+        \item RBFChain obteve a melhor acurácia, identificando todas as três mudanças de conceito, sem produzir falso positivos.
+        \item Algoritmo SeqDrift1 apresentou a segunda melhor acurácia, pois também detectou as três mudanças corretamente, entretanto, apresentou um falso positivo e uma taxa de atraso significativamente maior.
+        \item RBFChain também apresentou o melhor tempo de processamento.
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Dados Sintéticos -  Mudanças Incrementais}
     \begin{figure}[t]
         \begin{center}
@@ -508,14 +506,6 @@
             \label{fig:exp_incremental}
         \end{center}
     \end{figure}
-\end{frame}
-
-\begin{frame}{Dados Sintéticos -  Mudanças Incrementais}
-    \begin{itemize}
-        \item A mudança de conceito incremental representa uma dificuldade, pois todos algoritmos que detectaram a mudança existente também produziram falso positivos.
-        \item RBFChain e SeqDrift1, que apresentaram os melhores resultados nos testes anteriores, tiveram a pior acurácia, pois emitiram dois falsos positivo cada.
-        \item Teste considerado inconclusivo, ressaltando a necessidade de uma investigação mais detalhada sobre a detecção de mudanças de conceito incrementais.
-    \end{itemize}
 \end{frame}
 
 \begin{frame}{Dados Sintéticos -  Mudanças Incrementais}
@@ -543,11 +533,20 @@
         \end{table}
 \end{frame}
 
+\begin{frame}{Dados Sintéticos -  Mudanças Incrementais}
+    \begin{itemize}
+        \item A mudança de conceito incremental representa uma dificuldade, pois todos algoritmos que detectaram a mudança existente também produziram falso positivos.
+        \item RBFChain e SeqDrift1, que apresentaram os melhores resultados nos testes anteriores, tiveram a pior acurácia, pois emitiram dois falsos positivo cada.
+        \item Teste considerado inconclusivo, ressaltando a necessidade de uma investigação mais detalhada sobre a detecção de mudanças de conceito incrementais.
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Dados Reais - Identificação de fixações e sacadas}
     \begin{itemize}
-        \item O monitoramento ocular tem sido utilizado em uma vasta gama de pesquisas, em diferentes áreas de pesquisa.
-        \item A identificação de eventos a partir dos dados brutos coletados é realizada por algoritmos.
-        \item Os algoritmos existentes na literatura não permitem a identificação em tempo de execução.
+        \item Dados de monitoramento ocular têm sido utilizados por uma quantidade significativa de pesquisas, em diferentes áreas do conhecimento.
+        \item Os dados brutos coletados precisam ser identificados em eventos, como fixações e sacadas, para serem analisados.
+        \item O processo de identificação é realizado por algoritmos. Entretanto, nenhum algoritmo existente na literatura permitir identificar eventos em tempo de execução.
+        \item Para superar esta limitação, empregamos o RBFChain na identificação de fixações e sacadas.
     \end{itemize}
 \end{frame}
 
@@ -563,10 +562,10 @@
 
 \begin{frame}{Dados Reais - Identificação de fixações e sacadas}
     \begin{itemize}
-        \item Dados de dois macacos-prego, Dede e Juju, produzidos e cedidos pelo Instituto do Cérebro (UFRN).
-        \item $6.200$ eventos, $(x, y)$, indicando a localização do olhar ao longo do tempo.
-        \item Versão adaptada do RBFChain: continuidade do conceito indica fixação, alternância, sacada.
-        \item Comparado ao algoritmo-referência: ClusterFix \cite{KONIG2014121}.
+        \item O experimento utilizou dados de dois macacos-prego (Dede e Juju) produzidos e cedidos pelo Instituto do Cérebro (UFRN).
+        \item Cada conjunto de dados possui $6.200$ eventos, que indicam a localização do olhar ao longo do tempo $(x, y)$.
+        \item O RBFChain foi ligeiramente adaptado para analisar a alternância (sacadas) e a continuidade (fixações) dos conceitos.
+        \item Os resultados foram validados através de métricas de classificação, utilizando os resultados do algoritmo ClusterFix \cite{KONIG2014121} como rótulos.
     \end{itemize}
 \end{frame}
 
@@ -602,10 +601,10 @@
         \midrule
         QP       &  \textbf{Quantidade de Pontos} analisados. \\
         AC       &  \textbf{Acurácia}.  \\
-                 & Fração de fixações e sacadas classificadas corretamente. \\
+                 & Fração de fixações e sacadas identificadas corretamente. \\
 
         PR       &  \textbf{Precisão}.  \\
-                 & Fração das fixações classificadas pelo algoritmo corretamente.  \\
+                 & Fração das fixações identificadas pelo algoritmo corretamente.  \\
 
         RE       &  \textbf{\textit{Recall}}.  \\
                  & Fração das fixações existentes (rotuladas) que também foram identificadas pelo algoritmo.  \\
@@ -653,7 +652,7 @@
     \end{table}
 
     \begin{itemize}
-        \item \alert{$87\%$} das fixações e sacadas classificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
+        \item \alert{$87\%$} das fixações e sacadas identificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
         \item \alert{$98\%$} das fixações identificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
         \item \alert{$88\%$} das fixações identificadas pelo ClusterFix também foram identificadas pelo RBFChain.
     \end{itemize}
@@ -697,7 +696,7 @@
     \end{table}
 
     \begin{itemize}
-        \item \alert{$82\%$} das fixações e sacadas classificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
+        \item \alert{$82\%$} das fixações e sacadas identificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
         \item \alert{$98\%$} das fixações identificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
         \item \alert{$83\%$} das fixações identificadas pelo ClusterFix também foram identificadas pelo RBFChain.
     \end{itemize}
@@ -707,9 +706,8 @@
 
 \begin{frame}{Conclusões}
     \begin{itemize}
-        \item Um novo método de detecção de mudanças de conceito, denominado RBFChain, baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov, que se diferencia por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos;
-        \item Uma nova abordagem, baseada em uma versão adaptada do RBFChain, para o problema real de classificação de fixações e sacadas em atividades de monitoramento ocular.
-        A abordagem proposta se diferencia por realizar a classificação em tempo de execução e apresentar acurácia equivalente ao estado da arte.
+        \item Novo método de detecção de mudanças de conceito, capaz de detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos;
+        \item Novo método para identificação de fixações e sacadas em tempo de execução, com acurácia equivalente ao estado da arte.
     \end{itemize}
 \end{frame}
 
@@ -717,7 +715,7 @@
     \begin{itemize}
         \item Desenvolvimento de novas estratégias para o cálculo dos parâmetros.
         \item Criação de novas bases de dados experimentais.
-        \item Investigação acerca da detecção de mudanças incrementais.
+        \item Investigação aprofundada sobre a detecção de mudanças incrementais.
     \end{itemize}
 \end{frame}
 
