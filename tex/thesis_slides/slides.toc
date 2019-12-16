@@ -1,6 +1,6 @@
 \babel@toc {brazilian}{}
 \beamer@sectionintoc {1}{Introdu\IeC {\c c}\IeC {\~a}o}{3}{0}{1}
-\beamer@sectionintoc {2}{Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{9}{0}{2}
-\beamer@sectionintoc {3}{RBFChain}{31}{0}{3}
-\beamer@sectionintoc {4}{Experimentos}{36}{0}{4}
-\beamer@sectionintoc {5}{Conclus\IeC {\~o}es e Trabalhos Futuros}{51}{0}{5}
+\beamer@sectionintoc {2}{Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{8}{0}{2}
+\beamer@sectionintoc {3}{RBFChain}{27}{0}{3}
+\beamer@sectionintoc {4}{Experimentos}{32}{0}{4}
+\beamer@sectionintoc {5}{Conclus\IeC {\~o}es e Trabalhos Futuros}{57}{0}{5}

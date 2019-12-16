@@ -1,10 +1,4 @@
-\begin{thebibliography}{10}
-
-\bibitem{Ackermann:2012:SCA:2133803.2184450}
-M.~R. Ackermann, M.~M\"{a}rtens, C.~Raupach, K.~Swierkot, C.~Lammersen, and
-  C.~Sohler.
-\newblock Streamkm++: A clustering algorithm for data streams.
-\newblock {\em J. Exp. Algorithmics}, 17:2.4:2.1--2.4:2.30, May 2012.
+\begin{thebibliography}{1}
 
 \bibitem{Aggarwal:2006:DSM:1196418}
 C.~C. Aggarwal.
@@ -18,71 +12,32 @@ C.~C. Aggarwal, J.~Han, J.~Wang, and P.~S. Yu.
 \newblock In {\em Proceedings of the 29th International Conference on Very
   Large Data Bases - Volume 29}, VLDB '03, pages 81--92. VLDB Endowment, 2003.
 
-\bibitem{Aggarwal:2004:DCD:1014052.1014110}
-C.~C. Aggarwal, J.~Han, J.~Wang, and P.~S. Yu.
-\newblock On demand classification of data streams.
-\newblock In {\em Proceedings of the Tenth ACM SIGKDD International Conference
-  on Knowledge Discovery and Data Mining}, KDD '04, pages 503--508, New York,
-  NY, USA, 2004. ACM.
-
-\bibitem{Bifet:2013:EDS:2480362.2480516}
-A.~Bifet, B.~Pfahringer, J.~Read, and G.~Holmes.
-\newblock Efficient data stream classification via probabilistic adaptive
-  windows.
-\newblock In {\em Proceedings of the 28th Annual ACM Symposium on Applied
-  Computing}, SAC '13, pages 801--806, New York, NY, USA, 2013. ACM.
-
 \bibitem{Braga:RedesNeuraisTeoriaAplicacoes}
 A.~Braga, A.~C. Carvalho, and T.~B. Ludermir.
 \newblock {\em {Redes Neurais Artificiais: Teoria e aplica\c{c}\~{o}es}},
   volume~2.
 \newblock LTC Editora, 2007.
 
-\bibitem{Domingos:2000:MHD:347090.347107}
-P.~Domingos and G.~Hulten.
-\newblock Mining high-speed data streams.
-\newblock In {\em Proceedings of the Sixth ACM SIGKDD International Conference
-  on Knowledge Discovery and Data Mining}, KDD '00, pages 71--80, New York, NY,
-  USA, 2000. ACM.
-
 \bibitem{Duda:2000:PC:954544}
 R.~O. Duda, P.~E. Hart, and D.~G. Stork.
 \newblock {\em Pattern Classification (2Nd Edition)}.
 \newblock Wiley-Interscience, New York, NY, USA, 2000.
-
-\bibitem{Gama:2003:ADT:956750.956813}
-J.~a. Gama, R.~Rocha, and P.~Medas.
-\newblock Accurate decision trees for mining high-speed data streams.
-\newblock In {\em Proceedings of the Ninth ACM SIGKDD International Conference
-  on Knowledge Discovery and Data Mining}, KDD '03, pages 523--528, New York,
-  NY, USA, 2003. ACM.
 
 \bibitem{Gama:2014:SCD:2597757.2523813}
 J.~a. Gama, I.~\v{Z}liobait\.{e}, A.~Bifet, M.~Pechenizkiy, and A.~Bouchachia.
 \newblock A survey on concept drift adaptation.
 \newblock {\em ACM Comput. Surv.}, 46(4):44:1--44:37, Mar. 2014.
 
-\bibitem{Kolter:2007:DWM:1314498.1390333}
-J.~Z. Kolter and M.~A. Maloof.
-\newblock Dynamic weighted majority: An ensemble method for drifting concepts.
-\newblock {\em J. Mach. Learn. Res.}, 8:2755--2790, Dec. 2007.
-
-\bibitem{Kranen:2011:CIM:2134350.2134352}
-P.~Kranen, I.~Assent, C.~Baldauf, and T.~Seidl.
-\newblock The clustree: Indexing micro-clusters for anytime stream mining.
-\newblock {\em Knowl. Inf. Syst.}, 29(2):249--272, Nov. 2011.
+\bibitem{KONIG2014121}
+S.~D. König and E.~A. Buffalo.
+\newblock A nonparametric method for detecting fixations and saccades using
+  cluster analysis: Removing the need for arbitrary thresholds.
+\newblock {\em Journal of Neuroscience Methods}, 227:121 -- 131, 2014.
 
 \bibitem{taylor1998introduction}
 H.~Taylor, S.~Karlin, and H.~Taylor.
 \newblock {\em An Introduction to Stochastic Modeling}.
 \newblock Elsevier Science, 1998.
-
-\bibitem{Wang:2003:MCD:956750.956778}
-H.~Wang, W.~Fan, P.~S. Yu, and J.~Han.
-\newblock Mining concept-drifting data streams using ensemble classifiers.
-\newblock In {\em Proceedings of the Ninth ACM SIGKDD International Conference
-  on Knowledge Discovery and Data Mining}, KDD '03, pages 226--235, New York,
-  NY, USA, 2003. ACM.
 
 \bibitem{Zliobaite:2010}
 I.~Zliobaite.

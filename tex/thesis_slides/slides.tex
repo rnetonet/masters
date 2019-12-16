@@ -11,6 +11,7 @@
 \usepgfplotslibrary{dateplot}
 
 \usepackage{xspace}
+\usepackage{xcolor}
 \newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
 \usepackage{tabularx}
 
@@ -49,41 +50,35 @@
 
 \begin{frame}{Introdução}
     \begin{itemize}
-        \item<1 -> Avanços tecnológicos recentes contribuiram para um aumento exponencial no volume de dados produzidos por sistemas computacionais \cite{idc_report}.
-        \item<1 -> Parte significativa desses dados é produzida atráves de \alert{Fluxos Contínuos de Dados (FCDs)}: sequências \alert{ininterruptas} e \alert{potencialmente infinitas} de eventos \cite{Aggarwal:2006:DSM:1196418}.
-        \item<1 -> FCDs estão presentes em diversos domínios de aplicação:
+        \item<1 -> Avanços tecnológicos recentes contribuiram para o aumento do volume de dados produzidos por sistemas computacionais \cite{idc_report}.
+        \item<1 -> Parte significativa desse volume é produzida na forma de \alert{Fluxos Contínuos de Dados (FCDs)}: sequências \alert{ininterruptas} e \alert{potencialmente infinitas} de eventos \cite{Aggarwal:2006:DSM:1196418}.
+        \item<1 -> FCDs estão presentes em variados domínios de aplicação:
         \begin{itemize}
             \item Análise do Mercado Financeiro;
             \item Gestão de redes de telecomunicação;
             \item Detecção de intrusos;
-            \item Monitoramento de tráfico, etc.
+            \item Monitoramento de tráfico; etc.
         \end{itemize}
       \end{itemize}
 \end{frame}
 
 \begin{frame}{Introdução}
     \begin{itemize}
-        \item<1 -> Técnicas de \alert{Aprendizado de Máquina (AM)} têm sido aplicadas para extrair informações úteis desses grandes conjuntos de dados.
-        \item<1 -> Cenários com FCDs limitam a aplicação de técnicas de AM, pois impõem restrições de tempo de resposta, de uso dos recursos computacionais e apresentam comportamento \alert{não estacionário}.
-        \item<1 -> Em cenários \alert{não estacionários}, o contexto do processo gerador e/ou a distribuição dos dados podem sofrer alterações (\alert{mudanças de conceito}) ao longo do tempo.
-        \item<1 -> A ocorrência de \alert{mudanças de conceito} (\textit{concept drifts}) pode impactar negativamente a acurácia das técnicas aplicadas.
+        \item<1 -> Técnicas de \alert{Aprendizado de Máquina (AM)} são utilizadas para extrair informações úteis desses grandes conjuntos de dados.
+        \item<1 -> Cenários com FCDs limitam a aplicação dessas técnicas, pois impõem restrições de tempo de resposta, de uso dos recursos computacionais e apresentam comportamento \alert{não estacionário}.
+        \item<1 -> Em cenários \alert{não estacionários}, o contexto do processo gerador e/ou a distribuição dos dados podem sofrer alterações ao longo do tempo.
+        \item<1 -> Essas mudanças, denominadas \alert{mudanças de conceito} (\textit{concept drifts}), podem ter impacto negativo nas técnicas de AM aplicadas.
       \end{itemize}
 \end{frame}
 
 \begin{frame}{Introdução}
     \begin{itemize}
-        \item<1 -> A atualização periódica de modelos, apesar de computacionalmente ineficiente, foi utilizada inicialmente como estratégia para mitigar a perda de acurácia causada por mudanças de conceito.
-        \item<1 -> A fim de obter maior eficiência e precisão, pesquisadores propuseram novos métodos de detecção de mudança de conceito baseados em monitoramento.
-      \end{itemize}
-\end{frame}
-
-
-\begin{frame}{Introdução}
-    \begin{itemize}
-        \item<1 -> Entretanto, esses métodos ainda apresentam limitações ao serem aplicados em cenários com FCDs \cite{Aggarwal:2006:DSM:1196418}:
+        \item<1 -> Inicialmente, realizava-se a atualização periódica dos modelos para mitigar os efeitos das mudanças de conceito.
+        \item<1 -> Pesquisadores propuseram métodos mais precisos e eficazes baseados em monitoramento.
+        \item<1 -> Os métodos propostos apresentam limitações ao serem aplicados em cenários com FCDs \cite{Aggarwal:2006:DSM:1196418}:
         \begin{itemize}
             \item<1 -> Necessidade de rotulação;
-            \item<1 -> Eficiência computacional (tempo de resposta e uso de recursos).
+            \item<1 -> Não atendem às restrições (tempo de resposta e uso de recursos).
         \end{itemize}
       \end{itemize}
 \end{frame}
@@ -99,30 +94,28 @@
 
 \begin{frame}{Fluxos Contínuos de Dados e Aprendizado de Máquina}
     \begin{itemize}
-        \item<1 -> \alert{Fluxos Contínuos de Dados (FCDs)} são sequências ininterruptas e potencialmente infinitas de eventos \cite{Aggarwal:2006:DSM:1196418}.
-        \item<1 -> Não podem ser armazenados em sua totalidade e, por serem de alta frequência, devem ser analisados em tempo real.
-        \item<1 -> Algoritmos supervisionados \cite{Domingos:2000:MHD:347090.347107, Bifet:2013:EDS:2480362.2480516, Wang:2003:MCD:956750.956778, Aggarwal:2004:DCD:1014052.1014110, Gama:2003:ADT:956750.956813} e não-supervisionados \cite{Aggarwal:2003:FCE:1315451.1315460, Ackermann:2012:SCA:2133803.2184450, Kranen:2011:CIM:2134350.2134352} da área de AM foram adaptados para atenderem a essas restrições.
-        \item<1 -> Contudo, essas especializações não tratam a ocorrência de \alert{mudanças de conceito}.
+        \item<1 -> \alert{Fluxos Contínuos de Dados (FCDs)} são sequências ininterruptas e potencialmente infinitas de eventos \cite{Aggarwal:2006:DSM:1196418}, que não podem ser armazenados e devem ser analisados em tempo de execução.
+        \item<1 -> Algoritmos de AM foram adaptados para atender a essas restrições \cite{Aggarwal:2003:FCE:1315451.1315460}, mas ainda são sucetíveis a \alert{mudanças de conceito}.
       \end{itemize}
 \end{frame}
 
 \begin{frame}{Mudança de Conceito}
     \begin{itemize}
-        \item<1 -> A Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544} é comumente utilizada para descrever a tarefa de classificação e pode ser utilizada para formalizar a noção de \alert{mudança de conceito}.
-        \item<1 -> Considerando que $p_{t_0}$ e $p_{t_1}$ denotam as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, é possível afirmar que há mudança de conceito entre os instantes $t_0$ e $t_1$ se:
+        \item<1 -> \alert{Mudanças de conceito} são alterações no contexto do processo e/ou na distribuição dos dados que podem impactar negativamente técnicas de AM.
+        \item<1 -> Podem ser definidas formalmente através da Teoria Bayesiana de Decisão \cite{Duda:2000:PC:954544}: sendo $p_{t_0}$ e $p_{t_1}$ as distribuições de probabilidades conjuntas nos instantes $t_0$ e $t_1$, há mudança de conceito entre $t_0$ e $t_1$ se:
         \begin{equation} \label{eq:3}
             {\exists}X : p_{t_0}(X, c) \ne p_{t_1}(X, c)
         \end{equation}
-        \item<1 -> Ou seja: um conjunto de dados possui resultados esperados legítimos em $t_0$, mas este mesmo conjunto passa a ter resultados esperados diferentes, também legítimos, em $t_1$ \cite{Kolter:2007:DWM:1314498.1390333}.
+        % \item<1 -> $X$ possui uma classificação legítima em $t_0$, mas passa a ter outra, também legítima, em $t_1$.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Mudança de Conceito}
     \begin{itemize}
-        \item<1 -> As mudanças de conceito podem ser categorizadas como \alert{Virtuais} ou \alert{Reais} \cite{Gama:2014:SCD:2597757.2523813}:
+        \item<1 -> São categorizadas como \alert{Virtuais} ou \alert{Reais} \cite{Gama:2014:SCD:2597757.2523813}:
         \begin{itemize}
-        \item<1 -> \alert{Mudanças Virtuais} são causadas por alterações na probabilidade a priori das classes, $P(c)$, e não alteram os conceitos-alvo.
-        \item<1 -> \alert{Mudanças Reais} surgem a partir de alterações na probabilidade a posteriori, $p(c|X)$, e modificam os resultados esperados.
+        \item<1 -> \alert{Mudanças Virtuais} são alterações na probabilidade a priori das classes, $P(c)$, e \alert{\textbf{não modificam} os resultados esperados}.
+        \item<1 -> \alert{Mudanças Reais} são alterações na probabilidade a posteriori, $p(c|X)$, e \alert{\textbf{modificam} os resultados esperados}.
         \end{itemize}
     \end{itemize}
 \end{frame}
@@ -130,8 +123,8 @@
 \begin{frame}{Mudança de Conceito}
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[scale=0.5]{imagens/concept_drift.png}
-        \caption{Mudança de Conceito Virtual vs. Mudança de Conceito Real}
+        \includegraphics[scale=0.55]{imagens/concept_drift.png}
+        \caption{Mudança de Conceito Virtual vs. Mudança de Conceito Real.}
         \label{fig:real_and_virtual_concept_drift}
     \end{center}
 \end{figure}
@@ -139,12 +132,12 @@
 
 \begin{frame}{Mudança de Conceito}
     \begin{itemize}
-        \item<1 -> As mudanças de conceito podem ocorrer de forma \alert{abrupta}, \alert{gradual}, \alert{incremental} ou \alert{recorrente} \cite{Zliobaite:2010}.
+        \item<1 -> Ocorrem de forma \alert{abrupta}, \alert{gradual}, \alert{incremental} ou \alert{recorrente} \cite{Zliobaite:2010}.
     \end{itemize}
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[scale=0.5]{imagens/concept_drift_patterns.png}
-            \caption{Padrões de ocorrência de Mudanças de Conceito}
+            \includegraphics[scale=0.55]{imagens/concept_drift_patterns.png}
+            \caption{Padrões de ocorrência de Mudanças de Conceito.}
             \label{fig:concept_drift_patterns}
         \end{center}
     \end{figure}
@@ -152,7 +145,7 @@
 
 \begin{frame}{Algoritmos para Detecção de Mudança de Conceito}
     \begin{itemize}
-        \item<1 -> Os algoritmos para Detecção de Mudanças de Conceito se dividem em duas categorias, conforme a necessidade de rotulação dos dados \cite{Zliobaite:2010}:
+        \item<1 -> Algoritmos de detecção se dividem em dois grupos, conforme a necessidade de rotulação dos dados \cite{Zliobaite:2010}:
         \begin{itemize}
         \item<1 -> \alert{Explícitos/Supervisionados}: \textbf{Dependem} da rotulação dos dados. Realizam a detecção a partir do monitoramento de medidas de performance como taxa de erro e acurácia.
         \item<1 -> \alert{Implícitos/Não Supervisionados}: \textbf{Independem} da rotulação dos dados. Realizam a detecção através do monitoramento de características dos próprios dados ou de indicadores produzidos pelas técnicas de aprendizado aplicadas.
@@ -162,41 +155,45 @@
 
 \begin{frame}{Ferramenta: MOA}
     \begin{itemize}
-        \item<1 -> Principal framework para mineração de dados em fluxos contínuos.
-        \item<1 -> Permite implementar e validar novos métodos de detecção de mudança de conceito de forma trivial.
+        \item<1 -> O MOA é o principal framework para pesquisa com fluxos contínuos.
+        \item<1 -> Possui rotinas para produzir dados sintéticos e para avaliar métodos de detecção de mudança de conceito.
     \end{itemize}
     \begin{figure}[H]
         \begin{center}
-            \includegraphics[scale=0.25]{imagens/moa.png}
+            \includegraphics[scale=0.18]{imagens/moa.png}
+            \caption{MOA - Tela Inicial.}
+            \label{fig:moa}
         \end{center}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Mudança de Conceito - RBFChain}
     \begin{itemize}
-        \item<1 -> O método proposto neste trabalho é capaz de identificar mudanças \alert{sob qualquer padrão de ocorrência}.
-        \item<1 -> Por ser independente de rótulos, considera todas mudanças identificadas como \alert{mudanças reais}.
-        \item<1 -> Implementado e validado através da plataforma MOA.
+        \item<1 -> O método proposto identifica mudanças \alert{sob qualquer padrão de ocorrência}.
+        \item<1 -> É independente de rótulos, logo considera todas mudanças identificadas como \alert{mudanças reais}.
+        \item<1 -> Foi implementado e validado através do MOA.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Redes de Função de Base Radial}
     \begin{itemize}
-        \item<1 -> \alert{Redes de Função de Base Radial} são redes neurais cujo principal diferencial é a forma de ativação: pois é realizada através do cálculo da distância entre o evento e um centro definido \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
-        \item<1 -> A arquitetura de uma rede RBF, em sua forma mais básica, envolve três camadas:
+        \item<1 -> \alert{Redes de Função de Base Radial} são redes neurais cuja ativação é realizada através do cálculo da distância entre o evento e um centro definido \cite{Braga:RedesNeuraisTeoriaAplicacoes}.
+        \item<1 -> A arquitetura mais básica para redes RBF envolve três camadas:
         \begin{itemize}
             \item<1 -> \alert{Entrada}: Recepciona os dados e encaminha para camada intermediária.
             \item<1 -> \alert{Intermediária}: Composta por funções de ativação de base radial que atuam como neurônios.
             \item<1 -> \alert{Saída}: Pondera os resultados da camada intermediária, agregando-os linearmente para compor a resposta final da rede.
         \end{itemize}
-        \item<1 -> Na literatura, as funções Gaussianas são as funções de ativação mais usuais em redes RBF.
+        % \item<1 -> Na literatura, as funções Gaussianas são as funções de ativação mais empregadas em redes RBF.
       \end{itemize}
 \end{frame}
 
 \begin{frame}{Redes de Função de Base Radial}
     \begin{figure}[H]
     \begin{center}
-        \includegraphics[scale=0.65]{imagens/rbf_arq.png}
+        \includegraphics[scale=0.63]{imagens/rbf_arq.png}
+        \caption{Arquitetura RBF.}
+        \label{fig:rbg_arq}
     \end{center}
     \end{figure}
 \end{frame}
@@ -204,8 +201,8 @@
 \begin{frame}{Redes de Função de Base Radial}
     \begin{itemize}
         \item<1 -> O RBFChain utiliza uma rede RBF adaptada, composta apenas pelas camadas inicial e intermediária.
-        \item<2 -> O processo de ativação realizado na camada intermediária produz, implicitamente, grupos a partir das observações recebidas ao longo do tempo.
-        \item<3 -> Mudanças de conceito são identificadas quando o grupo ativo deste agrupamento é alterado.
+        \item<1 -> O processo de ativação da camada intermediária produz, implicitamente, grupos dos eventos recebidos.
+        \item<1 -> Mudanças de conceito são identificadas quando o grupo ativo desse agrupamento é alterado.
       \end{itemize}
 \end{frame}
 
@@ -226,7 +223,7 @@
 
 \begin{frame}{Cadeias de Markov}
     \begin{itemize}
-        \item<1 -> Uma \alert{Cadeia de Markov}, ou \alert{Processo de Markov}, é um processo estocástico no qual a probabilidade do estado em um dado período de tempo depende apenas do estado no período imediatamente anterior:
+        \item<1 -> Uma \alert{Cadeia de Markov}, ou \alert{Processo de Markov}, é um processo estocástico no qual a probabilidade do estado em um determinado período de tempo depende apenas do estado no período imediatamente anterior:
         \begin{equation}
             \label{eq:markov}
             \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } , \ldots , X _ { 0 } = s _ { 0 } \right) = \mathbb { P } \left( X _ { t } = s _ { j } | X _ { t - 1 } = s _ { i } \right) = p _ { i j }
@@ -246,10 +243,20 @@
 \end{frame}
 
 \begin{frame}{Cadeias de Markov}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=0.23]{imagens/markov_chain_wikipedia.png}
+            \caption{Exemplo: Cadeia de Markov com três estados.}
+            \label{fig:cadeia_markov_tres_estados}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Cadeias de Markov}
     \begin{itemize}
         \item<1 -> O RBFChain utiliza uma Cadeia de Markov para modelar o agrupamento criado na rede RBF.
-        \item<2 -> Os grupos formados representam os estados do modelo markoviano e as mudanças (ativações) entre estes grupos, as transições.
-        \item<3 -> Estas mudanças são refletidas no modelo através do aumento da probabilidade  correspondente e a diminuição proporcional das outras transições. Estas alterações são realizadas respeitando a condição $0 \leq P_{ij} \leq 1$.
+        \item<1 -> Os grupos formados representam os estados do modelo markoviano e as mudanças (ativações) entre estes grupos, as transições.
+        \item<1 -> Estas mudanças são refletidas no modelo através do aumento da probabilidade  correspondente e a diminuição proporcional das outras transições. Estas alterações são realizadas respeitando a condição $0 \leq P_{ij} \leq 1$.
       \end{itemize}
 \end{frame}
 
@@ -284,7 +291,9 @@
 \begin{frame}{Visão Geral}
         \begin{figure}[H]
             \begin{center}
-                \includegraphics[scale=0.45]{imagens/arquitetura_rbfchain.png}
+                \includegraphics[scale=0.4]{imagens/arquitetura_rbfchain.png}
+                \caption{Arquitetura RBFChain.}
+                \label{fig:arquitetura}
             \end{center}
         \end{figure}
 \end{frame}
@@ -298,6 +307,8 @@
     \begin{figure}[H]
         \begin{center}
             \includegraphics[width=\textwidth]{imagens/funcionamento_algoritmo.png}
+            \caption{Execução de exemplo do RBFChain.}
+            \label{fig:funcionamento_algoritmo}
         \end{center}
     \end{figure}
 \end{frame}
@@ -306,6 +317,8 @@
     \begin{figure}[H]
         \begin{center}
             \includegraphics[width=\textwidth]{imagens/evolucao_markov.png}
+            \caption{Evolução do modelo markoviano.}
+        \label{fig:evolucao_markov}
         \end{center}
     \end{figure}
 \end{frame}
@@ -313,21 +326,37 @@
 
 \section{Experimentos}
 
+
+\begin{frame}{Dados Sintéticos}
+    \begin{itemize}
+        \item Produzidos através de versões adaptadas dos geradores do MOA.
+        \item $4$ conjuntos de dados, com $2.500$ eventos cada.
+        \item Eventos com valores entre $0$ e $1$.
+        \item Ruído randômico $[-0.1, 0.2]$.
+        \item Até $2$ conceitos distintos representados.
+        \item Conceitos compostos por $400$ eventos.
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Dados Sintéticos}
     \begin{figure}[ht]
         \begin{center}
             \includegraphics[width=\textwidth]{imagens/conjuntos_dados_sinteticos.png}
+            \caption{Representação gráfica dos conjuntos de dados sintéticos.}
+            \label{fig:conjuntos_dados_sinteticos}
         \end{center}
     \end{figure}
 \end{frame}
 
 
-\begin{frame}{Dados Sintéticos - Critérios de Avaliação}
+\begin{frame}{Dados Sintéticos - Métricas}
     \begin{table}[h]
         \centering
+        \caption{Métricas utilizadas na avaliação com dados sintéticos.}
+        \label{tbl:indicadores_analisado}
         \begin{tabularx}{\textwidth}{ll}
         \toprule
-        Indicador & Observação \\
+        Métrica & Observação \\
         \midrule
         TP       &  \textbf{Tempo de Processamento} por instância (média em seg.). \\
         MR       &  \textbf{Mudanças Reais} existentes no conjunto de dados. \\
@@ -340,19 +369,39 @@
     \end{table}
 \end{frame}
 
-\begin{frame}{Dados Sintéticos - Resultado: Sem mudanças de conceito}
+\begin{frame}{Dados Sintéticos -  Sem mudanças de conceito}
+    \begin{figure}[t]
+        \begin{center}
+            \includegraphics[width=\textwidth]{imagens/nochange.png}
+            \caption{Comportamento dos algoritmos para o conjunto de dados sem mudanças de conceito.}
+            \label{fig:exp_sem_mudancas}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{Dados Sintéticos -  Sem mudanças de conceito}
+    \begin{itemize}
+        \item Todos algoritmos testados demonstraram tolerância a ruídos e não indicaram nenhum falso positivo.
+        \item RBFChain obteve a melhor média em tempo de processamento, juntamente com o EDDM.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos -  Sem mudanças de conceito}
     \begin{table}[h]
         \centering
+        \caption{Resultados dos algoritmos para o conjunto de dados sem mudanças de conceito.}
+        \label{tbl:exp1}
         \begin{tabular}{llllll}
 
         \toprule
         Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\
         \midrule
-        RBFChain               & 0.013                  & 0                      & 0                      & 0                      & ---                    \\
+        RBFChain               & \alert{0.013}                  & 0                      & 0                      & 0                      & ---                    \\
         ADWIN                  & 0.025                  & 0                      & 0                      & 0                      & ---                    \\
         CUSUM                  & 0.016                  & 0                      & 0                      & 0                      & ---                    \\
         DDM                    & 0.014                  & 0                      & 0                      & 0                      & ---                    \\
-        EDDM                   & 0.013                  & 0                      & 0                      & 0                      & ---                    \\
+        EDDM                   & \alert{0.013}                  & 0                      & 0                      & 0                      & ---                    \\
         EWMA                   & 0.014                  & 0                      & 0                      & 0                      & ---                    \\
         HDDMA                  & 0.017                  & 0                      & 0                      & 0                      & ---                    \\
         PageHinkley            & 0.015                  & 0                      & 0                      & 0                      & ---                    \\
@@ -363,45 +412,17 @@
     \end{table}
 \end{frame}
 
-\begin{frame}{Dados Sintéticos - Resultado: Sem mudanças de conceito}
-    \begin{itemize}
-        \item Todos algoritmos testados demonstraram tolerância a ruídos e não indicaram nenhum falso positivo.
-        \item RBFChain obteve a melhor média em tempo de processamento, juntamente com o EDDM.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Dados Sintéticos - Resultado: Sem mudanças de conceito}
+\begin{frame}{Dados Sintéticos -  Mudanças Abruptas}
     \begin{figure}[t]
         \begin{center}
-            \includegraphics[width=\textwidth]{imagens/nochange.png}
+            \includegraphics[width=\textwidth]{imagens/abrupt.png}
+            \caption{Comportamento dos algoritmos para o conjunto de dados com mudanças de conceito abruptas.}
+            \label{fig:exp_abrupta}
         \end{center}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Dados Sintéticos - Resultado: Mudanças Abruptas}
-    \begin{table}[ht]
-        \centering
-        \begin{tabular}{llllll}
-
-    \toprule
-    Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\
-    \midrule
-    RBFChain               & 0.015                  & 6                      & 5                      & 0                      & 166.67                 \\
-    ADWIN                  & 0.016                  & 6                      & 6                      & 2046                   & 9.00                   \\
-    CUSUM                  & 0.021                  & 6                      & 3                      & 0                      & 68.83                  \\
-    DDM                    & 0.015                  & 6                      & 3                      & 0                      & 38.83                  \\
-    EDDM                   & 0.013                  & 6                      & 0                      & 0                      & ---                    \\
-    EWMA                   & 0.014                  & 6                      & 1                      & 0                      & 1.00                   \\
-    HDDMA                  & 0.014                  & 6                      & 3                      & 0                      & 10.00                    \\
-    PageHinkley            & 0.015                  & 6                      & 1                      & 0                      & 16.17                  \\
-    SeqDrift1              & 0.015                  & 6                      & 5                      & 0                      & 167.50                 \\
-    \bottomrule
-
-        \end{tabular}
-        \end{table}
-\end{frame}
-
-\begin{frame}{Dados Sintéticos - Resultado: Mudanças Abruptas}
+\begin{frame}{Dados Sintéticos -  Mudanças Abruptas}
     \begin{itemize}
         \item RBFChain e SeqDrift1 apresentaram as melhores acurácias, identificando 5 das 6 mudanças existentes, sem produzir nenhum falso positivo.
         \item RBFChain apresentou o terceiro melhor tempo de processamento (TP), com uma pequena diferença para o primeiro.
@@ -409,41 +430,42 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Dados Sintéticos - Resultado: Mudanças Abruptas}
-    \begin{figure}[t]
-        \begin{center}
-            \includegraphics[width=\textwidth]{imagens/abrupt.png}
-        \end{center}
-    \end{figure}
-\end{frame}
-
-
-
-\begin{frame}{Dados Sintéticos - Resultado: Mudanças Graduais}
+\begin{frame}{Dados Sintéticos -  Mudanças Abruptas}
     \begin{table}[ht]
         \centering
+        \caption{Resultados dos algoritmos para o conjunto de dados com mudanças de conceito abruptas.}
+        \label{tbl:exp2}
         \begin{tabular}{llllll}
 
-        \toprule
-        Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\
-        \midrule
-        RBFChain               & 0.011                  & 3                      & 3                      & 0                      & 101.00                 \\
-        ADWIN                  & 0.020                  & 3                      & 3                      & 2209                   & 1.00                   \\
-        CUSUM                  & 0.014                  & 3                      & 2                      & 0                      & 83.33                  \\
-        DDM                    & 0.014                  & 3                      & 1                      & 1                      & 58.33                  \\
-        EDDM                   & 0.013                  & 3                      & 0                      & 0                      & ---                    \\
-        EWMA                   & 0.015                  & 3                      & 0                      & 0                      & ---                    \\
-        HDDMA                  & 0.014                  & 3                      & 2                      & 0                      & 100.67                 \\
-        PageHinkley            & 0.014                  & 3                      & 1                      & 0                      & 22.33                  \\
-        SeqDrift1              & 0.015                  & 3                      & 3                      & 1                      & 194.33                 \\
-        \bottomrule
-
+    \toprule
+    Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\
+    \midrule
+    RBFChain               & 0.015                  & 6                      & \alert{5}              & 0                      & 166.67                 \\
+    ADWIN                  & 0.016                  & 6                      & 6                      & \textcolor{red}{2046}  & 9.00                   \\
+    CUSUM                  & 0.021                  & 6                      & 3                      & 0                      & 68.83                  \\
+    DDM                    & 0.015                  & 6                      & 3                      & 0                      & 38.83                  \\
+    EDDM                   & 0.013                  & 6                      & 0                      & 0                      & ---                    \\
+    EWMA                   & 0.014                  & 6                      & 1                      & 0                      & 1.00                   \\
+    HDDMA                  & 0.014                  & 6                      & 3                      & 0                      & 10.00                    \\
+    PageHinkley            & 0.015                  & 6                      & 1                      & 0                      & 16.17                  \\
+    SeqDrift1              & 0.015                  & 6                      & \alert{5}              & 0                      & 167.50                 \\
+    \bottomrule
 
         \end{tabular}
         \end{table}
 \end{frame}
 
-\begin{frame}{Dados Sintéticos - Resultado: Mudanças Graduais}
+\begin{frame}{Dados Sintéticos -  Mudanças Graduais}
+    \begin{figure}[t]
+        \begin{center}
+            \includegraphics[width=\textwidth]{imagens/gradual.png}
+            \caption{Comportamento dos algoritmos para o conjunto de dados com mudanças de conceito graduais.}
+            \label{fig:exp_gradual}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos -  Mudanças Graduais}
     \begin{itemize}
         \item RBFChain obteve a melhor acurácia, identificando todas as três mudanças de conceito, sem produzir falso positivos.
         \item Algoritmo SeqDrift1 apresentou a segunda melhor acurácia, pois também detectou as três mudanças corretamente, entretanto, apresentou um falso positivo e uma taxa de atraso significativamente maior.
@@ -452,17 +474,55 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Dados Sintéticos - Resultado: Mudanças Graduais}
+\begin{frame}{Dados Sintéticos -  Mudanças Graduais}
+    \begin{table}[ht]
+        \centering
+        \caption{Resultados dos algoritmos para o conjunto de dados com mudanças de conceito graduais.}
+        \label{tbl:exp3}
+        \begin{tabular}{llllll}
+
+        \toprule
+        Algoritmo              & TP                     & MR                     & VP                     & FP                     & ATR                    \\
+        \midrule
+        RBFChain               & \alert{0.011}          & 3                      & \alert{3}              & \alert{0}              & \alert{101.00}         \\
+        ADWIN                  & 0.020                  & 3                      & 3                      & 2209                   & 1.00                   \\
+        CUSUM                  & 0.014                  & 3                      & 2                      & 0                      & 83.33                  \\
+        DDM                    & 0.014                  & 3                      & 1                      & 1                      & 58.33                  \\
+        EDDM                   & 0.013                  & 3                      & 0                      & 0                      & ---                    \\
+        EWMA                   & 0.015                  & 3                      & 0                      & 0                      & ---                    \\
+        HDDMA                  & 0.014                  & 3                      & 2                      & 0                      & 100.67                 \\
+        PageHinkley            & 0.014                  & 3                      & 1                      & 0                      & 22.33                  \\
+        SeqDrift1              & 0.015                  & 3                      & \alert{3}              & \alert{1}              & \alert{194.33}         \\
+        \bottomrule
+
+
+        \end{tabular}
+        \end{table}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos -  Mudanças Incrementais}
     \begin{figure}[t]
         \begin{center}
-            \includegraphics[width=\textwidth]{imagens/gradual.png}
+            \includegraphics[width=\textwidth]{imagens/incremental.png}
+            \caption{Comportamento dos algoritmos para o conjunto de dados com mudanças de conceito incrementais.}
+            \label{fig:exp_incremental}
         \end{center}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Dados Sintéticos - Resultado: Mudanças Incrementais}
+\begin{frame}{Dados Sintéticos -  Mudanças Incrementais}
+    \begin{itemize}
+        \item A mudança de conceito incremental representa uma dificuldade, pois todos algoritmos que detectaram a mudança existente também produziram falso positivos.
+        \item RBFChain e SeqDrift1, que apresentaram os melhores resultados nos testes anteriores, tiveram a pior acurácia, pois emitiram dois falsos positivo cada.
+        \item Teste considerado inconclusivo, ressaltando a necessidade de uma investigação mais detalhada sobre a detecção de mudanças de conceito incrementais.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dados Sintéticos -  Mudanças Incrementais}
     \begin{table}[ht]
         \centering
+        \caption{Resultados dos algoritmos para o conjunto de dados com mudanças de conceito incrementais.}
+        \label{tbl:exp4}
         \begin{tabular}{llllll}
 
         \toprule
@@ -483,33 +543,182 @@
         \end{table}
 \end{frame}
 
-\begin{frame}{Dados Sintéticos - Resultado: Mudanças Incrementais}
+\begin{frame}{Dados Reais - Identificação de fixações e sacadas}
     \begin{itemize}
-        \item A mudança de conceito incremental representa uma dificuldade, pois todos algoritmos que detectaram a mudança existente também produziram falso positivos.
-        \item RBFChain e SeqDrift1, que apresentaram os melhores resultados nos testes anteriores, tiveram a pior acurácia, pois emitiram dois falsos positivo cada.
-        \item Teste considerado inconclusivo, ressaltando a necessidade de uma investigação mais detalhada sobre a detecção de mudanças de conceito incrementais.
+        \item O monitoramento ocular tem sido utilizado em uma vasta gama de pesquisas, em diferentes áreas de pesquisa.
+        \item A identificação de eventos a partir dos dados brutos coletados é realizada por algoritmos.
+        \item Os algoritmos existentes na literatura não permitem a identificação em tempo de execução.
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Dados Sintéticos - Resultado: Mudanças Incrementais}
-    \begin{figure}[t]
+\begin{frame}{Dados Reais - Identificação de fixações e sacadas}
+    \begin{figure}[H]
         \begin{center}
-            \includegraphics[width=\textwidth]{imagens/incremental.png}
+            \includegraphics[scale=1]{imagens/exemplo_fixacao_e_sacadas.png}
+            \caption{Exemplo de identificação de fixações e sacadas. Fonte: \cite{KONIG2014121}.}
+            \label{fig:exemplo_fixacoes_e_sacadas}
         \end{center}
     \end{figure}
 \end{frame}
 
+\begin{frame}{Dados Reais - Identificação de fixações e sacadas}
+    \begin{itemize}
+        \item Dados de dois macacos-prego, Dede e Juju, produzidos e cedidos pelo Instituto do Cérebro (UFRN).
+        \item $6.200$ eventos, $(x, y)$, indicando a localização do olhar ao longo do tempo.
+        \item Versão adaptada do RBFChain: continuidade do conceito indica fixação, alternância, sacada.
+        \item Comparado ao algoritmo-referência: ClusterFix \cite{KONIG2014121}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dados Reais - Identificação de fixações e sacadas -  Trajetórias}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[scale=0.25]{imagens/trajetoria_dede.png}
+                    \caption{Trajetória \textit{Dede}.}
+                \end{center}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[scale=0.25]{imagens/trajetoria_juju.png}
+                    \caption{Trajetória \textit{Juju}.}
+                \end{center}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Dados Reais - Identificação de fixações e sacadas -  Métricas}
+    \begin{table}[h]
+        \centering
+        \caption{Métricas utilizadas na avaliação com dados reais.}
+        \label{tbl:metricas_rbfchain}
+        \begin{tabularx}{\textwidth}{lX}
+        \toprule
+        Métrica  & Observação \\
+        \midrule
+        QP       &  \textbf{Quantidade de Pontos} analisados. \\
+        AC       &  \textbf{Acurácia}.  \\
+                 & Fração de fixações e sacadas classificadas corretamente. \\
+
+        PR       &  \textbf{Precisão}.  \\
+                 & Fração das fixações classificadas pelo algoritmo corretamente.  \\
+
+        RE       &  \textbf{\textit{Recall}}.  \\
+                 & Fração das fixações existentes (rotuladas) que também foram identificadas pelo algoritmo.  \\
+
+        \bottomrule
+        \end{tabularx}
+        \end{table}
+\end{frame}
+
+\begin{frame}{Dados Reais - Identificação de fixações e sacadas -  Dede}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[scale=0.25]{imagens/dede_clusterfix.png}
+                    \caption{ClusterFix - \textit{Dede}.}
+                \end{center}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[scale=0.28]{imagens/dede_rbfchain.png}
+                    \caption{RBFChain - \textit{Dede}.}
+                \end{center}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Dados Reais - Identificação de fixações e sacadas -  Dede}
+    \begin{table}[ht!]
+        \centering
+        \caption{Resultados para o conjunto de dados \textit{Dede}.}
+        \label{tbl:dede}
+        \begin{tabular}{llll}
+
+        \toprule
+        QT              & AC                     & PR                     & RE         \\
+        \midrule
+        $6.200$         & $0.87$                 & $0.98$                 & $0.88$      \\
+        \bottomrule
+
+        \end{tabular}
+    \end{table}
+
+    \begin{itemize}
+        \item \alert{$87\%$} das fixações e sacadas classificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
+        \item \alert{$98\%$} das fixações identificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
+        \item \alert{$88\%$} das fixações identificadas pelo ClusterFix também foram identificadas pelo RBFChain.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Dados Reais - Identificação de fixações e sacadas -  Juju}
+    \begin{columns}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[scale=0.25]{imagens/juju_clusterfix.png}
+                    \caption{ClusterFix - \textit{Juju}.}
+                \end{center}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[scale=0.28]{imagens/juju_rbfchain.png}
+                    \caption{RBFChain - \textit{Juju}.}
+                \end{center}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Dados Reais - Identificação de fixações e sacadas -  Juju}
+    \begin{table}[ht!]
+        \centering
+        \caption{Resultados para o conjunto de dados \textit{Juju}.}
+        \label{tbl:juju}
+        \begin{tabular}{llll}
+
+        \toprule
+        QT              & AC                     & PR                     & RE      \\
+        \midrule
+        $6.200$         & $0.82$                 & $0.98$                 & $0.83$      \\
+        \bottomrule
+
+        \end{tabular}
+    \end{table}
+
+    \begin{itemize}
+        \item \alert{$82\%$} das fixações e sacadas classificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
+        \item \alert{$98\%$} das fixações identificadas pelo RBFChain tiveram a mesma classificação pelo ClusterFix.
+        \item \alert{$83\%$} das fixações identificadas pelo ClusterFix também foram identificadas pelo RBFChain.
+    \end{itemize}
+\end{frame}
+
 \section{Conclusões e Trabalhos Futuros}
 
-\begin{frame}{Lorem Ipsum}
+\begin{frame}{Conclusões}
     \begin{itemize}
-        \item<1 -> A:
-        \begin{itemize}
-            \item<2 -> A1;
-            \item<2 -> A2.
-        \end{itemize}
-        \item<3 -> B
-      \end{itemize}
+        \item Um novo método de detecção de mudanças de conceito, denominado RBFChain, baseado em Redes de Função de Base Radial (RBF) e Cadeias de Markov, que se diferencia por detectar mudanças em tempo de execução, de forma computacionalmente eficiente e independente de rótulos;
+        \item Uma nova abordagem, baseada em uma versão adaptada do RBFChain, para o problema real de classificação de fixações e sacadas em atividades de monitoramento ocular.
+        A abordagem proposta se diferencia por realizar a classificação em tempo de execução e apresentar acurácia equivalente ao estado da arte.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Trabalhos Futuros}
+    \begin{itemize}
+        \item Desenvolvimento de novas estratégias para o cálculo dos parâmetros.
+        \item Criação de novas bases de dados experimentais.
+        \item Investigação acerca da detecção de mudanças incrementais.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Referências}
