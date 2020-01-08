@@ -1,3 +1,5 @@
+import numpy as np
+
 class DataReader:
     def __init__(self, file_path):
         self.file_path = file_path
@@ -12,8 +14,7 @@ class DataReader:
             cleaned_data = []
             for index, line in enumerate(file_lines):
                 # indexes <= 1 should be convert to int
-                parser = int if index <= 1 else float
-                cleaned_data.append(list(map(parser, line.split())))
+                cleaned_data.append(list(map(float, line.split())))
 
             # Unpack dataset
             (
@@ -31,3 +32,9 @@ class DataReader:
                 self.acc_filt,
             ) = cleaned_data
 
+
+            # Create distances attr, euclidian distance to (0, 0)
+            self.distances = []
+            for _x, _y in zip(self.x, self.y):
+                d = np.sqrt(np.power(_x, 2) + np.power(_y, 2))
+                self.distances.append(d)

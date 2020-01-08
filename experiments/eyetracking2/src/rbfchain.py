@@ -1,5 +1,4 @@
 import math
-from decimal import Decimal
 
 
 class MarkovChain:
@@ -12,7 +11,9 @@ class MarkovChain:
         origin = f"{origin:.2f}"
         destination = f"{destination:.2f}"
 
-        if origin != destination or (not self.current_origin and not self.current_destination):
+        if origin != destination or (
+            not self.current_origin and not self.current_destination
+        ):
             self.current_origin = origin
             self.current_destination = destination
 
@@ -32,13 +33,16 @@ class MarkovChain:
                     self.system[self.current_origin][possible_destination] = 1
             else:
                 reduction_factor = alpha / (len(self.system[self.current_origin]) - 1)
-                self.system[self.current_origin][possible_destination] -= reduction_factor
+                self.system[self.current_origin][
+                    possible_destination
+                ] -= reduction_factor
                 if self.system[self.current_origin][possible_destination] < 0:
                     self.system[self.current_origin][possible_destination] = 0
 
         return self.system[self.current_origin][self.current_destination]
 
-class RBF:
+
+class RBFChain:
     """ Radial Basis Functions - Drift Detection Method.
 
     Parameters
@@ -57,7 +61,6 @@ class RBF:
     """
 
     def __init__(self, sigma=2, lambda_=0.5, alpha=0.25, delta=1.0):
-        super().__init__()
         self.sigma = sigma
         self.lambda_ = lambda_
         self.alpha = alpha
@@ -77,7 +80,6 @@ class RBF:
         Resets the change detector parameters.
 
         """
-        super().reset()
         self.sample_count = 1
         # Reset or not the markov
         # self.markov = MarkovChain()
@@ -89,11 +91,6 @@ class RBF:
         ----------
         prediction: float
         """
-        # self.in_warning_zone = False
-
-        if self.in_concept_change:
-            self.reset()
-
         self.sample_count += 1
 
         activation = 0.0
@@ -117,17 +114,21 @@ class RBF:
             self.actual_center = activated_center
 
         # Update markov
-        probability = self.markov.update(self.actual_center, activated_center, self.alpha)
+        probability = self.markov.update(
+            self.actual_center, activated_center, self.alpha
+        )
 
-        # If center changed
-        if self.actual_center != activated_center:
-            if probability >= self.delta:
-                self.in_concept_change = True
-            else:
-                self.in_warning_zone = True
+        return probability
 
-            # Update actual center
-            self.actual_center = activated_center
+        # # If center changed
+        # if self.actual_center != activated_center:
+        #     if probability >= self.delta:
+        #         self.in_concept_change = True
+        #     else:
+        #         self.in_warning_zone = True
 
-        if probability >= self.delta and self.in_warning_zone:
-            self.in_concept_change = True
+        #     # Update actual center
+        #     self.actual_center = activated_center
+
+        # if probability >= self.delta and self.in_warning_zone:
+        #     self.in_concept_change = True
