@@ -1,9 +1,6 @@
 import math
-
-from graphviz import Digraph
-from skmultiflow.drift_detection.base_drift_detector import BaseDriftDetector
-
 from decimal import Decimal
+
 
 class MarkovChain:
     def __init__(self):
@@ -41,34 +38,7 @@ class MarkovChain:
 
         return self.system[self.current_origin][self.current_destination]
 
-
-    def to_graphviz(self):
-        dot = Digraph(comment="RBF")
-
-        dot.attr(dpi="600")
-
-        dot.attr("node", fontsize="8")
-        dot.attr("edge", fontsize="8")
-        dot.attr("edge", labelfloat="false")
-
-        # nodes
-        for origin in self.system.keys():
-            dot.node(origin)
-
-        # edges
-        for origin in self.system.keys():
-            for destination in self.system[origin].keys():
-                dot.edge(
-                    origin,
-                    destination,
-                    constraint="false",
-                    label=format(self.system[origin][destination], ".2f"),
-                )
-
-        return dot
-
-
-class RBF(BaseDriftDetector):
+class RBF:
     """ Radial Basis Functions - Drift Detection Method.
 
     Parameters
