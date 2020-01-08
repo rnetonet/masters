@@ -53,6 +53,32 @@ class DataOverviewPlot:
         plt.show(block=True)
 
 
+class TrajectoryPlot:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def plot(self):
+        fig = plt.figure()
+        fig.gca().set_title(self.__class__.__name__)
+
+        custom_legends = [
+            Line2D([0], [0], color=(0, 1, 0), ls="-", linewidth=1),
+            Line2D([0], [0], color="r", ls="-", linewidth=1, alpha=0.5),
+        ]
+        fig.legend(
+            custom_legends,
+            ["Saccades", "Fixations"],
+            ncol=1,
+            borderaxespad=0,
+            loc="lower center",
+        )
+
+        # Trajectory
+        plt.plot(self.x, self.y, "-", color=(0, 1, 0), linewidth=0.25)
+        plt.show(block=False)
+
+
 class FixationsPlot:
     def __init__(self, x, y, fixations_indexes):
         self.x = x
@@ -76,7 +102,7 @@ class FixationsPlot:
         )
 
         # Trajectory
-        plt.plot(self.x, self.y, "-", color=(0, 1, 0), linewidth=0.5)
+        plt.plot(self.x, self.y, "-", color=(0, 1, 0), linewidth=0.25)
 
         # Fixations
         fixations_x, fixations_y = [], []

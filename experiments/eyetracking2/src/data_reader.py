@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class DataReader:
     def __init__(self, file_path):
         self.file_path = file_path
@@ -31,7 +32,6 @@ class DataReader:
                 self.vel_filt,
                 self.acc_filt,
             ) = cleaned_data
-
 
             # Create distances attr, euclidian distance to (0, 0)
             self.distances = []

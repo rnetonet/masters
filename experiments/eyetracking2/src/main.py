@@ -2,8 +2,9 @@ import argparse
 
 import settings
 from data_reader import DataReader
+from plotter import FixationsPlot, TrajectoryPlot
 from rbfchain import RBFChain
-from plotter import FixationsPlot
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -21,8 +22,12 @@ def main():
         if probability >= rbfchain.delta:
             fixations_indexes.append(index)
 
+    trajectory_plot = TrajectoryPlot(dataset.x, dataset.y)
+    trajectory_plot.plot()
+
     fixations_plot = FixationsPlot(dataset.x, dataset.y, fixations_indexes)
     fixations_plot.plot()
+
 
 if __name__ == "__main__":
     main()
