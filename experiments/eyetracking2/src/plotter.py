@@ -80,14 +80,20 @@ class TrajectoryPlot:
 
 
 class FixationsPlot:
-    def __init__(self, x, y, fixations_indexes):
+    def __init__(self, x, y, fixations_indexes, title=None, block=True):
         self.x = x
         self.y = y
         self.fixations_indexes = fixations_indexes
+        self.title = title
+        self.block = block
 
     def plot(self):
         fig = plt.figure()
-        fig.gca().set_title(self.__class__.__name__)
+
+        if not self.title:
+            fig.gca().set_title(self.__class__.__name__)
+        else:
+            fig.gca().set_title(self.title)
 
         custom_legends = [
             Line2D([0], [0], color=(0, 1, 0), ls="-", linewidth=1),
@@ -111,4 +117,4 @@ class FixationsPlot:
             fixations_y.append(self.y[index])
 
         plt.plot(fixations_x, fixations_y, "ro", markersize=0.25)
-        plt.show()
+        plt.show(block=self.block)
