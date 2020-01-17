@@ -87,28 +87,26 @@ class FixationsPlot:
         self.title = title
         self.block = block
 
-    def plot(self):
-        fig = plt.figure()
-
+    def plot(self, ax):
         if not self.title:
-            fig.gca().set_title(self.__class__.__name__)
+            ax.set_title(self.__class__.__name__)
         else:
-            fig.gca().set_title(self.title)
+            ax.set_title(self.title)
 
         custom_legends = [
             Line2D([0], [0], color=(0, 1, 0), ls="-", linewidth=1),
             Line2D([0], [0], color="r", ls="-", linewidth=1, alpha=0.5),
         ]
-        fig.legend(
+        ax.legend(
             custom_legends,
             ["Saccades", "Fixations"],
             ncol=1,
             borderaxespad=0,
-            loc="lower center",
+            loc="best",
         )
 
         # Trajectory
-        plt.plot(self.x, self.y, "-", color=(0, 1, 0), linewidth=0.25)
+        ax.plot(self.x, self.y, "-", color=(0, 1, 0), linewidth=0.25)
 
         # Fixations
         fixations_x, fixations_y = [], []
@@ -116,5 +114,4 @@ class FixationsPlot:
             fixations_x.append(self.x[index])
             fixations_y.append(self.y[index])
 
-        plt.plot(fixations_x, fixations_y, "ro", markersize=0.25)
-        plt.show(block=self.block)
+        ax.plot(fixations_x, fixations_y, "ro", markersize=0.25)
