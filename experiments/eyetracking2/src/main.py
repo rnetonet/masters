@@ -6,6 +6,7 @@ import re
 import shutil
 
 import matplotlib.pyplot as plt
+import numpy as np
 import tabulate
 from sklearn import metrics
 
@@ -37,21 +38,9 @@ def main():
 
     # Counter used in the output table and to prefix the images
     counter = 0
-    accuracies = {
-        "bufalo": [],
-        "vel100": [],
-        "vel_rms": []
-    }
-    precisions = {
-        "bufalo": [],
-        "vel100": [],
-        "vel_rms": []
-    }
-    recalls = {
-        "bufalo": [],
-        "vel100": [],
-        "vel_rms": []
-    }
+    accuracies = {"bufalo": [], "vel100": [], "vel_rms": []}
+    precisions = {"bufalo": [], "vel100": [], "vel_rms": []}
+    recalls = {"bufalo": [], "vel100": [], "vel_rms": []}
 
     # Output table
     headers = [
@@ -220,7 +209,7 @@ def main():
                     str(counter) + "\n" + " ",
                     dataset_basename,
                     trial,
-                    "Bufalo\nVel100\nVelRMS",
+                    "Bufalo\nVel 100\nVel RMS",
                     f"{metrics.accuracy_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n{metrics.accuracy_score(result_vel100.predictions, result_rbfchain_predictions):.2f}\n{metrics.accuracy_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
                     f"{metrics.precision_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n{metrics.precision_score(result_vel100.predictions, result_rbfchain_predictions):.2f}\n{metrics.precision_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
                     f"{metrics.recall_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n{metrics.recall_score(result_vel100.predictions, result_rbfchain_predictions):.2f}\n{metrics.recall_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
@@ -230,17 +219,53 @@ def main():
             #
             # Keeps an history, enabling the creation of a summary.
             #
-            accuracies["bufalo"].append(metrics.accuracy_score(result_bufalo.predictions, result_rbfchain_predictions))
-            accuracies["vel100"].append(metrics.accuracy_score(result_vel100.predictions, result_rbfchain_predictions))
-            accuracies["vel_rms"].append(metrics.accuracy_score(result_vel_rms.predictions, result_rbfchain_predictions))
+            accuracies["bufalo"].append(
+                metrics.accuracy_score(
+                    result_bufalo.predictions, result_rbfchain_predictions
+                )
+            )
+            accuracies["vel100"].append(
+                metrics.accuracy_score(
+                    result_vel100.predictions, result_rbfchain_predictions
+                )
+            )
+            accuracies["vel_rms"].append(
+                metrics.accuracy_score(
+                    result_vel_rms.predictions, result_rbfchain_predictions
+                )
+            )
 
-            precisions["bufalo"].append(metrics.precision_score(result_bufalo.predictions, result_rbfchain_predictions))
-            precisions["vel100"].append(metrics.precision_score(result_vel100.predictions, result_rbfchain_predictions))
-            precisions["vel_rms"].append(metrics.precision_score(result_vel_rms.predictions, result_rbfchain_predictions))
+            precisions["bufalo"].append(
+                metrics.precision_score(
+                    result_bufalo.predictions, result_rbfchain_predictions
+                )
+            )
+            precisions["vel100"].append(
+                metrics.precision_score(
+                    result_vel100.predictions, result_rbfchain_predictions
+                )
+            )
+            precisions["vel_rms"].append(
+                metrics.precision_score(
+                    result_vel_rms.predictions, result_rbfchain_predictions
+                )
+            )
 
-            recalls["bufalo"].append(metrics.recall_score(result_bufalo.predictions, result_rbfchain_predictions))
-            recalls["vel100"].append(metrics.recall_score(result_vel100.predictions, result_rbfchain_predictions))
-            recalls["vel_rms"].append(metrics.recall_score(result_vel_rms.predictions, result_rbfchain_predictions))
+            recalls["bufalo"].append(
+                metrics.recall_score(
+                    result_bufalo.predictions, result_rbfchain_predictions
+                )
+            )
+            recalls["vel100"].append(
+                metrics.recall_score(
+                    result_vel100.predictions, result_rbfchain_predictions
+                )
+            )
+            recalls["vel_rms"].append(
+                metrics.recall_score(
+                    result_vel_rms.predictions, result_rbfchain_predictions
+                )
+            )
 
             # Save figure
             if os.path.exists(result_image_full_path):
@@ -274,9 +299,33 @@ def main():
         fp.write(output_table)
 
     #
-    # Create and persist summary tables
+    # Create, persist and output summary tables
     #
-    ...
+    summary_header = ["Algorithm", "Avg. Accuracy", "Avg. Precision", "Avg. Recall"]
+    summary_table = [
+        ["Bufalo", np.mean(accuracies["bufalo"]), np.mean(precisions["bufalo"]), np.mean(recalls["bufalo"])],
+        ["Vel 100", np.mean(accuracies["vel_100"]), np.mean(precisions["vel_100"]), np.mean(recalls["vel_100"])],
+        ["Vel RMS", np.mean(accuracies["vel_rms"]), np.mean(precisions["vel_rms"]), np.mean(recalls["vel_rms"])],
+        [
+            "-",
+            np.mean([accuracies["bufalo"], accuracies["vel_100"], np.mean(accuracies["vel_rms"])]),
+            np.mean([precisions["bufalo"], precisions["vel_100"], np.mean(precisions["vel_rms"])]),
+            np.mean([recalls["bufalo"], recalls["vel_100"], np.mean(recalls["vel_rms"])]),
+        ]
+    ]
+
+    with open(result_table_summary_full_path_txt, "w") as fp:
+        output_table = tabulate.tabulate(
+            summary_table, headers=summary_header, tablefmt="grid", floatfmt=".2f"
+        )
+        fp.write(output_table)
+
+    with open(result_table_summary_full_path_latex, "w") as fp:
+        output_table = tabulate.tabulate(
+            summary_table, headers=summary_header, tablefmt="latex", floatfmt=".2f"
+        )
+        fp.write(output_table)
+
 
 if __name__ == "__main__":
     main()
