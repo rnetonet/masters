@@ -38,9 +38,9 @@ def main():
 
     # Counter used in the output table and to prefix the images
     counter = 0
-    accuracies = {"bufalo": [], "vel100": [], "vel_rms": []}
-    precisions = {"bufalo": [], "vel100": [], "vel_rms": []}
-    recalls = {"bufalo": [], "vel100": [], "vel_rms": []}
+    accuracies = {"bufalo": [], "vel_100": [], "vel_rms": []}
+    precisions = {"bufalo": [], "vel_100": [], "vel_rms": []}
+    recalls = {"bufalo": [], "vel_100": [], "vel_rms": []}
 
     # Output table
     headers = [
@@ -70,11 +70,11 @@ def main():
 
     result_table_summary_full_path_txt = os.path.join(
         result_tables_base_path,
-        os.path.basename(datasets_top_folder_abs_path) + "_summary_" + ".txt",
+        os.path.basename(datasets_top_folder_abs_path) + "_summary" + ".txt",
     )
     result_table_summary_full_path_latex = os.path.join(
         result_tables_base_path,
-        os.path.basename(datasets_top_folder_abs_path) + "_summary_" + ".tex",
+        os.path.basename(datasets_top_folder_abs_path) + "_summary" + ".tex",
     )
 
     # Clear previous outputs and recreated folders
@@ -190,14 +190,14 @@ def main():
                 dataset.x,
                 dataset.y,
                 result_vel100.fixations_positions,
-                title="vel100",
+                title="Vel 100",
                 block=False,
             ).plot(axs[1, 0])
             FixationsPlot(
                 dataset.x,
                 dataset.y,
                 result_vel_rms.fixations_positions,
-                title="vel_rms",
+                title="Vel RMS",
                 block=True,
             ).plot(axs[1, 1])
 
@@ -224,7 +224,7 @@ def main():
                     result_bufalo.predictions, result_rbfchain_predictions
                 )
             )
-            accuracies["vel100"].append(
+            accuracies["vel_100"].append(
                 metrics.accuracy_score(
                     result_vel100.predictions, result_rbfchain_predictions
                 )
@@ -240,7 +240,7 @@ def main():
                     result_bufalo.predictions, result_rbfchain_predictions
                 )
             )
-            precisions["vel100"].append(
+            precisions["vel_100"].append(
                 metrics.precision_score(
                     result_vel100.predictions, result_rbfchain_predictions
                 )
@@ -256,7 +256,7 @@ def main():
                     result_bufalo.predictions, result_rbfchain_predictions
                 )
             )
-            recalls["vel100"].append(
+            recalls["vel_100"].append(
                 metrics.recall_score(
                     result_vel100.predictions, result_rbfchain_predictions
                 )
@@ -301,30 +301,44 @@ def main():
     #
     # Create, persist and output summary tables
     #
-    summary_header = ["Algorithm", "Avg. Accuracy", "Avg. Precision", "Avg. Recall"]
+    summary_headers = ["Algorithm", "Avg. Accuracy", "Avg. Precision", "Avg. Recall"]
     summary_table = [
         ["Bufalo", np.mean(accuracies["bufalo"]), np.mean(precisions["bufalo"]), np.mean(recalls["bufalo"])],
         ["Vel 100", np.mean(accuracies["vel_100"]), np.mean(precisions["vel_100"]), np.mean(recalls["vel_100"])],
         ["Vel RMS", np.mean(accuracies["vel_rms"]), np.mean(precisions["vel_rms"]), np.mean(recalls["vel_rms"])],
         [
             "-",
-            np.mean([accuracies["bufalo"], accuracies["vel_100"], np.mean(accuracies["vel_rms"])]),
-            np.mean([precisions["bufalo"], precisions["vel_100"], np.mean(precisions["vel_rms"])]),
-            np.mean([recalls["bufalo"], recalls["vel_100"], np.mean(recalls["vel_rms"])]),
+            np.mean([
+                np.mean(accuracies["bufalo"]),
+                np.mean(accuracies["vel_100"]),
+                np.mean(accuracies["vel_rms"]),
+            ]),
+            np.mean([
+                np.mean(precisions["bufalo"]),
+                np.mean(precisions["vel_100"]),
+                np.mean(precisions["vel_rms"]),
+            ]),
+            np.mean([
+                np.mean(recalls["bufalo"]),
+                np.mean(recalls["vel_100"]),
+                np.mean(recalls["vel_rms"]),
+            ]),
         ]
     ]
 
     with open(result_table_summary_full_path_txt, "w") as fp:
         output_table = tabulate.tabulate(
-            summary_table, headers=summary_header, tablefmt="grid", floatfmt=".2f"
+            summary_table, headers=summary_headers, tablefmt="grid", floatfmt=".2f"
         )
         fp.write(output_table)
 
     with open(result_table_summary_full_path_latex, "w") as fp:
         output_table = tabulate.tabulate(
-            summary_table, headers=summary_header, tablefmt="latex", floatfmt=".2f"
+            summary_table, headers=summary_headers, tablefmt="latex", floatfmt=".2f"
         )
         fp.write(output_table)
+
+    print(f"Everything ok \N{hot beverage}")
 
 
 if __name__ == "__main__":
