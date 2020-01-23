@@ -100,9 +100,6 @@ def main():
     # Each folder has multiple trials.
     #
     for dataset_folder in os.listdir(datasets_top_folder_abs_path):
-        # Update counter
-        counter += 1
-
         #
         # Mount paths
         #
@@ -119,6 +116,9 @@ def main():
         )
 
         for trial_full_path in trials_full_paths:
+            # Update counter
+            counter += 1
+
             #
             # Extract trial number and mount the paths used
             #
