@@ -3,9 +3,6 @@ from matplotlib.lines import Line2D
 
 from data_reader import DataReader
 
-plt.style.use("seaborn-white")
-
-
 class DataOverviewPlot:
     def __init__(self, dataset: DataReader):
         self.dataset = dataset
@@ -87,7 +84,7 @@ class FixationsPlot:
         self.title = title
         self.block = block
 
-    def plot(self, ax):
+    def plot_in_ax(self, ax):
         if not self.title:
             ax.set_title(self.__class__.__name__)
         else:
@@ -114,4 +111,18 @@ class FixationsPlot:
             fixations_x.append(self.x[index])
             fixations_y.append(self.y[index])
 
-        ax.plot(fixations_x, fixations_y, "ro", markersize=0.25)
+        ax.plot(
+            fixations_x,
+            fixations_y,
+            linestyle="",
+            marker="o",
+            markersize=1,
+            alpha=0.25,
+            color="red",
+        )
+
+    def plot_to_file(self, filename, **kwargs):
+        fig = plt.figure()
+        self.plot_in_ax(fig.gca())
+        fig.savefig(filename, **kwargs)
+        plt.close(fig)

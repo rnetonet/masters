@@ -118,6 +118,10 @@ class RBFChain:
             self.actual_center, activated_center, self.alpha
         )
 
+        # If probability higher, update actual_center if different
+        if probability >= self.delta and self.actual_center != activated_center:
+            self.actual_center = activated_center
+
         return probability
 
         # # If center changed
