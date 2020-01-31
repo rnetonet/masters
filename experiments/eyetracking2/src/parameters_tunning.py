@@ -43,14 +43,6 @@ def objective(trial):
         for input_data in dataset.distances
     ]
 
-    # for input_data in dataset.distances:
-    #     probability = rbfchain.add_element(input_data)
-
-    #     if probability >= rbfchain.delta:
-    #         rbfchain_predictions.append(1)
-    #     else:
-    #         rbfchain_predictions.append(0)
-
     # The study tries to minimize a value
     accuracy = metrics.accuracy_score(result_bufalo.predictions, rbfchain_predictions)
 
@@ -62,4 +54,5 @@ def objective(trial):
 
 
 study = optuna.create_study(sampler=RandomSampler(), direction="maximize")
+# study = optuna.create_study(direction="maximize")
 study.optimize(objective, n_jobs=-1)

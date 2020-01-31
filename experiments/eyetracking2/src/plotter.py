@@ -3,6 +3,7 @@ from matplotlib.lines import Line2D
 
 from data_reader import DataReader
 
+
 class DataOverviewPlot:
     def __init__(self, dataset: DataReader):
         self.dataset = dataset

@@ -9,20 +9,6 @@ import time
 from collections import deque
 
 import matplotlib.pyplot as plt
-
-plt.style.use("seaborn-paper")
-
-plt.rc("font", family="serif")
-plt.rc("font", size=8)  # controls default text sizes
-plt.rc("axes", titlesize=8)  # fontsize of the axes title
-plt.rc("axes", labelsize=8)  # fontsize of the x and y labels
-plt.rc("xtick", labelsize=8)  # fontsize of the tick labels
-plt.rc("ytick", labelsize=8)  # fontsize of the tick labels
-plt.rc("legend", fontsize=8)  # legend fontsize
-plt.rc("figure", titlesize=8)  # fontsize of the figure title
-plt.rc("figure", dpi=300)
-plt.rc("figure", figsize=[12, 6])
-
 import numpy as np
 import tabulate
 from sklearn import metrics
@@ -32,6 +18,22 @@ from data_reader import DataReader
 from plotter import FixationsPlot
 from rbfchain import RBFChain
 from result_reader import ResultReader
+
+# Configure matplotlib
+plt.style.use("seaborn-paper")
+plt.rc("font", family="serif")
+PLT_FONT_SIZE = 4.75
+plt.rc("font", size=PLT_FONT_SIZE)  # controls default text sizes
+plt.rc("axes", titlesize=PLT_FONT_SIZE)  # fontsize of the axes title
+plt.rc("axes", labelsize=PLT_FONT_SIZE)  # fontsize of the x and y labels
+plt.rc("xtick", labelsize=PLT_FONT_SIZE)  # fontsize of the tick labels
+plt.rc("ytick", labelsize=PLT_FONT_SIZE)  # fontsize of the tick labels
+plt.rc("legend", fontsize=PLT_FONT_SIZE)  # legend fontsize
+plt.rc("figure", titlesize=PLT_FONT_SIZE)  # fontsize of the figure title
+plt.rc("figure", titleweight="bold")
+plt.rc("figure", dpi=200)
+plt.rc("figure", figsize=[7, 3.5])
+
 
 #
 # Patterns
@@ -337,7 +339,7 @@ def main():
             if os.path.exists(result_image_full_path):
                 os.remove(result_image_full_path)
 
-            plt.tight_layout(h_pad=0.5, w_pad=0.5)
+            plt.tight_layout(h_pad=1, w_pad=1)
             plt.savefig(result_image_full_path)
             plt.close()
 

@@ -123,16 +123,3 @@ class RBFChain:
             self.actual_center = activated_center
 
         return probability
-
-        # # If center changed
-        # if self.actual_center != activated_center:
-        #     if probability >= self.delta:
-        #         self.in_concept_change = True
-        #     else:
-        #         self.in_warning_zone = True
-
-        #     # Update actual center
-        #     self.actual_center = activated_center
-
-        # if probability >= self.delta and self.in_warning_zone:
-        #     self.in_concept_change = True
