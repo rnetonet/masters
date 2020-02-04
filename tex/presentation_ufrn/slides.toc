@@ -1,0 +1,5 @@
+\babel@toc {brazilian}{}
+\beamer@sectionintoc {1}{Concept Drift}{3}{0}{1}
+\beamer@sectionintoc {2}{RBFChain}{9}{0}{2}
+\beamer@sectionintoc {3}{Experimentos}{21}{0}{3}
+\beamer@sectionintoc {4}{Novos experimentos e demonstra\IeC {\c c}\IeC {\~a}o}{34}{0}{4}
