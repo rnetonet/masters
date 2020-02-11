@@ -5,8 +5,6 @@ import os.path
 import pickle
 import re
 import shutil
-import time
-from collections import deque
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -57,15 +55,14 @@ def main():
 
     # Counter used in the output table and to prefix the images
     counter = 0
-    accuracies = {"bufalo": [], "vel_100": [], "vel_rms": []}
-    precisions = {"bufalo": [], "vel_100": [], "vel_rms": []}
-    recalls = {"bufalo": [], "vel_100": [], "vel_rms": []}
+    accuracies = {"clusterfix": [], "vel_100": [], "vel_rms": []}
+    precisions = {"clusterfix": [], "vel_100": [], "vel_rms": []}
+    recalls = {"clusterfix": [], "vel_100": [], "vel_rms": []}
 
     # Output table
     headers = [
-        "#",
-        "Dataset",
         "Trial",
+        "Dataset",
         "Algorithm",
         "Accuracy",
         "Precision",
@@ -230,7 +227,7 @@ def main():
                 dataset.x,
                 dataset.y,
                 result_rbfchain_fixations_positions,
-                title="RBFChain",
+                title="RBF & Markov Chain",
                 block=False,
             )
             rbfchain_fixations_plot.plot_in_ax(axs[0, 0])
@@ -241,7 +238,7 @@ def main():
                 dataset.x,
                 dataset.y,
                 result_bufalo.fixations_positions,
-                title="Bufalo",
+                title="ClusterFix",
                 block=False,
             )
             bufalo_fixations_plot.plot_in_ax(axs[0, 1])
@@ -274,20 +271,39 @@ def main():
             #
             table.append(
                 [
-                    str(counter) + "\n" + " ",
-                    dataset_basename,
-                    trial,
-                    "Bufalo\nVel 100\nVel RMS",
-                    f"{metrics.accuracy_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n{metrics.accuracy_score(result_vel100.predictions, result_rbfchain_predictions):.2f}\n{metrics.accuracy_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
-                    f"{metrics.precision_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n{metrics.precision_score(result_vel100.predictions, result_rbfchain_predictions):.2f}\n{metrics.precision_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
-                    f"{metrics.recall_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n{metrics.recall_score(result_vel100.predictions, result_rbfchain_predictions):.2f}\n{metrics.recall_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
-                ]
+                    str(counter) + "\n" + " " + "\n" + " ",
+                    dataset_basename + "-" + trial + "\n" + " " + "\n" + " ",
+                    "ClusterFix",
+                    f"{metrics.accuracy_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n\n",
+                    f"{metrics.precision_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n\n",
+                    f"{metrics.recall_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n\n",
+                ],
+            )
+            table.append(
+                [
+                    "",
+                    "",
+                    "Vel 100",
+                    f"{metrics.accuracy_score(result_vel100.predictions, result_rbfchain_predictions):.2f}",
+                    f"{metrics.precision_score(result_vel100.predictions, result_rbfchain_predictions):.2f}",
+                    f"{metrics.recall_score(result_vel100.predictions, result_rbfchain_predictions):.2f}",
+                ],
+            )
+            table.append(
+                [
+                    "",
+                    "",
+                    "Vel RMS",
+                    f"{metrics.accuracy_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
+                    f"{metrics.precision_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
+                    f"{metrics.recall_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
+                ],
             )
 
             #
             # Keeps an history, enabling the creation of a summary.
             #
-            accuracies["bufalo"].append(
+            accuracies["clusterfix"].append(
                 metrics.accuracy_score(
                     result_bufalo.predictions, result_rbfchain_predictions
                 )
@@ -303,7 +319,7 @@ def main():
                 )
             )
 
-            precisions["bufalo"].append(
+            precisions["clusterfix"].append(
                 metrics.precision_score(
                     result_bufalo.predictions, result_rbfchain_predictions
                 )
@@ -319,7 +335,7 @@ def main():
                 )
             )
 
-            recalls["bufalo"].append(
+            recalls["clusterfix"].append(
                 metrics.recall_score(
                     result_bufalo.predictions, result_rbfchain_predictions
                 )
@@ -363,54 +379,169 @@ def main():
 
     with open(result_table_full_path_latex, "w") as fp:
         output_table = tabulate.tabulate(
-            table, headers=headers, tablefmt="latex", floatfmt=".2f"
+            table, headers=headers, tablefmt="latex_booktabs", floatfmt=".2f"
         )
         fp.write(output_table)
 
     #
     # Create, persist and output summary tables
     #
-    summary_headers = ["Algorithm", "Avg. Accuracy", "Avg. Precision", "Avg. Recall"]
+    summary_headers = [
+        "Algorithm",
+
+        "Min. Accuracy",
+        "Max. Accuracy",
+        "Avg. Accuracy",
+        "Std. Accuracy",
+
+        "Min. Precision",
+        "Max. Precision",
+        "Avg. Precision",
+        "Std. Precision",
+
+        "Min. Recall",
+        "Max. Recall",
+        "Avg. Recall",
+        "Std. Recall",
+    ]
     summary_table = [
         [
-            "Bufalo",
-            np.mean(accuracies["bufalo"]),
-            np.mean(precisions["bufalo"]),
-            np.mean(recalls["bufalo"]),
+            "ClusterFix",
+            np.min(accuracies["clusterfix"]),
+            np.max(accuracies["clusterfix"]),
+            np.mean(accuracies["clusterfix"]),
+            np.std(accuracies["clusterfix"]),
+
+            np.min(precisions["clusterfix"]),
+            np.max(precisions["clusterfix"]),
+            np.mean(precisions["clusterfix"]),
+            np.std(precisions["clusterfix"]),
+
+            np.min(recalls["clusterfix"]),
+            np.max(recalls["clusterfix"]),
+            np.mean(recalls["clusterfix"]),
+            np.std(recalls["clusterfix"]),
         ],
         [
             "Vel 100",
+            np.min(accuracies["vel_100"]),
+            np.max(accuracies["vel_100"]),
             np.mean(accuracies["vel_100"]),
+            np.std(accuracies["vel_100"]),
+
+            np.min(precisions["vel_100"]),
+            np.max(precisions["vel_100"]),
             np.mean(precisions["vel_100"]),
+            np.std(precisions["vel_100"]),
+
+            np.min(recalls["vel_100"]),
+            np.max(recalls["vel_100"]),
             np.mean(recalls["vel_100"]),
+            np.std(recalls["vel_100"]),
         ],
         [
             "Vel RMS",
+            np.min(accuracies["vel_rms"]),
+            np.max(accuracies["vel_rms"]),
             np.mean(accuracies["vel_rms"]),
+            np.std(accuracies["vel_rms"]),
+
+            np.min(precisions["vel_rms"]),
+            np.max(precisions["vel_rms"]),
             np.mean(precisions["vel_rms"]),
+            np.std(precisions["vel_rms"]),
+
+            np.min(recalls["vel_rms"]),
+            np.max(recalls["vel_rms"]),
             np.mean(recalls["vel_rms"]),
+            np.std(recalls["vel_rms"]),
         ],
         [
-            "-",
+            "Avg",
             np.mean(
                 [
-                    np.mean(accuracies["bufalo"]),
+                    np.min(accuracies["clusterfix"]),
+                    np.min(accuracies["vel_100"]),
+                    np.min(accuracies["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.max(accuracies["clusterfix"]),
+                    np.max(accuracies["vel_100"]),
+                    np.max(accuracies["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.mean(accuracies["clusterfix"]),
                     np.mean(accuracies["vel_100"]),
                     np.mean(accuracies["vel_rms"]),
                 ]
             ),
             np.mean(
                 [
-                    np.mean(precisions["bufalo"]),
+                    np.std(accuracies["clusterfix"]),
+                    np.std(accuracies["vel_100"]),
+                    np.std(accuracies["vel_rms"]),
+                ]
+            ),
+
+            np.mean(
+                [
+                    np.min(precisions["clusterfix"]),
+                    np.min(precisions["vel_100"]),
+                    np.min(precisions["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.max(precisions["clusterfix"]),
+                    np.max(precisions["vel_100"]),
+                    np.max(precisions["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.mean(precisions["clusterfix"]),
                     np.mean(precisions["vel_100"]),
                     np.mean(precisions["vel_rms"]),
                 ]
             ),
             np.mean(
                 [
-                    np.mean(recalls["bufalo"]),
+                    np.std(precisions["clusterfix"]),
+                    np.std(precisions["vel_100"]),
+                    np.std(precisions["vel_rms"]),
+                ]
+            ),
+
+            np.mean(
+                [
+                    np.min(recalls["clusterfix"]),
+                    np.min(recalls["vel_100"]),
+                    np.min(recalls["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.max(recalls["clusterfix"]),
+                    np.max(recalls["vel_100"]),
+                    np.max(recalls["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.mean(recalls["clusterfix"]),
                     np.mean(recalls["vel_100"]),
                     np.mean(recalls["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.std(recalls["clusterfix"]),
+                    np.std(recalls["vel_100"]),
+                    np.std(recalls["vel_rms"]),
                 ]
             ),
         ],
@@ -438,7 +569,6 @@ def main():
         pickle.dump(result, fp)
 
     print(f"Everything ok \N{hot beverage}")
-
 
 if __name__ == "__main__":
     main()
