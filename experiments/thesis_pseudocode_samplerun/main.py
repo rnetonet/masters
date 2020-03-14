@@ -103,4 +103,4 @@ for position, value in enumerate(dataset):
     rbf.markov.to_png(f"img/T{position + 1}")  # Fake start with 1
 
 # Plot
-plt.show(block=True)
+plt.show(block=False)

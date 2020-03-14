@@ -1,5 +1,6 @@
 from decimal import Decimal
 import math
+from prettyprinter import pprint
 
 from graphviz import Digraph
 from skmultiflow.drift_detection.base_drift_detector import BaseDriftDetector
@@ -22,16 +23,18 @@ class MarkovChain:
 
         if not self.system.get(origin):
             self.system[origin] = {}
-
-        if not self.system[origin].get(destination):
+            self.system[origin][destination] = 1.0
+        elif not self.system[origin].get(destination):
             self.system[origin][destination] = 0.0
 
         # Increment
         self.system[origin][destination] += alpha
 
         # Decrement
-        if len(self.system[origin]) > 1:
-            reduction_factor = alpha / (len(self.system[origin]) - 1)
+        num_other_destinations = sum(1 for destination in self.system[origin] if destination != origin and self.system[origin][destination] > 0)
+
+        if num_other_destinations >= 1:
+            reduction_factor = alpha / num_other_destinations
             for possible_destination in self.system[origin]:
                 if possible_destination != destination:
                     self.system[origin][possible_destination] -= reduction_factor
