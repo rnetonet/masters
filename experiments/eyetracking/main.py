@@ -3,7 +3,7 @@ import os
 
 import matplotlib
 
-matplotlib.use("TKAgg", warn=False, force=True)
+#matplotlib.use("TKAgg", warn=False, force=True)
 
 import matplotlib.pyplot as plt
 
