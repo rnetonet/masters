@@ -1,10 +1,10 @@
 import matplotlib
 
-matplotlib.use("TKAgg", warn=False, force=True)
-
 import matplotlib.colors as mcolors
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
+from matplotlib import rc
+rc('text', usetex=True)
 
 import rbf
 from rbfplot import RBFPlot
@@ -16,22 +16,22 @@ rbf = rbf.RBF(sigma=3, lambda_=0.8, alpha=0.25, delta=0.5)
 rbfplot = RBFPlot(step=1)
 
 # Datasets
-dataset = [0.11, 0.12, 0.13, 0.33, 0.34, 0.45, 0.6, 0.33, 0.25, 0.14, 0.11, 0.15]
+dataset = [0.11, 0.12, 0.13, 0.33] # , 0.34, 0.45, 0.6, 0.33, 0.25, 0.14, 0.11, 0.15]
 
 #
 # Plot setup
 #
 
 # Font size
-font = {"family": "normal", "size": 7}
+font = {"family": "normal", "size": 9.5}
 plt.rc("font", **font)
 
 # Subplots
 fig = plt.figure()
-gs = fig.add_gridspec(nrows=3, ncols=4)
+gs = fig.add_gridspec(nrows=2, ncols=2)
 plots = []
-for i in range(3):
-    for j in range(4):
+for i in range(2):
+    for j in range(2):
         plot = fig.add_subplot(gs[i, j])
         plot.grid(False)
         plot.autoscale(False)
@@ -72,7 +72,6 @@ for position, value in enumerate(dataset):
         warnings_zones_positions.append(position + 1)  # Fake start with 1
 
     if rbf.in_concept_change:
-        # print(rbf.markov.to_graphviz())
         concept_drifts_positions.append(position + 1)  # Fake start with 1
 
     #
@@ -83,24 +82,25 @@ for position, value in enumerate(dataset):
             point["position"],
             point["value"],
             linewidth=0.25,
-            markersize=4,
+            markersize=9,
             marker="o",
             linestyle="solid",
             color=point["color"],
         )
         plots[position].set_title(
-            f"T{point['position']} | E={point['value']} | GA={point['activated_center']} | GC={point['concept_center']}"
+            f"\\textbf{{T{point['position']}}}"
+            # f"T{point['position']} | E={point['value']} | GA={point['activated_center']} | GC={point['concept_center']}"
         )
 
     for warning_position in warnings_zones_positions:
         plots[position].axvline(
-            x=warning_position, linewidth=0.12, linestyle="-", color="y"
+            x=warning_position, linewidth=0.33, linestyle="-", color="y"
         )
 
     for drift_position in concept_drifts_positions:
         plots[position].axvline(x=drift_position, linewidth=0.25, color="r")
 
-    rbf.markov.to_png(f"img/T{position + 1}")  # Fake start with 1
+    rbf.markov.to_svg(f"img/T{position + 1}")  # Fake start with 1
 
 # Plot
-plt.show(block=False)
+plt.show(block=True)
