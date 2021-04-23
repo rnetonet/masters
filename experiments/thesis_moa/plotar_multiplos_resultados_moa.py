@@ -4,8 +4,6 @@ import sys
 
 import matplotlib
 
-matplotlib.use("TKAgg", warn=False, force=True)
-
 from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-white')
@@ -17,7 +15,7 @@ path = sys.argv[1]
 files = os.listdir(path)
 
 map_filename_graph_title = {
-    "rbfchain": "RBFChain",
+    "rbfchain": "RMIDDM",
     "adwin": "ADWIN",
     "cusum": "CUSUM",
     "ddm": "DDM",
@@ -28,10 +26,10 @@ map_filename_graph_title = {
     "seqdrift1": "SeqDrift1",
 }
 map_path_dataset = {
-    "nochange": "Sem Mudança",
-    "abrupt": "Mudança Abrupta",
-    "gradual": "Mudança Gradual",
-    "incremental": "Mudança Incremental",
+    "nochange": "No Change",
+    "abrupt": "Abrupt",
+    "gradual": "Gradual",
+    "incremental": "Incremental",
 }
 map_filename_subplot = {
     "rbfchain": 331,
@@ -101,22 +99,23 @@ for file in files:
                 pending_drift = False
             detected_changes += 1
 
-    ax.plot(range(0, len(data)), data, color="#D3D3D3", linestyle="-", linewidth=0.25, alpha=0.5)
+    ax.plot(range(0, len(data)), data, color="#000000", linestyle="-", linewidth=0.25, alpha=0.5)
 
 # Legend
 custom_legends = [
-    Line2D([0], [0], color="#D3D3D3", linestyle="-", linewidth=0.25),
+    Line2D([0], [0], color="#000000", linestyle="-", linewidth=0.25),
     Line2D([0], [0], color="g", ls="-", linewidth=1),
     Line2D([0], [0], color="b", ls="--", linewidth=1),
     Line2D([0], [0], color="r", ls="--", linewidth=1),
 ]
-fig.legend(
-    custom_legends,
-    ["Fluxo de Dados", "Mudança de Conceito", "Mudança Detectada", "Falso-positivo"],
-    ncol=2,
-    borderaxespad=0,
-    loc="lower center",
-)
+if dataset_key != "nochange":
+    fig.legend(
+        custom_legends,
+        ["Stream", "Concept Drift", "Concept Drift Detection", "False Positive Detection"],
+        ncol=2,
+        borderaxespad=0,
+        loc="lower center",
+    )
 
 # Showing and saving
 plt.show()

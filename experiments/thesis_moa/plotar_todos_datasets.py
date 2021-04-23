@@ -4,8 +4,6 @@ import os.path
 import glob
 import matplotlib
 
-matplotlib.use("TKAgg", warn=False, force=True)
-
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-white')
 
@@ -15,13 +13,13 @@ from scipy.io import arff
 
 class DatasetPlotter:
     _filename_settings_map = {
-        "abrupt.arff": {"name": "Mudança Abrupta", "subplot": {"row": 0, "col": 0}},
-        "gradual.arff": {"name": "Mudança Gradual", "subplot": {"row": 0, "col": 1}},
+        "abrupt.arff": {"name": "Abrupt", "subplot": {"row": 0, "col": 0}},
+        "gradual.arff": {"name": "Gradual", "subplot": {"row": 0, "col": 1}},
         "incremental.arff": {
-            "name": "Mudança Incremental",
+            "name": "Incremental",
             "subplot": {"row": 1, "col": 0},
         },
-        "nochange.arff": {"name": "Sem Mudança", "subplot": {"row": 1, "col": 1}},
+        "nochange.arff": {"name": "No Change", "subplot": {"row": 1, "col": 1}},
     }
 
     def __init__(self, path):
