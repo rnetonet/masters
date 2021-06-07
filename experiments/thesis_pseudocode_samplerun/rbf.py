@@ -77,6 +77,11 @@ class MarkovChain:
         dot = self.to_graphviz()
         dot.format = "png"
         return dot.render(filename)
+    
+    def to_svg(self, filename="markov"):
+        dot = self.to_graphviz()
+        dot.format = "svg"
+        return dot.render(filename)
 
 
 class RBF(BaseDriftDetector):

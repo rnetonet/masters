@@ -1,0 +1,48 @@
+// RBF
+digraph {
+	dpi=100
+	node [fontsize=8]
+	edge [fontsize=8]
+	edge [labelfloat=false]
+	nan
+	0.14
+	471.00
+	989.14
+	2412.71
+	1430.86
+	1961.71
+	2826.43
+	4073.14
+	3249.71
+	nan -> nan [label=0.00 constraint=false]
+	nan -> 0.14 [label=1.00 constraint=false]
+	0.14 -> 0.14 [label=0.00 constraint=false]
+	0.14 -> 471.00 [label=1.00 constraint=false]
+	471.00 -> 471.00 [label=0.00 constraint=false]
+	471.00 -> 989.14 [label=1.00 constraint=false]
+	989.14 -> 989.14 [label=0.00 constraint=false]
+	989.14 -> 1430.86 [label=1.00 constraint=false]
+	989.14 -> 1961.71 [label=0.00 constraint=false]
+	989.14 -> 2412.71 [label=0.00 constraint=false]
+	989.14 -> 471.00 [label=0.00 constraint=false]
+	2412.71 -> 2412.71 [label=0.00 constraint=false]
+	2412.71 -> 2826.43 [label=0.00 constraint=false]
+	2412.71 -> 1961.71 [label=1.00 constraint=false]
+	2412.71 -> 1430.86 [label=0.00 constraint=false]
+	1430.86 -> 1430.86 [label=0.00 constraint=false]
+	1430.86 -> 989.14 [label=0.00 constraint=false]
+	1430.86 -> 1961.71 [label=0.00 constraint=false]
+	1430.86 -> 2412.71 [label=1.00 constraint=false]
+	1961.71 -> 1961.71 [label=0.00 constraint=false]
+	1961.71 -> 2412.71 [label=0.00 constraint=false]
+	1961.71 -> 2826.43 [label=1.00 constraint=false]
+	2826.43 -> 2826.43 [label=0.00 constraint=false]
+	2826.43 -> 3249.71 [label=0.00 constraint=false]
+	2826.43 -> 2412.71 [label=0.00 constraint=false]
+	2826.43 -> 1961.71 [label=1.00 constraint=false]
+	4073.14 -> 4073.14 [label=0.00 constraint=false]
+	4073.14 -> 4706.29 [label=0.00 constraint=false]
+	4073.14 -> 3249.71 [label=1.00 constraint=false]
+	3249.71 -> 3249.71 [label=0.00 constraint=false]
+	3249.71 -> 2826.43 [label=1.00 constraint=false]
+}

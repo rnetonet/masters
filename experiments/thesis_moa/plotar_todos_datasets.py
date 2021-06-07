@@ -3,8 +3,7 @@ import os
 import os.path
 import glob
 import matplotlib
-
-matplotlib.use("TKAgg", warn=False, force=True)
+from matplotlib.lines import Line2D
 
 import matplotlib.pyplot as plt
 plt.style.use('seaborn-white')
@@ -15,13 +14,13 @@ from scipy.io import arff
 
 class DatasetPlotter:
     _filename_settings_map = {
-        "abrupt.arff": {"name": "Mudança Abrupta", "subplot": {"row": 0, "col": 0}},
-        "gradual.arff": {"name": "Mudança Gradual", "subplot": {"row": 0, "col": 1}},
+        "abrupt.arff": {"name": "Abrupt", "subplot": {"row": 0, "col": 0}},
+        "gradual.arff": {"name": "Gradual", "subplot": {"row": 0, "col": 1}},
         "incremental.arff": {
-            "name": "Mudança Incremental",
+            "name": "Incremental",
             "subplot": {"row": 1, "col": 0},
         },
-        "nochange.arff": {"name": "Sem Mudança", "subplot": {"row": 1, "col": 1}},
+        "nochange.arff": {"name": "No Change", "subplot": {"row": 1, "col": 1}},
     }
 
     def __init__(self, path):
@@ -59,6 +58,19 @@ class DatasetPlotter:
         for ax in self.axs.flat:
             ax.set_xlim(0, 2500)
             ax.set_ylim(0, 1.1)
+        
+        custom_legends = [
+            Line2D([0], [0], color="#000000", linestyle="-", linewidth=0.25),
+            Line2D([0], [0], color="g", ls="-", linewidth=1),
+        ]
+        
+        self.fig.legend(
+            custom_legends,
+            ["Stream", "Concept Drift"],
+            ncol=2,
+            borderaxespad=0,
+            loc="lower center",
+        )
 
     def _setup_ax(self, arff_file_name):
         arff_file_name = os.path.basename(arff_file_name)
@@ -71,7 +83,7 @@ class DatasetPlotter:
         arff_file_df = self.read_arff_file(arff_file_name)
 
         ax.plot(arff_file_df["input"], color="k", linestyle="-", linewidth=0.1)
-        ax.plot(arff_file_df["change"], color="r", linestyle="--", linewidth=0.2)
+        ax.plot(arff_file_df["change"], color="g", linestyle="--", linewidth=0.2)
 
 
 if __name__ == "__main__":
