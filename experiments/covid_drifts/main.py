@@ -4,7 +4,6 @@ import pandas as pd
 from matplotlib.lines import Line2D
 
 from rbf import RBF
-from rbfplot import RBFPlot
 
 DATASET_CASOS = 'dados_covid_sp.csv.gz'
 DATASET_LEITOS = 'dados_covid_sp_leitos.csv.gz'
@@ -88,7 +87,7 @@ custom_legends = [
 ]
 legend = plt.legend(
     custom_legends,
-    ['Daily Cases', 'ICUs occupation (%)', 'Concept Drift'],
+    ['Daily Cases (7d window mean)', 'ICUs occupation (%)', 'Concept Drift'],
     ncol=2,
     borderaxespad=0,
     loc='upper left',
