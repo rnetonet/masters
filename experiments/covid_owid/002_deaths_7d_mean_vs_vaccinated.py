@@ -8,14 +8,17 @@ from rbf import RBF
 
 df = pd.read_csv("owid-covid-data.csv")
 
+print(df.columns)
+
 df = df.loc[df["location"] == "Brazil"]
-df = df.dropna(subset=("new_deaths",))
-df = df.fillna(0)
+df.fillna(method="ffill")
 df["weekly_new_deaths_mean"] = df["new_deaths"].rolling(window=7).mean()
+df["weekly_new_cases_mean"] = df["new_cases"].rolling(window=7).mean()
 df = df[::7]
 
 fig, ax_left = plt.subplots()
 ax_right = ax_left.twinx()
+ax_third = ax_left.twinx()
 
 ax_left.plot(
     df["date"],
@@ -26,12 +29,19 @@ ax_left.plot(
 )
 
 ax_left.yaxis.set_major_formatter(mpl.ticker.StrMethodFormatter("{x:,.0f}"))
-# ax_left.ticklabel_format(useOffset=False, style="plain", axis="y")
 
 ax_right.plot(
     df["date"],
     df["weekly_new_deaths_mean"],
     color="red",
+    linestyle="-",
+    linewidth=0.75,
+)
+
+ax_third.plot(
+    df["date"],
+    df["weekly_new_cases_mean"],
+    color="green",
     linestyle="-",
     linewidth=0.75,
 )
@@ -45,7 +55,7 @@ for index, row in df.iterrows():
     rbf.add_element(row["weekly_new_deaths_mean"])
 
     if rbf.in_concept_change:
-        ax_left.axvline(input_data, color="green", ls="--", linewidth=0.75)
+        ax_left.axvline(input_data, color="orange", ls="--", linewidth=0.75)
         xticks.append(df["date"][index])
 
         rbf.markov.to_png()
@@ -57,6 +67,9 @@ ax_right.tick_params(axis="x", labelrotation=90)
 ax_left.tick_params(axis="y", colors="navy")
 ax_right.tick_params(axis="y", colors="red")
 
+ax_third.tick_params(axis="y", colors="green")
+ax_third.get_yaxis().set_visible(False)
+
 ax_right.set_xticks(xticks)
 
 for tick in ax_right.xaxis.get_minor_ticks():
@@ -65,13 +78,14 @@ for tick in ax_right.xaxis.get_minor_ticks():
 plt.gcf().subplots_adjust(bottom=0.15)
 
 custom_legends = [
-    Line2D([0], [0], color="navy", linestyle="-", linewidth=1),
-    Line2D([0], [0], color="red", ls="-", linewidth=1),
-    Line2D([0], [0], color="green", ls="--", linewidth=1),
+    Line2D([0], [0], color="navy", linestyle="-", linewidth=2),
+    Line2D([0], [0], color="green", ls="-", linewidth=2),
+    Line2D([0], [0], color="red", ls="-", linewidth=2),
+    Line2D([0], [0], color="orange", ls="--", linewidth=2),
 ]
 legend = plt.legend(
     custom_legends,
-    ["People Vaccinated", "Deaths (7d window mean)", f"Concept Drift"],
+    ["People Vaccinated", "Cases (7d window mean)", "Deaths (7d window mean)", f"Concept Drift (Deaths)"],
     ncol=2,
     borderaxespad=0,
     loc="upper left",
