@@ -41,7 +41,7 @@ ax_right.plot(
 ax_third.plot(
     df["date"],
     df["weekly_new_cases_mean"],
-    color="green",
+    color="lightgreen",
     linestyle="-",
     linewidth=0.75,
 )
@@ -50,15 +50,15 @@ xticks = []
 rbf = RBF(**{"sigma": 0.01, "lambda_": 0.5, "alpha": 0.5, "delta": 1.0})
 
 for index, row in df.iterrows():
-    input_data = df["date"][index]
+    date = df["date"][index]
 
     rbf.add_element(row["weekly_new_deaths_mean"])
 
-    if rbf.in_concept_change:
-        ax_left.axvline(input_data, color="orange", ls="--", linewidth=0.75)
-        xticks.append(df["date"][index])
+    rbf.markov.to_png(date + "_markov.png")
 
-        rbf.markov.to_png()
+    if rbf.in_concept_change:
+        ax_left.axvline(date, color="orange", ls="--", linewidth=0.75)
+        xticks.append(date)
 
 
 ax_left.tick_params(axis="x", labelrotation=90)
@@ -67,7 +67,7 @@ ax_right.tick_params(axis="x", labelrotation=90)
 ax_left.tick_params(axis="y", colors="navy")
 ax_right.tick_params(axis="y", colors="red")
 
-ax_third.tick_params(axis="y", colors="green")
+ax_third.tick_params(axis="y", colors="lightgreen")
 ax_third.get_yaxis().set_visible(False)
 
 ax_right.set_xticks(xticks)
@@ -79,7 +79,7 @@ plt.gcf().subplots_adjust(bottom=0.15)
 
 custom_legends = [
     Line2D([0], [0], color="navy", linestyle="-", linewidth=2),
-    Line2D([0], [0], color="green", ls="-", linewidth=2),
+    Line2D([0], [0], color="lightgreen", ls="-", linewidth=2),
     Line2D([0], [0], color="red", ls="-", linewidth=2),
     Line2D([0], [0], color="orange", ls="--", linewidth=2),
 ]

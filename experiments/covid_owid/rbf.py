@@ -61,12 +61,13 @@ class MarkovChain:
         # edges
         for origin in self.system.keys():
             for destination in self.system[origin].keys():
-                dot.edge(
-                    origin,
-                    destination,
-                    constraint="false",
-                    label=format(self.system[origin][destination], ".2f"),
-                )
+                if self.system[origin][destination] > 0:
+                    dot.edge(
+                        origin,
+                        destination,
+                        constraint="false",
+                        label=format(self.system[origin][destination], ".2f"),
+                    )
 
         return dot
 
