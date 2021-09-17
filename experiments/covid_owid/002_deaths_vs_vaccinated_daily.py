@@ -5,7 +5,7 @@ import pandas as pd
 from matplotlib.lines import Line2D
 
 from rbf import RBF
-from prettyprinter import pprint
+
 
 def remove_generated_pngs():
     # Remove all pngs
@@ -22,14 +22,7 @@ df = pd.read_csv("owid-covid-data.csv")
 
 df = df.loc[df["location"] == "Brazil"]
 
-df["weekly_new_deaths_mean"] = df["new_deaths"].rolling(window=7).mean()
-df["weekly_new_cases_mean"] = df["new_cases"].rolling(window=7).mean()
-
-df["weekly_new_deaths_mean"] = df["weekly_new_deaths_mean"].fillna(method="ffill")
-df["weekly_new_cases_mean"] = df["weekly_new_cases_mean"].fillna(method="ffill")
-
 df.fillna(method="ffill", inplace=True)
-df = df[::7]
 
 fig, ax_left = plt.subplots()
 ax_right = ax_left.twinx()
@@ -47,7 +40,7 @@ ax_left.yaxis.set_major_formatter(mpl.ticker.StrMethodFormatter("{x:,.0f}"))
 
 ax_right.plot(
     df["date"],
-    df["weekly_new_deaths_mean"],
+    df["new_deaths"],
     color="red",
     linestyle="-",
     linewidth=0.75,
@@ -55,7 +48,7 @@ ax_right.plot(
 
 ax_third.plot(
     df["date"],
-    df["weekly_new_cases_mean"],
+    df["new_cases"],
     color="lightgreen",
     linestyle="-",
     linewidth=0.75,
@@ -66,16 +59,11 @@ rbf = RBF(**{"sigma": 0.01, "lambda_": 0.5, "alpha": 0.5, "delta": 1.0})
 
 for index, row in df.iterrows():
     date = df["date"][index]
-    value = row["weekly_new_deaths_mean"]
+    value = row["new_deaths"]
 
     rbf.add_element(value)
 
     rbf.markov.to_png(date + "_markov.png")
-    
-    print("="*80)
-    pprint(date)
-    pprint(rbf.markov.system)
-    print("="*80)
 
     if rbf.in_concept_change:
         ax_left.axvline(date, color="orange", ls="--", linewidth=0.75)
@@ -108,8 +96,8 @@ legend = plt.legend(
     custom_legends,
     [
         "People Vaccinated",
-        "Cases (7d window mean)",
-        "Deaths (7d window mean)",
+        "Cases",
+        "Deaths",
         f"Concept Drift (Deaths)",
     ],
     ncol=2,
@@ -118,7 +106,7 @@ legend = plt.legend(
 )
 legend.get_frame().set_alpha(None)
 
-plt.suptitle("Vaccinated X Deaths (7d window mean)")
+plt.suptitle("Vaccinated X Deaths")
 plt.title(f"{len(df)=}, {len(rbf.centers)=}")
 
 plt.show()
