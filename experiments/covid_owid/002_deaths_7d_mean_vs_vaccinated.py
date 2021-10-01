@@ -40,7 +40,7 @@ ax_left.plot(
     df["people_vaccinated"],
     color="navy",
     linestyle="-",
-    linewidth=0.75,
+    linewidth=1.00,
 )
 
 ax_left.yaxis.set_major_formatter(mpl.ticker.StrMethodFormatter("{x:,.0f}"))
@@ -50,7 +50,7 @@ ax_right.plot(
     df["weekly_new_deaths_mean"],
     color="red",
     linestyle="-",
-    linewidth=0.75,
+    linewidth=1.00,
 )
 
 ax_third.plot(
@@ -58,7 +58,7 @@ ax_third.plot(
     df["weekly_new_cases_mean"],
     color="lightgreen",
     linestyle="-",
-    linewidth=0.75,
+    linewidth=1.00,
 )
 
 xticks = []
@@ -78,7 +78,7 @@ for index, row in df.iterrows():
     print("="*80)
 
     if rbf.in_concept_change:
-        ax_left.axvline(date, color="orange", ls="--", linewidth=0.75)
+        ax_left.axvline(date, color="orange", ls="--", linewidth=1.00)
         xticks.append(date)
 
 
@@ -108,8 +108,8 @@ legend = plt.legend(
     custom_legends,
     [
         "People Vaccinated",
-        "Cases (7d window mean)",
-        "Deaths (7d window mean)",
+        "Cases",
+        "Deaths",
         f"Concept Drift (Deaths)",
     ],
     ncol=2,
@@ -118,8 +118,8 @@ legend = plt.legend(
 )
 legend.get_frame().set_alpha(None)
 
-plt.suptitle("Vaccinated X Deaths (7d window mean)")
-plt.title(f"{len(df)=}, {len(rbf.centers)=}")
+plt.suptitle("Vaccinated / Cases / Deaths")
+# plt.title(f"{len(df)=}, {len(rbf.centers)=}")
 
 plt.show()
 
