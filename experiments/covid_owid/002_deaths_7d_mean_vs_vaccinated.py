@@ -73,8 +73,8 @@ for index, row in df.iterrows():
     rbf.markov.to_png(date + "_markov.png")
     
     print("="*80)
-    pprint(date)
-    pprint(rbf.markov.system)
+    pprint(f"{date=}, {rbf.concept_center=}")
+    # pprint(rbf.markov.system)
     print("="*80)
 
     if rbf.in_concept_change:

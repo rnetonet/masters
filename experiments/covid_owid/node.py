@@ -51,12 +51,23 @@ class Node():
             facecolor = self.node_facecolor
         )
         ax.add_collection(p)
-        ax.annotate(
-            self.label, 
-            xy = self.center, 
-            color = '#ffffff', 
-            **self.text_args
-        )
+
+        if '*' not in self.label:
+            ax.annotate(
+                self.label, 
+                xy = self.center, 
+                color = '#ffffff', 
+                **self.text_args
+            )
+        else:
+            label = self.label.replace('*', '')
+            ax.annotate(
+                label, 
+                xy = self.center, 
+                color = 'black', 
+                weight="bold",
+                **self.text_args
+            )
         
         
     def add_self_loop(self, ax, prob=None, direction='up'):

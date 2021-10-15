@@ -63,6 +63,7 @@ for index, row in df.iterrows():
 
     rbf.add_element(value)
 
+    print(f"{rbf.concept_center=}, {date=}")
     rbf.markov.to_png(date + "_markov.png")
 
     if rbf.in_concept_change:
