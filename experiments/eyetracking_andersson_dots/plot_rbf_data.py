@@ -78,7 +78,7 @@ fig.legend(
 # Processing dataset
 #
 dataset = DataReader(dataset_abs_path)
-rbfchain = RBFChain(**{"sigma": 0.01, "lambda_": 0.9, "alpha": 0.025, "delta": 1.0})
+rbfchain = RBFChain(**{"sigma": 0.01, "lambda_": 0.95, "alpha": 0.01, "delta": 1.0})
 
 result_rbfchain_predictions = []
 result_rbfchain_fixations_positions = []
