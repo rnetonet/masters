@@ -1,6 +1,7 @@
 import glob
 import os
 import os.path
+import statistics
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -27,10 +28,12 @@ plt.rc("figure", dpi=200)
 plt.rc("figure", figsize=[7, 3.5])
 
 
-def handle(dataset_path, raw=False):
+def handle(dataset_path, raw=False, context=None):
     dataset_abs_path = os.path.abspath(dataset_path)
     dataset_filename = os.path.basename(dataset_abs_path)
     dataset = DataReader(dataset_abs_path)
+
+    context = context or {}
 
     #
     # Plot setup
@@ -75,9 +78,8 @@ def handle(dataset_path, raw=False):
 
     if not raw:
         rbfchain = RBFChain(
-            **{"sigma": 0.01, "lambda_": 0.90, "alpha": 0.017, "delta": 1.0}
+            **{"sigma": 0.01, "lambda_": 0.95, "alpha": 0.095, "delta": 1.0}
         )
-
         for index, input_data in enumerate(dataset.distances):
             probability = rbfchain.add_element(input_data)
 
@@ -109,27 +111,31 @@ def handle(dataset_path, raw=False):
         fixations_y.append(dataset.y[fixation_position])
         fixations.set_data(fixations_x, fixations_y)
 
-    accuracy = metrics.accuracy_score(dataset.labels, result_rbfchain_predictions)
-    balanced_accuracy_score = metrics.balanced_accuracy_score(
-        dataset.labels, result_rbfchain_predictions
-    )
-    precision_score = metrics.precision_score(
-        dataset.labels, result_rbfchain_predictions
-    )
-    recall_score = metrics.recall_score(dataset.labels, result_rbfchain_predictions)
-    cohen_kappa_score = metrics.cohen_kappa_score(dataset.labels, result_rbfchain_predictions)
-    jaccard_score = metrics.jaccard_score(dataset.labels, result_rbfchain_predictions)
+    # accuracy = metrics.accuracy_score(dataset.labels, result_rbfchain_predictions)
+    # balanced_accuracy_score = metrics.balanced_accuracy_score(
+    #     dataset.labels, result_rbfchain_predictions
+    # )
+    # precision_score = metrics.precision_score(
+    #     dataset.labels, result_rbfchain_predictions
+    # )
+    # recall_score = metrics.recall_score(dataset.labels, result_rbfchain_predictions)
+    # jaccard_score = metrics.jaccard_score(dataset.labels, result_rbfchain_predictions)
 
-    fig.gca().set_title(f"{dataset_filename=}, {raw=}, {accuracy=:.2f}")
-    plt.savefig(f"results/{dataset_filename}_{raw=}_{accuracy=}.png")
+    cohen_kappa_score = max(
+        0, metrics.cohen_kappa_score(dataset.labels, result_rbfchain_predictions)
+    )
+
+    fig.gca().set_title(f"{dataset_filename=}, {raw=}, {cohen_kappa_score=:.2f}")
+    plt.savefig(f"results/{context['dataset']}-{dataset_filename}_{raw=}_{cohen_kappa_score=}.png")
 
     return {
-        "dataset": dataset_filename,
+        "dataset": dataset_path,
+        "cohen_kappa_score": cohen_kappa_score,
+        "context": context
         # "accuracy": accuracy,
         # "balanced_accuracy_score": balanced_accuracy_score,
         # "precision_score": precision_score,
         # "recall_score": recall_score,
-        "cohen_kappa_score": cohen_kappa_score,
         # "jaccard_score": jaccard_score
     }
 
@@ -139,14 +145,31 @@ for image in glob.glob("results/*.png"):
 
 results = []
 
-for dataset_path in glob.glob("data/*.csv"):
-    handle(dataset_path, raw=True)
-    results.append(handle(dataset_path, raw=False))
+for dataset_dir, subdirs, files in os.walk("data"):
+    for file in files:
+        dataset_path = dataset_dir + os.sep + file
+        dataset = dataset_dir.split("/")[-1]
 
-print(
-    tabulate(
-        results,
-        tablefmt="grid",
-        headers="keys"
-    )
-)
+        if dataset_path.endswith(".csv"):
+            
+            handle(dataset_path, raw=True, context={"dataset": dataset})
+            results.append(
+                handle(dataset_path, raw=False, context={"dataset": dataset})
+            )
+
+# Analytical results
+print(tabulate(results, tablefmt="grid", headers="keys"))
+
+# Summary results
+summary_results = {}
+for result in results:
+    dataset = result["context"]["dataset"]
+
+    summary_results.setdefault(dataset, [])
+    summary_results.get(dataset).append(result["cohen_kappa_score"])
+
+summary_table = []
+for dataset, scores in summary_results.items():
+    summary_table.append([dataset, statistics.mean(scores)])
+
+print(tabulate(summary_table, tablefmt="grid", headers=["Dataset", "Cohen Kappa Score"]))
