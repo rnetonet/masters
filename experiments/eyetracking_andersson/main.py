@@ -111,19 +111,17 @@ def handle(dataset_path, raw=False, context=None):
         fixations_y.append(dataset.y[fixation_position])
         fixations.set_data(fixations_x, fixations_y)
 
-    # accuracy = metrics.accuracy_score(dataset.labels, result_rbfchain_predictions)
-    # balanced_accuracy_score = metrics.balanced_accuracy_score(
-    #     dataset.labels, result_rbfchain_predictions
-    # )
-    # precision_score = metrics.precision_score(
-    #     dataset.labels, result_rbfchain_predictions
-    # )
-    # recall_score = metrics.recall_score(dataset.labels, result_rbfchain_predictions)
-    # jaccard_score = metrics.jaccard_score(dataset.labels, result_rbfchain_predictions)
+    accuracy_score = metrics.accuracy_score(dataset.labels, result_rbfchain_predictions)
 
+    precision_score = metrics.precision_score(
+        dataset.labels, result_rbfchain_predictions
+    )
+      
     cohen_kappa_score = max(
         0, metrics.cohen_kappa_score(dataset.labels, result_rbfchain_predictions)
     )
+    jaccard_score = metrics.jaccard_score(dataset.labels, result_rbfchain_predictions)
+    recall_score = metrics.recall_score(dataset.labels, result_rbfchain_predictions)
 
     fig.gca().set_title(f"{dataset_filename=}, {raw=}, {cohen_kappa_score=:.2f}")
     plt.savefig(f"results/{context['dataset']}-{dataset_filename}_{raw=}_{cohen_kappa_score=}.png")
@@ -131,12 +129,14 @@ def handle(dataset_path, raw=False, context=None):
     return {
         "dataset": dataset_path,
         "cohen_kappa_score": cohen_kappa_score,
+        "jaccard_score": jaccard_score,
+        "recall_score": recall_score,
+        "accuracy_score": accuracy_score,
+        "precision_score": precision_score,
         "context": context
         # "accuracy": accuracy,
         # "balanced_accuracy_score": balanced_accuracy_score,
         # "precision_score": precision_score,
-        # "recall_score": recall_score,
-        # "jaccard_score": jaccard_score
     }
 
 
@@ -161,15 +161,39 @@ for dataset_dir, subdirs, files in os.walk("data"):
 print(tabulate(results, tablefmt="grid", headers="keys"))
 
 # Summary results
-summary_results = {}
+summary_kappa_results = {}
+summary_jaccard_results = {}
+summary_recall_results = {}
+summary_accuracy_results = {}
+summary_precision_results = {}
+
 for result in results:
     dataset = result["context"]["dataset"]
 
-    summary_results.setdefault(dataset, [])
-    summary_results.get(dataset).append(result["cohen_kappa_score"])
+    summary_kappa_results.setdefault(dataset, [])
+    summary_kappa_results.get(dataset).append(result["cohen_kappa_score"])
 
-summary_table = []
-for dataset, scores in summary_results.items():
-    summary_table.append([dataset, statistics.mean(scores)])
+    summary_jaccard_results.setdefault(dataset, [])
+    summary_jaccard_results.get(dataset).append(result["jaccard_score"])
 
-print(tabulate(summary_table, tablefmt="grid", headers=["Dataset", "Cohen Kappa Score"]))
+    summary_recall_results.setdefault(dataset, [])
+    summary_recall_results.get(dataset).append(result["recall_score"])
+
+    summary_accuracy_results.setdefault(dataset, [])
+    summary_accuracy_results.get(dataset).append(result["accuracy_score"])
+
+    summary_precision_results.setdefault(dataset, [])
+    summary_precision_results.get(dataset).append(result["precision_score"])
+
+def generate_summary_table(summary_results):
+    summary_table = []
+    for dataset, scores in summary_results.items():
+        summary_table.append([dataset, statistics.mean(scores)])
+    return summary_table
+
+print(tabulate(generate_summary_table(summary_accuracy_results), tablefmt="grid", headers=["Dataset", "Accuracy Score"]))
+print(tabulate(generate_summary_table(summary_precision_results), tablefmt="grid", headers=["Dataset", "Precision Score"]))
+print(tabulate(generate_summary_table(summary_recall_results), tablefmt="grid", headers=["Dataset", "Recall Score"]))
+print(tabulate(generate_summary_table(summary_jaccard_results), tablefmt="grid", headers=["Dataset", "Jaccard Score"]))
+print(tabulate(generate_summary_table(summary_kappa_results), tablefmt="grid", headers=["Dataset", "Cohen Kappa Score"]))
+
