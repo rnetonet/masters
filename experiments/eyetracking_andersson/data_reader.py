@@ -26,7 +26,6 @@ class DataReader:
             self.labels = []
             
             for row in cleaned_data:
-                print(row, type(row))
                 # Unpack dataset
                 (
                     a,

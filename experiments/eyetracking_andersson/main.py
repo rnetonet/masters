@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.lines import Line2D
 from sklearn import metrics
+from tabulate import tabulate
 
 from data_reader import DataReader
 from rbfchain import RBFChain
@@ -73,7 +74,9 @@ def handle(dataset_path, raw=False):
     result_rbfchain_fixations_positions = []
 
     if not raw:
-        rbfchain = RBFChain(**{"sigma": 0.01, "lambda_": 0.95, "alpha": 0.01, "delta": 1.0})
+        rbfchain = RBFChain(
+            **{"sigma": 0.01, "lambda_": 0.90, "alpha": 0.017, "delta": 1.0}
+        )
 
         for index, input_data in enumerate(dataset.distances):
             probability = rbfchain.add_element(input_data)
@@ -93,7 +96,6 @@ def handle(dataset_path, raw=False):
             else:
                 result_rbfchain_predictions.append(0)
 
-
     #
     # Plotting
     #
@@ -108,10 +110,43 @@ def handle(dataset_path, raw=False):
         fixations.set_data(fixations_x, fixations_y)
 
     accuracy = metrics.accuracy_score(dataset.labels, result_rbfchain_predictions)
+    balanced_accuracy_score = metrics.balanced_accuracy_score(
+        dataset.labels, result_rbfchain_predictions
+    )
+    precision_score = metrics.precision_score(
+        dataset.labels, result_rbfchain_predictions
+    )
+    recall_score = metrics.recall_score(dataset.labels, result_rbfchain_predictions)
+    cohen_kappa_score = metrics.cohen_kappa_score(dataset.labels, result_rbfchain_predictions)
+    jaccard_score = metrics.jaccard_score(dataset.labels, result_rbfchain_predictions)
 
     fig.gca().set_title(f"{dataset_filename=}, {raw=}, {accuracy=:.2f}")
     plt.savefig(f"results/{dataset_filename}_{raw=}_{accuracy=}.png")
 
+    return {
+        "dataset": dataset_filename,
+        # "accuracy": accuracy,
+        # "balanced_accuracy_score": balanced_accuracy_score,
+        # "precision_score": precision_score,
+        # "recall_score": recall_score,
+        "cohen_kappa_score": cohen_kappa_score,
+        # "jaccard_score": jaccard_score
+    }
+
+
+for image in glob.glob("results/*.png"):
+    os.remove(image)
+
+results = []
+
 for dataset_path in glob.glob("data/*.csv"):
     handle(dataset_path, raw=True)
-    handle(dataset_path, raw=False)
+    results.append(handle(dataset_path, raw=False))
+
+print(
+    tabulate(
+        results,
+        tablefmt="grid",
+        headers="keys"
+    )
+)
