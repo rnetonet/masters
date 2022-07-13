@@ -122,12 +122,16 @@ def handle(dataset_path, raw=False, context=None):
     precision_score = metrics.precision_score(
         dataset.labels, result_rbfchain_predictions
     )
-      
+
     cohen_kappa_score = max(
         0, metrics.cohen_kappa_score(dataset.labels, result_rbfchain_predictions)
     )
     jaccard_score = metrics.jaccard_score(dataset.labels, result_rbfchain_predictions)
     recall_score = metrics.recall_score(dataset.labels, result_rbfchain_predictions)
+
+    balanced_accuracy_score = metrics.balanced_accuracy_score(dataset.labels, result_rbfchain_predictions)
+    sensivity_score = metrics.recall_score(dataset.labels, result_rbfchain_predictions, pos_label=0)
+    specificity_score = metrics.recall_score(dataset.labels, result_rbfchain_predictions)
 
     fig.gca().set_title(f"{dataset_filename=}, {raw=}, {cohen_kappa_score=:.2f}")
     plt.savefig(f"results/{context['dataset']}-{dataset_filename}_{raw=}_{cohen_kappa_score=}.png")
@@ -139,6 +143,9 @@ def handle(dataset_path, raw=False, context=None):
         "recall_score": recall_score,
         "accuracy_score": accuracy_score,
         "precision_score": precision_score,
+        "balanced_accuracy_score": balanced_accuracy_score,
+        "sensivity_score": sensivity_score,
+        "specifity_score": specificity_score,
         "context": context
         # "accuracy": accuracy,
         # "balanced_accuracy_score": balanced_accuracy_score,
@@ -157,7 +164,7 @@ for dataset_dir, subdirs, files in os.walk("data"):
         dataset = dataset_dir.split("/")[-1]
 
         if dataset_path.endswith(".csv"):
-            
+
             handle(dataset_path, raw=True, context={"dataset": dataset})
             results.append(
                 handle(dataset_path, raw=False, context={"dataset": dataset})
@@ -175,6 +182,9 @@ summary_jaccard_results = {}
 summary_recall_results = {}
 summary_accuracy_results = {}
 summary_precision_results = {}
+balanced_accuracy_results = {}
+sensivity_results = {}
+specifity_results = {}
 
 for result in results:
     dataset = result["context"]["dataset"]
@@ -194,6 +204,15 @@ for result in results:
     summary_precision_results.setdefault(dataset, [])
     summary_precision_results.get(dataset).append(result["precision_score"])
 
+    balanced_accuracy_results.setdefault(dataset, [])
+    balanced_accuracy_results.get(dataset).append(result["balanced_accuracy_score"])
+
+    sensivity_results.setdefault(dataset, [])
+    sensivity_results.get(dataset).append(result["sensivity_score"])
+
+    specifity_results.setdefault(dataset, [])
+    specifity_results.get(dataset).append(result["specifity_score"])
+
 def generate_summary_table(summary_results):
     summary_table = []
     for dataset, scores in summary_results.items():
@@ -206,3 +225,6 @@ print(tabulate(generate_summary_table(summary_recall_results), tablefmt="grid", 
 print(tabulate(generate_summary_table(summary_jaccard_results), tablefmt="grid", headers=["Dataset", "Jaccard Score"]))
 print(tabulate(generate_summary_table(summary_kappa_results), tablefmt="grid", headers=["Dataset", "Cohen Kappa Score"]))
 
+print(tabulate(generate_summary_table(balanced_accuracy_results), tablefmt="grid", headers=["Dataset", "Balanced Accuracy Score"]))
+print(tabulate(generate_summary_table(sensivity_results), tablefmt="grid", headers=["Dataset", "Sensivity Score"]))
+print(tabulate(generate_summary_table(specifity_results), tablefmt="grid", headers=["Dataset", "Specifity Score"]))

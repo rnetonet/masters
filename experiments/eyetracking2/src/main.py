@@ -59,6 +59,10 @@ def main():
     precisions = {"clusterfix": [], "vel_100": [], "vel_rms": []}
     recalls = {"clusterfix": [], "vel_100": [], "vel_rms": []}
 
+    balanced_accuracy = {"clusterfix": [], "vel_100": [], "vel_rms": []}
+    sensivity = {"clusterfix": [], "vel_100": [], "vel_rms": []}
+    specificity = {"clusterfix": [], "vel_100": [], "vel_rms": []}
+
     # Output table
     headers = [
         "Trial",
@@ -67,6 +71,9 @@ def main():
         "Accuracy",
         "Precision",
         "Recall",
+        "Balanced Accuracy",
+        "Specifity",
+        "Sensivity",
     ]
     table = []
 
@@ -277,6 +284,11 @@ def main():
                     f"{metrics.accuracy_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n\n",
                     f"{metrics.precision_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n\n",
                     f"{metrics.recall_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n\n",
+
+                    f"{metrics.balanced_accuracy_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n\n",
+                    f"{metrics.recall_score(result_bufalo.predictions, result_rbfchain_predictions, pos_label=0):.2f}\n\n",
+                    f"{metrics.recall_score(result_bufalo.predictions, result_rbfchain_predictions):.2f}\n\n",
+
                 ],
             )
             table.append(
@@ -287,6 +299,10 @@ def main():
                     f"{metrics.accuracy_score(result_vel100.predictions, result_rbfchain_predictions):.2f}",
                     f"{metrics.precision_score(result_vel100.predictions, result_rbfchain_predictions):.2f}",
                     f"{metrics.recall_score(result_vel100.predictions, result_rbfchain_predictions):.2f}",
+
+                    f"{metrics.balanced_accuracy_score(result_vel100.predictions, result_rbfchain_predictions):.2f}\n\n",
+                    f"{metrics.recall_score(result_vel100.predictions, result_rbfchain_predictions, pos_label=0):.2f}\n\n",
+                    f"{metrics.recall_score(result_vel100.predictions, result_rbfchain_predictions):.2f}\n\n",
                 ],
             )
             table.append(
@@ -297,6 +313,10 @@ def main():
                     f"{metrics.accuracy_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
                     f"{metrics.precision_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
                     f"{metrics.recall_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}",
+
+                    f"{metrics.balanced_accuracy_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}\n\n",
+                    f"{metrics.recall_score(result_vel_rms.predictions, result_rbfchain_predictions, pos_label=0):.2f}\n\n",
+                    f"{metrics.recall_score(result_vel_rms.predictions, result_rbfchain_predictions):.2f}\n\n",
                 ],
             )
 
@@ -351,6 +371,37 @@ def main():
                 )
             )
 
+
+            balanced_accuracy["clusterfix"].append(
+                metrics.balanced_accuracy_score(result_bufalo.predictions, result_rbfchain_predictions)
+            )
+            balanced_accuracy["vel_100"].append(
+                metrics.balanced_accuracy_score(result_vel100.predictions, result_rbfchain_predictions)
+            )
+            balanced_accuracy["vel_rms"].append(
+               metrics.balanced_accuracy_score(result_vel_rms.predictions, result_rbfchain_predictions)
+            )
+
+            sensivity["clusterfix"].append(
+                metrics.recall_score(result_bufalo.predictions, result_rbfchain_predictions)
+            )
+            sensivity["vel_100"].append(
+                metrics.recall_score(result_vel100.predictions, result_rbfchain_predictions)
+            )
+            sensivity["vel_rms"].append(
+                metrics.recall_score(result_vel_rms.predictions, result_rbfchain_predictions)
+            )
+
+            specificity["clusterfix"].append(
+                metrics.recall_score(result_bufalo.predictions, result_rbfchain_predictions, pos_label=0)
+            )
+            specificity["vel_100"].append(
+                metrics.recall_score(result_vel100.predictions, result_rbfchain_predictions, pos_label=0)
+            )
+            specificity["vel_rms"].append(
+                metrics.recall_score(result_vel_rms.predictions, result_rbfchain_predictions, pos_label=0)
+            )
+
             # Save summary figure
             if os.path.exists(result_image_full_path):
                 os.remove(result_image_full_path)
@@ -403,6 +454,22 @@ def main():
         "Max. Recall",
         "Avg. Recall",
         "Std. Recall",
+
+
+        "Min. Balanced Accuracy",
+        "Max. Balanced Accuracy",
+        "Avg. Balanced Accuracy",
+        "Std. Balanced Accuracy",
+
+        "Min. Specifity",
+        "Max. Specifity",
+        "Avg. Specifity",
+        "Std. Specifity",
+
+        "Min. Sensivity",
+        "Max. Sensivity",
+        "Avg. Sensivity",
+        "Std. Sensivity",
     ]
     summary_table = [
         [
@@ -421,6 +488,22 @@ def main():
             np.max(recalls["clusterfix"]),
             np.mean(recalls["clusterfix"]),
             np.std(recalls["clusterfix"]),
+
+
+            np.min(balanced_accuracy["clusterfix"]),
+            np.max(balanced_accuracy["clusterfix"]),
+            np.mean(balanced_accuracy["clusterfix"]),
+            np.std(balanced_accuracy["clusterfix"]),
+
+            np.min(specificity["clusterfix"]),
+            np.max(specificity["clusterfix"]),
+            np.mean(specificity["clusterfix"]),
+            np.std(specificity["clusterfix"]),
+
+            np.min(sensivity["clusterfix"]),
+            np.max(sensivity["clusterfix"]),
+            np.mean(sensivity["clusterfix"]),
+            np.std(sensivity["clusterfix"]),
         ],
         [
             "Vel 100",
@@ -438,6 +521,22 @@ def main():
             np.max(recalls["vel_100"]),
             np.mean(recalls["vel_100"]),
             np.std(recalls["vel_100"]),
+
+
+            np.min(balanced_accuracy["vel_100"]),
+            np.max(balanced_accuracy["vel_100"]),
+            np.mean(balanced_accuracy["vel_100"]),
+            np.std(balanced_accuracy["vel_100"]),
+
+            np.min(specificity["vel_100"]),
+            np.max(specificity["vel_100"]),
+            np.mean(specificity["vel_100"]),
+            np.std(specificity["vel_100"]),
+
+            np.min(sensivity["vel_100"]),
+            np.max(sensivity["vel_100"]),
+            np.mean(sensivity["vel_100"]),
+            np.std(sensivity["vel_100"]),
         ],
         [
             "Vel RMS",
@@ -455,6 +554,22 @@ def main():
             np.max(recalls["vel_rms"]),
             np.mean(recalls["vel_rms"]),
             np.std(recalls["vel_rms"]),
+
+
+            np.min(balanced_accuracy["vel_rms"]),
+            np.max(balanced_accuracy["vel_rms"]),
+            np.mean(balanced_accuracy["vel_rms"]),
+            np.std(balanced_accuracy["vel_rms"]),
+
+            np.min(specificity["vel_rms"]),
+            np.max(specificity["vel_rms"]),
+            np.mean(specificity["vel_rms"]),
+            np.std(specificity["vel_rms"]),
+
+            np.min(sensivity["vel_rms"]),
+            np.max(sensivity["vel_rms"]),
+            np.mean(sensivity["vel_rms"]),
+            np.std(sensivity["vel_rms"]),
         ],
         [
             "Avg",
@@ -542,6 +657,95 @@ def main():
                     np.std(recalls["clusterfix"]),
                     np.std(recalls["vel_100"]),
                     np.std(recalls["vel_rms"]),
+                ]
+            ),
+
+            np.mean(
+                [
+                    np.min(balanced_accuracy["clusterfix"]),
+                    np.min(balanced_accuracy["vel_100"]),
+                    np.min(balanced_accuracy["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.max(balanced_accuracy["clusterfix"]),
+                    np.max(balanced_accuracy["vel_100"]),
+                    np.max(balanced_accuracy["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.mean(balanced_accuracy["clusterfix"]),
+                    np.mean(balanced_accuracy["vel_100"]),
+                    np.mean(balanced_accuracy["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.std(balanced_accuracy["clusterfix"]),
+                    np.std(balanced_accuracy["vel_100"]),
+                    np.std(balanced_accuracy["vel_rms"]),
+                ]
+            ),
+
+
+            np.mean(
+                [
+                    np.min(specificity["clusterfix"]),
+                    np.min(specificity["vel_100"]),
+                    np.min(specificity["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.max(specificity["clusterfix"]),
+                    np.max(specificity["vel_100"]),
+                    np.max(specificity["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.mean(specificity["clusterfix"]),
+                    np.mean(specificity["vel_100"]),
+                    np.mean(specificity["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.std(specificity["clusterfix"]),
+                    np.std(specificity["vel_100"]),
+                    np.std(specificity["vel_rms"]),
+                ]
+            ),
+
+
+            np.mean(
+                [
+                    np.min(sensivity["clusterfix"]),
+                    np.min(sensivity["vel_100"]),
+                    np.min(sensivity["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.max(sensivity["clusterfix"]),
+                    np.max(sensivity["vel_100"]),
+                    np.max(sensivity["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.mean(sensivity["clusterfix"]),
+                    np.mean(sensivity["vel_100"]),
+                    np.mean(sensivity["vel_rms"]),
+                ]
+            ),
+            np.mean(
+                [
+                    np.std(sensivity["clusterfix"]),
+                    np.std(sensivity["vel_100"]),
+                    np.std(sensivity["vel_rms"]),
                 ]
             ),
         ],
