@@ -6,10 +6,11 @@ import matplotlib
 
 from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
-plt.style.use('seaborn-white')
 
 import numpy as np
 import pandas as pd
+
+matplotlib.use("TKAgg", force=True)
 
 path = sys.argv[1]
 files = os.listdir(path)

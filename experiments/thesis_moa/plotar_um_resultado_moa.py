@@ -4,7 +4,8 @@ import sys
 
 import matplotlib
 
-matplotlib.use("TKAgg", warn=False, force=True)
+# matplotlib.use('Agg')
+matplotlib.use("TKAgg", force=True)
 
 from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
