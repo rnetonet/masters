@@ -3,7 +3,7 @@ import sys
 
 import matplotlib
 
-matplotlib.use("TKAgg", warn=False, force=True)
+matplotlib.use("TKAgg", force=True)
 
 import matplotlib.colors as mcolors
 import matplotlib.image as mpimg

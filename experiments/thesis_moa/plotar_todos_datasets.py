@@ -6,12 +6,11 @@ import matplotlib
 from matplotlib.lines import Line2D
 
 import matplotlib.pyplot as plt
-plt.style.use('seaborn-white')
 
 import pandas as pd
 from scipy.io import arff
 
-
+matplotlib.use("TKAgg", force=True)
 class DatasetPlotter:
     _filename_settings_map = {
         "abrupt.arff": {"name": "Abrupt", "subplot": {"row": 0, "col": 0}},
