@@ -225,7 +225,7 @@ class MarkovChain:
                                    annotate = self.annotate_probabilities)
 
         plt.axis('off')
-        plt.margins(0,0)
+        plt.margins(0, 0)
         plt.subplots_adjust(left=0, right=1, top=1, bottom=0)
 
         # Save the image to disk?

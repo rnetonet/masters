@@ -43,7 +43,7 @@ class MarkovChain:
         self.text_args = {
             'ha': 'center',
             'va': 'center',
-            'fontsize': 16
+            'fontsize': 22
         }
 
         # Build the network
@@ -69,9 +69,10 @@ class MarkovChain:
             self.node_centers = [[-3,-2], [3,-2], [-3,2]]
         elif self.n_states == 4:
             self.figsize = (8, 8)
-            self.xlim = (-5, 5)
-            self.ylim = (-5, 5)
-            self.node_centers = [[-4,4], [4,4], [4,-4], [-4,-4]]
+            self.xlim = (-3, 3)
+            self.ylim = (-3, 3)
+            #self.node_centers = [[-4,4], [4,4], [4,-4], [-4,-4]]
+            self.node_centers = [[-2,2], [2,2], [2,-2], [-2,-2]]
 
 
     def build_network(self):
@@ -101,8 +102,10 @@ class MarkovChain:
         y_start = node1.y + np.sign(node2.y-node1.y) * node1.radius
 
         # arrow length
-        dx = abs(node1.x - node2.x) - 2.5* node1.radius
-        dy = abs(node1.y - node2.y) - 2.5* node1.radius
+        scale_fator = 1
+        arrow_length_reduction = 2.5
+        dx = (abs(node1.x - node2.x) - arrow_length_reduction * node1.radius) * scale_fator
+        dy = (abs(node1.y - node2.y) - arrow_length_reduction * node1.radius) * scale_fator
 
         # we don't want xoffset and yoffset to both be non-nul
         yoffset = 0.4 * self.node_radius * np.sign(node2.x-node1.x)
@@ -162,9 +165,17 @@ class MarkovChain:
                     self.add_arrow(ax, self.nodes[i], self.nodes[j], prob = self.M[i,j])
 
         plt.axis('off')
+        plt.margins(0, 0, tight=True)
+        ax.margins(x=0)
+
+        plt.tight_layout(pad=0)
+        ax.set_position([0, 0, 1, 1])
+
+        plt.subplots_adjust(left=0, right=1, top=1, bottom=0)
+
         # Save the image to disk?
         if img_path:
-            plt.savefig(img_path)
+            plt.savefig(img_path, transparent=False, bbox_inches='tight', pad_inches=0)
         plt.show()
 
 

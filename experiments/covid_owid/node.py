@@ -35,8 +35,8 @@ class Node():
         
         self.text_args = {
             'ha': 'center', 
-            'va': 'center', 
-            'fontsize': 16
+            'va': 'center',
+            'fontsize': 22
         }
     
     
