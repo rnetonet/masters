@@ -176,6 +176,7 @@ class MarkovChain:
         # Save the image to disk?
         if img_path:
             plt.savefig(img_path, transparent=False, bbox_inches='tight', pad_inches=0)
+        
         plt.show()
 
 

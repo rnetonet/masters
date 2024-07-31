@@ -74,6 +74,9 @@ class Node():
         """
         Draws a self loop
         """
+        if not prob:
+            return
+
         if direction == 'up':
             start = -30
             angle = 180
