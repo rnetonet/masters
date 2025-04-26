@@ -1,3 +1,4 @@
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 import pandas as pd
@@ -7,6 +8,8 @@ from rbf import RBF
 
 DATASET_CASOS = 'dados_covid_sp.csv.gz'
 DATASET_LEITOS = 'dados_covid_sp_leitos.csv.gz'
+
+matplotlib.use("QtAgg")
 
 df_casos = pd.read_csv(DATASET_CASOS, delimiter=';', compression='gzip')
 df_leitos = pd.read_csv(DATASET_LEITOS, delimiter=';', compression='gzip')
