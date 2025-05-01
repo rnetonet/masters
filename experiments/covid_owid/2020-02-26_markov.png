@@ -1,9 +1,0 @@
-// RBF
-digraph {
-	dpi=100
-	node [fontsize=8]
-	edge [fontsize=8]
-	edge [labelfloat=false]
-	nan
-	nan -> nan [label=0.50 constraint=false]
-}

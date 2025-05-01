@@ -62,7 +62,10 @@ ax_third.plot(
 )
 
 xticks = []
-rbf = RBF(**{"sigma": 0.01, "lambda_": 0.5, "alpha": 0.5, "delta": 1.0})
+# rbf = RBF(**{"sigma": 0.01, "lambda_": 0.5, "alpha": 0.5, "delta": 1.0})
+rbf = RBF(
+    **{'sigma': 0.01, 'lambda_': 0.55, 'alpha': 0.35, 'delta': 0.75}
+)
 
 for index, row in df.iterrows():
     date = df["date"][index]
