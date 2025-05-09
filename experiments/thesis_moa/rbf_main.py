@@ -3,7 +3,7 @@ import sys
 
 import matplotlib
 
-matplotlib.use("TKAgg", force=True)
+matplotlib.use("QtAgg", force=True)
 
 import matplotlib.colors as mcolors
 import matplotlib.image as mpimg
@@ -85,6 +85,10 @@ plt.plot(x, y, color="k", linestyle="-", linewidth=0.1)
 
 for drift_position in concept_drifts_positions:
     plt.axvline(x=drift_position, linewidth=0.25, color="r")
+
+print("#" * 80)
+print(f"{filename=} | {len(rbf.centers)=}")
+print("#" * 80)
 
 # Plot
 plt.show(block=True)

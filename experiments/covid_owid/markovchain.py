@@ -142,6 +142,8 @@ class MarkovChain:
         """
         fig, ax = plt.subplots(figsize=self.figsize)
 
+        # plt.suptitle(img_path, fontsize=22, ha='center', va='top')
+
         # Set the axis limits
         plt.xlim(self.xlim)
         plt.ylim(self.ylim)

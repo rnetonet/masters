@@ -1,11 +1,13 @@
+import math
+
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.ticker as mtick
 import pandas as pd
 from matplotlib.lines import Line2D
-
-from rbf import RBF
 from prettyprinter import pprint
+from rbf import RBF
+
 
 def remove_generated_pngs():
     # Remove all pngs
@@ -14,6 +16,7 @@ def remove_generated_pngs():
 
     for file in glob.glob("*.png"):
         os.remove(file)
+
 
 remove_generated_pngs()
 
@@ -62,28 +65,34 @@ ax_third.plot(
 )
 
 xticks = []
-# rbf = RBF(**{"sigma": 0.01, "lambda_": 0.5, "alpha": 0.5, "delta": 1.0})
-rbf = RBF(
-    **{'sigma': 0.01, 'lambda_': 0.55, 'alpha': 0.35, 'delta': 0.75}
-)
+rbf = RBF(**{"sigma": 0.01, "lambda_": 0.5, "alpha": 0.5, "delta": 1.0})
+# rbf = RBF(**{"sigma": 0.01, "lambda_": 0.55, "alpha": 0.35, "delta": 0.75})
 
 for index, row in df.iterrows():
     date = df["date"][index]
     value = row["weekly_new_deaths_mean"]
 
-    rbf.add_element(value)
+    if not math.isnan(value):
+        rbf.add_element(value)
 
-    rbf.markov.to_png(date + "_markov.png")
-    
-    print("="*80)
-    pprint(f"{date=}, {rbf.concept_center=}")
-    # pprint(rbf.markov.system)
-    print("="*80)
+    dates = [
+        "2020-04-15",
+        "2020-04-22",
+        "2020-05-27",
+        "2020-06-03",
+        "2020-12-09",
+        "2020-12-16"
+    ]
+    if date in dates:
+        print(date)
+        rbf.markov.to_png(f"{date}.graphviz")
+        pprint(rbf.markov.system)
+
 
     if rbf.in_concept_change:
         ax_left.axvline(date, color="orange", ls="--", linewidth=1.00)
         xticks.append(date)
-
+     
 
 ax_left.tick_params(axis="x", labelrotation=90)
 ax_right.tick_params(axis="x", labelrotation=90)
@@ -126,4 +135,3 @@ plt.suptitle("Vaccinated / Cases / Deaths")
 
 plt.show()
 
-remove_generated_pngs()

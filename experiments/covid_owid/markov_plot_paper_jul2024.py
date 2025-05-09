@@ -6,13 +6,11 @@ from markovchain import MarkovChain
 
 # fig12 - OK
 P = np.array([
-    [0.0, 1.0, 0.0, 0.0], # 571,
-    [0.0, 0.5, 0.0, 0.5], # 664,
-    [0.0, 0.0, 0.5, 0.5], # 962,
-    [0.0, 0.5, 0.0, 0.5], # 802,
+    [0.0, 1.0,], # 8,
+    [0.0, 0.0], # 962,
 ])
-mc = MarkovChain(P, ['571', '664*', '962', '802'])
-mc.draw("fig12.svg")
+mc = MarkovChain(P, ['8', '962*'])
+mc.draw("fig12.svg") # 10/06/2020
 
 
 # fig13 - OK
